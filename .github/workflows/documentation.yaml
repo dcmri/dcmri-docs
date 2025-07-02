@@ -33,6 +33,9 @@ jobs:
         run: |
           make html
         working-directory: docs
+
+      - name: Add CNAME file for custom domain
+        run: echo "dcmri.org" > docs/build/html/CNAME
         
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v3

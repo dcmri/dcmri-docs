@@ -318,14 +318,14 @@ popular population-based AIF:
     *
 
       .. image-sg:: /examples/tutorials/images/sphx_glr_plot_aif_002.png
-         :alt: MRI signals, Concentration in indicator compartments
+         :alt: MRI signals, Concentration in indicator compartments, Free parameters with their stdev
          :srcset: /examples/tutorials/images/sphx_glr_plot_aif_002.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /examples/tutorials/images/sphx_glr_plot_aif_003.png
-         :alt: MRI signals, Concentration in indicator compartments
+         :alt: MRI signals, Concentration in indicator compartments, Free parameters with their stdev
          :srcset: /examples/tutorials/images/sphx_glr_plot_aif_003.png
          :class: sphx-glr-multi-img
 
@@ -525,7 +525,7 @@ underestimation in the blood flow values observed.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.993 seconds)
+   **Total running time of the script:** (0 minutes 1.039 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_aif.py:

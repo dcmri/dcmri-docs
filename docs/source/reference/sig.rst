@@ -39,3 +39,23 @@ Inverse signal models
    conc_ss
    conc_src
    conc_lin
+
+
+T1 mapping
+==========
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   vfa_nonlinear
+   vfa_linear
+
+Descriptive parameters
+======================
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   describe

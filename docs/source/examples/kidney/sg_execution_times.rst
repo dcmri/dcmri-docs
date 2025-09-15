@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:08.432** total execution time for 1 file **from examples\kidney**:
+**00:10.447** total execution time for 1 file **from examples\kidney**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_examples_kidney_plot_gfr_validation.py` (``plot_gfr_validation.py``)
-     - 00:08.432
+     - 00:10.447
      - 0.0

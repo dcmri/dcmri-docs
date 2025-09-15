@@ -104,6 +104,16 @@ factors have a known form.
    stepconv
 
 
+Deconvolution
+=============
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   deconv
+
+
 .. _sampling-functions:
 
 Helper functions

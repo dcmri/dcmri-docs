@@ -846,7 +846,7 @@ identical - to those produced from a separate Aorta and Kidneys fit.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 31.889 seconds)
+   **Total running time of the script:** (0 minutes 30.773 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_minipig.py:

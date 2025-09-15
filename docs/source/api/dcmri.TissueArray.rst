@@ -25,6 +25,7 @@
       ~TissueArray.params
       ~TissueArray.plot
       ~TissueArray.plot_fit
+      ~TissueArray.plot_overlay
       ~TissueArray.plot_params
       ~TissueArray.plot_signals
       ~TissueArray.predict

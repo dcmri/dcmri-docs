@@ -481,8 +481,8 @@ extremely high levels of water exchange:
 
  .. code-block:: none
 
-    PSe: 115.0 mL/sec/cm3
-    PSc: 126.0 mL/sec/cm3
+    PSe: 114.0 mL/sec/cm3
+    PSc: 142.0 mL/sec/cm3
 
 
 
@@ -556,7 +556,7 @@ confounder.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.257 seconds)
+   **Total running time of the script:** (0 minutes 4.644 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_wex.py:

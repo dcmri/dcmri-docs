@@ -10,6 +10,21 @@ and have built-in functionality to determine parameter values from data.
 .. currentmodule:: dcmri
 
 
+Linear and stationary tissues
+=============================
+
+The most general class of methods for tissues with a single inlet of indicator.
+
+
+.. autosummary::
+   :toctree: ../api/
+   :template: custom-class-template.rst
+   :recursive:
+
+   TissueLS
+   TissueLSArray
+
+
 Exchange tissues
 ================
 

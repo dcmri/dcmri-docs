@@ -1,0 +1,1012 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dcmri.pk_inv &#8212; dcmri 0.6.19 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=4143dd60"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-64ZSJ8Z1MX"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-64ZSJ8Z1MX');
+            </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-64ZSJ8Z1MX');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dcmri/pk_inv';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/tristan-logo.jpg" class="logo__image only-light" alt="dcmri 0.6.19 documentation - Home"/>
+    <img src="../../_static/tristan-logo.jpg" class="logo__image only-dark pst-js-only" alt="dcmri 0.6.19 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contribute/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../about/index.html">
+    About
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contribute/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">dcmri.pk_inv</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for dcmri.pk_inv</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">integrate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">rice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+
+<div class="viewcode-block" id="vfa_nonlinear">
+<a class="viewcode-back" href="../../api/dcmri.vfa_nonlinear.html#dcmri.vfa_nonlinear">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">vfa_nonlinear</span><span class="p">(</span><span class="n">signal_intensities</span><span class="p">,</span> <span class="n">flip_angles_deg</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates R1 and S0 from VFA data using a NON-LINEAR fit.</span>
+
+<span class="sd">    This function fits the data directly to the SPGR signal equation:</span>
+<span class="sd">    S(a) = S0 * sin(a) * (1 - exp(-TR*R1)) / (1 - cos(a) * exp(-TR*R1))</span>
+<span class="sd">    </span>
+<span class="sd">    This method can be more stable and accurate than the linear fit,</span>
+<span class="sd">    especially in the presence of noise.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        signal_intensities (list or np.ndarray): A list or array of measured</span>
+<span class="sd">                                                  signal intensities.</span>
+<span class="sd">        flip_angles_deg (list or np.ndarray): A list or array of corresponding flip angles in degrees.</span>
+<span class="sd">        tr (float): The repetition time (TR) of the sequence.</span>
+<span class="sd">        bounds (tuple): bounds on (R1, S0) as a tuple ([lower_R1, lower_S0], [upper_R1, upper_S0]). Default is ([0, 0], [np.inf, np.inf])</span>
+<span class="sd">        verbose (int): if set to 1, warning messages are printed. Defaults to 0.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing the calculated (R1, S0).</span>
+<span class="sd">               Returns initial guesses if the non-linear fit fails to converge.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Convert inputs to numpy arrays for vectorized operations</span>
+    <span class="n">signals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">signal_intensities</span><span class="p">)</span>
+    
+    <span class="c1"># If the signal intensities are image arrays, loop over the pixels</span>
+    <span class="k">if</span> <span class="n">signals</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">signals_shape</span> <span class="o">=</span> <span class="n">signals</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">signals_array</span> <span class="o">=</span> <span class="n">signals</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">signals_shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">R1_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">signals_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">S0_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">signals_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">signals_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Performing non-linear VFA fit&#39;</span><span class="p">):</span>
+            <span class="n">R1_array</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">S0_array</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">vfa_nonlinear</span><span class="p">(</span><span class="n">signals_array</span><span class="p">[</span><span class="n">x</span><span class="p">,:],</span> <span class="n">flip_angles_deg</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="n">R1_array</span> <span class="o">=</span> <span class="n">R1_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">signals_shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">S0_array</span> <span class="o">=</span> <span class="n">S0_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">signals_shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">R1_array</span><span class="p">,</span> <span class="n">S0_array</span>
+
+    <span class="c1"># --- 0. Input Validation and Conversion ---</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flip_angles_deg</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">signals</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input arrays for flip angles and signals must have the same length.&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Default bounds</span>
+    <span class="k">if</span> <span class="n">bounds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
+    
+    <span class="c1"># Convert flip angles from degrees to radians for trigonometric functions</span>
+    <span class="n">flip_angles_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">flip_angles_deg</span><span class="p">)</span>
+
+    <span class="c1"># --- 1. Define the SPGR signal model for curve_fit ---</span>
+    <span class="c1"># tr is passed as a fixed argument to the model function</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spgr_model</span><span class="p">(</span><span class="n">alpha_rad</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">s0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">r1</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># T1 must be positive</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+        <span class="n">e1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">tr</span> <span class="o">*</span> <span class="n">r1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha_rad</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha_rad</span><span class="p">)</span> <span class="o">*</span> <span class="n">e1</span><span class="p">)</span>
+
+    <span class="c1"># --- 2. Provide Initial Guesses and Bounds ---</span>
+    <span class="c1"># Good initial guesses are important for non-linear fitting.</span>
+    <span class="c1"># Guess S0 as the maximum signal, and T1 as a typical biological value.</span>
+    <span class="n">initial_s0_guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
+    <span class="n">initial_r1_guess</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">1.2</span>
+    <span class="n">initial_guesses</span> <span class="o">=</span> <span class="p">[</span><span class="n">initial_r1_guess</span><span class="p">,</span> <span class="n">initial_s0_guess</span><span class="p">]</span>
+    
+    <span class="c1"># --- 3. Perform Non-Linear Fit ---</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+            <span class="n">spgr_model</span><span class="p">,</span>
+            <span class="n">flip_angles_rad</span><span class="p">,</span>
+            <span class="n">signals</span><span class="p">,</span>
+            <span class="n">p0</span><span class="o">=</span><span class="n">initial_guesses</span><span class="p">,</span>
+            <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span>
+        <span class="p">)</span>
+        <span class="n">calculated_r1</span><span class="p">,</span> <span class="n">calculated_s0</span> <span class="o">=</span> <span class="n">popt</span>
+        <span class="k">return</span> <span class="n">calculated_r1</span><span class="p">,</span> <span class="n">calculated_s0</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning (Non-Linear Fit): Could not converge to a solution. Returning initial guesses.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">initial_r1_guess</span><span class="p">,</span> <span class="n">initial_s0_guess</span></div>
+
+
+
+<div class="viewcode-block" id="vfa_linear">
+<a class="viewcode-back" href="../../api/dcmri.vfa_linear.html#dcmri.vfa_linear">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">vfa_linear</span><span class="p">(</span><span class="n">signal_intensities</span><span class="p">,</span> <span class="n">flip_angles_deg</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates R1 and S0 from variable flip angle (VFA) SPGR data.</span>
+
+<span class="sd">    This function uses the linearized form of the steady-state spoiled</span>
+<span class="sd">    gradient-echo (SPGR) signal equation to perform a linear fit and</span>
+<span class="sd">    extract R1 and S0.</span>
+
+<span class="sd">    The linearized equation is:</span>
+<span class="sd">    S(a)/sin(a) = E1 * S(a)/tan(a) + S0*(1-E1)</span>
+<span class="sd">    where E1 = exp(-TR * R1). This is a linear equation of the form y = m*x + c.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        signal_intensities (list or np.ndarray): A list or array of measured</span>
+<span class="sd">                                                  signal intensities.</span>
+<span class="sd">        flip_angles_deg (list or np.ndarray): A list or array of corresponding flip angles in degrees.</span>
+<span class="sd">        tr (float): The repetition time (TR) of the sequence.</span>
+<span class="sd">        bounds (tuple): bounds on (R1, S0) as a tuple ([lower_R1, lower_S0], [upper_R1, upper_S0]). Default is ([0, 0], [np.inf, np.inf])</span>
+<span class="sd">        verbose (int): if set to 1, warning messages are printed. Defaults to 0.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing the calculated (R1, S0).</span>
+<span class="sd">               Returns (0, 0) if the calculation is not physically</span>
+<span class="sd">               plausible (e.g., due to noisy data leading to a slope &gt;= 1).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Convert inputs to numpy arrays for vectorized operations</span>
+    <span class="n">signals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">signal_intensities</span><span class="p">)</span>
+
+    <span class="c1"># If the signal intensities are image arrays, loop over the pixels</span>
+    <span class="k">if</span> <span class="n">signals</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">signals_shape</span> <span class="o">=</span> <span class="n">signals</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">signals_array</span> <span class="o">=</span> <span class="n">signals</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">signals_shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">R1_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">signals_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">S0_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">signals_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">signals_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Performing linear VFA fit&#39;</span><span class="p">):</span>
+            <span class="n">R1_array</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">S0_array</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">vfa_linear</span><span class="p">(</span><span class="n">signals_array</span><span class="p">[</span><span class="n">x</span><span class="p">,:],</span> <span class="n">flip_angles_deg</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="n">R1_array</span> <span class="o">=</span> <span class="n">R1_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">signals_shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">S0_array</span> <span class="o">=</span> <span class="n">S0_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">signals_shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">R1_array</span><span class="p">,</span> <span class="n">S0_array</span>
+
+    <span class="c1"># --- 1. Input Validation and Conversion ---</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flip_angles_deg</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">signals</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input arrays for flip angles and signals must have the same length.&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Default bounds</span>
+    <span class="k">if</span> <span class="n">bounds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
+    
+    <span class="c1"># Convert flip angles from degrees to radians for trigonometric functions</span>
+    <span class="n">flip_angles_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">flip_angles_deg</span><span class="p">)</span>
+
+    <span class="c1"># --- 2. Data Transformation for Linearization ---</span>
+    <span class="c1"># Avoid division by zero for tan(90 degrees) if present</span>
+    <span class="c1"># and for sin(0 degrees). We filter out these data points.</span>
+    <span class="n">valid_indices</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">flip_angles_rad</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">flip_angles_rad</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">valid_indices</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: Not enough valid data points (&lt;2) for a linear fit. Returning lower bounds.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        
+    <span class="n">y</span> <span class="o">=</span> <span class="n">signals</span><span class="p">[</span><span class="n">valid_indices</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">flip_angles_rad</span><span class="p">[</span><span class="n">valid_indices</span><span class="p">])</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">signals</span><span class="p">[</span><span class="n">valid_indices</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">flip_angles_rad</span><span class="p">[</span><span class="n">valid_indices</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: Equal values for x and y - cannot perform linear fit. Returning lower bounds&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>   
+
+    <span class="c1"># --- 3. Linear Regression ---</span>
+    <span class="c1"># Use np.polyfit to find the slope (m) and intercept (c) of the line y = mx + c</span>
+    <span class="c1"># The degree of the polynomial is 1 for a linear fit.</span>
+    <span class="c1">#slope, intercept = np.polyfit(x, y, 1)</span>
+    <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="c1"># --- 4. Calculate T1 and S0 ---</span>
+    <span class="c1"># The slope corresponds to E1</span>
+    <span class="n">e1</span> <span class="o">=</span> <span class="n">slope</span>
+    
+    <span class="c1"># Check for physically plausible E1 value. E1 must be &gt; 0 and &lt; 1.</span>
+    <span class="c1"># A slope &gt;= 1 or &lt;= 0 would result in a non-real or negative T1.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">e1</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: Calculated slope (E1 = </span><span class="si">{</span><span class="n">e1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">) is outside the valid range (0, 1).&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This may be due to noise or other artifacts. Returning lower bounds.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Calculate T1 from E1</span>
+    <span class="c1"># T1 = -TR / ln(E1)</span>
+    <span class="n">r1</span> <span class="o">=</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span> <span class="o">/</span> <span class="n">tr</span>
+    
+    <span class="c1"># Calculate S0 from the intercept</span>
+    <span class="c1"># Intercept = S0 * (1 - E1) =&gt; S0 = Intercept / (1 - E1)</span>
+    <span class="n">s0</span> <span class="o">=</span> <span class="n">intercept</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e1</span><span class="p">)</span>
+
+    <span class="c1"># Apply bounds</span>
+    <span class="n">r1</span> <span class="o">=</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">r1</span> <span class="o">&lt;</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="n">r1</span>
+    <span class="n">s0</span> <span class="o">=</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">s0</span> <span class="o">&lt;</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">else</span> <span class="n">s0</span>
+    <span class="n">r1</span> <span class="o">=</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">r1</span> <span class="o">&gt;</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="n">r1</span>
+    <span class="n">s0</span> <span class="o">=</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">s0</span> <span class="o">&gt;</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">else</span> <span class="n">s0</span>
+
+    <span class="k">return</span> <span class="n">r1</span><span class="p">,</span> <span class="n">s0</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">convmat</span><span class="p">(</span><span class="n">f</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the convolution matrix</span>
+
+<span class="sd">    The convolution product f*g can be computed by a matrix multiplication </span>
+<span class="sd">    dt * M(f) # g. This function returns the matrix M(f) for a given f, </span>
+<span class="sd">    which can be inverted to perform deconvolution.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        f (numpy.ndarray): 1D array to be convolved</span>
+<span class="sd">        order (int, optional): Order of the integration. Defaults to 2.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: n x n square matrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">order</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">]</span>
+        
+    <span class="k">elif</span> <span class="n">order</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>    
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>        
+                <span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">mat</span> <span class="o">=</span> <span class="n">mat</span><span class="o">/</span><span class="mi">6</span>
+
+    <span class="k">return</span> <span class="n">mat</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">invconvmat</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;TSVD&#39;</span><span class="p">):</span>
+    <span class="n">mat</span> <span class="o">=</span> <span class="n">convmat</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+    <span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">svmin</span> <span class="o">=</span> <span class="n">tol</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">method</span><span class="o">==</span><span class="s1">&#39;Tikhonov&#39;</span><span class="p">:</span>
+        <span class="n">s_inv</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">svmin</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">method</span><span class="o">==</span><span class="s1">&#39;TSVD&#39;</span><span class="p">:</span>
+        <span class="n">s_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">svmin</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">s</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unknown deconvolution method </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">. Possible values &quot;</span>
+            <span class="s2">&quot;are &#39;TSVD&#39; (Truncated Singular Value Decomposition) or &quot;</span>
+            <span class="s2">&quot;&#39;Tikhonov&#39;.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Vt</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">s_inv</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="deconv">
+<a class="viewcode-back" href="../../api/dcmri.deconv.html#dcmri.deconv">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">deconv</span><span class="p">(</span><span class="n">h</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+           <span class="n">method</span><span class="o">=</span><span class="s1">&#39;TSVD&#39;</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Deconvolve two uniformly sampled 1D functions.</span>
+
+<span class="sd">    If and (h,g) are known in h = g*f, this function estimates f = deconv(h, g).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        h (numpy array): Result of the convolution. if g has N </span>
+<span class="sd">            elements, than h can be an N-element array, or a  </span>
+<span class="sd">            N x K - element array where N is the length of g. In this </span>
+<span class="sd">            case each column is deconvolved indepdently with g.</span>
+<span class="sd">        g (numpy array): One factor of the convolution (1D array).</span>
+<span class="sd">        dt (float, optional): Time between samples. Defaults to 1.0.</span>
+<span class="sd">        order (int, optional): Integration order of the convolution </span>
+<span class="sd">            matrix. Defaults to 2.</span>
+<span class="sd">        method (str, optional): Regularization method. Current options </span>
+<span class="sd">            are &#39;TSVD&#39; (Truncated Singular Value Decomposition) or </span>
+<span class="sd">            &#39;Tikhonov&#39;. Defaults to False.</span>
+<span class="sd">        tol (float, optional): Tolerance for the inversion of the </span>
+<span class="sd">            convolution matrix (rgularization parameter). Singular </span>
+<span class="sd">            values less than a fraction &#39;tol&#39; of the largest </span>
+<span class="sd">            singular value are ignored. Defaults to 1e-15.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Estimate of the convolution factor f. This has </span>
+<span class="sd">        the same shape as h.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">g</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;g must be 1-dimensional.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;h must have 1 or 2 dimensions.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The first dimension of h must have the same length as g.&quot;</span>
+        <span class="p">)</span>
+    <span class="n">ginv</span> <span class="o">=</span> <span class="n">invconvmat</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">ginv</span> <span class="o">@</span> <span class="n">h</span><span class="p">)</span> <span class="o">/</span> <span class="n">dt</span></div>
+
+
+
+<div class="viewcode-block" id="describe">
+<a class="viewcode-back" href="../../api/dcmri.describe.html#dcmri.describe">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">describe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rician</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute descriptive parameter maps for a signal array.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (numpy.ndarray): array with signal data. Dimensions have </span>
+<span class="sd">            to be at least 2, where the last dimension is time.</span>
+<span class="sd">        n0 (int, optional): Number of baseline points. Defaults to 1.</span>
+<span class="sd">        rician (bool, optional): Whether to correct for Rician noise in </span>
+<span class="sd">            computation of baseline signal and noise (slow). Defaults </span>
+<span class="sd">            to False.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: if rician=True, n0 needs to be 3 or higher.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Dictionary with parameter maps.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">maps</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">n0</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="o">...</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">...</span><span class="p">,:</span><span class="n">n0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n0</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Nb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">...</span><span class="p">,:</span><span class="n">n0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;SEmax&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">]</span>
+    <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;SEauc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">over</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
+        <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;RSEmax&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;SEmax&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;RSEauc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;SEauc&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rician</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n0</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Rician correction can only be applied if n0 &gt; 2&#39;</span><span class="p">)</span>
+        <span class="n">Sb_rice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">Nb_rice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">data_xt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_xt</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Computing Rician noise&#39;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">data_xt</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">rice</span> <span class="o">=</span> <span class="n">mle_rice</span><span class="p">(</span><span class="n">data_xt</span><span class="p">[</span><span class="n">x</span><span class="p">,:</span><span class="n">n0</span><span class="p">])</span>
+            <span class="n">Sb_rice</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">rice</span><span class="p">[</span><span class="s1">&#39;nu&#39;</span><span class="p">]</span>
+            <span class="n">Nb_rice</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">rice</span><span class="p">[</span><span class="s1">&#39;sigma&#39;</span><span class="p">]</span>
+        <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Sb_rician&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Sb_rice</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">maps</span><span class="p">[</span><span class="s1">&#39;Nb_rician&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Nb_rice</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">maps</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mle_rice</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">fit_loc</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Maximum-likelihood estimate of Rician parameters from 1D array `data`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : array-like, shape (n,)</span>
+<span class="sd">        Observations (must be &gt;= 0 unless you fit loc).</span>
+<span class="sd">    fit_loc : bool</span>
+<span class="sd">        If True, estimate loc as well. If False, assume loc == 0.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict with keys:</span>
+<span class="sd">      - &#39;nu&#39;    : estimated noncentrality parameter nu</span>
+<span class="sd">      - &#39;sigma&#39; : estimated scale sigma</span>
+<span class="sd">      - &#39;b&#39;     : estimated shape parameter b = nu/sigma</span>
+<span class="sd">      - &#39;loc&#39;   : estimated location (0 if fit_loc=False)</span>
+<span class="sd">      - &#39;success&#39;, &#39;message&#39; from optimizer</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">fit_loc</span> <span class="ow">and</span> <span class="p">(</span><span class="n">data</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;data contains negative values but fit_loc=False. &quot;</span>
+                         <span class="s2">&quot;Either remove negatives or set fit_loc=True.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># initial guess using scipy&#39;s fit (fast and robust)</span>
+    <span class="k">if</span> <span class="n">fit_loc</span><span class="p">:</span>
+        <span class="n">b0</span><span class="p">,</span> <span class="n">loc0</span><span class="p">,</span> <span class="n">sigma0</span> <span class="o">=</span> <span class="n">rice</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>         <span class="c1"># returns (shape, loc, scale)</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">b0</span><span class="p">),</span> <span class="n">loc0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">sigma0</span><span class="p">)])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">b0</span><span class="p">,</span> <span class="n">loc0</span><span class="p">,</span> <span class="n">sigma0</span> <span class="o">=</span> <span class="n">rice</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">floc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">([</span><span class="n">b0</span><span class="p">,</span> <span class="n">sigma0</span><span class="p">])</span>  <span class="c1"># we optimize in log-space for positivity</span>
+
+    <span class="c1"># Negative log-likelihood to minimize (we parametrize to enforce positivity)</span>
+    <span class="k">if</span> <span class="n">fit_loc</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">neglog</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rice</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">loc</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="p">))</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">neglog</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rice</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="p">))</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">neglog</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;L-BFGS-B&#39;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+                   <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ftol&#39;</span><span class="p">:</span><span class="mf">1e-12</span><span class="p">,</span> <span class="s1">&#39;gtol&#39;</span><span class="p">:</span><span class="mf">1e-8</span><span class="p">})</span>
+
+    <span class="k">if</span> <span class="n">fit_loc</span><span class="p">:</span>
+        <span class="n">b_hat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">loc_hat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">sigma_hat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">b_hat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">sigma_hat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">loc_hat</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="n">nu_hat</span> <span class="o">=</span> <span class="n">b_hat</span> <span class="o">*</span> <span class="n">sigma_hat</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;nu&#39;</span><span class="p">:</span> <span class="n">nu_hat</span><span class="p">,</span>
+        <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="n">sigma_hat</span><span class="p">,</span>
+        <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="n">b_hat</span><span class="p">,</span>
+        <span class="s1">&#39;loc&#39;</span><span class="p">:</span> <span class="n">loc_hat</span><span class="p">,</span>
+        <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="n">res</span><span class="o">.</span><span class="n">success</span><span class="p">,</span>
+        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="n">res</span><span class="o">.</span><span class="n">message</span><span class="p">,</span>
+        <span class="s1">&#39;nll&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">)</span>
+    <span class="p">}</span>
+
+
+
+<span class="c1"># Used in iBEAt - not yet exposed in dcmri</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pixel_2cfm_linfit</span><span class="p">(</span><span class="n">imgs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">aif</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">baseline</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Hct</span><span class="o">=</span><span class="mf">0.45</span><span class="p">):</span>
+
+    <span class="c1"># Reshape to 2D (x,t)</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span>
+    <span class="n">imgs</span> <span class="o">=</span> <span class="n">imgs</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+    <span class="n">S0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">imgs</span><span class="p">[:,</span> <span class="p">:</span><span class="n">baseline</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">Sa0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">aif</span><span class="p">[:</span><span class="n">baseline</span><span class="p">])</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="p">(</span><span class="n">aif</span><span class="o">-</span><span class="n">Sa0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">Hct</span><span class="p">)</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">imgs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">A</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">A</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">_ddint</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
+
+    <span class="n">fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">par</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">imgs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">imgs</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">S0</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+        <span class="n">ctii</span><span class="p">,</span> <span class="n">cti</span> <span class="o">=</span> <span class="n">_ddint</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
+        <span class="n">A</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">ctii</span>
+        <span class="n">A</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">cti</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">fit</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">S0</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> \
+            <span class="n">A</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+        <span class="n">par</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">_params_2cfm</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+    <span class="c1"># Apply bounds</span>
+    <span class="n">smax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span>
+    <span class="n">fit</span><span class="p">[</span><span class="n">fit</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">fit</span><span class="p">[</span><span class="n">fit</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">*</span><span class="n">smax</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">smax</span>
+
+    <span class="c1"># Return in original shape</span>
+    <span class="n">fit</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">par</span> <span class="o">=</span> <span class="n">par</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="p">,))</span>
+
+    <span class="k">return</span> <span class="n">fit</span><span class="p">,</span> <span class="n">par</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ddint</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">cumulative_trapezoid</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">ci</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">cii</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">cumulative_trapezoid</span><span class="p">(</span><span class="n">ci</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">cii</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">cii</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cii</span><span class="p">,</span> <span class="n">ci</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_params_2cfm</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">Fp</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">alpha</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">beta</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">Fp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">Fp</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">beta</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">nom</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">alpha</span>
+    <span class="n">det</span> <span class="o">=</span> <span class="n">beta</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">alpha</span>
+    <span class="k">if</span> <span class="n">det</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Tp</span> <span class="o">=</span> <span class="n">beta</span><span class="o">/</span><span class="n">nom</span>
+        <span class="n">Te</span> <span class="o">=</span> <span class="n">Tp</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">det</span><span class="p">)</span>
+        <span class="n">Tp</span> <span class="o">=</span> <span class="p">(</span><span class="n">beta</span> <span class="o">-</span> <span class="n">root</span><span class="p">)</span><span class="o">/</span><span class="n">nom</span>
+        <span class="n">Te</span> <span class="o">=</span> <span class="p">(</span><span class="n">beta</span> <span class="o">+</span> <span class="n">root</span><span class="p">)</span><span class="o">/</span><span class="n">nom</span>
+
+    <span class="k">if</span> <span class="n">Te</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">PS</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">Fp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">PS</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">T</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">/</span><span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="n">Fp</span><span class="p">)</span>
+            <span class="n">PS</span> <span class="o">=</span> <span class="n">Fp</span><span class="o">*</span><span class="p">(</span><span class="n">T</span><span class="o">-</span><span class="n">Tp</span><span class="p">)</span><span class="o">/</span><span class="n">Te</span>
+
+    <span class="c1"># Convert to conventional units and apply bounds</span>
+    <span class="n">Fp</span> <span class="o">*=</span> <span class="mi">6000</span>
+    <span class="k">if</span> <span class="n">Fp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Fp</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">Fp</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">:</span>
+        <span class="n">Fp</span> <span class="o">=</span> <span class="mi">2000</span>
+    <span class="k">if</span> <span class="n">Tp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Tp</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">Tp</span> <span class="o">&gt;</span> <span class="mi">600</span><span class="p">:</span>
+        <span class="n">Tp</span> <span class="o">=</span> <span class="mi">600</span>
+    <span class="n">PS</span> <span class="o">*=</span> <span class="mi">6000</span>
+    <span class="k">if</span> <span class="n">PS</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">PS</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">PS</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">:</span>
+        <span class="n">PS</span> <span class="o">=</span> <span class="mi">2000</span>
+    <span class="k">if</span> <span class="n">Te</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Te</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">Te</span> <span class="o">&gt;</span> <span class="mi">600</span><span class="p">:</span>
+        <span class="n">Te</span> <span class="o">=</span> <span class="mi">600</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">Fp</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">PS</span><span class="p">,</span> <span class="n">Te</span><span class="p">]</span>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024-2025, dcmri contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

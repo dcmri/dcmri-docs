@@ -1,3 +1,7 @@
+import os
+import sys
+from pathlib import Path
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -6,17 +10,18 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 project = 'dcmri'
-copyright = '2024-2025, dcmri contributors'
+copyright = '2024-2026, dcmri contributors'
 author = 'dcmri contributors'
-release = '0.6.19'
+release = '0.7.0'
+
+#import dcmri
 
 # -- Path setup --------------------------------------------------------------
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here
-import os
-import sys
-sys.path.insert(0, os.path.abspath('../../src'))
+# sys.path.insert(0, os.path.abspath('../../src'))
+#sys.path.insert(0, Path(dcmri.__file__).parent.parent)
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -34,41 +39,41 @@ extensions = [
     'sphinx_copybutton', # copy button for code blocks
     'sphinx_design', # sphinx web design components
     #'sphinx_remove_toctrees', # selectively remove toctree objects from pages
-    'sphinx_gallery.gen_gallery', # thumbnail galleries
+    #'sphinx_gallery.gen_gallery', # thumbnail galleries
     'matplotlib.sphinxext.plot_directive', # to show plots in docstrings
     'sphinx_exec_code', # To execute code in rst files.
 ]
 
 
 
-# Settings for sphinx-gallery, see
-# https://sphinx-gallery.github.io/stable/getting_started.html#create-simple-gallery
-sphinx_gallery_conf = {
-    # path to the example scripts relative to conf.py
-    'examples_dirs': '../examples',   
+# # Settings for sphinx-gallery, see
+# # https://sphinx-gallery.github.io/stable/getting_started.html#create-simple-gallery
+# sphinx_gallery_conf = {
+#     # path to the example scripts relative to conf.py
+#     'examples_dirs': '../examples',   
 
-    # path to where to save gallery generated output
-    'gallery_dirs': 'examples',  
+#     # path to where to save gallery generated output
+#     'gallery_dirs': 'examples',  
     
-    # directory where function/class granular galleries are stored
-    'backreferences_dir': 'backreferences',
+#     # directory where function/class granular galleries are stored
+#     'backreferences_dir': 'backreferences',
 
-    # Modules for which function/class level galleries are created. 
-    'doc_module': ('dcmri', ),
+#     # Modules for which function/class level galleries are created. 
+#     'doc_module': ('dcmri', ),
 
-    # objects to exclude from implicit backreferences. The default option
-    # is an empty set, i.e. exclude nothing.
-    'exclude_implicit_doc': {},
+#     # objects to exclude from implicit backreferences. The default option
+#     # is an empty set, i.e. exclude nothing.
+#     'exclude_implicit_doc': {},
 
-    # thumbnail for examples that do not generate any plot
-    #'default_thumb_file': '_static/tristan-logo.jpg',
+#     # thumbnail for examples that do not generate any plot
+#     #'default_thumb_file': '_static/tristan-logo.jpg',
 
-    # Disabling download button of all scripts
-    'download_all_examples': False,
+#     # Disabling download button of all scripts
+#     'download_all_examples': False,
 
-    # Default setting disables animations. Set to True to enable
-    'matplotlib_animations': (True, 'jshtml'),
-}
+#     # Default setting disables animations. Set to True to enable
+#     'matplotlib_animations': (True, 'jshtml'),
+# }
 
 # This way a link to other methods, classes, or modules can be made with back ticks so that you don't have to use qualifiers like :class:, :func:, :meth: and the likes
 default_role = 'obj'
@@ -97,7 +102,7 @@ intersphinx_mapping = {
     "scipy": ('https://docs.scipy.org/doc/scipy/', None),
 }
 
-autosummary_generate = True # enable autosummary extension
+# autosummary_generate = True # enable autosummary extension
 
 # Tell sphinx-autodoc-typehints to generate stub parameter annotations 
 # including types, even if the parameters aren't explicitly documented.

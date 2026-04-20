@@ -1,76 +1,12 @@
-.. _end-to-end models:
+.. _e2e:
 
-***********
-Tissue bank
-***********
+*****************
+End-to-end models
+*****************
 
-These models relate tissue parameters directly to measured signals
-and have built-in functionality to determine parameter values from data. 
+Determine parameters directly from signal data. 
 
 .. currentmodule:: dcmri
-
-
-Linear and stationary tissues
-=============================
-
-The most general class of methods for tissues with a single inlet of indicator.
-
-
-.. autosummary::
-   :toctree: ../api/
-   :template: custom-class-template.rst
-   :recursive:
-
-   TissueLS
-   TissueLSArray
-
-
-Exchange tissues
-================
-
-Suitable for a range of applications including brain, cancer,
-muscle, lung, myocardium, and more.
-
-
-.. autosummary::
-   :toctree: ../api/
-   :template: custom-class-template.rst
-   :recursive:
-
-   Tissue
-   TissueArray
-
-
-Liver
-=====
-
-.. autosummary::
-   :toctree: ../api/
-   :template: custom-class-template.rst
-   :recursive:
-
-   Liver
-   AortaLiver
-   AortaLiver2scan
-   AortaPortalLiver
-
-
-Kidney
-======
-
-
-.. autosummary::
-   :toctree: ../api/
-   :template: custom-class-template.rst
-   :recursive:
-
-   Kidney
-   KidneyCortMed
-   AortaKidneys
-   
-
-Aorta
-=====
 
 .. autosummary::
    :toctree: ../api/
@@ -78,3 +14,14 @@ Aorta
    :recursive:
 
    Aorta
+   AortaKidneys
+   AortaLiver
+   AortaLiverDrug
+   AortaLiverDynamic
+   AortaLiverDynamicDrug
+   AortaPortalLiver
+   CortMed
+   Kidney
+   Liver
+   TissueLS
+   TissueX

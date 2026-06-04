@@ -1,0 +1,513 @@
+{
+ "B0": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "FF": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float64"
+  }
+ ],
+ "Fp": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float64"
+  }
+ ],
+ "T1": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "aif": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "config": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "datafile": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "dc.Kidney": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e.kidney",
+   "module_short": "dcmri.e2e.kidney",
+   "name": "Kidney"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Kidney"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney"
+  }
+ ],
+ "dc.Kidney.print_configs": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e.kidney",
+   "module_short": "dcmri.e2e.kidney",
+   "name": "Kidney.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Kidney.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.Kidney",
+   "module_short": "dcmri.Kidney",
+   "name": "print_configs"
+  }
+ ],
+ "dc.T1": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "T1"
+  }
+ ],
+ "dc.fetch": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "fetch"
+  }
+ ],
+ "dcmri.Kidney": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney"
+  }
+ ],
+ "dmr": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "iso_sk_gfr": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "kidney": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "kidney_model": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.kidney",
+   "module_short": "dcmri.e2e.kidney",
+   "name": "Kidney"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Kidney"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney"
+  }
+ ],
+ "kidney_model.params": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.kidney",
+   "module_short": "dcmri.e2e.kidney",
+   "name": "Kidney.params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Kidney.params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney.params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.params"
+  }
+ ],
+ "kidney_model.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.kidney",
+   "module_short": "dcmri.e2e.kidney",
+   "name": "Kidney.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Kidney.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core.model",
+   "name": "SuperModel.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.plot"
+  }
+ ],
+ "kidney_model.print_params": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.kidney",
+   "module_short": "dcmri.e2e.kidney",
+   "name": "Kidney.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Kidney.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.print_params"
+  }
+ ],
+ "kidney_model.train": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.kidney",
+   "module_short": "dcmri.e2e.kidney",
+   "name": "Kidney.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Kidney.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core.model",
+   "name": "SuperModel.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.train"
+  }
+ ],
+ "mrr_sk_gfr": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float64"
+  }
+ ],
+ "par": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "participant": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "pydmr.read": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydmr",
+   "module_short": "pydmr",
+   "name": "read"
+  }
+ ],
+ "roi": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "signal": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "time": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "visit": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ]
+}

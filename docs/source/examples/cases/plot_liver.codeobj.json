@@ -1,0 +1,436 @@
+{
+ "case": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "config": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "dc.Liver": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e.liver",
+   "module_short": "dcmri.e2e.liver",
+   "name": "Liver"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Liver"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Liver"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Liver"
+  }
+ ],
+ "dc.Liver.print_configs": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e.liver",
+   "module_short": "dcmri.e2e.liver",
+   "name": "Liver.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Liver.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Liver.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.Liver",
+   "module_short": "dcmri.Liver",
+   "name": "print_configs"
+  }
+ ],
+ "dc.T1": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "T1"
+  }
+ ],
+ "dc.fetch": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "fetch"
+  }
+ ],
+ "dc.tristan_rat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "tristan_rat"
+  }
+ ],
+ "dcmri.Liver": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Liver"
+  }
+ ],
+ "dmr": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "dmrfile": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "https://zenodo.org/records/15648009": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "https://zenodo",
+   "module_short": "https://zenodo",
+   "name": "org/records/15648009"
+  }
+ ],
+ "liver_model": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.liver",
+   "module_short": "dcmri.e2e.liver",
+   "name": "Liver"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Liver"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Liver"
+  }
+ ],
+ "liver_model.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.liver",
+   "module_short": "dcmri.e2e.liver",
+   "name": "Liver.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Liver.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Liver.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core.model",
+   "name": "SuperModel.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.plot"
+  }
+ ],
+ "liver_model.print_params": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.liver",
+   "module_short": "dcmri.e2e.liver",
+   "name": "Liver.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Liver.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Liver.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.print_params"
+  }
+ ],
+ "liver_model.train": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.liver",
+   "module_short": "dcmri.e2e.liver",
+   "name": "Liver.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "Liver.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Liver.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core.model",
+   "name": "SuperModel.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.train"
+  }
+ ],
+ "np.amax": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "amax"
+  }
+ ],
+ "np.arange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "arange"
+  }
+ ],
+ "par": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "pydmr.read": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydmr",
+   "module_short": "pydmr",
+   "name": "read"
+  }
+ ],
+ "roi": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "train_rat_liver": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  }
+ ]
+}

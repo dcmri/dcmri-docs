@@ -13,4 +13,7 @@ what they are and what they do.
 
    e2e
    kinetics
-   
+   relaxivity
+   bloch
+   inverse
+   utils

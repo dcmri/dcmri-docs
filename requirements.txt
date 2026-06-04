@@ -18,5 +18,3 @@ sphinx-gallery
 sphinx-exec-code
 pydmr
 changelist
-
-

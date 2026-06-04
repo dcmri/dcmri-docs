@@ -39,41 +39,52 @@ extensions = [
     'sphinx_copybutton', # copy button for code blocks
     'sphinx_design', # sphinx web design components
     #'sphinx_remove_toctrees', # selectively remove toctree objects from pages
-    #'sphinx_gallery.gen_gallery', # thumbnail galleries
+    'sphinx_gallery.gen_gallery', # thumbnail galleries
     'matplotlib.sphinxext.plot_directive', # to show plots in docstrings
     'sphinx_exec_code', # To execute code in rst files.
 ]
 
+# This ensures r1 and R1 are documented as separate functions
+# Map the exact object path to a unique file string
+autosummary_filename_map = {
+    'dcmri.R1': 'dcmri.r1_upper',
+    'dcmri.r1': 'dcmri.r1_lower',
+    'dcmri.R1s': 'dcmri.r2s_upper',
+    'dcmri.r2s': 'dcmri.r2s_lower',
+    'dcmri.Kidney': 'dcmri.kidney_upper',
+    'dcmri.kidney': 'dcmri.kidney_lower',
+    'dcmri.Liver': 'dcmri.liver_upper',
+    'dcmri.liver': 'dcmri.liver_lower',
+}
 
+# Settings for sphinx-gallery, see
+# https://sphinx-gallery.github.io/stable/getting_started.html#create-simple-gallery
+sphinx_gallery_conf = {
+    # path to the example scripts relative to conf.py
+    'examples_dirs': '../examples',   
 
-# # Settings for sphinx-gallery, see
-# # https://sphinx-gallery.github.io/stable/getting_started.html#create-simple-gallery
-# sphinx_gallery_conf = {
-#     # path to the example scripts relative to conf.py
-#     'examples_dirs': '../examples',   
-
-#     # path to where to save gallery generated output
-#     'gallery_dirs': 'examples',  
+    # path to where to save gallery generated output
+    'gallery_dirs': 'examples',  
     
-#     # directory where function/class granular galleries are stored
-#     'backreferences_dir': 'backreferences',
+    # directory where function/class granular galleries are stored
+    'backreferences_dir': 'backreferences',
 
-#     # Modules for which function/class level galleries are created. 
-#     'doc_module': ('dcmri', ),
+    # Modules for which function/class level galleries are created. 
+    'doc_module': ('dcmri', ),
 
-#     # objects to exclude from implicit backreferences. The default option
-#     # is an empty set, i.e. exclude nothing.
-#     'exclude_implicit_doc': {},
+    # objects to exclude from implicit backreferences. The default option
+    # is an empty set, i.e. exclude nothing.
+    'exclude_implicit_doc': {},
 
-#     # thumbnail for examples that do not generate any plot
-#     #'default_thumb_file': '_static/tristan-logo.jpg',
+    # thumbnail for examples that do not generate any plot
+    #'default_thumb_file': '_static/tristan-logo.jpg',
 
-#     # Disabling download button of all scripts
-#     'download_all_examples': False,
+    # Disabling download button of all scripts
+    'download_all_examples': False,
 
-#     # Default setting disables animations. Set to True to enable
-#     'matplotlib_animations': (True, 'jshtml'),
-# }
+    # Default setting disables animations. Set to True to enable
+    'matplotlib_animations': (True, 'jshtml'),
+}
 
 # This way a link to other methods, classes, or modules can be made with back ticks so that you don't have to use qualifiers like :class:, :func:, :meth: and the likes
 default_role = 'obj'
@@ -139,7 +150,7 @@ source_suffix = ['.rst', '.md']
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = '_static/tristan-logo.jpg'
+html_logo = '_static/dcmri-logo.png'
 
 # The base URL which points to the root of the HTML documentation. 
 # It is used to indicate the location of document

@@ -1,0 +1,426 @@
+{
+ "R102a": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "R102l": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "aol_model": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_liver_dynamic",
+   "module_short": "dcmri.e2e.aorta_liver_dynamic",
+   "name": "AortaLiverDynamic"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaLiverDynamic"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaLiverDynamic"
+  }
+ ],
+ "aol_model.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_liver_dynamic",
+   "module_short": "dcmri.e2e.aorta_liver_dynamic",
+   "name": "AortaLiverDynamic.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaLiverDynamic.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaLiverDynamic.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core.model",
+   "name": "SuperModel.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.plot"
+  }
+ ],
+ "aol_model.print_params": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_liver_dynamic",
+   "module_short": "dcmri.e2e.aorta_liver_dynamic",
+   "name": "AortaLiverDynamic.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaLiverDynamic.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaLiverDynamic.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.print_params"
+  }
+ ],
+ "aol_model.train": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_liver_dynamic",
+   "module_short": "dcmri.e2e.aorta_liver_dynamic",
+   "name": "AortaLiverDynamic.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaLiverDynamic.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaLiverDynamic.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core.model",
+   "name": "SuperModel.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.train"
+  }
+ ],
+ "config": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "dc.AortaLiverDynamic": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_liver_dynamic",
+   "module_short": "dcmri.e2e.aorta_liver_dynamic",
+   "name": "AortaLiverDynamic"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaLiverDynamic"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaLiverDynamic"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaLiverDynamic"
+  }
+ ],
+ "dc.AortaLiverDynamic.print_configs": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_liver_dynamic",
+   "module_short": "dcmri.e2e.aorta_liver_dynamic",
+   "name": "AortaLiverDynamic.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaLiverDynamic.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaLiverDynamic.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.AortaLiverDynamic",
+   "module_short": "dcmri.AortaLiverDynamic",
+   "name": "print_configs"
+  }
+ ],
+ "dc.fetch": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "fetch"
+  }
+ ],
+ "dcmri.AortaLiverDynamic": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaLiverDynamic"
+  }
+ ],
+ "dmrfile": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "n0": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "par": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "participant": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "pydmr.read": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydmr",
+   "module_short": "pydmr",
+   "name": "read"
+  }
+ ],
+ "roi": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "signal": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "time": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "time_1": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "time_2": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "visit": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ]
+}

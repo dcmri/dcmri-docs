@@ -1,0 +1,395 @@
+{
+ "aorta_kidneys": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_kidneys",
+   "module_short": "dcmri.e2e.aorta_kidneys",
+   "name": "AortaKidneys"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaKidneys"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaKidneys"
+  }
+ ],
+ "aorta_kidneys.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_kidneys",
+   "module_short": "dcmri.e2e.aorta_kidneys",
+   "name": "AortaKidneys.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaKidneys.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaKidneys.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core.model",
+   "name": "SuperModel.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.plot"
+  }
+ ],
+ "aorta_kidneys.print_params": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_kidneys",
+   "module_short": "dcmri.e2e.aorta_kidneys",
+   "name": "AortaKidneys.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaKidneys.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaKidneys.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_params"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.print_params"
+  }
+ ],
+ "aorta_kidneys.train": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_kidneys",
+   "module_short": "dcmri.e2e.aorta_kidneys",
+   "name": "AortaKidneys.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaKidneys.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaKidneys.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core.model",
+   "name": "SuperModel.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.train"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.train"
+  }
+ ],
+ "config": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "dc.AortaKidneys": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_kidneys",
+   "module_short": "dcmri.e2e.aorta_kidneys",
+   "name": "AortaKidneys"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaKidneys"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaKidneys"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaKidneys"
+  }
+ ],
+ "dc.AortaKidneys.print_configs": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e.aorta_kidneys",
+   "module_short": "dcmri.e2e.aorta_kidneys",
+   "name": "AortaKidneys.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.e2e",
+   "module_short": "dcmri.e2e",
+   "name": "AortaKidneys.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaKidneys.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.model",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "SuperModel.print_configs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.AortaKidneys",
+   "module_short": "dcmri.AortaKidneys",
+   "name": "print_configs"
+  }
+ ],
+ "dc.T1": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "T1"
+  }
+ ],
+ "dc.fetch": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "fetch"
+  }
+ ],
+ "dcmri.AortaKidneys": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaKidneys"
+  }
+ ],
+ "dmrfile": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "np.arange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "arange"
+  }
+ ],
+ "pars": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "pydmr.read": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydmr",
+   "module_short": "pydmr",
+   "name": "read"
+  }
+ ],
+ "rois": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "signal": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "time": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ]
+}

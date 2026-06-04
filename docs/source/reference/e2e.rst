@@ -1,12 +1,15 @@
 .. _e2e:
 
+.. currentmodule:: dcmri
+
 *****************
 End-to-end models
 *****************
 
 Determine parameters directly from signal data. 
 
-.. currentmodule:: dcmri
+Whole body models
+------------------
 
 .. autosummary::
    :toctree: ../api/
@@ -16,10 +19,20 @@ Determine parameters directly from signal data.
    Aorta
    AortaKidneys
    AortaLiver
-   AortaLiverDrug
-   AortaLiverDynamic
-   AortaLiverDynamicDrug
    AortaPortalLiver
+   AortaLiverDynamic
+   AortaLiverDrug
+   AortaLiverDynamicDrug
+   
+
+Single tissue models
+--------------------
+
+.. autosummary::
+   :toctree: ../api/
+   :template: custom-class-template.rst
+   :recursive:
+
    CortMed
    Kidney
    Liver

@@ -1,4 +1,5 @@
 .. _kinetics:
+.. currentmodule:: dcmri
    
 *********************
 Tracer-kinetic models
@@ -9,10 +10,8 @@ functions for tracer-kinetic models of various configurations, as
 well as a library of functions for specific configurations.
 
 
-Configurable functions
-**********************
-
-.. currentmodule:: dcmri.kinetics
+Wrapper functions
+*****************
 
 .. autosummary::
    :toctree: ../api/
@@ -32,7 +31,6 @@ Building blocks
 The `kinetics` package includes a library `kinetics'lib` with basic 
 building blocks for constructing more complex kinetic models.
 
-.. currentmodule:: dcmri.kinetics.lib
 
 Residue functions:
 
@@ -215,7 +213,6 @@ Sources
 *******
 
 .. autosummary::
- 
    :toctree: ../api/
    :template: autosummary.rst
 

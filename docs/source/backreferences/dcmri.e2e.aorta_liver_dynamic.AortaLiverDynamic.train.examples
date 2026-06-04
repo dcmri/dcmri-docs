@@ -1,0 +1,42 @@
+
+
+Examples using ``dcmri.e2e.aorta_liver_dynamic.AortaLiverDynamic.train``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. start-sphx-glr-thumbnails
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverDynamic model to  simultaneously fit signals measured in aorta and liver over two separate scans  on the same day. ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_dynamic_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_liver_dynamic`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">AortaLiverDynamic</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta_liver_dynamic`
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+

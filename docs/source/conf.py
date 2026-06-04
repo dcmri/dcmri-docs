@@ -113,7 +113,11 @@ intersphinx_mapping = {
     "scipy": ('https://docs.scipy.org/doc/scipy/', None),
 }
 
-# autosummary_generate = True # enable autosummary extension
+# enable autosummary extension
+autosummary_generate = True 
+
+# Do not prepend the class or module name to function/method signatures
+add_module_names = False
 
 # Tell sphinx-autodoc-typehints to generate stub parameter annotations 
 # including types, even if the parameters aren't explicitly documented.

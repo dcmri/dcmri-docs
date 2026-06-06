@@ -3,11 +3,9 @@
 
 .. currentmodule:: dcmri
 
-
 .. autoclass:: TissueX
    :no-members:
    :show-inheritance:
-
 
 
 
@@ -15,10 +13,8 @@
 
 
 .. autosummary::
-   :toctree:
 
    ~TissueX.configs
-
 
 
 
@@ -28,7 +24,6 @@
 
 
 .. autosummary::
-   :toctree:
    :nosignatures:
 
    ~TissueX.conc
@@ -50,7 +45,6 @@
 
 
 
-
 .. rubric:: Detailed Members Reference
 
 
@@ -64,65 +58,49 @@
 
 
 
-
 .. automethod:: TissueX.conc
-
 
 
 .. automethod:: TissueX.cost
 
 
-
 .. automethod:: TissueX.export_params
-
 
 
 .. automethod:: TissueX.load
 
 
-
 .. automethod:: TissueX.mz
-
 
 
 .. automethod:: TissueX.params
 
 
-
 .. automethod:: TissueX.plot
-
 
 
 .. automethod:: TissueX.predict
 
 
-
 .. automethod:: TissueX.print_configs
-
 
 
 .. automethod:: TissueX.print_params
 
 
-
 .. automethod:: TissueX.relax
-
 
 
 .. automethod:: TissueX.save
 
 
-
 .. automethod:: TissueX.signal
-
 
 
 .. automethod:: TissueX.time
 
 
-
 .. automethod:: TissueX.train
-
 
 
 

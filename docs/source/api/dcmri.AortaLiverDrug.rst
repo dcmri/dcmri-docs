@@ -3,11 +3,9 @@
 
 .. currentmodule:: dcmri
 
-
 .. autoclass:: AortaLiverDrug
    :no-members:
    :show-inheritance:
-
 
 
 
@@ -15,10 +13,8 @@
 
 
 .. autosummary::
-   :toctree:
 
    ~AortaLiverDrug.configs
-
 
 
 
@@ -28,7 +24,6 @@
 
 
 .. autosummary::
-   :toctree:
    :nosignatures:
 
    ~AortaLiverDrug.conc
@@ -49,7 +44,6 @@
 
 
 
-
 .. rubric:: Detailed Members Reference
 
 
@@ -63,61 +57,46 @@
 
 
 
-
 .. automethod:: AortaLiverDrug.conc
-
 
 
 .. automethod:: AortaLiverDrug.cost
 
 
-
 .. automethod:: AortaLiverDrug.export_params
-
 
 
 .. automethod:: AortaLiverDrug.load
 
 
-
 .. automethod:: AortaLiverDrug.params
-
 
 
 .. automethod:: AortaLiverDrug.plot
 
 
-
 .. automethod:: AortaLiverDrug.predict
-
 
 
 .. automethod:: AortaLiverDrug.print_configs
 
 
-
 .. automethod:: AortaLiverDrug.print_params
-
 
 
 .. automethod:: AortaLiverDrug.relax
 
 
-
 .. automethod:: AortaLiverDrug.save
-
 
 
 .. automethod:: AortaLiverDrug.signal
 
 
-
 .. automethod:: AortaLiverDrug.time
 
 
-
 .. automethod:: AortaLiverDrug.train
-
 
 
 

@@ -3,11 +3,9 @@
 
 .. currentmodule:: dcmri
 
-
 .. autoclass:: Kidney
    :no-members:
    :show-inheritance:
-
 
 
 
@@ -15,10 +13,8 @@
 
 
 .. autosummary::
-   :toctree:
 
    ~Kidney.configs
-
 
 
 
@@ -28,7 +24,6 @@
 
 
 .. autosummary::
-   :toctree:
    :nosignatures:
 
    ~Kidney.conc
@@ -49,7 +44,6 @@
 
 
 
-
 .. rubric:: Detailed Members Reference
 
 
@@ -63,61 +57,46 @@
 
 
 
-
 .. automethod:: Kidney.conc
-
 
 
 .. automethod:: Kidney.cost
 
 
-
 .. automethod:: Kidney.export_params
-
 
 
 .. automethod:: Kidney.load
 
 
-
 .. automethod:: Kidney.params
-
 
 
 .. automethod:: Kidney.plot
 
 
-
 .. automethod:: Kidney.predict
-
 
 
 .. automethod:: Kidney.print_configs
 
 
-
 .. automethod:: Kidney.print_params
-
 
 
 .. automethod:: Kidney.relax
 
 
-
 .. automethod:: Kidney.save
-
 
 
 .. automethod:: Kidney.signal
 
 
-
 .. automethod:: Kidney.time
 
 
-
 .. automethod:: Kidney.train
-
 
 
 

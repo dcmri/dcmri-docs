@@ -3,11 +3,9 @@
 
 .. currentmodule:: dcmri
 
-
 .. autoclass:: AortaKidneys
    :no-members:
    :show-inheritance:
-
 
 
 
@@ -15,10 +13,8 @@
 
 
 .. autosummary::
-   :toctree:
 
    ~AortaKidneys.configs
-
 
 
 
@@ -28,7 +24,6 @@
 
 
 .. autosummary::
-   :toctree:
    :nosignatures:
 
    ~AortaKidneys.conc
@@ -49,7 +44,6 @@
 
 
 
-
 .. rubric:: Detailed Members Reference
 
 
@@ -63,61 +57,46 @@
 
 
 
-
 .. automethod:: AortaKidneys.conc
-
 
 
 .. automethod:: AortaKidneys.cost
 
 
-
 .. automethod:: AortaKidneys.export_params
-
 
 
 .. automethod:: AortaKidneys.load
 
 
-
 .. automethod:: AortaKidneys.params
-
 
 
 .. automethod:: AortaKidneys.plot
 
 
-
 .. automethod:: AortaKidneys.predict
-
 
 
 .. automethod:: AortaKidneys.print_configs
 
 
-
 .. automethod:: AortaKidneys.print_params
-
 
 
 .. automethod:: AortaKidneys.relax
 
 
-
 .. automethod:: AortaKidneys.save
-
 
 
 .. automethod:: AortaKidneys.signal
 
 
-
 .. automethod:: AortaKidneys.time
 
 
-
 .. automethod:: AortaKidneys.train
-
 
 
 

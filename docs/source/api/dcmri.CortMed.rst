@@ -3,11 +3,9 @@
 
 .. currentmodule:: dcmri
 
-
 .. autoclass:: CortMed
    :no-members:
    :show-inheritance:
-
 
 
 
@@ -15,10 +13,8 @@
 
 
 .. autosummary::
-   :toctree:
 
    ~CortMed.configs
-
 
 
 
@@ -28,7 +24,6 @@
 
 
 .. autosummary::
-   :toctree:
    :nosignatures:
 
    ~CortMed.conc
@@ -49,7 +44,6 @@
 
 
 
-
 .. rubric:: Detailed Members Reference
 
 
@@ -63,61 +57,46 @@
 
 
 
-
 .. automethod:: CortMed.conc
-
 
 
 .. automethod:: CortMed.cost
 
 
-
 .. automethod:: CortMed.export_params
-
 
 
 .. automethod:: CortMed.load
 
 
-
 .. automethod:: CortMed.params
-
 
 
 .. automethod:: CortMed.plot
 
 
-
 .. automethod:: CortMed.predict
-
 
 
 .. automethod:: CortMed.print_configs
 
 
-
 .. automethod:: CortMed.print_params
-
 
 
 .. automethod:: CortMed.relax
 
 
-
 .. automethod:: CortMed.save
-
 
 
 .. automethod:: CortMed.signal
 
 
-
 .. automethod:: CortMed.time
 
 
-
 .. automethod:: CortMed.train
-
 
 
 

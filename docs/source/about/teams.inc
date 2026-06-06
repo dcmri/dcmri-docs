@@ -2,9 +2,6 @@
 .. _core-developers-team:
 
 
-Contributors:
-
-
 .. raw:: html
 
    <div class="team-member">

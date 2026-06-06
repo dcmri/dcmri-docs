@@ -3,11 +3,9 @@
 
 .. currentmodule:: dcmri
 
-
 .. autoclass:: Liver
    :no-members:
    :show-inheritance:
-
 
 
 
@@ -15,10 +13,8 @@
 
 
 .. autosummary::
-   :toctree:
 
    ~Liver.configs
-
 
 
 
@@ -28,7 +24,6 @@
 
 
 .. autosummary::
-   :toctree:
    :nosignatures:
 
    ~Liver.conc
@@ -49,7 +44,6 @@
 
 
 
-
 .. rubric:: Detailed Members Reference
 
 
@@ -63,61 +57,46 @@
 
 
 
-
 .. automethod:: Liver.conc
-
 
 
 .. automethod:: Liver.cost
 
 
-
 .. automethod:: Liver.export_params
-
 
 
 .. automethod:: Liver.load
 
 
-
 .. automethod:: Liver.params
-
 
 
 .. automethod:: Liver.plot
 
 
-
 .. automethod:: Liver.predict
-
 
 
 .. automethod:: Liver.print_configs
 
 
-
 .. automethod:: Liver.print_params
-
 
 
 .. automethod:: Liver.relax
 
 
-
 .. automethod:: Liver.save
-
 
 
 .. automethod:: Liver.signal
 
 
-
 .. automethod:: Liver.time
 
 
-
 .. automethod:: Liver.train
-
 
 
 

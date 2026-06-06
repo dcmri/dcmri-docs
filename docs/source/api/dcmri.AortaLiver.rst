@@ -3,11 +3,9 @@
 
 .. currentmodule:: dcmri
 
-
 .. autoclass:: AortaLiver
    :no-members:
    :show-inheritance:
-
 
 
 
@@ -15,10 +13,8 @@
 
 
 .. autosummary::
-   :toctree:
 
    ~AortaLiver.configs
-
 
 
 
@@ -28,7 +24,6 @@
 
 
 .. autosummary::
-   :toctree:
    :nosignatures:
 
    ~AortaLiver.conc
@@ -49,7 +44,6 @@
 
 
 
-
 .. rubric:: Detailed Members Reference
 
 
@@ -63,61 +57,46 @@
 
 
 
-
 .. automethod:: AortaLiver.conc
-
 
 
 .. automethod:: AortaLiver.cost
 
 
-
 .. automethod:: AortaLiver.export_params
-
 
 
 .. automethod:: AortaLiver.load
 
 
-
 .. automethod:: AortaLiver.params
-
 
 
 .. automethod:: AortaLiver.plot
 
 
-
 .. automethod:: AortaLiver.predict
-
 
 
 .. automethod:: AortaLiver.print_configs
 
 
-
 .. automethod:: AortaLiver.print_params
-
 
 
 .. automethod:: AortaLiver.relax
 
 
-
 .. automethod:: AortaLiver.save
-
 
 
 .. automethod:: AortaLiver.signal
 
 
-
 .. automethod:: AortaLiver.time
 
 
-
 .. automethod:: AortaLiver.train
-
 
 
 

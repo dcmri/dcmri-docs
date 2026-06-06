@@ -3,11 +3,9 @@
 
 .. currentmodule:: dcmri
 
-
 .. autoclass:: Aorta
    :no-members:
    :show-inheritance:
-
 
 
 
@@ -15,10 +13,8 @@
 
 
 .. autosummary::
-   :toctree:
 
    ~Aorta.configs
-
 
 
 
@@ -28,7 +24,6 @@
 
 
 .. autosummary::
-   :toctree:
    :nosignatures:
 
    ~Aorta.conc
@@ -49,7 +44,6 @@
 
 
 
-
 .. rubric:: Detailed Members Reference
 
 
@@ -63,61 +57,46 @@
 
 
 
-
 .. automethod:: Aorta.conc
-
 
 
 .. automethod:: Aorta.cost
 
 
-
 .. automethod:: Aorta.export_params
-
 
 
 .. automethod:: Aorta.load
 
 
-
 .. automethod:: Aorta.params
-
 
 
 .. automethod:: Aorta.plot
 
 
-
 .. automethod:: Aorta.predict
-
 
 
 .. automethod:: Aorta.print_configs
 
 
-
 .. automethod:: Aorta.print_params
-
 
 
 .. automethod:: Aorta.relax
 
 
-
 .. automethod:: Aorta.save
-
 
 
 .. automethod:: Aorta.signal
 
 
-
 .. automethod:: Aorta.time
 
 
-
 .. automethod:: Aorta.train
-
 
 
 

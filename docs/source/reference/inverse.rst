@@ -32,8 +32,8 @@ Library
    conc_ss
 
 
-T1 mapping
-**********
+Relaxometry
+***********
 
 .. autosummary::
    :toctree: ../api/
@@ -41,3 +41,14 @@ T1 mapping
 
    vfa_nonlinear
    vfa_linear
+
+
+Kinetics
+********
+
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   linfit_2cfm

@@ -13,23 +13,8 @@ General tissues
    :toctree: ../api/
    :template: autosummary.rst
 
-   R1
-   R2
-   R2s
    Relax
-
-
-Exchange tissues
-****************
-
-.. autosummary::
-   :toctree: ../api/
-   :template: autosummary.rst
-
-   R1TissueX
-   R2TissueX
-   R2sTissueX
-   RelaxTissueX
+   ConcToRelax
 
 
 Library

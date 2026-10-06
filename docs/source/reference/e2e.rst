@@ -36,5 +36,4 @@ Single tissue models
    CortMed
    Kidney
    Liver
-   TissueLS
    TissueX

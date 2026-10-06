@@ -1,356 +1,5 @@
 {
- "B0": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "float"
-  }
- ],
- "FA": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "int"
-  }
- ],
- "Hct": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "float"
-  }
- ],
- "R1": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
-  }
- ],
- "R1b": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "float"
-  }
- ],
- "R2s": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
-  }
- ],
- "R2sb": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "float"
-  }
- ],
- "S0": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "int"
-  }
- ],
- "TE": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "float"
-  }
- ],
- "TR": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "float"
-  }
- ],
- "aorta": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e.aorta",
-   "module_short": "dcmri.e2e.aorta",
-   "name": "Aorta"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e",
-   "module_short": "dcmri.e2e",
-   "name": "Aorta"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Aorta"
-  }
- ],
- "aorta.conc": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e.aorta",
-   "module_short": "dcmri.e2e.aorta",
-   "name": "Aorta.conc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e",
-   "module_short": "dcmri.e2e",
-   "name": "Aorta.conc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Aorta.conc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core.model",
-   "module_short": "dcmri.core.model",
-   "name": "SuperModel.conc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core",
-   "module_short": "dcmri.core",
-   "name": "SuperModel.conc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "SuperModel.conc"
-  }
- ],
- "aorta.plot": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e.aorta",
-   "module_short": "dcmri.e2e.aorta",
-   "name": "Aorta.plot"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e",
-   "module_short": "dcmri.e2e",
-   "name": "Aorta.plot"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Aorta.plot"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core.model",
-   "module_short": "dcmri.core.model",
-   "name": "SuperModel.plot"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core",
-   "module_short": "dcmri.core",
-   "name": "SuperModel.plot"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "SuperModel.plot"
-  }
- ],
- "aorta.print_params": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e.aorta",
-   "module_short": "dcmri.e2e.aorta",
-   "name": "Aorta.print_params"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e",
-   "module_short": "dcmri.e2e",
-   "name": "Aorta.print_params"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Aorta.print_params"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core.model",
-   "module_short": "dcmri.core",
-   "name": "SuperModel.print_params"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core",
-   "module_short": "dcmri.core",
-   "name": "SuperModel.print_params"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "SuperModel.print_params"
-  }
- ],
- "aorta.time": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e.aorta",
-   "module_short": "dcmri.e2e.aorta",
-   "name": "Aorta.time"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e",
-   "module_short": "dcmri.e2e",
-   "name": "Aorta.time"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Aorta.time"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core.model",
-   "module_short": "dcmri.core.model",
-   "name": "SuperModel.time"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core",
-   "module_short": "dcmri.core",
-   "name": "SuperModel.time"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "SuperModel.time"
-  }
- ],
- "aorta.train": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e.aorta",
-   "module_short": "dcmri.e2e.aorta",
-   "name": "Aorta.train"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.e2e",
-   "module_short": "dcmri.e2e",
-   "name": "Aorta.train"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Aorta.train"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core.model",
-   "module_short": "dcmri.core.model",
-   "name": "SuperModel.train"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core",
-   "module_short": "dcmri.core",
-   "name": "SuperModel.train"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "SuperModel.train"
-  }
- ],
- "bat": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "int"
-  }
- ],
- "cb_pop": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
-  }
- ],
- "config": [
+ "aif": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -359,169 +8,229 @@
    "name": "dict"
   }
  ],
- "cp_pop": [
+ "aif.keys": [
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
   }
  ],
- "dc.Aorta": [
+ "aorta": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta"
+  }
+ ],
+ "aorta.inputs": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.inputs"
+  }
+ ],
+ "aorta.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.plot"
+  }
+ ],
+ "dc.InverseAorta": [
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "dcmri.e2e.aorta",
-   "module_short": "dcmri.e2e.aorta",
-   "name": "Aorta"
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "dcmri.e2e",
-   "module_short": "dcmri.e2e",
-   "name": "Aorta"
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta"
   },
   {
    "is_class": true,
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "Aorta"
+   "name": "InverseAorta"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "dcmri.core.model",
-   "module_short": "dcmri.core",
-   "name": "SuperModel"
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module"
   },
   {
    "is_class": true,
    "is_explicit": false,
    "module": "dcmri.core",
    "module_short": "dcmri.core",
-   "name": "SuperModel"
+   "name": "Module"
   },
   {
    "is_class": true,
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "SuperModel"
+   "name": "Module"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "Aorta"
+   "name": "InverseAorta"
   }
  ],
- "dc.Aorta.print_configs": [
+ "dc.Parker": [
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "dcmri.e2e.aorta",
-   "module_short": "dcmri.e2e.aorta",
-   "name": "Aorta.print_configs"
+   "module": "dcmri.dro.modules",
+   "module_short": "dcmri.dro.modules",
+   "name": "Parker"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "dcmri.e2e",
-   "module_short": "dcmri.e2e",
-   "name": "Aorta.print_configs"
+   "module": "dcmri.dro",
+   "module_short": "dcmri.dro",
+   "name": "Parker"
   },
   {
    "is_class": true,
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "Aorta.print_configs"
+   "name": "Parker"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "dcmri.core.model",
-   "module_short": "dcmri.core",
-   "name": "SuperModel.print_configs"
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module"
   },
   {
    "is_class": true,
    "is_explicit": false,
    "module": "dcmri.core",
    "module_short": "dcmri.core",
-   "name": "SuperModel.print_configs"
+   "name": "Module"
   },
   {
    "is_class": true,
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "SuperModel.print_configs"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.Aorta",
-   "module_short": "dcmri.Aorta",
-   "name": "print_configs"
-  }
- ],
- "dc.Signal": [
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri.bloch.tissue",
-   "module_short": "dcmri",
-   "name": "Signal"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri.bloch",
-   "module_short": "dcmri",
-   "name": "Signal"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Signal"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri.core.layer",
-   "module_short": "dcmri.core",
-   "name": "LayerFunction"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri.core",
-   "module_short": "dcmri.core",
-   "name": "LayerFunction"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "LayerFunction"
+   "name": "Module"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "Signal"
+   "name": "Parker"
   }
  ],
- "dc.T1": [
+ "dc.print_quantities": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -534,55 +243,7 @@
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "T1"
-  }
- ],
- "dc.parker": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "parker"
-  }
- ],
- "dc.r1": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "r1"
-  }
- ],
- "dc.r2s": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "r2s"
+   "name": "print_quantities"
   }
  ],
  "dcmri": [
@@ -594,27 +255,29 @@
    "name": "dcmri"
   }
  ],
- "dcmri.Aorta": [
+ "dcmri.InverseAorta": [
   {
    "is_class": false,
    "is_explicit": true,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "Aorta"
+   "name": "InverseAorta"
   },
   {
    "is_class": false,
    "is_explicit": true,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "Aorta"
-  },
+   "name": "InverseAorta"
+  }
+ ],
+ "dcmri.Parker": [
   {
    "is_class": false,
    "is_explicit": true,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "Aorta"
+   "name": "Parker"
   }
  ],
  "dcmri.parker": [
@@ -624,15 +287,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "parker"
-  }
- ],
- "dt": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "float"
   }
  ],
  "https://onlinelibrary.wiley.com/doi/10.1002/mrm.21912": [
@@ -653,145 +307,22 @@
    "name": "21066"
   }
  ],
- "np.arange": [
+ "missing_data": [
   {
    "is_class": false,
    "is_explicit": false,
    "module": "builtins",
    "module_short": "builtins",
-   "name": "builtin_function_or_method"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "arange"
+   "name": "set"
   }
  ],
- "plt.legend": [
+ "result": [
   {
    "is_class": false,
    "is_explicit": false,
    "module": "builtins",
    "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.pyplot",
-   "module_short": "matplotlib.pyplot",
-   "name": "legend"
-  }
- ],
- "plt.plot": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.pyplot",
-   "module_short": "matplotlib.pyplot",
-   "name": "plot"
-  }
- ],
- "plt.show": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.pyplot",
-   "module_short": "matplotlib.pyplot",
-   "name": "show"
-  }
- ],
- "plt.xlabel": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.pyplot",
-   "module_short": "matplotlib.pyplot",
-   "name": "xlabel"
-  }
- ],
- "plt.ylabel": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.pyplot",
-   "module_short": "matplotlib.pyplot",
-   "name": "ylabel"
-  }
- ],
- "r1": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "float"
-  }
- ],
- "r2s": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "float"
-  }
- ],
- "sig_pop": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
-  }
- ],
- "t": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
-  }
- ],
- "tmax": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "int"
+   "name": "dict"
   }
  ]
 }

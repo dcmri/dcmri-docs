@@ -9,13 +9,6 @@
 
 
 
-.. rubric:: Attributes
-
-
-.. autosummary::
-
-   ~AortaKidneys.configs
-
 
 
 
@@ -26,19 +19,11 @@
 .. autosummary::
    :nosignatures:
 
-   ~AortaKidneys.conc
+   ~AortaKidneys.all_configs
    ~AortaKidneys.cost
-   ~AortaKidneys.export_params
-   ~AortaKidneys.load
-   ~AortaKidneys.params
    ~AortaKidneys.plot
    ~AortaKidneys.predict
-   ~AortaKidneys.print_configs
-   ~AortaKidneys.print_params
-   ~AortaKidneys.relax
-   ~AortaKidneys.save
-   ~AortaKidneys.signal
-   ~AortaKidneys.time
+   ~AortaKidneys.state
    ~AortaKidneys.train
 
 
@@ -49,27 +34,15 @@
 
 
 
-.. autoattribute:: AortaKidneys.configs
 
 
 
 
 
-
-
-.. automethod:: AortaKidneys.conc
+.. automethod:: AortaKidneys.all_configs
 
 
 .. automethod:: AortaKidneys.cost
-
-
-.. automethod:: AortaKidneys.export_params
-
-
-.. automethod:: AortaKidneys.load
-
-
-.. automethod:: AortaKidneys.params
 
 
 .. automethod:: AortaKidneys.plot
@@ -78,22 +51,7 @@
 .. automethod:: AortaKidneys.predict
 
 
-.. automethod:: AortaKidneys.print_configs
-
-
-.. automethod:: AortaKidneys.print_params
-
-
-.. automethod:: AortaKidneys.relax
-
-
-.. automethod:: AortaKidneys.save
-
-
-.. automethod:: AortaKidneys.signal
-
-
-.. automethod:: AortaKidneys.time
+.. automethod:: AortaKidneys.state
 
 
 .. automethod:: AortaKidneys.train

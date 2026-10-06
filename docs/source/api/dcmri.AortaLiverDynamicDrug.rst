@@ -9,13 +9,6 @@
 
 
 
-.. rubric:: Attributes
-
-
-.. autosummary::
-
-   ~AortaLiverDynamicDrug.configs
-
 
 
 
@@ -26,19 +19,11 @@
 .. autosummary::
    :nosignatures:
 
-   ~AortaLiverDynamicDrug.conc
+   ~AortaLiverDynamicDrug.all_configs
    ~AortaLiverDynamicDrug.cost
-   ~AortaLiverDynamicDrug.export_params
-   ~AortaLiverDynamicDrug.load
-   ~AortaLiverDynamicDrug.params
    ~AortaLiverDynamicDrug.plot
    ~AortaLiverDynamicDrug.predict
-   ~AortaLiverDynamicDrug.print_configs
-   ~AortaLiverDynamicDrug.print_params
-   ~AortaLiverDynamicDrug.relax
-   ~AortaLiverDynamicDrug.save
-   ~AortaLiverDynamicDrug.signal
-   ~AortaLiverDynamicDrug.time
+   ~AortaLiverDynamicDrug.state
    ~AortaLiverDynamicDrug.train
 
 
@@ -49,27 +34,15 @@
 
 
 
-.. autoattribute:: AortaLiverDynamicDrug.configs
 
 
 
 
 
-
-
-.. automethod:: AortaLiverDynamicDrug.conc
+.. automethod:: AortaLiverDynamicDrug.all_configs
 
 
 .. automethod:: AortaLiverDynamicDrug.cost
-
-
-.. automethod:: AortaLiverDynamicDrug.export_params
-
-
-.. automethod:: AortaLiverDynamicDrug.load
-
-
-.. automethod:: AortaLiverDynamicDrug.params
 
 
 .. automethod:: AortaLiverDynamicDrug.plot
@@ -78,22 +51,7 @@
 .. automethod:: AortaLiverDynamicDrug.predict
 
 
-.. automethod:: AortaLiverDynamicDrug.print_configs
-
-
-.. automethod:: AortaLiverDynamicDrug.print_params
-
-
-.. automethod:: AortaLiverDynamicDrug.relax
-
-
-.. automethod:: AortaLiverDynamicDrug.save
-
-
-.. automethod:: AortaLiverDynamicDrug.signal
-
-
-.. automethod:: AortaLiverDynamicDrug.time
+.. automethod:: AortaLiverDynamicDrug.state
 
 
 .. automethod:: AortaLiverDynamicDrug.train

@@ -9,13 +9,6 @@
 
 
 
-.. rubric:: Attributes
-
-
-.. autosummary::
-
-   ~Aorta.configs
-
 
 
 
@@ -26,19 +19,14 @@
 .. autosummary::
    :nosignatures:
 
-   ~Aorta.conc
+   ~Aorta.all_configs
    ~Aorta.cost
-   ~Aorta.export_params
-   ~Aorta.load
-   ~Aorta.params
    ~Aorta.plot
    ~Aorta.predict
    ~Aorta.print_configs
-   ~Aorta.print_params
-   ~Aorta.relax
-   ~Aorta.save
-   ~Aorta.signal
-   ~Aorta.time
+   ~Aorta.print_state
+   ~Aorta.set_state
+   ~Aorta.state
    ~Aorta.train
 
 
@@ -49,27 +37,15 @@
 
 
 
-.. autoattribute:: Aorta.configs
 
 
 
 
 
-
-
-.. automethod:: Aorta.conc
+.. automethod:: Aorta.all_configs
 
 
 .. automethod:: Aorta.cost
-
-
-.. automethod:: Aorta.export_params
-
-
-.. automethod:: Aorta.load
-
-
-.. automethod:: Aorta.params
 
 
 .. automethod:: Aorta.plot
@@ -81,19 +57,13 @@
 .. automethod:: Aorta.print_configs
 
 
-.. automethod:: Aorta.print_params
+.. automethod:: Aorta.print_state
 
 
-.. automethod:: Aorta.relax
+.. automethod:: Aorta.set_state
 
 
-.. automethod:: Aorta.save
-
-
-.. automethod:: Aorta.signal
-
-
-.. automethod:: Aorta.time
+.. automethod:: Aorta.state
 
 
 .. automethod:: Aorta.train

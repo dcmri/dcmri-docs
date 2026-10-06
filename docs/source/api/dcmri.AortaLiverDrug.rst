@@ -9,13 +9,6 @@
 
 
 
-.. rubric:: Attributes
-
-
-.. autosummary::
-
-   ~AortaLiverDrug.configs
-
 
 
 
@@ -26,19 +19,11 @@
 .. autosummary::
    :nosignatures:
 
-   ~AortaLiverDrug.conc
+   ~AortaLiverDrug.all_configs
    ~AortaLiverDrug.cost
-   ~AortaLiverDrug.export_params
-   ~AortaLiverDrug.load
-   ~AortaLiverDrug.params
    ~AortaLiverDrug.plot
    ~AortaLiverDrug.predict
-   ~AortaLiverDrug.print_configs
-   ~AortaLiverDrug.print_params
-   ~AortaLiverDrug.relax
-   ~AortaLiverDrug.save
-   ~AortaLiverDrug.signal
-   ~AortaLiverDrug.time
+   ~AortaLiverDrug.state
    ~AortaLiverDrug.train
 
 
@@ -49,27 +34,15 @@
 
 
 
-.. autoattribute:: AortaLiverDrug.configs
 
 
 
 
 
-
-
-.. automethod:: AortaLiverDrug.conc
+.. automethod:: AortaLiverDrug.all_configs
 
 
 .. automethod:: AortaLiverDrug.cost
-
-
-.. automethod:: AortaLiverDrug.export_params
-
-
-.. automethod:: AortaLiverDrug.load
-
-
-.. automethod:: AortaLiverDrug.params
 
 
 .. automethod:: AortaLiverDrug.plot
@@ -78,22 +51,7 @@
 .. automethod:: AortaLiverDrug.predict
 
 
-.. automethod:: AortaLiverDrug.print_configs
-
-
-.. automethod:: AortaLiverDrug.print_params
-
-
-.. automethod:: AortaLiverDrug.relax
-
-
-.. automethod:: AortaLiverDrug.save
-
-
-.. automethod:: AortaLiverDrug.signal
-
-
-.. automethod:: AortaLiverDrug.time
+.. automethod:: AortaLiverDrug.state
 
 
 .. automethod:: AortaLiverDrug.train

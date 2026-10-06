@@ -9,13 +9,6 @@
 
 
 
-.. rubric:: Attributes
-
-
-.. autosummary::
-
-   ~CortMed.configs
-
 
 
 
@@ -26,19 +19,11 @@
 .. autosummary::
    :nosignatures:
 
-   ~CortMed.conc
+   ~CortMed.all_configs
    ~CortMed.cost
-   ~CortMed.export_params
-   ~CortMed.load
-   ~CortMed.params
    ~CortMed.plot
    ~CortMed.predict
-   ~CortMed.print_configs
-   ~CortMed.print_params
-   ~CortMed.relax
-   ~CortMed.save
-   ~CortMed.signal
-   ~CortMed.time
+   ~CortMed.state
    ~CortMed.train
 
 
@@ -49,27 +34,15 @@
 
 
 
-.. autoattribute:: CortMed.configs
 
 
 
 
 
-
-
-.. automethod:: CortMed.conc
+.. automethod:: CortMed.all_configs
 
 
 .. automethod:: CortMed.cost
-
-
-.. automethod:: CortMed.export_params
-
-
-.. automethod:: CortMed.load
-
-
-.. automethod:: CortMed.params
 
 
 .. automethod:: CortMed.plot
@@ -78,22 +51,7 @@
 .. automethod:: CortMed.predict
 
 
-.. automethod:: CortMed.print_configs
-
-
-.. automethod:: CortMed.print_params
-
-
-.. automethod:: CortMed.relax
-
-
-.. automethod:: CortMed.save
-
-
-.. automethod:: CortMed.signal
-
-
-.. automethod:: CortMed.time
+.. automethod:: CortMed.state
 
 
 .. automethod:: CortMed.train

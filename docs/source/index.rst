@@ -4,25 +4,17 @@
 
 .. container:: landing-header-hero
 
-   .. grid:: 1 1 2 2
+   .. grid:: 1 1 1 1
       :gutter: 3
       :padding: 0
       :class-container: align-items-center
 
-      .. grid-item:: :columns: 12 12 4 4
-         :class: text-center
+      .. grid-item:: :columns: 12
+         :class: d-flex justify-content-center align-items-center
 
-         .. image:: _static/dcmri-logo.png
-            :width: 240px
-
-      .. grid-item:: :columns: 12 12 8 8
-
-         .. raw:: html
-
-            <h1 class="display-3 text-primary font-weight-bold" style="margin-bottom: 0.2rem; border-bottom: none;">dcmri</h1>
-            <p class="lead text-muted font-italic" style="font-size: 1.4rem; letter-spacing: 0.5px;">
-               A python toolbox for dynamic contrast MRI
-            </p>
+         .. image:: _static/dcmri-logo-subtext.png
+            :width: 500px
+            :class: align-center
 
 .. grid:: 1 1 2 2
    :gutter: 3

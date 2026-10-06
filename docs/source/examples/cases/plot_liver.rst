@@ -31,12 +31,12 @@ administration of an inhibitor drug). For a complete analysis of
 all data we refer to the 
 `full pipeline <https://zenodo.org/records/15648009>`_.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-20
+.. GENERATED FROM PYTHON SOURCE LINES 17-19
 
 Setup
 -----
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-33
+.. GENERATED FROM PYTHON SOURCE LINES 19-29
 
 .. code-block:: Python
 
@@ -46,10 +46,7 @@ Setup
     import pydmr
     import dcmri as dc
 
-    # --- The dataset to be analysed
-    case = 'S12-02'
-
-    # --- Fetch the data
+    # --- Fetch and read the data
     dmrfile = dc.fetch('tristan_rats_healthy_six_drugs')
     dmr = pydmr.read(dmrfile, 'nest')
 
@@ -60,92 +57,38 @@ Setup
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
-
-Identify a configuration
-------------------------
-Let's see what options we have to configure the model:
-
-.. GENERATED FROM PYTHON SOURCE LINES 37-40
-
-.. code-block:: Python
-
-
-    dc.Liver.print_configs()
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    kinetics:
-      - 1I-EC-D
-      - 1I-EC
-      - 2I-EC-HF
-      - 2I-EC
-      - 1I-IC
-      - 1I-IC-HF
-      - 1I-IC-HFD
-      - 1I-IC-HFDU
-      - 2I-IC-HF
-      - 2I-IC
-      - 2I-IC-U
-
-    non_stationary:
-      - None
-      - U
-      - E
-      - UE
-
-    sequence:
-      - 3D-SPGR-SS
-      - 2D-SR-SPGR-SS
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 41-48
+.. GENERATED FROM PYTHON SOURCE LINES 30-33
 
 This study uses an intracellullar agent, and in rats the mixing in 
 the blood pool is fast, so we will use a single inlet model (1I). 
-In a single acquisition there is no good rationale for allowing 
-non-stationary function, and the acquisition in this study is done 
-with a 3D-SPGR sequence in steady-state. 
+All other default configurations are correct:
 
-So we are left with the following configuration:
+.. GENERATED FROM PYTHON SOURCE LINES 33-38
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-55
+.. code-block:: Python
+
+    liver = dc.InverseLiver(
+        kinetics='1I-IC-HF',
+        calibrate=True,
+    )
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 39-40
+
+Let's see what input parameters are needed
+
+.. GENERATED FROM PYTHON SOURCE LINES 40-43
 
 .. code-block:: Python
 
 
-    config = {
-        'kinetics': '1I-IC',
-        'sequence': '3D-SPGR-SS',
-        'non_stationary': None,
-    }
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 56-57
-
-Let's see what parameters define the state: 
-
-.. GENERATED FROM PYTHON SOURCE LINES 57-60
-
-.. code-block:: Python
-
-
-    dc.Liver(**config).print_params(round_to=3)
+    liver.print_inputs()
 
 
 
@@ -155,103 +98,90 @@ Let's see what parameters define the state:
 
  .. code-block:: none
 
-
-    Indicator quantities
-
-    agent = gadoterate       (Contrast agent)
-    c_a = array (480,) M     (Arterial blood concentration)
-
-    Signal quantities
-
-    B1corr = 1                (Tissue B1-correction factor)
-    FA = 15 deg               (Flip angle)
-    field_strength = 3 T      (Magnetic field strength)
-    noise_sdev = 0.0 a.u.     (Standard deviation of the signal noise)
-    S0 = 1.0 a.u.             (Signal scaling factor)
-    TE = 0.001 sec            (Echo time)
-    TR = 0.005 sec            (Repetition time)
-    TS = 0 sec                (Sampling time)
-
-    Electromagnetic quantities
-
-    R10 = 0.65 Hz     (Tissue precontrast R1)
-    R20s = 25 Hz      (Tissue precontrast R2*)
-
-    Physiological quantities
-
-    E = 0.1                  (Extraction fraction)
-    Fp = 0.02 mL/sec/cm3     (Plasma flow)
-    H = 0.45                 (Tissue Hematocrit)
-    T_a = 0 sec              (Arterial delay)
-    Th = 1800 sec            (Hepatocellular mean transit time)
-    ve = 0.3 mL/cm3          (Extracellular volume fraction)
-
-    Hyperparameter quantities
-
-    dt = 0.5 sec     (Forward model time step)
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                          InverseLiver instance - inputs (n = 21)                                                          |
+    +----------------+------------+--------------------------------------------------------------+-----------------+------------+---------------+-------+-------+
+    | Key            | Unit       | Name                                                         | Group           | Value      | Bounds        | DICOM | OSIPI |
+    +----------------+------------+--------------------------------------------------------------+-----------------+------------+---------------+-------+-------+
+    | agent          |            | contrast agent generic name                                  | Indicator       | gadoterate |               |       |       |
+    | ci_li          | mmol/mL    | inlet concentration in the liver                             | Indicator       | 0.005      |               |       |       |
+    +----------------+------------+--------------------------------------------------------------+-----------------+------------+---------------+-------+-------+
+    | NSR_li         |            | noise-to-signal ratio in the liver                           | Signal          | 0.0        | (0, 100000.0) |       |       |
+    | S_li           | a.u.       | signal in the liver                                          | Signal          | 1.0        | (0, 5)        |       |       |
+    | nb             | a.u.       | number of baseline time points                               | Signal          | 1          |               |       |       |
+    | pfree          | a.u.       | set of free parameters                                       | Signal          | None       |               |       |       |
+    | tS_li          | sec        | signal time points in the liver                              | Signal          | 0.0        |               |       |       |
+    +----------------+------------+--------------------------------------------------------------+-----------------+------------+---------------+-------+-------+
+    | FA             | deg        | flip angle                                                   | Sequence        | 15         | (0, 180)      |       |       |
+    | Nk0            |            | number of acquired phase lines to the center of k-space      | Sequence        | 64         | (0, 1000)     |       |       |
+    | Nph            |            | number of acquired phase lines in k-space                    | Sequence        | 128        | (0, 1000)     |       |       |
+    | TE             | sec        | echo time                                                    | Sequence        | 0.001      | (0, 10)       |       |       |
+    | TR             | sec        | repetition time                                              | Sequence        | 0.005      | (0, 1)        |       |       |
+    | field_strength | T          | magnetic field strength                                      | Sequence        | 3          | (0, 20)       |       |       |
+    | tstart         | sec        | start of the acquisition                                     | Sequence        | 0          | (0, 10000.0)  |       |       |
+    +----------------+------------+--------------------------------------------------------------+-----------------+------------+---------------+-------+-------+
+    | B1corr_li      |            | B1-correction factor in the liver                            | Electromagnetic | 1          | (0, 5)        |       |       |
+    | me             | A cm2/mL   | equilibrium magnetization                                    | Electromagnetic | 1          | (0, 5)        |       |       |
+    +----------------+------------+--------------------------------------------------------------+-----------------+------------+---------------+-------+-------+
+    | T_h            | sec        | mean transit time in hepatocytes                             | Physiological   | 1800       | (600, 36000)  |       |       |
+    | k_e2h          | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | 0.003      | (0.0, 0.1)    |       |       |
+    | v_e_li         | mL/cm3     | volume fraction in extracellular space of the liver          | Physiological   | 0.3        | (0.01, 0.6)   |       |       |
+    | v_li           | mL/cm3     | volume fraction in the liver                                 | Physiological   | 1          | (0, 1)        |       |       |
+    +----------------+------------+--------------------------------------------------------------+-----------------+------------+---------------+-------+-------+
+    | dt             | sec        | pseudo-continuous time step                                  | Hyperparameters | 0.5        |               |       |       |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-71
 
-Train a Liver model
-------------------------
-The measured input functions in this study are unstable so we will 
-analyse the data with a standardised input function. For the 
-liver model in this case we fix a number of physiological 
-parameters to literature value as they are not expected to change 
-much. 
+.. GENERATED FROM PYTHON SOURCE LINES 44-49
 
-We are going to analyse two datasets so let's pack up this 
-part in a helper function:
+The measured input functions in this study are unstable 
+so we will analyse the data with a standardised input function.
+Since we will be running this on two different datasets, lets first 
+define a function which returns the data dictionary for a given 
+dataset:
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-114
+.. GENERATED FROM PYTHON SOURCE LINES 49-85
 
 .. code-block:: Python
 
+    def data_dict(subject, visit):
 
-    def train_rat_liver(roi, par):
+        # --- Get the data for the subject and visit
+        roi = dmr['rois'][subject][visit]
+        par = dmr['pars'][subject][visit]
 
-        # --- Generate an input function
+        # --- Generate the input function 
         dt = 0.5
-        t = np.arange(0, np.amax(roi['time']) + dt, dt)
-        ca = dc.tristan_rat(t, BAT=par['BAT'], duration=par['duration'])
+        bat = par['BAT'] + roi['time'][1] / 2
+        t = np.arange(0, np.amax(roi['time']) + 180, dt)
+        ca = dc.tristan_rat(t, BAT=bat, duration=par['duration'])
 
-        # --- Set up a liver model
-        liver_model = dc.Liver(
+        # Acquisition is retrospectively triggered so Nph can be derived
+        ts = roi['time'][1] - roi['time'][0]
+        Nph = int(np.round(ts / par['TR'])) 
 
-            # Indicator quantities
-            agent = 'gadoxetate',
-            c_a = ca,
-
-            # Signal quantities
-            field_strength = par['field_strength'],
-            TR = par['TR'],
-            FA = par['FA'],
-
-            # Electromagnetic quantities
-            R10 = 1/dc.T1(par['field_strength'], 'liver'),
-
-            # Physiological quantities
-            Fp = 0.022,      # doi: 10.1021/acs.molpharmaceut.1c00206
-            H = 0.418,       # Cremer et al, J Cereb Blood Flow Metab 3, 254-256 (1983)
-            ve = 0.23,
-
-            # Hyperparameter quantities
-            dt = dt,
-
-            # Configuration
-            **config
-        )
-
-        # --- Define free parameters
-        free = {'E': [0.0, 0.9], 'Th': [0, 60 * 60]}
-
-        # --- Train the model
-        liver_model.train(roi['time'], roi['liver'], n0=par['n0'], free=free)
-
-        return liver_model
+        # --- Create a data dictionary with values for all inputs
+        return {
+            'tS_li': roi['time'],
+            'S_li': roi['liver'],
+            'agent': 'gadoxetate',
+            'ci_li': ca,
+            'field_strength': par['field_strength'],
+            'TR': par['TR'],
+            'FA': par['FA'],
+            'Nph': Nph, 
+            'Nk0': int(np.round(Nph / 2)) ,
+            'dt': dt,
+            'nb': par['n0'],
+            'F_p_li': 0.022,      # doi: 10.1021/acs.molpharmaceut.1c00206
+            'H': 0.418,           # Cremer et al, J Cereb Blood Flow Metab 3, 254-256 (1983)
+            'v_e_li': 0.23,
+            'v_li': 1.0,
+            'pfree': {'k_e2h':[0, 1], 'T_h': [0, 60 * 60]},
+        }
 
 
 
@@ -260,48 +190,22 @@ part in a helper function:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-117
+.. GENERATED FROM PYTHON SOURCE LINES 86-87
 
-Analyse the Day 1 data
-----------------------
+Now we are in a position to fit the data from both visits
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-128
+.. GENERATED FROM PYTHON SOURCE LINES 87-96
 
 .. code-block:: Python
 
 
-    # --- Get the data
-    roi = dmr['rois'][case]['Day_1']
-    par = dmr['pars'][case]['Day_1']
+    # --- Fit the day 1 data
+    day_1_data = data_dict('S12-02', 'Day_1')
+    day_1_result = liver(day_1_data, verbose=2)
 
-    # --- Train the model on the data
-    liver_model = train_rat_liver(roi, par)
-
-    # --- Check that the model has fitted the data
-    liver_model.plot(roi['time'], roi['liver'])
-
-
-
-
-.. image-sg:: /examples/cases/images/sphx_glr_plot_liver_001.png
-   :alt: MRI Signal Prediction, Concentration Reconstruction
-   :srcset: /examples/cases/images/sphx_glr_plot_liver_001.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 129-130
-
-Print the measured model parameters. 
-
-.. GENERATED FROM PYTHON SOURCE LINES 130-133
-
-.. code-block:: Python
-
-
-    liver_model.print_params(round_to=4, deriv=True, group='phys')
+    # --- Fit the day 2 data
+    day_2_data = data_dict('S12-02', 'Day_2')
+    day_2_result = liver(day_2_data, verbose=2)
 
 
 
@@ -311,71 +215,93 @@ Print the measured model parameters.
 
  .. code-block:: none
 
-
-    Physiological quantities
-
-    E = 0.8135                     (Extraction fraction)
-    Fp = 0.022 mL/sec/cm3          (Plasma flow)
-    H = 0.418                      (Tissue Hematocrit)
-    kbh = 0.0025 mL/sec/cm3        (Biliary excretion rate)
-    Kbh = 0.0041 /sec              (Biliary tissue excretion rate)
-    khe = 0.096 mL/sec/cm3         (Hepatocellular uptake rate)
-    Khe = 0.4172 /sec              (Hepatocellular tissue uptake rate)
-    Ktrans = 0.0179 mL/sec/cm3     (Plasma clearance)
-    T_a = 0 sec                    (Arterial delay)
-    Te = 1.9498 sec                (Extracellular mean transit time)
-    Th = 244.352 sec               (Hepatocellular mean transit time)
-    ve = 0.23 mL/cm3               (Extracellular volume fraction)
-    vh = 0.6048 mL/cm3             (Hepatocellular volume fraction)
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 134-136
-
-Analyse the Day 2 data
-----------------------
-
-.. GENERATED FROM PYTHON SOURCE LINES 136-148
-
-.. code-block:: Python
-
-
-    # --- Get the data
-    roi = dmr['rois'][case]['Day_2']
-    par = dmr['pars'][case]['Day_2']
-
-    # --- Train the model on the data
-    liver_model = train_rat_liver(roi, par)
-
-    # --- Plot the results to check that the model has fitted the data
-    liver_model.plot(roi['time'], roi['liver'])
+       Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+           0              1         1.0812e+02                                    2.38e+04    
+           1              2         4.6496e+01      6.16e+01       3.04e-01       8.99e+03    
+           2              4         1.8828e+01      2.77e+01       4.69e-02       2.19e+03    
+           3              5         1.0119e+01      8.71e+00       4.05e-02       1.37e+03    
+           4              7         6.7686e+00      3.35e+00       1.26e-02       3.25e+02    
+           5              8         5.4909e+00      1.28e+00       8.47e-03       1.26e+02    
+           6              9         4.2930e+00      1.20e+00       1.62e-02       3.09e+02    
+           7             10         4.1144e+00      1.79e-01       3.26e-03       2.34e+01    
+           8             11         4.1135e+00      9.30e-04       1.42e-04       6.72e-02    
+           9             12         4.1135e+00      1.41e-07       5.22e-06       2.41e-04    
+          10             13         4.1135e+00      5.22e-10       3.21e-07       1.53e-05    
+    `ftol` termination condition is satisfied.
+    Function evaluations 13, initial cost 1.0812e+02, final cost 4.1135e+00, first-order optimality 1.53e-05.
+       Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+           0              1         4.1518e+01                                    1.65e+04    
+           1              2         9.4512e+00      3.21e+01       1.79e-01       3.42e+03    
+           2              4         4.8899e+00      4.56e+00       7.83e-02       1.14e+03    
+           3              5         2.4571e+00      2.43e+00       9.37e-02       1.83e+03    
+           4              6         8.4999e-01      1.61e+00       2.30e-02       3.98e+02    
+           5              7         7.5834e-01      9.17e-02       2.03e-03       3.70e-02    
+           6              8         7.5833e-01      2.17e-06       5.02e-05       3.86e-03    
+           7              9         7.5833e-01      4.68e-10       7.57e-07       3.76e-05    
+    `ftol` termination condition is satisfied.
+    Function evaluations 9, initial cost 4.1518e+01, final cost 7.5833e-01, first-order optimality 3.76e-05.
 
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 97-99
 
-.. image-sg:: /examples/cases/images/sphx_glr_plot_liver_002.png
-   :alt: MRI Signal Prediction, Concentration Reconstruction
-   :srcset: /examples/cases/images/sphx_glr_plot_liver_002.png
-   :class: sphx-glr-single-img
+Before we interpret the results, let's verify the optimization has 
+converged to a solution:
 
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 149-152
-
-Day 1 results
--------------
-Print the measured model parameters. 
-
-.. GENERATED FROM PYTHON SOURCE LINES 152-155
+.. GENERATED FROM PYTHON SOURCE LINES 99-108
 
 .. code-block:: Python
 
 
-    liver_model.print_params(round_to=4, deriv=True, group='phys')
+    # --- Day 1 fit
+    day_1_data |= day_1_result['popt']
+    liver.plot(day_1_data)
+
+    # --- Day 2 fit
+    day_2_data |= day_2_result['popt']
+    liver.plot(day_2_data)
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /examples/cases/images/sphx_glr_plot_liver_001.png
+         :alt: MRI Signal Prediction, Concentration Reconstruction
+         :srcset: /examples/cases/images/sphx_glr_plot_liver_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /examples/cases/images/sphx_glr_plot_liver_002.png
+         :alt: MRI Signal Prediction, Concentration Reconstruction
+         :srcset: /examples/cases/images/sphx_glr_plot_liver_002.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 109-110
+
+Print the values for the derived parameters
+
+.. GENERATED FROM PYTHON SOURCE LINES 110-119
+
+.. code-block:: Python
+
+    dc.print_quantities(day_1_result['popt'], 'Day 1', decimals=3)
+    dc.print_quantities(day_2_result['popt'], 'Day 2', decimals=3)
+
+    # # %%
+    # # The values confirm the effect of the drug on liver function. The 
+    # # liver extraction fraction of gadoxetate has dropped from 80% to 37% 
+    # # the hepatocellular uptake rate (khe) from 0.096 to 0.013 mL/sec/cm3, and 
+    # # the biliary excretion rate (kbh) from 0.0025 to 0.0013 mL/sec/cm3.
 
 
 
@@ -385,37 +311,32 @@ Print the measured model parameters.
 
  .. code-block:: none
 
+    +----------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                          Day 1                                                                           |
+    +-------+------------+--------------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
+    | Key   | Unit       | Name                                                         | Group           | Value               | Bounds       | DICOM | OSIPI |
+    +-------+------------+--------------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
+    | T_h   | sec        | mean transit time in hepatocytes                             | Physiological   | 251.944             | (600, 36000) |       |       |
+    | k_e2h | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | 0.03                | (0.0, 0.1)   |       |       |
+    +----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-    Physiological quantities
-
-    E = 0.3742                     (Extraction fraction)
-    Fp = 0.022 mL/sec/cm3          (Plasma flow)
-    H = 0.418                      (Tissue Hematocrit)
-    kbh = 0.0013 mL/sec/cm3        (Biliary excretion rate)
-    Kbh = 0.0022 /sec              (Biliary tissue excretion rate)
-    khe = 0.0132 mL/sec/cm3        (Hepatocellular uptake rate)
-    Khe = 0.0572 /sec              (Hepatocellular tissue uptake rate)
-    Ktrans = 0.0082 mL/sec/cm3     (Plasma clearance)
-    T_a = 0 sec                    (Arterial delay)
-    Te = 6.5426 sec                (Extracellular mean transit time)
-    Th = 455.1973 sec              (Hepatocellular mean transit time)
-    ve = 0.23 mL/cm3               (Extracellular volume fraction)
-    vh = 0.6048 mL/cm3             (Hepatocellular volume fraction)
+    +----------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                          Day 2                                                                           |
+    +-------+------------+--------------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
+    | Key   | Unit       | Name                                                         | Group           | Value               | Bounds       | DICOM | OSIPI |
+    +-------+------------+--------------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
+    | T_h   | sec        | mean transit time in hepatocytes                             | Physiological   | 463.451             | (600, 36000) |       |       |
+    | k_e2h | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | 0.014               | (0.0, 0.1)   |       |       |
+    +----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 156-160
-
-The values confirm the effect of the drug on liver function. The 
-liver extraction fraction of gadoxetate has dropped from 80% to 37% 
-the hepatocellular uptake rate (khe) from 0.096 to 0.013 mL/sec/cm3, and 
-the biliary excretion rate (kbh) from 0.0025 to 0.0013 mL/sec/cm3.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.903 seconds)
+   **Total running time of the script:** (0 minutes 0.430 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_liver.py:

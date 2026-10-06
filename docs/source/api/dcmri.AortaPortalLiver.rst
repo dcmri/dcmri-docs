@@ -9,13 +9,6 @@
 
 
 
-.. rubric:: Attributes
-
-
-.. autosummary::
-
-   ~AortaPortalLiver.configs
-
 
 
 
@@ -26,19 +19,11 @@
 .. autosummary::
    :nosignatures:
 
-   ~AortaPortalLiver.conc
+   ~AortaPortalLiver.all_configs
    ~AortaPortalLiver.cost
-   ~AortaPortalLiver.export_params
-   ~AortaPortalLiver.load
-   ~AortaPortalLiver.params
    ~AortaPortalLiver.plot
    ~AortaPortalLiver.predict
-   ~AortaPortalLiver.print_configs
-   ~AortaPortalLiver.print_params
-   ~AortaPortalLiver.relax
-   ~AortaPortalLiver.save
-   ~AortaPortalLiver.signal
-   ~AortaPortalLiver.time
+   ~AortaPortalLiver.state
    ~AortaPortalLiver.train
 
 
@@ -49,27 +34,15 @@
 
 
 
-.. autoattribute:: AortaPortalLiver.configs
 
 
 
 
 
-
-
-.. automethod:: AortaPortalLiver.conc
+.. automethod:: AortaPortalLiver.all_configs
 
 
 .. automethod:: AortaPortalLiver.cost
-
-
-.. automethod:: AortaPortalLiver.export_params
-
-
-.. automethod:: AortaPortalLiver.load
-
-
-.. automethod:: AortaPortalLiver.params
 
 
 .. automethod:: AortaPortalLiver.plot
@@ -78,22 +51,7 @@
 .. automethod:: AortaPortalLiver.predict
 
 
-.. automethod:: AortaPortalLiver.print_configs
-
-
-.. automethod:: AortaPortalLiver.print_params
-
-
-.. automethod:: AortaPortalLiver.relax
-
-
-.. automethod:: AortaPortalLiver.save
-
-
-.. automethod:: AortaPortalLiver.signal
-
-
-.. automethod:: AortaPortalLiver.time
+.. automethod:: AortaPortalLiver.state
 
 
 .. automethod:: AortaPortalLiver.train

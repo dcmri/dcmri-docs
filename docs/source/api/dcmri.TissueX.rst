@@ -9,13 +9,6 @@
 
 
 
-.. rubric:: Attributes
-
-
-.. autosummary::
-
-   ~TissueX.configs
-
 
 
 
@@ -26,20 +19,11 @@
 .. autosummary::
    :nosignatures:
 
-   ~TissueX.conc
+   ~TissueX.all_configs
    ~TissueX.cost
-   ~TissueX.export_params
-   ~TissueX.load
-   ~TissueX.mz
-   ~TissueX.params
    ~TissueX.plot
    ~TissueX.predict
-   ~TissueX.print_configs
-   ~TissueX.print_params
-   ~TissueX.relax
-   ~TissueX.save
-   ~TissueX.signal
-   ~TissueX.time
+   ~TissueX.state
    ~TissueX.train
 
 
@@ -50,30 +34,15 @@
 
 
 
-.. autoattribute:: TissueX.configs
 
 
 
 
 
-
-
-.. automethod:: TissueX.conc
+.. automethod:: TissueX.all_configs
 
 
 .. automethod:: TissueX.cost
-
-
-.. automethod:: TissueX.export_params
-
-
-.. automethod:: TissueX.load
-
-
-.. automethod:: TissueX.mz
-
-
-.. automethod:: TissueX.params
 
 
 .. automethod:: TissueX.plot
@@ -82,22 +51,7 @@
 .. automethod:: TissueX.predict
 
 
-.. automethod:: TissueX.print_configs
-
-
-.. automethod:: TissueX.print_params
-
-
-.. automethod:: TissueX.relax
-
-
-.. automethod:: TissueX.save
-
-
-.. automethod:: TissueX.signal
-
-
-.. automethod:: TissueX.time
+.. automethod:: TissueX.state
 
 
 .. automethod:: TissueX.train

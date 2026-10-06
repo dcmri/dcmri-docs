@@ -88,9 +88,3 @@ Digital phantoms
    :template: autosummary.rst
 
    shepp_logan
-   aif
-   brain
-   tissue
-   liver
-   kidney
-   tissue2scan

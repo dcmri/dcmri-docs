@@ -1,1 +1,393 @@
-{}
+{
+ "dcmri.InverseAorta": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.InverseAorta.inputs": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.InverseAorta.plot": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.InverseLiver": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.InverseLiver.plot": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.InverseLiver.print_inputs": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.Liver": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.Module": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ],
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.Module.inputs": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.Module.plot": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ],
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.Module.print_inputs": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.Parker": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.core.Module": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ],
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.core.Module.inputs": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.core.Module.plot": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ],
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.core.Module.print_inputs": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.core.module.Module": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ],
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.core.module.Module.inputs": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.core.module.Module.plot": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ],
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.core.module.Module.print_inputs": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.dro.Parker": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.dro.modules.Parker": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.fetch": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.inverse.InverseAorta": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.inverse.InverseAorta.inputs": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.inverse.InverseAorta.plot": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.inverse.InverseLiver": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.inverse.InverseLiver.plot": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.inverse.InverseLiver.print_inputs": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.inverse.aorta.InverseAorta": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.inverse.aorta.InverseAorta.inputs": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.inverse.aorta.InverseAorta.plot": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.inverse.liver.InverseLiver": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.inverse.liver.InverseLiver.plot": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.inverse.liver.InverseLiver.print_inputs": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.parker": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ]
+ ],
+ "dcmri.print_quantities": [
+  [
+   "plot_aorta.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ",
+   "Cardiac output"
+  ],
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ],
+ "dcmri.tristan_rat": [
+  [
+   "plot_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "This example illustrates the use of Liver for fitting of signals  measured in liver. ",
+   "Liver"
+  ]
+ ]
+}

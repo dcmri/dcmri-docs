@@ -44,8 +44,9 @@ extensions = [
     'sphinx_exec_code', # To execute code in rst files.
 ]
 
-# This ensures r1 and R1 are documented as separate functions
-# Map the exact object path to a unique file string
+# Due to the case insensitivity of the file system, functions 
+# that differ only in case are not natively distinguished. This 
+# mapping ensures that they are represented by unique file strings:
 autosummary_filename_map = {
     'dcmri.R1': 'dcmri.r1_upper',
     'dcmri.r1': 'dcmri.r1_lower',
@@ -55,6 +56,8 @@ autosummary_filename_map = {
     'dcmri.kidney': 'dcmri.kidney_lower',
     'dcmri.Liver': 'dcmri.liver_upper',
     'dcmri.liver': 'dcmri.liver_lower',
+    'dcmri.parker': 'dcmri.parker_lower',
+    'dcmri.Parker': 'dcmri.parker_upper',
 }
 
 # Settings for sphinx-gallery, see

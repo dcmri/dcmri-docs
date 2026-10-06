@@ -13,20 +13,8 @@ General tissues
    :toctree: ../api/
    :template: autosummary.rst
 
-   Longitudinal
-   Readout
-   Signal
+   Magnetization
 
-
-Exchange tissues
-****************
-
-.. autosummary::
-   :toctree: ../api/
-   :template: autosummary.rst
-
-   MzTissueX
-   SignalTissueX
 
 
 Building blocks
@@ -43,11 +31,14 @@ Pulses
    :toctree: ../api/
    :template: autosummary.rst
 
-   Mz_pr_spgr_ss
-   Mz_pr_spgr_prop
-   Mz_ss
-   Mz_prop
-   Mz_ss_spgr
+   Mz_dyn
+   Mz_dyn_spgr
+   Mz_dyn_pr_spgr
+   Mz_dyn_ss
+   Mz_dyn_ss_pr_spgr
+   Mz_dyn_ss_spgr
+   Mz_dyn_ss_spgri
+   Mz_dyn_se
 
 
 Sequences
@@ -57,10 +48,11 @@ Sequences
    :toctree: ../api/
    :template: autosummary.rst
 
-   Mz_spgr_in_ss
-   Mz_pr_spgr
-   Mz_pr_spgr_in_ss
-   Mz_ssi
-   Mz_se
-   mz_readout
-   signal_rice
+   Mz_dyn_k0
+   Mz_dyn_k0_spgr
+   Mz_dyn_k0_pr_spgr
+   Mz_dyn_ss_k0
+   Mz_dyn_ss_k0_pr_spgr
+   Mz_dyn_ss_k0_spgr
+   Mz_dyn_ss_k0_spgri
+   Mz_dyn_k0_se

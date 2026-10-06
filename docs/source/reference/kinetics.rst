@@ -13,7 +13,7 @@ wrapper functions.
    :padding: 2
    :class-container: text-center
 
-   .. card:: Wrapper Functions
+   .. grid-item-card:: Wrapper Functions
       :link: kinetics/wrappers
       :link-type: doc
       :shadow: md
@@ -23,7 +23,7 @@ wrapper functions.
       ^^^
       Configurable, high-level wrapper interfaces for organs and whole tissues.
 
-   .. card:: Building Blocks
+   .. grid-item-card:: Building Blocks
       :link: kinetics/building_blocks
       :link-type: doc
       :shadow: md
@@ -33,7 +33,7 @@ wrapper functions.
       ^^^
       Elementary components, paths, and mathematical systems for custom models.
 
-   .. card:: Exchange Tissues
+   .. grid-item-card:: Exchange Tissues
       :link: kinetics/exchange_tissues
       :link-type: doc
       :shadow: md
@@ -43,7 +43,7 @@ wrapper functions.
       ^^^
       Vascular-interstitial tracer models featuring bidirectional exchange.
 
-   .. card:: Liver Models
+   .. grid-item-card:: Liver Models
       :link: kinetics/liver
       :link-type: doc
       :shadow: md
@@ -53,7 +53,7 @@ wrapper functions.
       ^^^
       Single and dual-inlet models spanning extracellular and intracellular spaces.
 
-   .. card:: Kidney Models
+   .. grid-item-card:: Kidney Models
       :link: kinetics/kidney
       :link-type: doc
       :shadow: md
@@ -63,7 +63,7 @@ wrapper functions.
       ^^^
       Parenchymal and dedicated cortico-medullary structural models.
 
-   .. card:: Aorta Models
+   .. grid-item-card:: Aorta Models
       :link: kinetics/aorta
       :link-type: doc
       :shadow: md
@@ -73,7 +73,7 @@ wrapper functions.
       ^^^
       Tracer flux dynamics across specialized aortic pathways.
 
-   .. card:: Sources
+   .. grid-item-card:: Sources
       :link: kinetics/sources
       :link-type: doc
       :shadow: md

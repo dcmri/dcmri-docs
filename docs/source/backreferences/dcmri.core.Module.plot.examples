@@ -1,0 +1,63 @@
+
+
+Examples using ``dcmri.core.Module.plot``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. start-sphx-glr-thumbnails
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Cardiac output</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Liver for fitting of signals  measured in liver. ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_liver_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_liver`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Liver</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_liver`
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+

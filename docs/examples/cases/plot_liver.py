@@ -11,7 +11,6 @@ measuring liver function on Day 1 (control) and on Day 2 (after
 administration of an inhibitor drug). For a complete analysis of 
 all data we refer to the 
 `full pipeline <https://zenodo.org/records/15648009>`_.
-
 """
 
 # %%
@@ -23,140 +22,99 @@ import numpy as np
 import pydmr
 import dcmri as dc
 
-# --- The dataset to be analysed
-case = 'S12-02'
-
-# --- Fetch the data
+# --- Fetch and read the data
 dmrfile = dc.fetch('tristan_rats_healthy_six_drugs')
 dmr = pydmr.read(dmrfile, 'nest')
 
 # %%
-# Identify a configuration
-# ------------------------
-# Let's see what options we have to configure the model:
-
-dc.Liver.print_configs()
-
-# %%
 # This study uses an intracellullar agent, and in rats the mixing in 
 # the blood pool is fast, so we will use a single inlet model (1I). 
-# In a single acquisition there is no good rationale for allowing 
-# non-stationary function, and the acquisition in this study is done 
-# with a 3D-SPGR sequence in steady-state. 
-# 
-# So we are left with the following configuration:
-
-config = {
-    'kinetics': '1I-IC',
-    'sequence': '3D-SPGR-SS',
-    'non_stationary': None,
-}
+# All other default configurations are correct:
+liver = dc.InverseLiver(
+    kinetics='1I-IC-HF',
+    calibrate=True,
+)
 
 # %%
-# Let's see what parameters define the state: 
+# Let's see what input parameters are needed
 
-dc.Liver(**config).print_params(round_to=3)
+liver.print_inputs()
 
 # %%
-# Train a Liver model
-# ------------------------
-# The measured input functions in this study are unstable so we will 
-# analyse the data with a standardised input function. For the 
-# liver model in this case we fix a number of physiological 
-# parameters to literature value as they are not expected to change 
-# much. 
-# 
-# We are going to analyse two datasets so let's pack up this 
-# part in a helper function:
+# The measured input functions in this study are unstable 
+# so we will analyse the data with a standardised input function.
+# Since we will be running this on two different datasets, lets first 
+# define a function which returns the data dictionary for a given 
+# dataset:
+def data_dict(subject, visit):
 
-def train_rat_liver(roi, par):
+    # --- Get the data for the subject and visit
+    roi = dmr['rois'][subject][visit]
+    par = dmr['pars'][subject][visit]
 
-    # --- Generate an input function
+    # --- Generate the input function 
     dt = 0.5
-    t = np.arange(0, np.amax(roi['time']) + dt, dt)
-    ca = dc.tristan_rat(t, BAT=par['BAT'], duration=par['duration'])
+    bat = par['BAT'] + roi['time'][1] / 2
+    t = np.arange(0, np.amax(roi['time']) + 180, dt)
+    ca = dc.tristan_rat(t, BAT=bat, duration=par['duration'])
 
-    # --- Set up a liver model
-    liver_model = dc.Liver(
+    # Acquisition is retrospectively triggered so Nph can be derived
+    ts = roi['time'][1] - roi['time'][0]
+    Nph = int(np.round(ts / par['TR'])) 
 
-        # Indicator quantities
-        agent = 'gadoxetate',
-        c_a = ca,
-
-        # Signal quantities
-        field_strength = par['field_strength'],
-        TR = par['TR'],
-        FA = par['FA'],
-
-        # Electromagnetic quantities
-        R10 = 1/dc.T1(par['field_strength'], 'liver'),
-
-        # Physiological quantities
-        Fp = 0.022,      # doi: 10.1021/acs.molpharmaceut.1c00206
-        H = 0.418,       # Cremer et al, J Cereb Blood Flow Metab 3, 254-256 (1983)
-        ve = 0.23,
-
-        # Hyperparameter quantities
-        dt = dt,
-
-        # Configuration
-        **config
-    )
-
-    # --- Define free parameters
-    free = {'E': [0.0, 0.9], 'Th': [0, 60 * 60]}
-
-    # --- Train the model
-    liver_model.train(roi['time'], roi['liver'], n0=par['n0'], free=free)
-
-    return liver_model
+    # --- Create a data dictionary with values for all inputs
+    return {
+        'tS_li': roi['time'],
+        'S_li': roi['liver'],
+        'agent': 'gadoxetate',
+        'ci_li': ca,
+        'field_strength': par['field_strength'],
+        'TR': par['TR'],
+        'FA': par['FA'],
+        'Nph': Nph, 
+        'Nk0': int(np.round(Nph / 2)) ,
+        'dt': dt,
+        'nb': par['n0'],
+        'F_p_li': 0.022,      # doi: 10.1021/acs.molpharmaceut.1c00206
+        'H': 0.418,           # Cremer et al, J Cereb Blood Flow Metab 3, 254-256 (1983)
+        'v_e_li': 0.23,
+        'v_li': 1.0,
+        'pfree': {'k_e2h':[0, 1], 'T_h': [0, 60 * 60]},
+    }
 
 # %%
-# Analyse the Day 1 data
-# ----------------------
+# Now we are in a position to fit the data from both visits
 
-# --- Get the data
-roi = dmr['rois'][case]['Day_1']
-par = dmr['pars'][case]['Day_1']
+# --- Fit the day 1 data
+day_1_data = data_dict('S12-02', 'Day_1')
+day_1_result = liver(day_1_data, verbose=2)
 
-# --- Train the model on the data
-liver_model = train_rat_liver(roi, par)
-
-# --- Check that the model has fitted the data
-liver_model.plot(roi['time'], roi['liver'])
+# --- Fit the day 2 data
+day_2_data = data_dict('S12-02', 'Day_2')
+day_2_result = liver(day_2_data, verbose=2)
 
 # %%
-# Print the measured model parameters. 
+# Before we interpret the results, let's verify the optimization has 
+# converged to a solution:
 
-liver_model.print_params(round_to=4, deriv=True, group='phys')
+# --- Update the data
+day_1_data |= day_1_result['popt']
+day_2_data |= day_2_result['popt']
 
-# %%
-# Analyse the Day 2 data
-# ----------------------
-
-# --- Get the data
-roi = dmr['rois'][case]['Day_2']
-par = dmr['pars'][case]['Day_2']
-
-# --- Train the model on the data
-liver_model = train_rat_liver(roi, par)
-
-# --- Plot the results to check that the model has fitted the data
-liver_model.plot(roi['time'], roi['liver'])
-
+# --- Plot the fits
+liver.plot(day_1_data)
+liver.plot(day_2_data)
 
 # %%
-# Day 1 results
-# -------------
-# Print the measured model parameters. 
+# Print the values for the derived parameters
+dc.print_quantities(day_1_result['popt'], 'Day 1', decimals=3)
+dc.print_quantities(day_2_result['popt'], 'Day 2', decimals=3)
 
-liver_model.print_params(round_to=4, deriv=True, group='phys')
-
-# %%
-# The values confirm the effect of the drug on liver function. The 
-# liver extraction fraction of gadoxetate has dropped from 80% to 37% 
-# the hepatocellular uptake rate (khe) from 0.096 to 0.013 mL/sec/cm3, and 
-# the biliary excretion rate (kbh) from 0.0025 to 0.0013 mL/sec/cm3.
+# # %%
+# # The values confirm the effect of the drug on liver function. The 
+# # liver extraction fraction of gadoxetate has dropped from 80% to 37% 
+# # the hepatocellular uptake rate (khe) from 0.096 to 0.013 mL/sec/cm3, and 
+# # the biliary excretion rate (kbh) from 0.0025 to 0.0013 mL/sec/cm3.
 
 # sphinx_gallery_start_ignore
 # Choose the last image as a thumbnail for the gallery

@@ -5,13 +5,6 @@ Building blocks
 
 Components for constructing more complex kinetic models.
 
-.. autosummary::
-   :toctree: ../api/
-   :template: autosummary.rst
-
-   conc
-   flux
-
 Pass
 ----
 .. autosummary::

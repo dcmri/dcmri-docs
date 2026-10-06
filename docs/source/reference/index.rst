@@ -54,6 +54,17 @@ what they are and what they do.
 
       📊 **bloch**
       ^^^
+      Magnetization dynamics under MRI pulse sequences.
+
+   .. grid-item-card:: Signal
+      :link: signal
+      :link-type: doc
+      :text-align: center
+      :class-card: reference-card
+      :class-title: sd-bg-info sd-text-white sd-font-weight-bold
+
+      📊 **signal**
+      ^^^
       MRI signal equations and sequence simulations.
 
    .. grid-item-card:: Inverse Problems
@@ -87,5 +98,6 @@ what they are and what they do.
    kinetics
    relaxivity
    bloch
+   signal
    inverse
    utils

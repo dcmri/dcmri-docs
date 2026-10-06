@@ -18,49 +18,33 @@
 .. _sphx_glr_examples_cases_plot_aorta.py:
 
 
-=====
-Aorta
-=====
+==============
+Cardiac output
+==============
 
-This tutorial will illustrate the use of a simple whole-body model 
-`~dcmri.Aorta` in the measurement of cardiac output from an 
-arterial input function (AIF). 
+This tutorial illustrates how the Aorta model `~dcmri.InverseAorta` 
+can be used to measure the cardiac output from an arterial input 
+function (AIF). 
 
-An arterial input function (AIF) is traditionally used in DC-MRI to 
-derive an input concentration to a tissue model, which can then be 
-used to estimate tissue properties such as blood flow and permeability.
+An AIF is typically used in DC-MRI to derive input concentrations 
+for a tissue model. However, the AIF signal also encodes properties 
+of the circulation, which can be derived by fitting a model of the 
+circulation to the AIF.
 
-Typically, a signal is measured in the aorta or a large artery, and 
-this is converted analytically to aorta concentrations. An analytical 
-inversion is sometimes problematic due to the high concentrations in 
-aorta, which may cause the signal to reach a ceiling where it is 
-no longer reflective of further changes in concentration. The signal is 
-then not invertible, and any attempt to do so may lead to extreme 
-values for the concentrations.
+We will illustrate the idea by measuring the (average) cardiac output of 
+subjects used to derive a popular literature-based input function  
+from `Parker et al 2006 <https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.21066>`_. 
+It is implemented in `dcmri` as the function `~dcmri.parker` and the 
+module `~dcmri.Parker`.
 
-An alternative approach is to model the AIF directly and then derive the 
-concentrations by fitting the model parameters directly to the signal, 
-rather than performung a direct analytical inversion. This may 
-provide more reasonable results in cases where the signal is not invertible, 
-and also produces additional model parameters that may have some utility.
+.. GENERATED FROM PYTHON SOURCE LINES 23-24
 
-Here we use this approach to measure the cardiac output of 
-subjects from a literature-based input function. 
-A popular choice is the AIF derived by 
-`Parker et al (2006) <https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.21066>`_, 
-which is implemented in `dcmri` as the function `~dcmri.parker`. 
+We'll start by importing the package:
 
-As a model we will use `~dcmri.Aorta`, a whole-body model that can be used 
-to model input functions, derive arterial concentrations without the need 
-for explicit inversion, and derive systemic parameters such as cardiac output.
-
-.. GENERATED FROM PYTHON SOURCE LINES 38-44
+.. GENERATED FROM PYTHON SOURCE LINES 24-26
 
 .. code-block:: Python
 
-
-    import numpy as np
-    import matplotlib.pyplot as plt
     import dcmri as dc
 
 
@@ -70,31 +54,16 @@ for explicit inversion, and derive systemic parameters such as cardiac output.
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 27-29
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-48
+... and generating the population-average AIF. We use the default 
+settings from the original paper, so no need to provide arguments:
 
-Generate the data
------------------
-We first define the required constants:
-
-.. GENERATED FROM PYTHON SOURCE LINES 48-63
+.. GENERATED FROM PYTHON SOURCE LINES 29-31
 
 .. code-block:: Python
 
-
-    dt = 0.1 
-    tmax = 375
-    bat = 30
-    Hct = 0.45 # Estimate - not provided in the original paper
-    B0 = 1.5
-    R1b = 1 / dc.T1(B0, 'blood')
-    R2sb = 1 / 0.2 
-    r1 = dc.r1(B0, 'blood', 'gadodiamide') 
-    r2s = dc.r2s(B0, 'blood', 'gadodiamide')
-    FA = 20
-    TR = 0.004
-    TE = 0.00082
-    S0 = 100 # This is arbitrary
+    aif = dc.Parker()()
 
 
 
@@ -103,186 +72,25 @@ We first define the required constants:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-66
+.. GENERATED FROM PYTHON SOURCE LINES 32-40
 
-The `~dcmri.Aorta` model predicts signals. The paper only provides 
-the concentrations so we need to derive the signal:
+In order to apply the module `~dcmri.InverseAorta`, we need to 
+first configure it, and then set the input parameters. 
+The default configuration
+is mostly fine but we will choose a chain model for the heart-lung 
+system to create a more realistic first pass. Since the data are 
+acquired over several minutes we will allow for extravasation in 
+the organs, and we will also allow measured values for the blood 
+relaxation so we don't have to rely on preset literature values:
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-81
+.. GENERATED FROM PYTHON SOURCE LINES 40-46
 
 .. code-block:: Python
 
-
-    # --- Compute plasma concententration
-    t = np.arange(0, tmax, dt)
-    cp_pop = dc.parker(t, BAT=bat)
-
-    # --- Convert to blood concentration
-    cb_pop = (1 - Hct) * cp_pop    
-
-    # --- Convert to relaxation rates
-    R1 = R1b + r1 * cb_pop
-    R2s = R2sb + r2s * cb_pop
-
-    # --- Convert to signal
-    sig_pop = dc.Signal('3D-SPGR-SS')(S0=S0, R1=R1, R2s=R2s, TR=TR, FA=FA, TE=TE)
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 82-86
-
-Set up the Aorta model
-----------------------
-First we need to decide how to configure the model, so let's 
-see what options are available:
-
-.. GENERATED FROM PYTHON SOURCE LINES 86-89
-
-.. code-block:: Python
-
-
-    dc.Aorta.print_configs()
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    heartlung:
-      - comp
-      - pfcomp
-      - chain
-
-    organs:
-      - comp
-      - 2cxm
-
-    sequence:
-      - ZTE-3D-SPGR-SS
-      - 3D-SPGR-SS
-      - 3D-SR-SPGR-SS
-      - 3D-SPGR-SSI
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 90-93
-
-Let's choose a chain model for the heart-lung system 
-and a single compartment for the organs. The acquisition is done 
-with a 3D-SPGR sequence in steady-state, so the configuration becomes:
-
-.. GENERATED FROM PYTHON SOURCE LINES 93-100
-
-.. code-block:: Python
-
-
-    config = {
-        'heartlung': 'chain',
-        'organs': 'comp',
-        'sequence': '3D-SPGR-SS'
-    }
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 101-103
-
-Next we need to set suitable values for the constant parameters, 
-so lets print out the default state for this configuration: 
-
-.. GENERATED FROM PYTHON SOURCE LINES 103-106
-
-.. code-block:: Python
-
-
-    dc.Aorta(**config).print_params(round_to=3)
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    Indicator quantities
-
-    agent = gadoterate      (Contrast agent)
-    dose = 0.1 mL/kg        (Dose)
-    rate = 1 mL/s           (Injection rate)
-
-    Signal quantities
-
-    B1corr_a = 1              (Arterial B1-correction factor)
-    BAT = 60 sec              (Bolus arrival time)
-    FA = 15 deg               (Flip angle)
-    field_strength = 3 T      (Magnetic field strength)
-    noise_sdev = 0.0 a.u.     (Standard deviation of the signal noise)
-    S0_a = 1.0 a.u.           (Arterial signal scaling factor)
-    TE = 0.001 sec            (Echo time)
-    TR = 0.005 sec            (Repetition time)
-    TS = 0 sec                (Sampling time)
-
-    Electromagnetic quantities
-
-    R10_a = 0.65 Hz     (Arterial precontrast R1)
-    R20s_a = 20 Hz      (Arterial precontrast R2*)
-
-    Physiological quantities
-
-    CO = 100 mL/sec     (Cardiac output)
-    Dhl = 0.2           (Heart-lung dispersion)
-    Eb = 0.05           (Body extraction)
-    Thl = 10 sec        (Heart-lung MTT)
-    To = 20 sec         (Organ blood MTT)
-    weight = 70 kg      (Weight)
-
-    Hyperparameter quantities
-
-    dose_tolerance = 0.1      (Dose tolerance)
-    dt = 0.5 sec              (Forward model time step)
-    tmax = 240 sec            (Max time)
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 107-109
-
-Initialise an aorta model with the experimental parameters set to the 
-correct values:
-
-.. GENERATED FROM PYTHON SOURCE LINES 109-124
-
-.. code-block:: Python
-
-    aorta = dc.Aorta(
-        agent='gadodiamide',
-        dose=0.2, 
-        dt=dt, 
-        FA=FA, 
-        field_strength=B0, 
-        rate=3,
-        R10_a=R1b, 
-        R20s_a=R2sb, 
-        TE=TE,
-        TR=TR, 
-        weight=70, 
-        **config
+    aorta = dc.InverseAorta(
+        heartlung='chain', 
+        organs='2cxm', 
+        baseline='measured',
     )
 
 
@@ -292,19 +100,91 @@ correct values:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-128
+.. GENERATED FROM PYTHON SOURCE LINES 47-50
 
-Train the Aorta model
----------------------
-Train the model using the population AIF, and check that it fits the data:
+Most inputs, such as sequence parameters, are already returned as 
+part of the aif, so we only need to provide values for the missing 
+inputs. Let's see what they are:
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-132
+.. GENERATED FROM PYTHON SOURCE LINES 50-53
 
 .. code-block:: Python
 
+    missing_data = aorta.inputs() - aif.keys()
+    dc.print_quantities(missing_data)
 
-    aorta.train(t, sig_pop)
-    aorta.plot(t, sig_pop)
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    +--------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                 Quantities                                                                 |
+    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
+    | Key            | Unit     | Name                                                   | Group           | Value | Bounds       | DICOM | OSIPI |
+    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
+    | nb             | a.u.     | number of baseline time points                         | Signal          | 1    |              |       |       |
+    | pfree          | a.u.     | set of free parameters                                 | Signal          | None |              |       |       |
+    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
+    | tstart         | sec      | start of the acquisition                               | Sequence        | 0    | (0, 10000.0) |       |       |
+    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
+    | B1corr         |          | B1-correction factor                                   | Electromagnetic | 1    | (0, 5)       |       |       |
+    | me             | A cm2/mL | equilibrium magnetization                              | Electromagnetic | 1    | (0, 5)       |       |       |
+    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
+    | CO             | mL/sec   | cardiac output                                         | Physiological   | 100  | (0, 500)     |       |       |
+    | D_hl           |          | transit time dispersion in the heart and Lungs         | Physiological   | 0.2  | (0.01, 0.99) |       |       |
+    | E_or           |          | extraction fraction in the organs                      | Physiological   | 0.15 | (0, 0.5)     |       |       |
+    | T_b_or         | sec      | mean transit time in blood of the organs               | Physiological   | 20   | (0, 60)      |       |       |
+    | T_e_or         | sec      | mean transit time in extracellular space of the organs | Physiological   | 120  | (0, 800)     |       |       |
+    | T_hl           | sec      | mean transit time in the heart and Lungs               | Physiological   | 10   | (0, 30)      |       |       |
+    | vr_or          |          | Venous return in the organs                            | Physiological   | 0.9  | (0, 1)       |       |       |
+    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
+    | dose_tolerance |          | dose tolerance                                         | Hyperparameters | 0.1  |              |       |       |
+    +--------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 54-57
+
+The physiological parameters will be derived by the function, so we 
+can leave them to their defaults; for the other parameters 
+the defaults are OK too, so no need to make changes
+
+.. GENERATED FROM PYTHON SOURCE LINES 59-60
+
+We can now fit the model to the data:
+
+.. GENERATED FROM PYTHON SOURCE LINES 60-62
+
+.. code-block:: Python
+
+    result = aorta(aif)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 63-67
+
+Before we look at the results, let's check that the fit has 
+converged to the correct solution. To do this, we 
+first update the data with the new optimized values, 
+and then plot it with the ground truth concentrations as reference:
+
+.. GENERATED FROM PYTHON SOURCE LINES 67-70
+
+.. code-block:: Python
+
+    aif |= result['popt']
+    aorta.plot(aif)
 
 
 
@@ -318,43 +198,16 @@ Train the model using the population AIF, and check that it fits the data:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-135
+.. GENERATED FROM PYTHON SOURCE LINES 71-73
 
-We can also check that the concentrations derived from the trained 
-model provide a good approximation to the actual concentrations:
+The fit looks good so we can interpret the results. Let's 
+print them out:
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-142
-
-.. code-block:: Python
-
-    plt.plot(t / 60, 1000 * cp_pop, 'r-', label='Actual ')
-    plt.plot(aorta.time() / 60, 1000 * aorta.conc() / (1 - Hct), 'b-', label='Reconstructed')
-    plt.xlabel('Time (min)')
-    plt.ylabel('Plasma concentration (mM)')
-    plt.legend()
-    plt.show()
-
-
-
-
-.. image-sg:: /examples/cases/images/sphx_glr_plot_aorta_002.png
-   :alt: plot aorta
-   :srcset: /examples/cases/images/sphx_glr_plot_aorta_002.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 143-144
-
-Check the kinetic model parameters after training
-
-.. GENERATED FROM PYTHON SOURCE LINES 144-146
+.. GENERATED FROM PYTHON SOURCE LINES 73-75
 
 .. code-block:: Python
 
-    aorta.print_params('Eb', 'Thl', 'Dhl', 'To', 'CO', round_to=2)
+    dc.print_quantities(result['popt'])
 
 
 
@@ -364,31 +217,39 @@ Check the kinetic model parameters after training
 
  .. code-block:: none
 
+    +-------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                    Quantities                                                                   |
+    +--------+--------+--------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
+    | Key    | Unit   | Name                                                   | Group           | Value               | Bounds       | DICOM | OSIPI |
+    +--------+--------+--------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
+    | BAT    | sec    | bolus arrival time                                     | Indicator       | 25.453539949923815  | (-30, 30)    |       |       |
+    +--------+--------+--------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
+    | CO     | mL/sec | cardiac output                                         | Physiological   | 220.53860182696314  | (0, 500)     |       |       |
+    | D_hl   |        | transit time dispersion in the heart and Lungs         | Physiological   | 0.07767348035417199 | (0.01, 0.99) |       |       |
+    | E_or   |        | extraction fraction in the organs                      | Physiological   | 0.4999999103096042  | (0, 0.5)     |       |       |
+    | T_b_or | sec    | mean transit time in blood of the organs               | Physiological   | 10.227835182767148  | (0, 60)      |       |       |
+    | T_e_or | sec    | mean transit time in extracellular space of the organs | Physiological   | 18.24079981219239   | (0, 800)     |       |       |
+    | T_hl   | sec    | mean transit time in the heart and Lungs               | Physiological   | 13.053677650099118  | (0, 30)      |       |       |
+    | vr_or  |        | Venous return in the organs                            | Physiological   | 0.8677536179386912  | (0, 1)       |       |       |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
-    Physiological quantities
-
-    CO = 226.1 mL/sec     (Cardiac output)
-    Dhl = 0.11            (Heart-lung dispersion)
-    Eb = 0.13             (Body extraction)
-    Thl = 10.96 sec       (Heart-lung MTT)
-    To = 38.39 sec        (Organ blood MTT)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-153
+.. GENERATED FROM PYTHON SOURCE LINES 76-82
 
-These are all values in an expected range, except for the cardiac 
-output which is high: A value of 226 mL/sec corresponds to 13.5 L/min, 
-which is more than double of typical values in healthy volunteers. 
-This has been observed before by 
+The measured cardiac output is high: a value of 220 mL/sec 
+corresponds to 13.2 L/min, which is more than twice the typical 
+value in healthy volunteers. This is in fact a known property of 
+this particular population-average AIF. It has been observed before by 
 `Yang et al (2009) <https://onlinelibrary.wiley.com/doi/10.1002/mrm.21912>`_,
-though their estimate was less elevated (10.5 L/min). 
+though their exact estimate was less elevated (10.5 L/min). 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 40.169 seconds)
+   **Total running time of the script:** (1 minutes 12.253 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta.py:

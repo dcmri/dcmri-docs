@@ -97,24 +97,23 @@ day_2_result = liver(day_2_data, verbose=2)
 # Before we interpret the results, let's verify the optimization has 
 # converged to a solution:
 
-# --- Day 1 fit
+# --- Update the data
 day_1_data |= day_1_result['popt']
-liver.plot(day_1_data)
-
-# --- Day 2 fit
 day_2_data |= day_2_result['popt']
+
+# --- Plot the fits
+liver.plot(day_1_data)
 liver.plot(day_2_data)
 
 # %%
 # Print the values for the derived parameters
-dc.print_quantities(day_1_result['popt'], 'Day 1', decimals=3)
-dc.print_quantities(day_2_result['popt'], 'Day 2', decimals=3)
+dc.print_quantities(day_1_result['pder'], 'Day 1', digits=2)
+dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
 
-# # %%
-# # The values confirm the effect of the drug on liver function. The 
-# # liver extraction fraction of gadoxetate has dropped from 80% to 37% 
-# # the hepatocellular uptake rate (khe) from 0.096 to 0.013 mL/sec/cm3, and 
-# # the biliary excretion rate (kbh) from 0.0025 to 0.0013 mL/sec/cm3.
+# %%
+# The values confirm the effect of the drug on liver function. The 
+# hepatocellular uptake rate (khe) has dropped from from 0.03 to 0.014 mL/sec/cm3, and 
+# the biliary excretion rate (kbh) from 0.0023 to 0.0013 mL/sec/cm3.
 
 # sphinx_gallery_start_ignore
 # Choose the last image as a thumbnail for the gallery

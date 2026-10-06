@@ -254,12 +254,12 @@ converged to a solution:
 .. code-block:: Python
 
 
-    # --- Day 1 fit
+    # --- Update the data
     day_1_data |= day_1_result['popt']
-    liver.plot(day_1_data)
-
-    # --- Day 2 fit
     day_2_data |= day_2_result['popt']
+
+    # --- Plot the fits
+    liver.plot(day_1_data)
     liver.plot(day_2_data)
 
 
@@ -290,18 +290,12 @@ converged to a solution:
 
 Print the values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-119
+.. GENERATED FROM PYTHON SOURCE LINES 110-113
 
 .. code-block:: Python
 
-    dc.print_quantities(day_1_result['popt'], 'Day 1', decimals=3)
-    dc.print_quantities(day_2_result['popt'], 'Day 2', decimals=3)
-
-    # # %%
-    # # The values confirm the effect of the drug on liver function. The 
-    # # liver extraction fraction of gadoxetate has dropped from 80% to 37% 
-    # # the hepatocellular uptake rate (khe) from 0.096 to 0.013 mL/sec/cm3, and 
-    # # the biliary excretion rate (kbh) from 0.0025 to 0.0013 mL/sec/cm3.
+    dc.print_quantities(day_1_result['pder'], 'Day 1', digits=2)
+    dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
 
 
 
@@ -311,32 +305,50 @@ Print the values for the derived parameters
 
  .. code-block:: none
 
-    +----------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                                                          Day 1                                                                           |
-    +-------+------------+--------------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
-    | Key   | Unit       | Name                                                         | Group           | Value               | Bounds       | DICOM | OSIPI |
-    +-------+------------+--------------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
-    | T_h   | sec        | mean transit time in hepatocytes                             | Physiological   | 251.944             | (600, 36000) |       |       |
-    | k_e2h | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | 0.03                | (0.0, 0.1)   |       |       |
-    +----------------------------------------------------------------------------------------------------------------------------------------------------------+
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                            Day 1                                                                            |
+    +--------+------------+--------------------------------------------------------------+-----------------+-----------------------+--------------+-------+-------+
+    | Key    | Unit       | Name                                                         | Group           | Value                 | Bounds       | DICOM | OSIPI |
+    +--------+------------+--------------------------------------------------------------+-----------------+-----------------------+--------------+-------+-------+
+    | K_e2h  | 1/sec      | transfer rate from extracellular space to hepatocytes        | Physiological   | 0.13                  | (0.0, 0.1)   |       |       |
+    | K_h2b  | 1/sec      | transfer rate from hepatocytes to blood                      | Physiological   | 0.004                 | (0.0, 0.1)   |       |       |
+    | T_h    | sec        | mean transit time in hepatocytes                             | Physiological   | 250.0                 | (600, 36000) |       |       |
+    | k_e2h  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | 0.03                  | (0.0, 0.1)   |       |       |
+    | k_h2b  | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | Physiological   | 0.0023                | (0.0, 0.1)   |       |       |
+    | v_e_li | mL/cm3     | volume fraction in extracellular space of the liver          | Physiological   | 0.23                  | (0.01, 0.6)  |       |       |
+    | v_h    | mL/cm3     | volume fraction in hepatocytes                               | Physiological   | 0.58                  | (0, 1)       |       |       |
+    | v_li   | mL/cm3     | volume fraction in the liver                                 | Physiological   | 1.0                   | (0, 1)       |       |       |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-    +----------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                                                          Day 2                                                                           |
-    +-------+------------+--------------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
-    | Key   | Unit       | Name                                                         | Group           | Value               | Bounds       | DICOM | OSIPI |
-    +-------+------------+--------------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
-    | T_h   | sec        | mean transit time in hepatocytes                             | Physiological   | 463.451             | (600, 36000) |       |       |
-    | k_e2h | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | 0.014               | (0.0, 0.1)   |       |       |
-    +----------------------------------------------------------------------------------------------------------------------------------------------------------+
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                            Day 2                                                                            |
+    +--------+------------+--------------------------------------------------------------+-----------------+-----------------------+--------------+-------+-------+
+    | Key    | Unit       | Name                                                         | Group           | Value                 | Bounds       | DICOM | OSIPI |
+    +--------+------------+--------------------------------------------------------------+-----------------+-----------------------+--------------+-------+-------+
+    | K_e2h  | 1/sec      | transfer rate from extracellular space to hepatocytes        | Physiological   | 0.061                 | (0.0, 0.1)   |       |       |
+    | K_h2b  | 1/sec      | transfer rate from hepatocytes to blood                      | Physiological   | 0.0022                | (0.0, 0.1)   |       |       |
+    | T_h    | sec        | mean transit time in hepatocytes                             | Physiological   | 460.0                 | (600, 36000) |       |       |
+    | k_e2h  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | 0.014                 | (0.0, 0.1)   |       |       |
+    | k_h2b  | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | Physiological   | 0.0013                | (0.0, 0.1)   |       |       |
+    | v_e_li | mL/cm3     | volume fraction in extracellular space of the liver          | Physiological   | 0.23                  | (0.01, 0.6)  |       |       |
+    | v_h    | mL/cm3     | volume fraction in hepatocytes                               | Physiological   | 0.58                  | (0, 1)       |       |       |
+    | v_li   | mL/cm3     | volume fraction in the liver                                 | Physiological   | 1.0                   | (0, 1)       |       |       |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
+
+.. GENERATED FROM PYTHON SOURCE LINES 114-117
+
+The values confirm the effect of the drug on liver function. The 
+hepatocellular uptake rate (khe) has dropped from from 0.03 to 0.014 mL/sec/cm3, and 
+the biliary excretion rate (kbh) from 0.0023 to 0.0013 mL/sec/cm3.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.430 seconds)
+   **Total running time of the script:** (0 minutes 0.466 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_liver.py:

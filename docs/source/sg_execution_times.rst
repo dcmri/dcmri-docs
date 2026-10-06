@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**01:12.683** total execution time for 3 files **from all galleries**:
+**00:01.467** total execution time for 4 files **from all galleries**:
 
 .. container::
 
@@ -32,11 +32,14 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
+   * - :ref:`sphx_glr_examples_studies_plot_tristan6drugs.py` (``..\examples\studies\plot_tristan6drugs.py``)
+     - 00:01.467
+     - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta.py` (``..\examples\cases\plot_aorta.py``)
-     - 01:12.253
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_liver.py` (``..\examples\cases\plot_liver.py``)
-     - 00:00.430
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_examples_tutorials_plot_convolution.py` (``..\examples\tutorials\plot_convolution.py``)
      - 00:00.000

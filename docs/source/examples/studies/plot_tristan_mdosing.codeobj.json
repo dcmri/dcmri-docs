@@ -31,310 +31,71 @@
    "name": "Axes"
   }
  ],
- "ax.axhline": [
+ "ax.set_title": [
   {
    "is_class": false,
    "is_explicit": false,
    "module": "matplotlib.axes._axes",
    "module_short": "matplotlib.axes",
-   "name": "Axes.axhline"
+   "name": "Axes.set_title"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "matplotlib.axes",
    "module_short": "matplotlib.axes",
-   "name": "Axes.axhline"
+   "name": "Axes.set_title"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "matplotlib",
    "module_short": "matplotlib",
-   "name": "Axes.axhline"
+   "name": "Axes.set_title"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "matplotlib.axes._base",
    "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.axhline"
+   "name": "_AxesBase.set_title"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "matplotlib.axes",
    "module_short": "matplotlib.axes",
-   "name": "_AxesBase.axhline"
+   "name": "_AxesBase.set_title"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "matplotlib",
    "module_short": "matplotlib",
-   "name": "_AxesBase.axhline"
+   "name": "_AxesBase.set_title"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "matplotlib.artist",
    "module_short": "matplotlib.artist",
-   "name": "Artist.axhline"
+   "name": "Artist.set_title"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "matplotlib",
    "module_short": "matplotlib",
-   "name": "Artist.axhline"
+   "name": "Artist.set_title"
   }
  ],
- "ax.set": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.set"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.set"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.set"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.set"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.set"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.set"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.set"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.set"
-  }
- ],
- "ax.set_ylabel": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.set_ylabel"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.set_ylabel"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.set_ylabel"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.set_ylabel"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.set_ylabel"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.set_ylabel"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.set_ylabel"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.set_ylabel"
-  }
- ],
- "benchmarks": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DataFrame"
-  }
- ],
- "benchmarks.loc": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DataFrame.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.generic",
-   "module_short": "pandas.core.generic",
-   "name": "NDFrame.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "NDFrame.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "NDFrame.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.arraylike",
-   "module_short": "pandas.core.arraylike",
-   "name": "OpsMixin.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "OpsMixin.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "OpsMixin.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.base",
-   "module_short": "pandas.core.base",
-   "name": "PandasObject.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "PandasObject.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "PandasObject.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.indexing",
-   "module_short": "pandas.core.indexing",
-   "name": "IndexingMixin.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "IndexingMixin.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "IndexingMixin.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.accessor",
-   "module_short": "pandas.core.accessor",
-   "name": "DirNamesMixin.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "DirNamesMixin.loc"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DirNamesMixin.loc"
-  }
- ],
- "ci": [
+ "ax_row": [
   {
    "is_class": false,
    "is_explicit": false,
    "module": "numpy",
    "module_short": "numpy",
-   "name": "float64"
+   "name": "ndarray"
   }
  ],
  "data": [
@@ -344,120 +105,6 @@
    "module": "pandas",
    "module_short": "pandas",
    "name": "DataFrame"
-  }
- ],
- "data.groupby": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DataFrame.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.generic",
-   "module_short": "pandas.core.generic",
-   "name": "NDFrame.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "NDFrame.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "NDFrame.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.arraylike",
-   "module_short": "pandas.core.arraylike",
-   "name": "OpsMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "OpsMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "OpsMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.base",
-   "module_short": "pandas.core.base",
-   "name": "PandasObject.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "PandasObject.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "PandasObject.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.indexing",
-   "module_short": "pandas.core.indexing",
-   "name": "IndexingMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "IndexingMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "IndexingMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.accessor",
-   "module_short": "pandas.core.accessor",
-   "name": "DirNamesMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "DirNamesMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DirNamesMixin.groupby"
   }
  ],
  "data_file": [
@@ -630,6 +277,15 @@
    "name": "_BaseGrid.axes"
   }
  ],
+ "g.col_names": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
  "g.set_titles": [
   {
    "is_class": false,
@@ -674,13 +330,22 @@
    "name": "_BaseGrid.set_titles"
   }
  ],
- "https://doi.org/10.1007/s10334-024-01192-5": [
+ "https://orcid.org/0000-0002-5608-9812": [
   {
    "is_class": false,
    "is_explicit": true,
-   "module": "https://doi.org/10",
-   "module_short": "https://doi.org/10",
-   "name": "1007/s10334-024-01192-5"
+   "module": "https://orcid",
+   "module_short": "https://orcid",
+   "name": "org/0000-0002-5608-9812"
+  }
+ ],
+ "https://www.imi-tristan.eu/liver": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "https://www.imi-tristan",
+   "module_short": "https://www.imi-tristan",
+   "name": "eu/liver"
   }
  ],
  "inputs": [
@@ -722,15 +387,6 @@
    "module": "builtins",
    "module_short": "builtins",
    "name": "function"
-  }
- ],
- "mean": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "float64"
   }
  ],
  "np.amax": [
@@ -781,15 +437,6 @@
    "name": "round"
   }
  ],
- "order": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "list"
-  }
- ],
  "par": [
   {
    "is_class": false,
@@ -806,15 +453,6 @@
    "module": "builtins",
    "module_short": "builtins",
    "name": "str"
-  }
- ],
- "params": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "list"
   }
  ],
  "pd.DataFrame": [
@@ -938,36 +576,111 @@
    "name": "DataFrame"
   }
  ],
- "plt.rc": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.pyplot",
-   "module_short": "matplotlib.pyplot",
-   "name": "rc"
-  }
- ],
- "plt.rcParams": [
+ "plt.rcParams.update": [
   {
    "is_class": false,
    "is_explicit": false,
    "module": "matplotlib",
    "module_short": "matplotlib",
-   "name": "RcParams"
+   "name": "RcParams.update"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "matplotlib.pyplot",
-   "module_short": "matplotlib",
-   "name": "rcParams"
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "MutableMapping.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "MutableMapping.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Mapping.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Mapping.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Collection.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Collection.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Sized.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Sized.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Iterable.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Iterable.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Container.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Container.update"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot.rcParams",
+   "module_short": "matplotlib.pyplot.rcParams",
+   "name": "update"
   }
  ],
  "plt.show": [
@@ -1054,118 +767,139 @@
    "name": "DataFrame"
   }
  ],
- "results.query": [
+ "results.parameter.isin": [
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas",
    "module_short": "pandas",
-   "name": "DataFrame.query"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.generic",
-   "module_short": "pandas.core.generic",
-   "name": "NDFrame.query"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "NDFrame.query"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "NDFrame.query"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.arraylike",
-   "module_short": "pandas.core.arraylike",
-   "name": "OpsMixin.query"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "OpsMixin.query"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "OpsMixin.query"
+   "name": "Series.isin"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas.core.base",
    "module_short": "pandas.core.base",
-   "name": "PandasObject.query"
+   "name": "IndexOpsMixin.isin"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas.core",
    "module_short": "pandas.core",
-   "name": "PandasObject.query"
+   "name": "IndexOpsMixin.isin"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas",
    "module_short": "pandas",
-   "name": "PandasObject.query"
+   "name": "IndexOpsMixin.isin"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core.generic",
+   "module_short": "pandas.core.generic",
+   "name": "NDFrame.isin"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core",
+   "module_short": "pandas.core",
+   "name": "NDFrame.isin"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "NDFrame.isin"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core.arraylike",
+   "module_short": "pandas.core.arraylike",
+   "name": "OpsMixin.isin"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core",
+   "module_short": "pandas.core",
+   "name": "OpsMixin.isin"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "OpsMixin.isin"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core.base",
+   "module_short": "pandas.core.base",
+   "name": "PandasObject.isin"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core",
+   "module_short": "pandas.core",
+   "name": "PandasObject.isin"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "PandasObject.isin"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas.core.indexing",
    "module_short": "pandas.core.indexing",
-   "name": "IndexingMixin.query"
+   "name": "IndexingMixin.isin"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas.core",
    "module_short": "pandas.core",
-   "name": "IndexingMixin.query"
+   "name": "IndexingMixin.isin"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas",
    "module_short": "pandas",
-   "name": "IndexingMixin.query"
+   "name": "IndexingMixin.isin"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas.core.accessor",
    "module_short": "pandas.core.accessor",
-   "name": "DirNamesMixin.query"
+   "name": "DirNamesMixin.isin"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas.core",
    "module_short": "pandas.core",
-   "name": "DirNamesMixin.query"
+   "name": "DirNamesMixin.isin"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "pandas",
    "module_short": "pandas",
-   "name": "DirNamesMixin.query"
+   "name": "DirNamesMixin.isin"
   }
  ],
  "results.to_string": [
@@ -1282,6 +1016,24 @@
    "name": "DirNamesMixin.to_string"
   }
  ],
+ "rows": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "rows.items": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  }
+ ],
  "sns.catplot": [
   {
    "is_class": false,
@@ -1298,127 +1050,13 @@
    "name": "catplot"
   }
  ],
- "stat_summary": [
+ "study": [
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DataFrame"
-  }
- ],
- "stat_summary.groupby": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DataFrame.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.generic",
-   "module_short": "pandas.core.generic",
-   "name": "NDFrame.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "NDFrame.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "NDFrame.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.arraylike",
-   "module_short": "pandas.core.arraylike",
-   "name": "OpsMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "OpsMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "OpsMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.base",
-   "module_short": "pandas.core.base",
-   "name": "PandasObject.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "PandasObject.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "PandasObject.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.indexing",
-   "module_short": "pandas.core.indexing",
-   "name": "IndexingMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "IndexingMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "IndexingMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.accessor",
-   "module_short": "pandas.core.accessor",
-   "name": "DirNamesMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "DirNamesMixin.groupby"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DirNamesMixin.groupby"
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "int64"
   }
  ],
  "study_data": [
@@ -1466,24 +1104,6 @@
    "name": "dict"
   }
  ],
- "ylabel": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "str"
-  }
- ],
- "ylabels": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "list"
-  }
- ],
  "ylim": [
   {
    "is_class": false,
@@ -1491,15 +1111,6 @@
    "module": "builtins",
    "module_short": "builtins",
    "name": "tuple"
-  }
- ],
- "ylims": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "list"
   }
  ]
 }

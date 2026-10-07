@@ -5,8 +5,6 @@
 Liver function reproducibility
 ==============================
 
-`Ebony Gunwhy <https://orcid.org/0000-0002-5608-9812>`_.
-
 This example illustrates the use of `~dcmri.Liver` in a preclinical 
 setting, by replicating key results from 
 `Gunwhy et al (2024) <https://doi.org/10.1007/s10334-024-01192-5>`_.

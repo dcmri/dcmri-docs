@@ -1,146 +1,83 @@
 {
  "dcmri.InverseLiver": [
   [
-   "plot_tristan_repro.py",
+   "plot_tristan_rat.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "Ebony Gunwhy.",
-   "Liver function reproducibility"
-  ],
-  [
-   "plot_tristan6drugs.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ",
-   "Effect of 6 drugs on liver function"
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.Liver": [
   [
-   "plot_tristan_repro.py",
+   "plot_tristan_rat.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "Ebony Gunwhy.",
-   "Liver function reproducibility"
-  ],
-  [
-   "plot_tristan6drugs.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ",
-   "Effect of 6 drugs on liver function"
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.Module": [
   [
-   "plot_tristan_repro.py",
+   "plot_tristan_rat.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "Ebony Gunwhy.",
-   "Liver function reproducibility"
-  ],
-  [
-   "plot_tristan6drugs.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ",
-   "Effect of 6 drugs on liver function"
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.core.Module": [
   [
-   "plot_tristan_repro.py",
+   "plot_tristan_rat.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "Ebony Gunwhy.",
-   "Liver function reproducibility"
-  ],
-  [
-   "plot_tristan6drugs.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ",
-   "Effect of 6 drugs on liver function"
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.core.module.Module": [
   [
-   "plot_tristan_repro.py",
+   "plot_tristan_rat.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "Ebony Gunwhy.",
-   "Liver function reproducibility"
-  ],
-  [
-   "plot_tristan6drugs.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ",
-   "Effect of 6 drugs on liver function"
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.fetch": [
   [
-   "plot_tristan_repro.py",
+   "plot_tristan_rat.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "Ebony Gunwhy.",
-   "Liver function reproducibility"
-  ],
-  [
-   "plot_tristan6drugs.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ",
-   "Effect of 6 drugs on liver function"
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.inverse.InverseLiver": [
   [
-   "plot_tristan_repro.py",
+   "plot_tristan_rat.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "Ebony Gunwhy.",
-   "Liver function reproducibility"
-  ],
-  [
-   "plot_tristan6drugs.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ",
-   "Effect of 6 drugs on liver function"
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.inverse.liver.InverseLiver": [
   [
-   "plot_tristan_repro.py",
+   "plot_tristan_rat.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "Ebony Gunwhy.",
-   "Liver function reproducibility"
-  ],
-  [
-   "plot_tristan6drugs.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ",
-   "Effect of 6 drugs on liver function"
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.tristan_rat": [
   [
-   "plot_tristan_repro.py",
+   "plot_tristan_rat.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "Ebony Gunwhy.",
-   "Liver function reproducibility"
-  ],
-  [
-   "plot_tristan6drugs.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ",
-   "Effect of 6 drugs on liver function"
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ]
 }

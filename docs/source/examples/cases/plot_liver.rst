@@ -18,6 +18,8 @@
 .. _sphx_glr_examples_cases_plot_liver.py:
 
 
+.. _example_gadoxetate_rat:
+
 =====
 Liver
 =====
@@ -31,12 +33,12 @@ administration of an inhibitor drug). For a complete analysis of
 all data we refer to the 
 `full pipeline <https://zenodo.org/records/15648009>`_.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-19
+.. GENERATED FROM PYTHON SOURCE LINES 19-21
 
 Setup
 -----
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-29
+.. GENERATED FROM PYTHON SOURCE LINES 21-31
 
 .. code-block:: Python
 
@@ -57,13 +59,13 @@ Setup
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-33
+.. GENERATED FROM PYTHON SOURCE LINES 32-35
 
 This study uses an intracellullar agent, and in rats the mixing in 
 the blood pool is fast, so we will use a single inlet model (1I). 
 All other default configurations are correct:
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-38
+.. GENERATED FROM PYTHON SOURCE LINES 35-40
 
 .. code-block:: Python
 
@@ -79,11 +81,11 @@ All other default configurations are correct:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 41-42
 
 Let's see what input parameters are needed
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 42-45
 
 .. code-block:: Python
 
@@ -135,7 +137,7 @@ Let's see what input parameters are needed
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-49
+.. GENERATED FROM PYTHON SOURCE LINES 46-51
 
 The measured input functions in this study are unstable 
 so we will analyse the data with a standardised input function.
@@ -143,11 +145,11 @@ Since we will be running this on two different datasets, lets first
 define a function which returns the data dictionary for a given 
 dataset:
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-85
+.. GENERATED FROM PYTHON SOURCE LINES 51-87
 
 .. code-block:: Python
 
-    def data_dict(subject, visit):
+    def liver_data(subject, visit):
 
         # --- Get the data for the subject and visit
         roi = dmr['rois'][subject][visit]
@@ -159,11 +161,11 @@ dataset:
         t = np.arange(0, np.amax(roi['time']) + 180, dt)
         ca = dc.tristan_rat(t, BAT=bat, duration=par['duration'])
 
-        # Acquisition is retrospectively triggered so Nph can be derived
+        # --- Number of phase lines for a triggered sequence
         ts = roi['time'][1] - roi['time'][0]
         Nph = int(np.round(ts / par['TR'])) 
 
-        # --- Create a data dictionary with values for all inputs
+        # --- Return the data dictionary 
         return {
             'tS_li': roi['time'],
             'S_li': roi['liver'],
@@ -190,21 +192,21 @@ dataset:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-87
+.. GENERATED FROM PYTHON SOURCE LINES 88-89
 
 Now we are in a position to fit the data from both visits
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-96
+.. GENERATED FROM PYTHON SOURCE LINES 89-98
 
 .. code-block:: Python
 
 
     # --- Fit the day 1 data
-    day_1_data = data_dict('S12-02', 'Day_1')
+    day_1_data = liver_data('S12-02', 'Day_1')
     day_1_result = liver(day_1_data, verbose=2)
 
     # --- Fit the day 2 data
-    day_2_data = data_dict('S12-02', 'Day_2')
+    day_2_data = liver_data('S12-02', 'Day_2')
     day_2_result = liver(day_2_data, verbose=2)
 
 
@@ -244,12 +246,12 @@ Now we are in a position to fit the data from both visits
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-99
+.. GENERATED FROM PYTHON SOURCE LINES 99-101
 
 Before we interpret the results, let's verify the optimization has 
 converged to a solution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-108
+.. GENERATED FROM PYTHON SOURCE LINES 101-110
 
 .. code-block:: Python
 
@@ -286,11 +288,11 @@ converged to a solution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-110
+.. GENERATED FROM PYTHON SOURCE LINES 111-112
 
 Print the values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-113
+.. GENERATED FROM PYTHON SOURCE LINES 112-115
 
 .. code-block:: Python
 
@@ -339,7 +341,7 @@ Print the values for the derived parameters
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-117
+.. GENERATED FROM PYTHON SOURCE LINES 116-119
 
 The values confirm the effect of the drug on liver function. The 
 hepatocellular uptake rate (khe) has dropped from from 0.03 to 0.014 mL/sec/cm3, and 

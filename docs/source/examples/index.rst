@@ -104,7 +104,7 @@ Population analyses
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ">
 
 .. only:: html
 
@@ -115,7 +115,7 @@ Population analyses
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Preclinical - effect on liver function of 6 test drugs</div>
+      <div class="sphx-glr-thumbnail-title">Effect of 6 drugs on liver function</div>
     </div>
 
 

@@ -1,4 +1,6 @@
 """
+.. _example_gadoxetate_rat:
+
 =====
 Liver
 =====
@@ -46,7 +48,7 @@ liver.print_inputs()
 # Since we will be running this on two different datasets, lets first 
 # define a function which returns the data dictionary for a given 
 # dataset:
-def data_dict(subject, visit):
+def liver_data(subject, visit):
 
     # --- Get the data for the subject and visit
     roi = dmr['rois'][subject][visit]
@@ -58,11 +60,11 @@ def data_dict(subject, visit):
     t = np.arange(0, np.amax(roi['time']) + 180, dt)
     ca = dc.tristan_rat(t, BAT=bat, duration=par['duration'])
 
-    # Acquisition is retrospectively triggered so Nph can be derived
+    # --- Number of phase lines for a triggered sequence
     ts = roi['time'][1] - roi['time'][0]
     Nph = int(np.round(ts / par['TR'])) 
 
-    # --- Create a data dictionary with values for all inputs
+    # --- Return the data dictionary 
     return {
         'tS_li': roi['time'],
         'S_li': roi['liver'],
@@ -86,11 +88,11 @@ def data_dict(subject, visit):
 # Now we are in a position to fit the data from both visits
 
 # --- Fit the day 1 data
-day_1_data = data_dict('S12-02', 'Day_1')
+day_1_data = liver_data('S12-02', 'Day_1')
 day_1_result = liver(day_1_data, verbose=2)
 
 # --- Fit the day 2 data
-day_2_data = data_dict('S12-02', 'Day_2')
+day_2_data = liver_data('S12-02', 'Day_2')
 day_2_result = liver(day_2_data, verbose=2)
 
 # %%

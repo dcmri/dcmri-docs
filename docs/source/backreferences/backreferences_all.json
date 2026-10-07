@@ -4,8 +4,8 @@
    "plot_tristan6drugs.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ",
-   "Preclinical - effect on liver function of 6 test drugs"
+   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ",
+   "Effect of 6 drugs on liver function"
   ]
  ],
  "dcmri.Liver": [
@@ -13,8 +13,8 @@
    "plot_tristan6drugs.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ",
-   "Preclinical - effect on liver function of 6 test drugs"
+   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ",
+   "Effect of 6 drugs on liver function"
   ]
  ],
  "dcmri.Module": [
@@ -22,8 +22,8 @@
    "plot_tristan6drugs.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ",
-   "Preclinical - effect on liver function of 6 test drugs"
+   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ",
+   "Effect of 6 drugs on liver function"
   ]
  ],
  "dcmri.core.Module": [
@@ -31,8 +31,8 @@
    "plot_tristan6drugs.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ",
-   "Preclinical - effect on liver function of 6 test drugs"
+   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ",
+   "Effect of 6 drugs on liver function"
   ]
  ],
  "dcmri.core.module.Module": [
@@ -40,8 +40,8 @@
    "plot_tristan6drugs.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ",
-   "Preclinical - effect on liver function of 6 test drugs"
+   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ",
+   "Effect of 6 drugs on liver function"
   ]
  ],
  "dcmri.fetch": [
@@ -49,8 +49,8 @@
    "plot_tristan6drugs.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ",
-   "Preclinical - effect on liver function of 6 test drugs"
+   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ",
+   "Effect of 6 drugs on liver function"
   ]
  ],
  "dcmri.inverse.InverseLiver": [
@@ -58,8 +58,8 @@
    "plot_tristan6drugs.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ",
-   "Preclinical - effect on liver function of 6 test drugs"
+   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ",
+   "Effect of 6 drugs on liver function"
   ]
  ],
  "dcmri.inverse.liver.InverseLiver": [
@@ -67,8 +67,8 @@
    "plot_tristan6drugs.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ",
-   "Preclinical - effect on liver function of 6 test drugs"
+   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ",
+   "Effect of 6 drugs on liver function"
   ]
  ],
  "dcmri.tristan_rat": [
@@ -76,8 +76,8 @@
    "plot_tristan6drugs.py",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
    "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver for fitting of signals  measured in liver. The use case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis were first  published in Melillo et al (2023). ",
-   "Preclinical - effect on liver function of 6 test drugs"
+   "This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ",
+   "Effect of 6 drugs on liver function"
   ]
  ]
 }

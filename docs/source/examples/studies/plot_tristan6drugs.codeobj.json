@@ -126,6 +126,15 @@
    "name": "Artist.tick_params"
   }
  ],
+ "all_data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
  "ax": [
   {
    "is_class": false,
@@ -440,136 +449,13 @@
    "name": "int"
   }
  ],
- "data": [
+ "data_file": [
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DataFrame"
-  }
- ],
- "data.parameter": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "Series"
-  }
- ],
- "data.pivot_table": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DataFrame.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.generic",
-   "module_short": "pandas.core.generic",
-   "name": "NDFrame.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "NDFrame.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "NDFrame.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.arraylike",
-   "module_short": "pandas.core.arraylike",
-   "name": "OpsMixin.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "OpsMixin.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "OpsMixin.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.base",
-   "module_short": "pandas.core.base",
-   "name": "PandasObject.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "PandasObject.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "PandasObject.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.indexing",
-   "module_short": "pandas.core.indexing",
-   "name": "IndexingMixin.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "IndexingMixin.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "IndexingMixin.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core.accessor",
-   "module_short": "pandas.core.accessor",
-   "name": "DirNamesMixin.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas.core",
-   "module_short": "pandas.core",
-   "name": "DirNamesMixin.pivot_table"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pandas",
-   "module_short": "pandas",
-   "name": "DirNamesMixin.pivot_table"
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
   }
  ],
  "dc.InverseLiver": [
@@ -662,24 +548,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "Liver"
-  }
- ],
- "dmr": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "dict"
-  }
- ],
- "dmrfile": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "str"
   }
  ],
  "drug": [
@@ -937,6 +805,15 @@
    "name": "function"
   }
  ],
+ "example_gadoxetate_rat": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "example_gadoxetate_rat"
+  }
+ ],
  "fig": [
   {
    "is_class": false,
@@ -1013,15 +890,6 @@
    "module": "https://doi.org/10",
    "module_short": "https://doi.org/10",
    "name": "3390/pharmaceutics15030896"
-  }
- ],
- "https://www.imi-tristan.eu/liver": [
-  {
-   "is_class": false,
-   "is_explicit": true,
-   "module": "https://www.imi-tristan",
-   "module_short": "https://www.imi-tristan",
-   "name": "eu/liver"
   }
  ],
  "inputs": [
@@ -1156,15 +1024,6 @@
    "module": "builtins",
    "module_short": "builtins",
    "name": "list"
-  }
- ],
- "pars": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "dict"
   }
  ],
  "pd.DataFrame": [
@@ -1495,24 +1354,6 @@
    "name": "DirNamesMixin.to_string"
   }
  ],
- "rois": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "dict"
-  }
- ],
- "rois.items": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "builtin_function_or_method"
-  }
- ],
  "row": [
   {
    "is_class": false,
@@ -1565,6 +1406,138 @@
    "module": "builtins",
    "module_short": "builtins",
    "name": "int"
+  }
+ ],
+ "study_data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "DataFrame"
+  }
+ ],
+ "study_data.parameter": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "Series"
+  }
+ ],
+ "study_data.pivot_table": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "DataFrame.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core.generic",
+   "module_short": "pandas.core.generic",
+   "name": "NDFrame.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core",
+   "module_short": "pandas.core",
+   "name": "NDFrame.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "NDFrame.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core.arraylike",
+   "module_short": "pandas.core.arraylike",
+   "name": "OpsMixin.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core",
+   "module_short": "pandas.core",
+   "name": "OpsMixin.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "OpsMixin.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core.base",
+   "module_short": "pandas.core.base",
+   "name": "PandasObject.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core",
+   "module_short": "pandas.core",
+   "name": "PandasObject.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "PandasObject.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core.indexing",
+   "module_short": "pandas.core.indexing",
+   "name": "IndexingMixin.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core",
+   "module_short": "pandas.core",
+   "name": "IndexingMixin.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "IndexingMixin.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core.accessor",
+   "module_short": "pandas.core.accessor",
+   "name": "DirNamesMixin.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core",
+   "module_short": "pandas.core",
+   "name": "DirNamesMixin.pivot_table"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "DirNamesMixin.pivot_table"
   }
  ],
  "subj": [

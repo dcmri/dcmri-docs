@@ -1,13 +1,4 @@
 {
- "data_dict": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  }
- ],
  "day_1_data": [
   {
    "is_class": false,
@@ -288,6 +279,15 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "Module.print_inputs"
+  }
+ ],
+ "liver_data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
   }
  ],
  "np.amax": [

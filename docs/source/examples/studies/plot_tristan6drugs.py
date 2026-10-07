@@ -6,7 +6,7 @@ Effect of 6 drugs on liver function
 ===================================
 
 This example illustrates the use of `~dcmri.Liver` in a preclinical 
-setting, by replicating key results from the paper 
+setting, by replicating key results from
 `Melillo et al (2023) <https://doi.org/10.3390/pharmaceutics15030896>`_.  
 
 The study determined the effect of 6 test drugs on liver function as 
@@ -27,7 +27,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 import pydmr
-
 import dcmri as dc
 
 # %%
@@ -211,7 +210,7 @@ plt.show()
 # %%
 # Discussion
 # ----------
-# These results confirm the key findgs from the paper: 
+# These results confirm the key findings from the paper: 
 # 
 # - Two of the tested drugs (rifampicin and cyclosporine) showed 
 #   strong inhibition of both uptake and excretion. 

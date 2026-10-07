@@ -24,7 +24,24 @@ Population analyses
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Liver in a preclinical  setting, by replicating key results from the paper  Melillo et al (2023).  ">
+    <div class="sphx-glr-thumbcontainer" tooltip="Ebony Gunwhy.">
+
+.. only:: html
+
+  .. image:: /examples/studies/images/thumb/sphx_glr_plot_tristan_repro_thumb.png
+    :alt:
+
+  :doc:`/examples/studies/plot_tristan_repro`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Liver function reproducibility</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Liver in a preclinical  setting, by replicating key results from Melillo et al (2023).  ">
 
 .. only:: html
 
@@ -49,5 +66,6 @@ Population analyses
 .. toctree::
    :hidden:
 
+   /examples/studies/plot_tristan_repro
    /examples/studies/plot_tristan6drugs
 

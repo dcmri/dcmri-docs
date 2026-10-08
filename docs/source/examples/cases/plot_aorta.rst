@@ -222,15 +222,15 @@ print them out:
     +--------+--------+--------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
     | Key    | Unit   | Name                                                   | Group           | Value               | Bounds       | DICOM | OSIPI |
     +--------+--------+--------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
-    | BAT    | sec    | bolus arrival time                                     | Indicator       | 25.453539949923815  | (-30, 30)    |       |       |
+    | BAT    | sec    | bolus arrival time                                     | Indicator       | 25.45360450790157   | (-30, 30)    |       |       |
     +--------+--------+--------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
-    | CO     | mL/sec | cardiac output                                         | Physiological   | 220.53860182696314  | (0, 500)     |       |       |
-    | D_hl   |        | transit time dispersion in the heart and Lungs         | Physiological   | 0.07767348035417199 | (0.01, 0.99) |       |       |
-    | E_or   |        | extraction fraction in the organs                      | Physiological   | 0.4999999103096042  | (0, 0.5)     |       |       |
-    | T_b_or | sec    | mean transit time in blood of the organs               | Physiological   | 10.227835182767148  | (0, 60)      |       |       |
-    | T_e_or | sec    | mean transit time in extracellular space of the organs | Physiological   | 18.24079981219239   | (0, 800)     |       |       |
-    | T_hl   | sec    | mean transit time in the heart and Lungs               | Physiological   | 13.053677650099118  | (0, 30)      |       |       |
-    | vr_or  |        | Venous return in the organs                            | Physiological   | 0.8677536179386912  | (0, 1)       |       |       |
+    | CO     | mL/sec | cardiac output                                         | Physiological   | 220.53859044963454  | (0, 500)     |       |       |
+    | D_hl   |        | transit time dispersion in the heart and Lungs         | Physiological   | 0.07767411960984237 | (0.01, 0.99) |       |       |
+    | E_or   |        | extraction fraction in the organs                      | Physiological   | 0.49999999818473656 | (0, 0.5)     |       |       |
+    | T_b_or | sec    | mean transit time in blood of the organs               | Physiological   | 10.227941175744132  | (0, 60)      |       |       |
+    | T_e_or | sec    | mean transit time in extracellular space of the organs | Physiological   | 18.240628681523923  | (0, 800)     |       |       |
+    | T_hl   | sec    | mean transit time in the heart and Lungs               | Physiological   | 13.053609507995402  | (0, 30)      |       |       |
+    | vr_or  |        | Venous return in the organs                            | Physiological   | 0.8677535417251857  | (0, 1)       |       |       |
     +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -249,7 +249,7 @@ though their exact estimate was less elevated (10.5 L/min).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 12.253 seconds)
+   **Total running time of the script:** (1 minutes 38.011 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta.py:

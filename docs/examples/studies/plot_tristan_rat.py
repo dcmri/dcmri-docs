@@ -36,27 +36,29 @@ import dcmri as dc
 
 
 # %%
-# The basic modelling approach is illustrated in a :ref:`separate 
-# case study <example_gadoxetate_rat>` so we just replicate it here:
+# The basic modelling approach is justified in a :ref:`separate 
+# case study <example_gadoxetate_rat>` so we just replicate it here.
+# We first define the helper function that builds a data dictionary 
+# for a given study:
 
-# --- Build a data dictionary for a given study
 def liver_data(data, subject, visit):
 
-    # --- Get the data for the subject and visit
+    # --- Get the data
     roi = data['rois'][subject][visit]
     par = data['pars'][subject][visit]
 
-    # --- Generate the input function 
+    # --- Number of phase lines
+    ts = roi['time'][1] - roi['time'][0]
+    Nph = int(np.round(ts / par['TR'])) 
+    Nk0 = int(np.round(Nph / 2))
+
+    # --- Input function 
     dt = 0.5
     bat = par['BAT'] + roi['time'][1] / 2
     t = np.arange(0, np.amax(roi['time']) + 180, dt)
     ca = dc.tristan_rat(t, BAT=bat, duration=par['duration'])
 
-    # --- Number of phase lines for a triggered sequence
-    ts = roi['time'][1] - roi['time'][0]
-    Nph = int(np.round(ts / par['TR'])) 
-
-    # --- Return the data dictionary 
+    # --- Data dictionary 
     return {
         'tS_li': roi['time'],
         'S_li': roi['liver'],
@@ -66,19 +68,26 @@ def liver_data(data, subject, visit):
         'TR': par['TR'],
         'FA': par['FA'],
         'Nph': Nph, 
-        'Nk0': int(np.round(Nph / 2)) ,
+        'Nk0': Nk0,
         'dt': dt,
         'nb': par['n0'],
-        'H': 0.418,           # Cremer et al, J Cereb Blood Flow Metab 3, 254-256 (1983)
+        'H': 0.418,      
         'v_e_li': 0.23,
         'v_li': 1.0,
         'pfree': {'k_e2h':[0, 1], 'T_h': [0, 60 * 60]},
     }
 
-# --- Compute liver function for all data
-def compute_liver_function(data):
+# %%
+# Next we build a helper function that computes the results for all 
+# data in a given study:
 
-    # --- Configure the inverse model
+def compute_liver_function(study_name):
+
+    # --- Read the data
+    data_file = dc.fetch(study_name)
+    data = pydmr.read(data_file, 'nest')
+
+    # --- Configure the model
     liver = dc.InverseLiver(kinetics='1I-IC-HF', calibrate=True)
 
     # --- Fit all datasets and save results in a list
@@ -87,18 +96,18 @@ def compute_liver_function(data):
         for visit in visits:
             inputs = liver_data(data, subj, visit)
             result = liver(inputs) 
-            study_data = data['pars'][subj][visit]
+            visit_data = data['pars'][subj][visit]
 
             for parameter, value in result['pder'].items():
                 records.append({
                     'subject': subj,
-                    'study': study_data['study'],
-                    'visit': study_data['visit'],
+                    'study': visit_data['study'],
+                    'visit': visit_data['visit'],
                     'parameter': parameter,
                     'value': value,
                 })
 
-    # --- Convert list to dataframe for analysis
+    # --- Return as a dataframe for analysis
     return pd.DataFrame(records)
 
 # %%
@@ -109,17 +118,11 @@ def compute_liver_function(data):
 # The study determined the effect of 6 test drugs on liver function as 
 # measured by gadoxetate uptake and excretion in healthy rats. 
 
-# %%
-# First, fetch and read the data
-
-data_file = dc.fetch('tristan_rats_healthy_six_drugs')
-all_data = pydmr.read(data_file, 'nest')
-
 # %% 
-# Compute liver function
-results = compute_liver_function(all_data)
+# We start by fitting all data in the study. The result is a data 
+# table in long format:
 
-# The result is a data table in long format
+results = compute_liver_function('tristan_rats_healthy_six_drugs')
 print(results.to_string())
 
 
@@ -167,7 +170,7 @@ plt.show()
 # 
 # - **red** means the inhibition is more than 20% (i.e. upper value of 
 #   the 95% CI is less than -20%).
-# - **orange** means the inhbition is less than 20% (i.e. upper value 
+# - **orange** means the inhibition is less than 20% (i.e. upper value 
 #   of the 95% CI is less than 0%).
 # - **green** means no inhibition was detected with 95% confidence 
 #   (i.e. 0% lies in the 95% CI).
@@ -240,14 +243,8 @@ plt.show()
 # in the same centre. 
 
 # %%
-# Fetch and read the data
-
-data_file = dc.fetch('tristan_rats_healthy_reproducibility')
-all_data = pydmr.read(data_file, 'nest')
-
-# %%
-# Compute liver function
-results = compute_liver_function(all_data)
+# Fit all data in the study:
+results = compute_liver_function('tristan_rats_healthy_reproducibility')
 
 # %%
 # We visualise the results by plotting the 95% confidence intervals 
@@ -318,7 +315,7 @@ plt.tight_layout()
 plt.show()
 
 # %%
-# The results replicate the main finding from # `Gunwhy et al (2024) <https://doi.org/10.1007/s10334-024-01192-5>`_., 
+# The results replicate the main finding from `Gunwhy et al (2024) <https://doi.org/10.1007/s10334-024-01192-5>`_., 
 # that there are substantial study-dependent biases in absolute values.
 
 # %%
@@ -328,7 +325,7 @@ plt.show()
 # The study aimed to identify the difference between acute and chronic dosing 
 # effects of inhibitor drugs (Rifampicin, Cyclosporine, or Bosentan). 
 #
-# **Reference**
+# *Reference*
 # 
 # Mikael Montelius, Steven Sourbron, Nicola Melillo, Daniel Scotcher, 
 # Aleksandra Galetin, Gunnar Schuetz, Claudia Green, Edvin Johansson, 
@@ -336,29 +333,15 @@ plt.show()
 # gadoxetate uptake in rats using gadoxetate DCE-MRI. Int Soc Mag Reson Med 
 # 2021; 2674.
 
-# %% 
-# Fetch the data
-
-data_file = dc.fetch('tristan_rats_healthy_multiple_dosing')
-data = pydmr.read(data_file, 'nest')
+# %%
+# Fit all data in the study:
+results = compute_liver_function('tristan_rats_healthy_multiple_dosing')
 
 # %%
-# Compute liver function
-results = compute_liver_function(data)
+# Now let's plot the biomarker values across visits for each of the 
+# chronic dosing studies:
 
-# %%
-# Now let's plot the biomarker values across visits for each study group.
-# For this exercise, let's specify Ktrans and kbh as the biomarker parameters that
-# we are interested in. For each subject, we can visualise the change in
-# biomarker values between visits. For reference, in the below plots, the
-# studies are numbered as follows:
-# 
-# - Study 1: Rifampicin repetitive dosing regime
-# - Study 2: Cyclosporine repetitive dosing regime
-# - Study 3: Bosentan repetitive dosing regime
-
-import matplotlib.pyplot as plt
-import seaborn as sns
+STUDY = {1: 'Rifampicin', 2: 'Cyclosporine', 3: 'Bosentan'}
 
 plt.rcParams.update({
     'axes.titlesize': 25, 'axes.labelsize': 20,
@@ -388,7 +371,7 @@ g = sns.catplot(data=data,
 # One title per column, on the top row only
 g.set_titles("")
 for ax, study in zip(g.axes[0], g.col_names):
-    ax.set_title(f"Study {study}", pad=15)
+    ax.set_title(f"{STUDY[study]}", pad=15)
 
 # One y-axis label and one set of limits per row
 for ax_row, (par, ylim) in zip(g.axes, rows.items()):

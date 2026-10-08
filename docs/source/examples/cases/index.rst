@@ -41,7 +41,7 @@ Analyses of single subjects with end-to-end models.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Liver for fitting of signals  measured in liver. ">
+    <div class="sphx-glr-thumbcontainer" tooltip="Using Liver to measure hepatocellular function in rats.">
 
 .. only:: html
 

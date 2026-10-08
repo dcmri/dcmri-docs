@@ -414,10 +414,10 @@ implementations):
 .. math::
     \frac{dC}{dt} = -K(C) C
     \qquad\textrm{with}\qquad
-    K(C) = \frac{V_\max}{K_m+C}
+    K(C) = \frac{V_{\max}}{K_m+C}
 
-For small enough concentrations :math:`C << K_m` this reduces to a standard 
-linear compartment with :math:`K=V_\max/K_m`. The Michaelis-Menten compartment 
+For small enough concentrations :math:`C \ll K_m` this reduces to a standard 
+linear compartment with :math:`K=V_{\max}/K_m`. The Michaelis-Menten compartment 
 would therefore mainly be used in situations where higher doses of contrast 
 agent are injected. It is a classic example of a non-linear system and 
 an analytical solution is available through the work of 

@@ -230,10 +230,10 @@ exchange across the endothelium, and the second to the water exchange across
 the cell wall. Examples of possible water exchange regimes are:
 
 - *RF*: Restricted water exchange across the endothelium 
-  (:math:`0\lt PS_e\lt\infty`) and fast water exchange across the tissue cell 
+  (:math:`0 < PS_e < \infty`) and fast water exchange across the tissue cell 
   wall (:math:`PS_c=\infty`). 
 - *NF*: No water exchange across the endothelium (:math:`PS_e=0`) and fast 
   water exchange across the tissue cell wall (:math:`PS_c=\infty`). 
 - *FR*: Fast water exchange across the endothelium (:math:`PS_e=\infty`) and 
   restricted water exchange across the tissue cell wall 
-  (:math:`0\lt PS_c\lt\infty`).
+  (:math:`0 < PS_c < \infty`).

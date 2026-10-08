@@ -1,6 +1,7 @@
 import os
 import sys
 from pathlib import Path
+import re
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -169,12 +170,51 @@ html_logo = '_static/dcmri-logo.png'
 # Instruction to autoclass: do NOT document __init__
 autodoc_default_flags = ['members', 'private-members', 'special-members','show-inheritance']
 
+# Latex engine - this works better with unicode symbols than pdflatex
+latex_engine = "xelatex"
+
+latex_table_style = ['booktabs', 'grid']
+
+
 def autodoc_skip_member(app, what, name, obj, skip, options):
     # Ref: https://stackoverflow.com/a/21449475/
     # return True if (skip or exclude) else None  # Can interfere with subsequent skip functions.
     exclude = ['__init__']
     return True if name in exclude else None
+
+# Remove emoji's for the pdf build
+_emoji = re.compile(
+    "["
+    "\U0001F000-\U0001FAFF"   # emoji, symbols, pictographs, flags
+    "\u2190-\u21FF"           # arrows (↔, ↩, ...)
+    "\u2300-\u23FF"           # misc technical (⏳, ⌚, ⏰, ...)
+    "\u25A0-\u25FF"           # geometric shapes (▶, ◀, ...)
+    "\u2600-\u27BF"           # misc symbols and dingbats (✅, ⚠, ✔, ...)
+    "\u2900-\u297F"           # supplemental arrows
+    "\u2B00-\u2BFF"           # misc symbols and arrows (⭐, ⬆, ...)
+    "\u200D\u20E3\uFE0E\uFE0F"  # joiner, keycap, variation selectors
+    "]"
+)
+
+def strip_emoji(app, docname, source):
+    if app.builder.name == "latex":
+        source[0] = _emoji.sub("", source[0])
+
+from docutils import nodes
+
+def strip_emoji_doctree(app, doctree, docname):
+    if app.builder.name != "latex":
+        return
+    for node in list(doctree.findall(nodes.Text)):
+        text = node.astext()
+        cleaned = _emoji.sub("", text)
+        if cleaned != text:
+            node.parent.replace(node, nodes.Text(cleaned))
+
+
  
 def setup(app):
     app.connect('autodoc-skip-member', autodoc_skip_member)
     app.add_css_file("custom.css")
+    app.connect("source-read", strip_emoji)
+    app.connect("doctree-resolved", strip_emoji_doctree)

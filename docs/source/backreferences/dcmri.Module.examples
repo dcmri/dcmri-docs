@@ -15,6 +15,48 @@ Examples using ``dcmri.Module``
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Cardiac output</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using Liver to measure hepatocellular function in rats.">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_liver_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_liver`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Liver</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_liver`
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.">
 
 .. only:: html

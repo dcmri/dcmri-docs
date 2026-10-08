@@ -106,12 +106,12 @@ At some point the total dose becomes too small to have any measureable impact
 on the result and we can stop iterating. 
 
 In practice we compute the 
-residual dose :math:`r_i` at each iteration (here :math:`t_\max` is the total 
+residual dose :math:`r_i` at each iteration (here :math:`t_{\max}` is the total 
 acquisition time):
 
 .. math::
 
-    r_i = \frac{\int_0^{t_\max} J_{v,i}(t)dt}{\int_0^{t_\max} J_{v,0}(t)dt} 
+    r_i = \frac{\int_0^{t_{\max}} J_{v,i}(t)dt}{\int_0^{t_{\max}} J_{v,0}(t)dt} 
 
 And then truncate the sum as soon as the residual dose drops below a user-
 defined tolerance.

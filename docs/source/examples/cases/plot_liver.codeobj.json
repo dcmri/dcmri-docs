@@ -1,4 +1,22 @@
 {
+ "all_data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "data_file": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
  "day_1_data": [
   {
    "is_class": false,
@@ -141,33 +159,22 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "Liver"
-  }
- ],
- "dmr": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "dict"
-  }
- ],
- "dmrfile": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "str"
-  }
- ],
- "https://zenodo.org/records/15648009": [
+  },
   {
    "is_class": false,
    "is_explicit": true,
-   "module": "https://zenodo",
-   "module_short": "https://zenodo",
-   "name": "org/records/15648009"
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Liver"
+  }
+ ],
+ "example_tristan_preclinical": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "example_tristan_preclinical"
   }
  ],
  "liver": [

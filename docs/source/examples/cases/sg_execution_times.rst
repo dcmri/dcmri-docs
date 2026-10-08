@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.466** total execution time for 2 files **from examples\cases**:
+**01:38.630** total execution time for 2 files **from examples\cases**:
 
 .. container::
 
@@ -32,9 +32,9 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_examples_cases_plot_liver.py` (``plot_liver.py``)
-     - 00:00.466
-     - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta.py` (``plot_aorta.py``)
-     - 00:00.000
+     - 01:38.011
+     - 0.0
+   * - :ref:`sphx_glr_examples_cases_plot_liver.py` (``plot_liver.py``)
+     - 00:00.619
      - 0.0

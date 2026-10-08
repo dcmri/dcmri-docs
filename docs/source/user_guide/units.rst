@@ -46,7 +46,7 @@ relevant also other units that are commonly found in the literature on DC-MRI:
 +-------------------------------+------------+--------------------------------------+
 | Magnetization                 | A/cm       | A/m                                  | 
 +-------------------------------+------------+--------------------------------------+
-| Contrast agent relaxivity     | 1/sec*M    | 1/mM/sec                             | 
+| Contrast agent relaxivity     | 1/sec/M    | 1/mM/sec                             | 
 +-------------------------------+------------+--------------------------------------+
 | Perfusion                     | mL/sec/cm3 | mL/100mL/min, 1/sec, mL/sec/mL       | 
 +-------------------------------+------------+--------------------------------------+

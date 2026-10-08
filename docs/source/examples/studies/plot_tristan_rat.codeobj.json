@@ -36,6 +36,15 @@
    "name": "Line2D"
   }
  ],
+ "STUDY": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
  "_": [
   {
    "is_class": false,
@@ -124,15 +133,6 @@
    "module": "matplotlib",
    "module_short": "matplotlib",
    "name": "Artist.tick_params"
-  }
- ],
- "all_data": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "dict"
   }
  ],
  "ax": [
@@ -885,15 +885,6 @@
    "module": "pandas",
    "module_short": "pandas",
    "name": "DirNamesMixin.groupby"
-  }
- ],
- "data_file": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "str"
   }
  ],
  "dc.InverseLiver": [

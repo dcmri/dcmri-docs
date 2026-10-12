@@ -1,119 +1,76 @@
 """
-==========
-AortaLiver
-==========
+===============
+Aorta and Liver
+===============
 
 These example shows the use of the `~dcmri.AortaLiver` model to 
 fit signals measured in aorta and liver simultaneously. 
+
 """
 
-# %%
-# Setup
-# -----
-
-# --- Import packages
+import numpy as np
 import pydmr
 import dcmri as dc
 
-# --- Fetch the data
-dmrfile = dc.fetch('tristan_humans_healthy_rifampicin')
-data = pydmr.read(dmrfile, 'nest')
-
-# --- Identify the case
-participant, visit = '002', 'control'
-
-# --- Get the subject-level data
-roi = data['rois'][participant][visit]
-par = data['pars'][participant][visit]
-time = roi['time_1'] - roi['time_1'][0]
-
 
 # %%
-# Set up the model
-# ----------------
-# We need to decide how to configure the model, so let's 
-# see what options are available:
+# Model setup
+# -----------
+# Since we are using data from the `TRISTAN healthy volunteer study with 
+# rifampicin <https://zenodo.org/records/20210596>`_, we'll configure 
+# the model with the following options:
 
-dc.AortaLiver.print_configs()
-
-# %%
-# For these data we will use the general model for an intracellular 
-# tracer, with stationary function and a standard 3D-SPGR-SS sequence:
-
-config = {
-    'kinetics': '1I-IC',
-    'sequence': '3D-SPGR-SS',
-    'non_stationary': None,
-}
-
-# %%
-# Print the fixed parameters of this configuration: 
-
-dc.AortaLiver(**config).print_params(round_to=3, fixed_only=True)
-
-# %%
-# Model definition
-# ----------------
-# Now define the model with all parameters set:
-
-aol_model = dc.AortaLiver(          
-
-    # Indicator quantities
-    agent = 'gadoxetate',
-    dose = par['dose_1'],
-    rate = 1,
-
-    # Signal quantities
-    field_strength = 3,
-    TR = par['TR'],
-    FA = par['FA_1'],
-    TS = time[1],
-    
-    # Electromagnetic quantities
-    R10_a = 1/par['T1_aorta_1'],
-    R10_l = 1/par['T1_liver_1'],
-
-    # Physiological quantities
-    weight = par['weight'],
-
-    # Hyperparameter quantities
-    tmax = max(time),
-    vol_l = par['liver_volume'],
-    
-    # Configuration
-    **config 
+aol = dc.InverseAortaLiver(
+    heartlung='pfcomp',         # Smoother first pass data
+    organs='2cxm',              # Long acquisition times reveal extravasation
+    liver='1I-IC',              # Intracellular agent
+    baseline='measured',        # Data are available on precontrast T1
+    sequence='ZTE-3D-SPGR-SS',  # Echo times are assumed to be zero
+    t2s_relaxation_ao=None,     # No T2* relaxation with TE=0
+    t2s_relaxation_li=None,     # No T2* relaxation with TE=0
+    calibrate=True,             # Derive signal scaling factor from data
 )
+
+# %%
+# Let's see what input parameters are needed for this model:
+
+aol.print_inputs()
+
 
 # %%
 # Fitting the model
 # -----------------
+study = 'tristan_humans_healthy_rifampicin'
 
-# --- Baseline
-n0 = int(par['t0']/time[1])
+# --- Format the data
+visit_1_data = dc.load_tristan_humans(study, 'LDS-002', visits=['control'], scans=[1])
+visit_2_data = dc.load_tristan_humans(study, 'LDS-002', visits=['drug'], scans=[1])
 
-# --- Time points in aorta and liver
-time = (
-    time[roi['aorta_1_accept']], 
-    time[roi['liver_1_accept']],
-)
+# --- Estimate BAT
+visit_1_data['BAT'] = dc.estimate_bat(visit_1_data['tS_ao'], visit_1_data['S_ao'])
+visit_2_data['BAT'] = dc.estimate_bat(visit_2_data['tS_ao'], visit_2_data['S_ao'])
 
-# --- Signal in aorta and liver
-signal = (
-    roi['aorta_1'][roi['aorta_1_accept']], 
-    roi['liver_1'][roi['liver_1_accept']],
-)
-
-# --- Train the model
-aol_model.train(time, signal, n0=n0, xtol=1e-3)
-
-# --- Verify that the model fits the data
-aol_model.plot(time, signal)
+# --- Fit the models
+visit_1_result = aol(visit_1_data, verbose=0)
+visit_2_result = aol(visit_2_data, verbose=0)
 
 # %%
-# Check results
-# -------------
-aol_model.print_params(round_to=3, group='phys', deriv=True)
+# Before we interpret the results, let's verify the optimization has 
+# converged to a solution:
 
+# --- Update the data
+visit_1_data |= visit_1_result['popt']
+visit_2_data |= visit_2_result['popt']
+
+# --- Plot the fits
+aol.plot(visit_1_data)
+aol.plot(visit_2_data)
+
+# %%
+# The model first the data well, so we can now consider the 
+# values for the derived parameters
+dc.print_quantities(visit_1_result['pder'], 'control', digits=2)
+dc.print_quantities(visit_2_result['pder'], 'drug', digits=2)
 
 # sphinx_gallery_start_ignore
 # sphinx_gallery_thumbnail_number = -1

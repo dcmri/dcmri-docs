@@ -6,7 +6,7 @@ Analyzing data
 --------------
 
 To analyse data with ``dcmri``, select the appropriate tissue type from the 
-:ref:`tissue bank <end-to-end models>` and train it on your data. For examples 
+:ref:`tissue bank <end-to-end-models>` and train it on your data. For examples 
 of usage, consult the documentation of the model or look for a 
 similar application in the list of :ref:`examples <examples>`. 
 
@@ -20,15 +20,15 @@ at the relevant :ref:`background section <tissue-types>`.
 Developing models
 -----------------
 
-Apart from the end-to-end models in the :ref:`tissue bank <e2e>`, 
+Apart from the end-to-end models in the :ref:`tissue bank <end-to-end-models>`, 
 ``dcmri`` also includes a library of more generic basic methods that can 
 be used to build custom-models more easily, and facilitate the creation of new 
 models to extend the functionality of ``dcmri``. These basic methods are 
 implemented as simple python functions for maximal transparency and modularity. 
 
-The are organised in a hierarchical fashion:
+They are organised in a hierarchical fashion:
 
-- The :ref:`tissue module <tissue mods>` contains high-level implementations 
+- The tissue module contains high-level implementations 
   of tissue-specific functions such as concentrations or signals. For more 
   background, see the section on :ref:`tissue types <tissue-types>`.
 

@@ -6,7 +6,7 @@ Liver
 Single-inlet extracellular
 --------------------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_liver_1i_ec
@@ -15,7 +15,7 @@ Single-inlet extracellular
 Single-inlet intracellular
 --------------------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_liver_1i_ic
@@ -24,7 +24,7 @@ Single-inlet intracellular
 Single-inlet intracellular (non-stationary)
 -------------------------------------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_liver_1i_ic_nsu
@@ -37,7 +37,7 @@ Single-inlet intracellular (non-stationary)
 Dual-inlet extracellular
 ------------------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_liver_2i_ec
@@ -46,7 +46,7 @@ Dual-inlet extracellular
 Dual-inlet intracellular
 ------------------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_liver_2i_ic
@@ -56,7 +56,7 @@ Dual-inlet intracellular
 Dual-inlet intracellular (non-stationary)
 -----------------------------------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_liver_2i_ic_nse

@@ -14,7 +14,7 @@ An example is the conversion from signal to concentration using steady-state
 sequences, which 
 can be performed analytically for tissues with fast water exchange. Some 
 of these methods are available as functions in `dcmri` 
-(see :ref:`inverse-signal-models`) and as optional fitting methods in 
+(see :ref:`inverse`) and as optional fitting methods in 
 end-to-end applications.
 
 [ ... coming soon ...] Direct inversion methods.

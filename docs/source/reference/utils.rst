@@ -14,8 +14,6 @@ Lexicon
    :toctree: ../api/
    :template: autosummary.rst
 
-   init
-   bounds
    select_params
 
 

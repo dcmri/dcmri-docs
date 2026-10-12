@@ -22,9 +22,6 @@ import numpy as np
 import pydmr
 import dcmri as dc
 
-# --- Fetch and read the data
-data_file = dc.fetch('tristan_rats_healthy_six_drugs')
-all_data = pydmr.read(data_file, 'nest')
 
 # %%
 # Modelling
@@ -47,9 +44,14 @@ liver.print_inputs()
 # define a function which returns the data dictionary for a given 
 # dataset:
 
-def liver_data(all_data, subject, visit):
+def format_data(study_name, subject, visit):
 
-    # --- Get the data of this study
+    # --- Get the data of the study
+
+    data_file = dc.fetch(study_name)
+    all_data = pydmr.read(data_file, 'nest')
+
+    # --- Get the data of this subject visit
 
     roi = all_data['rois'][subject][visit]
     par = all_data['pars'][subject][visit]
@@ -151,9 +153,11 @@ def liver_data(all_data, subject, visit):
 # on the second day. The study showed this to be a strong inhibitor 
 # of uptake and excretion:
 
+study = 'tristan_rats_study_08_single_cyclosporine'
+
 # --- Get the data
-day_1_data = liver_data(all_data, 'S08-02', 'Day_1')
-day_2_data = liver_data(all_data, 'S08-02', 'Day_2')
+day_1_data = format_data(study, 'S08-02', 'Day_1')
+day_2_data = format_data(study, 'S08-02', 'Day_2')
 
 # --- Fit the models
 day_1_result = liver(day_1_data)
@@ -181,7 +185,7 @@ dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
 # The values confirm the strong inhibition of liver function by the 
 # drug. The hepatocellular uptake rate (k_e2h) has dropped from 0.030 
 # to 0.0039 mL/sec/cm3, and the biliary excretion rate (k_h2b) from 
-# 0.0023 to 0.00098 mL/sec/cm3.
+# 0.0022 to 0.00098 mL/sec/cm3.
 
 # %%
 # Case study 2 - weak inhibition
@@ -191,9 +195,11 @@ dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
 # showed this to be a weak inhibitor of excretion with no effect on 
 # uptake:
 
+study = 'tristan_rats_study_06_single_pioglitazone'
+
 # --- Get the data
-day_1_data = liver_data(all_data, 'S06-02', 'Day_1')
-day_2_data = liver_data(all_data, 'S06-02', 'Day_2')
+day_1_data = format_data(study, 'S06-02', 'Day_1')
+day_2_data = format_data(study, 'S06-02', 'Day_2')
 
 # --- Fit the models
 day_1_result = liver(day_1_data)

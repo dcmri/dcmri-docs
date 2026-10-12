@@ -1,1 +1,200 @@
-{}
+{
+ "dcmri.AortaLiver": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.InverseAortaLiver": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.InverseAortaLiver.plot": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.InverseAortaLiver.print_inputs": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.Module": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.Module.plot": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.Module.print_inputs": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.core.Module": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.core.Module.plot": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.core.Module.print_inputs": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.core.module.Module": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.core.module.Module.plot": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.core.module.Module.print_inputs": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.estimate_bat": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.fetch": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.inverse.InverseAortaLiver": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.inverse.InverseAortaLiver.plot": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.inverse.InverseAortaLiver.print_inputs": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.inverse.aorta_liver.InverseAortaLiver": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.inverse.aorta_liver.InverseAortaLiver.plot": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.inverse.aorta_liver.InverseAortaLiver.print_inputs": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ],
+ "dcmri.print_quantities": [
+  [
+   "plot_aorta_liver.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
+   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
+   "Aorta and Liver"
+  ]
+ ]
+}

@@ -4,7 +4,7 @@ Wrapper functions
 .. currentmodule:: dcmri
 
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    ConcAorta

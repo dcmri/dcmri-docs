@@ -6,7 +6,7 @@ Kidney
 Parenchymal
 -----------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_kidney_2cf
@@ -21,7 +21,7 @@ Parenchymal
 Cortico-medullary
 -----------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_kidney_cm9

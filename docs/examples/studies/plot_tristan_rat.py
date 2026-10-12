@@ -83,29 +83,27 @@ def liver_data(data, subject, visit):
 
 def compute_liver_function(study_name):
 
-    # --- Read the data
-    data_file = dc.fetch(study_name)
-    data = pydmr.read(data_file, 'nest')
-
     # --- Configure the model
     liver = dc.InverseLiver(kinetics='1I-IC-HF', calibrate=True)
 
     # --- Fit all datasets and save results in a list
     records = []
-    for subj, visits in data['rois'].items():
-        for visit in visits:
-            inputs = liver_data(data, subj, visit)
-            result = liver(inputs) 
-            visit_data = data['pars'][subj][visit]
+    for file in dc.fetch(study_name):
+        data = pydmr.read(file, 'nest')
+        for subj, visits in data['rois'].items():
+            for visit in visits:
+                inputs = liver_data(data, subj, visit)
+                result = liver(inputs) 
+                visit_data = data['pars'][subj][visit]
 
-            for parameter, value in result['pder'].items():
-                records.append({
-                    'subject': subj,
-                    'study': visit_data['study'],
-                    'visit': visit_data['visit'],
-                    'parameter': parameter,
-                    'value': value,
-                })
+                for parameter, value in result['pder'].items():
+                    records.append({
+                        'subject': subj,
+                        'study': visit_data['study'],
+                        'visit': visit_data['visit'],
+                        'parameter': parameter,
+                        'value': value,
+                    })
 
     # --- Return as a dataframe for analysis
     return pd.DataFrame(records)
@@ -341,7 +339,7 @@ results = compute_liver_function('tristan_rats_healthy_multiple_dosing')
 # Now let's plot the biomarker values across visits for each of the 
 # chronic dosing studies:
 
-STUDY = {1: 'Rifampicin', 2: 'Cyclosporine', 3: 'Bosentan'}
+STUDY = {14: 'Rifampicin', 15: 'Cyclosporine', 11: 'Bosentan'}
 
 plt.rcParams.update({
     'axes.titlesize': 25, 'axes.labelsize': 20,

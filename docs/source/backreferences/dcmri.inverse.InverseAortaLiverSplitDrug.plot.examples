@@ -1,0 +1,42 @@
+
+
+Examples using ``dcmri.inverse.InverseAortaLiverSplitDrug.plot``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. start-sphx-glr-thumbnails
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_split_drug_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_liver_split_drug`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Liver Drug effect in two scans</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta_liver_split_drug`
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+

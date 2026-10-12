@@ -82,7 +82,7 @@
    :class-container: feature-grid
 
    .. grid-item-card::
-      :link: e2e
+      :link: end-to-end-models
       :link-type: ref
 
       🏥 **Tissue Bank**
@@ -106,7 +106,7 @@
       Basic pharmacokinetic building blocks, including multi-compartment systems and transit models.
 
    .. grid-item-card::
-      :link: real-data
+      :link: utils
       :link-type: ref
 
       📊 **Data Libraries**
@@ -114,7 +114,7 @@
       Built-in access to real data, synthetic profiles, and simulated images to make comparative validation effortless.
 
    .. grid-item-card:: 
-      :link: convolution-functions
+      :link: utils
       :link-type: ref
 
       🛠️ **Mathematical Utilities**

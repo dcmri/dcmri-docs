@@ -22,9 +22,6 @@ import numpy as np
 import pydmr
 import dcmri as dc
 
-# --- Fetch and read the data
-data_file = dc.fetch('tristan_rats_healthy_six_drugs')
-all_data = pydmr.read(data_file, 'nest')
 
 # %%
 # Modelling
@@ -47,82 +44,22 @@ liver.print_inputs()
 # define a function which returns the data dictionary for a given 
 # dataset:
 
-def liver_data(all_data, subject, visit):
+def get_data(study, subject, visit):
 
-    # --- Get the data of this study
+    # --- Load the data
+    data = dc.load_tristan_rats(study, subject, visit)
 
-    roi = all_data['rois'][subject][visit]
-    par = all_data['pars'][subject][visit]
-
-    # --- Number of phase lines
-    # Data are acquired with a triggered sequence - meaning k-space 
-    # lines are acquired for a given duration (57 sec) along with a 
-    # breathing signal, and only lines measured in expiration are 
-    # used to reconstruct the image.
-
-    ts = roi['time'][1] - roi['time'][0]
-    Nph = int(np.round(ts / par['TR'])) 
-
-    # The sequence is linearly encoded so the central line falls 
-    # approximately in the middle:
-
-    Nk0 = int(np.round(Nph / 2))
-
-    # --- Internal timings 
-    # We set the simulation time step to 0.5 seconds, which should 
-    # be more than sufficient considering the time resolution is 
-    # 57 sec. Smaller values could be used too at the cost of some 
-    # additional computation time: 
-
+    # --- Define time points for simulation
     dt = 0.5
+    tmax = np.amax(data['tS_li']) + 60
+    t = np.arange(0, tmax, dt)
 
-    # We extend the simulation time with 60 sec beyond the last 
-    # acquisition time to ensure sufficient time points to simulate 
-    # data sampling:
-
-    t_sim = np.amax(roi['time']) + 60
-
-    # --- Bolus arrival time (BAT)
-    # The timing of injection was fixed in these studies, typically 
-    # chosen after 4 or 5 acquisitions. We offset with half the time 
-    # step because the BAT in the parameter file is defined relative 
-    # to the start of the acquisition:
-
-    bat = par['BAT'] + roi['time'][1] / 2
-
-    # --- Generate the input function
-    # The measured input functions in this study are unstable so we 
-    # will analyse the data with a population-average input function:
-
-    t = np.arange(0, t_sim, dt)
-    ca = dc.tristan_rat(t, BAT=bat, duration=par['duration'])
-
-    # --- Build the data dictionary 
-
-    return {
-
-        # --- Data
-
-        'tS_li': roi['time'],
-        'S_li': roi['liver'],
-
-        # --- Contrast agent
-
-        'agent': 'gadoxetate',
-        'ci_li': ca,
-
-        # --- Sequence parameters
-
-        'field_strength': par['field_strength'],
-        'TR': par['TR'],
-        'FA': par['FA'],
-        'Nph': Nph, 
-        'Nk0': Nk0,
+    const = {
+        # --- Input function
+        'ci_li': dc.tristan_rat(t, BAT=data['BAT'], duration=data['duration']),
 
         # --- Hyperparameters
-
         'dt': dt,
-        'nb': par['n0'],
 
         # --- Physiological constants
         # The volume fractions are treated as constants since prior 
@@ -139,9 +76,11 @@ def liver_data(all_data, subject, visit):
         # The primary endpoints of this study are treated as free 
         # parameters with liberal constraints so results are fully 
         # data driven:
-
         'pfree': {'k_e2h':[0, 1], 'T_h': [0, 60 * 60]},
     }
+
+    return data | const
+
 
 # %%
 # Case study 1 - strong inhibition
@@ -151,9 +90,11 @@ def liver_data(all_data, subject, visit):
 # on the second day. The study showed this to be a strong inhibitor 
 # of uptake and excretion:
 
+study = 'tristan_rats_study_08_single_cyclosporine'
+
 # --- Get the data
-day_1_data = liver_data(all_data, 'S08-02', 'Day_1')
-day_2_data = liver_data(all_data, 'S08-02', 'Day_2')
+day_1_data = get_data(study, 'S08-02', 'Day_1')
+day_2_data = get_data(study, 'S08-02', 'Day_2')
 
 # --- Fit the models
 day_1_result = liver(day_1_data)
@@ -181,7 +122,7 @@ dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
 # The values confirm the strong inhibition of liver function by the 
 # drug. The hepatocellular uptake rate (k_e2h) has dropped from 0.030 
 # to 0.0039 mL/sec/cm3, and the biliary excretion rate (k_h2b) from 
-# 0.0023 to 0.00098 mL/sec/cm3.
+# 0.0022 to 0.00098 mL/sec/cm3.
 
 # %%
 # Case study 2 - weak inhibition
@@ -191,9 +132,11 @@ dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
 # showed this to be a weak inhibitor of excretion with no effect on 
 # uptake:
 
+study = 'tristan_rats_study_06_single_pioglitazone'
+
 # --- Get the data
-day_1_data = liver_data(all_data, 'S06-02', 'Day_1')
-day_2_data = liver_data(all_data, 'S06-02', 'Day_2')
+day_1_data = get_data(study, 'S06-02', 'Day_1')
+day_2_data = get_data(study, 'S06-02', 'Day_2')
 
 # --- Fit the models
 day_1_result = liver(day_1_data)

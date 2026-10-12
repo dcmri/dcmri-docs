@@ -72,7 +72,7 @@ def tristan_human(roi, par, **kwargs):
     time_2 = roi['time_2'] - roi['time_1'][0]
 
     # --- Initialise the model with known defaults
-    model = dc.AortaLiverDynamic(
+    model = dc.AortaLiverSplit(
 
         # Configuration
         kinetics = '1I-IC',

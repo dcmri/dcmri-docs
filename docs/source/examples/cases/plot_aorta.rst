@@ -121,29 +121,30 @@ inputs. Let's see what they are:
 
  .. code-block:: none
 
-    +--------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                                                 Quantities                                                                 |
-    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
-    | Key            | Unit     | Name                                                   | Group           | Value | Bounds       | DICOM | OSIPI |
-    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
-    | nb             | a.u.     | number of baseline time points                         | Signal          | 1    |              |       |       |
-    | pfree          | a.u.     | set of free parameters                                 | Signal          | None |              |       |       |
-    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
-    | tstart         | sec      | start of the acquisition                               | Sequence        | 0    | (0, 10000.0) |       |       |
-    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
-    | B1corr         |          | B1-correction factor                                   | Electromagnetic | 1    | (0, 5)       |       |       |
-    | me             | A cm2/mL | equilibrium magnetization                              | Electromagnetic | 1    | (0, 5)       |       |       |
-    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
-    | CO             | mL/sec   | cardiac output                                         | Physiological   | 100  | (0, 500)     |       |       |
-    | D_hl           |          | transit time dispersion in the heart and Lungs         | Physiological   | 0.2  | (0.01, 0.99) |       |       |
-    | E_or           |          | extraction fraction in the organs                      | Physiological   | 0.15 | (0, 0.5)     |       |       |
-    | T_b_or         | sec      | mean transit time in blood of the organs               | Physiological   | 20   | (0, 60)      |       |       |
-    | T_e_or         | sec      | mean transit time in extracellular space of the organs | Physiological   | 120  | (0, 800)     |       |       |
-    | T_hl           | sec      | mean transit time in the heart and Lungs               | Physiological   | 10   | (0, 30)      |       |       |
-    | vr_or          |          | Venous return in the organs                            | Physiological   | 0.9  | (0, 1)       |       |       |
-    +----------------+----------+--------------------------------------------------------+-----------------+------+--------------+-------+-------+
-    | dose_tolerance |          | dose tolerance                                         | Hyperparameters | 0.1  |              |       |       |
-    +--------------------------------------------------------------------------------------------------------------------------------------------+
+    +---------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                  Quantities                                                                 |
+    +----------------+-------+----------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | Key            | Value | Unit     | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
+    +----------------+-------+----------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | B1corr         | 1     |          | B1-correction factor                                   | Electromagnetic | (0, 5)       |       |       |
+    | me             | 1     | A cm2/mL | equilibrium magnetization                              | Electromagnetic | (0, 5)       |       |       |
+    +----------------+-------+----------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | dose_tolerance | 0.1   |          | dose tolerance                                         | Hyperparameters |              |       |       |
+    +----------------+-------+----------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | pfree          | None  | a.u.     | set of free parameters                                 | Inverse problem |              |       |       |
+    +----------------+-------+----------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | CO             | 100   | mL/sec   | cardiac output                                         | Physiological   | (0, 500)     |       |       |
+    | D_hl           | 0.2   |          | transit time dispersion in the heart and Lungs         | Physiological   | (0.01, 0.99) |       |       |
+    | E_or           | 0.15  |          | extraction fraction in the organs                      | Physiological   | (0, 0.5)     |       |       |
+    | T_b_or         | 20    | sec      | mean transit time in blood of the organs               | Physiological   | (0, 60)      |       |       |
+    | T_e_or         | 120   | sec      | mean transit time in extracellular space of the organs | Physiological   | (0, 800)     |       |       |
+    | T_hl           | 10    | sec      | mean transit time in the heart and Lungs               | Physiological   | (0, 30)      |       |       |
+    | vr_or          | 0.9   |          | Venous return in the organs                            | Physiological   | (0, 1)       |       |       |
+    +----------------+-------+----------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | tstart         | 0     | sec      | start of the acquisition                               | Sequence        | (0, 10000.0) |       |       |
+    +----------------+-------+----------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | nb             | 1     | a.u.     | number of baseline time points                         | Signal          |              |       |       |
+    +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
@@ -219,18 +220,18 @@ print them out:
 
     +-------------------------------------------------------------------------------------------------------------------------------------------------+
     |                                                                    Quantities                                                                   |
-    +--------+--------+--------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
-    | Key    | Unit   | Name                                                   | Group           | Value               | Bounds       | DICOM | OSIPI |
-    +--------+--------+--------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
-    | BAT    | sec    | bolus arrival time                                     | Indicator       | 25.45360450790157   | (-30, 30)    |       |       |
-    +--------+--------+--------------------------------------------------------+-----------------+---------------------+--------------+-------+-------+
-    | CO     | mL/sec | cardiac output                                         | Physiological   | 220.53859044963454  | (0, 500)     |       |       |
-    | D_hl   |        | transit time dispersion in the heart and Lungs         | Physiological   | 0.07767411960984237 | (0.01, 0.99) |       |       |
-    | E_or   |        | extraction fraction in the organs                      | Physiological   | 0.49999999818473656 | (0, 0.5)     |       |       |
-    | T_b_or | sec    | mean transit time in blood of the organs               | Physiological   | 10.227941175744132  | (0, 60)      |       |       |
-    | T_e_or | sec    | mean transit time in extracellular space of the organs | Physiological   | 18.240628681523923  | (0, 800)     |       |       |
-    | T_hl   | sec    | mean transit time in the heart and Lungs               | Physiological   | 13.053609507995402  | (0, 30)      |       |       |
-    | vr_or  |        | Venous return in the organs                            | Physiological   | 0.8677535417251857  | (0, 1)       |       |       |
+    +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | Key    | Value               | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
+    +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | BAT    | 25.453550161253382  | sec    | bolus arrival time                                     | Indicator       | (-30, 30)    |       |       |
+    +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | CO     | 220.53853032047348  | mL/sec | cardiac output                                         | Physiological   | (0, 500)     |       |       |
+    | D_hl   | 0.07767359648178616 |        | transit time dispersion in the heart and Lungs         | Physiological   | (0.01, 0.99) |       |       |
+    | E_or   | 0.4999998483749601  |        | extraction fraction in the organs                      | Physiological   | (0, 0.5)     |       |       |
+    | T_b_or | 10.227867500696773  | sec    | mean transit time in blood of the organs               | Physiological   | (0, 60)      |       |       |
+    | T_e_or | 18.240779961236772  | sec    | mean transit time in extracellular space of the organs | Physiological   | (0, 800)     |       |       |
+    | T_hl   | 13.053667697312425  | sec    | mean transit time in the heart and Lungs               | Physiological   | (0, 30)      |       |       |
+    | vr_or  | 0.8677535970554863  |        | Venous return in the organs                            | Physiological   | (0, 1)       |       |       |
     +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -249,7 +250,7 @@ though their exact estimate was less elevated (10.5 L/min).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 38.011 seconds)
+   **Total running time of the script:** (1 minutes 14.963 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta.py:

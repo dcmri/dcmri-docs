@@ -38,7 +38,7 @@ in a feeding artery at those times, and *roi* is a signal-time curve measured
 in a region of interest. 
 
 Next we find a suitable tissue type from the 
-:ref:`tissue bank <e2e>` and initialize it. For most common 
+:ref:`tissue bank <end-to-end-models>` and initialize it. For most common 
 applications, this will be `dcmri.Tissue`:
 
 .. code-block:: python

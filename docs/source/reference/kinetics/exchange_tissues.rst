@@ -1,3 +1,5 @@
+.. _ref-exchange-tissues:
+
 Exchange tissues
 ================
 
@@ -8,7 +10,7 @@ Concentrations and flux in vascular-interstitial tissues with bidirectional exch
 Uptake
 ------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_tissue_u
@@ -17,7 +19,7 @@ Uptake
 Fast exchange
 -------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_tissue_fx
@@ -26,7 +28,7 @@ Fast exchange
 No exchange
 -----------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_tissue_nx
@@ -37,7 +39,7 @@ No exchange
 Weakly vascularized
 -------------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_tissue_wv
@@ -46,7 +48,7 @@ Weakly vascularized
 High flow
 ---------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_tissue_hf
@@ -55,7 +57,7 @@ High flow
 High flow uptake
 ----------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_tissue_hfu
@@ -64,7 +66,7 @@ High flow uptake
 Two-compartment uptake
 ----------------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
 
    conc_tissue_2cu
@@ -73,7 +75,7 @@ Two-compartment uptake
 Two-compartment exchange
 ------------------------
 .. autosummary::
-   :toctree: ../api/
+   :toctree: ../../api/
    :template: autosummary.rst
    
    conc_tissue_2cx

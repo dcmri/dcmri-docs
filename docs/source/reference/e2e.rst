@@ -1,4 +1,4 @@
-.. _e2e:
+.. _end-to-end-models:
 
 .. currentmodule:: dcmri
 
@@ -16,13 +16,13 @@ Whole body models
    :template: custom-class-template.rst
    :recursive:
 
-   Aorta
-   AortaKidneys
-   AortaLiver
-   AortaPortalLiver
-   AortaLiverDynamic
-   AortaLiverDrug
-   AortaLiverDynamicDrug
+   InverseAorta
+   InverseAortaKidneys
+   InverseAortaLiver
+   InverseAortaPortalLiver
+   InverseAortaLiverSplit
+   InverseAortaLiverDrug
+   InverseAortaLiverSplitDrug
    
 
 Single tissue models
@@ -33,7 +33,7 @@ Single tissue models
    :template: custom-class-template.rst
    :recursive:
 
-   CortMed
-   Kidney
-   Liver
-   TissueX
+   InverseCortMed
+   InverseKidney
+   InverseLiver
+   InverseTissueX

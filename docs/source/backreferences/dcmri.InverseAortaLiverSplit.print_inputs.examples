@@ -1,0 +1,42 @@
+
+
+Examples using ``dcmri.InverseAortaLiverSplit.print_inputs``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. start-sphx-glr-thumbnails
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_split_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_liver_split`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Aorta and Liver in two scans</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta_liver_split`
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+

@@ -75,7 +75,7 @@
    "name": "estimate_bat"
   }
  ],
- "dc.fetch": [
+ "dc.load_tristan_humans": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -88,7 +88,7 @@
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "fetch"
+   "name": "load_tristan_humans"
   }
  ],
  "dc.print_quantities": [
@@ -114,15 +114,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "AortaLiverDrug"
-  }
- ],
- "get_data": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
   }
  ],
  "https://zenodo.org/records/20210596": [
@@ -245,7 +236,7 @@
    "name": "Module.print_inputs"
   }
  ],
- "np.round": [
+ "np.argmax": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -258,23 +249,7 @@
    "is_explicit": false,
    "module": "numpy",
    "module_short": "numpy",
-   "name": "round"
-  }
- ],
- "pydmr.read": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pydmr",
-   "module_short": "pydmr",
-   "name": "read"
+   "name": "argmax"
   }
  ],
  "result": [

@@ -1,200 +1,108 @@
 {
  "dcmri.AortaLiver": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "_plot_tristan_volunteers.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
+   "Clinical - rifampicin induced inhibition (short protocol)"
   ]
  ],
- "dcmri.InverseAortaLiver": [
+ "dcmri.InverseLiver": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
- "dcmri.InverseAortaLiver.plot": [
+ "dcmri.Liver": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.InverseAortaLiver.print_inputs": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.Module": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.Module.plot": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.Module.print_inputs": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.core.Module": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.core.Module.plot": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.core.Module.print_inputs": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.core.module.Module": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.core.module.Module.plot": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.core.module.Module.print_inputs": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.estimate_bat": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
  "dcmri.fetch": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "_plot_tristan_volunteers.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
+   "Clinical - rifampicin induced inhibition (short protocol)"
+  ],
+  [
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
- "dcmri.inverse.InverseAortaLiver": [
+ "dcmri.inverse.InverseLiver": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
- "dcmri.inverse.InverseAortaLiver.plot": [
+ "dcmri.inverse.liver.InverseLiver": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
- "dcmri.inverse.InverseAortaLiver.print_inputs": [
+ "dcmri.load_tristan_rats": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ],
- "dcmri.inverse.aorta_liver.InverseAortaLiver": [
+ "dcmri.tristan_rat": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.inverse.aorta_liver.InverseAortaLiver.plot": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.inverse.aorta_liver.InverseAortaLiver.print_inputs": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.print_quantities": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_tristan_rat.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
+   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
+   "Liver function in rats"
   ]
  ]
 }

@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:04.464** total execution time for 8 files **from all galleries**:
+**00:00.084** total execution time for 9 files **from all galleries**:
 
 .. container::
 
@@ -32,10 +32,10 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_examples_cases_plot_aorta_liver.py` (``..\examples\cases\plot_aorta_liver.py``)
-     - 00:04.464
+   * - :ref:`sphx_glr_examples_studies_plot_tristan_rat.py` (``..\examples\studies\plot_tristan_rat.py``)
+     - 00:00.084
      - 0.0
-   * - :ref:`sphx_glr_examples_cases_plot_aorta.py` (``..\examples\cases\plot_aorta.py``)
+   * - :ref:`sphx_glr_examples_cases_plot_aorta_liver.py` (``..\examples\cases\plot_aorta_liver.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta_liver_drug.py` (``..\examples\cases\plot_aorta_liver_drug.py``)
@@ -50,7 +50,10 @@ Computation times
    * - :ref:`sphx_glr_examples_cases_plot_liver.py` (``..\examples\cases\plot_liver.py``)
      - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_examples_studies_plot_tristan_rat.py` (``..\examples\studies\plot_tristan_rat.py``)
+   * - :ref:`sphx_glr_examples_studies__plot_tristan_volunteers.py` (``..\examples\studies\_plot_tristan_volunteers.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_examples_tutorials_plot_cardiac_output.py` (``..\examples\tutorials\plot_cardiac_output.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_examples_tutorials_plot_convolution.py` (``..\examples\tutorials\plot_convolution.py``)

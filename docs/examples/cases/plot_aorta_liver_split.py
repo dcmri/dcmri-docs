@@ -9,7 +9,6 @@ different scans on the same day.
 """
 
 import numpy as np
-import pydmr
 import dcmri as dc
 
 
@@ -32,6 +31,7 @@ model = dc.InverseAortaLiverSplit(
     calibrate=True,             # Derive signal scaling factor from data
     trigger=True,               # Signals are retrospectively triggered
     bolus='dual',               # Two independent injections performed
+    estimate_bat='custom',      # Use the dedicated BAT estimator
 )
 
 # %%
@@ -49,16 +49,6 @@ study = 'tristan_humans_healthy_rifampicin'
 # --- Format the data
 visit_1_data = dc.load_tristan_humans(study, 'LDS-002', visits=['control'])
 visit_2_data = dc.load_tristan_humans(study, 'LDS-002', visits=['drug'])
-
-# --- Estimate BAT
-visit_1_data |= {
-    'BAT_1': dc.estimate_bat(visit_1_data['tS_1_ao'], visit_1_data['S_1_ao']),
-    'BAT_2': visit_1_data['tS_2_ao'][np.argmax(visit_1_data['S_2_ao'])],
-}
-visit_2_data |= {
-    'BAT_1': dc.estimate_bat(visit_2_data['tS_1_ao'], visit_2_data['S_1_ao']),
-    'BAT_2': visit_2_data['tS_2_ao'][np.argmax(visit_2_data['S_2_ao'])],
-}
 
 # --- Fit the model
 visit_1_result = model(visit_1_data, verbose=2)

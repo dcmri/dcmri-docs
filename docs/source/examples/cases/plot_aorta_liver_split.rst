@@ -26,13 +26,12 @@ These example shows the use of the `~dcmri.AortaLiverSplit` model to
 simultaneously fit signals measured in aorta and liver over two 
 different scans on the same day. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-16
+.. GENERATED FROM PYTHON SOURCE LINES 10-15
 
 .. code-block:: Python
 
 
     import numpy as np
-    import pydmr
     import dcmri as dc
 
 
@@ -43,7 +42,7 @@ different scans on the same day.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-22
+.. GENERATED FROM PYTHON SOURCE LINES 16-21
 
 Model setup
 -----------
@@ -51,7 +50,7 @@ Since we are using data from the `TRISTAN healthy volunteer study with
 rifampicin <https://zenodo.org/records/20210596>`_, we'll configure 
 the model with the following options:
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-37
+.. GENERATED FROM PYTHON SOURCE LINES 21-36
 
 .. code-block:: Python
 
@@ -77,11 +76,11 @@ the model with the following options:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-39
+.. GENERATED FROM PYTHON SOURCE LINES 37-38
 
 Let's see what input parameters are needed for this model:
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-42
+.. GENERATED FROM PYTHON SOURCE LINES 38-41
 
 .. code-block:: Python
 
@@ -117,8 +116,8 @@ Let's see what input parameters are needed for this model:
     | BAT_2          | 30         | sec      | 2nd bolus arrival time                                  | Indicator       | (-30, 30)     |       |       |
     | dose_1         | 0.1        | mL/kg    | 1st contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
     | dose_2         | 0.1        | mL/kg    | 2nd contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
-    | rate_1         | 1          | mL/s     | 1st injection rate                                      | Indicator       | (0, 10)       |       |       |
-    | rate_2         | 1          | mL/s     | 2nd injection rate                                      | Indicator       | (0, 10)       |       |       |
+    | rate_1         | 1          | mL/sec   | 1st injection rate                                      | Indicator       | (0, 10)       |       |       |
+    | rate_2         | 1          | mL/sec   | 2nd injection rate                                      | Indicator       | (0, 10)       |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | pfree          | None       | a.u.     | set of free parameters                                  | Inverse problem |               |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
@@ -172,100 +171,12 @@ Let's see what input parameters are needed for this model:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-46
-
-For clarity and reusability we'll first define a helper 
-function which returns a dictionary with required data for a single 
-study participant and visit:
-
-.. GENERATED FROM PYTHON SOURCE LINES 46-117
-
-.. code-block:: Python
-
-
-    def get_data(study, participant, visit): 
-
-        # --- Load the data
-        file = dc.fetch(study)
-        data = pydmr.read(file, 'nest')
-
-        # --- Get the subject-level data
-        roi = data['rois'][participant][visit]
-        par = data['pars'][participant][visit]
-    
-        # --- Get GFR from screening visit if available
-        par_screen = data['pars'][participant]['screening']
-        eGFR = par_screen['eGFR_abs'] if 'eGFR_abs' in par_screen else par['eGFR_abs']
-
-        # --- Time arrays
-        time_1 = roi['time_1'] - roi['time_1'][0]
-        time_2 = roi['time_2'] - roi['time_1'][0]
-
-        return {     
-
-            # Electromagnetic
-            'R1_b': 1 / par['T1_aorta_1'], 
-            'R1_li': 1 / par['T1_liver_1'], 
-
-            # Hyperparameter
-            'dt': 0.5,
-
-            # Indicator
-            'agent': 'gadoxetate',
-            'BAT_1': dc.estimate_bat(time_1, roi['aorta_1'] ),
-            'BAT_2': time_2[np.argmax(roi['aorta_2'])],
-            'dose_1': par['dose_1'],
-            'dose_2': par['dose_2'],
-            'rate_1': 1,
-            'rate_2': 1,
-
-            # Physiological
-            'GFR': eGFR / 60,
-
-            # Sequence
-            'FA': par['FA_1'],
-            'field_strength': 3,
-            'Nk0': int(np.round(time_1[1] / par['TR'] / 2)),
-            'Nph': int(np.round(time_1[1] / par['TR'])),
-            'TR': par['TR'],
-
-            # Signal
-            'iStrig_1_ao': roi['aorta_1_accept'],
-            'iStrig_1_li': roi['liver_1_accept'],
-            'iStrig_2_ao': roi['aorta_2_accept'],
-            'iStrig_2_li': roi['liver_2_accept'],
-
-            'nb_1': int(par['t0'] / (time_1[1] - time_1[0])),
-            'nb_2': int(par['t0'] / (time_2[1] - time_2[0])),
-
-            'S_1_ao': roi['aorta_1'] , 
-            'S_2_ao': roi['aorta_2'],
-            'S_1_li': roi['liver_1'], 
-            'S_2_li': roi['liver_2'],
-
-            'tS_1_ao': time_1,
-            'tS_2_ao': time_2,
-            'tS_1_li': time_1,
-            'tS_2_li': time_2,
-
-            # Whole body
-            'vol_li': par['liver_volume'],
-            'weight': par['weight'], 
-        }
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 118-120
+.. GENERATED FROM PYTHON SOURCE LINES 42-44
 
 Fitting the model
 -----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-132
+.. GENERATED FROM PYTHON SOURCE LINES 44-66
 
 .. code-block:: Python
 
@@ -274,8 +185,18 @@ Fitting the model
     study = 'tristan_humans_healthy_rifampicin'
 
     # --- Format the data
-    visit_1_data = get_data(study, 'LDS-002', 'control')
-    visit_2_data = get_data(study, 'LDS-002', 'drug')
+    visit_1_data = dc.load_tristan_humans(study, 'LDS-002', visits=['control'])
+    visit_2_data = dc.load_tristan_humans(study, 'LDS-002', visits=['drug'])
+
+    # --- Estimate BAT
+    visit_1_data |= {
+        'BAT_1': dc.estimate_bat(visit_1_data['tS_1_ao'], visit_1_data['S_1_ao']),
+        'BAT_2': visit_1_data['tS_2_ao'][np.argmax(visit_1_data['S_2_ao'])],
+    }
+    visit_2_data |= {
+        'BAT_1': dc.estimate_bat(visit_2_data['tS_1_ao'], visit_2_data['S_1_ao']),
+        'BAT_2': visit_2_data['tS_2_ao'][np.argmax(visit_2_data['S_2_ao'])],
+    }
 
     # --- Fit the model
     visit_1_result = model(visit_1_data, verbose=2)
@@ -297,17 +218,17 @@ Fitting the model
            4              6         8.0220e+05      1.05e+04       9.40e-02       7.84e+05    
            5              7         7.9425e+05      7.94e+03       1.03e-01       4.79e+05    
            6              8         7.9053e+05      3.72e+03       9.95e-02       3.36e+05    
-           7              9         7.8944e+05      1.09e+03       9.54e-02       3.14e+05    
+           7              9         7.8944e+05      1.09e+03       9.54e-02       3.13e+05    
            8             10         7.8730e+05      2.14e+03       2.26e-02       2.18e+04    
            9             14         7.8726e+05      4.28e+01       7.01e-04       1.75e+04    
           10             15         7.8718e+05      7.51e+01       1.35e-03       1.66e+04    
           11             19         7.8718e+05      2.32e+00       4.20e-05       1.66e+04    
-          12             21         7.8718e+05      1.16e+00       2.10e-05       1.66e+04    
-          13             25         7.8718e+05      3.63e-02       6.56e-07       1.66e+04    
-          14             27         7.8718e+05      1.81e-02       3.28e-07       1.66e+04    
-          15             30         7.8718e+05      2.27e-03       4.10e-08       1.66e+04    
+          12             22         7.8718e+05      2.90e-01       5.25e-06       1.66e+04    
+          13             24         7.8718e+05      1.45e-01       2.62e-06       1.66e+04    
+          14             25         7.8718e+05      2.90e-01       5.25e-06       1.66e+04    
+          15             30         7.8718e+05      2.27e-03       4.10e-08       8.51e+10    
     `ftol` termination condition is satisfied.
-    Function evaluations 30, initial cost 4.0918e+06, final cost 7.8718e+05, first-order optimality 1.66e+04.
+    Function evaluations 30, initial cost 4.0918e+06, final cost 7.8718e+05, first-order optimality 8.51e+10.
        Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
            0              1         1.7177e+06                                    5.20e+06    
            1              2         8.4386e+05      8.74e+05       2.25e-01       6.72e+06    
@@ -315,51 +236,35 @@ Fitting the model
            3              4         4.0722e+05      1.66e+05       3.75e-01       6.76e+05    
            4              5         3.7415e+05      3.31e+04       1.76e-01       2.91e+05    
            5              7         3.4872e+05      2.54e+04       6.18e-02       2.15e+05    
-           6              9         3.4849e+05      2.26e+02       2.83e-02       3.75e+05    
+           6              9         3.4849e+05      2.27e+02       2.83e-02       3.75e+05    
            7             10         3.4600e+05      2.49e+03       7.88e-03       9.86e+04    
            8             13         3.4578e+05      2.19e+02       1.03e-03       1.01e+05    
-           9             15         3.4571e+05      7.31e+01       5.17e-04       8.56e+04    
-          10             16         3.4569e+05      1.48e+01       4.92e-04       1.07e+05    
+           9             15         3.4571e+05      7.33e+01       5.17e-04       8.56e+04    
+          10             16         3.4569e+05      1.46e+01       4.92e-04       1.07e+05    
           11             17         3.4566e+05      2.94e+01       1.29e-04       1.07e+05    
-          12             18         3.4563e+05      2.87e+01       2.58e-04       7.59e+04    
-          13             19         3.4562e+05      1.70e+01       2.46e-04       1.10e+05    
-          14             20         3.4560e+05      1.37e+01       2.58e-04       7.28e+04    
+          12             18         3.4563e+05      2.89e+01       2.58e-04       7.59e+04    
+          13             19         3.4562e+05      1.68e+01       2.46e-04       1.10e+05    
+          14             20         3.4560e+05      1.39e+01       2.58e-04       7.28e+04    
           15             21         3.4559e+05      1.23e+01       6.16e-05       7.04e+04    
           16             22         3.4557e+05      2.36e+01       1.23e-04       6.58e+04    
-          17             26         3.4557e+05      1.94e-01       3.86e-06       1.12e+05    
-          18             27         3.4557e+05      2.74e-01       4.04e-06       6.58e+04    
-          19             28         3.4557e+05      4.64e-01       3.86e-06       1.12e+05    
-          20             29         3.4557e+05      3.35e-03       4.04e-06       6.58e+04    
-          21             30         3.4557e+05      1.80e-01       9.65e-07       6.57e+04    
-          22             31         3.4557e+05      3.60e-01       1.93e-06       6.56e+04    
-          23             32         3.4557e+05      3.31e-02       3.86e-06       1.12e+05    
-          24             33         3.4557e+05      2.38e-01       1.01e-06       1.12e+05    
-          25             34         3.4556e+05      2.59e-01       2.02e-06       6.56e+04    
-          26             35         3.4556e+05      1.11e-01       1.93e-06       1.12e+05    
-          27             36         3.4556e+05      1.23e-01       2.02e-06       6.56e+04    
-          28             37         3.4556e+05      2.46e-01       1.93e-06       1.12e+05    
-          29             39         3.4556e+05      8.14e-02       5.05e-07       6.55e+04    
-          30             40         3.4556e+05      1.09e-02       4.83e-07       1.12e+05    
-          31             41         3.4556e+05      2.98e-02       1.26e-07       1.12e+05    
-          32             42         3.4556e+05      2.55e-02       2.52e-07       6.55e+04    
-          33             43         3.4556e+05      2.07e-02       2.41e-07       1.12e+05    
-          34             44         3.4556e+05      8.49e-03       2.52e-07       6.55e+04    
-          35             45         3.4556e+05      1.12e-02       6.03e-08       6.55e+04    
-          36             46         3.4556e+05      2.25e-02       1.21e-07       6.55e+04    
-          37             48         3.4556e+05      4.00e-03       6.03e-08       1.12e+05    
-          38             49         3.4556e+05      3.29e-03       6.31e-08       6.55e+04    
-          39             50         3.4556e+05      2.81e-03       1.51e-08       6.55e+04    
+          17             27         3.4557e+05      1.61e-01       9.65e-07       1.12e+05    
+          18             30         3.4557e+05      1.13e-02       1.26e-07       6.58e+04    
+          19             31         3.4557e+05      1.18e-02       1.21e-07       1.12e+05    
+          20             32         3.4557e+05      2.85e-03       1.26e-07       6.58e+04    
+          21             33         3.4557e+05      5.63e-03       3.02e-08       6.58e+04    
+          22             34         3.4557e+05      1.13e-02       6.03e-08       6.58e+04    
+          23             36         3.4557e+05      3.29e-03       3.02e-08       5.47e+04    
     `ftol` termination condition is satisfied.
-    Function evaluations 50, initial cost 1.7177e+06, final cost 3.4556e+05, first-order optimality 6.55e+04.
+    Function evaluations 36, initial cost 1.7177e+06, final cost 3.4557e+05, first-order optimality 5.47e+04.
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-134
+.. GENERATED FROM PYTHON SOURCE LINES 67-68
 
 Verify that the optimization has converged to a solution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-143
+.. GENERATED FROM PYTHON SOURCE LINES 68-77
 
 .. code-block:: Python
 
@@ -396,12 +301,12 @@ Verify that the optimization has converged to a solution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-146
+.. GENERATED FROM PYTHON SOURCE LINES 78-80
 
 The model first the data well, so we can now consider the 
 values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-149
+.. GENERATED FROM PYTHON SOURCE LINES 80-83
 
 .. code-block:: Python
 
@@ -497,7 +402,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 9.175 seconds)
+   **Total running time of the script:** (0 minutes 52.738 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver_split.py:

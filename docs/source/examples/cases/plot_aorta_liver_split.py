@@ -9,7 +9,6 @@ different scans on the same day.
 """
 
 import numpy as np
-import pydmr
 import dcmri as dc
 
 
@@ -40,81 +39,6 @@ model = dc.InverseAortaLiverSplit(
 model.print_inputs()
 
 # %%
-# For clarity and reusability we'll first define a helper 
-# function which returns a dictionary with required data for a single 
-# study participant and visit:
-
-def get_data(study, participant, visit): 
-
-    # --- Load the data
-    file = dc.fetch(study)
-    data = pydmr.read(file, 'nest')
-
-    # --- Get the subject-level data
-    roi = data['rois'][participant][visit]
-    par = data['pars'][participant][visit]
-    
-    # --- Get GFR from screening visit if available
-    par_screen = data['pars'][participant]['screening']
-    eGFR = par_screen['eGFR_abs'] if 'eGFR_abs' in par_screen else par['eGFR_abs']
-
-    # --- Time arrays
-    time_1 = roi['time_1'] - roi['time_1'][0]
-    time_2 = roi['time_2'] - roi['time_1'][0]
-
-    return {     
-
-        # Electromagnetic
-        'R1_b': 1 / par['T1_aorta_1'], 
-        'R1_li': 1 / par['T1_liver_1'], 
-
-        # Hyperparameter
-        'dt': 0.5,
-
-        # Indicator
-        'agent': 'gadoxetate',
-        'BAT_1': dc.estimate_bat(time_1, roi['aorta_1'] ),
-        'BAT_2': time_2[np.argmax(roi['aorta_2'])],
-        'dose_1': par['dose_1'],
-        'dose_2': par['dose_2'],
-        'rate_1': 1,
-        'rate_2': 1,
-
-        # Physiological
-        'GFR': eGFR / 60,
-
-        # Sequence
-        'FA': par['FA_1'],
-        'field_strength': 3,
-        'Nk0': int(np.round(time_1[1] / par['TR'] / 2)),
-        'Nph': int(np.round(time_1[1] / par['TR'])),
-        'TR': par['TR'],
-
-        # Signal
-        'iStrig_1_ao': roi['aorta_1_accept'],
-        'iStrig_1_li': roi['liver_1_accept'],
-        'iStrig_2_ao': roi['aorta_2_accept'],
-        'iStrig_2_li': roi['liver_2_accept'],
-
-        'nb_1': int(par['t0'] / (time_1[1] - time_1[0])),
-        'nb_2': int(par['t0'] / (time_2[1] - time_2[0])),
-
-        'S_1_ao': roi['aorta_1'] , 
-        'S_2_ao': roi['aorta_2'],
-        'S_1_li': roi['liver_1'], 
-        'S_2_li': roi['liver_2'],
-
-        'tS_1_ao': time_1,
-        'tS_2_ao': time_2,
-        'tS_1_li': time_1,
-        'tS_2_li': time_2,
-
-        # Whole body
-        'vol_li': par['liver_volume'],
-        'weight': par['weight'], 
-    }
-
-# %%
 # Fitting the model
 # -----------------
 
@@ -122,8 +46,18 @@ def get_data(study, participant, visit):
 study = 'tristan_humans_healthy_rifampicin'
 
 # --- Format the data
-visit_1_data = get_data(study, 'LDS-002', 'control')
-visit_2_data = get_data(study, 'LDS-002', 'drug')
+visit_1_data = dc.load_tristan_humans(study, 'LDS-002', visits=['control'])
+visit_2_data = dc.load_tristan_humans(study, 'LDS-002', visits=['drug'])
+
+# --- Estimate BAT
+visit_1_data |= {
+    'BAT_1': dc.estimate_bat(visit_1_data['tS_1_ao'], visit_1_data['S_1_ao']),
+    'BAT_2': visit_1_data['tS_2_ao'][np.argmax(visit_1_data['S_2_ao'])],
+}
+visit_2_data |= {
+    'BAT_1': dc.estimate_bat(visit_2_data['tS_1_ao'], visit_2_data['S_1_ao']),
+    'BAT_2': visit_2_data['tS_2_ao'][np.argmax(visit_2_data['S_2_ao'])],
+}
 
 # --- Fit the model
 visit_1_result = model(visit_1_data, verbose=2)

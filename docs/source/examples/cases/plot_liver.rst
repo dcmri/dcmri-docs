@@ -141,92 +141,27 @@ Since we will be running this on different datasets, we first
 define a function which returns the data dictionary for a given 
 dataset:
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-148
+.. GENERATED FROM PYTHON SOURCE LINES 46-85
 
 .. code-block:: Python
 
 
-    def format_data(study_name, subject, visit):
+    def get_data(study, subject, visit):
 
-        # --- Get the data of the study
+        # --- Load the data
+        data = dc.load_tristan_rats(study, subject, visit)
 
-        data_file = dc.fetch(study_name)
-        all_data = pydmr.read(data_file, 'nest')
-
-        # --- Get the data of this subject visit
-
-        roi = all_data['rois'][subject][visit]
-        par = all_data['pars'][subject][visit]
-
-        # --- Number of phase lines
-        # Data are acquired with a triggered sequence - meaning k-space 
-        # lines are acquired for a given duration (57 sec) along with a 
-        # breathing signal, and only lines measured in expiration are 
-        # used to reconstruct the image.
-
-        ts = roi['time'][1] - roi['time'][0]
-        Nph = int(np.round(ts / par['TR'])) 
-
-        # The sequence is linearly encoded so the central line falls 
-        # approximately in the middle:
-
-        Nk0 = int(np.round(Nph / 2))
-
-        # --- Internal timings 
-        # We set the simulation time step to 0.5 seconds, which should 
-        # be more than sufficient considering the time resolution is 
-        # 57 sec. Smaller values could be used too at the cost of some 
-        # additional computation time: 
-
+        # --- Define time points for simulation
         dt = 0.5
+        tmax = np.amax(data['tS_li']) + 60
+        t = np.arange(0, tmax, dt)
 
-        # We extend the simulation time with 60 sec beyond the last 
-        # acquisition time to ensure sufficient time points to simulate 
-        # data sampling:
-
-        t_sim = np.amax(roi['time']) + 60
-
-        # --- Bolus arrival time (BAT)
-        # The timing of injection was fixed in these studies, typically 
-        # chosen after 4 or 5 acquisitions. We offset with half the time 
-        # step because the BAT in the parameter file is defined relative 
-        # to the start of the acquisition:
-
-        bat = par['BAT'] + roi['time'][1] / 2
-
-        # --- Generate the input function
-        # The measured input functions in this study are unstable so we 
-        # will analyse the data with a population-average input function:
-
-        t = np.arange(0, t_sim, dt)
-        ca = dc.tristan_rat(t, BAT=bat, duration=par['duration'])
-
-        # --- Build the data dictionary 
-
-        return {
-
-            # --- Data
-
-            'tS_li': roi['time'],
-            'S_li': roi['liver'],
-
-            # --- Contrast agent
-
-            'agent': 'gadoxetate',
-            'ci_li': ca,
-
-            # --- Sequence parameters
-
-            'field_strength': par['field_strength'],
-            'TR': par['TR'],
-            'FA': par['FA'],
-            'Nph': Nph, 
-            'Nk0': Nk0,
+        const = {
+            # --- Input function
+            'ci_li': dc.tristan_rat(t, BAT=data['BAT'], duration=data['duration']),
 
             # --- Hyperparameters
-
             'dt': dt,
-            'nb': par['n0'],
 
             # --- Physiological constants
             # The volume fractions are treated as constants since prior 
@@ -243,10 +178,10 @@ dataset:
             # The primary endpoints of this study are treated as free 
             # parameters with liberal constraints so results are fully 
             # data driven:
-
             'pfree': {'k_e2h':[0, 1], 'T_h': [0, 60 * 60]},
         }
 
+        return data | const
 
 
 
@@ -254,7 +189,9 @@ dataset:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-155
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 86-92
 
 Case study 1 - strong inhibition
 --------------------------------
@@ -263,7 +200,7 @@ where all rats received a standard dose of cyclosporine
 on the second day. The study showed this to be a strong inhibitor 
 of uptake and excretion:
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-166
+.. GENERATED FROM PYTHON SOURCE LINES 92-103
 
 .. code-block:: Python
 
@@ -271,8 +208,8 @@ of uptake and excretion:
     study = 'tristan_rats_study_08_single_cyclosporine'
 
     # --- Get the data
-    day_1_data = format_data(study, 'S08-02', 'Day_1')
-    day_2_data = format_data(study, 'S08-02', 'Day_2')
+    day_1_data = get_data(study, 'S08-02', 'Day_1')
+    day_2_data = get_data(study, 'S08-02', 'Day_2')
 
     # --- Fit the models
     day_1_result = liver(day_1_data)
@@ -285,12 +222,12 @@ of uptake and excretion:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-169
+.. GENERATED FROM PYTHON SOURCE LINES 104-106
 
 Before we interpret the results, let's verify the optimization has 
 converged to a solution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-178
+.. GENERATED FROM PYTHON SOURCE LINES 106-115
 
 .. code-block:: Python
 
@@ -327,12 +264,12 @@ converged to a solution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 179-181
+.. GENERATED FROM PYTHON SOURCE LINES 116-118
 
 The model first the data well, so we can now consider the 
 values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-184
+.. GENERATED FROM PYTHON SOURCE LINES 118-121
 
 .. code-block:: Python
 
@@ -381,14 +318,14 @@ values for the derived parameters
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-189
+.. GENERATED FROM PYTHON SOURCE LINES 122-126
 
 The values confirm the strong inhibition of liver function by the 
 drug. The hepatocellular uptake rate (k_e2h) has dropped from 0.030 
 to 0.0039 mL/sec/cm3, and the biliary excretion rate (k_h2b) from 
 0.0022 to 0.00098 mL/sec/cm3.
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-197
+.. GENERATED FROM PYTHON SOURCE LINES 128-134
 
 Case study 2 - weak inhibition
 ------------------------------
@@ -397,7 +334,7 @@ rats received a dose of pioglitazone of the second day. The study
 showed this to be a weak inhibitor of excretion with no effect on 
 uptake:
 
-.. GENERATED FROM PYTHON SOURCE LINES 197-208
+.. GENERATED FROM PYTHON SOURCE LINES 134-145
 
 .. code-block:: Python
 
@@ -405,8 +342,8 @@ uptake:
     study = 'tristan_rats_study_06_single_pioglitazone'
 
     # --- Get the data
-    day_1_data = format_data(study, 'S06-02', 'Day_1')
-    day_2_data = format_data(study, 'S06-02', 'Day_2')
+    day_1_data = get_data(study, 'S06-02', 'Day_1')
+    day_2_data = get_data(study, 'S06-02', 'Day_2')
 
     # --- Fit the models
     day_1_result = liver(day_1_data)
@@ -419,12 +356,12 @@ uptake:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-211
+.. GENERATED FROM PYTHON SOURCE LINES 146-148
 
 As before, always good to check the fit before interpreting the 
 results:
 
-.. GENERATED FROM PYTHON SOURCE LINES 211-220
+.. GENERATED FROM PYTHON SOURCE LINES 148-157
 
 .. code-block:: Python
 
@@ -461,12 +398,12 @@ results:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 221-223
+.. GENERATED FROM PYTHON SOURCE LINES 158-160
 
 Again we can verify the model fits the data well. Let's have 
 a look at the values for the derived parameters:
 
-.. GENERATED FROM PYTHON SOURCE LINES 223-226
+.. GENERATED FROM PYTHON SOURCE LINES 160-163
 
 .. code-block:: Python
 
@@ -515,7 +452,7 @@ a look at the values for the derived parameters:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 227-231
+.. GENERATED FROM PYTHON SOURCE LINES 164-168
 
 The values confirm the very weak effect of the drug on liver 
 function. The hepatocellular uptake rate (k_e2h) has dropped from 
@@ -525,7 +462,7 @@ from 0.0029 to 0.0024 mL/sec/cm3.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.366 seconds)
+   **Total running time of the script:** (0 minutes 0.381 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_liver.py:

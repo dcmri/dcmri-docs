@@ -15,24 +15,24 @@ Examples using ``dcmri.AortaLiver``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ">
 
 .. only:: html
 
-  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_thumb.png
+  .. image:: /examples/studies/images/thumb/sphx_glr__plot_tristan_volunteers_thumb.png
     :alt:
 
-  :doc:`/examples/cases/plot_aorta_liver`
+  :doc:`/examples/studies/_plot_tristan_volunteers`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Aorta and Liver</div>
+      <div class="sphx-glr-thumbnail-title">Clinical - rifampicin induced inhibition (short protocol)</div>
     </div>
 
 
 .. only:: not html
 
- * :doc:`/examples/cases/plot_aorta_liver`
+ * :doc:`/examples/studies/_plot_tristan_volunteers`
 
 .. thumbnail-parent-div-close
 

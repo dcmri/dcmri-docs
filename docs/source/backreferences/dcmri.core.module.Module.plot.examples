@@ -15,24 +15,24 @@ Examples using ``dcmri.core.module.Module.plot``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ">
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ">
 
 .. only:: html
 
-  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_thumb.png
+  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_cardiac_output_thumb.png
     :alt:
 
-  :doc:`/examples/cases/plot_aorta_liver`
+  :doc:`/examples/tutorials/plot_cardiac_output`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Aorta and Liver</div>
+      <div class="sphx-glr-thumbnail-title">Cardiac output</div>
     </div>
 
 
 .. only:: not html
 
- * :doc:`/examples/cases/plot_aorta_liver`
+ * :doc:`/examples/tutorials/plot_cardiac_output`
 
 .. thumbnail-parent-div-close
 

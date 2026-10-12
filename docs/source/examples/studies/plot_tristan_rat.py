@@ -41,41 +41,27 @@ import dcmri as dc
 # We first define the helper function that builds a data dictionary 
 # for a given study:
 
-def liver_data(data, subject, visit):
+def get_data(study, subject, visit):
 
-    # --- Get the data
-    roi = data['rois'][subject][visit]
-    par = data['pars'][subject][visit]
+    # --- Load the data
+    data = dc.load_tristan_rats(study, subject, visit)
 
-    # --- Number of phase lines
-    ts = roi['time'][1] - roi['time'][0]
-    Nph = int(np.round(ts / par['TR'])) 
-    Nk0 = int(np.round(Nph / 2))
-
-    # --- Input function 
+    # --- Define time points for simulation
     dt = 0.5
-    bat = par['BAT'] + roi['time'][1] / 2
-    t = np.arange(0, np.amax(roi['time']) + 180, dt)
-    ca = dc.tristan_rat(t, BAT=bat, duration=par['duration'])
+    tmax = np.amax(data['tS_li']) + 60
+    t = np.arange(0, tmax, dt)
 
-    # --- Data dictionary 
-    return {
-        'tS_li': roi['time'],
-        'S_li': roi['liver'],
-        'agent': 'gadoxetate',
-        'ci_li': ca,
-        'field_strength': par['field_strength'],
-        'TR': par['TR'],
-        'FA': par['FA'],
-        'Nph': Nph, 
-        'Nk0': Nk0,
+    # --- Constants
+    const = {
+        'ci_li': dc.tristan_rat(t, BAT=data['BAT'], duration=data['duration']),
         'dt': dt,
-        'nb': par['n0'],
-        'H': 0.418,      
+        'H': 0.418, # Cremer et al, JCBFM 3, 254-256 (1983)
         'v_e_li': 0.23,
         'v_li': 1.0,
         'pfree': {'k_e2h':[0, 1], 'T_h': [0, 60 * 60]},
     }
+
+    return data | const
 
 # %%
 # Next we build a helper function that computes the results for all 
@@ -92,7 +78,7 @@ def compute_liver_function(study_name):
         data = pydmr.read(file, 'nest')
         for subj, visits in data['rois'].items():
             for visit in visits:
-                inputs = liver_data(data, subj, visit)
+                inputs = get_data(data, subj, visit)
                 result = liver(inputs) 
                 visit_data = data['pars'][subj][visit]
 

@@ -25,13 +25,11 @@ Aorta and Liver
 These example shows the use of the `~dcmri.AortaLiver` model to 
 fit signals measured in aorta and liver simultaneously. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-16
+.. GENERATED FROM PYTHON SOURCE LINES 10-14
 
 .. code-block:: Python
 
 
-    import numpy as np
-    import pydmr
     import dcmri as dc
 
 
@@ -42,7 +40,7 @@ fit signals measured in aorta and liver simultaneously.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-22
+.. GENERATED FROM PYTHON SOURCE LINES 15-20
 
 Model setup
 -----------
@@ -50,7 +48,7 @@ Since we are using data from the `TRISTAN healthy volunteer study with
 rifampicin <https://zenodo.org/records/20210596>`_, we'll configure 
 the model with the following options:
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-34
+.. GENERATED FROM PYTHON SOURCE LINES 20-32
 
 .. code-block:: Python
 
@@ -73,16 +71,17 @@ the model with the following options:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-36
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 Let's see what input parameters are needed for this model:
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-39
+.. GENERATED FROM PYTHON SOURCE LINES 34-38
 
 .. code-block:: Python
 
 
     aol.print_inputs()
+
 
 
 
@@ -109,7 +108,7 @@ Let's see what input parameters are needed for this model:
     | agent          | gadoterate |          | contrast agent generic name                             | Indicator       |               |       |       |
     | BAT            | 30         | sec      | bolus arrival time                                      | Indicator       | (-30, 30)     |       |       |
     | dose           | 0.1        | mL/kg    | contrast agent dose                                     | Indicator       | (0, 0.2)      |       |       |
-    | rate           | 1          | mL/s     | injection rate                                          | Indicator       | (0, 10)       |       |       |
+    | rate           | 1          | mL/sec   | injection rate                                          | Indicator       | (0, 10)       |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | pfree          | None       | a.u.     | set of free parameters                                  | Inverse problem |               |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
@@ -151,101 +150,24 @@ Let's see what input parameters are needed for this model:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-42
-
-Since we want to analyse multiple datasets, we'll first define a helper 
-function which returns a dictionary with required data. 
-
-.. GENERATED FROM PYTHON SOURCE LINES 42-107
-
-.. code-block:: Python
-
-
-    def get_data(study, participant, visit): 
-
-        # --- Load the data
-        file = dc.fetch(study)
-        data = pydmr.read(file, 'nest')
-
-        # --- Get the subject-level data
-        roi = data['rois'][participant][visit]
-        par = data['pars'][participant][visit]
-
-        # --- Get GFR from screening visit if available
-        if 'eGFR_abs' in data['pars'][participant]['screening']:
-            eGFR = data['pars'][participant]['screening']['eGFR_abs']
-        else:
-            eGFR = data['pars'][participant][visit]['eGFR_abs']
-
-      # --- Time arrays
-        time = [
-            roi['time_1'] - roi['time_1'][0],
-        ]
-
-        data = {     
-
-            # Electromagnetic
-            'R1_b': 1 / par['T1_aorta_1'], 
-            'R1_li': 1 / par['T1_liver_1'],
-
-            # Hyperparameter
-            'dt': 0.5,
-
-            # Indicator
-            'agent': 'gadoxetate',
-            'BAT': dc.estimate_bat(time[0], roi['aorta_1']),
-
-            # Physiological
-            'GFR': eGFR / 60,
-
-            # Sequence
-            'FA': par['FA_1'],
-            'field_strength': 3,
-            'Nk0': int(np.round(time[0][1] / par['TR'] / 2)),
-            'Nph': int(np.round(time[0][1] / par['TR'])),
-            'TR': par['TR'],
-
-            # Whole body
-            'vol_li': par['liver_volume'],
-            'weight': par['weight'], 
-        }
-
-        scan = 1
-        # Indicator group
-        data[f'rate'] = 1
-        data[f'dose'] = par[f'dose_{scan}']
-
-        # Signal group
-        data[f'nb'] = int(par['t0'] / (time[0][1] - time[0][0]))
-        for r in ['aorta', 'liver']:
-            data[f'tS_{r[:2]}'] = time[0]
-            data[f'S_{r[:2]}'] = roi[f'{r}_{scan}']
-            data[f'iStrig_{r[:2]}'] = roi[f'{r}_{scan}']
-
-        return data
-
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 108-110
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 Fitting the model
 -----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-120
+.. GENERATED FROM PYTHON SOURCE LINES 41-55
 
 .. code-block:: Python
 
     study = 'tristan_humans_healthy_rifampicin'
 
     # --- Format the data
-    visit_1_data = get_data(study, 'LDS-002', 'control')
-    visit_2_data = get_data(study, 'LDS-002', 'drug')
+    visit_1_data = dc.load_tristan_humans(study, 'LDS-002', visits=['control'], scans=[1])
+    visit_2_data = dc.load_tristan_humans(study, 'LDS-002', visits=['drug'], scans=[1])
+
+    # --- Estimate BAT
+    visit_1_data['BAT'] = dc.estimate_bat(visit_1_data['tS_ao'], visit_1_data['S_ao'])
+    visit_2_data['BAT'] = dc.estimate_bat(visit_2_data['tS_ao'], visit_2_data['S_ao'])
 
     # --- Fit the models
     visit_1_result = aol(visit_1_data, verbose=0)
@@ -258,12 +180,12 @@ Fitting the model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-123
+.. GENERATED FROM PYTHON SOURCE LINES 56-58
 
 Before we interpret the results, let's verify the optimization has 
 converged to a solution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 123-132
+.. GENERATED FROM PYTHON SOURCE LINES 58-67
 
 .. code-block:: Python
 
@@ -300,12 +222,12 @@ converged to a solution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-135
+.. GENERATED FROM PYTHON SOURCE LINES 68-70
 
 The model first the data well, so we can now consider the 
 values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-138
+.. GENERATED FROM PYTHON SOURCE LINES 70-73
 
 .. code-block:: Python
 
@@ -362,27 +284,27 @@ values for the derived parameters
     +-----------+---------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
     | CL_p      | 0.14    | mL/sec     | Contrast agent clearance in plasma                           | Physiological   | (0.0, 100)   |       |       |
     | CO        | 96.0    | mL/sec     | cardiac output                                               | Physiological   | (0, 500)     |       |       |
-    | D_hl      | 0.45    |            | transit time dispersion in the heart and Lungs               | Physiological   | (0.01, 0.99) |       |       |
-    | E_li      | 0.032   |            | extraction fraction in the liver                             | Physiological   | (0.0, 1.0)   |       |       |
+    | D_hl      | 0.47    |            | transit time dispersion in the heart and Lungs               | Physiological   | (0.01, 0.99) |       |       |
+    | E_li      | 0.031   |            | extraction fraction in the liver                             | Physiological   | (0.0, 1.0)   |       |       |
     | E_or      | 0.14    |            | extraction fraction in the organs                            | Physiological   | (0, 0.5)     |       |       |
-    | F_b_li    | 0.0098  | mL/sec/cm3 | flow per unit tissue in blood of the liver                   | Physiological   | (0, 1)       |       |       |
-    | F_p_li    | 0.0054  | mL/sec/cm3 | flow per unit tissue in plasma of the liver                  | Physiological   | (0, 0.05)    |       |       |
-    | fCO_li    | 0.082   |            | fraction of the cardiac output in the liver                  | Physiological   | (0, 0.5)     |       |       |
+    | F_b_li    | 0.01    | mL/sec/cm3 | flow per unit tissue in blood of the liver                   | Physiological   | (0, 1)       |       |       |
+    | F_p_li    | 0.0055  | mL/sec/cm3 | flow per unit tissue in plasma of the liver                  | Physiological   | (0, 0.05)    |       |       |
+    | fCO_li    | 0.084   |            | fraction of the cardiac output in the liver                  | Physiological   | (0, 0.5)     |       |       |
     | GFR       | 1.9     | mL/sec     | glomerular filtration rate                                   | Physiological   | (0, 10)      |       |       |
     | H         | 0.45    |            | hematocrit                                                   | Physiological   | (0, 1)       |       |       |
     | k_e2h     | 0.00018 | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)   |       |       |
-    | K_e2h     | 0.00098 | 1/sec      | transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
+    | K_e2h     | 0.00099 | 1/sec      | transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
     | k_h2b     | 1.9e-05 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
     | K_h2b     | 2.8e-05 | 1/sec      | transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
     | Ktrans_li | 0.00017 | mL/sec/cm3 | plasma clearance in the liver                                | Physiological   | (0.0, 0.1)   |       |       |
-    | T_b_or    | 29.0    | sec        | mean transit time in blood of the organs                     | Physiological   | (0, 60)      |       |       |
-    | T_e_li    | 32.0    | sec        | mean transit time in extracellular space of the liver        | Physiological   | (0.1, 60)    |       |       |
-    | T_e_or    | 710.0   | sec        | mean transit time in extracellular space of the organs       | Physiological   | (0, 800)     |       |       |
-    | T_gu      | 9.1     | sec        | mean transit time in the gut                                 | Physiological   | (0.1, 60)    |       |       |
+    | T_b_or    | 30.0    | sec        | mean transit time in blood of the organs                     | Physiological   | (0, 60)      |       |       |
+    | T_e_li    | 31.0    | sec        | mean transit time in extracellular space of the liver        | Physiological   | (0.1, 60)    |       |       |
+    | T_e_or    | 720.0   | sec        | mean transit time in extracellular space of the organs       | Physiological   | (0, 800)     |       |       |
+    | T_gu      | 9.5     | sec        | mean transit time in the gut                                 | Physiological   | (0.1, 60)    |       |       |
     | T_h       | 36000.0 | sec        | mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
-    | T_hl      | 15.0    | sec        | mean transit time in the heart and Lungs                     | Physiological   | (0, 30)      |       |       |
+    | T_hl      | 14.0    | sec        | mean transit time in the heart and Lungs                     | Physiological   | (0, 30)      |       |       |
     | v_e_li    | 0.18    | mL/cm3     | volume fraction in extracellular space of the liver          | Physiological   | (0.01, 0.6)  |       |       |
-    | v_h       | 0.67    | mL/cm3     | volume fraction in hepatocytes                               | Physiological   | (0, 1)       |       |       |
+    | v_h       | 0.68    | mL/cm3     | volume fraction in hepatocytes                               | Physiological   | (0, 1)       |       |       |
     | v_li      | 1.0     | mL/cm3     | volume fraction in the liver                                 | Physiological   | (0, 1)       |       |       |
     +-----------+---------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
     | vol_ao    | 1.0     | cm3        | ROI volume in the aorta                                      | Whole-body      | (0.0, 1000)  |       |       |
@@ -397,7 +319,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.464 seconds)
+   **Total running time of the script:** (0 minutes 6.129 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver.py:

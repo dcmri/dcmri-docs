@@ -24,6 +24,23 @@ Tutorials
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ">
+
+.. only:: html
+
+  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_cardiac_output_thumb.png
+    :alt:
+
+  :doc:`/examples/tutorials/plot_cardiac_output`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Cardiac output</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Convolution is a key operation in any application of pharmacokinetic  analysis. The reason for this central role is that the solution of a linear  and stationary system can always be written as a convolution. dcmri includes  functions that  perform convolution in the most general context, but also includes solutions  that are optimized for common special cases. ">
 
 .. only:: html
@@ -49,5 +66,6 @@ Tutorials
 .. toctree::
    :hidden:
 
+   /examples/tutorials/plot_cardiac_output
    /examples/tutorials/plot_convolution
 

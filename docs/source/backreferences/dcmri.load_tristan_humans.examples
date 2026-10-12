@@ -1,0 +1,105 @@
+
+
+Examples using ``dcmri.load_tristan_humans``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. start-sphx-glr-thumbnails
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_drug_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_liver_drug`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Inhibition of liver function</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta_liver_drug`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_liver`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Aorta and Liver</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta_liver`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_split_drug_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_liver_split_drug`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Liver Drug effect in two scans</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta_liver_split_drug`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_split_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_liver_split`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Aorta and Liver in two scans</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta_liver_split`
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+

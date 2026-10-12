@@ -27,13 +27,12 @@ simultaneously fit signals measured in aorta and liver over two
 different days, with two scans on each day. The second day, an 
 inhibitor drug is administered before the first scan of the day.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-17
+.. GENERATED FROM PYTHON SOURCE LINES 11-16
 
 .. code-block:: Python
 
 
     import numpy as np
-    import pydmr
     import dcmri as dc
 
 
@@ -44,7 +43,7 @@ inhibitor drug is administered before the first scan of the day.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-23
+.. GENERATED FROM PYTHON SOURCE LINES 17-22
 
 Model setup
 -----------
@@ -52,7 +51,7 @@ Since we are using data from the `TRISTAN healthy volunteer study with
 rifampicin <https://zenodo.org/records/20210596>`_, we'll configure 
 the model with the following options:
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-38
+.. GENERATED FROM PYTHON SOURCE LINES 22-37
 
 .. code-block:: Python
 
@@ -78,11 +77,11 @@ the model with the following options:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 38-39
 
 Let's see what input parameters are needed for this model:
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 39-42
 
 .. code-block:: Python
 
@@ -98,7 +97,7 @@ Let's see what input parameters are needed for this model:
  .. code-block:: none
 
     +----------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                               InverseAortaLiverSplitDrug instance - inputs (n = 99)                                                |
+    |                                               InverseAortaLiverSplitDrug instance - inputs (n = 91)                                                |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | Key            | Value      | Unit     | Name                                                    | Group           | Bounds        | DICOM | OSIPI |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
@@ -126,10 +125,10 @@ Let's see what input parameters are needed for this model:
     | dose_2         | 0.1        | mL/kg    | 2nd contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
     | dose_3         | 0.1        | mL/kg    | 3rd contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
     | dose_4         | 0.1        | mL/kg    | 4th contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
-    | rate_1         | 1          | mL/s     | 1st injection rate                                      | Indicator       | (0, 10)       |       |       |
-    | rate_2         | 1          | mL/s     | 2nd injection rate                                      | Indicator       | (0, 10)       |       |       |
-    | rate_3         | 1          | mL/s     | 3rd injection rate                                      | Indicator       | (0, 10)       |       |       |
-    | rate_4         | 1          | mL/s     | 4th injection rate                                      | Indicator       | (0, 10)       |       |       |
+    | rate_1         | 1          | mL/sec   | 1st injection rate                                      | Indicator       | (0, 10)       |       |       |
+    | rate_2         | 1          | mL/sec   | 2nd injection rate                                      | Indicator       | (0, 10)       |       |       |
+    | rate_3         | 1          | mL/sec   | 3rd injection rate                                      | Indicator       | (0, 10)       |       |       |
+    | rate_4         | 1          | mL/sec   | 4th injection rate                                      | Indicator       | (0, 10)       |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | pfree          | None       | a.u.     | set of free parameters                                  | Inverse problem |               |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
@@ -156,15 +155,7 @@ Let's see what input parameters are needed for this model:
     | field_strength | 3          | T        | magnetic field strength                                 | Sequence        | (0, 20)       |       |       |
     | Nk0            | 64         |          | number of acquired phase lines to the center of k-space | Sequence        | (0, 1000)     |       |       |
     | Nph            | 128        |          | number of acquired phase lines in k-space               | Sequence        | (0, 1000)     |       |       |
-    | tacq_1         | 240        | sec      | 1st acquisition duration                                | Sequence        | (0, 10000.0)  |       |       |
-    | tacq_2         | 240        | sec      | 2nd acquisition duration                                | Sequence        | (0, 10000.0)  |       |       |
-    | tacq_3         | 240        | sec      | 3rd acquisition duration                                | Sequence        | (0, 10000.0)  |       |       |
-    | tacq_4         | 240        | sec      | 4th acquisition duration                                | Sequence        | (0, 10000.0)  |       |       |
     | TR             | 0.005      | sec      | repetition time                                         | Sequence        | (0, 1)        |       |       |
-    | tstart_1       | 0          | sec      | 1st start of the acquisition                            | Sequence        | (0, 10000.0)  |       |       |
-    | tstart_2       | 0          | sec      | 2nd start of the acquisition                            | Sequence        | (0, 10000.0)  |       |       |
-    | tstart_3       | 0          | sec      | 3rd start of the acquisition                            | Sequence        | (0, 10000.0)  |       |       |
-    | tstart_4       | 0          | sec      | 4th start of the acquisition                            | Sequence        | (0, 10000.0)  |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | iStrig_1_ao    | None       |          | 1st indices of the signal trigger in the aorta          | Signal          |               |       |       |
     | iStrig_1_li    | None       |          | 1st indices of the signal trigger in the liver          | Signal          |               |       |       |
@@ -214,105 +205,12 @@ Let's see what input parameters are needed for this model:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-47
-
-For clarity and reusability we'll first define a helper 
-function which returns a dictionary with required data for a single 
-study participant and visit:
-
-.. GENERATED FROM PYTHON SOURCE LINES 47-123
-
-.. code-block:: Python
-
-
-    def get_data(study, participant): 
-
-        # --- Load the data
-        file = dc.fetch(study)
-        data = pydmr.read(file, 'nest')
-
-        # --- Get the subject-level data
-        roi = data['rois'][participant]
-        par = data['pars'][participant]
-    
-        # --- Get GFR from screening visit if available
-        par_screen = par['screening']
-        if 'eGFR_abs' in par_screen:
-            eGFR = par_screen['eGFR_abs'] 
-        else: 
-            eGFR = (par['control']['eGFR_abs'] + par['drug']['eGFR_abs']) / 2
-
-        # --- Time arrays
-        time = [
-            roi['control']['time_1'] - roi['control']['time_1'][0],
-            roi['control']['time_2'] - roi['control']['time_1'][0],
-            roi['drug']['time_1'] - roi['drug']['time_1'][0],
-            roi['drug']['time_2'] - roi['drug']['time_1'][0],
-        ]
-
-        data = {     
-
-            # Electromagnetic
-            'R1_b': (1 / par['control']['T1_aorta_1'] + 1 / par['drug']['T1_aorta_1']) / 2, 
-            'R1_li':(1 / par['control']['T1_liver_1'] + 1 / par['drug']['T1_liver_1']) / 2,
-
-            # Hyperparameter
-            'dt': 0.5,
-
-            # Indicator
-            'agent': 'gadoxetate',
-            'BAT_1': dc.estimate_bat(time[0], roi['control']['aorta_1']),
-            'BAT_2': time[1][np.argmax(roi['control']['aorta_2'])],
-            'BAT_3': dc.estimate_bat(time[2], roi['drug']['aorta_1']),
-            'BAT_4': time[3][np.argmax(roi['drug']['aorta_2'])],
-
-            # Physiological
-            'GFR': eGFR / 60,
-
-            # Sequence
-            'FA': par['control']['FA_1'],
-            'field_strength': 3,
-            'Nk0': int(np.round(time[0][1] / par['control']['TR'] / 2)),
-            'Nph': int(np.round(time[0][1] / par['control']['TR'])),
-            'TR': par['control']['TR'],
-
-            # Whole body
-            'vol_1_li': par['control']['liver_volume'],
-            'vol_2_li': par['drug']['liver_volume'],
-            'weight': par['control']['weight'], 
-        }
-
-        idx = 0
-        for visit in ['control', 'drug']:
-            for scan in [1, 2]:
-                idx += 1
-
-                # Indicator group
-                data[f'rate_{idx}'] = 1
-                data[f'dose_{idx}'] = par[visit][f'dose_{scan}']
-
-                # Signal group
-                data[f'nb_{idx}'] = int(par[visit]['t0'] / (time[idx - 1][1] - time[idx - 1][0]))
-                for r in ['aorta', 'liver']:
-                    data[f'tS_{idx}_{r[:2]}'] = time[idx - 1]
-                    data[f'S_{idx}_{r[:2]}'] = roi[visit][f'{r}_{scan}']
-                    data[f'iStrig_{idx}_{r[:2]}'] = roi[visit][f'{r}_{scan}_accept']
-                     
-        return data
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 124-126
+.. GENERATED FROM PYTHON SOURCE LINES 43-45
 
 Fitting the model
 -----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-136
+.. GENERATED FROM PYTHON SOURCE LINES 45-63
 
 .. code-block:: Python
 
@@ -320,8 +218,16 @@ Fitting the model
     # --- Source data identifier
     study = 'tristan_humans_healthy_rifampicin'
 
-    # --- Format the data
-    data = get_data(study, 'LDS-002')
+    # --- Load the data
+    data = dc.load_tristan_humans(study, 'LDS-002')
+
+    # --- Estimate BAT
+    data |= {
+        'BAT_1': dc.estimate_bat(data['tS_1_ao'], data['S_1_ao']),
+        'BAT_2': data['tS_2_ao'][np.argmax(data['S_2_ao'])],
+        'BAT_3': dc.estimate_bat(data['tS_3_ao'], data['S_3_ao']),
+        'BAT_4': data['tS_4_ao'][np.argmax(data['S_4_ao'])],
+    }
 
     # --- Fit the model
     result = model(data, verbose=2)
@@ -340,42 +246,44 @@ Fitting the model
            2              3         1.6411e+06      7.71e+05       4.17e-01       2.20e+07    
            3              4         1.3085e+06      3.33e+05       1.58e-01       2.29e+06    
            4              5         1.2864e+06      2.22e+04       2.24e-01       8.83e+05    
-           5              6         1.2721e+06      1.43e+04       1.66e-01       1.30e+06    
-           6              7         1.2553e+06      1.67e+04       1.18e-01       4.79e+05    
-           7             10         1.2513e+06      4.06e+03       9.73e-03       5.53e+04    
-           8             12         1.2511e+06      1.97e+02       4.86e-03       8.62e+04    
-           9             14         1.2510e+06      4.67e+01       1.17e-03       4.46e+04    
-          10             15         1.2510e+06      2.69e+01       3.02e-04       5.20e+04    
-          11             16         1.2510e+06      8.93e+00       2.82e-04       4.81e+04    
-          12             17         1.2510e+06      9.40e+00       7.59e-05       4.74e+04    
-          13             18         1.2510e+06      1.85e+01       1.51e-04       4.62e+04    
-          14             21         1.2510e+06      1.54e+00       1.89e-05       4.83e+04    
-          15             22         1.2510e+06      4.70e-01       1.76e-05       4.64e+04    
-          16             23         1.2510e+06      5.70e-01       4.73e-06       4.64e+04    
-          17             24         1.2510e+06      1.14e+00       9.47e-06       4.63e+04    
-          18             27         1.2510e+06      6.76e-02       1.18e-06       4.81e+04    
-          19             28         1.2510e+06      5.70e-02       1.10e-06       4.63e+04    
-          20             29         1.2510e+06      7.34e-02       1.18e-06       4.81e+04    
-          21             30         1.2510e+06      5.11e-02       1.10e-06       4.63e+04    
-          22             31         1.2510e+06      7.92e-02       1.18e-06       4.81e+04    
-          23             32         1.2510e+06      4.52e-02       1.10e-06       4.63e+04    
-          24             33         1.2510e+06      8.49e-02       1.18e-06       4.80e+04    
-          25             34         1.2510e+06      3.95e-02       1.10e-06       4.63e+04    
-          26             35         1.2510e+06      3.56e-02       2.96e-07       4.63e+04    
-          27             36         1.2510e+06      6.76e-02       5.92e-07       4.80e+04    
-          28             39         1.2510e+06      2.38e-03       6.86e-08       4.63e+04    
-          29             40         1.2510e+06      2.22e-03       1.85e-08       4.63e+04    
+           5              6         1.2720e+06      1.43e+04       1.66e-01       1.30e+06    
+           6              7         1.2552e+06      1.68e+04       1.17e-01       4.79e+05    
+           7             10         1.2511e+06      4.07e+03       1.01e-02       5.71e+04    
+           8             13         1.2510e+06      1.18e+02       1.27e-03       6.30e+04    
+           9             14         1.2510e+06      2.98e+01       1.31e-03       3.37e+04    
+          10             15         1.2510e+06      3.43e+01       2.99e-04       5.51e+04    
+          11             16         1.2510e+06      5.45e+00       6.20e-04       8.69e+04    
+          12             17         1.2509e+06      2.35e+01       1.48e-04       3.01e+04    
+          13             18         1.2509e+06      1.64e+01       2.95e-04       8.80e+04    
+          14             19         1.2509e+06      2.76e+00       2.96e-04       6.01e+04    
+          15             20         1.2509e+06      1.01e+01       8.03e-05       5.88e+04    
+          16             22         1.2509e+06      1.39e+00       4.01e-05       3.03e+04    
+          17             23         1.2509e+06      2.70e+00       3.67e-05       5.85e+04    
+          18             25         1.2509e+06      9.18e-01       1.00e-05       3.00e+04    
+          19             26         1.2509e+06      9.05e-02       9.17e-06       5.84e+04    
+          20             27         1.2509e+06      3.09e-01       2.51e-06       5.83e+04    
+          21             28         1.2509e+06      3.03e-01       5.02e-06       3.00e+04    
+          22             29         1.2509e+06      1.99e-01       4.58e-06       5.83e+04    
+          23             30         1.2509e+06      1.02e-01       5.02e-06       2.99e+04    
+          24             31         1.2509e+06      1.24e-01       1.15e-06       2.99e+04    
+          25             32         1.2509e+06      2.47e-01       2.29e-06       2.99e+04    
+          26             34         1.2509e+06      2.68e-02       1.15e-06       5.83e+04    
+          27             35         1.2509e+06      3.85e-02       3.14e-07       5.83e+04    
+          28             36         1.2509e+06      2.17e-02       6.27e-07       2.99e+04    
+          29             37         1.2509e+06      4.07e-02       5.73e-07       5.83e+04    
+          30             39         1.2509e+06      1.50e-02       1.57e-07       2.99e+04    
+          31             41         1.2509e+06      2.42e-03       7.16e-08       5.83e+04    
     `ftol` termination condition is satisfied.
-    Function evaluations 40, initial cost 5.6552e+06, final cost 1.2510e+06, first-order optimality 4.63e+04.
+    Function evaluations 41, initial cost 5.6552e+06, final cost 1.2509e+06, first-order optimality 5.83e+04.
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-138
+.. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 Verify that the optimization has converged to a solution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-145
+.. GENERATED FROM PYTHON SOURCE LINES 65-72
 
 .. code-block:: Python
 
@@ -398,12 +306,12 @@ Verify that the optimization has converged to a solution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-148
+.. GENERATED FROM PYTHON SOURCE LINES 73-75
 
 The model first the data well, so we can now consider the 
 values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-151
+.. GENERATED FROM PYTHON SOURCE LINES 75-78
 
 .. code-block:: Python
 
@@ -447,8 +355,8 @@ values for the derived parameters
     | K_1_h2b     | 0.00034 | 1/sec      | 1st transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
     | k_2_e2h     | 0.00027 | mL/sec/cm3 | 2nd tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)   |       |       |
     | K_2_e2h     | 0.0015  | 1/sec      | 2nd transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
-    | k_2_h2b     | 0.00051 | mL/sec/cm3 | 2nd tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
-    | K_2_h2b     | 0.00075 | 1/sec      | 2nd transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
+    | k_2_h2b     | 0.00052 | mL/sec/cm3 | 2nd tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
+    | K_2_h2b     | 0.00076 | 1/sec      | 2nd transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
     | Ktrans_1_li | 0.0028  | mL/sec/cm3 | 1st plasma clearance in the liver                                | Physiological   | (0.0, 0.1)   |       |       |
     | Ktrans_2_li | 0.00026 | mL/sec/cm3 | 2nd plasma clearance in the liver                                | Physiological   | (0.0, 0.1)   |       |       |
     | T_1_e_li    | 12.0    | sec        | 1st mean transit time in extracellular space of the liver        | Physiological   | (0.1, 60)    |       |       |
@@ -476,7 +384,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 18.895 seconds)
+   **Total running time of the script:** (1 minutes 33.737 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver_split_drug.py:

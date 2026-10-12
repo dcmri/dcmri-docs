@@ -1,0 +1,328 @@
+{
+ "aif": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "aif.keys": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  }
+ ],
+ "aorta": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta"
+  }
+ ],
+ "aorta.inputs": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.inputs"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.inputs"
+  }
+ ],
+ "aorta.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.plot"
+  }
+ ],
+ "dc.InverseAorta": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta"
+  }
+ ],
+ "dc.Parker": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.dro.modules",
+   "module_short": "dcmri.dro.modules",
+   "name": "Parker"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.dro",
+   "module_short": "dcmri.dro",
+   "name": "Parker"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Parker"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Parker"
+  }
+ ],
+ "dc.print_quantities": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "print_quantities"
+  }
+ ],
+ "dcmri": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dcmri"
+  }
+ ],
+ "dcmri.InverseAorta": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta"
+  }
+ ],
+ "dcmri.Parker": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Parker"
+  }
+ ],
+ "dcmri.parker": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "parker"
+  }
+ ],
+ "https://onlinelibrary.wiley.com/doi/10.1002/mrm.21912": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "https://onlinelibrary.wiley.com/doi/10.1002/mrm",
+   "module_short": "https://onlinelibrary.wiley.com/doi/10.1002/mrm",
+   "name": "21912"
+  }
+ ],
+ "https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.21066": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "https://onlinelibrary.wiley.com/doi/full/10.1002/mrm",
+   "module_short": "https://onlinelibrary.wiley.com/doi/full/10.1002/mrm",
+   "name": "21066"
+  }
+ ],
+ "missing_data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "set"
+  }
+ ],
+ "result": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ]
+}

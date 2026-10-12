@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.857** total execution time for 1 file **from examples\tutorials**:
+**01:01.348** total execution time for 2 files **from examples\tutorials**:
 
 .. container::
 
@@ -32,6 +32,9 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
+   * - :ref:`sphx_glr_examples_tutorials_plot_cardiac_output.py` (``plot_cardiac_output.py``)
+     - 01:01.348
+     - 0.0
    * - :ref:`sphx_glr_examples_tutorials_plot_convolution.py` (``plot_convolution.py``)
-     - 00:00.857
+     - 00:00.000
      - 0.0

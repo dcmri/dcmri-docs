@@ -75,7 +75,7 @@
    "name": "estimate_bat"
   }
  ],
- "dc.fetch": [
+ "dc.load_tristan_humans": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -88,7 +88,7 @@
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "fetch"
+   "name": "load_tristan_humans"
   }
  ],
  "dc.print_quantities": [
@@ -114,15 +114,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "AortaLiverSplitDrug"
-  }
- ],
- "get_data": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
   }
  ],
  "https://zenodo.org/records/20210596": [
@@ -259,38 +250,6 @@
    "module": "numpy",
    "module_short": "numpy",
    "name": "argmax"
-  }
- ],
- "np.round": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "_ArrayFunctionDispatcher"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "round"
-  }
- ],
- "pydmr.read": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "pydmr",
-   "module_short": "pydmr",
-   "name": "read"
   }
  ],
  "result": [

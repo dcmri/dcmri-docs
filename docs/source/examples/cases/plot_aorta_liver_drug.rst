@@ -32,13 +32,12 @@ of these data allows us to exploit the fact that the majority of
 systemic parameters are not affected by the drug, and can therefore 
 be assumed constant between both visits. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-23
+.. GENERATED FROM PYTHON SOURCE LINES 17-22
 
 .. code-block:: Python
 
 
     import numpy as np
-    import pydmr
     import dcmri as dc
 
 
@@ -49,7 +48,7 @@ be assumed constant between both visits.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-29
+.. GENERATED FROM PYTHON SOURCE LINES 23-28
 
 Model setup
 -----------
@@ -57,7 +56,7 @@ Since we are using data from the `TRISTAN healthy volunteer study with
 rifampicin <https://zenodo.org/records/20210596>`_, we'll configure 
 the model with the following options:
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-43
+.. GENERATED FROM PYTHON SOURCE LINES 28-42
 
 .. code-block:: Python
 
@@ -82,16 +81,17 @@ the model with the following options:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-45
+.. GENERATED FROM PYTHON SOURCE LINES 43-44
 
 Let's see what input parameters are needed for this model:
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-48
+.. GENERATED FROM PYTHON SOURCE LINES 44-48
 
 .. code-block:: Python
 
 
     model.print_inputs()
+
 
 
 
@@ -122,8 +122,8 @@ Let's see what input parameters are needed for this model:
     | BAT_2          | 30         | sec      | 2nd bolus arrival time                                  | Indicator       | (-30, 30)     |       |       |
     | dose_1         | 0.1        | mL/kg    | 1st contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
     | dose_2         | 0.1        | mL/kg    | 2nd contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
-    | rate_1         | 1          | mL/s     | 1st injection rate                                      | Indicator       | (0, 10)       |       |       |
-    | rate_2         | 1          | mL/s     | 2nd injection rate                                      | Indicator       | (0, 10)       |       |       |
+    | rate_1         | 1          | mL/sec   | 1st injection rate                                      | Indicator       | (0, 10)       |       |       |
+    | rate_2         | 1          | mL/sec   | 2nd injection rate                                      | Indicator       | (0, 10)       |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | pfree          | None       | a.u.     | set of free parameters                                  | Inverse problem |               |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
@@ -180,101 +180,12 @@ Let's see what input parameters are needed for this model:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-52
-
-For clarity and reusability we'll first define a helper 
-function which returns a dictionary with required data for a single 
-study participant:
-
-.. GENERATED FROM PYTHON SOURCE LINES 52-124
-
-.. code-block:: Python
-
-
-    def get_data(study, participant): 
-
-        # --- Load the data
-        file = dc.fetch(study)
-        data = pydmr.read(file, 'nest')
-
-        # --- Get the subject-level data
-        roi = data['rois'][participant]
-        par = data['pars'][participant]
-
-        # --- Get GFR from screening visit if available
-        if 'eGFR_abs' in par['screening']:
-            eGFR = par['screening']['eGFR_abs']
-        else:
-            eGFR = (par['control']['eGFR_abs'] + par['drug']['eGFR_abs']) / 2
-
-        # --- Time arrays
-        time = [
-            roi['control']['time_1'] - roi['control']['time_1'][0],
-            roi['drug']['time_1'] - roi['drug']['time_1'][0],
-        ]
-
-        data = {     
-
-            # Electromagnetic
-            'R1_b': (1 / par['control']['T1_aorta_1'] + 1 / par['drug']['T1_aorta_1']) / 2, 
-            'R1_li':(1 / par['control']['T1_liver_1'] + 1 / par['drug']['T1_liver_1']) / 2,
-
-            # Hyperparameter
-            'dt': 0.5,
-
-            # Indicator
-            'agent': 'gadoxetate',
-            'BAT_1': dc.estimate_bat(time[0], roi['control']['aorta_1']),
-            'BAT_2': dc.estimate_bat(time[1], roi['drug']['aorta_1']),
-
-            # Physiological
-            'GFR': eGFR / 60,
-
-            # Sequence
-            'FA': par['control']['FA_1'],
-            'field_strength': 3,
-            'Nk0': int(np.round(time[0][1] / par['control']['TR'] / 2)),
-            'Nph': int(np.round(time[0][1] / par['control']['TR'])),
-            'TR': par['control']['TR'],
-
-            # Whole body
-            'vol_1_li': par['control']['liver_volume'],
-            'vol_2_li': par['drug']['liver_volume'],
-            'weight':(par['control']['weight'] + par['drug']['weight']) / 2, 
-        }
-
-        idx = 0
-        for visit in ['control', 'drug']:
-            for scan in [1]:
-                idx += 1
-
-                # Indicator group
-                data[f'rate_{idx}'] = 1
-                data[f'dose_{idx}'] = par[visit][f'dose_{scan}']
-
-                # Signal group
-                data[f'nb_{idx}'] = int(par[visit]['t0'] / (time[idx - 1][1] - time[idx - 1][0]))
-                for r in ['aorta', 'liver']:
-                    data[f'tS_{idx}_{r[:2]}'] = time[idx - 1]
-                    data[f'S_{idx}_{r[:2]}'] = roi[visit][f'{r}_{scan}']
-                    data[f'iStrig_{idx}_{r[:2]}'] = roi[visit][f'{r}_{scan}_accept']
-                     
-        return data
-
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 125-127
+.. GENERATED FROM PYTHON SOURCE LINES 49-51
 
 Fitting the model
 -----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-137
+.. GENERATED FROM PYTHON SOURCE LINES 51-67
 
 .. code-block:: Python
 
@@ -282,8 +193,14 @@ Fitting the model
     # --- Source data identifier
     study = 'tristan_humans_healthy_rifampicin'
 
-    # --- Format the data
-    data = get_data(study, 'LDS-002')
+    # --- Load the data
+    data = dc.load_tristan_humans(study, 'LDS-002', scans=[1])
+
+    # --- Estimate BAT
+    data |= {
+        'BAT_1': dc.estimate_bat(data['tS_1_ao'], data['S_1_ao']),
+        'BAT_2': data['tS_2_ao'][np.argmax(data['S_2_ao'])],
+    }
 
     # --- Fit the model
     result = model(data, verbose=2)
@@ -297,36 +214,45 @@ Fitting the model
  .. code-block:: none
 
        Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
-           0              1         1.3227e+06                                    8.97e+06    
-           1              2         5.1857e+05      8.04e+05       2.29e-01       4.91e+06    
-           2              3         1.9690e+05      3.22e+05       3.11e-01       9.09e+05    
-           3              4         1.4804e+05      4.89e+04       2.24e-01       1.22e+06    
-           4              6         1.4448e+05      3.57e+03       3.64e-02       1.17e+06    
-           5              7         1.3253e+05      1.19e+04       8.40e-03       1.66e+05    
-           6              8         1.3133e+05      1.20e+03       1.70e-02       3.37e+04    
-           7              9         1.3085e+05      4.75e+02       3.47e-02       1.09e+05    
-           8             10         1.3044e+05      4.17e+02       3.55e-02       8.91e+04    
-           9             11         1.2984e+05      5.96e+02       3.51e-02       1.23e+05    
-          10             13         1.2954e+05      3.02e+02       1.74e-02       4.34e+04    
-          11             16         1.2919e+05      3.50e+02       2.14e-03       1.37e+04    
-          12             21         1.2919e+05      3.90e-01       1.94e-05       1.26e+04    
-          13             22         1.2919e+05      7.13e-01       3.82e-05       1.05e+04    
-          14             25         1.2919e+05      8.34e-02       4.76e-06       1.02e+04    
-          15             27         1.2919e+05      4.13e-02       2.38e-06       1.01e+04    
-          16             30         1.2919e+05      5.14e-03       2.97e-07       1.01e+04    
-          17             31         1.2919e+05      1.03e-02       5.93e-07       1.01e+04    
-          18             34         1.2919e+05      1.28e-03       7.42e-08       1.01e+04    
+           0              1         1.4467e+06                                    8.97e+06    
+           1              2         6.7087e+05      7.76e+05       2.26e-01       5.45e+06    
+           2              3         2.7744e+05      3.93e+05       3.07e-01       4.61e+05    
+           3              4         2.5307e+05      2.44e+04       2.29e-01       5.14e+05    
+           4              5         1.9175e+05      6.13e+04       2.38e-01       6.44e+05    
+           5              7         1.4371e+05      4.80e+04       8.57e-02       3.44e+05    
+           6              8         1.3379e+05      9.92e+03       1.49e-01       9.16e+05    
+           7              9         1.2176e+05      1.20e+04       2.30e-01       2.70e+05    
+           8             12         1.1628e+05      5.48e+03       2.00e-02       3.12e+05    
+           9             13         1.1609e+05      1.84e+02       3.97e-02       7.12e+04    
+          10             14         1.1546e+05      6.31e+02       9.71e-03       1.67e+04    
+          11             15         1.1527e+05      1.87e+02       1.73e-02       2.56e+03    
+          12             17         1.1520e+05      7.78e+01       8.39e-03       2.45e+03    
+          13             19         1.1516e+05      3.63e+01       4.14e-03       2.39e+03    
+          14             20         1.1509e+05      6.83e+01       8.23e-03       3.61e+03    
+          15             23         1.1508e+05      8.66e+00       1.01e-03       2.22e+03    
+          16             25         1.1508e+05      4.13e+00       5.14e-04       2.21e+03    
+          17             27         1.1508e+05      2.06e+00       2.58e-04       2.21e+03    
+          18             29         1.1508e+05      1.03e+00       1.29e-04       2.21e+03    
+          19             30         1.1507e+05      2.06e+00       2.58e-04       2.20e+03    
+          20             33         1.1507e+05      2.58e-01       3.22e-05       2.20e+03    
+          21             35         1.1507e+05      1.29e-01       1.61e-05       2.20e+03    
+          22             36         1.1507e+05      2.57e-01       3.22e-05       2.20e+03    
+          23             39         1.1507e+05      3.22e-02       4.03e-06       2.20e+03    
+          24             41         1.1507e+05      1.61e-02       2.01e-06       2.20e+03    
+          25             43         1.1507e+05      8.04e-03       1.01e-06       2.20e+03    
+          26             45         1.1507e+05      4.02e-03       5.04e-07       2.20e+03    
+          27             48         1.1507e+05      5.03e-04       6.30e-08       2.20e+03    
     `ftol` termination condition is satisfied.
-    Function evaluations 34, initial cost 1.3227e+06, final cost 1.2919e+05, first-order optimality 1.01e+04.
+    Function evaluations 48, initial cost 1.4467e+06, final cost 1.1507e+05, first-order optimality 2.20e+03.
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-139
+.. GENERATED FROM PYTHON SOURCE LINES 68-69
 
 Verify that the optimization has converged to a solution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-146
+.. GENERATED FROM PYTHON SOURCE LINES 69-76
 
 .. code-block:: Python
 
@@ -349,12 +275,12 @@ Verify that the optimization has converged to a solution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-149
+.. GENERATED FROM PYTHON SOURCE LINES 77-79
 
 The model first the data well, so we can now consider the 
 values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-151
+.. GENERATED FROM PYTHON SOURCE LINES 79-81
 
 .. code-block:: Python
 
@@ -374,38 +300,38 @@ values for the derived parameters
     | Key         | Value   | Unit       | Name                                                             | Group           | Bounds       | DICOM | OSIPI |
     +-------------+---------+------------+------------------------------------------------------------------+-----------------+--------------+-------+-------+
     | CL_1_p      | 1.9     | mL/sec     | 1st Contrast agent clearance in plasma                           | Physiological   | (0.0, 100)   |       |       |
-    | CL_2_p      | 0.18    | mL/sec     | 2nd Contrast agent clearance in plasma                           | Physiological   | (0.0, 100)   |       |       |
-    | CO          | 82.0    | mL/sec     | cardiac output                                                   | Physiological   | (0, 500)     |       |       |
-    | D_hl        | 0.62    |            | transit time dispersion in the heart and Lungs                   | Physiological   | (0.01, 0.99) |       |       |
-    | E_1_li      | 0.31    |            | 1st extraction fraction in the liver                             | Physiological   | (0.0, 1.0)   |       |       |
-    | E_2_li      | 0.041   |            | 2nd extraction fraction in the liver                             | Physiological   | (0.0, 1.0)   |       |       |
-    | E_or        | 0.26    |            | extraction fraction in the organs                                | Physiological   | (0, 0.5)     |       |       |
-    | F_1_b_li    | 0.011   | mL/sec/cm3 | 1st flow per unit tissue in blood of the liver                   | Physiological   | (0, 1)       |       |       |
-    | F_1_p_li    | 0.0061  | mL/sec/cm3 | 1st flow per unit tissue in plasma of the liver                  | Physiological   | (0, 0.05)    |       |       |
-    | F_2_b_li    | 0.0095  | mL/sec/cm3 | 2nd flow per unit tissue in blood of the liver                   | Physiological   | (0, 1)       |       |       |
-    | F_2_p_li    | 0.0052  | mL/sec/cm3 | 2nd flow per unit tissue in plasma of the liver                  | Physiological   | (0, 0.05)    |       |       |
-    | fCO_li      | 0.093   |            | fraction of the cardiac output in the liver                      | Physiological   | (0, 0.5)     |       |       |
+    | CL_2_p      | 0.16    | mL/sec     | 2nd Contrast agent clearance in plasma                           | Physiological   | (0.0, 100)   |       |       |
+    | CO          | 65.0    | mL/sec     | cardiac output                                                   | Physiological   | (0, 500)     |       |       |
+    | D_hl        | 0.94    |            | transit time dispersion in the heart and Lungs                   | Physiological   | (0.01, 0.99) |       |       |
+    | E_1_li      | 0.33    |            | 1st extraction fraction in the liver                             | Physiological   | (0.0, 1.0)   |       |       |
+    | E_2_li      | 0.04    |            | 2nd extraction fraction in the liver                             | Physiological   | (0.0, 1.0)   |       |       |
+    | E_or        | 0.29    |            | extraction fraction in the organs                                | Physiological   | (0, 0.5)     |       |       |
+    | F_1_b_li    | 0.0099  | mL/sec/cm3 | 1st flow per unit tissue in blood of the liver                   | Physiological   | (0, 1)       |       |       |
+    | F_1_p_li    | 0.0055  | mL/sec/cm3 | 1st flow per unit tissue in plasma of the liver                  | Physiological   | (0, 0.05)    |       |       |
+    | F_2_b_li    | 0.0085  | mL/sec/cm3 | 2nd flow per unit tissue in blood of the liver                   | Physiological   | (0, 1)       |       |       |
+    | F_2_p_li    | 0.0047  | mL/sec/cm3 | 2nd flow per unit tissue in plasma of the liver                  | Physiological   | (0, 0.05)    |       |       |
+    | fCO_li      | 0.1     |            | fraction of the cardiac output in the liver                      | Physiological   | (0, 0.5)     |       |       |
     | GFR         | 1.9     | mL/sec     | glomerular filtration rate                                       | Physiological   | (0, 10)      |       |       |
     | H           | 0.45    |            | hematocrit                                                       | Physiological   | (0, 1)       |       |       |
     | k_1_e2h     | 0.0027  | mL/sec/cm3 | 1st tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)   |       |       |
     | K_1_e2h     | 0.015   | 1/sec      | 1st transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
-    | k_1_h2b     | 0.00021 | mL/sec/cm3 | 1st tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
-    | K_1_h2b     | 0.00031 | 1/sec      | 1st transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
-    | k_2_e2h     | 0.00022 | mL/sec/cm3 | 2nd tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)   |       |       |
-    | K_2_e2h     | 0.0013  | 1/sec      | 2nd transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
-    | k_2_h2b     | 0.00015 | mL/sec/cm3 | 2nd tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
-    | K_2_h2b     | 0.00023 | 1/sec      | 2nd transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
-    | Ktrans_1_li | 0.0019  | mL/sec/cm3 | 1st plasma clearance in the liver                                | Physiological   | (0.0, 0.1)   |       |       |
-    | Ktrans_2_li | 0.00021 | mL/sec/cm3 | 2nd plasma clearance in the liver                                | Physiological   | (0.0, 0.1)   |       |       |
-    | T_1_e_li    | 20.0    | sec        | 1st mean transit time in extracellular space of the liver        | Physiological   | (0.1, 60)    |       |       |
-    | T_1_h       | 3200.0  | sec        | 1st mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
-    | T_2_e_li    | 33.0    | sec        | 2nd mean transit time in extracellular space of the liver        | Physiological   | (0.1, 60)    |       |       |
-    | T_2_h       | 4400.0  | sec        | 2nd mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
-    | T_b_or      | 25.0    | sec        | mean transit time in blood of the organs                         | Physiological   | (0, 60)      |       |       |
-    | T_e_or      | 340.0   | sec        | mean transit time in extracellular space of the organs           | Physiological   | (0, 800)     |       |       |
-    | T_gu        | 18.0    | sec        | mean transit time in the gut                                     | Physiological   | (0.1, 60)    |       |       |
+    | k_1_h2b     | 0.00019 | mL/sec/cm3 | 1st tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
+    | K_1_h2b     | 0.00029 | 1/sec      | 1st transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
+    | k_2_e2h     | 0.0002  | mL/sec/cm3 | 2nd tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)   |       |       |
+    | K_2_e2h     | 0.0011  | 1/sec      | 2nd transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
+    | k_2_h2b     | 8.8e-05 | mL/sec/cm3 | 2nd tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
+    | K_2_h2b     | 0.00013 | 1/sec      | 2nd transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
+    | Ktrans_1_li | 0.0018  | mL/sec/cm3 | 1st plasma clearance in the liver                                | Physiological   | (0.0, 0.1)   |       |       |
+    | Ktrans_2_li | 0.00019 | mL/sec/cm3 | 2nd plasma clearance in the liver                                | Physiological   | (0.0, 0.1)   |       |       |
+    | T_1_e_li    | 23.0    | sec        | 1st mean transit time in extracellular space of the liver        | Physiological   | (0.1, 60)    |       |       |
+    | T_1_h       | 3400.0  | sec        | 1st mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
+    | T_2_e_li    | 38.0    | sec        | 2nd mean transit time in extracellular space of the liver        | Physiological   | (0.1, 60)    |       |       |
+    | T_2_h       | 7600.0  | sec        | 2nd mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
+    | T_b_or      | 41.0    | sec        | mean transit time in blood of the organs                         | Physiological   | (0, 60)      |       |       |
+    | T_e_or      | 350.0   | sec        | mean transit time in extracellular space of the organs           | Physiological   | (0, 800)     |       |       |
+    | T_gu        | 19.0    | sec        | mean transit time in the gut                                     | Physiological   | (0.1, 60)    |       |       |
     | T_hl        | 14.0    | sec        | mean transit time in the heart and Lungs                         | Physiological   | (0, 30)      |       |       |
-    | v_e_li      | 0.18    | mL/cm3     | volume fraction in extracellular space of the liver              | Physiological   | (0.01, 0.6)  |       |       |
+    | v_e_li      | 0.19    | mL/cm3     | volume fraction in extracellular space of the liver              | Physiological   | (0.01, 0.6)  |       |       |
     | v_li        | 1.0     | mL/cm3     | volume fraction in the liver                                     | Physiological   | (0, 1)       |       |       |
     +-------------+---------+------------+------------------------------------------------------------------+-----------------+--------------+-------+-------+
     | vol_1_ao    | 1.0     | cm3        | 1st ROI volume in the aorta                                      | Whole-body      | (0.0, 1000)  |       |       |
@@ -422,7 +348,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.412 seconds)
+   **Total running time of the script:** (0 minutes 6.903 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver_drug.py:

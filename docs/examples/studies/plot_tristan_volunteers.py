@@ -131,7 +131,7 @@ for i, s in enumerate(v1.index):
         x += ['rifampicin']
         khe += [6000 * v2.at[s,'k_e2h']]
         kbh += [6000 * v2.at[s,'k_h2b']] 
-    color = clr[i-1]
+    color = clr[i - 1]
     ax1.plot(x, khe, '-', label=s, marker='o', markersize=6, color=color)
     ax2.plot(x, kbh, '-', label=s, marker='o', markersize=6, color=color)
 

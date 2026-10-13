@@ -9,7 +9,6 @@ different days, with two scans on each day. The second day, an
 inhibitor drug is administered before the first scan of the day.
 """
 
-import numpy as np
 import dcmri as dc
 
 
@@ -32,6 +31,7 @@ model = dc.InverseAortaLiverSplitDrug(
     calibrate=True,             # Derive signal scaling factor from data
     trigger=True,               # Signals are retrospectively triggered
     bolus='dual',               # Two independent injections performed
+    estimate_bat='custom',      # Use the dedicated BAT estimator
 )
 
 # %%
@@ -48,14 +48,6 @@ study = 'tristan_humans_healthy_rifampicin'
 
 # --- Load the data
 data = dc.load_tristan_humans(study, 'LDS-002')
-
-# --- Estimate BAT
-data |= {
-    'BAT_1': dc.estimate_bat(data['tS_1_ao'], data['S_1_ao']),
-    'BAT_2': data['tS_2_ao'][np.argmax(data['S_2_ao'])],
-    'BAT_3': dc.estimate_bat(data['tS_3_ao'], data['S_3_ao']),
-    'BAT_4': data['tS_4_ao'][np.argmax(data['S_4_ao'])],
-}
 
 # --- Fit the model
 result = model(data, verbose=2)

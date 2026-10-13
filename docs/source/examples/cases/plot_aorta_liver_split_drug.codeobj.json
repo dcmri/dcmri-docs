@@ -59,22 +59,6 @@
    "name": "InverseAortaLiverSplitDrug"
   }
  ],
- "dc.estimate_bat": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "estimate_bat"
-  }
- ],
  "dc.load_tristan_humans": [
   {
    "is_class": false,
@@ -234,22 +218,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "Module.print_inputs"
-  }
- ],
- "np.argmax": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "_ArrayFunctionDispatcher"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "argmax"
   }
  ],
  "result": [

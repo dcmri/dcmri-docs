@@ -64,8 +64,8 @@ data = dc.load_tristan_humans(study)
 
 # --- Fit all datasets and save results in a list
 records = []
-for subj in data.keys():
-    result = aol(data[subj], verbose=2) 
+for subj, vals in data.items():
+    result = aol(vals, verbose=2) 
 
     for parameter, value in result['pder'].items():
         visit = dc.parse_varname(parameter)['index']

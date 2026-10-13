@@ -27,12 +27,11 @@ simultaneously fit signals measured in aorta and liver over two
 different days, with two scans on each day. The second day, an 
 inhibitor drug is administered before the first scan of the day.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-16
+.. GENERATED FROM PYTHON SOURCE LINES 11-15
 
 .. code-block:: Python
 
 
-    import numpy as np
     import dcmri as dc
 
 
@@ -43,7 +42,7 @@ inhibitor drug is administered before the first scan of the day.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-22
+.. GENERATED FROM PYTHON SOURCE LINES 16-21
 
 Model setup
 -----------
@@ -51,7 +50,7 @@ Since we are using data from the `TRISTAN healthy volunteer study with
 rifampicin <https://zenodo.org/records/20210596>`_, we'll configure 
 the model with the following options:
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-37
+.. GENERATED FROM PYTHON SOURCE LINES 21-37
 
 .. code-block:: Python
 
@@ -68,6 +67,7 @@ the model with the following options:
         calibrate=True,             # Derive signal scaling factor from data
         trigger=True,               # Signals are retrospectively triggered
         bolus='dual',               # Two independent injections performed
+        estimate_bat='custom',      # Use the dedicated BAT estimator
     )
 
 
@@ -97,7 +97,7 @@ Let's see what input parameters are needed for this model:
  .. code-block:: none
 
     +----------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                               InverseAortaLiverSplitDrug instance - inputs (n = 91)                                                |
+    |                                               InverseAortaLiverSplitDrug instance - inputs (n = 87)                                                |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | Key            | Value      | Unit     | Name                                                    | Group           | Bounds        | DICOM | OSIPI |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
@@ -117,10 +117,6 @@ Let's see what input parameters are needed for this model:
     | dt             | 0.5        | sec      | pseudo-continuous time step                             | Hyperparameters |               |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | agent          | gadoterate |          | contrast agent generic name                             | Indicator       |               |       |       |
-    | BAT_1          | 30         | sec      | 1st bolus arrival time                                  | Indicator       | (-30, 30)     |       |       |
-    | BAT_2          | 30         | sec      | 2nd bolus arrival time                                  | Indicator       | (-30, 30)     |       |       |
-    | BAT_3          | 30         | sec      | 3rd bolus arrival time                                  | Indicator       | (-30, 30)     |       |       |
-    | BAT_4          | 30         | sec      | 4th bolus arrival time                                  | Indicator       | (-30, 30)     |       |       |
     | dose_1         | 0.1        | mL/kg    | 1st contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
     | dose_2         | 0.1        | mL/kg    | 2nd contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
     | dose_3         | 0.1        | mL/kg    | 3rd contrast agent dose                                 | Indicator       | (0, 0.2)      |       |       |
@@ -210,7 +206,7 @@ Let's see what input parameters are needed for this model:
 Fitting the model
 -----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-63
+.. GENERATED FROM PYTHON SOURCE LINES 45-55
 
 .. code-block:: Python
 
@@ -220,14 +216,6 @@ Fitting the model
 
     # --- Load the data
     data = dc.load_tristan_humans(study, 'LDS-002')
-
-    # --- Estimate BAT
-    data |= {
-        'BAT_1': dc.estimate_bat(data['tS_1_ao'], data['S_1_ao']),
-        'BAT_2': data['tS_2_ao'][np.argmax(data['S_2_ao'])],
-        'BAT_3': dc.estimate_bat(data['tS_3_ao'], data['S_3_ao']),
-        'BAT_4': data['tS_4_ao'][np.argmax(data['S_4_ao'])],
-    }
 
     # --- Fit the model
     result = model(data, verbose=2)
@@ -247,43 +235,48 @@ Fitting the model
            3              4         1.3085e+06      3.33e+05       1.58e-01       2.29e+06    
            4              5         1.2864e+06      2.22e+04       2.24e-01       8.83e+05    
            5              6         1.2720e+06      1.43e+04       1.66e-01       1.30e+06    
-           6              7         1.2552e+06      1.68e+04       1.17e-01       4.79e+05    
-           7             10         1.2511e+06      4.07e+03       1.01e-02       5.71e+04    
-           8             13         1.2510e+06      1.18e+02       1.27e-03       6.30e+04    
-           9             14         1.2510e+06      2.98e+01       1.31e-03       3.37e+04    
-          10             15         1.2510e+06      3.43e+01       2.99e-04       5.51e+04    
-          11             16         1.2510e+06      5.45e+00       6.20e-04       8.69e+04    
-          12             17         1.2509e+06      2.35e+01       1.48e-04       3.01e+04    
-          13             18         1.2509e+06      1.64e+01       2.95e-04       8.80e+04    
-          14             19         1.2509e+06      2.76e+00       2.96e-04       6.01e+04    
-          15             20         1.2509e+06      1.01e+01       8.03e-05       5.88e+04    
-          16             22         1.2509e+06      1.39e+00       4.01e-05       3.03e+04    
-          17             23         1.2509e+06      2.70e+00       3.67e-05       5.85e+04    
-          18             25         1.2509e+06      9.18e-01       1.00e-05       3.00e+04    
-          19             26         1.2509e+06      9.05e-02       9.17e-06       5.84e+04    
-          20             27         1.2509e+06      3.09e-01       2.51e-06       5.83e+04    
-          21             28         1.2509e+06      3.03e-01       5.02e-06       3.00e+04    
-          22             29         1.2509e+06      1.99e-01       4.58e-06       5.83e+04    
-          23             30         1.2509e+06      1.02e-01       5.02e-06       2.99e+04    
-          24             31         1.2509e+06      1.24e-01       1.15e-06       2.99e+04    
-          25             32         1.2509e+06      2.47e-01       2.29e-06       2.99e+04    
-          26             34         1.2509e+06      2.68e-02       1.15e-06       5.83e+04    
-          27             35         1.2509e+06      3.85e-02       3.14e-07       5.83e+04    
-          28             36         1.2509e+06      2.17e-02       6.27e-07       2.99e+04    
-          29             37         1.2509e+06      4.07e-02       5.73e-07       5.83e+04    
-          30             39         1.2509e+06      1.50e-02       1.57e-07       2.99e+04    
-          31             41         1.2509e+06      2.42e-03       7.16e-08       5.83e+04    
+           6              7         1.2551e+06      1.69e+04       1.17e-01       4.79e+05    
+           7             10         1.2511e+06      3.97e+03       1.03e-02       6.24e+04    
+           8             13         1.2510e+06      8.88e+01       1.35e-03       5.57e+04    
+           9             14         1.2510e+06      7.67e+01       1.28e-03       5.82e+04    
+          10             16         1.2510e+06      1.72e+01       3.32e-04       3.49e+04    
+          11             17         1.2509e+06      1.72e+01       3.03e-04       5.77e+04    
+          12             18         1.2509e+06      4.04e+00       3.31e-04       3.36e+04    
+          13             19         1.2509e+06      7.85e+00       7.53e-05       8.74e+04    
+          14             20         1.2509e+06      3.58e+00       1.52e-04       3.29e+04    
+          15             21         1.2509e+06      4.31e+00       3.76e-05       3.24e+04    
+          16             22         1.2509e+06      5.46e+00       7.52e-05       5.69e+04    
+          17             24         1.2509e+06      2.05e+00       2.06e-05       3.17e+04    
+          18             26         1.2509e+06      1.34e-01       9.40e-06       5.67e+04    
+          19             27         1.2509e+06      3.08e-01       2.58e-06       5.67e+04    
+          20             28         1.2509e+06      2.51e-01       5.16e-06       3.17e+04    
+          21             29         1.2509e+06      2.19e-01       4.70e-06       5.66e+04    
+          22             30         1.2509e+06      6.88e-02       5.16e-06       3.17e+04    
+          23             31         1.2509e+06      1.30e-01       1.17e-06       3.16e+04    
+          24             32         1.2509e+06      2.59e-01       2.35e-06       3.16e+04    
+          25             34         1.2509e+06      1.09e-02       1.17e-06       5.66e+04    
+          26             35         1.2509e+06      3.85e-02       3.23e-07       5.66e+04    
+          27             36         1.2509e+06      3.67e-02       6.45e-07       3.16e+04    
+          28             37         1.2509e+06      2.18e-02       5.87e-07       5.66e+04    
+          29             38         1.2509e+06      1.39e-02       6.45e-07       3.16e+04    
+          30             39         1.2509e+06      1.62e-02       1.47e-07       3.16e+04    
+          31             40         1.2509e+06      3.24e-02       2.94e-07       3.03e+04    
+          32             41         1.2509e+06      3.86e-03       6.63e-07       3.16e+04    
+          33             42         1.2509e+06      1.62e-02       1.47e-07       3.16e+04    
+          34             43         1.2509e+06      1.50e-02       2.94e-07       5.66e+04    
+          35             44         1.2509e+06      2.83e-03       3.23e-07       3.16e+04    
+          36             45         1.2509e+06      8.09e-03       7.34e-08       3.16e+04    
     `ftol` termination condition is satisfied.
-    Function evaluations 41, initial cost 5.6552e+06, final cost 1.2509e+06, first-order optimality 5.83e+04.
+    Function evaluations 45, initial cost 5.6552e+06, final cost 1.2509e+06, first-order optimality 3.16e+04.
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-65
+.. GENERATED FROM PYTHON SOURCE LINES 56-57
 
 Verify that the optimization has converged to a solution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-72
+.. GENERATED FROM PYTHON SOURCE LINES 57-64
 
 .. code-block:: Python
 
@@ -306,12 +299,12 @@ Verify that the optimization has converged to a solution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-75
+.. GENERATED FROM PYTHON SOURCE LINES 65-67
 
 The model first the data well, so we can now consider the 
 values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-78
+.. GENERATED FROM PYTHON SOURCE LINES 67-70
 
 .. code-block:: Python
 
@@ -365,7 +358,7 @@ values for the derived parameters
     | T_2_h       | 1300.0  | sec        | 2nd mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
     | T_b_or      | 22.0    | sec        | mean transit time in blood of the organs                         | Physiological   | (0, 60)      |       |       |
     | T_e_or      | 390.0   | sec        | mean transit time in extracellular space of the organs           | Physiological   | (0, 800)     |       |       |
-    | T_gu        | 0.28    | sec        | mean transit time in the gut                                     | Physiological   | (0.1, 60)    |       |       |
+    | T_gu        | 0.29    | sec        | mean transit time in the gut                                     | Physiological   | (0.1, 60)    |       |       |
     | T_hl        | 22.0    | sec        | mean transit time in the heart and Lungs                         | Physiological   | (0, 30)      |       |       |
     | v_e_li      | 0.18    | mL/cm3     | volume fraction in extracellular space of the liver              | Physiological   | (0.01, 0.6)  |       |       |
     | v_li        | 1.0     | mL/cm3     | volume fraction in the liver                                     | Physiological   | (0, 1)       |       |       |
@@ -384,7 +377,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 33.737 seconds)
+   **Total running time of the script:** (1 minutes 34.870 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver_split_drug.py:

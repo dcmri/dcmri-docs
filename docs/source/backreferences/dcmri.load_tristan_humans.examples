@@ -36,27 +36,6 @@ Examples using ``dcmri.load_tristan_humans``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ">
-
-.. only:: html
-
-  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_thumb.png
-    :alt:
-
-  :doc:`/examples/cases/plot_aorta_liver`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Aorta and Liver</div>
-    </div>
-
-
-.. only:: not html
-
- * :doc:`/examples/cases/plot_aorta_liver`
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.">
 
 .. only:: html
@@ -78,6 +57,27 @@ Examples using ``dcmri.load_tristan_humans``
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_liver`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Aorta and Liver</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_aorta_liver`
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ">
 
 .. only:: html
@@ -96,6 +96,69 @@ Examples using ``dcmri.load_tristan_humans``
 .. only:: not html
 
  * :doc:`/examples/cases/plot_aorta_liver_split`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ">
+
+.. only:: html
+
+  .. image:: /examples/studies/images/thumb/sphx_glr_plot_tristan_volunteers_thumb.png
+    :alt:
+
+  :doc:`/examples/studies/plot_tristan_volunteers`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Clinical - rifampicin induced inhibition (short protocol)</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/studies/plot_tristan_volunteers`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ">
+
+.. only:: html
+
+  .. image:: /examples/studies/images/thumb/sphx_glr_plot_tristan_patients_thumb.png
+    :alt:
+
+  :doc:`/examples/studies/plot_tristan_patients`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Clinical - rifampicin effect in subjects with impaired liver function</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/studies/plot_tristan_patients`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of AortaLiver2scan for joint  fitting of aorta and liver signals measured over 2 separate scans. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ">
+
+.. only:: html
+
+  .. image:: /examples/studies/images/thumb/sphx_glr_plot_tristan_volunteers_split_thumb.png
+    :alt:
+
+  :doc:`/examples/studies/plot_tristan_volunteers_split`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Clinical - rifampicin induced inhibition of liver function</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/studies/plot_tristan_volunteers_split`
 
 .. thumbnail-parent-div-close
 

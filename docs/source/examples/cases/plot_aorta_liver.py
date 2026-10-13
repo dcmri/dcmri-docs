@@ -7,7 +7,6 @@ These example shows the use of the `~dcmri.AortaLiver` model to
 fit signals measured in aorta and liver simultaneously. 
 
 """
-
 import dcmri as dc
 
 
@@ -27,6 +26,7 @@ aol = dc.InverseAortaLiver(
     t2s_relaxation_ao=None,     # No T2* relaxation with TE=0
     t2s_relaxation_li=None,     # No T2* relaxation with TE=0
     calibrate=True,             # Derive signal scaling factor from data
+    estimate_bat='custom',      # Use the dedicated BAT estimator
 )
 
 # %%
@@ -34,19 +34,14 @@ aol = dc.InverseAortaLiver(
 
 aol.print_inputs()
 
-
 # %%
 # Fitting the model
 # -----------------
 study = 'tristan_humans_healthy_rifampicin'
 
-# --- Format the data
+# --- Format the data for on subject
 visit_1_data = dc.load_tristan_humans(study, 'LDS-002', visits=['control'], scans=[1])
 visit_2_data = dc.load_tristan_humans(study, 'LDS-002', visits=['drug'], scans=[1])
-
-# --- Estimate BAT
-visit_1_data['BAT'] = dc.estimate_bat(visit_1_data['tS_ao'], visit_1_data['S_ao'])
-visit_2_data['BAT'] = dc.estimate_bat(visit_2_data['tS_ao'], visit_2_data['S_ao'])
 
 # --- Fit the models
 visit_1_result = aol(visit_1_data, verbose=0)

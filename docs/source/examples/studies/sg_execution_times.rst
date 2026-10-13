@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.084** total execution time for 2 files **from examples\studies**:
+**22:10.759** total execution time for 4 files **from examples\studies**:
 
 .. container::
 
@@ -32,9 +32,15 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_examples_studies_plot_tristan_rat.py` (``plot_tristan_rat.py``)
-     - 00:00.084
+   * - :ref:`sphx_glr_examples_studies_plot_tristan_volunteers_split.py` (``plot_tristan_volunteers_split.py``)
+     - 12:31.080
      - 0.0
-   * - :ref:`sphx_glr_examples_studies__plot_tristan_volunteers.py` (``_plot_tristan_volunteers.py``)
-     - 00:00.000
+   * - :ref:`sphx_glr_examples_studies_plot_tristan_volunteers.py` (``plot_tristan_volunteers.py``)
+     - 07:11.841
+     - 0.0
+   * - :ref:`sphx_glr_examples_studies_plot_tristan_patients.py` (``plot_tristan_patients.py``)
+     - 02:19.976
+     - 0.0
+   * - :ref:`sphx_glr_examples_studies_plot_tristan_rat.py` (``plot_tristan_rat.py``)
+     - 00:07.863
      - 0.0

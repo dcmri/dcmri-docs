@@ -32,110 +32,55 @@ Magn Reson Imaging. 2019 Jun;59:53-60. doi: 10.1016/j.mri.2019.03.005.
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import pydmr
 import dcmri as dc
 
-# --- Fetch the data
-datafile = dc.fetch('KRUK')
-dmr = pydmr.read(datafile, 'nest')
-rois, pars = dmr['rois'], dmr['pars']
 
-# %%
-# Model definition
-# ----------------
-# For convenience we define a function that returns a trained model:
+model = dc.InverseKidney(
+    sequence='ZTE-3D-SPGR-SS', 
+    t2s_relaxation=None, 
+    calibrate=True,
+    aif='measured',
+)
 
-def kidney_model(roi, par, kidney):
-
-    # Get B0 and precontrast T1
-    B0 = par['field_strength']
-    T1 = par[kidney+' T1'] if kidney+' T1' in par else dc.T1(B0, 'kidney')
-
-    # Define tissue model
-    model = dc.Kidney(
-
-        # Configuration
-        kinetics = '2CF',
-        sequence = '3D-SPGR-SS',
-
-        # Indicator quantities
-        agent = par['agent'],
-
-        # Signal quantities
-        FA = par['FA'],
-        field_strength = B0,
-        TR = par['TR'],
-        
-        # Electromagnetic quantities
-        R10 = 1 / T1,
-    )
-
-    # Train the kidney model on the data
-    time, signal = roi['time'], roi[kidney]
-    aif = {'signal': roi['aorta'], 'R10': 1/dc.T1(B0, 'blood')}
-
-    model.train(time, signal, aif=aif, n0=par['n0'], bounds={'Tt': [30, 300]})
-
-    return model
-
-# %%
-# Fit all data
-# ------------
-# Now that we have illustrated an individual result in some detail, we proceed 
-# to determine SK-GFR for all datasets:
-
-results = []
-
-for subj in rois.keys():
-    for visit in rois[subj].keys():
-        for kidney in ['LK', 'RK']:
-
-            roi = rois[subj][visit]
-            par = pars[subj][visit]
-            if kidney not in roi:
+records = []
+for visit in ['pre', 'post']:
+    for kidney in ['LK', 'RK']:
+        data = dc.load_kruk(visit=visit, kidney=kidney)
+        for subj, vals in data.items():
+            if vals is None:
                 continue
+
+            result = model(vals, verbose=2)
             
-            model = kidney_model(roi, par, kidney)
-
-            # Export parameters and add SK-GFR
-            params = model.export_params(num_only=True)
-            params['iso-SK-GFR'] = {
-                'name': 'Isotope single-kidney GFR', 
-                'value': par[f'{kidney} iso-SK-GFR'], 
-                'unit': 'mL/sec', 
-                'sdev': 0,
+            info = {
+                'subject': subj,
+                'visit': visit,
+                'kidney': kidney,
+                'field_strength': vals['field_strength'],
             }
-            params['mrr-SK-GFR'] = {
-                'name': 'MRR single-kidney GFR', 
-                'value': model.params('Fp') * model.params('FF') * par[kidney+' vol'], 
-                'unit': 'mL/sec', 
-                'sdev': 0,
-            }
+            for parameter, value in result['pder'].items():
+                records.append(info | {
+                    'parameter': parameter,
+                    'value': value,
+                })
+            records.append(info | {
+                'parameter': 'nmGFR',
+                'value': vals['nmGFR'],
+            })
 
-            # Convert to a dataframe
-            df = pd.DataFrame.from_dict(params, orient = 'index')
-            df['participant'] = subj
-            df['kidney'] = kidney
-            df['visit'] = visit
-            df['parameter'] = df.index
-            df['B0'] = par['field_strength']
-
-            # Append to results
-            results.append(df)
-
-# Combine all results into a single dataframe
-results = pd.concat(results).reset_index(drop=True)
+# --- Return as a dataframe for analysis
+results = pd.DataFrame(records)
 
 
 # %%
 # Plot MRI values and reference values
 
 # --- Separate SK-GFR values
-v1T = pd.pivot_table(results[results.B0==1], values='value', columns='parameter', index=['participant','kidney','visit'])
-v3T = pd.pivot_table(results[results.B0==3], values='value', columns='parameter', index=['participant','kidney','visit'])
+v1T = pd.pivot_table(results[results.field_strength==1], values='value', columns='parameter', index=['subject', 'kidney', 'visit'])
+v3T = pd.pivot_table(results[results.field_strength==3], values='value', columns='parameter', index=['subject', 'kidney', 'visit'])
 
-iso1T, iso3T = 60 * v1T['iso-SK-GFR'].values, 60 * v3T['iso-SK-GFR'].values
-mri1T, mri3T = 60 * v1T['mrr-SK-GFR'].values, 60 * v3T['mrr-SK-GFR'].values
+iso1T, iso3T = 60 * v1T['nmGFR'].values, 60 * v3T['nmGFR'].values
+mri1T, mri3T = 60 * v1T['GFR'].values, 60 * v3T['GFR'].values
 
 # --- Plot full range
 vmax = np.amax(np.concatenate((iso1T, iso3T, mri1T, mri3T)))
@@ -171,10 +116,10 @@ plt.show()
 # %%
 # Compute bias and accuracy
 
-v = pd.pivot_table(results, values='value', columns='parameter', index=['participant','kidney','visit'])
+v = pd.pivot_table(results, values='value', columns='parameter', index=['subject','kidney','visit'])
 
-iso = 60 * v['iso-SK-GFR'].values
-mri = 60 * v['mrr-SK-GFR'].values
+iso = 60 * v['nmGFR'].values
+mri = 60 * v['GFR'].values
 
 diff = mri-iso
 bias = round(np.mean(diff), 0)

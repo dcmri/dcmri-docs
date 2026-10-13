@@ -54,6 +54,7 @@
    ~InverseKidney.new_mapped_outputs
    ~InverseKidney.output_quantities
    ~InverseKidney.outputs
+   ~InverseKidney.pfree
    ~InverseKidney.plot
    ~InverseKidney.print_all_inputs
    ~InverseKidney.print_all_io
@@ -157,6 +158,9 @@
 
 
 .. automethod:: InverseKidney.outputs
+
+
+.. automethod:: InverseKidney.pfree
 
 
 .. automethod:: InverseKidney.plot

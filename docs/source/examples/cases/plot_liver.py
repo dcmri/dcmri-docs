@@ -51,7 +51,7 @@ def get_data(study, subject, visit):
 
     # --- Define time points for simulation
     dt = 0.5
-    tmax = np.amax(data['tS_li']) + 60
+    tmax = np.amax(data['tS_li']) + 120
     t = np.arange(0, tmax, dt)
 
     const = {

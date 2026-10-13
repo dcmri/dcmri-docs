@@ -25,7 +25,7 @@ preclinical MRI scanners at 3 different centers and 2 different field strengths.
 
 # %% 
 # Import the required packages
-
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -48,7 +48,7 @@ def get_data(study, subject, visit):
 
     # --- Define time points for simulation
     dt = 0.5
-    tmax = np.amax(data['tS_li']) + 60
+    tmax = np.amax(data['tS_li']) + 120
     t = np.arange(0, tmax, dt)
 
     # --- Constants
@@ -67,18 +67,19 @@ def get_data(study, subject, visit):
 # Next we build a helper function that computes the results for all 
 # data in a given study:
 
-def compute_liver_function(study_name):
+def compute_liver_function(project):
 
     # --- Configure the model
     liver = dc.InverseLiver(kinetics='1I-IC-HF', calibrate=True)
 
     # --- Fit all datasets and save results in a list
     records = []
-    for file in dc.fetch(study_name):
+    for file in dc.fetch(project):
         data = pydmr.read(file, 'nest')
         for subj, visits in data['rois'].items():
             for visit in visits:
-                inputs = get_data(data, subj, visit)
+                study = Path(file).stem[:-4]
+                inputs = get_data(study, subj, visit)
                 result = liver(inputs) 
                 visit_data = data['pars'][subj][visit]
 

@@ -34,6 +34,27 @@ Examples using ``dcmri.InverseAortaLiverSplitDrug``
 
  * :doc:`/examples/cases/plot_aorta_liver_split_drug`
 
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ">
+
+.. only:: html
+
+  .. image:: /examples/studies/images/thumb/sphx_glr_plot_tristan_patients_thumb.png
+    :alt:
+
+  :doc:`/examples/studies/plot_tristan_patients`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Clinical - rifampicin effect in subjects with impaired liver function</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/studies/plot_tristan_patients`
+
 .. thumbnail-parent-div-close
 
 .. raw:: html

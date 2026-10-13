@@ -15,7 +15,6 @@ be assumed constant between both visits.
 
 """
 
-import numpy as np
 import dcmri as dc
 
 
@@ -37,6 +36,7 @@ model = dc.InverseAortaLiverDrug(
     t2s_relaxation_li=None,     # No T2* relaxation with TE=0
     calibrate=True,             # Derive signal scaling factor from data
     trigger=True,               # Signals are retrospectively triggered
+    estimate_bat='custom',      # Use the dedicated BAT estimator
 )
 
 # %%
@@ -54,12 +54,6 @@ study = 'tristan_humans_healthy_rifampicin'
 
 # --- Load the data
 data = dc.load_tristan_humans(study, 'LDS-002', scans=[1])
-
-# --- Estimate BAT
-data |= {
-    'BAT_1': dc.estimate_bat(data['tS_1_ao'], data['S_1_ao']),
-    'BAT_2': data['tS_2_ao'][np.argmax(data['S_2_ao'])],
-}
 
 # --- Fit the model
 result = model(data, verbose=2)

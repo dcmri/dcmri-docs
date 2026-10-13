@@ -15,6 +15,27 @@ Examples using ``dcmri.inverse.InverseLiver``
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Using Liver to measure hepatocellular function in rats.">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_liver_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_liver`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Liver</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/cases/plot_liver`
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.">
 
 .. only:: html

@@ -25,10 +25,9 @@ Aorta and Liver
 These example shows the use of the `~dcmri.AortaLiver` model to 
 fit signals measured in aorta and liver simultaneously. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-14
+.. GENERATED FROM PYTHON SOURCE LINES 10-13
 
 .. code-block:: Python
-
 
     import dcmri as dc
 
@@ -40,7 +39,7 @@ fit signals measured in aorta and liver simultaneously.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-20
+.. GENERATED FROM PYTHON SOURCE LINES 14-19
 
 Model setup
 -----------
@@ -48,7 +47,7 @@ Since we are using data from the `TRISTAN healthy volunteer study with
 rifampicin <https://zenodo.org/records/20210596>`_, we'll configure 
 the model with the following options:
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-32
+.. GENERATED FROM PYTHON SOURCE LINES 19-32
 
 .. code-block:: Python
 
@@ -62,6 +61,7 @@ the model with the following options:
         t2s_relaxation_ao=None,     # No T2* relaxation with TE=0
         t2s_relaxation_li=None,     # No T2* relaxation with TE=0
         calibrate=True,             # Derive signal scaling factor from data
+        estimate_bat='custom',      # Use the dedicated BAT estimator
     )
 
 
@@ -75,7 +75,7 @@ the model with the following options:
 
 Let's see what input parameters are needed for this model:
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-38
+.. GENERATED FROM PYTHON SOURCE LINES 34-37
 
 .. code-block:: Python
 
@@ -86,13 +86,12 @@ Let's see what input parameters are needed for this model:
 
 
 
-
 .. rst-class:: sphx-glr-script-out
 
  .. code-block:: none
 
     +----------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                                    InverseAortaLiver instance - inputs (n = 41)                                                    |
+    |                                                    InverseAortaLiver instance - inputs (n = 40)                                                    |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | Key            | Value      | Unit     | Name                                                    | Group           | Bounds        | DICOM | OSIPI |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
@@ -106,7 +105,6 @@ Let's see what input parameters are needed for this model:
     | dt             | 0.5        | sec      | pseudo-continuous time step                             | Hyperparameters |               |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
     | agent          | gadoterate |          | contrast agent generic name                             | Indicator       |               |       |       |
-    | BAT            | 30         | sec      | bolus arrival time                                      | Indicator       | (-30, 30)     |       |       |
     | dose           | 0.1        | mL/kg    | contrast agent dose                                     | Indicator       | (0, 0.2)      |       |       |
     | rate           | 1          | mL/sec   | injection rate                                          | Indicator       | (0, 10)       |       |       |
     +----------------+------------+----------+---------------------------------------------------------+-----------------+---------------+-------+-------+
@@ -150,24 +148,20 @@ Let's see what input parameters are needed for this model:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-41
+.. GENERATED FROM PYTHON SOURCE LINES 38-40
 
 Fitting the model
 -----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-55
+.. GENERATED FROM PYTHON SOURCE LINES 40-50
 
 .. code-block:: Python
 
     study = 'tristan_humans_healthy_rifampicin'
 
-    # --- Format the data
+    # --- Format the data for on subject
     visit_1_data = dc.load_tristan_humans(study, 'LDS-002', visits=['control'], scans=[1])
     visit_2_data = dc.load_tristan_humans(study, 'LDS-002', visits=['drug'], scans=[1])
-
-    # --- Estimate BAT
-    visit_1_data['BAT'] = dc.estimate_bat(visit_1_data['tS_ao'], visit_1_data['S_ao'])
-    visit_2_data['BAT'] = dc.estimate_bat(visit_2_data['tS_ao'], visit_2_data['S_ao'])
 
     # --- Fit the models
     visit_1_result = aol(visit_1_data, verbose=0)
@@ -180,12 +174,12 @@ Fitting the model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-58
+.. GENERATED FROM PYTHON SOURCE LINES 51-53
 
 Before we interpret the results, let's verify the optimization has 
 converged to a solution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-67
+.. GENERATED FROM PYTHON SOURCE LINES 53-62
 
 .. code-block:: Python
 
@@ -222,12 +216,12 @@ converged to a solution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-70
+.. GENERATED FROM PYTHON SOURCE LINES 63-65
 
 The model first the data well, so we can now consider the 
 values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-73
+.. GENERATED FROM PYTHON SOURCE LINES 65-68
 
 .. code-block:: Python
 
@@ -288,7 +282,7 @@ values for the derived parameters
     | E_li      | 0.031   |            | extraction fraction in the liver                             | Physiological   | (0.0, 1.0)   |       |       |
     | E_or      | 0.14    |            | extraction fraction in the organs                            | Physiological   | (0, 0.5)     |       |       |
     | F_b_li    | 0.01    | mL/sec/cm3 | flow per unit tissue in blood of the liver                   | Physiological   | (0, 1)       |       |       |
-    | F_p_li    | 0.0055  | mL/sec/cm3 | flow per unit tissue in plasma of the liver                  | Physiological   | (0, 0.05)    |       |       |
+    | F_p_li    | 0.0056  | mL/sec/cm3 | flow per unit tissue in plasma of the liver                  | Physiological   | (0, 0.05)    |       |       |
     | fCO_li    | 0.084   |            | fraction of the cardiac output in the liver                  | Physiological   | (0, 0.5)     |       |       |
     | GFR       | 1.9     | mL/sec     | glomerular filtration rate                                   | Physiological   | (0, 10)      |       |       |
     | H         | 0.45    |            | hematocrit                                                   | Physiological   | (0, 1)       |       |       |
@@ -319,7 +313,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 6.129 seconds)
+   **Total running time of the script:** (0 minutes 4.727 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver.py:

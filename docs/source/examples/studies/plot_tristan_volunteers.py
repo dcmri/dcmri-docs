@@ -47,112 +47,49 @@ volunteers*. Proc Intl Soc Mag Reson Med, Singapore 2024.
 # Import packages
 import pandas as pd
 import matplotlib.pyplot as plt
-import pydmr
 import dcmri as dc
 
-# Fetch the data from the TRISTAN rifampicin study:
-dmrfile = dc.fetch('tristan_humans_healthy_rifampicin')
-data = pydmr.read(dmrfile, 'nest')
-rois, pars = data['rois'], data['pars']
-
 # %%
-# Model definition
-# ----------------
-# In order to avoid some repetition in this script, we define a function 
-# that returns a trained model for a single dataset:
+# Data analysis
+# -------------
 
-def tristan_human(roi, par, **kwargs):
+# --- Configure the model
+aol = dc.InverseAortaLiver(
+    heartlung='pfcomp',         # Smoother first pass data
+    organs='2cxm',              # Long acquisition times reveal extravasation
+    liver='1I-IC',              # Intracellular agent
+    baseline='measured',        # Data are available on precontrast T1
+    sequence='ZTE-3D-SPGR-SS',  # Echo times are assumed to be zero
+    t2s_relaxation_ao=None,     # No T2* relaxation with TE=0
+    t2s_relaxation_li=None,     # No T2* relaxation with TE=0
+    calibrate=True,             # Derive signal scaling factor from data
+    estimate_bat='ttp',      # Use the dedicated BAT estimator
+)
 
-    time = roi['time_1'] - roi['time_1'][0]
+# --- Load all datasets
+study = 'tristan_humans_healthy_rifampicin'
 
-    model = dc.AortaLiver(
+data = {
+    visit: dc.load_tristan_humans(study, visits=[visit], scans=[1])
+    for visit in ['control', 'drug']
+}
 
-        # Configuration
-        kinetics = '1I-IC',
-        sequence = '3D-SPGR-SS',
-        non_stationary = None,
+# --- Fit all datasets and save results in a list
+records = []
+for subj in data['control'].keys():
+    for visit in ['control', 'drug']:
+        result = aol(data[visit][subj], verbose=2) 
 
-        # Indicator quantities
-        agent = 'gadoxetate',
-        dose = par['dose_1'],
-        rate = 1,
+        for parameter, value in result['pder'].items():
+            records.append({
+                'subject': subj,
+                'visit': visit,
+                'parameter': parameter,
+                'value': value,
+            })
 
-        # Signal quantities
-        field_strength = 3,
-        TR = par['TR'],
-        FA = par['FA_1'],
-        TS = time[1],
-
-        # Electromagnetic quantities
-        R10_a = 1/par['T1_aorta_1'],
-        R10_l = 1/par['T1_liver_1'],
-
-        # Physiological quantities
-        weight = par['weight'],
-
-        # Hyperparameter quantities
-        tmax = max(time),
-        vol_l = par['liver_volume'],
-    )
-
-    # --- Baseline
-    n0 = int(par['t0']/time[1])
-
-    # --- Time points in aorta and liver
-    time = (
-        time[roi['aorta_1_accept']], 
-        time[roi['liver_1_accept']],
-    )
-
-    # --- Signal in aorta and liver
-    signal = (
-        roi['aorta_1'][roi['aorta_1_accept']], 
-        roi['liver_1'][roi['liver_1_accept']],
-    )
-
-    # Train the model
-    _, sdev, _ = model.train(time, signal, n0=n0, **kwargs)
-
-    # Export the numerical parameters, including derived
-    pars = model.export_params(sdev=sdev, group='phys', deriv=True)
-
-    # Return as dataframe
-    df = pd.DataFrame.from_dict(pars, orient='index')
-    return df.reset_index().rename(columns={'index': 'parameter'})
-
-
-# %%
-# Fit all data
-# ------------
-# Now that we have illustrated an individual result in some detail, we proceed 
-# with fitting the data for all 10 volunteers, at baseline and rifampicin 
-# visit. We do not print output for these individual computations and instead 
-# store results in one single dataframe:
-
-results = []
-
-# Loop over all datasets
-for subj in rois.keys():
-    for visit in rois[subj].keys():
-
-        roi = rois[subj][visit]
-        par = pars[subj][visit]
-
-        # Generate a trained model for the scan:
-        df = tristan_human(roi, par, xtol=1e-3)
-
-        # Add visit and subject info
-        df['subject'] = subj
-        df['visit'] = visit
-
-        # Add to the list of all results
-        results.append(df)
-
-# Combine all results into a single dataframe
-results = pd.concat(results).reset_index(drop=True)
-
-# Print all results
-print(results.to_string())
+# --- Return as a dataframe for analysis
+results = pd.DataFrame(records)
 
 
 # %%
@@ -186,17 +123,18 @@ v1 = v1.pivot(index='subject', columns='parameter', values='value')
 v2 = v2.pivot(index='subject', columns='parameter', values='value')
 
 # Plot the rate constants in units of mL/min/100mL
-for s in v1.index:
+for i, s in enumerate(v1.index):
     x = ['baseline']
-    khe = [6000 * v1.at[s,'khe']]
-    kbh = [6000 * v1.at[s,'kbh']] 
+    khe = [6000 * v1.at[s,'k_e2h']]
+    kbh = [6000 * v1.at[s,'k_h2b']] 
     if s in v2.index:
         x += ['rifampicin']
-        khe += [6000 * v2.at[s,'khe']]
-        kbh += [6000 * v2.at[s,'kbh']] 
-    color = clr[int(s)-1]
+        khe += [6000 * v2.at[s,'k_e2h']]
+        kbh += [6000 * v2.at[s,'k_h2b']] 
+    color = clr[i - 1]
     ax1.plot(x, khe, '-', label=s, marker='o', markersize=6, color=color)
     ax2.plot(x, kbh, '-', label=s, marker='o', markersize=6, color=color)
+
 plt.show()
 
 # sphinx_gallery_start_ignore

@@ -153,7 +153,7 @@ dataset:
 
         # --- Define time points for simulation
         dt = 0.5
-        tmax = np.amax(data['tS_li']) + 60
+        tmax = np.amax(data['tS_li']) + 120
         t = np.arange(0, tmax, dt)
 
         const = {
@@ -462,7 +462,7 @@ from 0.0029 to 0.0024 mL/sec/cm3.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.381 seconds)
+   **Total running time of the script:** (0 minutes 0.383 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_liver.py:

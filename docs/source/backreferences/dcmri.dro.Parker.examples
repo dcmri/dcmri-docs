@@ -15,24 +15,24 @@ Examples using ``dcmri.dro.Parker``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial illustrates how the Aorta model InverseAorta  can be used to measure the cardiac output from an arterial input  function (AIF). ">
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.">
 
 .. only:: html
 
-  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_cardiac_output_thumb.png
+  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_wex_thumb.png
     :alt:
 
-  :doc:`/examples/tutorials/plot_cardiac_output`
+  :doc:`/examples/tutorials/plot_wex`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Cardiac output</div>
+      <div class="sphx-glr-thumbnail-title">Water exchange</div>
     </div>
 
 
 .. only:: not html
 
- * :doc:`/examples/tutorials/plot_cardiac_output`
+ * :doc:`/examples/tutorials/plot_wex`
 
 .. thumbnail-parent-div-close
 

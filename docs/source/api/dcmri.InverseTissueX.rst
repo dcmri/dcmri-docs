@@ -39,6 +39,7 @@
    ~InverseTissueX.configs_with_input
    ~InverseTissueX.configs_with_output
    ~InverseTissueX.filter_data
+   ~InverseTissueX.init
    ~InverseTissueX.init_data
    ~InverseTissueX.input_data
    ~InverseTissueX.input_quantities
@@ -54,7 +55,9 @@
    ~InverseTissueX.new_mapped_outputs
    ~InverseTissueX.output_quantities
    ~InverseTissueX.outputs
+   ~InverseTissueX.pfree
    ~InverseTissueX.plot
+   ~InverseTissueX.print
    ~InverseTissueX.print_all_inputs
    ~InverseTissueX.print_all_io
    ~InverseTissueX.print_all_outputs
@@ -114,6 +117,9 @@
 .. automethod:: InverseTissueX.filter_data
 
 
+.. automethod:: InverseTissueX.init
+
+
 .. automethod:: InverseTissueX.init_data
 
 
@@ -159,7 +165,13 @@
 .. automethod:: InverseTissueX.outputs
 
 
+.. automethod:: InverseTissueX.pfree
+
+
 .. automethod:: InverseTissueX.plot
+
+
+.. automethod:: InverseTissueX.print
 
 
 .. automethod:: InverseTissueX.print_all_inputs

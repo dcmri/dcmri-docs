@@ -15,129 +15,24 @@ Examples using ``dcmri.print_quantities``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.">
+    <div class="sphx-glr-thumbcontainer" tooltip="What are inflow effects? ------------------------ Inflow effects in the arterial input function (AIF) are a common  type of artefact in DCE-MRI which severely biases the results if it  is not properly acccounted for. The effect is caused by unsaturated  blood flowing into the imaging slab causing an artefactual increase  of the baseline signal. A naive analysis of inflow-corrupted data  underestimates the arterial concentration and consequently  overestimates tissue perfusion parameters. ">
 
 .. only:: html
 
-  .. image:: /examples/cases/images/thumb/sphx_glr_plot_kidney_thumb.png
+  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_minipig_thumb.png
     :alt:
 
-  :doc:`/examples/cases/plot_kidney`
+  :doc:`/examples/tutorials/plot_minipig`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Kidney</div>
+      <div class="sphx-glr-thumbnail-title">Inflow effects</div>
     </div>
 
 
 .. only:: not html
 
- * :doc:`/examples/cases/plot_kidney`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ">
-
-.. only:: html
-
-  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_drug_thumb.png
-    :alt:
-
-  :doc:`/examples/cases/plot_aorta_liver_drug`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Inhibition of liver function</div>
-    </div>
-
-
-.. only:: not html
-
- * :doc:`/examples/cases/plot_aorta_liver_drug`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.">
-
-.. only:: html
-
-  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_split_drug_thumb.png
-    :alt:
-
-  :doc:`/examples/cases/plot_aorta_liver_split_drug`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Liver Drug effect in two scans</div>
-    </div>
-
-
-.. only:: not html
-
- * :doc:`/examples/cases/plot_aorta_liver_split_drug`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ">
-
-.. only:: html
-
-  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_thumb.png
-    :alt:
-
-  :doc:`/examples/cases/plot_aorta_liver`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Aorta and Liver</div>
-    </div>
-
-
-.. only:: not html
-
- * :doc:`/examples/cases/plot_aorta_liver`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ">
-
-.. only:: html
-
-  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_liver_split_thumb.png
-    :alt:
-
-  :doc:`/examples/cases/plot_aorta_liver_split`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Aorta and Liver in two scans</div>
-    </div>
-
-
-.. only:: not html
-
- * :doc:`/examples/cases/plot_aorta_liver_split`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Using Liver to measure hepatocellular function in rats.">
-
-.. only:: html
-
-  .. image:: /examples/cases/images/thumb/sphx_glr_plot_liver_thumb.png
-    :alt:
-
-  :doc:`/examples/cases/plot_liver`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Liver</div>
-    </div>
-
-
-.. only:: not html
-
- * :doc:`/examples/cases/plot_liver`
+ * :doc:`/examples/tutorials/plot_minipig`
 
 .. thumbnail-parent-div-close
 

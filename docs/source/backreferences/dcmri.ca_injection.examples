@@ -1,0 +1,42 @@
+
+
+Examples using ``dcmri.ca_injection``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. start-sphx-glr-thumbnails
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Fitting models when no end-to-end model is available. ">
+
+.. only:: html
+
+  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_whole_body_kinetics_thumb.png
+    :alt:
+
+  :doc:`/examples/tutorials/plot_whole_body_kinetics`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Using library functions</div>
+    </div>
+
+
+.. only:: not html
+
+ * :doc:`/examples/tutorials/plot_whole_body_kinetics`
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+

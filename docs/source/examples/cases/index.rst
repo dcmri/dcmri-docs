@@ -92,6 +92,23 @@ Analyses of single subjects with end-to-end models.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaKidneys model to  fit signals measured in aorta and both kidneys simultaneously. ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_kidneys_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_kidneys`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">AortaKidneys</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ">
 
 .. only:: html
@@ -138,6 +155,7 @@ Analyses of single subjects with end-to-end models.
    /examples/cases/plot_aorta_liver_drug
    /examples/cases/plot_aorta_liver_split_drug
    /examples/cases/plot_aorta_liver
+   /examples/cases/plot_aorta_kidneys
    /examples/cases/plot_aorta_liver_split
    /examples/cases/plot_liver
 

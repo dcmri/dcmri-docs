@@ -16,43 +16,43 @@ import dcmri as dc
 # Set up the model
 # ----------------
 aok = dc.InverseAortaKidneys(
-    heartlung='chain',         # Smoother first pass data
-    organs='comp',              # Long acquisition times reveal extravasation
-    kidneys='2CFU',              # Intracellular agent
+    heartlung='chain',          # Smoother first pass data
+    organs='2cxm',              # Long acquisition times reveal extravasation # TODO to upper case 2CX for consistency
+    kidneys='2CF',              # Intracellular agent
+    # veins='plug',
     baseline='measured',        # Data are available on precontrast T1
     sequence='ZTE-3D-SPGR-SS',
-    # tof_corr=True,
-    # sequence='ZTE-3D-SPGR-SS',  # Echo times are assumed to be zero
     t2s_relaxation_ao=None,     # No T2* relaxation with TE=0
     t2s_relaxation_lk=None,     # No T2* relaxation with TE=0
-    t2s_relaxation_rk=None,     # No T2* relaxation with TE=0
-    calibrate=True,             # Derive signal scaling factor from data
+    t2s_relaxation_rk=None,     # No T2* relaxation with TE=0 # TODO relaxation models are always the same for left and right. Needs just on t2s_relaxation_ki
     estimate_bat='custom',      # Use the dedicated BAT estimator
 )
 
 #aok.print_inputs()
 
-data = dc.load_kruk('001', 'pre')
-
-dc.print_quantities(data)
+#data = dc.load_kruk('061', 'pre')
+data = dc.load_kruk('008', 'pre')
 
 result = aok(data, verbose=2)
 
-# Export SK-GFR and check against reference
-p = data | result['popt']
-RPF = (1 - p['H']) * p['fCO_ki'] * p['CO']
-GFR_lk = p['FF_lk'] * p['DRPF'] * RPF
-GFR_rk = p['FF_rk'] * (1 - p['DRPF']) * RPF
+# %%
+
+p = data | result['popt'] | result['pder']
+
+dc.print_quantities(result['popt'] | result['pder'], digits=3)
+
+# %%
 
 iso_lk, iso_rk = round(60 * p['nmGFR_lk']), round(60 * p['nmGFR_rk'])
-mrr_lk, mrr_rk = round(60 * GFR_lk), round(60 * GFR_rk)
+mrr_lk, mrr_rk = round(60 * p['GFR_lk']), round(60 * p['GFR_rk'])
 
 print(f"{'GFR (mL/min)':<14}{'Radio-isotope':>15}{'MRR':>8}")
 print("-" * 37)
 print(f"{'Left kidney':<14}{iso_lk:>15}{mrr_lk:>8}")
 print(f"{'Right kidney':<14}{iso_rk:>15}{mrr_rk:>8}")
 
-aok.plot(data, result)
+# %%
+aok.plot(data, result, xlim=None)
 
 # sphinx_gallery_start_ignore
 # sphinx_gallery_thumbnail_number = -1

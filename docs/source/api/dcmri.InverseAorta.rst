@@ -39,6 +39,7 @@
    ~InverseAorta.configs_with_input
    ~InverseAorta.configs_with_output
    ~InverseAorta.filter_data
+   ~InverseAorta.init
    ~InverseAorta.init_data
    ~InverseAorta.input_data
    ~InverseAorta.input_quantities
@@ -54,7 +55,9 @@
    ~InverseAorta.new_mapped_outputs
    ~InverseAorta.output_quantities
    ~InverseAorta.outputs
+   ~InverseAorta.pfree
    ~InverseAorta.plot
+   ~InverseAorta.predict
    ~InverseAorta.print_all_inputs
    ~InverseAorta.print_all_io
    ~InverseAorta.print_all_outputs
@@ -114,6 +117,9 @@
 .. automethod:: InverseAorta.filter_data
 
 
+.. automethod:: InverseAorta.init
+
+
 .. automethod:: InverseAorta.init_data
 
 
@@ -159,7 +165,13 @@
 .. automethod:: InverseAorta.outputs
 
 
+.. automethod:: InverseAorta.pfree
+
+
 .. automethod:: InverseAorta.plot
+
+
+.. automethod:: InverseAorta.predict
 
 
 .. automethod:: InverseAorta.print_all_inputs

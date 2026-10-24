@@ -22,9 +22,9 @@ import dcmri as dc
 # assume acquisition with a 3D-SPGR-SS sequence:
 
 kidney = dc.InverseKidney(
+    kinetics='2CFU',
     sequence='ZTE-3D-SPGR-SS', 
-    t2s_relaxation=None, 
-    calibrate=True,
+    t2s_relaxation=None,
     aif='measured',
 )
 
@@ -34,7 +34,7 @@ kidney = dc.InverseKidney(
 # kidney.print_inputs()
 
 # --- The dataset to be analysed
-data = dc.load_kruk('001', 'pre', 'LK')
+data = dc.load_kruk('061', 'pre', 'RK')
 
 dc.print_quantities(data)
 

@@ -41,6 +41,23 @@ Population analyses
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). ">
+
+.. only:: html
+
+  .. image:: /examples/studies/images/thumb/sphx_glr_plot_gfr_validation_thumb.png
+    :alt:
+
+  :doc:`/examples/studies/plot_gfr_validation`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Single-kidney glomerular filtration rate</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ">
 
 .. only:: html
@@ -75,6 +92,23 @@ Population analyses
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). ">
+
+.. only:: html
+
+  .. image:: /examples/studies/images/thumb/sphx_glr_plot_wb_gfr_validation_thumb.png
+    :alt:
+
+  :doc:`/examples/studies/plot_wb_gfr_validation`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Single-kidney glomerular filtration rate</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.">
 
 .. only:: html
@@ -101,7 +135,9 @@ Population analyses
    :hidden:
 
    /examples/studies/plot_tristan_volunteers
+   /examples/studies/plot_gfr_validation
    /examples/studies/plot_tristan_patients
    /examples/studies/plot_tristan_volunteers_split
+   /examples/studies/plot_wb_gfr_validation
    /examples/studies/plot_tristan_rat
 

@@ -113,6 +113,23 @@ Analyses of single subjects with end-to-end models.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaKidneys model to  fit signals measured in aorta and both kidneys simultaneously. ">
+
+.. only:: html
+
+  .. image:: /examples/cases/images/thumb/sphx_glr_plot_aorta_kidneys_thumb.png
+    :alt:
+
+  :doc:`/examples/cases/plot_aorta_kidneys`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">AortaKidneys</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ">
 
 .. only:: html
@@ -189,6 +206,23 @@ Population analyses
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). ">
+
+.. only:: html
+
+  .. image:: /examples/studies/images/thumb/sphx_glr_plot_gfr_validation_thumb.png
+    :alt:
+
+  :doc:`/examples/studies/plot_gfr_validation`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Single-kidney glomerular filtration rate</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ">
 
 .. only:: html
@@ -218,6 +252,23 @@ Population analyses
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Clinical - rifampicin induced inhibition of liver function</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). ">
+
+.. only:: html
+
+  .. image:: /examples/studies/images/thumb/sphx_glr_plot_wb_gfr_validation_thumb.png
+    :alt:
+
+  :doc:`/examples/studies/plot_wb_gfr_validation`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Single-kidney glomerular filtration rate</div>
     </div>
 
 
@@ -277,6 +328,74 @@ Tutorials
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Cardiac output</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Fitting models when no end-to-end model is available. ">
+
+.. only:: html
+
+  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_whole_body_kinetics_thumb.png
+    :alt:
+
+  :doc:`/examples/tutorials/plot_whole_body_kinetics`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Using library functions</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial will explore the role of the arterial input function (AIF) in  DC-MRI analysis, including the effect of using population-average AIFs versus  subject-specific AIFs. ">
+
+.. only:: html
+
+  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_aif_thumb.png
+    :alt:
+
+  :doc:`/examples/tutorials/plot_aif`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Arterial Input Functions</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.">
+
+.. only:: html
+
+  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_wex_thumb.png
+    :alt:
+
+  :doc:`/examples/tutorials/plot_wex`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Water exchange</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="What are inflow effects? ------------------------ Inflow effects in the arterial input function (AIF) are a common  type of artefact in DCE-MRI which severely biases the results if it  is not properly acccounted for. The effect is caused by unsaturated  blood flowing into the imaging slab causing an artefactual increase  of the baseline signal. A naive analysis of inflow-corrupted data  underestimates the arterial concentration and consequently  overestimates tissue perfusion parameters. ">
+
+.. only:: html
+
+  .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_minipig_thumb.png
+    :alt:
+
+  :doc:`/examples/tutorials/plot_minipig`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Inflow effects</div>
     </div>
 
 

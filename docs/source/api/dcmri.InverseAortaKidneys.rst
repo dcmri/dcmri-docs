@@ -39,6 +39,7 @@
    ~InverseAortaKidneys.configs_with_input
    ~InverseAortaKidneys.configs_with_output
    ~InverseAortaKidneys.filter_data
+   ~InverseAortaKidneys.init
    ~InverseAortaKidneys.init_data
    ~InverseAortaKidneys.input_data
    ~InverseAortaKidneys.input_quantities
@@ -54,6 +55,7 @@
    ~InverseAortaKidneys.new_mapped_outputs
    ~InverseAortaKidneys.output_quantities
    ~InverseAortaKidneys.outputs
+   ~InverseAortaKidneys.pfree
    ~InverseAortaKidneys.plot
    ~InverseAortaKidneys.print_all_inputs
    ~InverseAortaKidneys.print_all_io
@@ -114,6 +116,9 @@
 .. automethod:: InverseAortaKidneys.filter_data
 
 
+.. automethod:: InverseAortaKidneys.init
+
+
 .. automethod:: InverseAortaKidneys.init_data
 
 
@@ -157,6 +162,9 @@
 
 
 .. automethod:: InverseAortaKidneys.outputs
+
+
+.. automethod:: InverseAortaKidneys.pfree
 
 
 .. automethod:: InverseAortaKidneys.plot

@@ -675,7 +675,7 @@
    "name": "dict"
   }
  ],
- "data.keys": [
+ "data.items": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -1596,6 +1596,15 @@
    "module": "pandas",
    "module_short": "pandas",
    "name": "DirNamesMixin.pivot"
+  }
+ ],
+ "vals": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
   }
  ],
  "value": [

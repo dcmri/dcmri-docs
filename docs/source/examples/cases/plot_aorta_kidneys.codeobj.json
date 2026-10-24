@@ -1,0 +1,224 @@
+{
+ "aok": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta_kidneys",
+   "module_short": "dcmri.inverse.aorta_kidneys",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAortaKidneys"
+  }
+ ],
+ "aok.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta_kidneys",
+   "module_short": "dcmri.inverse.aorta_kidneys",
+   "name": "InverseAortaKidneys.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAortaKidneys.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAortaKidneys.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.plot"
+  }
+ ],
+ "data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "dc.InverseAortaKidneys": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta_kidneys",
+   "module_short": "dcmri.inverse.aorta_kidneys",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAortaKidneys"
+  }
+ ],
+ "dc.load_kruk": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "load_kruk"
+  }
+ ],
+ "dc.print_quantities": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "print_quantities"
+  }
+ ],
+ "dcmri.AortaKidneys": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "AortaKidneys"
+  }
+ ],
+ "iso_lk": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "iso_rk": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "mrr_lk": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "mrr_rk": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "p": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "result": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ]
+}

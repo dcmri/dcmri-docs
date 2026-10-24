@@ -142,7 +142,7 @@ inputs. Let's see what they are:
     | T_hl           | 10    | sec      | mean transit time in the heart and Lungs               | Physiological   | (0, 30)      |       |       |
     | vr_or          | 0.9   |          | Venous return in the organs                            | Physiological   | (0, 1)       |       |       |
     +----------------+-------+----------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | tstart         | 0     | sec      | start of the acquisition                               | Sequence        | (0, 10000.0) |       |       |
+    | nb             | 1     | a.u.     | number of baseline time points                         | Signal          |              |       |       |
     +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -163,11 +163,83 @@ We can now fit the model to the data:
 
 .. code-block:: Python
 
-    result = aorta(aif)
+    result = aorta(aif, verbose=2)
 
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+       Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+           0              1         8.0233e+03                                    5.28e+04    
+           1              2         3.5144e+03      4.51e+03       1.80e-01       1.00e+04    
+           2              3         2.1886e+03      1.33e+03       3.46e-01       1.10e+04    
+           3              4         1.5112e+03      6.77e+02       2.07e-01       1.93e+03    
+           4              5         1.4187e+03      9.25e+01       2.43e-01       1.10e+04    
+           5              6         1.2416e+03      1.77e+02       1.09e-01       1.16e+03    
+           6              7         1.1591e+03      8.25e+01       1.31e-01       8.85e+02    
+           7              8         1.1387e+03      2.04e+01       6.58e-02       1.75e+02    
+           8              9         1.1331e+03      5.57e+00       1.35e-01       1.60e+02    
+           9             10         1.1328e+03      2.42e-01       1.26e-02       8.03e+01    
+          10             11         1.1328e+03      9.73e-02       2.68e-02       5.62e+01    
+          11             12         1.1324e+03      3.86e-01       1.70e-01       6.67e+01    
+          12             13         1.1322e+03      1.68e-01       1.10e-02       6.29e+01    
+          13             14         1.1320e+03      1.61e-01       1.27e-02       6.70e+01    
+          14             15         1.1319e+03      1.83e-01       1.38e-02       6.48e+01    
+          15             16         1.1317e+03      1.31e-01       8.13e-03       7.22e+01    
+          16             17         1.1315e+03      2.21e-01       1.63e-02       6.83e+01    
+          17             18         1.1314e+03      7.28e-02       5.91e-04       5.41e+01    
+          18             19         1.1312e+03      2.21e-01       1.79e-02       8.06e+01    
+          19             20         1.1310e+03      1.75e-01       1.64e-02       7.13e+01    
+          20             21         1.1309e+03      1.47e-01       5.13e-04       7.21e+01    
+          21             22         1.1306e+03      2.59e-01       2.70e-02       1.12e+02    
+          22             23         1.1305e+03      1.13e-01       8.19e-04       6.28e+01    
+          23             24         1.1302e+03      3.46e-01       5.74e-03       1.05e+02    
+          24             25         1.1300e+03      1.34e-01       9.52e-04       3.91e+01    
+          25             26         1.1299e+03      1.29e-01       3.16e-03       6.89e+01    
+          26             27         1.1295e+03      4.50e-01       2.37e-02       1.14e+02    
+          27             28         1.1293e+03      1.72e-01       1.03e-03       7.19e+01    
+          28             29         1.1287e+03      6.22e-01       2.79e-02       1.24e+02    
+          29             30         1.1284e+03      2.49e-01       1.14e-03       7.49e+01    
+          30             31         1.1277e+03      6.67e-01       2.48e-02       1.54e+02    
+          31             32         1.1274e+03      3.12e-01       1.45e-03       6.58e+01    
+          32             33         1.1266e+03      8.04e-01       2.60e-02       1.52e+02    
+          33             34         1.1263e+03      3.57e-01       1.46e-03       8.79e+01    
+          34             35         1.1251e+03      1.16e+00       3.29e-02       2.02e+02    
+          35             36         1.1237e+03      1.43e+00       2.81e-02       1.92e+02    
+          36             37         1.1221e+03      1.60e+00       4.07e-02       1.93e+02    
+          37             38         1.1203e+03      1.77e+00       2.80e-02       2.24e+02    
+          38             39         1.1177e+03      2.57e+00       5.15e-02       2.47e+02    
+          39             40         1.1147e+03      2.99e+00       1.85e-02       2.84e+02    
+          40             41         1.1102e+03      4.53e+00       6.59e-02       3.47e+02    
+          41             42         1.1033e+03      6.94e+00       2.78e-02       3.73e+02    
+          42             43         1.0936e+03      9.69e+00       3.65e-02       4.64e+02    
+          43             44         1.0758e+03      1.78e+01       3.37e-02       5.87e+02    
+          44             45         1.0311e+03      4.47e+01       1.05e-01       8.14e+02    
+          45             46         8.5462e+02      1.76e+02       1.11e-01       1.08e+03    
+          46             47         6.4403e+02      2.11e+02       5.16e-01       4.19e+02    
+          47             49         5.3186e+02      1.12e+02       9.10e-02       3.02e+02    
+          48             50         3.8314e+02      1.49e+02       1.87e-01       1.14e+03    
+          49             52         3.1718e+02      6.60e+01       7.14e-02       3.76e+02    
+          50             53         2.1902e+02      9.82e+01       1.50e-01       2.29e+03    
+          51             54         1.1863e+02      1.00e+02       2.35e-01       1.53e+03    
+          52             55         8.1833e+01      3.68e+01       9.46e-02       5.51e+02    
+          53             56         6.9854e+01      1.20e+01       1.35e-01       8.17e+02    
+          54             57         6.4129e+01      5.73e+00       5.67e-02       1.89e+01    
+          55             59         6.3254e+01      8.75e-01       1.81e-02       3.26e+01    
+          56             61         6.2810e+01      4.44e-01       7.19e-03       2.45e+01    
+          57             63         6.2595e+01      2.14e-01       3.92e-03       1.82e+02    
+          58             65         6.2533e+01      6.24e-02       2.32e-03       5.28e+00    
+          59             67         6.2503e+01      3.02e-02       1.00e-03       3.53e+00    
+          60             68         6.2451e+01      5.14e-02       2.00e-03       4.56e+00    
+          61             71         6.2445e+01      6.76e-03       3.58e-04       2.02e+02    
+          62             80         6.2445e+01      3.11e-06       2.81e-08       6.07e+00    
+          63             81         6.2445e+01      4.17e-08       5.34e-09       2.82e+00    
+    `xtol` termination condition is satisfied.
+    Function evaluations 81, initial cost 8.0233e+03, final cost 6.2445e+01, first-order optimality 2.82e+00.
 
 
 
@@ -179,12 +251,11 @@ converged to the correct solution. To do this, we
 first update the data with the new optimized values, 
 and then plot it with the ground truth concentrations as reference:
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-71
+.. GENERATED FROM PYTHON SOURCE LINES 68-70
 
 .. code-block:: Python
 
-    aif |= result['popt']
-    aorta.plot(aif)
+    aorta.plot(aif, result)
 
 
 
@@ -198,12 +269,12 @@ and then plot it with the ground truth concentrations as reference:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-74
+.. GENERATED FROM PYTHON SOURCE LINES 71-73
 
 The fit looks good so we can interpret the results. Let's 
 print them out:
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-76
+.. GENERATED FROM PYTHON SOURCE LINES 73-75
 
 .. code-block:: Python
 
@@ -217,29 +288,27 @@ print them out:
 
  .. code-block:: none
 
-    +-----------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                                                      Quantities                                                                     |
-    +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-----------+
-    | Key    | Value               | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI     |
-    +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-----------+
-    | BAT    | 25.332051190252496  | sec    | bolus arrival time                                     | Indicator       | (-30, 30)    |       |           |
-    +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-----------+
-    | CO     | 257.09368999044585  | mL/sec | cardiac output                                         | Physiological   | (0, 500)     |       |           |
-    | D_hl   | 0.07837511656966911 |        | transit time dispersion in the heart and Lungs         | Physiological   | (0.01, 0.99) |       |           |
-    | E_or   | 0.494167422774453   |        | extraction fraction in the organs                      | Physiological   | (0, 0.5)     |       |           |
-    | T_b_or | 9.812882364438256   | sec    | mean transit time in blood of the organs               | Physiological   | (0, 60)      |       |           |
-    | T_e_or | 18.214564962280267  | sec    | mean transit time in extracellular space of the organs | Physiological   | (0, 800)     |       |           |
-    | T_hl   | 13.21053769764908   | sec    | mean transit time in the heart and Lungs               | Physiological   | (0, 30)      |       |           |
-    | vr_or  | 0.8675090552726987  |        | Venous return in the organs                            | Physiological   | (0, 1)       |       |           |
-    +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-----------+
-    | S0     | 108.45917866165576  | a.u.   | signal scaling factor                                  | Signal          | (0, 5)       |       | Q.MS1.010 |
-    +-----------------------------------------------------------------------------------------------------------------------------------------------------+
+    +---------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                     Quantities                                                                    |
+    +--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | Key    | Value                 | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
+    +--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | BAT    | 33.15256616652732     | sec    | bolus arrival time                                     | Indicator       | (-30, 30)    |       |       |
+    +--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | CO     | 430.8856025875062     | mL/sec | cardiac output                                         | Physiological   | (0, 500)     |       |       |
+    | D_hl   | 0.3531098169688629    |        | transit time dispersion in the heart and Lungs         | Physiological   | (0.01, 0.99) |       |       |
+    | E_or   | 0.48514575155968204   |        | extraction fraction in the organs                      | Physiological   | (0, 0.5)     |       |       |
+    | T_b_or | 2.012623979386575e-09 | sec    | mean transit time in blood of the organs               | Physiological   | (0, 60)      |       |       |
+    | T_e_or | 23.361882137749202    | sec    | mean transit time in extracellular space of the organs | Physiological   | (0, 800)     |       |       |
+    | T_hl   | 3.3987401511646342    | sec    | mean transit time in the heart and Lungs               | Physiological   | (0, 30)      |       |       |
+    | vr_or  | 0.935680891219857     |        | Venous return in the organs                            | Physiological   | (0, 1)       |       |       |
+    +---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-83
+.. GENERATED FROM PYTHON SOURCE LINES 76-82
 
 The measured cardiac output is high: a value of 220 mL/sec 
 corresponds to 13.2 L/min, which is more than twice the typical 
@@ -251,7 +320,7 @@ though their exact estimate was less elevated (10.5 L/min).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 1.348 seconds)
+   **Total running time of the script:** (3 minutes 50.957 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_cardiac_output.py:

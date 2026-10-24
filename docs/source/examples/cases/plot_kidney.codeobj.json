@@ -100,15 +100,6 @@
    "name": "Kidney"
   }
  ],
- "get_data": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  }
- ],
  "iso_sk_gfr": [
   {
    "is_class": false,
@@ -139,50 +130,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "InverseKidney"
-  }
- ],
- "kidney.pfree": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.inverse.kidney",
-   "module_short": "dcmri.inverse.kidney",
-   "name": "InverseKidney.pfree"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.inverse",
-   "module_short": "dcmri.inverse",
-   "name": "InverseKidney.pfree"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "InverseKidney.pfree"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core.module",
-   "module_short": "dcmri.core.module",
-   "name": "Module.pfree"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core",
-   "module_short": "dcmri.core",
-   "name": "Module.pfree"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Module.pfree"
   }
  ],
  "kidney.plot": [
@@ -229,50 +176,6 @@
    "name": "Module.plot"
   }
  ],
- "kidney.print_inputs": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.inverse.kidney",
-   "module_short": "dcmri.inverse.kidney",
-   "name": "InverseKidney.print_inputs"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.inverse",
-   "module_short": "dcmri.inverse",
-   "name": "InverseKidney.print_inputs"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "InverseKidney.print_inputs"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core.module",
-   "module_short": "dcmri.core.module",
-   "name": "Module.print_inputs"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri.core",
-   "module_short": "dcmri.core",
-   "name": "Module.print_inputs"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Module.print_inputs"
-  }
- ],
  "mrr_sk_gfr": [
   {
    "is_class": false,
@@ -280,6 +183,15 @@
    "module": "numpy",
    "module_short": "numpy",
    "name": "float64"
+  }
+ ],
+ "p": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
   }
  ],
  "result": [

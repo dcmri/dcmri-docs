@@ -22,25 +22,21 @@ import dcmri as dc
 # assume acquisition with a 3D-SPGR-SS sequence:
 
 kidney = dc.InverseKidney(
+    kinetics='2CFU',
     sequence='ZTE-3D-SPGR-SS', 
-    t2s_relaxation=None, 
-    calibrate=True,
+    t2s_relaxation=None,
     aif='measured',
 )
 
 # %%
 # Let's see what input parameters are needed for this model:
 
-kidney.print_inputs()
-
-def get_data(subject, kid, visit):
-    data = dc.load_kruk(subject, kid, visit)
-    data['pfree'] = kidney.pfree() | {'T_u': [30, 300]}
-    return data
+# kidney.print_inputs()
 
 # --- The dataset to be analysed
-data = get_data('001', 'LK', 'pre')
+data = dc.load_kruk('061', 'pre', 'RK')
 
+dc.print_quantities(data)
 
 # %%
 # Train the Kidney model
@@ -48,11 +44,8 @@ data = get_data('001', 'LK', 'pre')
 # --- Train the kidney model on the data
 result = kidney(data)
 
-# --- Update data
-data |= result['popt'] | {'c_ar': result['c_ar']}
-
-# --- Plot the results to check that the model has fitted the data
-kidney.plot(data)
+# --- Check that the model has fitted the data
+kidney.plot(data, result)
 
 # %%
 # Numerical results
@@ -63,9 +56,10 @@ dc.print_quantities(result, digits=2)
 #%%
 # Compare the measured SK-GFR to the 
 # radio-isotope reference value:
+p = data | result['popt']
 
-mrr_sk_gfr = data['FF'] * data['F_p_ki'] * data['vol_ki']
-iso_sk_gfr = data['GFR']
+mrr_sk_gfr = p['FF'] * p['F_p_ki'] * p['vol_ki']
+iso_sk_gfr = p['nmGFR']
 
 print(f"Radio-isotope SK-GFR: {round(60 * iso_sk_gfr)} mL/min")
 print(f"MRR SK-GFR: {round(60 * mrr_sk_gfr)} mL/min")

@@ -39,6 +39,7 @@
    ~InverseLiver.configs_with_input
    ~InverseLiver.configs_with_output
    ~InverseLiver.filter_data
+   ~InverseLiver.init
    ~InverseLiver.init_data
    ~InverseLiver.input_data
    ~InverseLiver.input_quantities
@@ -112,6 +113,9 @@
 
 
 .. automethod:: InverseLiver.filter_data
+
+
+.. automethod:: InverseLiver.init
 
 
 .. automethod:: InverseLiver.init_data

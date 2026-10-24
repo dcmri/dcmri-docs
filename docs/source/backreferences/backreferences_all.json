@@ -1,1337 +1,308 @@
 {
- "dcmri.AortaLiver": [
+ "dcmri.ForwardTissueX": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_tristan_volunteers.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition (short protocol)"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.AortaLiver2scan": [
+ "dcmri.ForwardTissueX.init": [
   [
-   "plot_tristan_volunteers_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver2scan for joint  fitting of aorta and liver signals measured over 2 separate scans. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition of liver function"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.AortaLiverDrug": [
+ "dcmri.ForwardTissueX.plot": [
   [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.AortaLiverSplit": [
+ "dcmri.InverseTissueX": [
   [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.AortaLiverSplitDrug": [
+ "dcmri.InverseTissueX.plot": [
   [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.InverseAortaLiver": [
+ "dcmri.InverseTissueX.print": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_tristan_volunteers.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition (short protocol)"
-  ]
- ],
- "dcmri.InverseAortaLiver.plot": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.InverseAortaLiver.print_inputs": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.InverseAortaLiverDrug": [
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ]
- ],
- "dcmri.InverseAortaLiverDrug.plot": [
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ]
- ],
- "dcmri.InverseAortaLiverDrug.print_inputs": [
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ]
- ],
- "dcmri.InverseAortaLiverSplit": [
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_tristan_volunteers_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver2scan for joint  fitting of aorta and liver signals measured over 2 separate scans. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition of liver function"
-  ]
- ],
- "dcmri.InverseAortaLiverSplit.plot": [
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ]
- ],
- "dcmri.InverseAortaLiverSplit.print_inputs": [
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ]
- ],
- "dcmri.InverseAortaLiverSplitDrug": [
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_tristan_patients.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ",
-   "Clinical - rifampicin effect in subjects with impaired liver function"
-  ]
- ],
- "dcmri.InverseAortaLiverSplitDrug.plot": [
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ]
- ],
- "dcmri.InverseAortaLiverSplitDrug.print_inputs": [
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ]
- ],
- "dcmri.InverseKidney": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.InverseKidney.pfree": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.InverseKidney.plot": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.InverseKidney.print_inputs": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.InverseLiver": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ],
-  [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
-  ]
- ],
- "dcmri.InverseLiver.plot": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ]
- ],
- "dcmri.InverseLiver.print_inputs": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ]
- ],
- "dcmri.Kidney": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.Liver": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ],
-  [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
  "dcmri.Module": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ],
-  [
-   "plot_tristan_volunteers.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition (short protocol)"
-  ],
-  [
-   "plot_tristan_patients.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ",
-   "Clinical - rifampicin effect in subjects with impaired liver function"
-  ],
-  [
-   "plot_tristan_volunteers_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver2scan for joint  fitting of aorta and liver signals measured over 2 separate scans. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition of liver function"
-  ],
-  [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.Module.pfree": [
+ "dcmri.Module.init": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
  "dcmri.Module.plot": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.Module.print_inputs": [
+ "dcmri.Module.print": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
+  ]
+ ],
+ "dcmri.Parker": [
   [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
+  ]
+ ],
+ "dcmri.Tissue": [
   [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
  "dcmri.core.Module": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ],
-  [
-   "plot_tristan_volunteers.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition (short protocol)"
-  ],
-  [
-   "plot_tristan_patients.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ",
-   "Clinical - rifampicin effect in subjects with impaired liver function"
-  ],
-  [
-   "plot_tristan_volunteers_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver2scan for joint  fitting of aorta and liver signals measured over 2 separate scans. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition of liver function"
-  ],
-  [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.core.Module.pfree": [
+ "dcmri.core.Module.init": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
  "dcmri.core.Module.plot": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.core.Module.print_inputs": [
+ "dcmri.core.Module.print": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
  "dcmri.core.module.Module": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ],
-  [
-   "plot_tristan_volunteers.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition (short protocol)"
-  ],
-  [
-   "plot_tristan_patients.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ",
-   "Clinical - rifampicin effect in subjects with impaired liver function"
-  ],
-  [
-   "plot_tristan_volunteers_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver2scan for joint  fitting of aorta and liver signals measured over 2 separate scans. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition of liver function"
-  ],
-  [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.core.module.Module.pfree": [
+ "dcmri.core.module.Module.init": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
  "dcmri.core.module.Module.plot": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.core.module.Module.print_inputs": [
+ "dcmri.core.module.Module.print": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.fetch": [
+ "dcmri.dro.Parker": [
   [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiver": [
+ "dcmri.dro.modules.Parker": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_tristan_volunteers.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition (short protocol)"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiver.plot": [
+ "dcmri.forward.ForwardTissueX": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiver.print_inputs": [
+ "dcmri.forward.ForwardTissueX.init": [
   [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiverDrug": [
+ "dcmri.forward.ForwardTissueX.plot": [
   [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiverDrug.plot": [
+ "dcmri.forward.tissue_x.ForwardTissueX": [
   [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiverDrug.print_inputs": [
+ "dcmri.forward.tissue_x.ForwardTissueX.init": [
   [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiverSplit": [
+ "dcmri.forward.tissue_x.ForwardTissueX.plot": [
   [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_tristan_volunteers_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver2scan for joint  fitting of aorta and liver signals measured over 2 separate scans. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition of liver function"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiverSplit.plot": [
+ "dcmri.inverse.InverseTissueX": [
   [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiverSplit.print_inputs": [
+ "dcmri.inverse.InverseTissueX.plot": [
   [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiverSplitDrug": [
+ "dcmri.inverse.InverseTissueX.print": [
   [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_tristan_patients.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ",
-   "Clinical - rifampicin effect in subjects with impaired liver function"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiverSplitDrug.plot": [
+ "dcmri.inverse.tissue_x.InverseTissueX": [
   [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseAortaLiverSplitDrug.print_inputs": [
+ "dcmri.inverse.tissue_x.InverseTissueX.plot": [
   [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ],
- "dcmri.inverse.InverseKidney": [
+ "dcmri.inverse.tissue_x.InverseTissueX.print": [
   [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.inverse.InverseKidney.pfree": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.inverse.InverseKidney.plot": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.inverse.InverseKidney.print_inputs": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.inverse.InverseLiver": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ],
-  [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
-  ]
- ],
- "dcmri.inverse.InverseLiver.plot": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ]
- ],
- "dcmri.inverse.InverseLiver.print_inputs": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ]
- ],
- "dcmri.inverse.aorta_liver.InverseAortaLiver": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_tristan_volunteers.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition (short protocol)"
-  ]
- ],
- "dcmri.inverse.aorta_liver.InverseAortaLiver.plot": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.inverse.aorta_liver.InverseAortaLiver.print_inputs": [
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ]
- ],
- "dcmri.inverse.aorta_liver_drug.InverseAortaLiverDrug": [
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ]
- ],
- "dcmri.inverse.aorta_liver_drug.InverseAortaLiverDrug.plot": [
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ]
- ],
- "dcmri.inverse.aorta_liver_drug.InverseAortaLiverDrug.print_inputs": [
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ]
- ],
- "dcmri.inverse.aorta_liver_split.InverseAortaLiverSplit": [
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_tristan_volunteers_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver2scan for joint  fitting of aorta and liver signals measured over 2 separate scans. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition of liver function"
-  ]
- ],
- "dcmri.inverse.aorta_liver_split.InverseAortaLiverSplit.plot": [
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ]
- ],
- "dcmri.inverse.aorta_liver_split.InverseAortaLiverSplit.print_inputs": [
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ]
- ],
- "dcmri.inverse.aorta_liver_split_drug.InverseAortaLiverSplitDrug": [
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_tristan_patients.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ",
-   "Clinical - rifampicin effect in subjects with impaired liver function"
-  ]
- ],
- "dcmri.inverse.aorta_liver_split_drug.InverseAortaLiverSplitDrug.plot": [
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ]
- ],
- "dcmri.inverse.aorta_liver_split_drug.InverseAortaLiverSplitDrug.print_inputs": [
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ]
- ],
- "dcmri.inverse.kidney.InverseKidney": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.inverse.kidney.InverseKidney.pfree": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.inverse.kidney.InverseKidney.plot": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.inverse.kidney.InverseKidney.print_inputs": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.inverse.liver.InverseLiver": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ],
-  [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
-  ]
- ],
- "dcmri.inverse.liver.InverseLiver.plot": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ]
- ],
- "dcmri.inverse.liver.InverseLiver.print_inputs": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ]
- ],
- "dcmri.load_kruk": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ]
- ],
- "dcmri.load_tristan_humans": [
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_tristan_volunteers.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver for joint fitting of  aorta and liver signals to a whole-body model. The use case is provided by the  liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition (short protocol)"
-  ],
-  [
-   "plot_tristan_patients.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ",
-   "Clinical - rifampicin effect in subjects with impaired liver function"
-  ],
-  [
-   "plot_tristan_volunteers_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of AortaLiver2scan for joint  fitting of aorta and liver signals measured over 2 separate scans. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. The data and analysis was first  presented at the ISMRM in 2024 (Min et al 2024, manuscript in press). ",
-   "Clinical - rifampicin induced inhibition of liver function"
-  ]
- ],
- "dcmri.load_tristan_rats": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ],
-  [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
-  ]
- ],
- "dcmri.parse_varname": [
-  [
-   "plot_tristan_patients.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "The data show in this example aimed to demonstrates the effect of rifampicin  on liver function of patients with impaired function. The use  case is provided by the liver work package of the  TRISTAN project  which develops imaging  biomarkers for drug safety assessment. ",
-   "Clinical - rifampicin effect in subjects with impaired liver function"
-  ]
- ],
- "dcmri.print_quantities": [
-  [
-   "plot_kidney.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). We will analyse  one kidney of a participant in the KRUK study.",
-   "Kidney"
-  ],
-  [
-   "plot_aorta_liver_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverDrug model to  simultaneously fit signals measured in aorta and liver over two  different visits. In the second visit, images are acquired after  administering a drug that inhibits liver function. ",
-   "Inhibition of liver function"
-  ],
-  [
-   "plot_aorta_liver_split_drug.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplitDrug model to  simultaneously fit signals measured in aorta and liver over two  different days, with two scans on each day. The second day, an  inhibitor drug is administered before the first scan of the day.",
-   "Liver Drug effect in two scans"
-  ],
-  [
-   "plot_aorta_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiver model to  fit signals measured in aorta and liver simultaneously. ",
-   "Aorta and Liver"
-  ],
-  [
-   "plot_aorta_liver_split.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "These example shows the use of the AortaLiverSplit model to  simultaneously fit signals measured in aorta and liver over two  different scans on the same day. ",
-   "Aorta and Liver in two scans"
-  ],
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ]
- ],
- "dcmri.tristan_rat": [
-  [
-   "plot_liver.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\cases",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\cases",
-   "Using Liver to measure hepatocellular function in rats.",
-   "Liver"
-  ],
-  [
-   "plot_tristan_rat.py",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\studies",
-   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\studies",
-   "This example illustrates the use of Liver in a preclinical  setting. The notebook replicates the findings from a series of  multi-center experiments in rats performed by the  TRISTAN consortium.",
-   "Liver function in rats"
+   "plot_wex.py",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\../examples\\tutorials",
+   "C:\\Users\\md1spsx\\Documents\\GitHub\\dcmri-docs\\docs\\source\\examples\\tutorials",
+   "This tutorial will explore the effect of water exchange in a standard  two-compartmental tissue using the models in dcmri.Tissue.",
+   "Water exchange"
   ]
  ]
 }

@@ -36,9 +36,9 @@ import dcmri as dc
 
 
 model = dc.InverseKidney(
+    kinetics='2CFU',
     sequence='ZTE-3D-SPGR-SS', 
     t2s_relaxation=None, 
-    calibrate=True,
     aif='measured',
 )
 
@@ -51,7 +51,7 @@ for visit in ['pre', 'post']:
                 continue
 
             result = model(vals, verbose=2)
-            
+
             info = {
                 'subject': subj,
                 'visit': visit,

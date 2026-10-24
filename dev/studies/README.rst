@@ -1,7 +1,0 @@
-.. _populations:
-
-*******************
-Population analyses
-*******************
-
-

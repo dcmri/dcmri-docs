@@ -1,0 +1,799 @@
+{
+ "aorta": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta"
+  }
+ ],
+ "aorta.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.plot"
+  }
+ ],
+ "aorta.predict": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta.predict"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta.predict"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta.predict"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.predict"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.predict"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.predict"
+  }
+ ],
+ "aorta_kidneys": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta_kidneys",
+   "module_short": "dcmri.inverse.aorta_kidneys",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAortaKidneys"
+  }
+ ],
+ "aorta_kidneys.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta_kidneys",
+   "module_short": "dcmri.inverse.aorta_kidneys",
+   "name": "InverseAortaKidneys.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAortaKidneys.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAortaKidneys.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.plot"
+  }
+ ],
+ "ca": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "data.pop": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  }
+ ],
+ "dc.InverseAorta": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta",
+   "module_short": "dcmri.inverse.aorta",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAorta"
+  }
+ ],
+ "dc.InverseAortaKidneys": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse.aorta_kidneys",
+   "module_short": "dcmri.inverse.aorta_kidneys",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAortaKidneys"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseAortaKidneys"
+  }
+ ],
+ "dc.InverseKidney": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse.kidney",
+   "module_short": "dcmri.inverse.kidney",
+   "name": "InverseKidney"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseKidney"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseKidney"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseKidney"
+  }
+ ],
+ "dc.load_minipig": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "load_minipig"
+  }
+ ],
+ "dc.print_quantities": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "print_quantities"
+  }
+ ],
+ "dc.tristan": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "tristan"
+  }
+ ],
+ "dcmri.Kidney": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Kidney"
+  }
+ ],
+ "dcmri.aif_tristan": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "aif_tristan"
+  }
+ ],
+ "dt": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "img": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "kidney": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.kidney",
+   "module_short": "dcmri.inverse.kidney",
+   "name": "InverseKidney"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseKidney"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseKidney"
+  }
+ ],
+ "kidney.pfree": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.kidney",
+   "module_short": "dcmri.inverse.kidney",
+   "name": "InverseKidney.pfree"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseKidney.pfree"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseKidney.pfree"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.pfree"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.pfree"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.pfree"
+  }
+ ],
+ "kidney.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse.kidney",
+   "module_short": "dcmri.inverse.kidney",
+   "name": "InverseKidney.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.inverse",
+   "module_short": "dcmri.inverse",
+   "name": "InverseKidney.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "InverseKidney.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module.plot"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module.plot"
+  }
+ ],
+ "mpimg.imread": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.image",
+   "module_short": "matplotlib.image",
+   "name": "imread"
+  }
+ ],
+ "np.amax": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "amax"
+  }
+ ],
+ "np.arange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "arange"
+  }
+ ],
+ "np.argmax": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "argmax"
+  }
+ ],
+ "plt.axis": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "axis"
+  }
+ ],
+ "plt.figure": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "figure"
+  }
+ ],
+ "plt.imshow": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "imshow"
+  }
+ ],
+ "plt.legend": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "legend"
+  }
+ ],
+ "plt.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "plot"
+  }
+ ],
+ "plt.show": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "show"
+  }
+ ],
+ "plt.title": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "title"
+  }
+ ],
+ "plt.xlabel": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "xlabel"
+  }
+ ],
+ "plt.ylabel": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "ylabel"
+  }
+ ],
+ "pred": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "result": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict"
+  }
+ ],
+ "t": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "tof_corr=True": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tof_corr=True"
+  }
+ ]
+}

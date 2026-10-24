@@ -58,15 +58,14 @@ dc.print_quantities(missing_data)
 
 # %%
 # We can now fit the model to the data:
-result = aorta(aif)
+result = aorta(aif, verbose=2)
 
 # %%
 # Before we look at the results, let's check that the fit has 
 # converged to the correct solution. To do this, we 
 # first update the data with the new optimized values, 
 # and then plot it with the ground truth concentrations as reference:
-aif |= result['popt']
-aorta.plot(aif)
+aorta.plot(aif, result)
 
 # %%
 # The fit looks good so we can interpret the results. Let's 

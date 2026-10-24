@@ -39,6 +39,7 @@
    ~InverseAortaLiver.configs_with_input
    ~InverseAortaLiver.configs_with_output
    ~InverseAortaLiver.filter_data
+   ~InverseAortaLiver.init
    ~InverseAortaLiver.init_data
    ~InverseAortaLiver.input_data
    ~InverseAortaLiver.input_quantities
@@ -112,6 +113,9 @@
 
 
 .. automethod:: InverseAortaLiver.filter_data
+
+
+.. automethod:: InverseAortaLiver.init
 
 
 .. automethod:: InverseAortaLiver.init_data

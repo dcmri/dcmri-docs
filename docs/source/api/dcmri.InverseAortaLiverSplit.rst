@@ -39,6 +39,7 @@
    ~InverseAortaLiverSplit.configs_with_input
    ~InverseAortaLiverSplit.configs_with_output
    ~InverseAortaLiverSplit.filter_data
+   ~InverseAortaLiverSplit.init
    ~InverseAortaLiverSplit.init_data
    ~InverseAortaLiverSplit.input_data
    ~InverseAortaLiverSplit.input_quantities
@@ -112,6 +113,9 @@
 
 
 .. automethod:: InverseAortaLiverSplit.filter_data
+
+
+.. automethod:: InverseAortaLiverSplit.init
 
 
 .. automethod:: InverseAortaLiverSplit.init_data

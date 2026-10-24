@@ -39,6 +39,7 @@
    ~InverseAortaLiverDrug.configs_with_input
    ~InverseAortaLiverDrug.configs_with_output
    ~InverseAortaLiverDrug.filter_data
+   ~InverseAortaLiverDrug.init
    ~InverseAortaLiverDrug.init_data
    ~InverseAortaLiverDrug.input_data
    ~InverseAortaLiverDrug.input_quantities
@@ -112,6 +113,9 @@
 
 
 .. automethod:: InverseAortaLiverDrug.filter_data
+
+
+.. automethod:: InverseAortaLiverDrug.init
 
 
 .. automethod:: InverseAortaLiverDrug.init_data

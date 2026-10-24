@@ -39,6 +39,7 @@
    ~InverseCortMed.configs_with_input
    ~InverseCortMed.configs_with_output
    ~InverseCortMed.filter_data
+   ~InverseCortMed.init
    ~InverseCortMed.init_data
    ~InverseCortMed.input_data
    ~InverseCortMed.input_quantities
@@ -112,6 +113,9 @@
 
 
 .. automethod:: InverseCortMed.filter_data
+
+
+.. automethod:: InverseCortMed.init
 
 
 .. automethod:: InverseCortMed.init_data

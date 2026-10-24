@@ -59,9 +59,9 @@ assume acquisition with a 3D-SPGR-SS sequence:
 
 
     kidney = dc.InverseKidney(
+        kinetics='2CFU',
         sequence='ZTE-3D-SPGR-SS', 
-        t2s_relaxation=None, 
-        calibrate=True,
+        t2s_relaxation=None,
         aif='measured',
     )
 
@@ -76,21 +76,17 @@ assume acquisition with a 3D-SPGR-SS sequence:
 
 Let's see what input parameters are needed for this model:
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-45
+.. GENERATED FROM PYTHON SOURCE LINES 33-41
 
 .. code-block:: Python
 
 
-    kidney.print_inputs()
-
-    def get_data(subject, kid, visit):
-        data = dc.load_kruk(subject, kid, visit)
-        data['pfree'] = kidney.pfree() | {'T_u': [30, 300]}
-        return data
+    # kidney.print_inputs()
 
     # --- The dataset to be analysed
-    data = get_data('001', 'LK', 'pre')
+    data = dc.load_kruk('061', 'pre', 'RK')
 
+    dc.print_quantities(data)
 
 
 
@@ -100,64 +96,52 @@ Let's see what input parameters are needed for this model:
 
  .. code-block:: none
 
-    +------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                                       InverseKidney instance - inputs (n = 24)                                                       |
-    +----------------+------------+------------+---------------------------------------------------------+-----------------+---------------+-------+-------+
-    | Key            | Value      | Unit       | Name                                                    | Group           | Bounds        | DICOM | OSIPI |
-    +----------------+------------+------------+---------------------------------------------------------+-----------------+---------------+-------+-------+
-    | B1corr_ki      | 1          |            | B1-correction factor in the kidney                      | Electromagnetic | (0, 5)        |       |       |
-    | me             | 1          | A cm2/mL   | equilibrium magnetization                               | Electromagnetic | (0, 5)        |       |       |
-    | R1_b           | 0.65       | Hz         | tissue R1 in the blood                                  | Electromagnetic | (0, 5)        |       |       |
-    +----------------+------------+------------+---------------------------------------------------------+-----------------+---------------+-------+-------+
-    | dt             | 0.5        | sec        | pseudo-continuous time step                             | Hyperparameters |               |       |       |
-    +----------------+------------+------------+---------------------------------------------------------+-----------------+---------------+-------+-------+
-    | agent          | gadoterate |            | contrast agent generic name                             | Indicator       |               |       |       |
-    +----------------+------------+------------+---------------------------------------------------------+-----------------+---------------+-------+-------+
-    | pfree          | None       | a.u.       | set of free parameters                                  | Inverse problem |               |       |       |
-    +----------------+------------+------------+---------------------------------------------------------+-----------------+---------------+-------+-------+
-    | F_p_ki         | 0.02       | mL/sec/cm3 | flow per unit tissue in plasma of the kidney            | Physiological   | (0, 1)        |       |       |
-    | FF             | 0.1        |            | filtration fraction                                     | Physiological   | (0, 0.5)      |       |       |
-    | T_ar           | 30         | sec        | mean transit time in the artery                         | Physiological   | (0.1, 60)     |       |       |
-    | T_u            | 120        | sec        | mean transit time in tubuli                             | Physiological   | (0, 600)      |       |       |
-    | v_ki           | 1          | mL/cm3     | volume fraction in the kidney                           | Physiological   | (0, 1)        |       |       |
-    | v_p_ki         | 0.15       | mL/cm3     | volume fraction in plasma of the kidney                 | Physiological   | (0, 0.3)      |       |       |
-    +----------------+------------+------------+---------------------------------------------------------+-----------------+---------------+-------+-------+
-    | FA             | 15         | deg        | flip angle                                              | Sequence        | (0, 180)      |       |       |
-    | field_strength | 3          | T          | magnetic field strength                                 | Sequence        | (0, 20)       |       |       |
-    | Nk0            | 64         |            | number of acquired phase lines to the center of k-space | Sequence        | (0, 1000)     |       |       |
-    | Nph            | 128        |            | number of acquired phase lines in k-space               | Sequence        | (0, 1000)     |       |       |
-    | TR             | 0.005      | sec        | repetition time                                         | Sequence        | (0, 1)        |       |       |
-    | tstart         | 0          | sec        | start of the acquisition                                | Sequence        | (0, 10000.0)  |       |       |
-    +----------------+------------+------------+---------------------------------------------------------+-----------------+---------------+-------+-------+
-    | nb             | 1          | a.u.       | number of baseline time points                          | Signal          |               |       |       |
-    | NSR_ki         | 0.0        |            | noise-to-signal ratio in the kidney                     | Signal          | (0, 100000.0) |       |       |
-    | S_ar           | 1.0        | a.u.       | signal in the artery                                    | Signal          | (0, 5)        |       |       |
-    | S_ki           | 1.0        | a.u.       | signal in the kidney                                    | Signal          | (0, 5)        |       |       |
-    | tS_ar          | 0.0        | sec        | signal time points in the artery                        | Signal          |               |       |       |
-    | tS_ki          | 0.0        | sec        | signal time points in the kidney                        | Signal          |               |       |       |
-    +------------------------------------------------------------------------------------------------------------------------------------------------------+
+    +---------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                        Quantities                                                                       |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
+    | Key            | Value              | Unit   | Name                                                    | Group           | Bounds       | DICOM | OSIPI |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
+    | r1             | 3500.0             | Hz/M   | longitudinal contrast agent relaxivity                  | Electromagnetic | (0, 10000.0) |       |       |
+    | R1_b           | 0.614              | Hz     | tissue R1 in the blood                                  | Electromagnetic | (0, 5)       |       |       |
+    | R1_ki          | 0.7053339766853816 | Hz     | tissue R1 in the kidney                                 | Electromagnetic | (0, 5)       |       |       |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
+    | agent          | gadoterate         |        | contrast agent generic name                             | Indicator       |              |       |       |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
+    | nmGFR          | 0.308333333        | mL/sec | nuclear medicine glomerular filtration rate             | Physiological   | (0, 10)      |       |       |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
+    | FA             | 17.0               | deg    | flip angle                                              | Sequence        | (0, 180)     |       |       |
+    | field_strength | 3.0                | T      | magnetic field strength                                 | Sequence        | (0, 20)      |       |       |
+    | Nk0            | 213                |        | number of acquired phase lines to the center of k-space | Sequence        | (0, 1000)    |       |       |
+    | Nph            | 426                |        | number of acquired phase lines in k-space               | Sequence        | (0, 1000)    |       |       |
+    | TR             | 0.005              | sec    | repetition time                                         | Sequence        | (0, 1)       |       |       |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
+    | nb             | 10                 | a.u.   | number of baseline time points                          | Signal          |              |       |       |
+    | S_ar           | array (125,)       | a.u.   | signal in the artery                                    | Signal          | (0, 5)       |       |       |
+    | S_ki           | array (125,)       | a.u.   | signal in the kidney                                    | Signal          | (0, 5)       |       |       |
+    | tS_ar          | array (125,)       | sec    | signal time points in the artery                        | Signal          |              |       |       |
+    | tS_ki          | array (125,)       | sec    | signal time points in the kidney                        | Signal          |              |       |       |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
+    | vol_ki         | 160.859365         | cm3    | ROI volume in the kidney                                | Whole-body      | (0.0, 1000)  |       |       |
+    +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-49
+.. GENERATED FROM PYTHON SOURCE LINES 42-45
 
 Train the Kidney model
 ----------------------
 --- Train the kidney model on the data
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-57
+.. GENERATED FROM PYTHON SOURCE LINES 45-50
 
 .. code-block:: Python
 
     result = kidney(data)
 
-    # --- Update data
-    data |= result['popt'] | {'c_ar': result['c_ar']}
-
-    # --- Plot the results to check that the model has fitted the data
-    kidney.plot(data)
+    # --- Check that the model has fitted the data
+    kidney.plot(data, result)
 
 
 
@@ -171,13 +155,13 @@ Train the Kidney model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-61
+.. GENERATED FROM PYTHON SOURCE LINES 51-54
 
 Numerical results
 -----------------
 Print the measured model parameters:
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-63
+.. GENERATED FROM PYTHON SOURCE LINES 54-56
 
 .. code-block:: Python
 
@@ -191,35 +175,35 @@ Print the measured model parameters:
 
  .. code-block:: none
 
-    +----------------------------------------------------------------------------------------------------------------------------+
-    |                                                         Quantities                                                         |
-    +-------+--------------+---------+------------------------------------------------+-----------------+--------+-------+-------+
-    | Key   | Value        | Unit    | Name                                           | Group           | Bounds | DICOM | OSIPI |
-    +-------+--------------+---------+------------------------------------------------+-----------------+--------+-------+-------+
-    | c_ar  | array (401,) | mmol/mL | concentration in the artery                    | Indicator       | (0, 1) |       |       |
-    +-------+--------------+---------+------------------------------------------------+-----------------+--------+-------+-------+
-    | loss  | 7.4          | a.u.    | loss value of optimized model                  | Inverse problem |        |       |       |
-    | pcov  | array (6, 6) | a.u.    | dictionary with covariances of free parameters | Inverse problem |        |       |       |
-    | popt  | dict (6)     | a.u.    | dictionary of optimized free parameter values  | Inverse problem |        |       |       |
-    | psdev | dict (6)     | a.u.    | dictionary with parameter standard deviations  | Inverse problem |        |       |       |
-    +----------------------------------------------------------------------------------------------------------------------------+
+    +-------------------------------------------------------------------------------------------------------------------------+
+    |                                                        Quantities                                                       |
+    +-------+--------------+------+------------------------------------------------+-----------------+--------+-------+-------+
+    | Key   | Value        | Unit | Name                                           | Group           | Bounds | DICOM | OSIPI |
+    +-------+--------------+------+------------------------------------------------+-----------------+--------+-------+-------+
+    | loss  | 7.8          | a.u. | loss value of optimized model                  | Inverse problem |        |       |       |
+    | pcov  | array (4, 4) | a.u. | dictionary with covariances of free parameters | Inverse problem |        |       |       |
+    | pder  | dict (8)     | a.u. | dictionary with source- and derived parameters | Inverse problem |        |       |       |
+    | popt  | dict (4)     | a.u. | dictionary of optimized free parameter values  | Inverse problem |        |       |       |
+    | psdev | dict (4)     | a.u. | dictionary with parameter standard deviations  | Inverse problem |        |       |       |
+    +-------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-66
+.. GENERATED FROM PYTHON SOURCE LINES 57-59
 
 Compare the measured SK-GFR to the 
 radio-isotope reference value:
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-75
+.. GENERATED FROM PYTHON SOURCE LINES 59-69
 
 .. code-block:: Python
 
+    p = data | result['popt']
 
-    mrr_sk_gfr = data['FF'] * data['F_p_ki'] * data['vol_ki']
-    iso_sk_gfr = data['GFR']
+    mrr_sk_gfr = p['FF'] * p['F_p_ki'] * p['vol_ki']
+    iso_sk_gfr = p['nmGFR']
 
     print(f"Radio-isotope SK-GFR: {round(60 * iso_sk_gfr)} mL/min")
     print(f"MRR SK-GFR: {round(60 * mrr_sk_gfr)} mL/min")
@@ -234,8 +218,8 @@ radio-isotope reference value:
 
  .. code-block:: none
 
-    Radio-isotope SK-GFR: 21 mL/min
-    MRR SK-GFR: 33 mL/min
+    Radio-isotope SK-GFR: 18 mL/min
+    MRR SK-GFR: 23 mL/min
 
 
 
@@ -243,7 +227,7 @@ radio-isotope reference value:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.191 seconds)
+   **Total running time of the script:** (0 minutes 0.153 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_kidney.py:

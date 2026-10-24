@@ -39,6 +39,7 @@
    ~InverseKidney.configs_with_input
    ~InverseKidney.configs_with_output
    ~InverseKidney.filter_data
+   ~InverseKidney.init
    ~InverseKidney.init_data
    ~InverseKidney.input_data
    ~InverseKidney.input_quantities
@@ -113,6 +114,9 @@
 
 
 .. automethod:: InverseKidney.filter_data
+
+
+.. automethod:: InverseKidney.init
 
 
 .. automethod:: InverseKidney.init_data

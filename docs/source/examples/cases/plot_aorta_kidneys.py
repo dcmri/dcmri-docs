@@ -37,9 +37,9 @@ result = aok(data, verbose=2)
 
 # %%
 
-p = data | result['popt'] | result['pder']
+p = data | result['popt'] | result['pars']
 
-dc.print_quantities(result['popt'] | result['pder'], digits=3)
+dc.print_quantities(result['popt'] | result['pars'], digits=3)
 
 # %%
 

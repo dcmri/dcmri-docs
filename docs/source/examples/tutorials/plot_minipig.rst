@@ -652,7 +652,7 @@ instead of the modelled concentration:
 
 .. code-block:: Python
 
-    dc.print_quantities(result['pder'], digits=2, title='Functional kidney (left)')
+    dc.print_quantities(result['pars'], digits=2, title='Functional kidney (left)')
 
 
 
@@ -718,7 +718,7 @@ parameters:
 
 .. code-block:: Python
 
-    dc.print_quantities(result['pder'], digits=2, title='Fibrotic kidney (right)')
+    dc.print_quantities(result['pars'], digits=2, title='Fibrotic kidney (right)')
 
 
 
@@ -809,7 +809,7 @@ bias in the left-right comparison of parameters such as GFR):
 
 .. code-block:: Python
 
-    dc.print_quantities(result['popt'] | result['pder'], digits=3, title='Joint Aorta-Kidneys fit')
+    dc.print_quantities(result['popt'] | result['pars'], digits=3, title='Joint Aorta-Kidneys fit')
 
 
 

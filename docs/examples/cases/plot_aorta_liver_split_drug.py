@@ -3,7 +3,7 @@
 Liver Drug effect in two scans
 ==============================
 
-These example shows the use of the `~dcmri.AortaLiverSplitDrug` model to 
+These example shows the use of the `~dcmri.InverseAortaLiverSplitDrug` model to 
 simultaneously fit signals measured in aorta and liver over two 
 different days, with two scans on each day. The second day, an 
 inhibitor drug is administered before the first scan of the day.
@@ -31,7 +31,7 @@ model = dc.InverseAortaLiverSplitDrug(
     calibrate=True,             # Derive signal scaling factor from data
     trigger=True,               # Signals are retrospectively triggered
     bolus='dual',               # Two independent injections performed
-    estimate_bat='custom',      # Use the dedicated BAT estimator
+    estimate_bat='ttp',         # Use the dedicated BAT estimator
 )
 
 # %%
@@ -43,28 +43,25 @@ model.print_inputs()
 # Fitting the model
 # -----------------
 
-# --- Source data identifier
-study = 'tristan_humans_healthy_rifampicin'
-
 # --- Load the data
-data = dc.load_tristan_humans(study, 'LDS-002')
+data = dc.load_tristan_humans('tristan_humans_healthy_rifampicin')
 
-# --- Fit the model
-result = model(data, verbose=2)
+# --- Subject to analyse
+subj = 'LDS-002'
+
+# --- Fit the data of subject LDS-002
+result = model(data[subj], verbose=2)
 
 # %%
 # Verify that the optimization has converged to a solution:
 
-# --- Update the data
-data |= result['popt'] 
-
 # --- Plot the fits
-model.plot(data)
+model.plot(data[subj], result)
 
 # %%
 # The model first the data well, so we can now consider the 
 # values for the derived parameters
-dc.print_quantities(result['pder'], 'Drug effect', digits=2)
+dc.print_quantities(result['pars'], 'Drug effect', digits=2)
 
 
 # sphinx_gallery_start_ignore

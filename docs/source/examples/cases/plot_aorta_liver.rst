@@ -225,8 +225,8 @@ values for the derived parameters
 
 .. code-block:: Python
 
-    dc.print_quantities(visit_1_result['pder'], 'control', digits=2)
-    dc.print_quantities(visit_2_result['pder'], 'drug', digits=2)
+    dc.print_quantities(visit_1_result['pars'], 'control', digits=2)
+    dc.print_quantities(visit_2_result['pars'], 'drug', digits=2)
 
 
 

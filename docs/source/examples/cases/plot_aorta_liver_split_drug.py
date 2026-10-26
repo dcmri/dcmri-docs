@@ -64,7 +64,7 @@ model.plot(data)
 # %%
 # The model first the data well, so we can now consider the 
 # values for the derived parameters
-dc.print_quantities(result['pder'], 'Drug effect', digits=2)
+dc.print_quantities(result['pars'], 'Drug effect', digits=2)
 
 
 # sphinx_gallery_start_ignore

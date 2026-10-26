@@ -56,10 +56,8 @@ dc.print_quantities(result, digits=2)
 #%%
 # Compare the measured SK-GFR to the 
 # radio-isotope reference value:
-p = data | result['popt']
-
-mrr_sk_gfr = p['FF'] * p['F_p_ki'] * p['vol_ki']
-iso_sk_gfr = p['nmGFR']
+mrr_sk_gfr = result['pars']['F_u_ki'] * data['vol_ki']
+iso_sk_gfr = data['nmGFR']
 
 print(f"Radio-isotope SK-GFR: {round(60 * iso_sk_gfr)} mL/min")
 print(f"MRR SK-GFR: {round(60 * mrr_sk_gfr)} mL/min")

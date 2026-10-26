@@ -37,14 +37,12 @@ result = aok(data, verbose=2)
 
 # %%
 
-p = data | result['popt'] | result['pder']
-
-dc.print_quantities(result['popt'] | result['pder'], digits=3)
+dc.print_quantities(result['pars'], digits=3)
 
 # %%
 
-iso_lk, iso_rk = round(60 * p['nmGFR_lk']), round(60 * p['nmGFR_rk'])
-mrr_lk, mrr_rk = round(60 * p['GFR_lk']), round(60 * p['GFR_rk'])
+iso_lk, iso_rk = round(60 * data['nmGFR_lk']), round(60 * data['nmGFR_rk'])
+mrr_lk, mrr_rk = round(60 * result['pars']['GFR_lk']), round(60 * result['pars']['GFR_rk'])
 
 print(f"{'GFR (mL/min)':<14}{'Radio-isotope':>15}{'MRR':>8}")
 print("-" * 37)

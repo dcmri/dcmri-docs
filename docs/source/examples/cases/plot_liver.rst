@@ -273,8 +273,8 @@ values for the derived parameters
 
 .. code-block:: Python
 
-    dc.print_quantities(day_1_result['pder'], 'Day 1', digits=2)
-    dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
+    dc.print_quantities(day_1_result['pars'], 'Day 1', digits=2)
+    dc.print_quantities(day_2_result['pars'], 'Day 2', digits=2)
 
 
 
@@ -407,8 +407,8 @@ a look at the values for the derived parameters:
 
 .. code-block:: Python
 
-    dc.print_quantities(day_1_result['pder'], 'Day 1', digits=2)
-    dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
+    dc.print_quantities(day_1_result['pars'], 'Day 1', digits=2)
+    dc.print_quantities(day_2_result['pars'], 'Day 2', digits=2)
 
 
 

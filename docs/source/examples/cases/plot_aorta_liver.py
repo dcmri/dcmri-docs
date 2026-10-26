@@ -62,8 +62,8 @@ aol.plot(visit_2_data)
 # %%
 # The model first the data well, so we can now consider the 
 # values for the derived parameters
-dc.print_quantities(visit_1_result['pder'], 'control', digits=2)
-dc.print_quantities(visit_2_result['pder'], 'drug', digits=2)
+dc.print_quantities(visit_1_result['pars'], 'control', digits=2)
+dc.print_quantities(visit_2_result['pars'], 'drug', digits=2)
 
 # sphinx_gallery_start_ignore
 # sphinx_gallery_thumbnail_number = -1

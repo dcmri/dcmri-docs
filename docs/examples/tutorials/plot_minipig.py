@@ -302,7 +302,7 @@ result = kidney(data)
 kidney.plot(data, result)
 
 # %%
-dc.print_quantities(result['pder'], digits=2, title='Functional kidney (left)')
+dc.print_quantities(result['pars'], digits=2, title='Functional kidney (left)')
 
 
 
@@ -320,7 +320,7 @@ result = kidney(data)
 kidney.plot(data, result)
 
 # %%
-dc.print_quantities(result['pder'], digits=2, title='Fibrotic kidney (right)')
+dc.print_quantities(result['pars'], digits=2, title='Fibrotic kidney (right)')
 
 # %%
 # The right (fibrotic) kidney now shows a substantially lower 
@@ -363,7 +363,7 @@ result = aorta_kidneys(data)
 aorta_kidneys.plot(data, result)
 
 # %%
-dc.print_quantities(result['popt'] | result['pder'], digits=3, title='Joint Aorta-Kidneys fit')
+dc.print_quantities(result['popt'] | result['pars'], digits=3, title='Joint Aorta-Kidneys fit')
 
 # %%
 # This produces all results for aorta and kidneys in one go, which 

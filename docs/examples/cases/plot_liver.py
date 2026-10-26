@@ -103,20 +103,14 @@ day_2_result = liver(day_2_data)
 # %%
 # Before we interpret the results, let's verify the optimization has 
 # converged to a solution:
-
-# --- Update the data
-day_1_data |= day_1_result['popt']
-day_2_data |= day_2_result['popt']
-
-# --- Plot the fits
-liver.plot(day_1_data)
-liver.plot(day_2_data)
+liver.plot(day_1_data, day_1_result)
+liver.plot(day_2_data, day_2_result)
 
 # %%
 # The model first the data well, so we can now consider the 
 # values for the derived parameters
-dc.print_quantities(day_1_result['pder'], 'Day 1', digits=2)
-dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
+dc.print_quantities(day_1_result['pars'], 'Day 1', digits=2)
+dc.print_quantities(day_2_result['pars'], 'Day 2', digits=2)
 
 # %%
 # The values confirm the strong inhibition of liver function by the 
@@ -157,8 +151,8 @@ liver.plot(day_2_data)
 # %%
 # Again we can verify the model fits the data well. Let's have 
 # a look at the values for the derived parameters:
-dc.print_quantities(day_1_result['pder'], 'Day 1', digits=2)
-dc.print_quantities(day_2_result['pder'], 'Day 2', digits=2)
+dc.print_quantities(day_1_result['pars'], 'Day 1', digits=2)
+dc.print_quantities(day_2_result['pars'], 'Day 2', digits=2)
 
 # %%
 # The values confirm the very weak effect of the drug on liver 

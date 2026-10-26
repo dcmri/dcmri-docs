@@ -104,7 +104,7 @@ Data analysis
     for subj, vals in data.items():
         result = aol(vals, verbose=2) 
 
-        for parameter, value in result['pder'].items():
+        for parameter, value in result['pars'].items():
             visit = dc.parse_varname(parameter)['index']
             visit = {1: 'control', 2: 'drug', None: 'both'}[visit]
             records.append({

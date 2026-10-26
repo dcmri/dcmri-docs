@@ -308,7 +308,7 @@ values for the derived parameters
 
 .. code-block:: Python
 
-    dc.print_quantities(result['pder'], 'Drug effect', digits=2)
+    dc.print_quantities(result['pars'], 'Drug effect', digits=2)
 
 
 

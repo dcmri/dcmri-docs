@@ -83,7 +83,7 @@ def compute_liver_function(project):
                 result = liver(inputs) 
                 visit_data = data['pars'][subj][visit]
 
-                for parameter, value in result['pder'].items():
+                for parameter, value in result['pars'].items():
                     records.append({
                         'subject': subj,
                         'study': visit_data['study'],

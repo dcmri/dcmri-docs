@@ -50,20 +50,15 @@ visit_2_result = aol(visit_2_data, verbose=0)
 # %%
 # Before we interpret the results, let's verify the optimization has 
 # converged to a solution:
+aol.plot(visit_1_data, visit_1_result)
+aol.plot(visit_2_data, visit_2_result)
 
-# --- Update the data
-visit_1_data |= visit_1_result['popt']
-visit_2_data |= visit_2_result['popt']
-
-# --- Plot the fits
-aol.plot(visit_1_data)
-aol.plot(visit_2_data)
 
 # %%
 # The model first the data well, so we can now consider the 
 # values for the derived parameters
-dc.print_quantities(visit_1_result['pder'], 'control', digits=2)
-dc.print_quantities(visit_2_result['pder'], 'drug', digits=2)
+dc.print_quantities(visit_1_result['pars'], 'control', digits=2)
+dc.print_quantities(visit_2_result['pars'], 'drug', digits=2)
 
 # sphinx_gallery_start_ignore
 # sphinx_gallery_thumbnail_number = -1

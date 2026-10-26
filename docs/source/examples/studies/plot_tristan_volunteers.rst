@@ -117,7 +117,7 @@ Data analysis
         for visit in ['control', 'drug']:
             result = aol(data[visit][subj], verbose=2) 
 
-            for parameter, value in result['pder'].items():
+            for parameter, value in result['pars'].items():
                 records.append({
                     'subject': subj,
                     'visit': visit,

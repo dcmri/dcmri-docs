@@ -80,14 +80,14 @@ Setup
 
             result = model(vals, verbose=0)
 
-            print(subj, visit, vals['nmGFR_lk'], result['pder']['GFR_lk'])
+            print(subj, visit, vals['nmGFR_lk'], result['pars']['GFR_lk'])
 
             info = {
                 'subject': subj,
                 'visit': visit,
                 'field_strength': vals['field_strength'],
             }
-            for parameter, value in result['pder'].items():
+            for parameter, value in result['pars'].items():
                 records.append(info | {
                     'parameter': parameter,
                     'value': value,

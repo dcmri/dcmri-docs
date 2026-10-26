@@ -58,7 +58,7 @@ for visit in ['pre', 'post']:
                 'kidney': kidney,
                 'field_strength': vals['field_strength'],
             }
-            for parameter, value in result['pder'].items():
+            for parameter, value in result['pars'].items():
                 records.append(info | {
                     'parameter': parameter,
                     'value': value,

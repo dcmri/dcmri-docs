@@ -1,21 +1,35 @@
 name: docs
+
 on:
   push:
     branches: [release-0.6]
+  workflow_dispatch:
+
 permissions:
   contents: write
+
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
-        with: {python-version: "3.12"}
-      - run: pip install -e . -r docs/requirements.txt
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt "dcmri==0.6.19"
+
       - run: sphinx-build -b html docs/source docs/build/html
+
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/build/html
-          #destination_dir: "0.6"   # Publish at the root
-          keep_files: true         # leaves the other version untouched
+          # no destination_dir: publish at the root of gh-pages
+          keep_files: true   # leaves 0.7/ and switcher.json untouched

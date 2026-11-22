@@ -17,5 +17,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/build/html
-          destination_dir: "0.7"   # "0.6" in release-0.6
+          #destination_dir: "0.6"   # Publish at the root
           keep_files: true         # leaves the other version untouched

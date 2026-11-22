@@ -38,10 +38,11 @@ aol.print_inputs()
 # Fitting the model
 # -----------------
 study = 'tristan_humans_healthy_rifampicin'
+subj = 'LDS-003'
 
 # --- Format the data for on subject
-visit_1_data = dc.load_tristan_humans(study, 'LDS-002', visits=['control'], scans=[1])
-visit_2_data = dc.load_tristan_humans(study, 'LDS-002', visits=['drug'], scans=[1])
+visit_1_data = dc.load_tristan_humans(study, subj, visits=['control'], scans=[1])
+visit_2_data = dc.load_tristan_humans(study, subj, visits=['drug'], scans=[1])
 
 # --- Fit the models
 visit_1_result = aol(visit_1_data, verbose=0)

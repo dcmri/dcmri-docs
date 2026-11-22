@@ -47,9 +47,15 @@ model.print_inputs()
 data = dc.load_tristan_humans('tristan_humans_healthy_rifampicin')
 
 # --- Subject to analyse
-subj = 'LDS-002'
+# subj = 'LDS-008' # big drop good fit
+# subj = 'LDS-007' # good drop good fit
+# subj = 'LDS-006' # small increase ok fit
+# subj = 'LDS-004' # as expected
+subj = 'LDS-002' # no increase
+# subj = 'LDS-003' # single dose
 
 # --- Fit the data of subject LDS-002
+#' dict_keys([' 'LDS-010', 'LDS-009'])
 result = model(data[subj], verbose=2)
 
 # %%
@@ -61,7 +67,7 @@ model.plot(data[subj], result)
 # %%
 # The model first the data well, so we can now consider the 
 # values for the derived parameters
-dc.print_quantities(result['pars'], 'Drug effect', digits=2)
+dc.print_quantities(result['pars'], 'Drug effect', digits=3)
 
 
 # sphinx_gallery_start_ignore

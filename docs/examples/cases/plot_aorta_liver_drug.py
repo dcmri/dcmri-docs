@@ -27,7 +27,7 @@ import dcmri as dc
 
 
 model = dc.InverseAortaLiverDrug(
-    heartlung='pfcomp',         # Smoother first pass data
+    heartlung='chain',         # Smoother first pass data
     organs='2cxm',              # Long acquisition times reveal extravasation
     liver='1I-IC',              # Intracellular agent
     baseline='measured',        # Data are available on precontrast T1

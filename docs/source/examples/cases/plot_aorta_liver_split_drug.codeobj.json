@@ -91,13 +91,13 @@
    "name": "print_quantities"
   }
  ],
- "dcmri.AortaLiverSplitDrug": [
+ "dcmri.InverseAortaLiverSplitDrug": [
   {
    "is_class": false,
    "is_explicit": true,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "AortaLiverSplitDrug"
+   "name": "InverseAortaLiverSplitDrug"
   }
  ],
  "https://zenodo.org/records/20210596": [
@@ -229,7 +229,7 @@
    "name": "dict"
   }
  ],
- "study": [
+ "subj": [
   {
    "is_class": false,
    "is_explicit": false,

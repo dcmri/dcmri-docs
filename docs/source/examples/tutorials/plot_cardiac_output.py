@@ -15,7 +15,7 @@ circulation to the AIF.
 We will illustrate the idea by measuring the (average) cardiac output of 
 subjects used to derive a popular literature-based input function  
 from `Parker et al 2006 <https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.21066>`_. 
-It is implemented in `dcmri` as the function `~dcmri.parker` and the 
+It is implemented in `dcmri` as the function `~dcmri.aif_parker` and the 
 module `~dcmri.Parker`.
 """
 

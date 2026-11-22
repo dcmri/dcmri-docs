@@ -280,13 +280,13 @@
    "name": "Parker"
   }
  ],
- "dcmri.parker": [
+ "dcmri.aif_parker": [
   {
    "is_class": false,
    "is_explicit": true,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "parker"
+   "name": "aif_parker"
   }
  ],
  "https://onlinelibrary.wiley.com/doi/10.1002/mrm.21912": [

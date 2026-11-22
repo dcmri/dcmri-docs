@@ -44,6 +44,7 @@
    ~InverseAortaLiverSplit.input_data
    ~InverseAortaLiverSplit.input_quantities
    ~InverseAortaLiverSplit.inputs
+   ~InverseAortaLiverSplit.load
    ~InverseAortaLiverSplit.map_configs
    ~InverseAortaLiverSplit.map_data
    ~InverseAortaLiverSplit.map_inputs
@@ -56,12 +57,15 @@
    ~InverseAortaLiverSplit.output_quantities
    ~InverseAortaLiverSplit.outputs
    ~InverseAortaLiverSplit.plot
+   ~InverseAortaLiverSplit.plot_pcov
+   ~InverseAortaLiverSplit.plot_pvar
    ~InverseAortaLiverSplit.print_all_inputs
    ~InverseAortaLiverSplit.print_all_io
    ~InverseAortaLiverSplit.print_all_outputs
    ~InverseAortaLiverSplit.print_configs
    ~InverseAortaLiverSplit.print_inputs
    ~InverseAortaLiverSplit.print_outputs
+   ~InverseAortaLiverSplit.save
    ~InverseAortaLiverSplit.set_config
    ~InverseAortaLiverSplit.test_data
    ~InverseAortaLiverSplit.update_data
@@ -130,6 +134,9 @@
 .. automethod:: InverseAortaLiverSplit.inputs
 
 
+.. automethod:: InverseAortaLiverSplit.load
+
+
 .. automethod:: InverseAortaLiverSplit.map_configs
 
 
@@ -166,6 +173,12 @@
 .. automethod:: InverseAortaLiverSplit.plot
 
 
+.. automethod:: InverseAortaLiverSplit.plot_pcov
+
+
+.. automethod:: InverseAortaLiverSplit.plot_pvar
+
+
 .. automethod:: InverseAortaLiverSplit.print_all_inputs
 
 
@@ -182,6 +195,9 @@
 
 
 .. automethod:: InverseAortaLiverSplit.print_outputs
+
+
+.. automethod:: InverseAortaLiverSplit.save
 
 
 .. automethod:: InverseAortaLiverSplit.set_config

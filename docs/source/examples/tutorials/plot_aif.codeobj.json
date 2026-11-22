@@ -80,57 +80,6 @@
    "name": "dict"
   }
  ],
- "dc.ForwardTissueX": [
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri.forward.tissue_x",
-   "module_short": "dcmri.forward.tissue_x",
-   "name": "ForwardTissueX"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri.forward",
-   "module_short": "dcmri.forward",
-   "name": "ForwardTissueX"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "ForwardTissueX"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri.core.module",
-   "module_short": "dcmri.core.module",
-   "name": "Module"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri.core",
-   "module_short": "dcmri.core",
-   "name": "Module"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "Module"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "ForwardTissueX"
-  }
- ],
  "dc.InverseTissueX": [
   {
    "is_class": true,
@@ -182,7 +131,58 @@
    "name": "InverseTissueX"
   }
  ],
- "dc.parker": [
+ "dc.TissueX": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.forward.tissue_x",
+   "module_short": "dcmri.forward.tissue_x",
+   "name": "TissueX"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.forward",
+   "module_short": "dcmri.forward",
+   "name": "TissueX"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "TissueX"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.module",
+   "module_short": "dcmri.core.module",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Module"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Module"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "TissueX"
+  }
+ ],
+ "dc.aif_parker": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -195,10 +195,10 @@
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "parker"
+   "name": "aif_parker"
   }
  ],
- "dc.tristan": [
+ "dc.aif_tristan": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -211,16 +211,16 @@
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "tristan"
+   "name": "aif_tristan"
   }
  ],
- "dcmri.parker": [
+ "dcmri.aif_parker": [
   {
    "is_class": false,
    "is_explicit": true,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "parker"
+   "name": "aif_parker"
   }
  ],
  "dt": [
@@ -379,21 +379,21 @@
    "is_explicit": false,
    "module": "dcmri.forward.tissue_x",
    "module_short": "dcmri.forward.tissue_x",
-   "name": "ForwardTissueX"
+   "name": "TissueX"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "dcmri.forward",
    "module_short": "dcmri.forward",
-   "name": "ForwardTissueX"
+   "name": "TissueX"
   },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "dcmri",
    "module_short": "dcmri",
-   "name": "ForwardTissueX"
+   "name": "TissueX"
   }
  ],
  "t": [

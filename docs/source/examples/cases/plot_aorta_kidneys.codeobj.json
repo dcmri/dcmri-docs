@@ -203,15 +203,6 @@
    "name": "int"
   }
  ],
- "p": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "dict"
-  }
- ],
  "result": [
   {
    "is_class": false,

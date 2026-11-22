@@ -55,7 +55,7 @@ aif['c_ar'] = aif['C'] # TODO rename 'C' - to'C_ao' in Parker()?
 # 
 # Let's first generate a tissue without water exchange across either barrier:
 
-tissue_nn = dc.ForwardTissueX(water_exchange='NN') # TODO remove Forward from name, keep only inverse
+tissue_nn = dc.TissueX(water_exchange='NN') # TODO remove Forward from name, keep only inverse
 tissue_nn.plot(aif)
 
 # %%
@@ -73,7 +73,7 @@ tissue_nn.plot(aif)
 # this illustration it is more instructive to use RR with very high values 
 # for the water permeabilities): 
 
-tissue_ff = dc.ForwardTissueX(water_exchange='FF')
+tissue_ff = dc.TissueX(water_exchange='FF')
 tissue_ff.plot(aif)
 
 
@@ -94,7 +94,7 @@ tissue_ff.plot(aif)
 # for water, and the other is impermeable. First let's look at the case of 
 # high transendothelial water exchange and no transcytolemmal water exchange:
 
-tissue_fn = dc.ForwardTissueX(water_exchange='FN')
+tissue_fn = dc.TissueX(water_exchange='FN')
 tissue_fn.plot(aif)
 
 # %%
@@ -102,7 +102,7 @@ tissue_fn.plot(aif)
 # and the magnetization of tissue cells is not altered at all. The opposite 
 # case is similar:
 
-tissue_nf = dc.ForwardTissueX(water_exchange='NF')
+tissue_nf = dc.TissueX(water_exchange='NF')
 tissue_nf.plot(aif)
 
 
@@ -124,7 +124,7 @@ tissue_nf.plot(aif)
 # reference we also include a tissue with intermediate water exchange: 
 
 # Build a tissue in an intermediate water exchange regime
-tissue_rr = dc.ForwardTissueX(water_exchange='RR')
+tissue_rr = dc.TissueX(water_exchange='RR')
 rr = tissue_rr(aif | {'PSe': 1, 'PSc': 2})
 
 # Generate signals in all regimes

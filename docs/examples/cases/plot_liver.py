@@ -9,8 +9,7 @@ Using `~dcmri.Liver` to measure hepatocellular function in rats.
 
 This example illustrates the use of `~dcmri.Liver` with case studies, 
 measuring liver function in rats on Day 1 (control) and on Day 2 (after 
-administration of an inhibitor drug). A separate example shows a complete 
-:ref:`analysis of all data <example_tristan_preclinical>`
+administration of an inhibitor drug). 
 """
 
 # %%
@@ -54,28 +53,15 @@ def get_data(study, subject, visit):
     tmax = np.amax(data['tS_li']) + 120
     t = np.arange(0, tmax, dt)
 
+    # --- Constants
     const = {
-        # --- Input function
-        'ci_li': dc.tristan_rat(t, BAT=data['BAT'], duration=data['duration']),
-
-        # --- Hyperparameters
+        'ci_li': dc.aif_tristan_rat(t, BAT=data['BAT'], duration=data['duration']),
         'dt': dt,
-
-        # --- Physiological constants
-        # The volume fractions are treated as constants since prior 
-        # sensitivity analysis has shown they are not measureable from 
-        # these data. Also they are not expected to change after 
-        # drug administration so fixing them should not greatly affect
-        # measured treatment effects.
-
-        'H': 0.418, # Cremer et al, JCBFM 3, 254-256 (1983)
+        'H': 0.418, 
+        'k_e2h': 0.0147,
         'v_e_li': 0.23,
         'v_li': 1.0,
-
-        # --- Free parameters
-        # The primary endpoints of this study are treated as free 
-        # parameters with liberal constraints so results are fully 
-        # data driven:
+        'T_h': 30 * 60, 
         'pfree': {'k_e2h':[0, 1], 'T_h': [0, 60 * 60]},
     }
 

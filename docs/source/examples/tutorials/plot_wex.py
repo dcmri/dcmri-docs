@@ -4,7 +4,8 @@ Water exchange
 ==============
 
 This tutorial will explore the effect of water exchange in a standard 
-two-compartmental tissue using the models in `dcmri.Tissue`.
+two-compartmental tissue using the models in `dcmri.ForwardTissueX` 
+and `dcmri.InverseTissueX`.
 
 The three tissue compartments involved are the blood, interstitium and tissue 
 cells. The water exchange effects refer to the transport of water across the 
@@ -16,15 +17,15 @@ red blood cells is assumed to be in the fast exchange limit.
 Water exchange across either of these two barriers can be in the 
 fast-exchange limit (F), restricted (R), or there may be no water exchange at 
 all (N). Since there are two barriers involved this leads to 3x3=9 possible 
-water exchange regimes. `dcmri.Tissue` denotes these 9 regimes by a 
-combination of the letters F, R and N: the frst letter refers to the water 
+water exchange regimes. `dcmri.ForwardTissueX` denotes these 9 regimes by a 
+combination of the letters F, R and N: the first letter refers to the water 
 exchange across the endothelium, and the second to the water exchange across 
 the cell wall. For instance, 'FR' means fast water exchange (F) across the 
 endothelium, and restricted water exchange (R) across the cell wall.
 
 For regimes with restricted water exchange, the rate of exchange is quantified 
 by the permeability-surface area (PS) of water, a quantity in units 
-of mL/sec/cm3. `dcmri.Tissue` uses the notation ``PSe`` for the 
+of mL/sec/cm3. `dcmri.ForwardTissueX` uses the notation ``PSe`` for the 
 transendothelial water PS and ``PSc`` for the transcytolemmal PS.
 """
 
@@ -54,7 +55,7 @@ aif['c_ar'] = aif['C'] # TODO rename 'C' - to'C_ao' in Parker()?
 # 
 # Let's first generate a tissue without water exchange across either barrier:
 
-tissue_nn = dc.ForwardTissueX(water_exchange='NN') # TODO remove Forward from name, keep only inverse
+tissue_nn = dc.TissueX(water_exchange='NN') # TODO remove Forward from name, keep only inverse
 tissue_nn.plot(aif)
 
 # %%
@@ -72,7 +73,7 @@ tissue_nn.plot(aif)
 # this illustration it is more instructive to use RR with very high values 
 # for the water permeabilities): 
 
-tissue_ff = dc.ForwardTissueX(water_exchange='FF')
+tissue_ff = dc.TissueX(water_exchange='FF')
 tissue_ff.plot(aif)
 
 
@@ -93,7 +94,7 @@ tissue_ff.plot(aif)
 # for water, and the other is impermeable. First let's look at the case of 
 # high transendothelial water exchange and no transcytolemmal water exchange:
 
-tissue_fn = dc.ForwardTissueX(water_exchange='FN')
+tissue_fn = dc.TissueX(water_exchange='FN')
 tissue_fn.plot(aif)
 
 # %%
@@ -101,7 +102,7 @@ tissue_fn.plot(aif)
 # and the magnetization of tissue cells is not altered at all. The opposite 
 # case is similar:
 
-tissue_nf = dc.ForwardTissueX(water_exchange='NF')
+tissue_nf = dc.TissueX(water_exchange='NF')
 tissue_nf.plot(aif)
 
 
@@ -123,7 +124,7 @@ tissue_nf.plot(aif)
 # reference we also include a tissue with intermediate water exchange: 
 
 # Build a tissue in an intermediate water exchange regime
-tissue_rr = dc.ForwardTissueX(water_exchange='RR')
+tissue_rr = dc.TissueX(water_exchange='RR')
 rr = tissue_rr(aif | {'PSe': 1, 'PSc': 2})
 
 # Generate signals in all regimes

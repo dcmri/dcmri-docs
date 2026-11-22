@@ -56,14 +56,8 @@ visit_2_result = model(visit_2_data, verbose=2)
 
 # %%
 # Verify that the optimization has converged to a solution:
-
-# --- Update the data
-visit_1_data |= visit_1_result['popt'] 
-visit_2_data |= visit_2_result['popt']
-
-# --- Plot the fits
-model.plot(visit_1_data)
-model.plot(visit_2_data)
+model.plot(visit_1_data, visit_1_result)
+model.plot(visit_2_data, visit_2_result)
 
 # %%
 # The model first the data well, so we can now consider the 

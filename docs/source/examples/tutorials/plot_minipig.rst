@@ -245,11 +245,11 @@ the most common modelling approach is implemented in the function
     +--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
     | Key    | Value   | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
     +--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-    | F_p_ki | 0.1     | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | Physiological   | (0, 0.1)  |       |       |
-    | FF     | 0.5     |            | filtration fraction                          | Physiological   | (0, 0.5)  |       |       |
-    | T_ar   | 3.1e-25 | sec        | arterial mean transit time                   | Physiological   | (0.0, 10) |       |       |
-    | T_u    | 65.0    | sec        | mean transit time in tubuli                  | Physiological   | (30, 600) |       |       |
-    | v_p_ki | 0.3     | mL/cm3     | volume fraction in plasma of the kidney      | Physiological   | (0, 0.3)  |       |       |
+    | F_p_ki | 0.1     | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
+    | FF     | 0.5     |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
+    | T_ar   | 3.2e-27 | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
+    | T_u    | 65.0    | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
+    | v_p_ki | 0.3     | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
     +----------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -313,11 +313,11 @@ with unphysical values for the parameters:
     +--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
     | Key    | Value | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
     +--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-    | F_p_ki | 1.0   | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | Physiological   | (0, 0.1)  |       |       |
-    | FF     | 0.043 |            | filtration fraction                          | Physiological   | (0, 0.5)  |       |       |
-    | T_ar   | 2.8   | sec        | arterial mean transit time                   | Physiological   | (0.0, 10) |       |       |
-    | T_u    | 30.0  | sec        | mean transit time in tubuli                  | Physiological   | (30, 600) |       |       |
-    | v_p_ki | 1.0   | mL/cm3     | volume fraction in plasma of the kidney      | Physiological   | (0, 0.3)  |       |       |
+    | F_p_ki | 1.0   | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
+    | FF     | 0.043 |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
+    | T_ar   | 2.8   | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
+    | T_u    | 30.0  | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
+    | v_p_ki | 1.0   | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
     +--------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -379,7 +379,7 @@ default values as no data exist for the minipig:
 
     dt = 0.25
     t = np.arange(0, np.amax(data['tS_ao']) + 10, dt)  
-    ca = dc.tristan(t, # TODO Build dc.AifTristan() and rename dc.Parker() to dc.AifParker()
+    ca = dc.aif_tristan(t, # TODO Build dc.AifTristan() and rename dc.Parker() to dc.AifParker()
         agent="gadoterate",
         dose=data['dose'],
         rate=data['rate'],
@@ -442,11 +442,11 @@ model instead of the measured aorta signal.
     +--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
     | Key    | Value | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
     +--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-    | F_p_ki | 0.016 | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | Physiological   | (0, 0.1)  |       |       |
-    | FF     | 0.17  |            | filtration fraction                          | Physiological   | (0, 0.5)  |       |       |
-    | T_ar   | 8.9   | sec        | arterial mean transit time                   | Physiological   | (0.0, 10) |       |       |
-    | T_u    | 110.0 | sec        | mean transit time in tubuli                  | Physiological   | (30, 600) |       |       |
-    | v_p_ki | 0.076 | mL/cm3     | volume fraction in plasma of the kidney      | Physiological   | (0, 0.3)  |       |       |
+    | F_p_ki | 0.016 | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
+    | FF     | 0.17  |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
+    | T_ar   | 8.9   | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
+    | T_u    | 110.0 | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
+    | v_p_ki | 0.076 | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
     +--------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -521,21 +521,21 @@ parameter:
 
  .. code-block:: none
 
-    +--------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                                                    Quantities                                                                    |
-    +--------+----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | Key    | Value                | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
-    +--------+----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | BAT    | 15.250000114216096   | sec    | bolus arrival time                                     | Indicator       | (-30, 30)    |       |       |
-    +--------+----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | CO     | 499.99996624700543   | mL/sec | cardiac output                                         | Physiological   | (0, 500)     |       |       |
-    | D_hl   | 0.09849763085257902  |        | transit time dispersion in the heart and Lungs         | Physiological   | (0.01, 0.99) |       |       |
-    | E_or   | 3.72332956492064e-05 |        | extraction fraction in the organs                      | Physiological   | (0, 0.5)     |       |       |
-    | T_b_or | 9.35754933252712     | sec    | mean transit time in blood of the organs               | Physiological   | (0, 60)      |       |       |
-    | T_e_or | 283.4689192895747    | sec    | mean transit time in extracellular space of the organs | Physiological   | (0, 800)     |       |       |
-    | T_hl   | 19.855070282589633   | sec    | mean transit time in the heart and Lungs               | Physiological   | (0, 30)      |       |       |
-    | vr_or  | 0.9412438956718093   |        | Venous return in the organs                            | Physiological   | (0, 1)       |       |       |
-    +--------------------------------------------------------------------------------------------------------------------------------------------------+
+    +----------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                     Quantities                                                                     |
+    +--------+------------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | Key    | Value                  | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
+    +--------+------------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | BAT    | 15.25000003657986      | sec    | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
+    +--------+------------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | CO     | 499.99319520582634     | mL/sec | cardiac output                                         | physiological   | (0, 500)     |       |       |
+    | D_hl   | 0.09857800917123007    |        | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
+    | E_or   | 0.00020364835295258766 |        | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
+    | T_b_or | 9.354790164218016      | sec    | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
+    | T_e_or | 3.9994834647410626     | sec    | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
+    | T_hl   | 19.85743323870074      | sec    | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
+    | vr_or  | 0.9412316116649891     |        | Venous return in the organs                            | physiological   | (0, 1)       |       |       |
+    +----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
@@ -594,14 +594,14 @@ Let's try this again, but this time with inflow correction:
     +--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-------+
     | Key    | Value               | Unit   | Name                                           | Group           | Bounds       | DICOM | OSIPI |
     +--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-------+
-    | BAT    | 18.636336168063995  | sec    | bolus arrival time                             | Indicator       | (-30, 30)    |       |       |
+    | BAT    | 21.96104820538481   | sec    | bolus arrival time                             | indicator       | (-30, 30)    |       |       |
     +--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-------+
-    | CO     | 74.7498214442313    | mL/sec | cardiac output                                 | Physiological   | (0, 500)     |       |       |
-    | D_hl   | 0.09991645631044689 |        | transit time dispersion in the heart and Lungs | Physiological   | (0.01, 0.99) |       |       |
-    | T_b_or | 17.751715014381073  | sec    | mean transit time in blood of the organs       | Physiological   | (0, 60)      |       |       |
-    | T_hl   | 14.032402180325201  | sec    | mean transit time in the heart and Lungs       | Physiological   | (0, 30)      |       |       |
-    | TF     | 0.267960000016515   | sec    | inflow time                                    | Physiological   | (0, 1)       |       |       |
-    | vr_or  | 0.9266372658497557  |        | Venous return in the organs                    | Physiological   | (0, 1)       |       |       |
+    | CO     | 68.1916833566351    | mL/sec | cardiac output                                 | physiological   | (0, 500)     |       |       |
+    | D_hl   | 0.18909563458892104 |        | transit time dispersion in the heart and Lungs | physiological   | (0.01, 0.99) |       |       |
+    | T_b_or | 17.67491359074984   | sec    | mean transit time in blood of the organs       | physiological   | (0, 60)      |       |       |
+    | T_hl   | 10.405636903655012  | sec    | mean transit time in the heart and Lungs       | physiological   | (0, 30)      |       |       |
+    | TF     | 0.25403999964955487 | sec    | inflow time                                    | physiological   | (0, 1)       |       |       |
+    | vr_or  | 0.9288668254710016  |        | Venous return in the organs                    | physiological   | (0, 1)       |       |       |
     +-----------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -664,20 +664,19 @@ instead of the modelled concentration:
 
  .. code-block:: none
 
-    +--------------------------------------------------------------------------------------------------------------------------+
-    |                                                 Functional kidney (left)                                                 |
-    +--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-    | Key    | Value | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
-    +--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-    | F_p_ki | 0.033 | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | Physiological   | (0, 0.1)  |       |       |
-    | FF     | 0.082 |            | filtration fraction                          | Physiological   | (0, 0.5)  |       |       |
-    | T_ar   | 2.0   | sec        | arterial mean transit time                   | Physiological   | (0.0, 10) |       |       |
-    | T_u    | 48.0  | sec        | mean transit time in tubuli                  | Physiological   | (30, 600) |       |       |
-    | v_ki   | 1.0   | mL/cm3     | volume fraction in the kidney                | Physiological   | (0, 1)    |       |       |
-    | v_p_ki | 0.084 | mL/cm3     | volume fraction in plasma of the kidney      | Physiological   | (0, 0.3)  |       |       |
-    +--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-    | weight | 40.0  | kg         | body weight                                  | Whole-body      | (0, 300)  |       |       |
-    +--------------------------------------------------------------------------------------------------------------------------+
+    +---------------------------------------------------------------------------------------------------------------------------+
+    |                                                  Functional kidney (left)                                                 |
+    +--------+--------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
+    | Key    | Value  | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
+    +--------+--------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
+    | F_p_ki | 0.032  | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
+    | F_u_ki | 0.0019 | mL/sec/cm3 | flow per unit tissue in tubuli of the kidney | physiological   | (0, 0.05) |       |       |
+    | FF     | 0.058  |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
+    | T_ar   | 2.5    | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
+    | T_u    | 55.0   | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
+    | v_ki   | 1.0    | mL/cm3     | volume fraction in the kidney                | physiological   | (0, 1)    |       |       |
+    | v_p_ki | 0.074  | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
+    +---------------------------------------------------------------------------------------------------------------------------+
 
 
 
@@ -728,20 +727,19 @@ parameters:
 
  .. code-block:: none
 
-    +---------------------------------------------------------------------------------------------------------------------------+
-    |                                                  Fibrotic kidney (right)                                                  |
-    +--------+--------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-    | Key    | Value  | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
-    +--------+--------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-    | F_p_ki | 0.0063 | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | Physiological   | (0, 0.1)  |       |       |
-    | FF     | 0.052  |            | filtration fraction                          | Physiological   | (0, 0.5)  |       |       |
-    | T_ar   | 2.4    | sec        | arterial mean transit time                   | Physiological   | (0.0, 10) |       |       |
-    | T_u    | 540.0  | sec        | mean transit time in tubuli                  | Physiological   | (30, 600) |       |       |
-    | v_ki   | 1.0    | mL/cm3     | volume fraction in the kidney                | Physiological   | (0, 1)    |       |       |
-    | v_p_ki | 0.12   | mL/cm3     | volume fraction in plasma of the kidney      | Physiological   | (0, 0.3)  |       |       |
-    +--------+--------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-    | weight | 40.0   | kg         | body weight                                  | Whole-body      | (0, 300)  |       |       |
-    +---------------------------------------------------------------------------------------------------------------------------+
+    +----------------------------------------------------------------------------------------------------------------------------+
+    |                                                  Fibrotic kidney (right)                                                   |
+    +--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
+    | Key    | Value   | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
+    +--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
+    | F_p_ki | 0.0058  | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
+    | F_u_ki | 0.00037 | mL/sec/cm3 | flow per unit tissue in tubuli of the kidney | physiological   | (0, 0.05) |       |       |
+    | FF     | 0.065   |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
+    | T_ar   | 2.7     | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
+    | T_u    | 280.0   | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
+    | v_ki   | 1.0     | mL/cm3     | volume fraction in the kidney                | physiological   | (0, 1)    |       |       |
+    | v_p_ki | 0.091   | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
+    +----------------------------------------------------------------------------------------------------------------------------+
 
 
 
@@ -824,44 +822,46 @@ bias in the left-right comparison of parameters such as GFR):
     +--------+---------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
     | Key    | Value   | Unit       | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
     +--------+---------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | BAT    | 18.0    | sec        | bolus arrival time                                     | Indicator       | (-30, 30)    |       |       |
+    | BAT    | 17.7    | sec        | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
     +--------+---------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | CO     | 78.5    | mL/sec     | cardiac output                                         | Physiological   | (0, 500)     |       |       |
-    | D_hl   | 0.0886  |            | transit time dispersion in the heart and Lungs         | Physiological   | (0.01, 0.99) |       |       |
-    | DRPF   | 0.775   |            | Differential renal plasma flow                         | Physiological   | (0, 1)       |       |       |
-    | E_li   | 0.0     |            | extraction fraction in liver                           | Physiological   | (0.0, 1.0)   |       |       |
-    | E_lk   | 0.0837  |            | extraction fraction in the left kidney                 | Physiological   | (0, 1)       |       |       |
-    | E_or   | 0.0992  |            | extraction fraction in the organs                      | Physiological   | (0, 0.5)     |       |       |
-    | E_rk   | 0.0844  |            | extraction fraction in the right kidney                | Physiological   | (0, 1)       |       |       |
-    | F_p_lk | 0.0236  | mL/sec/cm3 | flow per unit tissue in plasma of the left kidney      | Physiological   | (0, 0.1)     |       |       |
-    | F_p_rk | 0.00685 | mL/sec/cm3 | flow per unit tissue in plasma of the right kidney     | Physiological   | (0, 0.1)     |       |       |
-    | fCO_ki | 0.06    |            | fraction of the cardiac output in the kidney           | Physiological   | (0, 0.5)     |       |       |
-    | FF_lk  | 0.0913  |            | filtration fraction in the left kidney                 | Physiological   | (0, 0.5)     |       |       |
-    | FF_rk  | 0.0922  |            | filtration fraction in the right kidney                | Physiological   | (0, 0.5)     |       |       |
-    | GFR_lk | 0.183   | mL/sec     | glomerular filtration rate in the left kidney          | Physiological   | (0, 20)      |       |       |
-    | GFR_rk | 0.0537  | mL/sec     | glomerular filtration rate in the right kidney         | Physiological   | (0, 20)      |       |       |
-    | H      | 0.45    |            | hematocrit                                             | Physiological   | (0, 1)       |       |       |
-    | PF_ki  | 2.59    | mL/sec     | plasma flow in the kidney                              | Physiological   | (0, 100)     |       |       |
-    | PF_lk  | 2.01    | mL/sec     | plasma flow in the left kidney                         | Physiological   | (0, 100)     |       |       |
-    | PF_rk  | 0.583   | mL/sec     | plasma flow in the right kidney                        | Physiological   | (0, 100)     |       |       |
-    | T_b_or | 15.3    | sec        | mean transit time in blood of the organs               | Physiological   | (0, 60)      |       |       |
-    | T_e_or | 323.0   | sec        | mean transit time in extracellular space of the organs | Physiological   | (0, 800)     |       |       |
-    | T_hl   | 15.0    | sec        | mean transit time in the heart and Lungs               | Physiological   | (0, 30)      |       |       |
-    | T_lka  | 1.11    | sec        | mean transit time in the left kidney artery            | Physiological   | (0, 5)       |       |       |
-    | T_p_lk | 4.35    | sec        | mean transit time in plasma of the left kidney         | Physiological   | (0, 30)      |       |       |
-    | T_p_rk | 16.7    | sec        | mean transit time in plasma of the right kidney        | Physiological   | (0, 30)      |       |       |
-    | T_rka  | 2.11    | sec        | mean transit time in the right kidney artery           | Physiological   | (0, 5)       |       |       |
-    | T_u_lk | 60.0    | sec        | mean transit time in tubuli of the left kidney         | Physiological   | (30, 600)    |       |       |
-    | T_u_rk | 145.0   | sec        | mean transit time in tubuli of the right kidney        | Physiological   | (30, 600)    |       |       |
-    | TF     | 0.271   | sec        | inflow time                                            | Physiological   | (0, 1)       |       |       |
-    | v_ki   | 1.0     | mL/cm3     | volume fraction in the kidney                          | Physiological   | (0, 1)       |       |       |
-    | v_p_lk | 0.103   | mL/cm3     | volume fraction in plasma of the left kidney           | Physiological   | (0, 0.3)     |       |       |
-    | v_p_rk | 0.115   | mL/cm3     | volume fraction in plasma of the right kidney          | Physiological   | (0, 0.3)     |       |       |
+    | CO     | 82.1    | mL/sec     | cardiac output                                         | physiological   | (0, 500)     |       |       |
+    | D_hl   | 0.0858  |            | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
+    | DRF    | 0.757   |            | Differential renal function                            | physiological   | (0, 1)       |       |       |
+    | DRPF   | 0.747   |            | Differential renal plasma flow                         | physiological   | (0, 1)       |       |       |
+    | E_li   | 0.0     |            | extraction fraction in liver                           | physiological   | (0.0, 1.0)   |       |       |
+    | E_lk   | 0.0933  |            | extraction fraction in the left kidney                 | physiological   | (0, 1)       |       |       |
+    | E_or   | 0.105   |            | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
+    | E_rk   | 0.0886  |            | extraction fraction in the right kidney                | physiological   | (0, 1)       |       |       |
+    | F_p_lk | 0.022   | mL/sec/cm3 | flow per unit tissue in plasma of the left kidney      | physiological   | (0, 0.1)     |       |       |
+    | F_p_rk | 0.00745 | mL/sec/cm3 | flow per unit tissue in plasma of the right kidney     | physiological   | (0, 0.1)     |       |       |
+    | fCO_ki | 0.0553  |            | fraction of the cardiac output in the kidney           | physiological   | (0, 0.5)     |       |       |
+    | FF_lk  | 0.103   |            | filtration fraction in the left kidney                 | physiological   | (0, 0.5)     |       |       |
+    | FF_rk  | 0.0973  |            | filtration fraction in the right kidney                | physiological   | (0, 0.5)     |       |       |
+    | GFR    | 0.254   | mL/sec     | glomerular filtration rate                             | physiological   | (0, 10)      |       |       |
+    | GFR_lk | 0.192   | mL/sec     | glomerular filtration rate in the left kidney          | physiological   | (0, 20)      |       |       |
+    | GFR_rk | 0.0616  | mL/sec     | glomerular filtration rate in the right kidney         | physiological   | (0, 20)      |       |       |
+    | H      | 0.45    |            | hematocrit                                             | physiological   | (0, 1)       |       |       |
+    | PF_ki  | 2.5     | mL/sec     | plasma flow in the kidney                              | physiological   | (0, 100)     |       |       |
+    | PF_lk  | 1.87    | mL/sec     | plasma flow in the left kidney                         | physiological   | (0, 100)     |       |       |
+    | PF_rk  | 0.633   | mL/sec     | plasma flow in the right kidney                        | physiological   | (0, 100)     |       |       |
+    | T_b_or | 14.4    | sec        | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
+    | T_e_or | 224.0   | sec        | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
+    | T_hl   | 15.3    | sec        | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
+    | T_lka  | 0.799   | sec        | mean transit time in the left kidney artery            | physiological   | (0, 5)       |       |       |
+    | T_p_lk | 5.05    | sec        | mean transit time in plasma of the left kidney         | physiological   | (0, 30)      |       |       |
+    | T_p_rk | 15.7    | sec        | mean transit time in plasma of the right kidney        | physiological   | (0, 30)      |       |       |
+    | T_rka  | 2.35    | sec        | mean transit time in the right kidney artery           | physiological   | (0, 5)       |       |       |
+    | T_u_lk | 57.7    | sec        | mean transit time in tubuli of the left kidney         | physiological   | (30, 600)    |       |       |
+    | T_u_rk | 125.0   | sec        | mean transit time in tubuli of the right kidney        | physiological   | (30, 600)    |       |       |
+    | TF     | 0.275   | sec        | inflow time                                            | physiological   | (0, 1)       |       |       |
+    | v_ki   | 1.0     | mL/cm3     | volume fraction in the kidney                          | physiological   | (0, 1)       |       |       |
+    | v_p_lk | 0.111   | mL/cm3     | volume fraction in plasma of the left kidney           | physiological   | (0, 0.3)     |       |       |
+    | v_p_rk | 0.117   | mL/cm3     | volume fraction in plasma of the right kidney          | physiological   | (0, 0.3)     |       |       |
     +--------+---------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | vol_ao | 1.0     | cm3        | ROI volume in the aorta                                | Whole-body      | (0.0, 1000)  |       |       |
-    | vol_lk | 85.0    | cm3        | ROI volume in the left kidney                          | Whole-body      | (0.0, 1000)  |       |       |
-    | vol_rk | 85.0    | cm3        | ROI volume in the right kidney                         | Whole-body      | (0.0, 1000)  |       |       |
-    | weight | 40.0    | kg         | body weight                                            | Whole-body      | (0, 300)     |       |       |
+    | vol_ao | 1.0     | cm3        | ROI volume in the aorta                                | whole-body      | (0.0, 1000)  |       |       |
+    | vol_lk | 85.0    | cm3        | ROI volume in the left kidney                          | whole-body      | (0.0, 1000)  |       |       |
+    | vol_rk | 85.0    | cm3        | ROI volume in the right kidney                         | whole-body      | (0.0, 1000)  |       |       |
+    | weight | 40.0    | kg         | body weight                                            | whole-body      | (0, 300)     |       |       |
     +-----------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -881,7 +881,7 @@ identical - to those produced from a separate Aorta and Kidneys fit.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 28.673 seconds)
+   **Total running time of the script:** (0 minutes 5.167 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_minipig.py:

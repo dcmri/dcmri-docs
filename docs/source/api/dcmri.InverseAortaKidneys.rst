@@ -44,6 +44,7 @@
    ~InverseAortaKidneys.input_data
    ~InverseAortaKidneys.input_quantities
    ~InverseAortaKidneys.inputs
+   ~InverseAortaKidneys.load
    ~InverseAortaKidneys.map_configs
    ~InverseAortaKidneys.map_data
    ~InverseAortaKidneys.map_inputs
@@ -57,12 +58,16 @@
    ~InverseAortaKidneys.outputs
    ~InverseAortaKidneys.pfree
    ~InverseAortaKidneys.plot
+   ~InverseAortaKidneys.plot_pcov
+   ~InverseAortaKidneys.plot_pvar
+   ~InverseAortaKidneys.print
    ~InverseAortaKidneys.print_all_inputs
    ~InverseAortaKidneys.print_all_io
    ~InverseAortaKidneys.print_all_outputs
    ~InverseAortaKidneys.print_configs
    ~InverseAortaKidneys.print_inputs
    ~InverseAortaKidneys.print_outputs
+   ~InverseAortaKidneys.save
    ~InverseAortaKidneys.set_config
    ~InverseAortaKidneys.test_data
    ~InverseAortaKidneys.update_data
@@ -131,6 +136,9 @@
 .. automethod:: InverseAortaKidneys.inputs
 
 
+.. automethod:: InverseAortaKidneys.load
+
+
 .. automethod:: InverseAortaKidneys.map_configs
 
 
@@ -170,6 +178,15 @@
 .. automethod:: InverseAortaKidneys.plot
 
 
+.. automethod:: InverseAortaKidneys.plot_pcov
+
+
+.. automethod:: InverseAortaKidneys.plot_pvar
+
+
+.. automethod:: InverseAortaKidneys.print
+
+
 .. automethod:: InverseAortaKidneys.print_all_inputs
 
 
@@ -186,6 +203,9 @@
 
 
 .. automethod:: InverseAortaKidneys.print_outputs
+
+
+.. automethod:: InverseAortaKidneys.save
 
 
 .. automethod:: InverseAortaKidneys.set_config

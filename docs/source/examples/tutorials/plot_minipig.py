@@ -201,7 +201,7 @@ kidney = dc.InverseKidney(
 
 dt = 0.25
 t = np.arange(0, np.amax(data['tS_ao']) + 10, dt)  
-ca = dc.tristan(t, # TODO Build dc.AifTristan() and rename dc.Parker() to dc.AifParker()
+ca = dc.aif_tristan(t, # TODO Build dc.AifTristan() and rename dc.Parker() to dc.AifParker()
     agent="gadoterate",
     dose=data['dose'],
     rate=data['rate'],

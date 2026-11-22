@@ -57,8 +57,8 @@ autosummary_filename_map = {
     'dcmri.kidney': 'dcmri.kidney_lower',
     'dcmri.Liver': 'dcmri.liver_upper',
     'dcmri.liver': 'dcmri.liver_lower',
-    'dcmri.parker': 'dcmri.parker_lower',
-    'dcmri.Parker': 'dcmri.parker_upper',
+    'dcmri.aif_parker': 'dcmri.aif_parker_lower',
+    'dcmri.Parker': 'dcmri.aif_parker_upper',
 }
 
 # Settings for sphinx-gallery, see

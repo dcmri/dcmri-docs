@@ -35,8 +35,8 @@ dt = 1.5        # Temporal resolution is 1.5 seconds
 # Simulate the concentrations at the arterial inlet to the tissue. 
 # We use `aif_tristan` here as this allows us to modify the cardiac output:
 t = np.arange(0, tmax, dt)
-ca_A = dc.tristan(t, BAT=0, CO=150)
-ca_B = dc.tristan(t, BAT=0, CO=100)
+ca_A = dc.aif_tristan(t, BAT=0, CO=150)
+ca_B = dc.aif_tristan(t, BAT=0, CO=100)
 
 # %%
 # Now we generate the signals and plot them:
@@ -61,7 +61,7 @@ config = {
 # Generate tissue signals
 # NX = No-Exchange of contrast agent is appropriate 
 # for brain tissue with intact blood-brain barrier.
-signal = dc.ForwardTissueX(**config)
+signal = dc.TissueX(**config)
 tissue = dc.InverseTissueX(**config)
 
 # Generate the signal
@@ -187,7 +187,7 @@ print_params('Inaccurate AIF', grey_matter, A, B)
 # using a similar experiment on a representative population. 
 # A popular choice is the AIF derived by 
 # `Parker et al (2006) <https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.21066>`_, 
-# which is implemented in ``dcmri`` as the function `~dcmri.parker`.
+# which is implemented in ``dcmri`` as the function `~dcmri.aif_parker`.
 
 # %%
 # Example using a population AIF
@@ -196,8 +196,8 @@ print_params('Inaccurate AIF', grey_matter, A, B)
 # analyse the data from our subjects A and B again, this time using a 
 # popular population-based AIF:
 
-data_A['c_ar'] = dc.parker(t, BAT=0)
-data_B['c_ar'] = dc.parker(t, BAT=0)
+data_A['c_ar'] = dc.aif_parker(t, BAT=0)
+data_B['c_ar'] = dc.aif_parker(t, BAT=0)
 
 # Now fit
 A = tissue(data_A)

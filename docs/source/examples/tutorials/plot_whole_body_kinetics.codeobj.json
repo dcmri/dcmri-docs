@@ -78,6 +78,22 @@
    "name": "curve_fit"
   }
  ],
+ "dc.aif_parker": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "aif_parker"
+  }
+ ],
  "dc.ca_conc": [
   {
    "is_class": false,
@@ -156,22 +172,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "get_quantity"
-  }
- ],
- "dc.parker": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "parker"
   }
  ],
  "desc": [

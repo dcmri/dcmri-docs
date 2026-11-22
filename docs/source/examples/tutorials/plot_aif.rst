@@ -70,8 +70,8 @@ We first generate the input functions for A and B:
     # Simulate the concentrations at the arterial inlet to the tissue. 
     # We use `aif_tristan` here as this allows us to modify the cardiac output:
     t = np.arange(0, tmax, dt)
-    ca_A = dc.tristan(t, BAT=0, CO=150)
-    ca_B = dc.tristan(t, BAT=0, CO=100)
+    ca_A = dc.aif_tristan(t, BAT=0, CO=150)
+    ca_B = dc.aif_tristan(t, BAT=0, CO=100)
 
 
 
@@ -109,7 +109,7 @@ Now we generate the signals and plot them:
     # Generate tissue signals
     # NX = No-Exchange of contrast agent is appropriate 
     # for brain tissue with intact blood-brain barrier.
-    signal = dc.ForwardTissueX(**config)
+    signal = dc.TissueX(**config)
     tissue = dc.InverseTissueX(**config)
 
     # Generate the signal
@@ -219,8 +219,8 @@ Helper function
                                v_b       F_b
     ----------------------------------------
     Ground truth              0.05      0.01
-    Tissue params (A)         0.05   0.01001
-    Tissue params (B)         0.05   0.01001
+    Tissue params (A)         0.05      0.01
+    Tissue params (B)         0.05      0.01
 
 
 
@@ -247,7 +247,7 @@ Let's check the fit to the data for completeness:
 
 
 .. image-sg:: /examples/tutorials/images/sphx_glr_plot_aif_002.png
-   :alt: Prediction of the MRI signals., Reconstruction of concentrations
+   :alt: MRI signal, Tissue concentration, Magnetization
    :srcset: /examples/tutorials/images/sphx_glr_plot_aif_002.png
    :class: sphx-glr-single-img
 
@@ -265,7 +265,7 @@ Let's check the fit to the data for completeness:
 
 
 .. image-sg:: /examples/tutorials/images/sphx_glr_plot_aif_003.png
-   :alt: Prediction of the MRI signals., Reconstruction of concentrations
+   :alt: MRI signal, Tissue concentration, Magnetization
    :srcset: /examples/tutorials/images/sphx_glr_plot_aif_003.png
    :class: sphx-glr-single-img
 
@@ -321,7 +321,7 @@ concentration to be underestimated by a factor 2:
                                v_b       F_b
     ----------------------------------------
     Ground truth              0.05      0.01
-    Tissue params (A)      0.09999   0.02002
+    Tissue params (A)          0.1      0.02
     Tissue params (B)          0.1      0.02
 
 
@@ -348,7 +348,7 @@ measured AIF alltogether, and instead use a standardized AIF measured once
 using a similar experiment on a representative population. 
 A popular choice is the AIF derived by 
 `Parker et al (2006) <https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.21066>`_, 
-which is implemented in ``dcmri`` as the function `~dcmri.parker`.
+which is implemented in ``dcmri`` as the function `~dcmri.aif_parker`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 193-198
 
@@ -363,8 +363,8 @@ popular population-based AIF:
 .. code-block:: Python
 
 
-    data_A['c_ar'] = dc.parker(t, BAT=0)
-    data_B['c_ar'] = dc.parker(t, BAT=0)
+    data_A['c_ar'] = dc.aif_parker(t, BAT=0)
+    data_B['c_ar'] = dc.aif_parker(t, BAT=0)
 
     # Now fit
     A = tissue(data_A)
@@ -409,7 +409,7 @@ are reasonable:
 
 
 .. image-sg:: /examples/tutorials/images/sphx_glr_plot_aif_004.png
-   :alt: Prediction of the MRI signals., Reconstruction of concentrations
+   :alt: MRI signal, Tissue concentration, Magnetization
    :srcset: /examples/tutorials/images/sphx_glr_plot_aif_004.png
    :class: sphx-glr-single-img
 
@@ -427,7 +427,7 @@ are reasonable:
 
 
 .. image-sg:: /examples/tutorials/images/sphx_glr_plot_aif_005.png
-   :alt: Prediction of the MRI signals., Reconstruction of concentrations
+   :alt: MRI signal, Tissue concentration, Magnetization
    :srcset: /examples/tutorials/images/sphx_glr_plot_aif_005.png
    :class: sphx-glr-single-img
 
@@ -447,7 +447,7 @@ properties, even if in reality they are due to systemic differences
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.389 seconds)
+   **Total running time of the script:** (0 minutes 0.527 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_aif.py:

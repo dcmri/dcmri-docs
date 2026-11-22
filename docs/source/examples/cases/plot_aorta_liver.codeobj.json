@@ -220,6 +220,15 @@
    "name": "str"
   }
  ],
+ "subj": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
  "visit_1_data": [
   {
    "is_class": false,

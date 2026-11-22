@@ -357,6 +357,22 @@
    "name": "InverseKidney"
   }
  ],
+ "dc.aif_tristan": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "aif_tristan"
+  }
+ ],
  "dc.load_minipig": [
   {
    "is_class": false,
@@ -387,22 +403,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "print_quantities"
-  }
- ],
- "dc.tristan": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "tristan"
   }
  ],
  "dcmri.Kidney": [

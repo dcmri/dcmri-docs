@@ -81,40 +81,34 @@ Set up the model
  .. code-block:: none
 
        Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
-           0              1         4.8073e+15                                    5.01e+16    
-           1              2         6.1645e+14      4.19e+15       3.00e-01       6.97e+15    
-           2              3         1.4232e+14      4.74e+14       3.43e-01       7.47e+14    
-           3              4         1.1985e+14      2.25e+13       2.05e-01       3.33e+14    
-           4              5         1.1655e+14      3.30e+12       7.22e-02       2.95e+13    
-           5              6         1.1595e+14      6.03e+11       9.40e-02       1.39e+13    
-           6              7         1.1553e+14      4.22e+11       5.99e-02       2.30e+13    
-           7              8         1.1550e+14      2.02e+10       2.64e-02       2.97e+13    
-           8              9         1.1550e+14      2.41e+09       7.72e-02       1.92e+13    
-           9             10         1.1527e+14      2.34e+11       1.15e-02       3.35e+13    
-          10             15         1.1527e+14      1.60e+09       2.32e-04       4.49e+13    
-          11             16         1.1526e+14      4.15e+09       6.11e-05       3.56e+13    
-          12             17         1.1526e+14      1.63e+09       1.28e-04       2.79e+13    
-          13             18         1.1526e+14      1.14e+09       1.07e-04       4.11e+13    
-          14             19         1.1526e+14      1.96e+09       3.02e-05       3.62e+13    
-          15             21         1.1526e+14      9.00e+08       1.52e-05       3.38e+13    
-          16             25         1.1526e+14      2.73e+07       4.74e-07       3.37e+13    
-          17             27         1.1526e+14      1.36e+07       2.37e-07       3.37e+13    
-          18             30         1.1526e+14      1.70e+06       2.97e-08       3.37e+13    
-          19             32         1.1526e+14      8.52e+05       1.48e-08       1.32e+13    
-    Both `ftol` and `xtol` termination conditions are satisfied.
-    Function evaluations 32, initial cost 4.8073e+15, final cost 1.1526e+14, first-order optimality 1.32e+13.
+           0              1         2.7438e+02                                    2.71e+03    
+           1              2         5.4017e+01      2.20e+02       2.39e-01       3.81e+02    
+           2              3         2.2921e+01      3.11e+01       2.90e-01       3.37e+01    
+           3              4         2.0808e+01      2.11e+00       2.30e-01       8.96e+01    
+           4              5         2.0214e+01      5.95e-01       8.09e-02       1.92e+01    
+           5              6         2.0019e+01      1.95e-01       1.05e-01       1.40e+01    
+           6              7         1.9970e+01      4.94e-02       5.15e-02       2.52e+00    
+           7              8         1.9948e+01      2.16e-02       5.11e-02       1.97e+00    
+           8              9         1.9940e+01      8.73e-03       3.16e-02       1.22e+00    
+           9             13         1.9938e+01      1.44e-03       1.40e-03       3.87e-01    
+          10             16         1.9938e+01      1.54e-04       1.88e-04       2.43e+00    
+          11             20         1.9938e+01      7.31e-06       6.30e-06       3.75e-01    
+          12             21         1.9938e+01      5.10e-06       5.77e-06       3.78e-01    
+          13             23         1.9938e+01      1.46e-06       2.89e-06       2.38e+00    
+          14             25         1.9938e+01      7.36e-07       7.87e-07       3.76e-01    
+          15             26         1.9938e+01      1.59e-07       1.80e-07       3.76e-01    
+    `ftol` termination condition is satisfied.
+    Function evaluations 26, initial cost 2.7438e+02, final cost 1.9938e+01, first-order optimality 3.76e-01.
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-44
+.. GENERATED FROM PYTHON SOURCE LINES 39-42
 
 .. code-block:: Python
 
 
-    p = data | result['popt'] | result['pars']
-
-    dc.print_quantities(result['popt'] | result['pars'], digits=3)
+    dc.print_quantities(result['pars'], digits=3)
 
 
 
@@ -129,56 +123,58 @@ Set up the model
     +--------+--------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
     | Key    | Value  | Unit       | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
     +--------+--------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | BAT    | 19.5   | sec        | bolus arrival time                                     | Indicator       | (-30, 30)    |       |       |
+    | BAT    | 20.5   | sec        | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
     +--------+--------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | CO     | 157.0  | mL/sec     | cardiac output                                         | Physiological   | (0, 500)     |       |       |
-    | D_hl   | 0.111  |            | transit time dispersion in the heart and Lungs         | Physiological   | (0.01, 0.99) |       |       |
-    | DRPF   | 0.459  |            | Differential renal plasma flow                         | Physiological   | (0, 1)       |       |       |
-    | E_li   | 0.0    |            | extraction fraction in liver                           | Physiological   | (0.0, 1.0)   |       |       |
-    | E_lk   | 0.132  |            | extraction fraction in the left kidney                 | Physiological   | (0, 1)       |       |       |
-    | E_or   | 0.241  |            | extraction fraction in the organs                      | Physiological   | (0, 0.5)     |       |       |
-    | E_rk   | 0.183  |            | extraction fraction in the right kidney                | Physiological   | (0, 1)       |       |       |
-    | F_p_lk | 0.0186 | mL/sec/cm3 | flow per unit tissue in plasma of the left kidney      | Physiological   | (0, 0.1)     |       |       |
-    | F_p_rk | 0.0214 | mL/sec/cm3 | flow per unit tissue in plasma of the right kidney     | Physiological   | (0, 0.1)     |       |       |
-    | fCO_ki | 0.0771 |            | fraction of the cardiac output in the kidney           | Physiological   | (0, 0.5)     |       |       |
-    | FF_lk  | 0.152  |            | filtration fraction in the left kidney                 | Physiological   | (0, 0.5)     |       |       |
-    | FF_rk  | 0.223  |            | filtration fraction in the right kidney                | Physiological   | (0, 0.5)     |       |       |
-    | GFR_lk | 0.463  | mL/sec     | glomerular filtration rate in the left kidney          | Physiological   | (0, 20)      |       |       |
-    | GFR_rk | 0.802  | mL/sec     | glomerular filtration rate in the right kidney         | Physiological   | (0, 20)      |       |       |
-    | H      | 0.45   |            | hematocrit                                             | Physiological   | (0, 1)       |       |       |
-    | PF_ki  | 6.64   | mL/sec     | plasma flow in the kidney                              | Physiological   | (0, 100)     |       |       |
-    | PF_lk  | 3.05   | mL/sec     | plasma flow in the left kidney                         | Physiological   | (0, 100)     |       |       |
-    | PF_rk  | 3.59   | mL/sec     | plasma flow in the right kidney                        | Physiological   | (0, 100)     |       |       |
-    | T_b_or | 25.7   | sec        | mean transit time in blood of the organs               | Physiological   | (0, 60)      |       |       |
-    | T_e_or | 187.0  | sec        | mean transit time in extracellular space of the organs | Physiological   | (0, 800)     |       |       |
-    | T_hl   | 13.8   | sec        | mean transit time in the heart and Lungs               | Physiological   | (0, 30)      |       |       |
-    | T_lka  | 0.222  | sec        | mean transit time in the left kidney artery            | Physiological   | (0, 5)       |       |       |
-    | T_p_lk | 15.8   | sec        | mean transit time in plasma of the left kidney         | Physiological   | (0, 30)      |       |       |
-    | T_p_rk | 14.0   | sec        | mean transit time in plasma of the right kidney        | Physiological   | (0, 30)      |       |       |
-    | T_rka  | 0.185  | sec        | mean transit time in the right kidney artery           | Physiological   | (0, 5)       |       |       |
-    | T_u_lk | 136.0  | sec        | mean transit time in tubuli of the left kidney         | Physiological   | (30, 600)    |       |       |
-    | T_u_rk | 104.0  | sec        | mean transit time in tubuli of the right kidney        | Physiological   | (30, 600)    |       |       |
-    | v_ki   | 1.0    | mL/cm3     | volume fraction in the kidney                          | Physiological   | (0, 1)       |       |       |
-    | v_p_lk | 0.293  | mL/cm3     | volume fraction in plasma of the left kidney           | Physiological   | (0, 0.3)     |       |       |
-    | v_p_rk | 0.299  | mL/cm3     | volume fraction in plasma of the right kidney          | Physiological   | (0, 0.3)     |       |       |
+    | CO     | 157.0  | mL/sec     | cardiac output                                         | physiological   | (0, 500)     |       |       |
+    | D_hl   | 0.13   |            | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
+    | DRF    | 0.363  |            | Differential renal function                            | physiological   | (0, 1)       |       |       |
+    | DRPF   | 0.458  |            | Differential renal plasma flow                         | physiological   | (0, 1)       |       |       |
+    | E_li   | 0.0    |            | extraction fraction in liver                           | physiological   | (0.0, 1.0)   |       |       |
+    | E_lk   | 0.134  |            | extraction fraction in the left kidney                 | physiological   | (0, 1)       |       |       |
+    | E_or   | 0.212  |            | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
+    | E_rk   | 0.187  |            | extraction fraction in the right kidney                | physiological   | (0, 1)       |       |       |
+    | F_p_lk | 0.0184 | mL/sec/cm3 | flow per unit tissue in plasma of the left kidney      | physiological   | (0, 0.1)     |       |       |
+    | F_p_rk | 0.0212 | mL/sec/cm3 | flow per unit tissue in plasma of the right kidney     | physiological   | (0, 0.1)     |       |       |
+    | fCO_ki | 0.0763 |            | fraction of the cardiac output in the kidney           | physiological   | (0, 0.5)     |       |       |
+    | FF_lk  | 0.155  |            | filtration fraction in the left kidney                 | physiological   | (0, 0.5)     |       |       |
+    | FF_rk  | 0.23   |            | filtration fraction in the right kidney                | physiological   | (0, 0.5)     |       |       |
+    | GFR    | 1.29   | mL/sec     | glomerular filtration rate                             | physiological   | (0, 10)      |       |       |
+    | GFR_lk | 0.466  | mL/sec     | glomerular filtration rate in the left kidney          | physiological   | (0, 20)      |       |       |
+    | GFR_rk | 0.819  | mL/sec     | glomerular filtration rate in the right kidney         | physiological   | (0, 20)      |       |       |
+    | H      | 0.45   |            | hematocrit                                             | physiological   | (0, 1)       |       |       |
+    | PF_ki  | 6.58   | mL/sec     | plasma flow in the kidney                              | physiological   | (0, 100)     |       |       |
+    | PF_lk  | 3.01   | mL/sec     | plasma flow in the left kidney                         | physiological   | (0, 100)     |       |       |
+    | PF_rk  | 3.56   | mL/sec     | plasma flow in the right kidney                        | physiological   | (0, 100)     |       |       |
+    | T_b_or | 29.1   | sec        | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
+    | T_e_or | 251.0  | sec        | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
+    | T_hl   | 12.8   | sec        | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
+    | T_lka  | 0.192  | sec        | mean transit time in the left kidney artery            | physiological   | (0, 5)       |       |       |
+    | T_p_lk | 15.9   | sec        | mean transit time in plasma of the left kidney         | physiological   | (0, 30)      |       |       |
+    | T_p_rk | 14.0   | sec        | mean transit time in plasma of the right kidney        | physiological   | (0, 30)      |       |       |
+    | T_rka  | 0.168  | sec        | mean transit time in the right kidney artery           | physiological   | (0, 5)       |       |       |
+    | T_u_lk | 135.0  | sec        | mean transit time in tubuli of the left kidney         | physiological   | (30, 600)    |       |       |
+    | T_u_rk | 103.0  | sec        | mean transit time in tubuli of the right kidney        | physiological   | (30, 600)    |       |       |
+    | v_ki   | 1.0    | mL/cm3     | volume fraction in the kidney                          | physiological   | (0, 1)       |       |       |
+    | v_p_lk | 0.293  | mL/cm3     | volume fraction in plasma of the left kidney           | physiological   | (0, 0.3)     |       |       |
+    | v_p_rk | 0.297  | mL/cm3     | volume fraction in plasma of the right kidney          | physiological   | (0, 0.3)     |       |       |
     +--------+--------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | vol_ao | 1.0    | cm3        | ROI volume in the aorta                                | Whole-body      | (0.0, 1000)  |       |       |
-    | vol_lk | 164.0  | cm3        | ROI volume in the left kidney                          | Whole-body      | (0.0, 1000)  |       |       |
-    | vol_rk | 168.0  | cm3        | ROI volume in the right kidney                         | Whole-body      | (0.0, 1000)  |       |       |
-    | weight | 70.0   | kg         | body weight                                            | Whole-body      | (0, 300)     |       |       |
+    | vol_ao | 1.0    | cm3        | ROI volume in the aorta                                | whole-body      | (0.0, 1000)  |       |       |
+    | vol_lk | 164.0  | cm3        | ROI volume in the left kidney                          | whole-body      | (0.0, 1000)  |       |       |
+    | vol_rk | 168.0  | cm3        | ROI volume in the right kidney                         | whole-body      | (0.0, 1000)  |       |       |
+    | weight | 70.0   | kg         | body weight                                            | whole-body      | (0, 300)     |       |       |
     +----------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-54
+.. GENERATED FROM PYTHON SOURCE LINES 43-52
 
 .. code-block:: Python
 
 
-    iso_lk, iso_rk = round(60 * p['nmGFR_lk']), round(60 * p['nmGFR_rk'])
-    mrr_lk, mrr_rk = round(60 * p['GFR_lk']), round(60 * p['GFR_rk'])
+    iso_lk, iso_rk = round(60 * data['nmGFR_lk']), round(60 * data['nmGFR_rk'])
+    mrr_lk, mrr_rk = round(60 * result['pars']['GFR_lk']), round(60 * result['pars']['GFR_rk'])
 
     print(f"{'GFR (mL/min)':<14}{'Radio-isotope':>15}{'MRR':>8}")
     print("-" * 37)
@@ -196,12 +192,12 @@ Set up the model
     GFR (mL/min)    Radio-isotope     MRR
     -------------------------------------
     Left kidney                31      28
-    Right kidney               36      48
+    Right kidney               36      49
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-57
+.. GENERATED FROM PYTHON SOURCE LINES 53-55
 
 .. code-block:: Python
 
@@ -222,7 +218,7 @@ Set up the model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.978 seconds)
+   **Total running time of the script:** (0 minutes 1.290 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_kidneys.py:

@@ -86,6 +86,22 @@
    "name": "InverseLiver"
   }
  ],
+ "dc.aif_tristan_rat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "aif_tristan_rat"
+  }
+ ],
  "dc.load_tristan_rats": [
   {
    "is_class": false,
@@ -118,22 +134,6 @@
    "name": "print_quantities"
   }
  ],
- "dc.tristan_rat": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "tristan_rat"
-  }
- ],
  "dcmri.Liver": [
   {
    "is_class": false,
@@ -148,15 +148,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "Liver"
-  }
- ],
- "example_tristan_preclinical": [
-  {
-   "is_class": false,
-   "is_explicit": true,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "example_tristan_preclinical"
   }
  ],
  "get_data": [

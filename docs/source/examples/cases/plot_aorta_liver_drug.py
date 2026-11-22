@@ -27,7 +27,7 @@ import dcmri as dc
 
 
 model = dc.InverseAortaLiverDrug(
-    heartlung='pfcomp',         # Smoother first pass data
+    heartlung='chain',         # Smoother first pass data
     organs='2cxm',              # Long acquisition times reveal extravasation
     liver='1I-IC',              # Intracellular agent
     baseline='measured',        # Data are available on precontrast T1
@@ -61,11 +61,8 @@ result = model(data, verbose=2)
 # %%
 # Verify that the optimization has converged to a solution:
 
-# --- Update the data
-data |= result['popt'] 
-
 # --- Plot the fits
-model.plot(data)
+model.plot(data, result)
 
 # %%
 # The model first the data well, so we can now consider the 

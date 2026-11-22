@@ -55,48 +55,6 @@ Examples using ``dcmri.load_kruk``
 
  * :doc:`/examples/cases/plot_aorta_kidneys`
 
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). ">
-
-.. only:: html
-
-  .. image:: /examples/studies/images/thumb/sphx_glr_plot_gfr_validation_thumb.png
-    :alt:
-
-  :doc:`/examples/studies/plot_gfr_validation`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Single-kidney glomerular filtration rate</div>
-    </div>
-
-
-.. only:: not html
-
- * :doc:`/examples/studies/plot_gfr_validation`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Kidney for measurement of  single-kidney glomerular filtration rate (SK-GFR). ">
-
-.. only:: html
-
-  .. image:: /examples/studies/images/thumb/sphx_glr_plot_wb_gfr_validation_thumb.png
-    :alt:
-
-  :doc:`/examples/studies/plot_wb_gfr_validation`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Single-kidney glomerular filtration rate</div>
-    </div>
-
-
-.. only:: not html
-
- * :doc:`/examples/studies/plot_wb_gfr_validation`
-
 .. thumbnail-parent-div-close
 
 .. raw:: html

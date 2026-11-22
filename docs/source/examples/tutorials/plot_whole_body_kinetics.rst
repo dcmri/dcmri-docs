@@ -67,7 +67,7 @@ As data we will use a population-average AIF:
 
     # --- Compute plasma concententration
     t = np.arange(0, tmax, dt)
-    cp_pop = dc.parker(t, BAT=bat)
+    cp_pop = dc.aif_parker(t, BAT=bat)
 
 
 
@@ -190,11 +190,11 @@ Let's print the model parameters:
 
  .. code-block:: none
 
-    E          : 0.12483384122553587
-    T_hl       : 8.743148060134105
-    D_hl       : 0.16564840342860862
-    T_or       : 39.539713512190524
-    CO         : 234.27493254964878
+    E          : 0.12483383500169636
+    T_hl       : 8.743148156453616
+    D_hl       : 0.16564841343389666
+    T_or       : 39.53972055241672
+    CO         : 234.2749235280015
 
 
 
@@ -207,7 +207,7 @@ Note that the cardiac output is high, as is well-known for this AIF model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.133 seconds)
+   **Total running time of the script:** (0 minutes 0.259 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_whole_body_kinetics.py:

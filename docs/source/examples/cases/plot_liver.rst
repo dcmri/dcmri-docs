@@ -28,15 +28,14 @@ Using `~dcmri.Liver` to measure hepatocellular function in rats.
 
 This example illustrates the use of `~dcmri.Liver` with case studies, 
 measuring liver function in rats on Day 1 (control) and on Day 2 (after 
-administration of an inhibitor drug). A separate example shows a complete 
-:ref:`analysis of all data <example_tristan_preclinical>`
+administration of an inhibitor drug). 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-19
+.. GENERATED FROM PYTHON SOURCE LINES 16-18
 
 Setup
 -----
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-26
+.. GENERATED FROM PYTHON SOURCE LINES 18-25
 
 .. code-block:: Python
 
@@ -54,7 +53,7 @@ Setup
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-35
+.. GENERATED FROM PYTHON SOURCE LINES 26-34
 
 Modelling
 ---------
@@ -65,7 +64,7 @@ a calibrated model so S0 is derived from the data. All other
 default configurations are fine so don't need to be specified 
 explicitly:
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-37
+.. GENERATED FROM PYTHON SOURCE LINES 34-36
 
 .. code-block:: Python
 
@@ -78,11 +77,11 @@ explicitly:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-39
+.. GENERATED FROM PYTHON SOURCE LINES 37-38
 
 Let's see what input parameters are needed for this model:
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-42
+.. GENERATED FROM PYTHON SOURCE LINES 38-41
 
 .. code-block:: Python
 
@@ -102,46 +101,46 @@ Let's see what input parameters are needed for this model:
     +----------------+------------+------------+--------------------------------------------------------------+-----------------+---------------+-------+-------+
     | Key            | Value      | Unit       | Name                                                         | Group           | Bounds        | DICOM | OSIPI |
     +----------------+------------+------------+--------------------------------------------------------------+-----------------+---------------+-------+-------+
-    | B1corr_li      | 1          |            | B1-correction factor in the liver                            | Electromagnetic | (0, 5)        |       |       |
-    | me             | 1          | A cm2/mL   | equilibrium magnetization                                    | Electromagnetic | (0, 5)        |       |       |
+    | B1corr_li      | 1          |            | B1-correction factor in the liver                            | electromagnetic | (0, 5)        |       |       |
+    | me             | 1          | A cm2/mL   | equilibrium magnetization                                    | electromagnetic | (0, 5)        |       |       |
     +----------------+------------+------------+--------------------------------------------------------------+-----------------+---------------+-------+-------+
-    | dt             | 0.5        | sec        | pseudo-continuous time step                                  | Hyperparameters |               |       |       |
+    | dt             | 0.5        | sec        | pseudo-continuous time step                                  | hyperparameters |               |       |       |
     +----------------+------------+------------+--------------------------------------------------------------+-----------------+---------------+-------+-------+
-    | agent          | gadoterate |            | contrast agent generic name                                  | Indicator       |               |       |       |
-    | ci_li          | 0.005      | mmol/mL    | inlet concentration in the liver                             | Indicator       |               |       |       |
+    | agent          | gadoterate |            | contrast agent generic name                                  | indicator       |               |       |       |
+    | ci_li          | 0.005      | mmol/mL    | inlet concentration in the liver                             | indicator       |               |       |       |
     +----------------+------------+------------+--------------------------------------------------------------+-----------------+---------------+-------+-------+
-    | pfree          | None       | a.u.       | set of free parameters                                       | Inverse problem |               |       |       |
+    | pfree          | None       | a.u.       | set of free parameters                                       | inverse problem |               |       |       |
     +----------------+------------+------------+--------------------------------------------------------------+-----------------+---------------+-------+-------+
-    | k_e2h          | 0.003      | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)    |       |       |
-    | T_h            | 1800       | sec        | mean transit time in hepatocytes                             | Physiological   | (600, 36000)  |       |       |
-    | v_e_li         | 0.3        | mL/cm3     | volume fraction in extracellular space of the liver          | Physiological   | (0.01, 0.6)   |       |       |
-    | v_li           | 1          | mL/cm3     | volume fraction in the liver                                 | Physiological   | (0, 1)        |       |       |
+    | k_e2h          | 0.0025     | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | physiological   | (0, 0.006)    |       |       |
+    | T_h            | 14400      | sec        | mean transit time in hepatocytes                             | physiological   | (600, 21600)  |       |       |
+    | v_e_li         | 0.25       | mL/cm3     | volume fraction in extracellular space of the liver          | physiological   | (0.01, 0.5)   |       |       |
+    | v_li           | 1          | mL/cm3     | volume fraction in the liver                                 | physiological   | (0, 1)        |       |       |
     +----------------+------------+------------+--------------------------------------------------------------+-----------------+---------------+-------+-------+
-    | FA             | 15         | deg        | flip angle                                                   | Sequence        | (0, 180)      |       |       |
-    | field_strength | 3          | T          | magnetic field strength                                      | Sequence        | (0, 20)       |       |       |
-    | Nk0            | 64         |            | number of acquired phase lines to the center of k-space      | Sequence        | (0, 1000)     |       |       |
-    | Nph            | 128        |            | number of acquired phase lines in k-space                    | Sequence        | (0, 1000)     |       |       |
-    | TE             | 0.001      | sec        | echo time                                                    | Sequence        | (0, 10)       |       |       |
-    | TR             | 0.005      | sec        | repetition time                                              | Sequence        | (0, 1)        |       |       |
-    | tstart         | 0          | sec        | start of the acquisition                                     | Sequence        | (0, 10000.0)  |       |       |
+    | FA             | 15         | deg        | flip angle                                                   | sequence        | (0, 180)      |       |       |
+    | field_strength | 3          | T          | magnetic field strength                                      | sequence        | (0, 20)       |       |       |
+    | Nk0            | 64         |            | number of acquired phase lines to the center of k-space      | sequence        | (0, 1000)     |       |       |
+    | Nph            | 128        |            | number of acquired phase lines in k-space                    | sequence        | (0, 1000)     |       |       |
+    | TE             | 0.001      | sec        | echo time                                                    | sequence        | (0, 10)       |       |       |
+    | TR             | 0.005      | sec        | repetition time                                              | sequence        | (0, 1)        |       |       |
+    | tstart         | 0          | sec        | start of the acquisition                                     | sequence        | (0, 10000.0)  |       |       |
     +----------------+------------+------------+--------------------------------------------------------------+-----------------+---------------+-------+-------+
-    | nb             | 1          | a.u.       | number of baseline time points                               | Signal          |               |       |       |
-    | NSR_li         | 0.0        |            | noise-to-signal ratio in the liver                           | Signal          | (0, 100000.0) |       |       |
-    | S_li           | 1.0        | a.u.       | signal in the liver                                          | Signal          | (0, 5)        |       |       |
-    | tS_li          | 0.0        | sec        | signal time points in the liver                              | Signal          |               |       |       |
+    | nb             | 1          | a.u.       | number of baseline time points                               | signal          |               |       |       |
+    | NSR_li         | 0.0        |            | noise-to-signal ratio in the liver                           | signal          | (0, 100000.0) |       |       |
+    | S_li           | 1.0        | a.u.       | signal in the liver                                          | signal          | (0, 5)        |       |       |
+    | tS_li          | 0.0        | sec        | signal time points in the liver                              | signal          |               |       |       |
     +-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-46
+.. GENERATED FROM PYTHON SOURCE LINES 42-45
 
 Since we will be running this on different datasets, we first 
 define a function which returns the data dictionary for a given 
 dataset:
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-85
+.. GENERATED FROM PYTHON SOURCE LINES 45-71
 
 .. code-block:: Python
 
@@ -156,28 +155,15 @@ dataset:
         tmax = np.amax(data['tS_li']) + 120
         t = np.arange(0, tmax, dt)
 
+        # --- Constants
         const = {
-            # --- Input function
-            'ci_li': dc.tristan_rat(t, BAT=data['BAT'], duration=data['duration']),
-
-            # --- Hyperparameters
+            'ci_li': dc.aif_tristan_rat(t, BAT=data['BAT'], duration=data['duration']),
             'dt': dt,
-
-            # --- Physiological constants
-            # The volume fractions are treated as constants since prior 
-            # sensitivity analysis has shown they are not measureable from 
-            # these data. Also they are not expected to change after 
-            # drug administration so fixing them should not greatly affect
-            # measured treatment effects.
-
-            'H': 0.418, # Cremer et al, JCBFM 3, 254-256 (1983)
+            'H': 0.418, 
+            'k_e2h': 0.0147,
             'v_e_li': 0.23,
             'v_li': 1.0,
-
-            # --- Free parameters
-            # The primary endpoints of this study are treated as free 
-            # parameters with liberal constraints so results are fully 
-            # data driven:
+            'T_h': 30 * 60, 
             'pfree': {'k_e2h':[0, 1], 'T_h': [0, 60 * 60]},
         }
 
@@ -191,7 +177,7 @@ dataset:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-92
+.. GENERATED FROM PYTHON SOURCE LINES 72-78
 
 Case study 1 - strong inhibition
 --------------------------------
@@ -200,7 +186,7 @@ where all rats received a standard dose of cyclosporine
 on the second day. The study showed this to be a strong inhibitor 
 of uptake and excretion:
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-103
+.. GENERATED FROM PYTHON SOURCE LINES 78-89
 
 .. code-block:: Python
 
@@ -222,23 +208,17 @@ of uptake and excretion:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-106
+.. GENERATED FROM PYTHON SOURCE LINES 90-92
 
 Before we interpret the results, let's verify the optimization has 
 converged to a solution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-115
+.. GENERATED FROM PYTHON SOURCE LINES 92-95
 
 .. code-block:: Python
 
-
-    # --- Update the data
-    day_1_data |= day_1_result['popt']
-    day_2_data |= day_2_result['popt']
-
-    # --- Plot the fits
-    liver.plot(day_1_data)
-    liver.plot(day_2_data)
+    liver.plot(day_1_data, day_1_result)
+    liver.plot(day_2_data, day_2_result)
 
 
 
@@ -264,12 +244,12 @@ converged to a solution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-118
+.. GENERATED FROM PYTHON SOURCE LINES 96-98
 
 The model first the data well, so we can now consider the 
 values for the derived parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-121
+.. GENERATED FROM PYTHON SOURCE LINES 98-101
 
 .. code-block:: Python
 
@@ -289,14 +269,14 @@ values for the derived parameters
     +--------+--------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
     | Key    | Value  | Unit       | Name                                                         | Group           | Bounds       | DICOM | OSIPI |
     +--------+--------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
-    | k_e2h  | 0.03   | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)   |       |       |
-    | K_e2h  | 0.13   | 1/sec      | transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
-    | k_h2b  | 0.0022 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
-    | K_h2b  | 0.0039 | 1/sec      | transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
-    | T_h    | 260.0  | sec        | mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
-    | v_e_li | 0.23   | mL/cm3     | volume fraction in extracellular space of the liver          | Physiological   | (0.01, 0.6)  |       |       |
-    | v_h    | 0.58   | mL/cm3     | volume fraction in hepatocytes                               | Physiological   | (0, 1)       |       |       |
-    | v_li   | 1.0    | mL/cm3     | volume fraction in the liver                                 | Physiological   | (0, 1)       |       |       |
+    | k_e2h  | 0.015  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | physiological   | (0, 0.006)   |       |       |
+    | K_e2h  | 0.065  | 1/sec      | transfer rate from extracellular space to hepatocytes        | physiological   | (0.0, 0.1)   |       |       |
+    | k_h2b  | 0.0011 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | physiological   | (0.0, 0.1)   |       |       |
+    | K_h2b  | 0.0019 | 1/sec      | transfer rate from hepatocytes to blood                      | physiological   | (0.0, 0.1)   |       |       |
+    | T_h    | 520.0  | sec        | mean transit time in hepatocytes                             | physiological   | (600, 21600) |       |       |
+    | v_e_li | 0.23   | mL/cm3     | volume fraction in extracellular space of the liver          | physiological   | (0.01, 0.5)  |       |       |
+    | v_h    | 0.58   | mL/cm3     | volume fraction in hepatocytes                               | physiological   | (0, 1)       |       |       |
+    | v_li   | 1.0    | mL/cm3     | volume fraction in the liver                                 | physiological   | (0, 1)       |       |       |
     +----------------------------------------------------------------------------------------------------------------------------------------------+
 
     +-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -304,28 +284,28 @@ values for the derived parameters
     +--------+---------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
     | Key    | Value   | Unit       | Name                                                         | Group           | Bounds       | DICOM | OSIPI |
     +--------+---------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
-    | k_e2h  | 0.0039  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)   |       |       |
-    | K_e2h  | 0.017   | 1/sec      | transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
-    | k_h2b  | 0.00098 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
-    | K_h2b  | 0.0017  | 1/sec      | transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
-    | T_h    | 600.0   | sec        | mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
-    | v_e_li | 0.23    | mL/cm3     | volume fraction in extracellular space of the liver          | Physiological   | (0.01, 0.6)  |       |       |
-    | v_h    | 0.58    | mL/cm3     | volume fraction in hepatocytes                               | Physiological   | (0, 1)       |       |       |
-    | v_li   | 1.0     | mL/cm3     | volume fraction in the liver                                 | Physiological   | (0, 1)       |       |       |
+    | k_e2h  | 0.0019  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | physiological   | (0, 0.006)   |       |       |
+    | K_e2h  | 0.0084  | 1/sec      | transfer rate from extracellular space to hepatocytes        | physiological   | (0.0, 0.1)   |       |       |
+    | k_h2b  | 0.00049 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | physiological   | (0.0, 0.1)   |       |       |
+    | K_h2b  | 0.00084 | 1/sec      | transfer rate from hepatocytes to blood                      | physiological   | (0.0, 0.1)   |       |       |
+    | T_h    | 1200.0  | sec        | mean transit time in hepatocytes                             | physiological   | (600, 21600) |       |       |
+    | v_e_li | 0.23    | mL/cm3     | volume fraction in extracellular space of the liver          | physiological   | (0.01, 0.5)  |       |       |
+    | v_h    | 0.58    | mL/cm3     | volume fraction in hepatocytes                               | physiological   | (0, 1)       |       |       |
+    | v_li   | 1.0     | mL/cm3     | volume fraction in the liver                                 | physiological   | (0, 1)       |       |       |
     +-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-126
+.. GENERATED FROM PYTHON SOURCE LINES 102-106
 
 The values confirm the strong inhibition of liver function by the 
 drug. The hepatocellular uptake rate (k_e2h) has dropped from 0.030 
 to 0.0039 mL/sec/cm3, and the biliary excretion rate (k_h2b) from 
 0.0022 to 0.00098 mL/sec/cm3.
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-134
+.. GENERATED FROM PYTHON SOURCE LINES 108-114
 
 Case study 2 - weak inhibition
 ------------------------------
@@ -334,7 +314,7 @@ rats received a dose of pioglitazone of the second day. The study
 showed this to be a weak inhibitor of excretion with no effect on 
 uptake:
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-145
+.. GENERATED FROM PYTHON SOURCE LINES 114-125
 
 .. code-block:: Python
 
@@ -356,12 +336,12 @@ uptake:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-148
+.. GENERATED FROM PYTHON SOURCE LINES 126-128
 
 As before, always good to check the fit before interpreting the 
 results:
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-157
+.. GENERATED FROM PYTHON SOURCE LINES 128-137
 
 .. code-block:: Python
 
@@ -398,12 +378,12 @@ results:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-160
+.. GENERATED FROM PYTHON SOURCE LINES 138-140
 
 Again we can verify the model fits the data well. Let's have 
 a look at the values for the derived parameters:
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-163
+.. GENERATED FROM PYTHON SOURCE LINES 140-143
 
 .. code-block:: Python
 
@@ -423,14 +403,14 @@ a look at the values for the derived parameters:
     +--------+--------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
     | Key    | Value  | Unit       | Name                                                         | Group           | Bounds       | DICOM | OSIPI |
     +--------+--------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
-    | k_e2h  | 0.032  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)   |       |       |
-    | K_e2h  | 0.14   | 1/sec      | transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
-    | k_h2b  | 0.0029 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
-    | K_h2b  | 0.0049 | 1/sec      | transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
-    | T_h    | 200.0  | sec        | mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
-    | v_e_li | 0.23   | mL/cm3     | volume fraction in extracellular space of the liver          | Physiological   | (0.01, 0.6)  |       |       |
-    | v_h    | 0.58   | mL/cm3     | volume fraction in hepatocytes                               | Physiological   | (0, 1)       |       |       |
-    | v_li   | 1.0    | mL/cm3     | volume fraction in the liver                                 | Physiological   | (0, 1)       |       |       |
+    | k_e2h  | 0.016  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | physiological   | (0, 0.006)   |       |       |
+    | K_e2h  | 0.069  | 1/sec      | transfer rate from extracellular space to hepatocytes        | physiological   | (0.0, 0.1)   |       |       |
+    | k_h2b  | 0.0014 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | physiological   | (0.0, 0.1)   |       |       |
+    | K_h2b  | 0.0024 | 1/sec      | transfer rate from hepatocytes to blood                      | physiological   | (0.0, 0.1)   |       |       |
+    | T_h    | 410.0  | sec        | mean transit time in hepatocytes                             | physiological   | (600, 21600) |       |       |
+    | v_e_li | 0.23   | mL/cm3     | volume fraction in extracellular space of the liver          | physiological   | (0.01, 0.5)  |       |       |
+    | v_h    | 0.58   | mL/cm3     | volume fraction in hepatocytes                               | physiological   | (0, 1)       |       |       |
+    | v_li   | 1.0    | mL/cm3     | volume fraction in the liver                                 | physiological   | (0, 1)       |       |       |
     +----------------------------------------------------------------------------------------------------------------------------------------------+
 
     +----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -438,21 +418,21 @@ a look at the values for the derived parameters:
     +--------+--------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
     | Key    | Value  | Unit       | Name                                                         | Group           | Bounds       | DICOM | OSIPI |
     +--------+--------+------------+--------------------------------------------------------------+-----------------+--------------+-------+-------+
-    | k_e2h  | 0.03   | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | Physiological   | (0.0, 0.1)   |       |       |
-    | K_e2h  | 0.13   | 1/sec      | transfer rate from extracellular space to hepatocytes        | Physiological   | (0.0, 0.1)   |       |       |
-    | k_h2b  | 0.0024 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | Physiological   | (0.0, 0.1)   |       |       |
-    | K_h2b  | 0.0041 | 1/sec      | transfer rate from hepatocytes to blood                      | Physiological   | (0.0, 0.1)   |       |       |
-    | T_h    | 240.0  | sec        | mean transit time in hepatocytes                             | Physiological   | (600, 36000) |       |       |
-    | v_e_li | 0.23   | mL/cm3     | volume fraction in extracellular space of the liver          | Physiological   | (0.01, 0.6)  |       |       |
-    | v_h    | 0.58   | mL/cm3     | volume fraction in hepatocytes                               | Physiological   | (0, 1)       |       |       |
-    | v_li   | 1.0    | mL/cm3     | volume fraction in the liver                                 | Physiological   | (0, 1)       |       |       |
+    | k_e2h  | 0.015  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes | physiological   | (0, 0.006)   |       |       |
+    | K_e2h  | 0.065  | 1/sec      | transfer rate from extracellular space to hepatocytes        | physiological   | (0.0, 0.1)   |       |       |
+    | k_h2b  | 0.0012 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood               | physiological   | (0.0, 0.1)   |       |       |
+    | K_h2b  | 0.0021 | 1/sec      | transfer rate from hepatocytes to blood                      | physiological   | (0.0, 0.1)   |       |       |
+    | T_h    | 490.0  | sec        | mean transit time in hepatocytes                             | physiological   | (600, 21600) |       |       |
+    | v_e_li | 0.23   | mL/cm3     | volume fraction in extracellular space of the liver          | physiological   | (0.01, 0.5)  |       |       |
+    | v_h    | 0.58   | mL/cm3     | volume fraction in hepatocytes                               | physiological   | (0, 1)       |       |       |
+    | v_li   | 1.0    | mL/cm3     | volume fraction in the liver                                 | physiological   | (0, 1)       |       |       |
     +----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-168
+.. GENERATED FROM PYTHON SOURCE LINES 144-148
 
 The values confirm the very weak effect of the drug on liver 
 function. The hepatocellular uptake rate (k_e2h) has dropped from 
@@ -462,7 +442,7 @@ from 0.0029 to 0.0024 mL/sec/cm3.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.383 seconds)
+   **Total running time of the script:** (0 minutes 0.389 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_liver.py:

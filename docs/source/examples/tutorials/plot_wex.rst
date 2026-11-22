@@ -23,7 +23,8 @@ Water exchange
 ==============
 
 This tutorial will explore the effect of water exchange in a standard 
-two-compartmental tissue using the models in `dcmri.Tissue`.
+two-compartmental tissue using the models in `dcmri.ForwardTissueX` 
+and `dcmri.InverseTissueX`.
 
 The three tissue compartments involved are the blood, interstitium and tissue 
 cells. The water exchange effects refer to the transport of water across the 
@@ -35,25 +36,25 @@ red blood cells is assumed to be in the fast exchange limit.
 Water exchange across either of these two barriers can be in the 
 fast-exchange limit (F), restricted (R), or there may be no water exchange at 
 all (N). Since there are two barriers involved this leads to 3x3=9 possible 
-water exchange regimes. `dcmri.Tissue` denotes these 9 regimes by a 
-combination of the letters F, R and N: the frst letter refers to the water 
+water exchange regimes. `dcmri.ForwardTissueX` denotes these 9 regimes by a 
+combination of the letters F, R and N: the first letter refers to the water 
 exchange across the endothelium, and the second to the water exchange across 
 the cell wall. For instance, 'FR' means fast water exchange (F) across the 
 endothelium, and restricted water exchange (R) across the cell wall.
 
 For regimes with restricted water exchange, the rate of exchange is quantified 
 by the permeability-surface area (PS) of water, a quantity in units 
-of mL/sec/cm3. `dcmri.Tissue` uses the notation ``PSe`` for the 
+of mL/sec/cm3. `dcmri.ForwardTissueX` uses the notation ``PSe`` for the 
 transendothelial water PS and ``PSc`` for the transcytolemmal PS.
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-36
+.. GENERATED FROM PYTHON SOURCE LINES 33-37
 
 Simulation setup
 ----------------
 We set up the simulation by importing the necessary packages and defining 
 the constants that will be fixed throughout. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-48
+.. GENERATED FROM PYTHON SOURCE LINES 39-49
 
 .. code-block:: Python
 
@@ -74,7 +75,7 @@ the constants that will be fixed throughout.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-56
+.. GENERATED FROM PYTHON SOURCE LINES 50-57
 
 The role of water exchange
 ----------------------------
@@ -84,12 +85,12 @@ more detail: fast water exchange (F) and no water exchange (N).
 
 Let's first generate a tissue without water exchange across either barrier:
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-60
+.. GENERATED FROM PYTHON SOURCE LINES 57-61
 
 .. code-block:: Python
 
 
-    tissue_nn = dc.ForwardTissueX(water_exchange='NN') # TODO remove Forward from name, keep only inverse
+    tissue_nn = dc.TissueX(water_exchange='NN') # TODO remove Forward from name, keep only inverse
     tissue_nn.plot(aif)
 
 
@@ -104,7 +105,7 @@ Let's first generate a tissue without water exchange across either barrier:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-74
+.. GENERATED FROM PYTHON SOURCE LINES 62-75
 
 In this model the indicator and water occupy the same compartments, so the 
 concentrations on the right have a similar profile. The magnetization (bottom left) 
@@ -120,12 +121,12 @@ barriers (*Note*: we could use the FF model here, but for the purposes of
 this illustration it is more instructive to use RR with very high values 
 for the water permeabilities): 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-79
+.. GENERATED FROM PYTHON SOURCE LINES 75-80
 
 .. code-block:: Python
 
 
-    tissue_ff = dc.ForwardTissueX(water_exchange='FF')
+    tissue_ff = dc.TissueX(water_exchange='FF')
     tissue_ff.plot(aif)
 
 
@@ -141,7 +142,7 @@ for the water permeabilities):
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-90
+.. GENERATED FROM PYTHON SOURCE LINES 81-91
 
 The indicator concentration in the tissue compartments is not affected by 
 the level of water exchange (top and bottom right), but the magnetization 
@@ -154,18 +155,18 @@ so rapidly that any differences are levelled out instantly. The tissue is
 well-mixed for water (and therefore water magnetization), although it is not 
 well-mixed for indicator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-95
+.. GENERATED FROM PYTHON SOURCE LINES 93-96
 
 Now let's consider the cases where one of the barriers is highly permeable 
 for water, and the other is impermeable. First let's look at the case of 
 high transendothelial water exchange and no transcytolemmal water exchange:
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-99
+.. GENERATED FROM PYTHON SOURCE LINES 96-100
 
 .. code-block:: Python
 
 
-    tissue_fn = dc.ForwardTissueX(water_exchange='FN')
+    tissue_fn = dc.TissueX(water_exchange='FN')
     tissue_fn.plot(aif)
 
 
@@ -180,18 +181,18 @@ high transendothelial water exchange and no transcytolemmal water exchange:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-103
+.. GENERATED FROM PYTHON SOURCE LINES 101-104
 
 As expected, blood and interstitium have the same magnetization throughout 
 and the magnetization of tissue cells is not altered at all. The opposite 
 case is similar:
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-108
+.. GENERATED FROM PYTHON SOURCE LINES 104-109
 
 .. code-block:: Python
 
 
-    tissue_nf = dc.ForwardTissueX(water_exchange='NF')
+    tissue_nf = dc.TissueX(water_exchange='NF')
     tissue_nf.plot(aif)
 
 
@@ -207,12 +208,12 @@ case is similar:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-111
+.. GENERATED FROM PYTHON SOURCE LINES 110-112
 
 In this case the tissue cells recieve the same magnetization as the 
 interstitium. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-124
+.. GENERATED FROM PYTHON SOURCE LINES 115-125
 
 Water exchange effect on the MR signal
 --------------------------------------
@@ -225,13 +226,13 @@ To illustrate the signal differences in more detail, we plot signals in
 mixed exchange regimes against the extremes of fast and no exchange. For 
 reference we also include a tissue with intermediate water exchange: 
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-159
+.. GENERATED FROM PYTHON SOURCE LINES 125-160
 
 .. code-block:: Python
 
 
     # Build a tissue in an intermediate water exchange regime
-    tissue_rr = dc.ForwardTissueX(water_exchange='RR')
+    tissue_rr = dc.TissueX(water_exchange='RR')
     rr = tissue_rr(aif | {'PSe': 1, 'PSc': 2})
 
     # Generate signals in all regimes
@@ -276,7 +277,7 @@ reference we also include a tissue with intermediate water exchange:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-169
+.. GENERATED FROM PYTHON SOURCE LINES 161-170
 
 These figures show clearly that water exchange levels have a measureable 
 effect on signals, and at all times lie between the extremes of no water 
@@ -288,7 +289,7 @@ curves represent the extremes. By contrast, changing the exchange rate of
 the indicator between its extremes of no- and infinite indicator exchange 
 has a more significant impact on the signal:
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-188
+.. GENERATED FROM PYTHON SOURCE LINES 170-189
 
 .. code-block:: Python
 
@@ -323,7 +324,7 @@ has a more significant impact on the signal:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 189-199
+.. GENERATED FROM PYTHON SOURCE LINES 190-200
 
 Water exchange bias
 -------------------
@@ -336,7 +337,7 @@ One way to explore the scale of this water exchange bias is by training a
 tissue that has no water exchange (NN) using data generated by a tissue in 
 fast water exchange:
 
-.. GENERATED FROM PYTHON SOURCE LINES 199-204
+.. GENERATED FROM PYTHON SOURCE LINES 200-205
 
 .. code-block:: Python
 
@@ -357,13 +358,13 @@ fast water exchange:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-208
+.. GENERATED FROM PYTHON SOURCE LINES 206-209
 
 The plot shows that the no-exchange tissue predicts the data with high 
 accuracy. However, the reconstructed magnetization is incorrect for fast 
 exchange tissue, and the reconstructed parameters are biased:
 
-.. GENERATED FROM PYTHON SOURCE LINES 208-213
+.. GENERATED FROM PYTHON SOURCE LINES 209-214
 
 .. code-block:: Python
 
@@ -383,17 +384,17 @@ exchange tissue, and the reconstructed parameters are biased:
     +-----------+------------+---------------+-------+---------+
     | Parameter | Unit       | Reconstructed | Truth | Error   |
     +-----------+------------+---------------+-------+---------+
-    | v_i       | mL/cm3     | 0.332         | 0.3   | 10.7 %  |
-    | F_b       | mL/sec/cm3 | 0.04914       | 0.02  | 145.7 % |
-    | v_b       | mL/cm3     | 0.1099        | 0.1   | 9.9 %   |
-    | PS        | mL/sec/cm3 | 0.002702      | 0.003 | -9.9 %  |
-    | T_ar      | sec        | 30.96         | 30    | 3.2 %   |
+    | v_i       | mL/cm3     | 0.3309        | 0.3   | 10.3 %  |
+    | PS        | mL/sec/cm3 | 0.00272       | 0.003 | -9.3 %  |
+    | v_b       | mL/cm3     | 0.109         | 0.1   | 9.0 %   |
+    | T_ar      | sec        | 0.9769        | 0     | inf     |
+    | F_b       | mL/sec/cm3 | 0.05006       | 0.02  | 150.3 % |
     +-----------+------------+---------------+-------+---------+
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 214-220
+.. GENERATED FROM PYTHON SOURCE LINES 215-221
 
 Removing water exchange bias
 ----------------------------
@@ -402,7 +403,7 @@ cannot be detected by comparing the fit to the data. In ideal circumstances,
 it can be removed by generalizing the model to allow for any level of water 
 exchange. Let's try this and look at the results again:
 
-.. GENERATED FROM PYTHON SOURCE LINES 220-225
+.. GENERATED FROM PYTHON SOURCE LINES 221-226
 
 .. code-block:: Python
 
@@ -423,13 +424,13 @@ exchange. Let's try this and look at the results again:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 226-229
+.. GENERATED FROM PYTHON SOURCE LINES 227-230
 
 Plotting the results now show a practically perfect fit to the data, and the 
 magnetization is correctly transferred to the tissue cells. 
 Also the measurements of the kinetic parameters are more accurate:
 
-.. GENERATED FROM PYTHON SOURCE LINES 229-234
+.. GENERATED FROM PYTHON SOURCE LINES 230-235
 
 .. code-block:: Python
 
@@ -450,25 +451,25 @@ Also the measurements of the kinetic parameters are more accurate:
     | Parameter | Unit       | Reconstructed | Truth | Error  |
     +-----------+------------+---------------+-------+--------+
     | v_i       | mL/cm3     | 0.3012        | 0.3   | 0.4 %  |
+    | PS        | mL/sec/cm3 | 0.002999      | 0.003 | -0.0 % |
+    | v_b       | mL/cm3     | 0.09999       | 0.1   | -0.0 % |
     | PSc       | mL/sec/cm3 | 100           | inf   | nan    |
+    | T_ar      | sec        | 0.02678       | 0     | inf    |
     | PSe       | mL/sec/cm3 | 100           | inf   | nan    |
-    | F_b       | mL/sec/cm3 | 0.02039       | 0.02  | 1.9 %  |
-    | v_b       | mL/cm3     | 0.1           | 0.1   | 0.0 %  |
-    | PS        | mL/sec/cm3 | 0.002998      | 0.003 | -0.1 % |
-    | T_ar      | sec        | 30.03         | 30    | 0.1 %  |
+    | F_b       | mL/sec/cm3 | 0.02039       | 0.02  | 2.0 %  |
     +-----------+------------+---------------+-------+--------+
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 235-239
+.. GENERATED FROM PYTHON SOURCE LINES 236-240
 
 The relative error in the water permeabilities PSe and PSc can not 
 meaningfully be quantified when the ground truth is infinite, but both 
 values have converged to the upper bound of 100 mL / min / 100mL, which 
 is chosen to be orders of magnitude higher than any physiological regime. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 241-259
+.. GENERATED FROM PYTHON SOURCE LINES 242-260
 
 Handling water exchange
 -----------------------
@@ -489,7 +490,7 @@ simulate a signal with realistic water PS values on the upper
 end of literature data. We plot the resulting signal against the 
 extremes of fast and no exchange:
 
-.. GENERATED FROM PYTHON SOURCE LINES 259-276
+.. GENERATED FROM PYTHON SOURCE LINES 260-277
 
 .. code-block:: Python
 
@@ -522,7 +523,7 @@ extremes of fast and no exchange:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 277-284
+.. GENERATED FROM PYTHON SOURCE LINES 278-285
 
 With these settings, the restricated water exchange signal is 
 intermediate between fast and no water exchange, but closer to the 
@@ -532,7 +533,7 @@ limnit is a better approximation for real tissues than a fast exchange
 limit. All standard approaches for the analysis of DCE-MRI data do 
 the opposite and assume fast water exchange.
 
-.. GENERATED FROM PYTHON SOURCE LINES 286-291
+.. GENERATED FROM PYTHON SOURCE LINES 287-292
 
 The impact of water exchange also depends on the imaging sequence, 
 and sequence parameters such as the choice of flip angle. Hence 
@@ -544,7 +545,7 @@ confounder.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 11.396 seconds)
+   **Total running time of the script:** (0 minutes 10.998 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_wex.py:

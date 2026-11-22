@@ -31,7 +31,7 @@ bat = 30
 
 # --- Compute plasma concententration
 t = np.arange(0, tmax, dt)
-cp_pop = dc.parker(t, BAT=bat)
+cp_pop = dc.aif_parker(t, BAT=bat)
 
 # %%
 # Build a kinetic model

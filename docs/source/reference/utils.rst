@@ -73,9 +73,9 @@ Input functions
    :toctree: ../api/
    :template: autosummary.rst
 
-   parker
-   tristan
-   tristan_rat
+   aif_parker
+   aif_tristan
+   aif_tristan_rat
 
 
 Digital phantoms

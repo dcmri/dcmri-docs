@@ -3,9 +3,12 @@
 
 ### package builds
 .venv/*
-docs/build
+docs/build/
 tests/tmp/*
 tests/export/*
+docs/source/api/
+docs/source/backreferences/
+docs/source/examples/
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

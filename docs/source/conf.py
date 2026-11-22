@@ -148,7 +148,7 @@ html_theme_options = {
     },
     "switcher": {
         "json_url": "https://dcmri.org/switcher.json",
-        "version_match": "0.7",      
+        "version_match": "0.7",
     },
     "navbar_end": ["version-switcher", "theme-switcher", "navbar-icon-links"],
 }

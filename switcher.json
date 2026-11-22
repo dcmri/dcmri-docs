@@ -1,0 +1,4 @@
+[
+  {"name": "0.7 (dev)",    "version": "0.7", "url": "https://dcmri.org/0.7/"},
+  {"name": "0.6 (stable)", "version": "0.6", "url": "https://dcmri.org/", "preferred": true}
+]

@@ -146,6 +146,11 @@ html_theme_options = {
     "analytics": {
         "google_analytics_id": "G-64ZSJ8Z1MX",
     },
+    "switcher": {
+        "json_url": "https://dcmri.org/switcher.json",
+        "version_match": "0.7",      
+    },
+    "navbar_end": ["version-switcher", "theme-switcher", "navbar-icon-links"],
 }
 
 # Add any paths that contain custom static files (such as style sheets) here, 

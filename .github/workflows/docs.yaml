@@ -1,0 +1,21 @@
+name: docs
+on:
+  push:
+    branches: [release-0.6]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e . -r docs/requirements.txt
+      - run: sphinx-build -b html docs/source docs/build/html
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/build/html
+          destination_dir: "0.7"   # "0.6" in release-0.6
+          keep_files: true         # leaves the other version untouched

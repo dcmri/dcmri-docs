@@ -7,6 +7,10 @@ Examples
 ########
 
 
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
 
 .. raw:: html
 
@@ -28,6 +32,10 @@ Kidney applications
 
 
 
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
 
 .. raw:: html
 
@@ -44,7 +52,7 @@ Kidney applications
   .. image:: /examples/kidney/images/thumb/sphx_glr_plot_gfr_validation_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_kidney_plot_gfr_validation.py`
+  :doc:`/examples/kidney/plot_gfr_validation`
 
 .. raw:: html
 
@@ -69,6 +77,10 @@ inhibition of liver function.
 
 
 
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
 
 .. raw:: html
 
@@ -85,7 +97,7 @@ inhibition of liver function.
   .. image:: /examples/liver/images/thumb/sphx_glr_plot_tristan_mdosing_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_liver_plot_tristan_mdosing.py`
+  :doc:`/examples/liver/plot_tristan_mdosing`
 
 .. raw:: html
 
@@ -102,7 +114,7 @@ inhibition of liver function.
   .. image:: /examples/liver/images/thumb/sphx_glr_plot_tristan_volunteers_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_liver_plot_tristan_volunteers.py`
+  :doc:`/examples/liver/plot_tristan_volunteers`
 
 .. raw:: html
 
@@ -119,7 +131,7 @@ inhibition of liver function.
   .. image:: /examples/liver/images/thumb/sphx_glr_plot_tristan_patients_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_liver_plot_tristan_patients.py`
+  :doc:`/examples/liver/plot_tristan_patients`
 
 .. raw:: html
 
@@ -136,7 +148,7 @@ inhibition of liver function.
   .. image:: /examples/liver/images/thumb/sphx_glr_plot_tristan_volunteers_2scan_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_liver_plot_tristan_volunteers_2scan.py`
+  :doc:`/examples/liver/plot_tristan_volunteers_2scan`
 
 .. raw:: html
 
@@ -153,7 +165,7 @@ inhibition of liver function.
   .. image:: /examples/liver/images/thumb/sphx_glr_plot_tristan_repro_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_liver_plot_tristan_repro.py`
+  :doc:`/examples/liver/plot_tristan_repro`
 
 .. raw:: html
 
@@ -170,7 +182,7 @@ inhibition of liver function.
   .. image:: /examples/liver/images/thumb/sphx_glr_plot_tristan6drugs_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_liver_plot_tristan6drugs.py`
+  :doc:`/examples/liver/plot_tristan6drugs`
 
 .. raw:: html
 
@@ -192,6 +204,10 @@ Tutorials
 
 
 
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
 
 .. raw:: html
 
@@ -208,7 +224,7 @@ Tutorials
   .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_aif_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_tutorials_plot_aif.py`
+  :doc:`/examples/tutorials/plot_aif`
 
 .. raw:: html
 
@@ -225,7 +241,7 @@ Tutorials
   .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_wex_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_tutorials_plot_wex.py`
+  :doc:`/examples/tutorials/plot_wex`
 
 .. raw:: html
 
@@ -242,7 +258,7 @@ Tutorials
   .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_minipig_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_tutorials_plot_minipig.py`
+  :doc:`/examples/tutorials/plot_minipig`
 
 .. raw:: html
 
@@ -259,7 +275,7 @@ Tutorials
   .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_convolution_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_tutorials_plot_convolution.py`
+  :doc:`/examples/tutorials/plot_convolution`
 
 .. raw:: html
 

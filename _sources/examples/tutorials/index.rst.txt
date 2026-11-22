@@ -11,6 +11,10 @@ Tutorials
 
 
 
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
 
 .. raw:: html
 
@@ -27,7 +31,7 @@ Tutorials
   .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_aif_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_tutorials_plot_aif.py`
+  :doc:`/examples/tutorials/plot_aif`
 
 .. raw:: html
 
@@ -44,7 +48,7 @@ Tutorials
   .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_wex_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_tutorials_plot_wex.py`
+  :doc:`/examples/tutorials/plot_wex`
 
 .. raw:: html
 
@@ -61,7 +65,7 @@ Tutorials
   .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_minipig_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_tutorials_plot_minipig.py`
+  :doc:`/examples/tutorials/plot_minipig`
 
 .. raw:: html
 
@@ -78,7 +82,7 @@ Tutorials
   .. image:: /examples/tutorials/images/thumb/sphx_glr_plot_convolution_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_tutorials_plot_convolution.py`
+  :doc:`/examples/tutorials/plot_convolution`
 
 .. raw:: html
 

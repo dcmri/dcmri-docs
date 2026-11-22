@@ -11,6 +11,10 @@ Kidney applications
 
 
 
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
 
 .. raw:: html
 
@@ -27,7 +31,7 @@ Kidney applications
   .. image:: /examples/kidney/images/thumb/sphx_glr_plot_gfr_validation_thumb.png
     :alt:
 
-  :ref:`sphx_glr_examples_kidney_plot_gfr_validation.py`
+  :doc:`/examples/kidney/plot_gfr_validation`
 
 .. raw:: html
 

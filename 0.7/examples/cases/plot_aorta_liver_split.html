@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Aorta and Liver in two scans &#8212; dcmri 0.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../../_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+            </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-64ZSJ8Z1MX"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-64ZSJ8Z1MX');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/cases/plot_aorta_liver_split';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.24.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://dcmri.org/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.7';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Liver" href="plot_liver.html" />
+    <link rel="prev" title="Liver Drug effect in two scans" href="plot_aorta_liver_split_drug.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/dcmri-logo.png" class="logo__image only-light" alt="dcmri 0.7.0 documentation - Home"/>
+    <img src="../../_static/dcmri-logo.png" class="logo__image only-dark pst-js-only" alt="dcmri 0.7.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page" aria-expanded="false" aria-controls="pst-secondary-sidebar-modal">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Case studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plot_kidney.html">Kidney</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_aorta_liver_drug.html">Inhibition of liver function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_aorta_liver.html">Aorta and Liver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_aorta_kidneys.html">AortaKidneys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_aorta_liver_split_drug.html">Liver Drug effect in two scans</a></li>
+<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">Aorta and Liver in two scans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_liver.html">Liver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Examples</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Case studies</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Aorta and Liver in two scans</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-cases-plot-aorta-liver-split-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="aorta-and-liver-in-two-scans">
+<span id="sphx-glr-examples-cases-plot-aorta-liver-split-py"></span><h1>Aorta and Liver in two scans<a class="headerlink" href="#aorta-and-liver-in-two-scans" title="Link to this heading">#</a></h1>
+<p>These example shows the use of the <code class="xref py py-obj docutils literal notranslate"><span class="pre">AortaLiverSplit</span></code> model to
+simultaneously fit signals measured in aorta and liver over two
+different scans on the same day.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span><span class="w">
+</span><span class="kn">import</span><span class="w"> </span><span class="nn">dcmri</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dc</span><span class="w">
+</span></pre></div></div>
+<section id="model-setup">
+<h2>Model setup<a class="headerlink" href="#model-setup" title="Link to this heading">#</a></h2>
+<p>Since we are using data from the <a class="reference external" href="https://zenodo.org/records/20210596">TRISTAN healthy volunteer study with
+rifampicin</a>, we’ll configure
+the model with the following options:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit" title="dcmri.InverseAortaLiverSplit"><span class="n">model</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class reference internal" href="../../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit" title="dcmri.InverseAortaLiverSplit"><span class="n">dc</span><span class="o">.</span><span class="n">InverseAortaLiverSplit</span></a><span class="p">(</span><span class="w">
+</span>    <span class="n">heartlung</span><span class="o">=</span><span class="s1">'</span><span class="s1">pfcomp</span><span class="s1">'</span><span class="p">,</span>         <span class="c1"># Smoother first pass data</span><span class="w">
+</span>    <span class="n">organs</span><span class="o">=</span><span class="s1">'</span><span class="s1">2cxm</span><span class="s1">'</span><span class="p">,</span>              <span class="c1"># Long acquisition times reveal extravasation</span><span class="w">
+</span>    <span class="n">liver</span><span class="o">=</span><span class="s1">'</span><span class="s1">1I-IC</span><span class="s1">'</span><span class="p">,</span>              <span class="c1"># Intracellular agent</span><span class="w">
+</span>    <span class="n">non_stationary</span><span class="o">=</span><span class="s1">'</span><span class="s1">U</span><span class="s1">'</span><span class="p">,</span>         <span class="c1"># Uptake rate changes during the course of the experiment</span><span class="w">
+</span>    <span class="n">baseline</span><span class="o">=</span><span class="s1">'</span><span class="s1">measured</span><span class="s1">'</span><span class="p">,</span>        <span class="c1"># Data are available on precontrast T1</span><span class="w">
+</span>    <span class="n">sequence</span><span class="o">=</span><span class="s1">'</span><span class="s1">ZTE-3D-SPGR-SS</span><span class="s1">'</span><span class="p">,</span>  <span class="c1"># Echo times are assumed to be zero</span><span class="w">
+</span>    <span class="n">t2s_relaxation_ao</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>     <span class="c1"># No T2* relaxation with TE=0</span><span class="w">
+</span>    <span class="n">t2s_relaxation_li</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>     <span class="c1"># No T2* relaxation with TE=0</span><span class="w">
+</span>    <span class="n">calibrate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>             <span class="c1"># Derive signal scaling factor from data</span><span class="w">
+</span>    <span class="n">trigger</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>               <span class="c1"># Signals are retrospectively triggered</span><span class="w">
+</span>    <span class="n">bolus</span><span class="o">=</span><span class="s1">'</span><span class="s1">dual</span><span class="s1">'</span><span class="p">,</span>               <span class="c1"># Two independent injections performed</span><span class="w">
+</span>    <span class="n">estimate_bat</span><span class="o">=</span><span class="s1">'</span><span class="s1">custom</span><span class="s1">'</span><span class="p">,</span>      <span class="c1"># Use the dedicated BAT estimator</span><span class="w">
+</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<p>Let’s see what input parameters are needed for this model:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-method reference internal" href="../../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit.print_inputs" title="dcmri.InverseAortaLiverSplit.print_inputs"><span class="n">model</span><span class="o">.</span><span class="n">print_inputs</span></a><span class="p">(</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                   InverseAortaLiverSplit instance - inputs (n = 60)                                                    |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
+| Key            | Value      | Unit     | Name                                                        | Group           | Bounds        | DICOM | OSIPI |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
+| B1corr_1_ao    | 1          |          | 1st B1-correction factor in the aorta                       | electromagnetic | (0, 5)        |       |       |
+| B1corr_1_li    | 1          |          | 1st B1-correction factor in the liver                       | electromagnetic | (0, 5)        |       |       |
+| B1corr_2_ao    | 1          |          | 2nd B1-correction factor in the aorta                       | electromagnetic | (0, 5)        |       |       |
+| B1corr_2_li    | 1          |          | 2nd B1-correction factor in the liver                       | electromagnetic | (0, 5)        |       |       |
+| me             | 1          | A cm2/mL | equilibrium magnetization                                   | electromagnetic | (0, 5)        |       |       |
+| R1_b           | 0.65       | Hz       | tissue R1 in the blood                                      | electromagnetic | (0, 5)        |       |       |
+| R1_li          | 0.65       | Hz       | tissue R1 in the liver                                      | electromagnetic | (0, 5)        |       |       |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
+| dose_tolerance | 0.1        |          | dose tolerance                                              | hyperparameters |               |       |       |
+| dt             | 0.5        | sec      | pseudo-continuous time step                                 | hyperparameters |               |       |       |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
+| agent          | gadoterate |          | contrast agent generic name                                 | indicator       |               |       |       |
+| dose_1         | 0.1        | mL/kg    | 1st contrast agent dose                                     | indicator       | (0, 0.2)      |       |       |
+| dose_2         | 0.1        | mL/kg    | 2nd contrast agent dose                                     | indicator       | (0, 0.2)      |       |       |
+| rate_1         | 1          | mL/sec   | 1st injection rate                                          | indicator       | (0, 10)       |       |       |
+| rate_2         | 1          | mL/sec   | 2nd injection rate                                          | indicator       | (0, 10)       |       |       |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
+| pfree          | None       | a.u.     | set of free parameters                                      | inverse problem |               |       |       |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
+| CO             | 100        | mL/sec   | cardiac output                                              | physiological   | (0, 500)      |       |       |
+| D_hl           | 0.2        |          | transit time dispersion in the heart and Lungs              | physiological   | (0.01, 0.99)  |       |       |
+| E_ki           | 0.15       |          | extraction fraction in the kidney                           | physiological   | (0, 1)        |       |       |
+| E_or           | 0.15       |          | extraction fraction in the organs                           | physiological   | (0, 0.5)      |       |       |
+| Ef_li          | 0.1        |          | final extraction fraction in the liver                      | physiological   | (0.0, 1.0)    |       |       |
+| Ei_li          | 0.1        |          | initial extraction fraction in the liver                    | physiological   | (0.0, 1.0)    |       |       |
+| fCO_li         | 0.1        |          | fraction of the cardiac output in the liver                 | physiological   | (0, 0.5)      |       |       |
+| H              | 0.45       |          | hematocrit                                                  | physiological   | (0, 1)        |       |       |
+| T_b_or         | 20         | sec      | mean transit time in blood of the organs                    | physiological   | (0, 60)       |       |       |
+| T_e_or         | 120        | sec      | mean transit time in extracellular space of the organs      | physiological   | (0, 800)      |       |       |
+| T_h            | 14400      | sec      | mean transit time in hepatocytes                            | physiological   | (600, 21600)  |       |       |
+| T_hl           | 10         | sec      | mean transit time in the heart and Lungs                    | physiological   | (0, 30)       |       |       |
+| T_lag          | 30         | sec      | mean transit time in the liver artery and gut               | physiological   | (0.0, 60)     |       |       |
+| v_e_li         | 0.25       | mL/cm3   | volume fraction in extracellular space of the liver         | physiological   | (0.01, 0.5)   |       |       |
+| v_li           | 1          | mL/cm3   | volume fraction in the liver                                | physiological   | (0, 1)        |       |       |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
+| FA_1           | 15         | deg      | 1st flip angle                                              | sequence        | (0, 180)      |       |       |
+| FA_2           | 15         | deg      | 2nd flip angle                                              | sequence        | (0, 180)      |       |       |
+| field_strength | 3          | T        | magnetic field strength                                     | sequence        | (0, 20)       |       |       |
+| Nk0_1          | 64         |          | 1st number of acquired phase lines to the center of k-space | sequence        | (0, 1000)     |       |       |
+| Nk0_2          | 64         |          | 2nd number of acquired phase lines to the center of k-space | sequence        | (0, 1000)     |       |       |
+| Nph_1          | 128        |          | 1st number of acquired phase lines in k-space               | sequence        | (0, 1000)     |       |       |
+| Nph_2          | 128        |          | 2nd number of acquired phase lines in k-space               | sequence        | (0, 1000)     |       |       |
+| TR_1           | 0.005      | sec      | 1st repetition time                                         | sequence        | (0, 1)        |       |       |
+| TR_2           | 0.005      | sec      | 2nd repetition time                                         | sequence        | (0, 1)        |       |       |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
+| iStrig_1_ao    | None       |          | 1st indices of the signal trigger in the aorta              | signal          |               |       |       |
+| iStrig_1_li    | None       |          | 1st indices of the signal trigger in the liver              | signal          |               |       |       |
+| iStrig_2_ao    | None       |          | 2nd indices of the signal trigger in the aorta              | signal          |               |       |       |
+| iStrig_2_li    | None       |          | 2nd indices of the signal trigger in the liver              | signal          |               |       |       |
+| nb_1           | 1          | a.u.     | 1st number of baseline time points                          | signal          |               |       |       |
+| nb_2           | 1          | a.u.     | 2nd number of baseline time points                          | signal          |               |       |       |
+| NSR_1_ao       | 0.0        |          | 1st noise-to-signal ratio in the aorta                      | signal          | (0, 100000.0) |       |       |
+| NSR_1_li       | 0.0        |          | 1st noise-to-signal ratio in the liver                      | signal          | (0, 100000.0) |       |       |
+| NSR_2_ao       | 0.0        |          | 2nd noise-to-signal ratio in the aorta                      | signal          | (0, 100000.0) |       |       |
+| NSR_2_li       | 0.0        |          | 2nd noise-to-signal ratio in the liver                      | signal          | (0, 100000.0) |       |       |
+| S_1_ao         | 1.0        | a.u.     | 1st signal in the aorta                                     | signal          | (0, 5)        |       |       |
+| S_1_li         | 1.0        | a.u.     | 1st signal in the liver                                     | signal          | (0, 5)        |       |       |
+| S_2_ao         | 1.0        | a.u.     | 2nd signal in the aorta                                     | signal          | (0, 5)        |       |       |
+| S_2_li         | 1.0        | a.u.     | 2nd signal in the liver                                     | signal          | (0, 5)        |       |       |
+| tS_1_ao        | 0.0        | sec      | 1st signal time points in the aorta                         | signal          |               |       |       |
+| tS_1_li        | 0.0        | sec      | 1st signal time points in the liver                         | signal          |               |       |       |
+| tS_2_ao        | 0.0        | sec      | 2nd signal time points in the aorta                         | signal          |               |       |       |
+| tS_2_li        | 0.0        | sec      | 2nd signal time points in the liver                         | signal          |               |       |       |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
+| vol_ao         | 1          | cm3      | ROI volume in the aorta                                     | whole-body      | (0.0, 1000)   |       |       |
+| vol_li         | 1000       | cm3      | ROI volume in the liver                                     | whole-body      | (0, 10000)    |       |       |
+| weight         | 70         | kg       | body weight                                                 | whole-body      | (0, 300)      |       |       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+</pre></div>
+</div>
+</section>
+<section id="fitting-the-model">
+<h2>Fitting the model<a class="headerlink" href="#fitting-the-model" title="Link to this heading">#</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="c1"># --- Source data identifier</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">study</span></a> <span class="o">=</span> <span class="s1">'</span><span class="s1">tristan_humans_healthy_rifampicin</span><span class="s1">'</span><span class="w">
+</span><span class="w">
+</span><span class="c1"># --- Format the data</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_1_data</span></a> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">load_tristan_humans</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">study</span></a><span class="p">,</span> <span class="s1">'</span><span class="s1">LDS-002</span><span class="s1">'</span><span class="p">,</span> <span class="n">visits</span><span class="o">=</span><span class="p">[</span><span class="s1">'</span><span class="s1">control</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_2_data</span></a> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">load_tristan_humans</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">study</span></a><span class="p">,</span> <span class="s1">'</span><span class="s1">LDS-002</span><span class="s1">'</span><span class="p">,</span> <span class="n">visits</span><span class="o">=</span><span class="p">[</span><span class="s1">'</span><span class="s1">drug</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="c1"># --- Fit the model</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_1_result</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit" title="dcmri.InverseAortaLiverSplit"><span class="n">model</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_1_data</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_2_result</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit" title="dcmri.InverseAortaLiverSplit"><span class="n">model</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_2_data</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality
+       0              1         3.0235e+03                                    2.11e+04
+       1              2         1.7212e+03      1.30e+03       5.75e-01       1.58e+04
+       2              3         1.6616e+03      5.96e+01       3.65e-01       1.50e+04
+       3              4         1.1728e+03      4.89e+02       1.05e-01       6.16e+03
+       4              5         8.9279e+02      2.80e+02       1.11e-01       6.00e+03
+       5              6         7.4311e+02      1.50e+02       2.05e-01       8.38e+02
+       6              8         7.2454e+02      1.86e+01       6.79e-02       8.27e+02
+       7              9         6.9700e+02      2.75e+01       1.24e-01       9.44e+02
+       8             12         6.9411e+02      2.90e+00       1.95e-02       4.71e+02
+       9             13         6.9069e+02      3.41e+00       1.32e-02       2.42e+01
+      10             14         6.8899e+02      1.70e+00       2.81e-02       2.53e+02
+      11             15         6.8638e+02      2.61e+00       2.60e-02       1.37e+02
+      12             17         6.8512e+02      1.25e+00       1.42e-02       6.04e+01
+      13             18         6.8473e+02      3.89e-01       3.23e-02       3.70e+02
+      14             19         6.8355e+02      1.18e+00       7.94e-03       2.96e+01
+      15             22         6.8353e+02      2.21e-02       1.13e-03       4.20e+01
+      16             24         6.8350e+02      3.09e-02       2.68e-04       3.61e+01
+      17             26         6.8350e+02      5.52e-04       1.35e-04       3.20e+01
+      18             27         6.8350e+02      2.75e-03       3.59e-05       3.08e+01
+      19             28         6.8350e+02      1.02e-03       7.16e-05       3.74e+01
+      20             29         6.8349e+02      1.85e-03       1.68e-05       3.69e+01
+      21             31         6.8349e+02      8.53e-04       8.39e-06       2.96e+01
+      22             35         6.8349e+02      2.02e-05       2.80e-07       2.96e+01
+      23             37         6.8349e+02      1.54e-06       1.40e-07       3.67e+01
+      24             38         6.8349e+02      3.56e-06       3.28e-08       3.67e+01
+`ftol` termination condition is satisfied.
+Function evaluations 38, initial cost 3.0235e+03, final cost 6.8349e+02, first-order optimality 3.67e+01.
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality
+       0              1         4.6621e+04                                    4.59e+05
+       1              2         6.9110e+03      3.97e+04       2.18e-01       4.91e+04
+       2              3         2.0541e+03      4.86e+03       2.39e-01       5.66e+03
+       3              4         1.4801e+03      5.74e+02       3.24e-01       1.68e+03
+       4              6         1.1670e+03      3.13e+02       8.80e-02       4.10e+03
+       5              7         9.4112e+02      2.26e+02       1.39e-01       6.01e+03
+       6              8         7.8845e+02      1.53e+02       2.39e-01       6.78e+02
+       7              9         7.3357e+02      5.49e+01       2.25e-01       3.60e+03
+       8             10         5.8234e+02      1.51e+02       2.13e-01       5.47e+02
+       9             13         5.7886e+02      3.48e+00       1.73e-02       1.29e+03
+      10             15         5.7534e+02      3.52e+00       1.07e-02       3.29e+02
+      11             16         5.7369e+02      1.65e+00       2.21e-02       1.32e+03
+      12             17         5.7179e+02      1.90e+00       4.39e-02       1.41e+03
+      13             18         5.7094e+02      8.48e-01       8.74e-02       7.68e+03
+      14             20         5.6826e+02      2.68e+00       2.04e-02       1.50e+02
+      15             21         5.6748e+02      7.85e-01       3.47e-02       3.68e+02
+      16             22         5.6697e+02      5.07e-01       5.66e-02       1.84e+02
+      17             23         5.6683e+02      1.45e-01       4.07e-02       1.42e+02
+      18             27         5.6679e+02      3.93e-02       1.02e-03       3.02e+00
+      19             29         5.6679e+02      1.31e-04       5.04e-04       2.23e+01
+      20             30         5.6679e+02      1.76e-03       1.24e-04       1.29e+00
+      21             31         5.6679e+02      8.00e-06       2.38e-04       2.47e+00
+      22             32         5.6679e+02      3.04e-04       6.09e-05       1.43e+00
+      23             33         5.6679e+02      2.01e-05       1.27e-04       1.33e+01
+      24             34         5.6679e+02      4.11e-04       3.11e-05       4.38e+00
+      25             37         5.6679e+02      3.37e-05       4.18e-06       3.77e+00
+      26             39         5.6679e+02      1.14e-05       2.08e-06       5.28e+00
+      27             42         5.6679e+02      2.33e-06       2.46e-07       3.51e+00
+`ftol` termination condition is satisfied.
+Function evaluations 42, initial cost 4.6621e+04, final cost 5.6679e+02, first-order optimality 3.51e+00.
+</pre></div>
+</div>
+<p>Verify that the optimization has converged to a solution:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-method reference internal" href="../../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit.plot" title="dcmri.InverseAortaLiverSplit.plot"><span class="n">model</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_1_data</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_1_result</span></a><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-method reference internal" href="../../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit.plot" title="dcmri.InverseAortaLiverSplit.plot"><span class="n">model</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_2_data</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_2_result</span></a><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_aorta_liver_split_001.png" srcset="../../_images/sphx_glr_plot_aorta_liver_split_001.png" alt="plot aorta liver split" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_aorta_liver_split_002.png" srcset="../../_images/sphx_glr_plot_aorta_liver_split_002.png" alt="plot aorta liver split" class = "sphx-glr-multi-img"/></li>
+</ul>
+<p>The model first the data well, so we can now consider the
+values for the derived parameters</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_1_result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">pars</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="s1">'</span><span class="s1">Control visit</span><span class="s1">'</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
+</span><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_2_result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">pars</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="s1">'</span><span class="s1">Drug visit</span><span class="s1">'</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                           Control visit                                                                            |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
+| Key       | Value   | Unit       | Name                                                                           | Group           | Bounds       | DICOM | OSIPI |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
+| BAT_1     | 79.0    | sec        | 1st bolus arrival time                                                         | indicator       | (-30, 30)    |       |       |
+| BAT_2     | 17000.0 | sec        | 2nd bolus arrival time                                                         | indicator       | (-30, 30)    |       |       |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
+| CL_p      | 1.1     | mL/sec     | Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)   |       |       |
+| CO        | 86.0    | mL/sec     | cardiac output                                                                 | physiological   | (0, 500)     |       |       |
+| D_hl      | 0.61    |            | transit time dispersion in the heart and Lungs                                 | physiological   | (0.01, 0.99) |       |       |
+| E_ki      | 0.024   |            | extraction fraction in the kidney                                              | physiological   | (0, 1)       |       |       |
+| E_li      | 0.18    |            | extraction fraction in liver                                                   | physiological   | (0.0, 1.0)   |       |       |
+| E_or      | 0.2     |            | extraction fraction in the organs                                              | physiological   | (0, 0.5)     |       |       |
+| Ef_li     | 0.26    |            | final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)   |       |       |
+| Ei_li     | 0.11    |            | initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)   |       |       |
+| F_b_li    | 0.013   | mL/sec/cm3 | flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)     |       |       |
+| F_p_li    | 0.0074  | mL/sec/cm3 | flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)    |       |       |
+| fCO_li    | 0.11    |            | fraction of the cardiac output in the liver                                    | physiological   | (0, 0.5)     |       |       |
+| H         | 0.45    |            | hematocrit                                                                     | physiological   | (0, 1)       |       |       |
+| k_e2h     | 0.0016  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)   |       |       |
+| K_e2h     | 0.0063  | 1/sec      | transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)   |       |       |
+| k_h2b     | 0.00015 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)   |       |       |
+| K_h2b     | 0.00027 | 1/sec      | transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)   |       |       |
+| kc_e2h    | 0.0017  |            | diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)   |       |       |
+| kf_e2h    | 0.0025  | mL/sec/cm3 | final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)   |       |       |
+| ki_e2h    | 0.00087 | mL/sec/cm3 | initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)   |       |       |
+| Ktrans_li | 0.0013  | mL/sec/cm3 | plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)   |       |       |
+| T_b_or    | 9.8     | sec        | mean transit time in blood of the organs                                       | physiological   | (0, 60)      |       |       |
+| T_e_li    | 28.0    | sec        | mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)    |       |       |
+| T_e_or    | 410.0   | sec        | mean transit time in extracellular space of the organs                         | physiological   | (0, 800)     |       |       |
+| T_h       | 3700.0  | sec        | mean transit time in hepatocytes                                               | physiological   | (600, 21600) |       |       |
+| T_hl      | 18.0    | sec        | mean transit time in the heart and Lungs                                       | physiological   | (0, 30)      |       |       |
+| T_lag     | 51.0    | sec        | mean transit time in the liver artery and gut                                  | physiological   | (0.0, 60)    |       |       |
+| v_e_li    | 0.26    | mL/cm3     | volume fraction in extracellular space of the liver                            | physiological   | (0.01, 0.5)  |       |       |
+| v_h       | 0.54    | mL/cm3     | volume fraction in hepatocytes                                                 | physiological   | (0, 1)       |       |       |
+| v_li      | 1.0     | mL/cm3     | volume fraction in the liver                                                   | physiological   | (0, 1)       |       |       |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
+| vol_ao    | 1.0     | cm3        | ROI volume in the aorta                                                        | whole-body      | (0.0, 1000)  |       |       |
+| vol_li    | 680.0   | cm3        | ROI volume in the liver                                                        | whole-body      | (0, 10000)   |       |       |
+| weight    | 63.0    | kg         | body weight                                                                    | whole-body      | (0, 300)     |       |       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                             Drug visit                                                                             |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
+| Key       | Value   | Unit       | Name                                                                           | Group           | Bounds       | DICOM | OSIPI |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
+| BAT_1     | 77.0    | sec        | 1st bolus arrival time                                                         | indicator       | (-30, 30)    |       |       |
+| BAT_2     | 10000.0 | sec        | 2nd bolus arrival time                                                         | indicator       | (-30, 30)    |       |       |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
+| CL_p      | 0.08    | mL/sec     | Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)   |       |       |
+| CO        | 90.0    | mL/sec     | cardiac output                                                                 | physiological   | (0, 500)     |       |       |
+| D_hl      | 0.52    |            | transit time dispersion in the heart and Lungs                                 | physiological   | (0.01, 0.99) |       |       |
+| E_ki      | 0.04    |            | extraction fraction in the kidney                                              | physiological   | (0, 1)       |       |       |
+| E_li      | 0.02    |            | extraction fraction in liver                                                   | physiological   | (0.0, 1.0)   |       |       |
+| E_or      | 0.15    |            | extraction fraction in the organs                                              | physiological   | (0, 0.5)     |       |       |
+| Ef_li     | 0.023   |            | final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)   |       |       |
+| Ei_li     | 0.016   |            | initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)   |       |       |
+| F_b_li    | 0.0091  | mL/sec/cm3 | flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)     |       |       |
+| F_p_li    | 0.005   | mL/sec/cm3 | flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)    |       |       |
+| fCO_li    | 0.081   |            | fraction of the cardiac output in the liver                                    | physiological   | (0, 0.5)     |       |       |
+| H         | 0.45    |            | hematocrit                                                                     | physiological   | (0, 1)       |       |       |
+| k_e2h     | 0.0001  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)   |       |       |
+| K_e2h     | 0.00053 | 1/sec      | transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)   |       |       |
+| k_h2b     | 3e-05   | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)   |       |       |
+| K_h2b     | 4.6e-05 | 1/sec      | transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)   |       |       |
+| kc_e2h    | 3.6e-05 |            | diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)   |       |       |
+| kf_e2h    | 0.00012 | mL/sec/cm3 | final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)   |       |       |
+| ki_e2h    | 8.2e-05 | mL/sec/cm3 | initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)   |       |       |
+| Ktrans_li | 9.8e-05 | mL/sec/cm3 | plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)   |       |       |
+| T_b_or    | 27.0    | sec        | mean transit time in blood of the organs                                       | physiological   | (0, 60)      |       |       |
+| T_e_li    | 37.0    | sec        | mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)    |       |       |
+| T_e_or    | 670.0   | sec        | mean transit time in extracellular space of the organs                         | physiological   | (0, 800)     |       |       |
+| T_h       | 22000.0 | sec        | mean transit time in hepatocytes                                               | physiological   | (600, 21600) |       |       |
+| T_hl      | 14.0    | sec        | mean transit time in the heart and Lungs                                       | physiological   | (0, 30)      |       |       |
+| T_lag     | 17.0    | sec        | mean transit time in the liver artery and gut                                  | physiological   | (0.0, 60)    |       |       |
+| v_e_li    | 0.19    | mL/cm3     | volume fraction in extracellular space of the liver                            | physiological   | (0.01, 0.5)  |       |       |
+| v_h       | 0.66    | mL/cm3     | volume fraction in hepatocytes                                                 | physiological   | (0, 1)       |       |       |
+| v_li      | 1.0     | mL/cm3     | volume fraction in the liver                                                   | physiological   | (0, 1)       |       |       |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
+| vol_ao    | 1.0     | cm3        | ROI volume in the aorta                                                        | whole-body      | (0.0, 1000)  |       |       |
+| vol_li    | 800.0   | cm3        | ROI volume in the liver                                                        | whole-body      | (0, 10000)   |       |       |
+| weight    | 64.0    | kg         | body weight                                                                    | whole-body      | (0, 300)     |       |       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (1 minutes 2.375 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-cases-plot-aorta-liver-split-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a24fd9fcd8c0a8cf1a3c0506757050b2/plot_aorta_liver_split.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_aorta_liver_split.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/f3d870883dfb9a012e08e99fbe63b013/plot_aorta_liver_split.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_aorta_liver_split.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a4d88834dc8838e00e0f8221543c6b4d/plot_aorta_liver_split.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_aorta_liver_split.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="plot_aorta_liver_split_drug.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Liver Drug effect in two scans</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="plot_liver.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Liver</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal" tabindex="-1"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-setup">Model setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-the-model">Fitting the model</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/cases/plot_aorta_liver_split.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024-2026, dcmri contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

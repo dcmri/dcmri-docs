@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dcmri.kinetics.functions_tissue &#8212; dcmri 0.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../../../_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+            </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-64ZSJ8Z1MX"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-64ZSJ8Z1MX');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dcmri/kinetics/functions_tissue';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.24.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://dcmri.org/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.7';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-light" alt="dcmri 0.7.0 documentation - Home"/>
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-dark pst-js-only" alt="dcmri 0.7.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">dcmri.kinetics.functions_tissue</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for dcmri.kinetics.functions_tissue</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.kinetics</span><span class="w"> </span><span class="kn">import</span> <span class="n">functions_blocks</span>
+
+
+<span class="n">FLUX_PARAMETERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'2CX'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'v_i'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">,</span> <span class="s1">'PS'</span><span class="p">],</span>
+    <span class="s1">'HF'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_i'</span><span class="p">,</span> <span class="s1">'PS'</span><span class="p">],</span>
+    <span class="s1">'WV'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_i'</span><span class="p">,</span> <span class="s1">'Ktrans'</span><span class="p">],</span>
+    <span class="s1">'2CU'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">,</span> <span class="s1">'PS'</span><span class="p">],</span>
+    <span class="s1">'HFU'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'PS'</span><span class="p">],</span>
+    <span class="s1">'FX'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_e'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">],</span>
+    <span class="s1">'NX'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">],</span>
+    <span class="s1">'NXP'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">],</span>
+    <span class="s1">'U'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'F_b'</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">CONC_PARAMETERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'2CX'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'v_i'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">,</span> <span class="s1">'PS'</span><span class="p">],</span>
+    <span class="s1">'HF'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'v_i'</span><span class="p">,</span> <span class="s1">'PS'</span><span class="p">],</span>
+    <span class="s1">'2CU'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">,</span> <span class="s1">'PS'</span><span class="p">],</span>
+    <span class="s1">'HFU'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'PS'</span><span class="p">],</span>
+    <span class="s1">'WV'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_i'</span><span class="p">,</span> <span class="s1">'Ktrans'</span><span class="p">],</span>
+    <span class="s1">'FX'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'v_e'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">],</span>
+    <span class="s1">'NX'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">],</span>
+    <span class="s1">'NXP'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'F_b'</span><span class="p">],</span>
+    <span class="s1">'U'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'F_b'</span><span class="p">],</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">dpars_tissue</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="mf">0.45</span><span class="p">):</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">{</span><span class="s1">'v_b'</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="n">p</span><span class="p">[</span><span class="s1">'v_p'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">H</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'v_b'</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="p">{</span><span class="s1">'v_e'</span><span class="p">,</span> <span class="s1">'v_p'</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="n">p</span><span class="p">[</span><span class="s1">'v_i'</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'v_e'</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="s1">'v_p'</span><span class="p">]</span>
+
+    <span class="k">elif</span> <span class="p">{</span><span class="s1">'v_p'</span><span class="p">,</span> <span class="s1">'v_i'</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="n">p</span><span class="p">[</span><span class="s1">'v_e'</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'v_p'</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">'v_i'</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="p">{</span><span class="s1">'v_b'</span><span class="p">,</span> <span class="s1">'v_i'</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="n">p</span><span class="p">[</span><span class="s1">'vc'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="s1">'v_b'</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="s1">'v_i'</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="p">{</span><span class="s1">'v_i'</span><span class="p">,</span> <span class="s1">'v_c'</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="n">p</span><span class="p">[</span><span class="s1">'v_ic'</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'v_i'</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">'v_c'</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">p</span>
+
+<span class="c1"># def _all_pars(kin, wex, seq, p):</span>
+
+<span class="c1">#     #pars = _model_pars(kin, wex, seq)</span>
+<span class="c1">#     p = {par: p[par] for par in pars}</span>
+
+<span class="c1">#     try:</span>
+<span class="c1">#         p['Fp'] = p['F_b'] * (1 - p['H'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['v_p'] = p['v_b'] * (1 - p['H'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['Ktrans'] = _div(p['Fp'] * p['PS'], p['Fp'] + p['PS'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['v_e'] = p['v_i'] + p['vc']</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['E'] = _div(p['PS'], p['Fp'] + p['PS'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['Ti'] = _div(p['v_i'], p['PS'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['Tp'] = _div(p['v_p'], p['PS'] + p['Fp'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['Tb'] = _div(p['v_p'], p['Fp'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['Te'] = _div(p['v_e'], p['Fp'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['Twc'] = _div(1 - p['v_b'] - p['v_i'], p['PSc'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['Twi'] = _div(p['v_i'], p['PSc'] + p['PSe'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['Twb'] = _div(p['v_b'], p['PSe'])</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         p['FAcorr'] = p['B1corr'] * p['FA']</span>
+<span class="c1">#     except KeyError:</span>
+<span class="c1">#         pass</span>
+
+<span class="c1">#     return p</span>
+
+
+<span class="c1"># def _div(a, b):</span>
+<span class="c1">#     with np.errstate(divide='ignore', invalid='ignore'):</span>
+<span class="c1">#         return np.where(b == 0, 0, np.divide(a, b))</span>
+        
+
+<div class="viewcode-block" id="conc_tissue_u">
+<a class="viewcode-back" href="../../../api/dcmri.conc_tissue_u.html#dcmri.conc_tissue_u">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conc_tissue_u</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Tissue concentration in an uptake tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Tissue concentration as a 2D array (1, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flux_tissue_u : Flux out of an uptake tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; F_b = 0.01</span>
+<span class="sd">    &gt;&gt;&gt; dc.conc_tissue_u(ca, t, F_b=F_b)</span>
+<span class="sd">    array([[0.   , 0.075, 0.325, 0.775, 1.525]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_trap</span><span class="p">(</span><span class="n">F_b</span> <span class="o">*</span> <span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">C</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="conc_tissue_fx">
+<a class="viewcode-back" href="../../../api/dcmri.conc_tissue_fx.html#dcmri.conc_tissue_fx">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conc_tissue_fx</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_e</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Tissue concentration in a fast-exchange tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_e : float</span>
+<span class="sd">        Extracellular volume fraction (mL/cm3)</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Tissue concentration as a 2D array (1, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flux_tissue_fx : Flux out of a fast-exchange tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.conc_tissue_fx(ca, t, H=0.45, v_e=0.1, F_b=0.01)</span>
+<span class="sd">    array([[0.        , 0.06657176, 0.23421188, 0.40905712, 0.42647156]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">F_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ce</span> <span class="o">=</span> <span class="n">ca</span><span class="o">*</span><span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Fp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span><span class="o">*</span><span class="n">F_b</span>
+        <span class="n">ce</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">flux_comp</span><span class="p">(</span><span class="n">ca</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">),</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_e</span><span class="o">/</span><span class="n">Fp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">v_e</span><span class="o">*</span><span class="n">ce</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="conc_tissue_nx">
+<a class="viewcode-back" href="../../../api/dcmri.conc_tissue_nx.html#dcmri.conc_tissue_nx">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conc_tissue_nx</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Tissue concentration in a no-exchange tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Tissue concentration as a 2D array (1, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flux_tissue_nx : Flux out of a no-exchange tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.conc_tissue_nx(ca, t, v_b=0.1, F_b=0.01)</span>
+<span class="sd">    array([[0.        , 0.06065307, 0.18552507, 0.27445719, 0.23040206]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">F_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Cb</span> <span class="o">=</span> <span class="n">ca</span><span class="o">*</span><span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Cb</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_comp</span><span class="p">(</span><span class="n">F_b</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_b</span><span class="o">/</span><span class="n">F_b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Cb</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="conc_tissue_nxp">
+<a class="viewcode-back" href="../../../api/dcmri.conc_tissue_nxp.html#dcmri.conc_tissue_nxp">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conc_tissue_nxp</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Tissue concentration in a no-exchange plug-flow tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Tissue concentration as a 2D array (1, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flux_tissue_nxp : Flux out of a no-exchange plug-flow tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.conc_tissue_nxp(ca, t, v_b=0.1, F_b=0.01)</span>
+<span class="sd">    array([[0.   , 0.075, 0.225, 0.3  , 0.25 ]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">F_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Cb</span> <span class="o">=</span> <span class="n">ca</span><span class="o">*</span><span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Cb</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_plug</span><span class="p">(</span><span class="n">F_b</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_b</span><span class="o">/</span><span class="n">F_b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Cb</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="conc_tissue_wv">
+<a class="viewcode-back" href="../../../api/dcmri.conc_tissue_wv.html#dcmri.conc_tissue_wv">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conc_tissue_wv</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Ktrans</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Tissue concentration in a weakly vascularized tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_i : float</span>
+<span class="sd">        Interstitial volume fraction (mL/cm3)</span>
+<span class="sd">    Ktrans : float</span>
+<span class="sd">        Volume transfer constant (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Tissue concentration as a 2D array (1, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flux_tissue_wv : Flux out of a no-exchange plug-flow tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.conc_tissue_wv(ca, t, H=0.45, v_i=0.1, Ktrans=0.001)</span>
+<span class="sd">    array([[0.        , 0.01333801, 0.05546861, 0.12371975, 0.20828741]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Ktrans</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ci</span> <span class="o">=</span> <span class="n">ca</span><span class="o">*</span><span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ci</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">flux_comp</span><span class="p">(</span><span class="n">ca</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">),</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_i</span><span class="o">/</span><span class="n">Ktrans</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">v_i</span> <span class="o">*</span> <span class="n">ci</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="conc_tissue_hfu">
+<a class="viewcode-back" href="../../../api/dcmri.conc_tissue_hfu.html#dcmri.conc_tissue_hfu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conc_tissue_hfu</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Tissue concentration in a high-flow uptake tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    PS : float</span>
+<span class="sd">        Permeability-surface area product (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Tissue concentration as a 2D array (2, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flux_tissue_hfu : Flux out of a high-flow uptake tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.conc_tissue_hfu(ca, t, H=0.45, v_b=0.1, PS=0.003)</span>
+<span class="sd">    array([[0.1       , 0.2       , 0.3       , 0.3       , 0.2       ],</span>
+<span class="sd">           [0.        , 0.04090909, 0.17727273, 0.42272727, 0.83181818]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="n">v_p</span> <span class="o">=</span> <span class="n">v_b</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="n">cp</span> <span class="o">=</span> <span class="n">ca</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="n">Ci</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_trap</span><span class="p">(</span><span class="n">PS</span><span class="o">*</span><span class="n">cp</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">v_p</span><span class="o">*</span><span class="n">cp</span><span class="p">,</span> <span class="n">Ci</span><span class="p">))</span> </div>
+
+
+<div class="viewcode-block" id="conc_tissue_hf">
+<a class="viewcode-back" href="../../../api/dcmri.conc_tissue_hf.html#dcmri.conc_tissue_hf">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conc_tissue_hf</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Tissue concentration in a high-flow tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_i : float</span>
+<span class="sd">        Interstitial volume fraction (mL/cm3)</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    PS : float</span>
+<span class="sd">        Permeability-surface area product (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Tissue concentration as a 2D array (2, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flux_tissue_hf : Flux out of a high-flow uptake tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.conc_tissue_hf(ca, t, H=0.45, v_i=0.3, v_b=0.1, PS=0.003)</span>
+<span class="sd">    array([[0.1       , 0.2       , 0.3       , 0.3       , 0.2       ],</span>
+<span class="sd">           [0.        , 0.04001404, 0.16640584, 0.37115924, 0.62486222]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="n">v_p</span> <span class="o">=</span> <span class="n">v_b</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">ca</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="n">Cp</span> <span class="o">=</span> <span class="n">v_p</span><span class="o">*</span><span class="n">ca</span>
+    <span class="k">if</span> <span class="n">PS</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Ci</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">ca</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Ci</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_comp</span><span class="p">(</span><span class="n">PS</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_i</span><span class="o">/</span><span class="n">PS</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ci</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="conc_tissue_2cu">
+<a class="viewcode-back" href="../../../api/dcmri.conc_tissue_2cu.html#dcmri.conc_tissue_2cu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conc_tissue_2cu</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Tissue concentration in a 2-compartment uptake tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood concentration (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    PS : float</span>
+<span class="sd">        Permeability-surface area product (mL/sec/cm3).</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Tissue concentration as a 2D array (2, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flux_tissue_2cu : Flux out of a 2-compartment uptake tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.conc_tissue_2cu(ca, t, H=0.45, v_b=0.1, F_b=0.01, PS=0.003)</span>
+<span class="sd">    array([[0.        , 0.05446241, 0.14519581, 0.18930117, 0.14318597],</span>
+<span class="sd">           [0.        , 0.00742669, 0.06187893, 0.19871861, 0.47075354]])</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">F_b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">conc_tissue_hfu</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="n">v_b</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="n">PS</span><span class="p">)</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="n">v_p</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">H</span><span class="p">)</span> <span class="o">*</span> <span class="n">v_b</span>
+    <span class="n">Fp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">H</span><span class="p">)</span> <span class="o">*</span> <span class="n">F_b</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">ca</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">H</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Fp</span><span class="o">+</span><span class="n">PS</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">)))</span>
+    <span class="n">Tp</span> <span class="o">=</span> <span class="n">v_p</span><span class="o">/</span><span class="p">(</span><span class="n">Fp</span><span class="o">+</span><span class="n">PS</span><span class="p">)</span>
+    <span class="n">Cp</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_comp</span><span class="p">(</span><span class="n">Fp</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">Tp</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v_p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Ktrans</span> <span class="o">=</span> <span class="n">PS</span><span class="o">*</span><span class="n">Fp</span><span class="o">/</span><span class="p">(</span><span class="n">PS</span><span class="o">+</span><span class="n">Fp</span><span class="p">)</span>
+        <span class="n">Ci</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_trap</span><span class="p">(</span><span class="n">Ktrans</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Ci</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_trap</span><span class="p">(</span><span class="n">PS</span><span class="o">*</span><span class="n">Cp</span><span class="o">/</span><span class="n">v_p</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ci</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="conc_tissue_2cx">
+<a class="viewcode-back" href="../../../api/dcmri.conc_tissue_2cx.html#dcmri.conc_tissue_2cx">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conc_tissue_2cx</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Tissue concentration in a 2-compartment exchange tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood concentration (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_i : float</span>
+<span class="sd">        Interstitial volume fraction (mL/cm3)</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    PS : float</span>
+<span class="sd">        Permeability-surface area product (mL/sec/cm3).</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Tissue concentration as a 2D array (2, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flux_tissue_2cu : Flux out of a 2-compartment uptake tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.conc_tissue_2cx(ca, t, H=0.45, v_i=0.3, v_b=0.1, F_b=0.01, PS=0.003)</span>
+<span class="sd">    array([[0.        , 0.05456069, 0.14710382, 0.1980532 , 0.16692313],</span>
+<span class="sd">           [0.        , 0.00713764, 0.06075431, 0.18960275, 0.40554217]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="n">v_p</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span><span class="o">*</span><span class="n">v_b</span>
+    <span class="n">Fp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span><span class="o">*</span><span class="n">F_b</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">Fp</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">conc_tissue_hf</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">,</span> <span class="n">v_i</span><span class="o">=</span><span class="n">v_i</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="n">v_b</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="n">PS</span><span class="p">)</span>
+
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">ca</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">Fp</span><span class="o">*</span><span class="n">ca</span>
+
+    <span class="k">if</span> <span class="n">Fp</span><span class="o">+</span><span class="n">PS</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Cp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))</span>
+        <span class="n">Ce</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ce</span><span class="p">))</span>
+
+    <span class="n">Tp</span> <span class="o">=</span> <span class="n">v_p</span><span class="o">/</span><span class="p">(</span><span class="n">Fp</span><span class="o">+</span><span class="n">PS</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">PS</span><span class="o">/</span><span class="p">(</span><span class="n">Fp</span><span class="o">+</span><span class="n">PS</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">PS</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Cp</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_comp</span><span class="p">(</span><span class="n">Fp</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">Tp</span><span class="p">)</span>
+        <span class="n">Ci</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ci</span><span class="p">))</span>
+
+    <span class="n">Ti</span> <span class="o">=</span> <span class="n">v_i</span><span class="o">/</span><span class="n">PS</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">conc_2cxm</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="p">[</span><span class="n">Tp</span><span class="p">,</span> <span class="n">Ti</span><span class="p">],</span> <span class="n">E</span><span class="o">=</span><span class="n">E</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">C</span></div>
+
+    
+
+
+
+
+<div class="viewcode-block" id="flux_tissue_u">
+<a class="viewcode-back" href="../../../api/dcmri.flux_tissue_u.html#dcmri.flux_tissue_u">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_tissue_u</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Flux out of an uptake tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Flux as a 1D array (nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    conc_tissue_u : Tissue concentration in an uptake tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.flux_tissue_u(ca, t, F_b=0.01)</span>
+<span class="sd">    array([0., 0., 0., 0., 0.])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">flux_trap</span><span class="p">(</span><span class="n">F_b</span><span class="o">*</span><span class="n">ca</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="flux_tissue_fx">
+<a class="viewcode-back" href="../../../api/dcmri.flux_tissue_fx.html#dcmri.flux_tissue_fx">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_tissue_fx</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_e</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Flux out of a fast-exchange tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_e : float</span>
+<span class="sd">        Extracellular volume fraction (mL/cm3)</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Flux as a 2D array (1, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    conc_tissue_fx : Concentration in a fast-exchange tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.flux_tissue_fx(ca, t, H=0.45, v_e=0.1, F_b=0.01)</span>
+<span class="sd">    array([0.        , 0.00366145, 0.01288165, 0.02249814, 0.02345594])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">F_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))</span>
+    <span class="n">Fp</span> <span class="o">=</span> <span class="n">F_b</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">flux_comp</span><span class="p">(</span><span class="n">F_b</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_e</span><span class="o">/</span><span class="n">Fp</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="flux_tissue_nx">
+<a class="viewcode-back" href="../../../api/dcmri.flux_tissue_nx.html#dcmri.flux_tissue_nx">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_tissue_nx</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Flux out of a no-exchange tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Flux as a 2D array (1, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    conc_tissue_nx : Flux out of a no-exchange tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.flux_tissue_nx(ca, t, v_b=0.1, F_b=0.01)</span>
+<span class="sd">    array([0.        , 0.00606531, 0.01855251, 0.02744572, 0.02304021])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">F_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">flux_comp</span><span class="p">(</span><span class="n">F_b</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_b</span><span class="o">/</span><span class="n">F_b</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="flux_tissue_nxp">
+<a class="viewcode-back" href="../../../api/dcmri.flux_tissue_nxp.html#dcmri.flux_tissue_nxp">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_tissue_nxp</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Flux out of a no-exchange plug-flow tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Flux as a 2D array (1, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    conc_tissue_nxp : Tissue concentration in a no-exchange plug-flow tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.flux_tissue_nxp(ca, t, v_b=0.1, F_b=0.01)</span>
+<span class="sd">    array([0.        , 0.        , 0.02      , 0.03      , 0.02333333])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">F_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">flux_plug</span><span class="p">(</span><span class="n">F_b</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_b</span><span class="o">/</span><span class="n">F_b</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="flux_tissue_wv">
+<a class="viewcode-back" href="../../../api/dcmri.flux_tissue_wv.html#dcmri.flux_tissue_wv">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_tissue_wv</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Ktrans</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Flux out of a weakly vascularized tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_i : float</span>
+<span class="sd">        Interstitial volume fraction (mL/cm3)</span>
+<span class="sd">    Ktrans : float</span>
+<span class="sd">        Volume transfer constant (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Flux as a 3D array (2, 2, nt) array. </span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    conc_tissue_wv : Tissue concentration in a no-exchange plug-flow tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.flux_tissue_wv(ca, t, H=0.45, v_i=0.1, Ktrans=0.001)</span>
+<span class="sd">    array([[[       nan,        nan,        nan,        nan,        nan],</span>
+<span class="sd">            [0.        , 0.00013338, 0.00055469, 0.0012372 , 0.00208287]],</span>
+
+<span class="sd">           [[0.00181818, 0.00363636, 0.00545455, 0.00545455, 0.00363636],</span>
+<span class="sd">            [0.        , 0.        , 0.        , 0.        , 0.        ]]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">ca</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">H</span><span class="p">)</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))))</span>
+    <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="c1"># TODO: double-check this</span>
+    <span class="n">J</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Ktrans</span> <span class="o">*</span> <span class="n">ca</span>
+    <span class="k">if</span> <span class="n">Ktrans</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">flux_comp</span><span class="p">(</span><span class="n">Ktrans</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_i</span><span class="o">/</span><span class="n">Ktrans</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">J</span></div>
+
+
+<div class="viewcode-block" id="flux_tissue_hfu">
+<a class="viewcode-back" href="../../../api/dcmri.flux_tissue_hfu.html#dcmri.flux_tissue_hfu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_tissue_hfu</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Flux out of a high-flow uptake tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    PS : float</span>
+<span class="sd">        Permeability-surface area product (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Flux as a 2D array (2, 2, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    conc_tissue_hfu : Tissue concentration in a high-flow uptake tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.flux_tissue_hfu(ca, t, H=0.45, PS=0.003)</span>
+<span class="sd">    array([[[       nan,        nan,        nan,        nan,        nan],</span>
+<span class="sd">            [0.        , 0.        , 0.        , 0.        , 0.        ]],</span>
+
+<span class="sd">        [[0.00545455, 0.01090909, 0.01636364, 0.01636364, 0.01090909],</span>
+<span class="sd">            [0.        , 0.        , 0.        , 0.        , 0.        ]]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))))</span>
+    <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">J</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">PS</span><span class="o">*</span><span class="n">ca</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">J</span></div>
+
+
+<div class="viewcode-block" id="flux_tissue_hf">
+<a class="viewcode-back" href="../../../api/dcmri.flux_tissue_hf.html#dcmri.flux_tissue_hf">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_tissue_hf</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Flux out of a high-flow tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_i : float</span>
+<span class="sd">        Interstitial volume fraction (mL/cm3)</span>
+<span class="sd">    PS : float</span>
+<span class="sd">        Permeability-surface area product (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Flux as a 2D array (2, 2, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    conc_tissue_hf : Tissue concentration in a high-flow tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.flux_tissue_hf(ca, t, H=0.45, v_i=0.3, PS=0.003)</span>
+<span class="sd">    array([[[       inf,        inf,        inf,        inf,        inf],</span>
+<span class="sd">            [0.        , 0.00040014, 0.00166406, 0.00371159, 0.00624862]],</span>
+
+<span class="sd">        [[0.00545455, 0.01090909, 0.01636364, 0.01636364, 0.01090909],</span>
+<span class="sd">            [0.        , 0.        , 0.        , 0.        , 0.        ]]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">ca</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))))</span>
+    <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+    <span class="n">J</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">PS</span><span class="o">*</span><span class="n">ca</span>
+    <span class="k">if</span> <span class="n">PS</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">ca</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">flux_comp</span><span class="p">(</span><span class="n">PS</span><span class="o">*</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">v_i</span><span class="o">/</span><span class="n">PS</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">J</span></div>
+
+
+<div class="viewcode-block" id="flux_tissue_2cu">
+<a class="viewcode-back" href="../../../api/dcmri.flux_tissue_2cu.html#dcmri.flux_tissue_2cu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_tissue_2cu</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Flux out of a 2-compartment uptake tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood concentration (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    PS : float</span>
+<span class="sd">        Permeability-surface area product (mL/sec/cm3).</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Flux as a 2D array (2, 2, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    conc_tissue_2cu : Tissue concentration in a 2-compartment uptake tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.flux_tissue_2cu(ca, t, H=0.45, v_b=0.1, F_b=0.01, PS=0.003)</span>
+<span class="sd">    array([[[0.        , 0.00299543, 0.00798577, 0.01041156, 0.00787523],</span>
+<span class="sd">            [0.        , 0.        , 0.        , 0.        , 0.        ]],</span>
+
+<span class="sd">        [[0.        , 0.00163387, 0.00435587, 0.00567904, 0.00429558],</span>
+<span class="sd">            [0.        , 0.        , 0.        , 0.        , 0.        ]]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">conc_tissue_2cu</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="n">v_b</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="n">F_b</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="n">PS</span><span class="p">)</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">ca</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="n">Fp</span> <span class="o">=</span> <span class="n">F_b</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">))))</span>
+    <span class="k">if</span> <span class="n">v_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">Fp</span><span class="o">+</span><span class="n">PS</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">Ktrans</span> <span class="o">=</span> <span class="n">Fp</span><span class="o">*</span><span class="n">PS</span><span class="o">/</span><span class="p">(</span><span class="n">Fp</span><span class="o">+</span><span class="n">PS</span><span class="p">)</span>
+            <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Fp</span><span class="o">*</span><span class="n">ca</span>
+            <span class="n">J</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Ktrans</span><span class="o">*</span><span class="n">ca</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Fp</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span><span class="o">/</span><span class="n">v_b</span>
+        <span class="n">J</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">PS</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span><span class="o">/</span><span class="n">v_b</span>
+    <span class="k">return</span> <span class="n">J</span></div>
+
+
+
+<div class="viewcode-block" id="flux_tissue_2cx">
+<a class="viewcode-back" href="../../../api/dcmri.flux_tissue_2cx.html#dcmri.flux_tissue_2cx">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_tissue_2cx</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Flux out of a 2-compartment exchange tissue.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ca : array_like</span>
+<span class="sd">        Concentration in arterial blood (M).</span>
+<span class="sd">    t : array_like, optional</span>
+<span class="sd">        The time points of the arterial blood concentration (sec). If None, the time </span>
+<span class="sd">        points are assumed to be uniformly spaced with spacing `dt`. </span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    dt : float, optional</span>
+<span class="sd">        Spacing between time points for uniformly spaced data (sec). This </span>
+<span class="sd">        parameter is ignored if `t` is explicitly provided. Defaults to 1.0.</span>
+<span class="sd">    H : float</span>
+<span class="sd">        Hematocrit</span>
+<span class="sd">    v_i : float</span>
+<span class="sd">        Interstitial volume fraction (mL/cm3)</span>
+<span class="sd">    v_b : float</span>
+<span class="sd">        Blood volume fraction (mL/cm3)</span>
+<span class="sd">    PS : float</span>
+<span class="sd">        Permeability-surface area product (mL/sec/cm3).</span>
+<span class="sd">    F_b : float</span>
+<span class="sd">        Tissue blood flow (mL/sec/cm3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Flux as a 2D array (2, nt) array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    conc_tissue_2cu : Tissue concentration in a 2-compartment uptake tissue</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import dcmri as dc</span>
+<span class="sd">    &gt;&gt;&gt; t = [0, 5, 15, 30, 60]</span>
+<span class="sd">    &gt;&gt;&gt; ca = [1, 2, 3, 3, 2]</span>
+<span class="sd">    &gt;&gt;&gt; dc.flux_tissue_2cx(ca, t, H=0.45, v_i=0.3, v_b=0.1, F_b=0.01, PS=0.003)</span>
+<span class="sd">    array([[[0.00000000e+00, 5.45606860e-03, 1.47103815e-02, 1.98053196e-02,</span>
+<span class="sd">            1.66923134e-02],</span>
+<span class="sd">            [0.00000000e+00, 7.13764072e-05, 6.07543096e-04, 1.89602751e-03,</span>
+<span class="sd">            4.05542166e-03]],</span>
+
+<span class="sd">        [[0.00000000e+00, 2.97603742e-03, 8.02384446e-03, 1.08029016e-02,</span>
+<span class="sd">            9.10489819e-03],</span>
+<span class="sd">            [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,</span>
+<span class="sd">            0.00000000e+00]]])</span>
+<span class="sd">    """</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">F_b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">flux_tissue_hf</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">,</span> <span class="n">v_i</span><span class="o">=</span><span class="n">v_i</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="n">PS</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">F_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">)))</span>
+
+    <span class="n">Fp</span> <span class="o">=</span> <span class="n">F_b</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">PS</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Jp</span> <span class="o">=</span> <span class="n">flux_tissue_nx</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="n">v_b</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="n">F_b</span><span class="p">)</span>
+        <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ca</span><span class="p">)))</span>
+        <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Jp</span>
+        <span class="k">return</span> <span class="n">J</span>
+    
+    <span class="n">C</span> <span class="o">=</span> <span class="n">conc_tissue_2cx</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">,</span> <span class="n">v_b</span><span class="o">=</span><span class="n">v_b</span><span class="p">,</span> <span class="n">v_i</span><span class="o">=</span><span class="n">v_i</span><span class="p">,</span> <span class="n">F_b</span><span class="o">=</span><span class="n">F_b</span><span class="p">,</span> <span class="n">PS</span><span class="o">=</span><span class="n">PS</span><span class="p">)</span>
+    <span class="c1"># Deriv_e standard parameters</span>
+    <span class="n">v_p</span> <span class="o">=</span> <span class="n">v_b</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
+    <span class="n">Tp</span> <span class="o">=</span> <span class="n">v_p</span><span class="o">/</span><span class="p">(</span><span class="n">Fp</span><span class="o">+</span><span class="n">PS</span><span class="p">)</span>
+    <span class="n">Te</span> <span class="o">=</span> <span class="n">v_i</span><span class="o">/</span><span class="n">PS</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">PS</span><span class="o">/</span><span class="p">(</span><span class="n">Fp</span><span class="o">+</span><span class="n">PS</span><span class="p">)</span>
+    <span class="c1"># Build the system matrix K</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="n">Tp</span><span class="p">,</span> <span class="n">Te</span><span class="p">]</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">E</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">E</span><span class="p">,</span>   <span class="mi">0</span><span class="p">],</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">functions_blocks</span><span class="o">.</span><span class="n">_J_ncomp</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># def flux_tissue_2cf(ca, t=None, dt=1.0, v_p=None, Fp=None, PS=None, Te=None):</span>
+<span class="c1">#     if Fp+PS == 0:</span>
+<span class="c1">#         return np.zeros((2, 2, len(ca)))</span>
+<span class="c1">#     # Derive standard parameters</span>
+<span class="c1">#     Tp = v_p/(Fp+PS)</span>
+<span class="c1">#     E = PS/(Fp+PS)</span>
+<span class="c1">#     J = Fp*ca</span>
+<span class="c1">#     T = [Tp, Te]</span>
+<span class="c1">#     # Solve the system explicitly</span>
+<span class="c1">#     t = utils.tarray(len(J), t=t, dt=dt)</span>
+<span class="c1">#     Jo = np.zeros((2, 2, len(t)))</span>
+<span class="c1">#     J0 = blocks.flux(J, T[0], t=t, model='comp')</span>
+<span class="c1">#     J10 = E*J0</span>
+<span class="c1">#     Jo[1, 0, :] = J10</span>
+<span class="c1">#     Jo[1, 1, :] = blocks.flux(J10, T[1], t=t, model='comp')</span>
+<span class="c1">#     Jo[0, 0, :] = (1-E)*J0</span>
+<span class="c1">#     return Jo</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024-2026, dcmri contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dcmri.dro.phantoms &#8212; dcmri 0.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../../../_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+            </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-64ZSJ8Z1MX"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-64ZSJ8Z1MX');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dcmri/dro/phantoms';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.24.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://dcmri.org/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.7';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-light" alt="dcmri 0.7.0 documentation - Home"/>
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-dark pst-js-only" alt="dcmri 0.7.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">dcmri.dro.phantoms</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for dcmri.dro.phantoms</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">const</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">major</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+    <span class="n">minor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">major</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">minor</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span><span class="p">)</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span><span class="p">)</span>
+    <span class="n">f1</span> <span class="o">=</span> <span class="p">[</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">c</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">c</span><span class="p">]</span>
+    <span class="n">f2</span> <span class="o">=</span> <span class="p">[</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">c</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">c</span><span class="p">]</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">d</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">d</span> <span class="o">*</span> <span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">d1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">f1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">f1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">d2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">f2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">f2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">d1</span> <span class="o">+</span> <span class="n">d2</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">major</span><span class="p">:</span>
+                <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">array</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_shepp_logan_mask</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Background</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'background'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 1 Scalp</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+        <span class="nb">bool</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.69</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'scalp'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 2 Bone and marrow</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+        <span class="nb">bool</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.69</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.0184</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6624</span><span class="p">,</span> <span class="mf">0.874</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'bone'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 3 CSF</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+                     <span class="p">[</span><span class="o">-</span><span class="mf">0.0184</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6624</span><span class="p">,</span> <span class="mf">0.874</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.0184</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6524</span><span class="p">,</span> <span class="mf">0.864</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'CSF skull'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 4 Gray matter</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+                     <span class="p">[</span><span class="o">-</span><span class="mf">0.0184</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6524</span><span class="p">,</span> <span class="mf">0.864</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.22</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.41</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">],</span> <span class="mi">180</span> <span class="o">-</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.31</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">],</span> <span class="mi">180</span> <span class="o">+</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.35</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.605</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.023</span><span class="p">],</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.605</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.023</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.605</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.023</span><span class="p">,</span> <span class="mf">0.023</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.83</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.66</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'gray matter'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 5 CSF</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span> <span class="p">[</span>
+                     <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.22</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.41</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">],</span> <span class="mi">180</span> <span class="o">-</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.35</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'CSF right'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 6 CSF</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span> <span class="p">[</span>
+                     <span class="mi">0</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.31</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">],</span> <span class="mi">180</span> <span class="o">+</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'CSF left'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 7 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+        <span class="nb">bool</span><span class="p">),</span> <span class="p">[</span><span class="mf">0.35</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'tumor 1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 8 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+                     <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'tumor 2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 9 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+                     <span class="p">[</span><span class="o">-</span><span class="mf">0.605</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.023</span><span class="p">],</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'tumor 4'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 10 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+                     <span class="p">[</span><span class="o">-</span><span class="mf">0.605</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.023</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'tumor 6'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 11 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+                     <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'tumor 3'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 12 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+                     <span class="p">[</span><span class="o">-</span><span class="mf">0.605</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.023</span><span class="p">,</span> <span class="mf">0.023</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'tumor 5'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 13 Sagittal sinus</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+                     <span class="p">[</span><span class="o">-</span><span class="mf">0.83</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'sagittal sinus'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 14 Anterior cerebral artery</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+        <span class="nb">bool</span><span class="p">),</span> <span class="p">[</span><span class="mf">0.66</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="s1">'anterior artery'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mask</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_shepp_logan</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">B0</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">'PD'</span><span class="p">:</span>
+        <span class="n">scalp</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">PD</span><span class="p">(</span><span class="s1">'skin'</span><span class="p">)</span>
+        <span class="n">bone</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">PD</span><span class="p">(</span><span class="s1">'bone marrow'</span><span class="p">)</span>
+        <span class="n">csf</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">PD</span><span class="p">(</span><span class="s1">'csf'</span><span class="p">)</span>
+        <span class="n">gm</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">PD</span><span class="p">(</span><span class="s1">'gray matter'</span><span class="p">)</span>
+        <span class="n">tumor</span> <span class="o">=</span> <span class="mf">0.95</span>
+        <span class="n">blood</span> <span class="o">=</span> <span class="mf">0.9</span>
+    <span class="k">elif</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">'T2'</span><span class="p">:</span>
+        <span class="n">scalp</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">T2</span><span class="p">(</span><span class="n">B0</span><span class="p">,</span> <span class="s1">'skin'</span><span class="p">)</span>
+        <span class="n">bone</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">T2</span><span class="p">(</span><span class="n">B0</span><span class="p">,</span> <span class="s1">'bone marrow'</span><span class="p">)</span>
+        <span class="n">csf</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">T2</span><span class="p">(</span><span class="n">B0</span><span class="p">,</span> <span class="s1">'csf'</span><span class="p">)</span>
+        <span class="n">gm</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">T2</span><span class="p">(</span><span class="n">B0</span><span class="p">,</span> <span class="s1">'gray matter'</span><span class="p">)</span>
+        <span class="n">tumor</span> <span class="o">=</span> <span class="mf">0.25</span>
+        <span class="n">blood</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="k">elif</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">'T1'</span><span class="p">:</span>
+        <span class="n">scalp</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">T1</span><span class="p">(</span><span class="n">B0</span><span class="p">,</span> <span class="s1">'skin'</span><span class="p">)</span>
+        <span class="n">bone</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">T1</span><span class="p">(</span><span class="n">B0</span><span class="p">,</span> <span class="s1">'bone marrow'</span><span class="p">)</span>
+        <span class="n">csf</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">T1</span><span class="p">(</span><span class="n">B0</span><span class="p">,</span> <span class="s1">'csf'</span><span class="p">)</span>
+        <span class="n">gm</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">T1</span><span class="p">(</span><span class="n">B0</span><span class="p">,</span> <span class="s1">'gray matter'</span><span class="p">)</span>
+        <span class="n">tumor</span> <span class="o">=</span> <span class="mf">0.926</span> <span class="o">*</span> <span class="p">(</span><span class="n">B0</span><span class="o">**</span><span class="mf">0.217</span><span class="p">)</span>
+        <span class="n">blood</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">T1</span><span class="p">(</span><span class="n">B0</span><span class="p">,</span> <span class="s1">'blood'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">'Fb'</span><span class="p">:</span>
+        <span class="n">scalp</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'Fb'</span><span class="p">,</span> <span class="s1">'skin'</span><span class="p">)</span>
+        <span class="n">bone</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'Fb'</span><span class="p">,</span> <span class="s1">'bone marrow'</span><span class="p">)</span>
+        <span class="n">csf</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'Fb'</span><span class="p">,</span> <span class="s1">'csf'</span><span class="p">)</span>
+        <span class="n">gm</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'Fb'</span><span class="p">,</span> <span class="s1">'gray matter'</span><span class="p">)</span>
+        <span class="n">tumor</span> <span class="o">=</span> <span class="mf">0.02</span>
+        <span class="n">blood</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">'vb'</span><span class="p">:</span>
+        <span class="n">scalp</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'vb'</span><span class="p">,</span> <span class="s1">'skin'</span><span class="p">)</span>
+        <span class="n">bone</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'vb'</span><span class="p">,</span> <span class="s1">'bone marrow'</span><span class="p">)</span>
+        <span class="n">csf</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'vb'</span><span class="p">,</span> <span class="s1">'csf'</span><span class="p">)</span>
+        <span class="n">gm</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'vb'</span><span class="p">,</span> <span class="s1">'gray matter'</span><span class="p">)</span>
+        <span class="n">tumor</span> <span class="o">=</span> <span class="mf">0.1</span>
+        <span class="n">blood</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">'PS'</span><span class="p">:</span>
+        <span class="n">scalp</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'PS'</span><span class="p">,</span> <span class="s1">'skin'</span><span class="p">)</span>
+        <span class="n">bone</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'PS'</span><span class="p">,</span> <span class="s1">'bone marrow'</span><span class="p">)</span>
+        <span class="n">csf</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'PS'</span><span class="p">,</span> <span class="s1">'csf'</span><span class="p">)</span>
+        <span class="n">gm</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'PS'</span><span class="p">,</span> <span class="s1">'gray matter'</span><span class="p">)</span>
+        <span class="n">tumor</span> <span class="o">=</span> <span class="mf">0.001</span>
+        <span class="n">blood</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">'vi'</span><span class="p">:</span>
+        <span class="n">scalp</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'vi'</span><span class="p">,</span> <span class="s1">'skin'</span><span class="p">)</span>
+        <span class="n">bone</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'vi'</span><span class="p">,</span> <span class="s1">'bone marrow'</span><span class="p">)</span>
+        <span class="n">csf</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'vi'</span><span class="p">,</span> <span class="s1">'csf'</span><span class="p">)</span>
+        <span class="n">gm</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">perfusion</span><span class="p">(</span><span class="s1">'vi'</span><span class="p">,</span> <span class="s1">'gray matter'</span><span class="p">)</span>
+        <span class="n">tumor</span> <span class="o">=</span> <span class="mf">0.3</span>
+        <span class="n">blood</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="c1"># 1 Scalp</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">scalp</span><span class="p">)</span>
+    <span class="c1"># 2 Bone and marrow</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.69</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bone</span><span class="p">)</span>
+    <span class="c1"># 3 CSF</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.0184</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6624</span><span class="p">,</span> <span class="mf">0.874</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">csf</span><span class="p">)</span>
+    <span class="c1"># 4 Gray matter</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.0184</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6524</span><span class="p">,</span> <span class="mf">0.864</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">gm</span><span class="p">)</span>
+    <span class="c1"># 5 CSF</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.22</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.41</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">],</span> <span class="mi">180</span> <span class="o">-</span> <span class="mi">18</span><span class="p">,</span> <span class="n">csf</span><span class="p">)</span>
+    <span class="c1"># 6 CSF</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.31</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">],</span> <span class="mi">180</span> <span class="o">+</span> <span class="mi">18</span><span class="p">,</span> <span class="n">csf</span><span class="p">)</span>
+    <span class="c1"># 7 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.35</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tumor</span><span class="p">)</span>
+    <span class="c1"># 8 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tumor</span><span class="p">)</span>
+    <span class="c1"># 9 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.605</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.023</span><span class="p">],</span> <span class="mi">90</span><span class="p">,</span> <span class="n">tumor</span><span class="p">)</span>
+    <span class="c1"># 10 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.605</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.023</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tumor</span><span class="p">)</span>
+    <span class="c1"># 11 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.046</span><span class="p">,</span> <span class="mf">0.046</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tumor</span><span class="p">)</span>
+    <span class="c1"># 12 Tumor</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.605</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.023</span><span class="p">,</span> <span class="mf">0.023</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tumor</span><span class="p">)</span>
+    <span class="c1"># 13 Sagittal sinus</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.83</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">blood</span><span class="p">)</span>
+    <span class="c1"># 14 Anterior cerebral artery</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">_ellipse</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.66</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">blood</span><span class="p">)</span>
+    <span class="c1"># Flip</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">array</span>
+
+
+<div class="viewcode-block" id="shepp_logan">
+<a class="viewcode-back" href="../../../api/dcmri.shepp_logan.html#dcmri.shepp_logan">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">shepp_logan</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">B0</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Modified Shepp-Logan phantom mimicking an axial slice through the brain.</span>
+
+<span class="sd">    The phantom is based on an MRI adaptation of the Shepp-Logan phantom </span>
+<span class="sd">    (Gach et al 2008), but with added features for use in a DC-MRI setting: </span>
+<span class="sd">    (1) additional regions for anterior cerebral artery and sinus sagittalis; </span>
+<span class="sd">    (2) additional optional contrasts blood flow (BF), blood volume (BV), </span>
+<span class="sd">    permeability-surface area product (PS) and interstitial volume (IV).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        params (str or tuple): parameter or parameters shown in the image. </span>
+<span class="sd">          The options are 'PD' (proton density), 'T1', 'T2', 'Fb' (blood flow), </span>
+<span class="sd">          'vb' (Blood volume), 'PS' (permeability-surface area product) and </span>
+<span class="sd">          'vi' (interstitial volume). If no parameters are provided, the </span>
+<span class="sd">          function returns a dictionary with 14 masks, one for each region.</span>
+<span class="sd">        n (int, optional): matrix size. Defaults to 256.</span>
+<span class="sd">        B0 (int, optional): field strength in T. Defaults to 3.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        H. M. Gach, C. Tanase and F. Boada, "2D &amp; 3D Shepp-Logan Phantom </span>
+<span class="sd">        Standards for MRI," 2008 19th International Conference on Systems </span>
+<span class="sd">        Engineering, Las Vegas, NV, USA, 2008, pp. 521-526, </span>
+<span class="sd">        `doi 10.1109/ICSEng.2008.15 &lt;https://ieeexplore.ieee.org/document/4616690&gt;`_.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.array or dict: if only one parameter is provided, this returns </span>
+<span class="sd">        an array. In all other conditions this returns a dictionary where keys </span>
+<span class="sd">        are the parameter- or region names, and values are square arrays with </span>
+<span class="sd">        image values.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Mask names:</span>
+<span class="sd">            - background</span>
+<span class="sd">            - scalp</span>
+<span class="sd">            - bone</span>
+<span class="sd">            - CSF skull</span>
+<span class="sd">            - CSF left</span>
+<span class="sd">            - CSF right</span>
+<span class="sd">            - gray matter</span>
+<span class="sd">            - tumor 1 to tumor 6</span>
+<span class="sd">            - sagittal sinus</span>
+<span class="sd">            - anterior artery</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">    Generate a single contrast:</span>
+
+<span class="sd">    .. plot::</span>
+<span class="sd">        :include-source:</span>
+
+<span class="sd">        &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">        &gt;&gt;&gt; import dcmri as dc</span>
+
+<span class="sd">        Simulate a synthetic blood flow image:</span>
+
+<span class="sd">        &gt;&gt;&gt; im = dc.shepp_logan('Fb')</span>
+
+<span class="sd">        Plot the result in units of mL/min/100mL:</span>
+
+<span class="sd">        &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(5, 5), ncols=1)</span>
+<span class="sd">        &gt;&gt;&gt; pos = ax.imshow(6000*im, cmap='gray', vmin=0.0, vmax=80)</span>
+<span class="sd">        &gt;&gt;&gt; fig.colorbar(pos, ax=ax, label='blood flow (mL/min/100mL)')</span>
+<span class="sd">        &gt;&gt;&gt; plt.show()</span>
+
+<span class="sd">    Generate multiple contrasts in one function call:</span>
+
+<span class="sd">    .. plot::</span>
+<span class="sd">        :include-source:</span>
+
+<span class="sd">        &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">        &gt;&gt;&gt; import dcmri as dc</span>
+
+<span class="sd">        Generate the MR Shepp-Logan phantom in low resolution:</span>
+
+<span class="sd">        &gt;&gt;&gt; im = dc.shepp_logan('PD', 'T1', 'T2', n=64)</span>
+
+<span class="sd">        Plot the result:</span>
+
+<span class="sd">        &gt;&gt;&gt; fig, (ax1, ax2, ax3) = plt.subplots(figsize=(12, 5), ncols=3)</span>
+<span class="sd">        &gt;&gt;&gt; ax1.imshow(im['PD'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax2.imshow(im['T1'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax3.imshow(im['T2'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; plt.show()</span>
+
+<span class="sd">    Generate masks for the different regions-of-interest:</span>
+
+<span class="sd">    .. plot::</span>
+<span class="sd">        :include-source:</span>
+
+<span class="sd">        &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">        &gt;&gt;&gt; import dcmri as dc</span>
+
+<span class="sd">        Generate the MR Shepp-Logan phantom masks:</span>
+
+<span class="sd">        &gt;&gt;&gt; im = dc.shepp_logan(n=128)</span>
+
+<span class="sd">        Plot all masks:</span>
+
+<span class="sd">        &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(8, 8), ncols=4, nrows=4)</span>
+<span class="sd">        &gt;&gt;&gt; ax[0,0].imshow(im['background'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[0,1].imshow(im['scalp'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[0,2].imshow(im['bone'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[0,3].imshow(im['CSF skull'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[1,0].imshow(im['CSF left'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[1,1].imshow(im['CSF right'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[1,2].imshow(im['gray matter'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[1,3].imshow(im['tumor 1'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[2,0].imshow(im['tumor 2'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[2,1].imshow(im['tumor 3'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[2,2].imshow(im['tumor 4'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[2,3].imshow(im['tumor 5'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[3,0].imshow(im['tumor 6'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[3,1].imshow(im['sagittal sinus'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; ax[3,2].imshow(im['anterior artery'], cmap='gray')</span>
+<span class="sd">        &gt;&gt;&gt; for i in range(4):</span>
+<span class="sd">        &gt;&gt;&gt;     for j in range(4):</span>
+<span class="sd">        &gt;&gt;&gt;         ax[i,j].set_yticklabels([])</span>
+<span class="sd">        &gt;&gt;&gt;         ax[i,j].set_xticklabels([])</span>
+<span class="sd">        &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_shepp_logan_mask</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_shepp_logan</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">B0</span><span class="o">=</span><span class="n">B0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">phantom</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">phantom</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">_shepp_logan</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">B0</span><span class="o">=</span><span class="n">B0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">phantom</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024-2026, dcmri contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

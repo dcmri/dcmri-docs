@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dcmri.bloch.functions_mz_dyn_k0 &#8212; dcmri 0.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../../../_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+            </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-64ZSJ8Z1MX"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-64ZSJ8Z1MX');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dcmri/bloch/functions_mz_dyn_k0';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.24.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://dcmri.org/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.7';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-light" alt="dcmri 0.7.0 documentation - Home"/>
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-dark pst-js-only" alt="dcmri 0.7.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">dcmri.bloch.functions_mz_dyn_k0</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for dcmri.bloch.functions_mz_dyn_k0</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">interp1d</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.bloch</span><span class="w"> </span><span class="kn">import</span> <span class="n">functions_mz_vectorized</span><span class="p">,</span> <span class="n">functions_sequences</span><span class="p">,</span> <span class="n">functions_mz</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">Mz_wrapper_k0</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">mz_prep_sequence</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Kw</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+    <span class="c1"># Catch the scalar case</span>
+    <span class="k">if</span> <span class="n">R1</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">R1</span> <span class="o">=</span> <span class="n">R1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span class="p">,)</span>
+        <span class="n">Kw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Kw</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'Eq'</span><span class="p">:</span>
+        <span class="n">Mz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">R1</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">v</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">])</span>
+        <span class="n">tMz</span> <span class="o">=</span> <span class="n">tR1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">tR1</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tMz</span><span class="p">,</span> <span class="n">Mz</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'IR-SS'</span><span class="p">:</span>
+        <span class="n">TA</span> <span class="o">=</span> <span class="n">functions_sequences</span><span class="o">.</span><span class="n">repetition_time</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_ss_k0_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="mi">180</span><span class="p">,</span> <span class="n">TA</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'SR-SS'</span><span class="p">:</span>
+        <span class="n">TA</span> <span class="o">=</span> <span class="n">functions_sequences</span><span class="o">.</span><span class="n">repetition_time</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_ss_k0_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="mi">90</span><span class="p">,</span> <span class="n">TA</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'PR-SS'</span><span class="p">:</span>
+        <span class="n">TA</span> <span class="o">=</span> <span class="n">functions_sequences</span><span class="o">.</span><span class="n">repetition_time</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_ss_k0_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'PA'</span><span class="p">],</span> <span class="n">TA</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'SPGR'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_k0_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nk0'</span><span class="p">],</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span> 
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'SR-SPGR'</span><span class="p">:</span>
+        <span class="n">_check_TP</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">])</span>
+        <span class="n">t0</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'iz'</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TD'</span><span class="p">])</span> <span class="k">if</span> <span class="n">sequence</span> <span class="o">==</span> <span class="s1">'2D-SR-SPGR'</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">tstart</span> <span class="o">+=</span> <span class="n">t0</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_k0_pr_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nk0'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TD'</span><span class="p">],</span> <span class="mi">90</span><span class="p">,</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span> 
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'IR-SPGR'</span><span class="p">:</span>
+        <span class="n">_check_TP</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_k0_pr_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nk0'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TD'</span><span class="p">],</span> <span class="mi">180</span><span class="p">,</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span> 
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'PR-SPGR'</span><span class="p">:</span>
+        <span class="n">_check_TP</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_k0_pr_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nk0'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TD'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'PA'</span><span class="p">],</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'SPGR-SS'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_ss_k0_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nk0'</span><span class="p">],</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'SR-SPGR-SS'</span><span class="p">:</span>
+        <span class="n">_check_TP</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_ss_k0_pr_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nk0'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TD'</span><span class="p">],</span> <span class="mi">90</span><span class="p">,</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span> 
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'IR-SPGR-SS'</span><span class="p">:</span>
+        <span class="n">_check_TP</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_ss_k0_pr_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nk0'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TD'</span><span class="p">],</span> <span class="mi">180</span><span class="p">,</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'PR-SPGR-SS'</span><span class="p">:</span>
+        <span class="n">_check_TP</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_ss_k0_pr_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nk0'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TP'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TD'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'PA'</span><span class="p">],</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span> 
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'SSI'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_ss_k0_spgri</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nph'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TF'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'SA'</span><span class="p">],</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'GE-SS'</span><span class="p">:</span>
+        <span class="n">t0</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'iz'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">]</span> <span class="o">/</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nz'</span><span class="p">]</span> <span class="k">if</span> <span class="n">sequence</span> <span class="o">==</span> <span class="s1">'2D-GE-EPI'</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">tstart</span> <span class="o">+=</span> <span class="n">t0</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_ss_k0_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'SE-SS'</span><span class="p">:</span>
+        <span class="n">t0</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'iz'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">]</span> <span class="o">/</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nz'</span><span class="p">]</span> <span class="k">if</span> <span class="n">sequence</span> <span class="o">==</span> <span class="s1">'2D-SE-EPI'</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">tstart</span> <span class="o">+=</span> <span class="n">t0</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_k0_se</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TE'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mz_prep_sequence</span> <span class="o">==</span> <span class="s1">'DE-SS'</span><span class="p">:</span>
+        <span class="n">t0</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'iz'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">]</span> <span class="o">/</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Nz'</span><span class="p">]</span> <span class="k">if</span> <span class="n">sequence</span> <span class="o">==</span> <span class="s1">'2D-DE-EPI'</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">tstart</span> <span class="o">+=</span> <span class="n">t0</span>
+        <span class="k">return</span> <span class="n">Mz_dyn_k0_se</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'me'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TE2'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'FA'</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="s1">'B1corr'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'TR'</span><span class="p">],</span> <span class="n">tj</span><span class="o">=</span><span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
+    
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_check_TP</span><span class="p">(</span><span class="n">TP</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">TP</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"The delay time (TP) after a preparation pulse must be greater than 0."</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_interpolate_2d_var</span><span class="p">(</span><span class="n">t_new</span><span class="p">,</span> <span class="n">tR</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Interpolate a 2D array R along its second dimension (axis=1) </span>
+<span class="sd">    """</span>
+    <span class="c1"># Original time points along axis 1</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tR</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_new</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Create interpolation function operating along axis=1</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">tR</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">'linear'</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+             <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span><span class="n">R</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">R</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+    <span class="c1"># Interpolate</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">t_new</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_interpolate_inputs</span><span class="p">(</span><span class="n">t_pulses</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">n_comps</span> <span class="o">=</span> <span class="n">R1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n_pulses</span> <span class="o">=</span> <span class="n">t_pulses</span><span class="o">.</span><span class="n">size</span>
+
+    <span class="c1"># Interpolate properties at pulse times</span>
+    <span class="n">R1_pulses</span> <span class="o">=</span> <span class="n">_interpolate_2d_var</span><span class="p">(</span><span class="n">t_pulses</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">j_pulses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_pulses</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">tj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">j_pulses</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_pulses</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tj</span> <span class="o">=</span> <span class="n">tj</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">tj</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">tj</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+        <span class="n">j_pulses</span> <span class="o">=</span> <span class="n">_interpolate_2d_var</span><span class="p">(</span><span class="n">t_pulses</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">R1_pulses</span><span class="p">,</span> <span class="n">j_pulses</span>
+
+
+
+<div class="viewcode-block" id="Mz_dyn_k0_spgr">
+<a class="viewcode-back" href="../../../api/dcmri.Mz_dyn_k0_spgr.html#dcmri.Mz_dyn_k0_spgr">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Mz_dyn_k0_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">R1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">Nph</span><span class="p">,</span> <span class="n">Nk0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tj</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> 
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Model longitudinal magnetization for a prep-recovery SPGR sequence with linear k-space ordering.</span>
+
+<span class="sd">    Simulates dynamic magnetization propagation over time across interpolated intervals. </span>
+<span class="sd">    At each temporal step $k$, a preparation pulse (`PA`) with delay (`TP`) is applied, </span>
+<span class="sd">    followed by an SPGR readout train of `Nph` pulses separated by `TR`, and a delay </span>
+<span class="sd">    `TD` before propagating state $M_0$ into step $k+1$.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tR1 : array-like</span>
+<span class="sd">        Time points of R1 [s].</span>
+<span class="sd">    R1 : 2D array-like</span>
+<span class="sd">        Longitudinal relaxation rate(s) over time with shape `(N_compartments, N_time)`.</span>
+<span class="sd">    v : float or array-like</span>
+<span class="sd">        Volume fraction(s) of the compartment(s).</span>
+<span class="sd">    Kw : float or array-like</span>
+<span class="sd">        Water exchange rate matrix or values between compartments [s^-1].</span>
+<span class="sd">    j : 2D array-like or None</span>
+<span class="sd">        Time-varying exchange flux or flow parameters matching `R1` shape.</span>
+<span class="sd">        If `None`, defaults to an array of zeros with shape matching `R1`.</span>
+<span class="sd">    me : float or array-like</span>
+<span class="sd">        Equilibrium magnetization value(s).</span>
+<span class="sd">    TR : float</span>
+<span class="sd">        Repetition time of individual readout pulses during SPGR acquisition [s].</span>
+<span class="sd">    FA : float</span>
+<span class="sd">        Flip angle of SPGR readout pulses [degrees].</span>
+<span class="sd">    Nph : int</span>
+<span class="sd">        Number of phase encoding steps / readout pulses per frame. </span>
+<span class="sd">    tj : array-like or None</span>
+<span class="sd">        Time points of j [s]. If None, it is assumed j is already defined at the correct times.</span>
+<span class="sd">    tstart : float</span>
+<span class="sd">        Time [s] of the first pulse in the sequence. Default is 0.</span>
+<span class="sd">    t_end : float</span>
+<span class="sd">        Time [s] of the last acquisition in the sequence. Defaults to max(tR1).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t_Mz : ndarray</span>
+<span class="sd">        1D array of interpolated time points across total duration `TP + Nph * TR + TD`.</span>
+<span class="sd">    Mz : ndarray</span>
+<span class="sd">        Longitudinal magnetization state recorded before each pulse, with shape </span>
+<span class="sd">        `(N_compartments, len(t_Mz), 1 + Nph)`. Index 0 represents magnetization prior </span>
+<span class="sd">        to the prep pulse (`PA`), while indices `1` to `Nph` represent magnetization </span>
+<span class="sd">        prior to each readout pulse (`FA`).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">t_end</span> <span class="o">=</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="o">&gt;</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Mz end time must be less or equal to the maximum time of R1."</span><span class="p">)</span>
+
+    <span class="c1"># Dimensions</span>
+    <span class="n">pulses_per_period</span> <span class="o">=</span> <span class="n">Nph</span> <span class="o">*</span> <span class="p">[[</span><span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">]]</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pulses_per_period</span><span class="p">])</span>
+    <span class="n">n_periods</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">tstart</span><span class="p">)</span> <span class="o">//</span> <span class="n">period</span><span class="p">)</span> <span class="k">if</span> <span class="n">tR1</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="n">n_comps</span> <span class="o">=</span> <span class="n">R1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">n_periods</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Maximum time for R1 </span><span class="si">{</span><span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2"> is less than the duration </span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2"> of a single pulse cycle. Extend R1-range and try again."</span><span class="p">)</span>
+
+    <span class="c1"># Pulse timings</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pulses_per_period</span><span class="p">[:</span><span class="n">Nk0</span><span class="p">]])</span>
+    <span class="n">t_periods</span> <span class="o">=</span> <span class="n">tstart</span> <span class="o">+</span> <span class="n">t0</span> <span class="o">+</span> <span class="n">period</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_periods</span><span class="p">)</span>
+
+    <span class="c1"># Interpolate properties at pulse times</span>
+    <span class="n">R1_periods</span><span class="p">,</span> <span class="n">j_periods</span> <span class="o">=</span> <span class="n">_interpolate_inputs</span><span class="p">(</span><span class="n">t_periods</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="c1"># Compute</span>
+    <span class="n">Mz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_periods</span><span class="p">))</span> 
+    <span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">me</span>
+    <span class="k">if</span> <span class="n">Nk0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_prop_spgr_vectorized</span><span class="p">(</span><span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">R1_periods</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">Nk0</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">Mz</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_prop_spgr_vectorized</span><span class="p">(</span><span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">R1_periods</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">Nph</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">t_periods</span><span class="p">,</span> <span class="n">Mz</span></div>
+
+
+
+
+<div class="viewcode-block" id="Mz_dyn_k0_pr_spgr">
+<a class="viewcode-back" href="../../../api/dcmri.Mz_dyn_k0_pr_spgr.html#dcmri.Mz_dyn_k0_pr_spgr">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Mz_dyn_k0_pr_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">R1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">Nph</span><span class="p">,</span> <span class="n">Nk0</span><span class="p">,</span> <span class="n">TP</span><span class="p">,</span> <span class="n">TD</span><span class="p">,</span> <span class="n">PA</span><span class="p">,</span> <span class="n">tj</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> 
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Model longitudinal magnetization for a prep-recovery SPGR sequence with linear k-space ordering.</span>
+
+<span class="sd">    Simulates dynamic magnetization propagation over time across interpolated intervals. </span>
+<span class="sd">    At each temporal step $k$, a preparation pulse (`PA`) with delay (`TP`) is applied, </span>
+<span class="sd">    followed by an SPGR readout train of `Nph` pulses separated by `TR`, and a delay </span>
+<span class="sd">    `TD` before propagating state $M_0$ into step $k+1$.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tR1 : array-like</span>
+<span class="sd">        Time points of R1 [s].</span>
+<span class="sd">    R1 : 2D array-like</span>
+<span class="sd">        Longitudinal relaxation rate(s) over time with shape `(N_compartments, N_time)`.</span>
+<span class="sd">    v : float or array-like</span>
+<span class="sd">        Volume fraction(s) of the compartment(s).</span>
+<span class="sd">    Kw : float or array-like</span>
+<span class="sd">        Water exchange rate matrix or values between compartments [s^-1].</span>
+<span class="sd">    j : 2D array-like or None</span>
+<span class="sd">        Time-varying exchange flux or flow parameters matching `R1` shape.</span>
+<span class="sd">        If `None`, defaults to an array of zeros with shape matching `R1`.</span>
+<span class="sd">    me : float or array-like</span>
+<span class="sd">        Equilibrium magnetization value(s).</span>
+<span class="sd">    TR : float</span>
+<span class="sd">        Repetition time of individual readout pulses during SPGR acquisition [s].</span>
+<span class="sd">    FA : float</span>
+<span class="sd">        Flip angle of SPGR readout pulses [degrees].</span>
+<span class="sd">    Nph : int</span>
+<span class="sd">        Number of phase encoding steps / readout pulses per frame.</span>
+<span class="sd">    TP : float</span>
+<span class="sd">        Preparation delay / time from preparation pulse to readout train start [s].</span>
+<span class="sd">    TD : float</span>
+<span class="sd">        Delay time following the readout train before the next frame [s].</span>
+<span class="sd">    PA : float</span>
+<span class="sd">        Preparation pulse flip angle [degrees] (e.g., inversion or saturation pulse).</span>
+<span class="sd">    tj : array-like or None</span>
+<span class="sd">        Time points of j [s]. If None, it is assumed j is already defined at the correct times. </span>
+<span class="sd">    tstart : float</span>
+<span class="sd">        Time [s] of the first pulse in the sequence. Default is 0.</span>
+<span class="sd">    t_end : float</span>
+<span class="sd">        Time [s] of the last acquisition in the sequence. Defaults to max(tR1).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t_Mz : ndarray</span>
+<span class="sd">        1D array of interpolated time points across total duration `TP + Nph * TR + TD`.</span>
+<span class="sd">    Mz : ndarray</span>
+<span class="sd">        Longitudinal magnetization state recorded before each pulse, with shape </span>
+<span class="sd">        `(N_compartments, len(t_Mz), 1 + Nph)`. Index 0 represents magnetization prior </span>
+<span class="sd">        to the prep pulse (`PA`), while indices `1` to `Nph` represent magnetization </span>
+<span class="sd">        prior to each readout pulse (`FA`).</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - Frame duration is calculated as `duration = TP + Nph * TR + TD`.</span>
+<span class="sd">    - End-of-frame state after `TD` is iteratively propagated as $M_0$ for step $k+1$.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">t_end</span> <span class="o">=</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="o">&gt;</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Mz end time must be less or equal to the maximum time of R1."</span><span class="p">)</span>
+
+    <span class="c1"># Dimensions</span>
+    <span class="n">pulses_per_period</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PA</span><span class="p">,</span> <span class="n">TP</span><span class="p">]]</span> <span class="o">+</span> <span class="p">(</span><span class="n">Nph</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">[[</span><span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[[</span><span class="n">FA</span><span class="p">,</span> <span class="n">TR</span> <span class="o">+</span> <span class="n">TD</span><span class="p">]]</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pulses_per_period</span><span class="p">])</span>
+    <span class="n">n_periods</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">tstart</span><span class="p">)</span> <span class="o">//</span> <span class="n">period</span><span class="p">)</span> <span class="k">if</span> <span class="n">tR1</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="n">n_comps</span> <span class="o">=</span> <span class="n">R1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">n_periods</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Maximum time for R1 </span><span class="si">{</span><span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2"> is less than the duration </span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2"> of a single pulse cycle. Extend R1-range and try again."</span><span class="p">)</span>
+
+    <span class="c1"># Pulse timings</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pulses_per_period</span><span class="p">[:</span><span class="n">Nk0</span><span class="p">]])</span>
+    <span class="n">t_periods</span> <span class="o">=</span> <span class="n">tstart</span> <span class="o">+</span> <span class="n">t0</span> <span class="o">+</span> <span class="n">period</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_periods</span><span class="p">)</span>
+
+    <span class="c1"># Interpolate properties at pulse times</span>
+    <span class="n">R1_periods</span><span class="p">,</span> <span class="n">j_periods</span> <span class="o">=</span> <span class="n">_interpolate_inputs</span><span class="p">(</span><span class="n">t_periods</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="c1"># Compute</span>
+    
+    <span class="n">Mz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_periods</span><span class="p">))</span> 
+    <span class="n">Mz0</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">me</span>
+    <span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_prop_vectorized</span><span class="p">(</span><span class="n">Mz0</span><span class="p">,</span> <span class="n">R1_periods</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">me</span><span class="p">,</span> <span class="n">pulses_per_period</span><span class="p">[:</span><span class="n">Nk0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])[:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">Mz</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_prop_pr_spgr_vectorized</span><span class="p">(</span><span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">R1_periods</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">Nph</span><span class="p">,</span> <span class="n">TP</span><span class="p">,</span> <span class="n">TD</span><span class="p">,</span> <span class="n">PA</span><span class="p">,</span> <span class="n">Nk0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">t_periods</span><span class="p">,</span> <span class="n">Mz</span></div>
+
+
+
+<div class="viewcode-block" id="Mz_dyn_ss_k0_pr_spgr">
+<a class="viewcode-back" href="../../../api/dcmri.Mz_dyn_ss_k0_pr_spgr.html#dcmri.Mz_dyn_ss_k0_pr_spgr">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Mz_dyn_ss_k0_pr_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">R1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">Nph</span><span class="p">,</span> <span class="n">Nk0</span><span class="p">,</span> <span class="n">TP</span><span class="p">,</span> <span class="n">TD</span><span class="p">,</span> <span class="n">PA</span><span class="p">,</span> <span class="n">tj</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Model steady-state longitudinal magnetization for a prep-recovery SPGR sequence.</span>
+
+<span class="sd">    Simulates a Preparation-Recovery Spoiled Gradient Recalled Echo (PR-SPGR) sequence </span>
+<span class="sd">    operating in steady state across interpolated time steps. At each step $k$, it solves </span>
+<span class="sd">    for the steady-state initial magnetization (`Mz[:, k, 0]`) prior to the preparation </span>
+<span class="sd">    pulse using `functions_sequences.Mz_ss_pr_spgr`, then propagates this state through </span>
+<span class="sd">    the prep delay (`TP`) and each of the `Nph` readout pulses (`TR`).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tR1 : array-like</span>
+<span class="sd">        Time points of R1 [s].</span>
+<span class="sd">    R1 : 2D array-like</span>
+<span class="sd">        Longitudinal relaxation rate(s) over time with shape `(N_compartments, N_time)`.</span>
+<span class="sd">    v : float or array-like</span>
+<span class="sd">        Volume fraction(s) of the compartment(s).</span>
+<span class="sd">    Kw : float or array-like</span>
+<span class="sd">        Water exchange rate matrix or values between compartments [s^-1].</span>
+<span class="sd">    j : 2D array-like or None</span>
+<span class="sd">        Time-varying exchange flux or flow parameters matching `R1` shape.</span>
+<span class="sd">        If `None`, defaults to an array of zeros with shape matching `R1`.</span>
+<span class="sd">    me : float or array-like</span>
+<span class="sd">        Equilibrium magnetization value(s).</span>
+<span class="sd">    TR : float</span>
+<span class="sd">        Repetition time of individual readout pulses during SPGR acquisition [s].</span>
+<span class="sd">    FA : float</span>
+<span class="sd">        Flip angle of readout pulses [degrees].</span>
+<span class="sd">    Nph : int</span>
+<span class="sd">        Number of phase encoding steps / readout pulses per frame.</span>
+<span class="sd">    TP : float</span>
+<span class="sd">        Preparation delay / time from preparation pulse to readout train start [s].</span>
+<span class="sd">    TD : float</span>
+<span class="sd">        Delay time following readout train before the next frame [s].</span>
+<span class="sd">    PA : float</span>
+<span class="sd">        Preparation pulse flip angle [degrees] (e.g., inversion or saturation pulse).</span>
+<span class="sd">    tj : array-like or None</span>
+<span class="sd">        Time points of j [s]. If None, it is assumed j is already defined at the correct times. </span>
+<span class="sd">    tstart : float</span>
+<span class="sd">        Time [s] of the first pulse in the sequence. Default is 0.</span>
+<span class="sd">    t_end : float</span>
+<span class="sd">        Time [s] of the last acquisition in the sequence. Defaults to max(tR1).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t_pulses : ndarray</span>
+<span class="sd">        2D array of interpolated time points across total duration `TP + Nph * TR + TD`.</span>
+<span class="sd">    Mz : ndarray</span>
+<span class="sd">        Longitudinal magnetization recorded before each pulse, with shape </span>
+<span class="sd">        `(N_compartments, len(t_pulses), 1 + Nph)`. Index 0 represents magnetization </span>
+<span class="sd">        prior to the prep pulse (`PA`), while indices `1` to `Nph` represent </span>
+<span class="sd">        magnetization prior to each readout pulse (`FA`).</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - Frame duration is calculated as `duration = TP + Nph * TR + TD`.</span>
+<span class="sd">    - Solves steady-state initial conditions independently at each time step $k$.</span>
+<span class="sd">    - Unlike `Mz_dyn_pr_spgr`, this function assumes inter-frame steady state rather than </span>
+<span class="sd">      dynamically carrying forward the end-of-frame residual magnetization.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">t_end</span> <span class="o">=</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="o">&gt;</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Mz end time must be less or equal to the maximum time of R1."</span><span class="p">)</span>
+    
+    <span class="c1"># Dimensions</span>
+    <span class="n">n_comps</span> <span class="o">=</span> <span class="n">R1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">+</span> <span class="n">Nph</span> <span class="o">*</span> <span class="n">TR</span> <span class="o">+</span> <span class="n">TD</span>
+    <span class="n">n_periods</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">tstart</span><span class="p">)</span> <span class="o">//</span> <span class="n">period</span><span class="p">)</span> <span class="k">if</span> <span class="n">tR1</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
+   
+    <span class="k">if</span> <span class="n">n_periods</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Maximum time for R1 </span><span class="si">{</span><span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2"> is less than the duration </span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2"> of a single pulse cycle. Extend R1-range and try again."</span><span class="p">)</span>
+
+    <span class="c1"># Pulses</span>
+    <span class="n">pulses_per_period</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PA</span><span class="p">,</span> <span class="n">TP</span><span class="p">]]</span> <span class="o">+</span> <span class="p">(</span><span class="n">Nph</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">[[</span><span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[[</span><span class="n">FA</span><span class="p">,</span> <span class="n">TR</span> <span class="o">+</span> <span class="n">TD</span><span class="p">]]</span>
+
+    <span class="c1"># Pulse timings</span>
+    <span class="n">tk0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pulses_per_period</span><span class="p">[:</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Nk0</span><span class="p">]])</span>
+    <span class="n">t_periods</span> <span class="o">=</span> <span class="n">tstart</span> <span class="o">+</span> <span class="n">tk0</span> <span class="o">+</span> <span class="n">period</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_periods</span><span class="p">)</span>
+
+    <span class="c1"># Interpolate properties at pulse times</span>
+    <span class="n">R1_periods</span><span class="p">,</span> <span class="n">j_periods</span> <span class="o">=</span> <span class="n">_interpolate_inputs</span><span class="p">(</span><span class="n">t_periods</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="n">R1_periods</span> <span class="o">=</span> <span class="n">R1_periods</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_periods</span><span class="p">))</span>
+    <span class="n">j_periods</span> <span class="o">=</span> <span class="n">j_periods</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_periods</span><span class="p">))</span>
+
+    <span class="c1"># Compute Mz before each pulse</span>
+    <span class="n">Mz</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_ss_k0_pr_spgr_vectorized</span><span class="p">(</span><span class="n">R1_periods</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">Nph</span><span class="p">,</span> <span class="n">TP</span><span class="p">,</span> <span class="n">TD</span><span class="p">,</span> <span class="n">PA</span><span class="p">,</span> <span class="n">Nk0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">t_periods</span><span class="p">,</span> <span class="n">Mz</span></div>
+
+
+
+
+<div class="viewcode-block" id="Mz_dyn_ss_k0_spgr">
+<a class="viewcode-back" href="../../../api/dcmri.Mz_dyn_ss_k0_spgr.html#dcmri.Mz_dyn_ss_k0_spgr">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Mz_dyn_ss_k0_spgr</span><span class="p">(</span><span class="n">tR1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">R1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">Nph</span><span class="p">,</span> <span class="n">Nk0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tj</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Calculate the steady-state longitudinal magnetization (Mz) for an SPGR sequence.</span>
+
+<span class="sd">    Interpolates time-varying relaxation rates (`R1`) and flux parameters (`j`) over </span>
+<span class="sd">    a total acquisition duration determined by the number of phase encoding steps </span>
+<span class="sd">    (`Nph`). Computes the steady-state magnetization at the start of each frame and </span>
+<span class="sd">    records `Mz` prior to each RF pulse across all `Nph` steps.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tR1 : array-like</span>
+<span class="sd">        Time points of R1 [s].</span>
+<span class="sd">    R1 : 2D array-like</span>
+<span class="sd">        Longitudinal relaxation rate(s) over time with shape `(N_compartments, N_time)`.</span>
+<span class="sd">    v : float or array-like</span>
+<span class="sd">        Volume fraction(s) of the compartment(s).</span>
+<span class="sd">    Kw : float or array-like</span>
+<span class="sd">        Water exchange rate matrix or values between compartments [s^-1].</span>
+<span class="sd">    j : 2D array-like or None</span>
+<span class="sd">        Time-varying exchange flux or flow parameters matching `R1` shape.</span>
+<span class="sd">        If `None`, defaults to an array of zeros with shape matching `R1`.</span>
+<span class="sd">    me : float or array-like</span>
+<span class="sd">        Equilibrium magnetization value(s).</span>
+<span class="sd">    TR : float</span>
+<span class="sd">        Repetition time [s].</span>
+<span class="sd">    FA : float</span>
+<span class="sd">        Flip angle [degrees].</span>
+<span class="sd">    Nph : int</span>
+<span class="sd">        Number of phase encoding steps / readout pulses in the sequence frame.</span>
+<span class="sd">    tj : array-like, optional</span>
+<span class="sd">        Time points for interpolation. If not provided, uses `tR1`.</span>
+<span class="sd">    tstart : float</span>
+<span class="sd">        Time [s] of the first pulse in the sequence. Default is 0.</span>
+<span class="sd">    t_end : float</span>
+<span class="sd">        Time [s] of the last acquisition in the sequence. Defaults to max(tR1).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t_Mz : ndarray</span>
+<span class="sd">        1D array of time points corresponding to the interpolated time vector.</span>
+<span class="sd">    Mz : ndarray</span>
+<span class="sd">        Calculated longitudinal magnetization before each readout pulse, with shape </span>
+<span class="sd">        `(N_compartments, len(t_Mz), Nph)`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - Total duration evaluated per frame is `TR * Nph` starting from `tstart = 0`.</span>
+<span class="sd">    - Solves initial steady-state magnetization using `functions_sequences.Mz_ss_spgr`.</span>
+<span class="sd">    - Assumes $R_1$ remains constant during the fast readout train (`Nph` pulses).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">t_end</span> <span class="o">=</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="o">&gt;</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Mz end time must be less or equal to the maximum time of R1."</span><span class="p">)</span>
+    
+    <span class="c1"># Dimensions</span>
+    <span class="n">n_comps</span> <span class="o">=</span> <span class="n">R1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n_pulses_per_period</span> <span class="o">=</span> <span class="n">Nph</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="n">n_pulses_per_period</span> <span class="o">*</span> <span class="n">TR</span>
+    <span class="n">n_periods</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">tstart</span><span class="p">)</span> <span class="o">//</span> <span class="n">period</span><span class="p">)</span> <span class="k">if</span> <span class="n">tR1</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">n_periods</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Maximum time for R1 (</span><span class="si">{</span><span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2">) is less than the duration </span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2"> of a single pulse cycle. Extend R1-range and try again."</span><span class="p">)</span>
+
+    <span class="c1"># Interpolate properties at pulse times</span>
+    <span class="n">t_periods</span> <span class="o">=</span> <span class="n">tstart</span> <span class="o">+</span> <span class="n">TR</span> <span class="o">*</span> <span class="n">Nk0</span> <span class="o">+</span> <span class="n">period</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_periods</span><span class="p">)</span>
+    <span class="n">R1_periods</span><span class="p">,</span> <span class="n">j_periods</span> <span class="o">=</span> <span class="n">_interpolate_inputs</span><span class="p">(</span><span class="n">t_periods</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="c1"># Compute</span>
+    <span class="n">Mz</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_ss_spgr_vectorized</span><span class="p">(</span><span class="n">R1_periods</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">)</span>
+
+    <span class="c1"># Reshape (probably not necessary)</span>
+    <span class="n">Mz</span> <span class="o">=</span> <span class="n">Mz</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_periods</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">t_periods</span><span class="p">,</span> <span class="n">Mz</span></div>
+
+
+
+
+<div class="viewcode-block" id="Mz_dyn_k0_se">
+<a class="viewcode-back" href="../../../api/dcmri.Mz_dyn_k0_se.html#dcmri.Mz_dyn_k0_se">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Mz_dyn_k0_se</span><span class="p">(</span><span class="n">tR1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">R1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">TE</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">tj</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span> 
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Calculate steady-state longitudinal magnetization (Mz) for a single slice in a SE sequence.</span>
+
+<span class="sd">    Constructs a two-pulse sequence model consisting of an excitation pulse </span>
+<span class="sd">    (flip angle `FA`) followed by a refocusing pulse (180°). Interpolates </span>
+<span class="sd">    time-varying relaxation rates (`R1`) and flux parameters (`j`) over a single TR </span>
+<span class="sd">    period, evaluating steady-state magnetization immediately prior to each RF pulse.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tR1 : array-like</span>
+<span class="sd">        Time points of R1 [s].</span>
+<span class="sd">    R1 : 2D array-like</span>
+<span class="sd">        Longitudinal relaxation rate(s) over time with shape `(N_compartments, N_time)`.</span>
+<span class="sd">    v : float or array-like</span>
+<span class="sd">        Volume fraction(s) of the compartment(s).</span>
+<span class="sd">    Kw : float or array-like</span>
+<span class="sd">        Water exchange rate matrix or values between compartments [s^-1].</span>
+<span class="sd">    j : 2D array-like or None</span>
+<span class="sd">        Time-varying exchange flux or flow parameters matching `R1` shape. </span>
+<span class="sd">        If `None`, defaults to an array of zeros with shape matching `R1`.</span>
+<span class="sd">    me : float or array-like</span>
+<span class="sd">        Equilibrium magnetization value(s).</span>
+<span class="sd">    TE : float</span>
+<span class="sd">        Echo time [s].</span>
+<span class="sd">    TR : float</span>
+<span class="sd">        Repetition time [s].</span>
+<span class="sd">    FA : float</span>
+<span class="sd">        Excitation flip angle [degrees].</span>
+<span class="sd">    tj : array-like, optional</span>
+<span class="sd">        Time points for interpolation. If not provided, uses `tR1`. </span>
+<span class="sd">    tstart : float</span>
+<span class="sd">        Time [s] of the first pulse in the sequence. Default is 0.</span>
+<span class="sd">    t_end : float</span>
+<span class="sd">        Time [s] of the last acquisition in the sequence. Defaults to max(tR1).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t_Mz : ndarray</span>
+<span class="sd">        1D array of time points corresponding to the interpolated grid over `TR`.</span>
+<span class="sd">    Mz : ndarray</span>
+<span class="sd">        Steady-state longitudinal magnetization evaluated before each pulse in the sequence, </span>
+<span class="sd">        with shape `(N_compartments, len(t_Mz), 2)`. Index 0 corresponds to magnetization </span>
+<span class="sd">        prior to the excitation pulse (`FA`), and index 1 corresponds to magnetization </span>
+<span class="sd">        prior to the 180° refocusing pulse.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Pulses</span>
+    <span class="n">pulses_per_period</span> <span class="o">=</span> <span class="p">[[</span><span class="n">FA</span><span class="p">,</span> <span class="n">TE</span> <span class="o">/</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">180</span><span class="p">,</span> <span class="n">TR</span> <span class="o">-</span> <span class="n">TE</span><span class="o">/</span><span class="mi">2</span><span class="p">]]</span>
+    <span class="n">Nk0</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">Mz_dyn_ss_k0</span><span class="p">(</span><span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">pulses_per_period</span><span class="p">,</span> <span class="n">Nk0</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Mz_dyn_ss_k0_spgri">
+<a class="viewcode-back" href="../../../api/dcmri.Mz_dyn_ss_k0_spgri.html#dcmri.Mz_dyn_ss_k0_spgri">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Mz_dyn_ss_k0_spgri</span><span class="p">(</span><span class="n">tR1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">R1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">Nph</span><span class="p">,</span> <span class="n">TF</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">Nk0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tj</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> 
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Model steady-state imaging (SSI) longitudinal magnetization with inflow effects.</span>
+
+<span class="sd">    Simulates a steady-state acquisition with steady-state inflow (SSI) over an </span>
+<span class="sd">    interpolated time window determined by the number of phase encodings (`Nph`). </span>
+<span class="sd">    At each time step $k$, computes the inflow-affected steady-state longitudinal </span>
+<span class="sd">    magnetization using `functions_sequences.Mz_prop_ssi` and replicates it across </span>
+<span class="sd">    all `Nph` readout steps in the frame.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tR1 : array-like</span>
+<span class="sd">        Time points of R1 [s].</span>
+<span class="sd">    R1 : 2D array-like</span>
+<span class="sd">        Longitudinal relaxation rate(s) over time with shape `(N_compartments, N_time)`.</span>
+<span class="sd">    v : float or array-like</span>
+<span class="sd">        Volume fraction(s) of the compartment(s).</span>
+<span class="sd">    Kw : float or array-like</span>
+<span class="sd">        Water exchange rate matrix or values between compartments [s^-1].</span>
+<span class="sd">    j : 2D array-like or None</span>
+<span class="sd">        Time-varying exchange flux or flow parameters matching `R1` shape.</span>
+<span class="sd">        If `None`, defaults to an array of zeros with shape matching `R1`.</span>
+<span class="sd">    me : float or array-like</span>
+<span class="sd">        Equilibrium magnetization value(s).</span>
+<span class="sd">    TR : float</span>
+<span class="sd">        Repetition time during SPGR readout [s].</span>
+<span class="sd">    FA : float</span>
+<span class="sd">        Readout flip angle [degrees].</span>
+<span class="sd">    Nph : int</span>
+<span class="sd">        Number of phase encoding steps / readout pulses per frame.</span>
+<span class="sd">    TF : float</span>
+<span class="sd">        Inflow time / duration of pre-readout inflow period [s].</span>
+<span class="sd">    SA : float</span>
+<span class="sd">        Saturation flip angle applied to inflowing spins outside the slab [degrees].</span>
+<span class="sd">    tj : array-like, optional</span>
+<span class="sd">        Time points for interpolation. If not provided, uses `tR1`. </span>
+<span class="sd">    tstart : float</span>
+<span class="sd">        Time [s] of the first pulse in the sequence. Default is 0.</span>
+<span class="sd">    t_end : float</span>
+<span class="sd">        Time [s] of the last acquisition in the sequence. Defaults to max(tR1).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t_Mz : ndarray</span>
+<span class="sd">        1D array of interpolated time points across the frame duration (`TR * Nph`).</span>
+<span class="sd">    Mz : ndarray</span>
+<span class="sd">        Calculated longitudinal magnetization recorded prior to each readout pulse, </span>
+<span class="sd">        with shape `(N_compartments, len(t_Mz), Nph)`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - Total evaluation duration per dynamic step is `TR * Nph` starting from `tstart = 0`.</span>
+<span class="sd">    - Assumes relaxation rate $R_1$ and flow $j$ remain constant during the fast </span>
+<span class="sd">      `Nph` readout train within each dynamic step $k$.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">t_end</span> <span class="o">=</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="o">&gt;</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Mz end time must be less or equal to the maximum time of R1."</span><span class="p">)</span>
+    
+    <span class="c1"># Dimensions</span>
+    <span class="n">n_pulses_per_period</span> <span class="o">=</span> <span class="n">Nph</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="n">n_pulses_per_period</span> <span class="o">*</span> <span class="n">TR</span>
+    <span class="n">n_periods</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">tstart</span><span class="p">)</span> <span class="o">//</span> <span class="n">period</span><span class="p">)</span> <span class="k">if</span> <span class="n">tR1</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">n_periods</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Maximum time for R1 </span><span class="si">{</span><span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2"> is less than the duration </span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2"> of a single pulse cycle. Extend R1-range and try again."</span><span class="p">)</span>
+
+    <span class="c1"># Pulse locations</span>
+    <span class="n">t_periods</span> <span class="o">=</span> <span class="n">tstart</span> <span class="o">+</span> <span class="n">TR</span> <span class="o">*</span> <span class="n">Nk0</span> <span class="o">+</span> <span class="n">period</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_periods</span><span class="p">)</span>
+
+    <span class="c1"># Interpolate properties at pulse times</span>
+    <span class="n">R1_periods</span><span class="p">,</span> <span class="n">j_periods</span> <span class="o">=</span> <span class="n">_interpolate_inputs</span><span class="p">(</span><span class="n">t_periods</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="c1"># Compute</span>
+    <span class="n">Mz</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_ss_spgri_vectorized</span><span class="p">(</span><span class="n">R1_periods</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">FA</span><span class="p">,</span> <span class="n">TR</span><span class="p">,</span> <span class="n">TF</span><span class="p">,</span> <span class="n">SA</span><span class="p">)</span>
+    <span class="c1">#Mz = functions_mz.Mz_ss_spgri(R1_periods, v, Kw, j_periods, me, FA, TR, TF, SA)</span>
+
+    <span class="k">return</span> <span class="n">t_periods</span><span class="p">,</span> <span class="n">Mz</span></div>
+
+
+
+<div class="viewcode-block" id="Mz_dyn_k0">
+<a class="viewcode-back" href="../../../api/dcmri.Mz_dyn_k0.html#dcmri.Mz_dyn_k0">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Mz_dyn_k0</span><span class="p">(</span><span class="n">tR1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">R1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">pulses_per_period</span><span class="p">,</span> <span class="n">Nk0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tj</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> 
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Model longitudinal magnetization for a prep-recovery SPGR sequence with linear k-space ordering.</span>
+
+<span class="sd">    Simulates dynamic magnetization propagation over time across interpolated intervals. </span>
+<span class="sd">    At each temporal step $k$, a preparation pulse (`PA`) with delay (`TP`) is applied, </span>
+<span class="sd">    followed by an SPGR readout train of `Nph` pulses separated by `TR`, and a delay </span>
+<span class="sd">    `TD` before propagating state $M_0$ into step $k+1$.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tR1 : array-like</span>
+<span class="sd">        Time points of R1 [s].</span>
+<span class="sd">    R1 : 2D array-like</span>
+<span class="sd">        Longitudinal relaxation rate(s) over time with shape `(N_compartments, N_time)`.</span>
+<span class="sd">    v : float or array-like</span>
+<span class="sd">        Volume fraction(s) of the compartment(s).</span>
+<span class="sd">    Kw : float or array-like</span>
+<span class="sd">        Water exchange rate matrix or values between compartments [s^-1].</span>
+<span class="sd">    j : 2D array-like or None</span>
+<span class="sd">        Time-varying exchange flux or flow parameters matching `R1` shape.</span>
+<span class="sd">        If `None`, defaults to an array of zeros with shape matching `R1`.</span>
+<span class="sd">    me : float or array-like</span>
+<span class="sd">        Equilibrium magnetization value(s).</span>
+<span class="sd">    pulses_per_period : list of lists</span>
+<span class="sd">        List of pulses in the sequence, where each pulse is defined as `[flip_angle, delay]`.</span>
+<span class="sd">    tj : array-like or None</span>
+<span class="sd">        Time points of j [s]. If None, it is assumed j is already defined at the correct times.</span>
+<span class="sd">    tstart : float</span>
+<span class="sd">        Time [s] of the first pulse in the sequence. Default is 0.</span>
+<span class="sd">    t_end : float</span>
+<span class="sd">        Time [s] of the last acquisition in the sequence. Defaults to max(tR1).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t_Mz : ndarray</span>
+<span class="sd">        1D array of interpolated time points across total duration `TP + Nph * TR + TD`.</span>
+<span class="sd">    Mz : ndarray</span>
+<span class="sd">        Longitudinal magnetization state recorded before each pulse, with shape </span>
+<span class="sd">        `(N_compartments, len(t_Mz), 1 + Nph)`. Index 0 represents magnetization prior </span>
+<span class="sd">        to the prep pulse (`PA`), while indices `1` to `Nph` represent magnetization </span>
+<span class="sd">        prior to each readout pulse (`FA`).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">t_end</span> <span class="o">=</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="o">&gt;</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Mz end time must be less or equal to the maximum time of R1."</span><span class="p">)</span>
+
+    <span class="c1"># Dimensions</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pulses_per_period</span><span class="p">])</span>
+    <span class="n">n_periods</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">tstart</span><span class="p">)</span> <span class="o">//</span> <span class="n">period</span><span class="p">)</span> <span class="k">if</span> <span class="n">tR1</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="n">n_comps</span> <span class="o">=</span> <span class="n">R1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">n_periods</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Maximum time for R1 </span><span class="si">{</span><span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2"> is less than the duration </span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2"> of a single pulse cycle. Extend R1-range and try again."</span><span class="p">)</span>
+
+    <span class="c1"># Pulse timings</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pulses_per_period</span><span class="p">[:</span><span class="n">Nk0</span><span class="p">]])</span>
+    <span class="n">t_periods</span> <span class="o">=</span> <span class="n">tstart</span> <span class="o">+</span> <span class="n">t0</span> <span class="o">+</span> <span class="n">period</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_periods</span><span class="p">)</span>
+
+    <span class="c1"># Interpolate properties at pulse times</span>
+    <span class="n">R1_periods</span><span class="p">,</span> <span class="n">j_periods</span> <span class="o">=</span> <span class="n">_interpolate_inputs</span><span class="p">(</span><span class="n">t_periods</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="c1"># Compute</span>
+    <span class="n">Mz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_periods</span><span class="p">))</span> 
+    <span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">me</span>
+    <span class="k">if</span> <span class="n">Nk0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_prop_vectorized</span><span class="p">(</span><span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">R1_periods</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">me</span><span class="p">,</span> <span class="n">pulses_per_period</span><span class="p">[:</span><span class="n">Nk0</span><span class="p">])[:,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">pulses_per_period_from_k0</span> <span class="o">=</span> <span class="n">pulses_per_period</span><span class="p">[</span><span class="n">Nk0</span><span class="p">:]</span> <span class="o">+</span> <span class="n">pulses_per_period</span><span class="p">[:</span><span class="n">Nk0</span><span class="p">]</span>
+    <span class="n">Mz</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_prop_vectorized</span><span class="p">(</span><span class="n">Mz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">R1_periods</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">me</span><span class="p">,</span> <span class="n">pulses_per_period_from_k0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">t_periods</span><span class="p">,</span> <span class="n">Mz</span></div>
+
+
+
+
+<div class="viewcode-block" id="Mz_dyn_ss_k0">
+<a class="viewcode-back" href="../../../api/dcmri.Mz_dyn_ss_k0.html#dcmri.Mz_dyn_ss_k0">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Mz_dyn_ss_k0</span><span class="p">(</span><span class="n">tR1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">R1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">pulses_per_period</span><span class="p">,</span> <span class="n">Nk0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tj</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span> 
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Calculate steady-state longitudinal magnetization (Mz) for an arbitrary pulse sequence applied dynamically.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tR1 : array-like</span>
+<span class="sd">        Time points of R1 [s].</span>
+<span class="sd">    R1 : 2D array-like</span>
+<span class="sd">        Longitudinal relaxation rate(s) over time with shape `(N_compartments, N_time)`.</span>
+<span class="sd">    v : float or array-like</span>
+<span class="sd">        Volume fraction(s) of the compartment(s).</span>
+<span class="sd">    Kw : float or array-like</span>
+<span class="sd">        Water exchange rate matrix or values between compartments [s^-1].</span>
+<span class="sd">    j : 2D array-like or None</span>
+<span class="sd">        Time-varying exchange flux or flow parameters matching `R1` shape. </span>
+<span class="sd">        If `None`, defaults to an array of zeros with shape matching `R1`.</span>
+<span class="sd">    me : float or array-like</span>
+<span class="sd">        Equilibrium magnetization value(s).</span>
+<span class="sd">    pulses_per_period : list of lists</span>
+<span class="sd">        List of pulses in the sequence, where each pulse is defined as `[flip_angle, delay]`.</span>
+<span class="sd">    tj : array-like, optional</span>
+<span class="sd">        Time points for interpolation. If not provided, uses `tR1`. </span>
+<span class="sd">    tstart : float</span>
+<span class="sd">        Time [s] of the first pulse in the sequence. Default is 0.</span>
+<span class="sd">    t_end : float</span>
+<span class="sd">        Time [s] of the last acquisition in the sequence. Defaults to max(tR1).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t_Mz : ndarray</span>
+<span class="sd">        2D array of time points corresponding to the interpolated grid over `TR`.</span>
+<span class="sd">    Mz : ndarray</span>
+<span class="sd">        Steady-state longitudinal magnetization evaluated before each pulse in the sequence, </span>
+<span class="sd">        with shape `(N_compartments, N_periods, N_pulses_per_period)`. </span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">t_end</span> <span class="o">=</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t_end</span> <span class="o">&gt;</span> <span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Mz end time must be less or equal to the maximum time of R1."</span><span class="p">)</span>
+
+    <span class="c1"># Dimensions</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pulses_per_period</span><span class="p">])</span>
+    <span class="n">n_periods</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">tstart</span><span class="p">)</span> <span class="o">//</span> <span class="n">period</span><span class="p">)</span> <span class="k">if</span> <span class="n">tR1</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="n">n_comps</span> <span class="o">=</span> <span class="n">R1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">n_periods</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Maximum time for R1 </span><span class="si">{</span><span class="n">tR1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2"> is less than the duration </span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2"> of a single pulse cycle. Extend R1-range and try again."</span><span class="p">)</span>
+
+    <span class="c1"># Pulse timings</span>
+    <span class="n">tk0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pulses_per_period</span><span class="p">[:</span><span class="n">Nk0</span><span class="p">]])</span>
+    <span class="n">t_periods</span> <span class="o">=</span> <span class="n">tstart</span> <span class="o">+</span> <span class="n">tk0</span> <span class="o">+</span> <span class="n">period</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_periods</span><span class="p">)</span>
+
+    <span class="c1"># Interpolate properties at pulse times</span>
+    <span class="n">R1_periods</span><span class="p">,</span> <span class="n">j_periods</span> <span class="o">=</span> <span class="n">_interpolate_inputs</span><span class="p">(</span><span class="n">t_periods</span><span class="p">,</span> <span class="n">tR1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">tj</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="c1"># Compute Mz before each pulse</span>
+    <span class="n">R1_periods</span> <span class="o">=</span> <span class="n">R1_periods</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_periods</span><span class="p">))</span>
+    <span class="n">j_periods</span> <span class="o">=</span> <span class="n">j_periods</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_comps</span><span class="p">,</span> <span class="n">n_periods</span><span class="p">))</span>
+
+    <span class="n">pulses_per_period_from_k0</span> <span class="o">=</span> <span class="n">pulses_per_period</span><span class="p">[</span><span class="n">Nk0</span><span class="p">:]</span> <span class="o">+</span> <span class="n">pulses_per_period</span><span class="p">[:</span><span class="n">Nk0</span><span class="p">]</span>
+    <span class="n">Mz</span> <span class="o">=</span> <span class="n">functions_mz_vectorized</span><span class="o">.</span><span class="n">Mz_ss_vectorized</span><span class="p">(</span><span class="n">R1_periods</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">j_periods</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">pulses_per_period_from_k0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">t_periods</span><span class="p">,</span> <span class="n">Mz</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024-2026, dcmri contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

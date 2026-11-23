@@ -1,0 +1,18 @@
+﻿dcmri.quantity\_dicom
+=====================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: quantity_dicom
+
+
+
+
+
+.. minigallery:: dcmri.quantity_dicom
+   :add-heading:
+
+

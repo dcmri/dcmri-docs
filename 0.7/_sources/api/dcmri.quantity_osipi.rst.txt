@@ -1,0 +1,18 @@
+﻿dcmri.quantity\_osipi
+=====================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: quantity_osipi
+
+
+
+
+
+.. minigallery:: dcmri.quantity_osipi
+   :add-heading:
+
+

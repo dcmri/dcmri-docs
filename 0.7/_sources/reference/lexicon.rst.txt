@@ -26,10 +26,12 @@ Quantities: properties
    :toctree: ../api/
    :template: autosummary.rst
 
+   quantity_desc
    quantity_unit
    quantity_group
    quantity_key
-   quantity_desc
+   quantity_dicom
+   quantity_osipi
 
 
 Quantities: operations

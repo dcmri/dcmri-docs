@@ -1,26 +1,12 @@
 ﻿dcmri.print\_quantities
 =======================
 
+
 .. currentmodule:: dcmri
 
-.. autoclass:: print_quantities
-   :no-members:
-   :show-inheritance:
 
 
-
-
-
-
-
-
-
-
-.. rubric:: Detailed Members Reference
-
-
-
-
+.. autofunction:: print_quantities
 
 
 
@@ -28,3 +14,5 @@
 
 .. minigallery:: dcmri.print_quantities
    :add-heading:
+
+

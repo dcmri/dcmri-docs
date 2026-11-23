@@ -1,0 +1,18 @@
+﻿dcmri.conc\_kidney\_pccf
+========================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: conc_kidney_pccf
+
+
+
+
+
+.. minigallery:: dcmri.conc_kidney_pccf
+   :add-heading:
+
+

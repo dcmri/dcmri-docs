@@ -1,0 +1,18 @@
+﻿dcmri.all\_compartments
+=======================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: all_compartments
+
+
+
+
+
+.. minigallery:: dcmri.all_compartments
+   :add-heading:
+
+

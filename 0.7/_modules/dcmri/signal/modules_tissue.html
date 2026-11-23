@@ -481,6 +481,8 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.bloch.functions_sequences</span><span class="w"> </span><span class="kn">import</span> <span class="n">channels</span>
 
 
+<div class="viewcode-block" id="signal_rice">
+<a class="viewcode-back" href="../../../api/dcmri.signal_rice.html#dcmri.signal_rice">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">signal_rice</span><span class="p">(</span><span class="n">nu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">sigma</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">nu</span>
@@ -490,7 +492,8 @@
         <span class="n">pref</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">rice_mean</span> <span class="o">=</span> <span class="n">pref</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">K</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">K</span><span class="p">)</span><span class="o">*</span><span class="n">i0</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="o">*</span><span class="n">i1</span><span class="p">(</span><span class="n">arg</span><span class="p">))</span>
     <span class="c1"># Nan values are points where the distribution is indistinguisable from Gaussian</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">rice_mean</span><span class="p">)</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">rice_mean</span><span class="p">),</span> <span class="n">nu</span><span class="p">,</span> <span class="n">rice_mean</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">rice_mean</span><span class="p">)</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">rice_mean</span><span class="p">),</span> <span class="n">nu</span><span class="p">,</span> <span class="n">rice_mean</span><span class="p">)</span></div>
+
 
 
 <span class="c1"># +--------------------------------------------------------------------------------------------------+</span>

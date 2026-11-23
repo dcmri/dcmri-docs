@@ -476,7 +476,7 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.core.module</span><span class="w"> </span><span class="kn">import</span> <span class="n">Module</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.dro.functions_aif</span><span class="w"> </span><span class="kn">import</span> <span class="n">parker</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.dro.functions_aif</span><span class="w"> </span><span class="kn">import</span> <span class="n">aif_parker</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.signal.modules_tissue</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConcToSignal</span>
 
 <span class="n">PARKER_INPUTS</span> <span class="o">=</span> <span class="p">{</span>
@@ -535,18 +535,18 @@
         <span class="n">p</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">PARKER_INPUTS</span> <span class="o">|</span> <span class="n">PARKER_OUTPUTS</span><span class="p">)</span>
 
         <span class="c1"># --- Override any user-defined inputs</span>
-        <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
         <span class="c1"># --- Compute plasma concentration</span>
         <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'tacq'</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">'dt'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'dt'</span><span class="p">])</span>
-        <span class="n">cp</span> <span class="o">=</span> <span class="n">parker</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">BAT</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="s1">'BAT'</span><span class="p">])</span>
+        <span class="n">cp</span> <span class="o">=</span> <span class="n">aif_parker</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">BAT</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="s1">'BAT'</span><span class="p">])</span>
 
         <span class="c1"># --- Convert to blood concentration</span>
         <span class="n">cb</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="s1">'H'</span><span class="p">])</span> <span class="o">*</span> <span class="n">cp</span> 
 
         <span class="c1"># --- Compute signals</span>
-        <span class="n">p</span> <span class="o">|=</span> <span class="p">{</span><span class="s1">'tC'</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="n">cb</span><span class="p">}</span>
-        <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc2sig</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">R1b</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="s1">'R1_b'</span><span class="p">],</span> <span class="n">R2sb</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="s1">'R2s_b'</span><span class="p">])</span>
+        <span class="n">p</span> <span class="o">|=</span> <span class="p">{</span><span class="s1">'tC'</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="n">cb</span><span class="p">,</span> <span class="s1">'R1b'</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="s1">'R1_b'</span><span class="p">],</span> <span class="s1">'R2sb'</span><span class="p">:</span><span class="n">p</span><span class="p">[</span><span class="s1">'R2s_b'</span><span class="p">]}</span>
+        <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc2sig</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
         
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> </div>
 

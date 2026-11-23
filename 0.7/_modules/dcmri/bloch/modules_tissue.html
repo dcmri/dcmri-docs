@@ -482,6 +482,8 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.bloch</span><span class="w"> </span><span class="kn">import</span> <span class="n">functions_sequences</span>
 
 
+<div class="viewcode-block" id="MzInflowPrep">
+<a class="viewcode-back" href="../../../api/dcmri.MzInflowPrep.html#dcmri.MzInflowPrep">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">MzInflowPrep</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span> 
     <span class="n">configs</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'sequence'</span><span class="p">:</span> <span class="n">get_sequence</span><span class="p">(</span><span class="s1">'name'</span><span class="p">),</span>
@@ -504,6 +506,8 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">map_io</span><span class="p">(</span><span class="n">imap</span><span class="p">,</span> <span class="n">omap</span><span class="p">,</span> <span class="n">iomap</span><span class="p">)</span>
 
+<div class="viewcode-block" id="MzInflowPrep.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.MzInflowPrep.html#dcmri.MzInflowPrep.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -572,7 +576,8 @@
                 <span class="n">j</span><span class="p">[</span><span class="n">inlet</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Fwi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">Mzi</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># (mL/min/cm3) * (magn/mL) = magn/min/cm3</span>
 
         <span class="n">output</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tJMz'</span><span class="p">:</span> <span class="n">tj</span><span class="p">,</span> <span class="s1">'JMz'</span><span class="p">:</span> <span class="n">j</span><span class="p">}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">output</span><span class="p">)</span></div>
+
     
     <span class="k">def</span><span class="w"> </span><span class="nf">inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">inputs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -627,7 +632,8 @@
                 <span class="s1">'Mzi'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">nc</span> <span class="o">*</span> <span class="p">[</span><span class="n">Mzi</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="p">}</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
 
 <span class="c1"># +--------------------------------------------------------------------------------------------------+</span>
 <span class="c1"># |                                   MzPrep - all configs (n = 3)                                   |</span>
@@ -686,6 +692,8 @@
 <span class="c1"># | tMz | sec  | longitudinal magnetization time points | Electromagnetic | 0.0  |        |       |       |</span>
 <span class="c1"># +-------------------------------------------------------------------------------------------------------+</span>
 
+<div class="viewcode-block" id="MzPrep">
+<a class="viewcode-back" href="../../../api/dcmri.MzPrep.html#dcmri.MzPrep">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">MzPrep</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span> 
     <span class="n">configs</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'sequence'</span><span class="p">:</span> <span class="n">get_sequence</span><span class="p">(</span><span class="s1">'name'</span><span class="p">),</span>
@@ -710,6 +718,8 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">map_io</span><span class="p">(</span><span class="n">imap</span><span class="p">,</span> <span class="n">omap</span><span class="p">,</span> <span class="n">iomap</span><span class="p">)</span>
 
+<div class="viewcode-block" id="MzPrep.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.MzPrep.html#dcmri.MzPrep.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -760,7 +770,8 @@
         <span class="n">o</span><span class="p">[</span><span class="s1">'tMz'</span><span class="p">],</span> <span class="n">o</span><span class="p">[</span><span class="s1">'Mz'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Mz_wrapper_k0</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">mz_prep_sequence</span><span class="p">,</span> <span class="n">tR</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span> <span class="n">o</span><span class="p">[</span><span class="s1">'tJMz'</span><span class="p">],</span> <span class="n">o</span><span class="p">[</span><span class="s1">'JMz'</span><span class="p">],</span> <span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="n">t_end</span><span class="p">)</span>
 
         <span class="c1"># Return dimensions (compartments, times)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">o</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'vw'</span><span class="p">,</span> <span class="s1">'tacq'</span><span class="p">}</span>
@@ -809,7 +820,8 @@
             <span class="s1">'Fwi'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nc</span><span class="p">),</span>
             <span class="s1">'inlets'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nc</span><span class="p">),</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
 
 
 <span class="c1"># +--------------------------------------------------------------------------------------------------+</span>
@@ -850,6 +862,8 @@
 <span class="c1"># | Mxy | A/cm | transverse magnetization | Electromagnetic | 1    | (0, 5) |       |       |</span>
 <span class="c1"># +-----------------------------------------------------------------------------------------+</span>
 
+<div class="viewcode-block" id="MxyReadMz">
+<a class="viewcode-back" href="../../../api/dcmri.MxyReadMz.html#dcmri.MxyReadMz">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">MxyReadMz</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span> 
     <span class="n">configs</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'sequence'</span><span class="p">:</span> <span class="n">get_sequence</span><span class="p">(</span><span class="s1">'name'</span><span class="p">),</span>
@@ -877,6 +891,8 @@
         <span class="c1"># (channels, components, compartments, times)</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">'Mxy'</span><span class="p">}</span>
 
+<div class="viewcode-block" id="MxyReadMz.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.MxyReadMz.html#dcmri.MxyReadMz.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
         <span class="n">seq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'sequence'</span><span class="p">]</span>
@@ -909,7 +925,8 @@
         <span class="c1"># (components, compartments, times)</span>
 
         <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Mxy'</span><span class="p">:</span> <span class="n">Mxy</span><span class="p">}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nt</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_data</span><span class="p">()</span>
@@ -922,7 +939,8 @@
             <span class="s1">'R2'</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">nc</span><span class="p">,</span> <span class="n">nt</span><span class="p">)),</span> 
             <span class="s1">'R2s'</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt</span><span class="p">),</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_interpolate_2d</span><span class="p">(</span><span class="n">t_new</span><span class="p">,</span> <span class="n">tR</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>

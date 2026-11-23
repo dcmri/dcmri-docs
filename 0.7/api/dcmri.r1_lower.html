@@ -81,7 +81,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="dcmri.T1" href="dcmri.T1.html" />
-    <link rel="prev" title="dcmri.r2s" href="dcmri.r2s_lower.html" />
+    <link rel="prev" title="dcmri.r2sq" href="dcmri.r2sq.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -447,6 +447,7 @@
 <li class="toctree-l2"><a class="reference internal" href="dcmri.ca_conc.html">dcmri.ca_conc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.ca_std_dose.html">dcmri.ca_std_dose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.r2s_lower.html">dcmri.r2s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.r2sq.html">dcmri.r2sq</a></li>
 <li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.r1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.T1.html">dcmri.T1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.T2.html">dcmri.T2</a></li>
@@ -470,6 +471,7 @@
 <li class="toctree-l2"><a class="reference internal" href="dcmri.sample.html">dcmri.sample</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.add_noise.html">dcmri.add_noise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.mle_rice.html">dcmri.mle_rice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.describe.html">dcmri.describe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.shepp_logan.html">dcmri.shepp_logan</a></li>
 </ul>
 </details></li>
@@ -604,7 +606,7 @@
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">dcmri</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dc</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">'The plasma relaxivity of gadobutrol at 3T is'</span><span class="p">,</span> <span class="mf">1e-3</span><span class="o">*</span><span class="n">dc</span><span class="o">.</span><span class="n">relaxivity</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="s1">'plasma'</span><span class="p">,</span> <span class="s1">'gadobutrol'</span><span class="p">),</span> <span class="s1">'Hz/mM'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">'The plasma relaxivity of gadobutrol at 3T is'</span><span class="p">,</span> <span class="mf">1e-3</span><span class="o">*</span><span class="n">dc</span><span class="o">.</span><span class="n">r1</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="s1">'plasma'</span><span class="p">,</span> <span class="s1">'gadobutrol'</span><span class="p">),</span> <span class="s1">'Hz/mM'</span><span class="p">)</span>
 <span class="go">The plasma relaxivity of gadobutrol at 3T is 5.0 Hz/mM</span>
 </pre></div>
 </div>
@@ -623,12 +625,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dcmri.r2s_lower.html"
+       href="dcmri.r2sq.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">dcmri.r2s</p>
+        <p class="prev-next-title">dcmri.r2sq</p>
       </div>
     </a>
     <a class="right-next"

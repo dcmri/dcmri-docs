@@ -753,6 +753,8 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ct</span><span class="p">))</span></div>
 
 
+<div class="viewcode-block" id="conc_kidney_ccf">
+<a class="viewcode-back" href="../../../api/dcmri.conc_kidney_ccf.html#dcmri.conc_kidney_ccf">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">conc_kidney_ccf</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">F_p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">D_p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">FF</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_u</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Chain-compartment filtration model for kidney tissue concentration.</span>
@@ -815,8 +817,11 @@
     <span class="n">Cp</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">conc_chain</span><span class="p">(</span><span class="n">F_p</span> <span class="o">*</span> <span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T_p</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="n">D_p</span><span class="p">)</span>
     <span class="n">cp</span> <span class="o">=</span> <span class="n">Cp</span> <span class="o">/</span> <span class="n">v_p</span>
     <span class="n">Ct</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">conc_comp</span><span class="p">(</span><span class="n">F_u</span> <span class="o">*</span> <span class="n">cp</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T_u</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ct</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ct</span><span class="p">))</span></div>
 
+
+<div class="viewcode-block" id="conc_kidney_pccf">
+<a class="viewcode-back" href="../../../api/dcmri.conc_kidney_pccf.html#dcmri.conc_kidney_pccf">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">conc_kidney_pccf</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">F_p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">D_p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">FF</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_u</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Chain-compartment filtration model for kidney tissue concentration.</span>
@@ -879,7 +884,8 @@
     <span class="n">Cp</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">conc_pfcomp</span><span class="p">(</span><span class="n">F_p</span> <span class="o">*</span> <span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T_p</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="n">D_p</span><span class="p">)</span>
     <span class="n">cp</span> <span class="o">=</span> <span class="n">Cp</span> <span class="o">/</span> <span class="n">v_p</span>
     <span class="n">Ct</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">conc_comp</span><span class="p">(</span><span class="n">F_u</span> <span class="o">*</span> <span class="n">cp</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T_u</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ct</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ct</span><span class="p">))</span></div>
+
 
 <div class="viewcode-block" id="conc_kidney_cpf">
 <a class="viewcode-back" href="../../../api/dcmri.conc_kidney_cpf.html#dcmri.conc_kidney_cpf">[docs]</a>
@@ -947,6 +953,8 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ct</span><span class="p">))</span></div>
 
 
+<div class="viewcode-block" id="conc_kidney_pcf">
+<a class="viewcode-back" href="../../../api/dcmri.conc_kidney_pcf.html#dcmri.conc_kidney_pcf">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">conc_kidney_pcf</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">F_p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">FF</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_u</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Compact parallel filtration model for kidney tissue concentration.</span>
@@ -1008,7 +1016,8 @@
     <span class="n">Cp</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">conc_plug</span><span class="p">(</span><span class="n">F_p</span> <span class="o">*</span> <span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T_p</span><span class="p">)</span>
     <span class="n">cp</span> <span class="o">=</span> <span class="n">Cp</span><span class="o">/</span><span class="n">v_p</span>
     <span class="n">Ct</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">conc_comp</span><span class="p">(</span><span class="n">F_u</span> <span class="o">*</span> <span class="n">cp</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T_u</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ct</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ct</span><span class="p">))</span></div>
+
 
 <div class="viewcode-block" id="conc_kidney_2pfu">
 <a class="viewcode-back" href="../../../api/dcmri.conc_kidney_2pfu.html#dcmri.conc_kidney_2pfu">[docs]</a>

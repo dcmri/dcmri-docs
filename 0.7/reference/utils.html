@@ -447,6 +447,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.ca_conc.html">dcmri.ca_conc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.ca_std_dose.html">dcmri.ca_std_dose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.r2s_lower.html">dcmri.r2s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.r2sq.html">dcmri.r2sq</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.r1_lower.html">dcmri.r1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.T1.html">dcmri.T1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.T2.html">dcmri.T2</a></li>
@@ -470,6 +471,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.sample.html">dcmri.sample</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.add_noise.html">dcmri.add_noise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.mle_rice.html">dcmri.mle_rice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.describe.html">dcmri.describe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.shepp_logan.html">dcmri.shepp_logan</a></li>
 </ul>
 </details></li>
@@ -548,22 +550,25 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.r2s_lower.html#dcmri.r2s" title="dcmri.r2s"><code class="xref py py-obj docutils literal notranslate"><span class="pre">r2s</span></code></a>([field_strength, tissue, agent, force])</p></td>
 <td><p>R2*-relaxivity</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.r1_lower.html#dcmri.r1" title="dcmri.r1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">r1</span></code></a>([field_strength, tissue, agent, force])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.r2sq.html#dcmri.r2sq" title="dcmri.r2sq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">r2sq</span></code></a>([field_strength, tissue, agent, force])</p></td>
+<td><p>R2*-relaxivity</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.r1_lower.html#dcmri.r1" title="dcmri.r1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">r1</span></code></a>([field_strength, tissue, agent, force])</p></td>
 <td><p>Longitudinal contrast agent relaxivity values in units of Hz/M</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.T1.html#dcmri.T1" title="dcmri.T1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T1</span></code></a>([field_strength, tissue, Hct, force])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.T1.html#dcmri.T1" title="dcmri.T1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T1</span></code></a>([field_strength, tissue, Hct, force])</p></td>
 <td><p>T1 value of selected tissue types.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.T2.html#dcmri.T2" title="dcmri.T2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T2</span></code></a>([field_strength, tissue, force])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.T2.html#dcmri.T2" title="dcmri.T2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T2</span></code></a>([field_strength, tissue, force])</p></td>
 <td><p>T2 value of selected tissue types.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.T2s.html#dcmri.T2s" title="dcmri.T2s"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T2s</span></code></a>([field_strength, tissue, force])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.T2s.html#dcmri.T2s" title="dcmri.T2s"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T2s</span></code></a>([field_strength, tissue, force])</p></td>
 <td><p>T2* value of selected tissue types.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.PD.html#dcmri.PD" title="dcmri.PD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PD</span></code></a>([tissue, force])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.PD.html#dcmri.PD" title="dcmri.PD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PD</span></code></a>([tissue, force])</p></td>
 <td><p>Relative proton density (PD) value of selected tissue types.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.perfusion.html#dcmri.perfusion" title="dcmri.perfusion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">perfusion</span></code></a>([parameter, tissue])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.perfusion.html#dcmri.perfusion" title="dcmri.perfusion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">perfusion</span></code></a>([parameter, tissue])</p></td>
 <td><p>perfusion parameters of selected tissue types.</p></td>
 </tr>
 </tbody>
@@ -648,6 +653,9 @@
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.mle_rice.html#dcmri.mle_rice" title="dcmri.mle_rice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mle_rice</span></code></a>(data[, fit_loc])</p></td>
 <td><p>Maximum-likelihood estimate of Rician parameters from 1D array <code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.describe.html#dcmri.describe" title="dcmri.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>(data[, n0, rician])</p></td>
+<td><p>Compute descriptive parameter maps for a signal array.</p></td>
 </tr>
 </tbody>
 </table>

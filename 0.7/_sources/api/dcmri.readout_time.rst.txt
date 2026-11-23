@@ -1,0 +1,18 @@
+﻿dcmri.readout\_time
+===================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: readout_time
+
+
+
+
+
+.. minigallery:: dcmri.readout_time
+   :add-heading:
+
+

@@ -1,0 +1,20 @@
+﻿dcmri.MxyReadMz
+===============
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: MxyReadMz
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.MxyReadMz
+   :add-heading:
+
+

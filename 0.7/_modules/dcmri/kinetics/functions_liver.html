@@ -1650,6 +1650,8 @@
 
 
 
+<div class="viewcode-block" id="conc_liver_1i_ick">
+<a class="viewcode-back" href="../../../api/dcmri.conc_liver_1i_ick.html#dcmri.conc_liver_1i_ick">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">conc_liver_1i_ick</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
                      <span class="n">v_e_li</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_p_li</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k_e2h</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k_h2b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
@@ -1665,8 +1667,11 @@
     <span class="k">return</span> <span class="n">_conc_liver</span><span class="p">(</span>
         <span class="n">ca</span><span class="p">,</span> <span class="n">v_e_app</span><span class="o">=</span><span class="n">v_e_app</span><span class="p">,</span> <span class="n">Ktrans</span><span class="o">=</span><span class="n">Ktrans</span><span class="p">,</span> <span class="n">T_h</span><span class="o">=</span><span class="n">T_h</span><span class="p">,</span> <span class="n">T_e</span><span class="o">=</span><span class="n">T_e</span><span class="p">,</span> 
         <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span>
-    <span class="p">)</span>
+    <span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="conc_liver_1i_ick_nsu">
+<a class="viewcode-back" href="../../../api/dcmri.conc_liver_1i_ick_nsu.html#dcmri.conc_liver_1i_ick_nsu">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">conc_liver_1i_ick_nsu</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
                          <span class="n">v_e_li</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">F_p_li</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
                          <span class="n">ki_e2h</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kf_e2h</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k_h2b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1681,7 +1686,8 @@
     <span class="n">k_e2h</span> <span class="o">=</span> <span class="n">_interp_params</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="p">[</span><span class="n">ki_e2h</span><span class="p">,</span> <span class="n">kf_e2h</span><span class="p">])</span>
 
     <span class="k">return</span> <span class="n">conc_liver_1i_ick</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">F_p_li</span><span class="o">=</span><span class="n">F_p_li</span><span class="p">,</span> 
-                            <span class="n">v_e_li</span><span class="o">=</span><span class="n">v_e_li</span><span class="p">,</span> <span class="n">k_e2h</span><span class="o">=</span><span class="n">k_e2h</span><span class="p">,</span> <span class="n">k_h2b</span><span class="o">=</span><span class="n">k_h2b</span><span class="p">)</span>
+                            <span class="n">v_e_li</span><span class="o">=</span><span class="n">v_e_li</span><span class="p">,</span> <span class="n">k_e2h</span><span class="o">=</span><span class="n">k_e2h</span><span class="p">,</span> <span class="n">k_h2b</span><span class="o">=</span><span class="n">k_h2b</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="conc_liver_1i_ic">
 <a class="viewcode-back" href="../../../api/dcmri.conc_liver_1i_ic.html#dcmri.conc_liver_1i_ic">[docs]</a>

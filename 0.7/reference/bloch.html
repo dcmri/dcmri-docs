@@ -442,11 +442,19 @@
 <li class="toctree-l1"><a class="reference internal" href="relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1 current active has-children"><a aria-current="page" class="current reference internal" href="#">Magnetization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Magnetization.html">dcmri.Magnetization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.MxyReadMz.html">dcmri.MxyReadMz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.MzPrep.html">dcmri.MzPrep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.MzInflowPrep.html">dcmri.MzInflowPrep</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.WaterExchangeGeneric.html">dcmri.WaterExchangeGeneric</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.WaterExchangeArtery.html">dcmri.WaterExchangeArtery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.WaterExchangeKidney.html">dcmri.WaterExchangeKidney</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.WaterExchangeLiver.html">dcmri.WaterExchangeLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.WaterExchangeTissueX.html">dcmri.WaterExchangeTissueX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.channels.html">dcmri.channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.pulse_readout.html">dcmri.pulse_readout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.readout_time.html">dcmri.readout_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.repetition_time.html">dcmri.repetition_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.acquisition_times.html">dcmri.acquisition_times</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_ss_vectorized.html">dcmri.Mz_ss_vectorized</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_ss_spgr_vectorized.html">dcmri.Mz_ss_spgr_vectorized</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_ss_pr_spgr_vectorized.html">dcmri.Mz_ss_pr_spgr_vectorized</a></li>
@@ -455,6 +463,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_prop_vectorized.html">dcmri.Mz_prop_vectorized</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_prop_spgr_vectorized.html">dcmri.Mz_prop_spgr_vectorized</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_prop_pr_spgr_vectorized.html">dcmri.Mz_prop_pr_spgr_vectorized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_wrapper_k0.html">dcmri.Mz_wrapper_k0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_dyn_k0_spgr.html">dcmri.Mz_dyn_k0_spgr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_dyn_k0_pr_spgr.html">dcmri.Mz_dyn_k0_pr_spgr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0_pr_spgr.html">dcmri.Mz_dyn_ss_k0_pr_spgr</a></li>
@@ -463,6 +472,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_dyn_k0_se.html">dcmri.Mz_dyn_k0_se</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_dyn_k0.html">dcmri.Mz_dyn_k0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0.html">dcmri.Mz_dyn_ss_k0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_wrapper_k_all.html">dcmri.Mz_wrapper_k_all</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_dyn_spgr.html">dcmri.Mz_dyn_spgr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_dyn_pr_spgr.html">dcmri.Mz_dyn_pr_spgr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_pr_spgr.html">dcmri.Mz_dyn_ss_pr_spgr</a></li>
@@ -545,6 +555,15 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Magnetization.html#dcmri.Magnetization" title="dcmri.Magnetization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Magnetization</span></code></a>([imap, omap, iomap, cmap])</p></td>
 <td><p></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.MxyReadMz.html#dcmri.MxyReadMz" title="dcmri.MxyReadMz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MxyReadMz</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.MzPrep.html#dcmri.MzPrep" title="dcmri.MzPrep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MzPrep</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.MzInflowPrep.html#dcmri.MzInflowPrep" title="dcmri.MzInflowPrep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MzInflowPrep</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -576,6 +595,21 @@
 <h2>Sequences: properties<a class="headerlink" href="#sequences-properties" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.channels.html#dcmri.channels" title="dcmri.channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">channels</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.pulse_readout.html#dcmri.pulse_readout" title="dcmri.pulse_readout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pulse_readout</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.readout_time.html#dcmri.readout_time" title="dcmri.readout_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">readout_time</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.repetition_time.html#dcmri.repetition_time" title="dcmri.repetition_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repetition_time</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.acquisition_times.html#dcmri.acquisition_times" title="dcmri.acquisition_times"><code class="xref py py-obj docutils literal notranslate"><span class="pre">acquisition_times</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -616,28 +650,31 @@
 <h2>Dynamic sequences: magnetization (k-space center)<a class="headerlink" href="#dynamic-sequences-magnetization-k-space-center" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_k0_spgr.html#dcmri.Mz_dyn_k0_spgr" title="dcmri.Mz_dyn_k0_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_k0_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_wrapper_k0.html#dcmri.Mz_wrapper_k0" title="dcmri.Mz_wrapper_k0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_wrapper_k0</span></code></a>(sequence, mz_prep_sequence, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_k0_spgr.html#dcmri.Mz_dyn_k0_spgr" title="dcmri.Mz_dyn_k0_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_k0_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
 <td><p>Model longitudinal magnetization for a prep-recovery SPGR sequence with linear k-space ordering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_k0_pr_spgr.html#dcmri.Mz_dyn_k0_pr_spgr" title="dcmri.Mz_dyn_k0_pr_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_k0_pr_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_k0_pr_spgr.html#dcmri.Mz_dyn_k0_pr_spgr" title="dcmri.Mz_dyn_k0_pr_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_k0_pr_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
 <td><p>Model longitudinal magnetization for a prep-recovery SPGR sequence with linear k-space ordering.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0_pr_spgr.html#dcmri.Mz_dyn_ss_k0_pr_spgr" title="dcmri.Mz_dyn_ss_k0_pr_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_k0_pr_spgr</span></code></a>(tR1, R1, v, Kw, j, me, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0_pr_spgr.html#dcmri.Mz_dyn_ss_k0_pr_spgr" title="dcmri.Mz_dyn_ss_k0_pr_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_k0_pr_spgr</span></code></a>(tR1, R1, v, Kw, j, me, ...)</p></td>
 <td><p>Model steady-state longitudinal magnetization for a prep-recovery SPGR sequence.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0_spgr.html#dcmri.Mz_dyn_ss_k0_spgr" title="dcmri.Mz_dyn_ss_k0_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_k0_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0_spgr.html#dcmri.Mz_dyn_ss_k0_spgr" title="dcmri.Mz_dyn_ss_k0_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_k0_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
 <td><p>Calculate the steady-state longitudinal magnetization (Mz) for an SPGR sequence.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0_spgri.html#dcmri.Mz_dyn_ss_k0_spgri" title="dcmri.Mz_dyn_ss_k0_spgri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_k0_spgri</span></code></a>(tR1, R1, v, Kw, j, me, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0_spgri.html#dcmri.Mz_dyn_ss_k0_spgri" title="dcmri.Mz_dyn_ss_k0_spgri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_k0_spgri</span></code></a>(tR1, R1, v, Kw, j, me, ...)</p></td>
 <td><p>Model steady-state imaging (SSI) longitudinal magnetization with inflow effects.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_k0_se.html#dcmri.Mz_dyn_k0_se" title="dcmri.Mz_dyn_k0_se"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_k0_se</span></code></a>(tR1, R1, v, Kw, j, me, TE, FA, TR)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_k0_se.html#dcmri.Mz_dyn_k0_se" title="dcmri.Mz_dyn_k0_se"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_k0_se</span></code></a>(tR1, R1, v, Kw, j, me, TE, FA, TR)</p></td>
 <td><p>Calculate steady-state longitudinal magnetization (Mz) for a single slice in a SE sequence.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_k0.html#dcmri.Mz_dyn_k0" title="dcmri.Mz_dyn_k0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_k0</span></code></a>(tR1, R1, v, Kw, j, me, ...[, Nk0, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_k0.html#dcmri.Mz_dyn_k0" title="dcmri.Mz_dyn_k0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_k0</span></code></a>(tR1, R1, v, Kw, j, me, ...[, Nk0, ...])</p></td>
 <td><p>Model longitudinal magnetization for a prep-recovery SPGR sequence with linear k-space ordering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0.html#dcmri.Mz_dyn_ss_k0" title="dcmri.Mz_dyn_ss_k0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_k0</span></code></a>(tR1, R1, v, Kw, j, me, ...[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_k0.html#dcmri.Mz_dyn_ss_k0" title="dcmri.Mz_dyn_ss_k0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_k0</span></code></a>(tR1, R1, v, Kw, j, me, ...[, ...])</p></td>
 <td><p>Calculate steady-state longitudinal magnetization (Mz) for an arbitrary pulse sequence applied dynamically.</p></td>
 </tr>
 </tbody>
@@ -648,28 +685,31 @@
 <h2>Dynamic sequences: magnetization (all k-space)<a class="headerlink" href="#dynamic-sequences-magnetization-all-k-space" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_spgr.html#dcmri.Mz_dyn_spgr" title="dcmri.Mz_dyn_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, TR, Nph)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_wrapper_k_all.html#dcmri.Mz_wrapper_k_all" title="dcmri.Mz_wrapper_k_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_wrapper_k_all</span></code></a>(sequence, mz_prep_sequence, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_spgr.html#dcmri.Mz_dyn_spgr" title="dcmri.Mz_dyn_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, TR, Nph)</p></td>
 <td><p>Model longitudinal magnetization for a prep-recovery SPGR sequence with linear k-space ordering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_pr_spgr.html#dcmri.Mz_dyn_pr_spgr" title="dcmri.Mz_dyn_pr_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_pr_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_pr_spgr.html#dcmri.Mz_dyn_pr_spgr" title="dcmri.Mz_dyn_pr_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_pr_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
 <td><p>Model longitudinal magnetization for a prep-recovery SPGR sequence with linear k-space ordering.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_pr_spgr.html#dcmri.Mz_dyn_ss_pr_spgr" title="dcmri.Mz_dyn_ss_pr_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_pr_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_pr_spgr.html#dcmri.Mz_dyn_ss_pr_spgr" title="dcmri.Mz_dyn_ss_pr_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_pr_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
 <td><p>Model steady-state longitudinal magnetization for a prep-recovery SPGR sequence.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_spgr.html#dcmri.Mz_dyn_ss_spgr" title="dcmri.Mz_dyn_ss_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_spgr.html#dcmri.Mz_dyn_ss_spgr" title="dcmri.Mz_dyn_ss_spgr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_spgr</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
 <td><p>Calculate the steady-state longitudinal magnetization (Mz) for an SPGR sequence.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_se.html#dcmri.Mz_dyn_se" title="dcmri.Mz_dyn_se"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_se</span></code></a>(tR1, R1, v, Kw, j, me, TE, FA, TR)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_se.html#dcmri.Mz_dyn_se" title="dcmri.Mz_dyn_se"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_se</span></code></a>(tR1, R1, v, Kw, j, me, TE, FA, TR)</p></td>
 <td><p>Calculate steady-state longitudinal magnetization (Mz) for a single slice in a SE sequence.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_spgri.html#dcmri.Mz_dyn_ss_spgri" title="dcmri.Mz_dyn_ss_spgri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_spgri</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss_spgri.html#dcmri.Mz_dyn_ss_spgri" title="dcmri.Mz_dyn_ss_spgri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss_spgri</span></code></a>(tR1, R1, v, Kw, j, me, FA, ...)</p></td>
 <td><p>Model steady-state imaging (SSI) longitudinal magnetization with inflow effects.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn.html#dcmri.Mz_dyn" title="dcmri.Mz_dyn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn</span></code></a>(tR1, R1, v, Kw, j, me, pulses_per_period)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn.html#dcmri.Mz_dyn" title="dcmri.Mz_dyn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn</span></code></a>(tR1, R1, v, Kw, j, me, pulses_per_period)</p></td>
 <td><p>Model longitudinal magnetization for a prep-recovery SPGR sequence with linear k-space ordering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss.html#dcmri.Mz_dyn_ss" title="dcmri.Mz_dyn_ss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss</span></code></a>(tR1, R1, v, Kw, j, me, ...[, tj, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Mz_dyn_ss.html#dcmri.Mz_dyn_ss" title="dcmri.Mz_dyn_ss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mz_dyn_ss</span></code></a>(tR1, R1, v, Kw, j, me, ...[, tj, ...])</p></td>
 <td><p>Calculate steady-state longitudinal magnetization (Mz) for an arbitrary pulse sequence applied dynamically.</p></td>
 </tr>
 </tbody>

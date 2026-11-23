@@ -1,0 +1,18 @@
+﻿dcmri.modify\_quantity
+======================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: modify_quantity
+
+
+
+
+
+.. minigallery:: dcmri.modify_quantity
+   :add-heading:
+
+

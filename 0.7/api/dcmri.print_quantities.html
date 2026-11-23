@@ -80,8 +80,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="dcmri.select_params" href="dcmri.select_params.html" />
-    <link rel="prev" title="dcmri.parse_varname" href="dcmri.parse_varname.html" />
+    <link rel="next" title="dcmri.quantity_to_json" href="dcmri.quantity_to_json.html" />
+    <link rel="prev" title="dcmri.popindex_quantity" href="dcmri.popindex_quantity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -436,14 +436,29 @@
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../reference/core.html">Core classes</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../reference/lexicon.html">Lexicon</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dcmri.QUANTITIES.html">dcmri.QUANTITIES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.unit.html">dcmri.unit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.group.html">dcmri.group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.get_quantity.html">dcmri.get_quantity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.build_varname.html">dcmri.build_varname</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.parse_varname.html">dcmri.parse_varname</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.all_quantities.html">dcmri.all_quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.all_groups.html">dcmri.all_groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.all_tissues.html">dcmri.all_tissues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.all_compartments.html">dcmri.all_compartments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_unit.html">dcmri.quantity_unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_group.html">dcmri.quantity_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_key.html">dcmri.quantity_key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_desc.html">dcmri.quantity_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.parse_quantity.html">dcmri.parse_quantity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.modify_quantity.html">dcmri.modify_quantity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.increment_quantity.html">dcmri.increment_quantity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.popindex_quantity.html">dcmri.popindex_quantity</a></li>
 <li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.print_quantities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.select_params.html">dcmri.select_params</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_to_json.html">dcmri.quantity_to_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_from_json.html">dcmri.quantity_from_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_to_csv.html">dcmri.quantity_to_csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.all_sequences.html">dcmri.all_sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.all_contrast_agents.html">dcmri.all_contrast_agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.sequence_channels.html">dcmri.sequence_channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.sequence_readout_pulses.html">dcmri.sequence_readout_pulses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.sequence_readout_time.html">dcmri.sequence_readout_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.sequence_repetition_time.html">dcmri.sequence_repetition_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.sequence_acquisition_times.html">dcmri.sequence_acquisition_times</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/e2e.html">End-to-end models</a></li>
@@ -519,22 +534,32 @@
                   
   <section id="dcmri-print-quantities">
 <h1>dcmri.print_quantities<a class="headerlink" href="#dcmri-print-quantities" title="Link to this heading">#</a></h1>
-<dl class="py class">
+<dl class="py function">
 <dt class="sig sig-object py" id="dcmri.print_quantities">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">print_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/tools.html#print_quantities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.print_quantities" title="Link to this definition">#</a></dt>
-<dd><p>Bases:</p>
+<span class="sig-name descname"><span class="pre">print_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/quantity_tools.html#print_quantities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.print_quantities" title="Link to this definition">#</a></dt>
+<dd><p>Print a table of quantities with their descriptions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>q</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)"><em>set</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>decimals</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-<li><p><strong>digits</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
+<li><p><strong>q</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)"><em>set</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>) – The quantities to print. A set holds quantity
+keys (see <a class="reference internal" href="dcmri.quantity_key.html#dcmri.quantity_key" title="dcmri.quantity_key"><code class="xref py py-func docutils literal notranslate"><span class="pre">quantity_key()</span></code></a>). A dict maps quantity keys
+to values.</p></li>
+<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a><em>, </em><em>optional</em>) – Title printed above the table. Defaults
+to None, which prints no title.</p></li>
+<li><p><strong>decimals</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – Number of decimal places used to
+format numerical values. Defaults to None, which applies no
+rounding.</p></li>
+<li><p><strong>digits</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – Number of significant digits used to
+format numerical values. Defaults to None. It is an
+alternative to <code class="xref py py-obj docutils literal notranslate"><span class="pre">decimals</span></code>.</p></li>
+<li><p><strong>as_dict</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, print the table contents
+as a dictionary instead of a table. Defaults to
+False.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<p class="rubric">Detailed Members Reference</p>
 <section id="examples-using-dcmri-print-quantities">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">dcmri.print_quantities</span></code><a class="headerlink" href="#examples-using-dcmri-print-quantities" title="Link to this heading">#</a></h2>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="These example shows the use of the AortaKidneys model to  fit signals measured in aorta and both kidneys simultaneously. "><img alt="" src="../_images/sphx_glr_plot_aorta_kidneys_thumb.png" />
@@ -578,20 +603,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dcmri.parse_varname.html"
+       href="dcmri.popindex_quantity.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">dcmri.parse_varname</p>
+        <p class="prev-next-title">dcmri.popindex_quantity</p>
       </div>
     </a>
     <a class="right-next"
-       href="dcmri.select_params.html"
+       href="dcmri.quantity_to_json.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">dcmri.select_params</p>
+        <p class="prev-next-title">dcmri.quantity_to_json</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -614,7 +639,7 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.print_quantities"><code class="docutils literal notranslate"><span class="pre">print_quantities</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.print_quantities"><code class="docutils literal notranslate"><span class="pre">print_quantities()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-using-dcmri-print-quantities">Examples using <code class="docutils literal notranslate"><span class="pre">dcmri.print_quantities</span></code></a></li>
 </ul>
   </nav></div>

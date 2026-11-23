@@ -853,6 +853,8 @@
 
 
 
+<div class="viewcode-block" id="describe">
+<a class="viewcode-back" href="../../../api/dcmri.describe.html#dcmri.describe">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">describe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rician</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Compute descriptive parameter maps for a signal array.</span>
 
@@ -895,7 +897,8 @@
             <span class="n">Nb_rice</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">rice</span><span class="p">[</span><span class="s1">'sigma'</span><span class="p">]</span>
         <span class="n">maps</span><span class="p">[</span><span class="s1">'Sb_rician'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Sb_rice</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
         <span class="n">maps</span><span class="p">[</span><span class="s1">'Nb_rician'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Nb_rice</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">maps</span>
+    <span class="k">return</span> <span class="n">maps</span></div>
+
 
 
 

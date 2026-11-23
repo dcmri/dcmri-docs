@@ -1,0 +1,18 @@
+﻿dcmri.all\_sequences
+====================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: all_sequences
+
+
+
+
+
+.. minigallery:: dcmri.all_sequences
+   :add-heading:
+
+

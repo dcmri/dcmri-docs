@@ -89,17 +89,22 @@ Set up the model
            5              6         2.0019e+01      1.95e-01       1.05e-01       1.40e+01    
            6              7         1.9970e+01      4.94e-02       5.15e-02       2.52e+00    
            7              8         1.9948e+01      2.16e-02       5.11e-02       1.97e+00    
-           8              9         1.9940e+01      8.73e-03       3.16e-02       1.22e+00    
+           8              9         1.9940e+01      8.74e-03       3.16e-02       1.22e+00    
            9             13         1.9938e+01      1.44e-03       1.40e-03       3.87e-01    
-          10             16         1.9938e+01      1.62e-04       1.88e-04       2.43e+00    
-          11             21         1.9938e+01      1.52e-06       1.57e-06       3.93e-01    
-          12             22         1.9938e+01      3.15e-07       3.65e-07       3.93e-01    
-          13             23         1.9938e+01      6.31e-07       7.29e-07       3.93e-01    
-          14             24         1.9938e+01      1.20e-06       1.46e-06       2.26e+00    
-          15             28         1.9938e+01      4.58e-08       4.92e-08       3.93e-01    
-          16             29         1.9938e+01      9.85e-09       1.14e-08       3.93e-01    
-    Both `ftol` and `xtol` termination conditions are satisfied.
-    Function evaluations 29, initial cost 2.7438e+02, final cost 1.9938e+01, first-order optimality 3.93e-01.
+          10             16         1.9938e+01      1.38e-04       1.88e-04       2.43e+00    
+          11             19         1.9938e+01      1.15e-05       2.52e-05       3.55e-01    
+          12             20         1.9938e+01      5.66e-06       5.51e-06       3.39e-01    
+          13             21         1.9938e+01      1.10e-05       1.11e-05       3.27e-01    
+          14             23         1.9938e+01      5.40e-06       5.59e-06       3.34e-01    
+          15             25         1.9938e+01      2.67e-06       2.80e-06       3.38e-01    
+          16             27         1.9938e+01      1.33e-06       1.40e-06       3.39e-01    
+          17             28         1.9938e+01      4.99e-07       2.81e-06       2.28e+00    
+          18             29         1.9938e+01      1.67e-06       7.87e-07       3.39e-01    
+          19             30         1.9938e+01      1.15e-08       7.02e-07       2.27e+00    
+          20             31         1.9938e+01      5.31e-07       1.97e-07       3.39e-01    
+          21             33         1.9938e+01      4.15e-08       4.38e-08       3.39e-01    
+    `ftol` termination condition is satisfied.
+    Function evaluations 33, initial cost 2.7438e+02, final cost 1.9938e+01, first-order optimality 3.39e-01.
 
 
 
@@ -219,7 +224,7 @@ Set up the model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.314 seconds)
+   **Total running time of the script:** (0 minutes 3.201 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_kidneys.py:

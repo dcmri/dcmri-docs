@@ -1,0 +1,18 @@
+﻿dcmri.sequence\_channels
+========================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: sequence_channels
+
+
+
+
+
+.. minigallery:: dcmri.sequence_channels
+   :add-heading:
+
+

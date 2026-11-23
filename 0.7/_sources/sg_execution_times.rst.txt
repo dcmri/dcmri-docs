@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**03:14.276** total execution time for 13 files **from all galleries**:
+**04:56.843** total execution time for 13 files **from all galleries**:
 
 .. container::
 
@@ -33,41 +33,41 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_examples_cases_plot_aorta_liver_split_drug.py` (``..\examples\cases\plot_aorta_liver_split_drug.py``)
-     - 01:12.215
+     - 01:36.798
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta_liver_split.py` (``..\examples\cases\plot_aorta_liver_split.py``)
-     - 00:59.399
+     - 01:26.193
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta_liver.py` (``..\examples\cases\plot_aorta_liver.py``)
-     - 00:32.917
+     - 00:56.848
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta_liver_drug.py` (``..\examples\cases\plot_aorta_liver_drug.py``)
-     - 00:10.799
+     - 00:24.491
      - 0.0
    * - :ref:`sphx_glr_examples_tutorials_plot_wex.py` (``..\examples\tutorials\plot_wex.py``)
-     - 00:08.621
+     - 00:14.720
      - 0.0
    * - :ref:`sphx_glr_examples_tutorials_plot_minipig.py` (``..\examples\tutorials\plot_minipig.py``)
-     - 00:04.883
+     - 00:05.996
      - 0.0
    * - :ref:`sphx_glr_examples_tutorials_plot_cardiac_output.py` (``..\examples\tutorials\plot_cardiac_output.py``)
-     - 00:02.436
+     - 00:05.988
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta_kidneys.py` (``..\examples\cases\plot_aorta_kidneys.py``)
-     - 00:01.314
+     - 00:03.201
      - 0.0
    * - :ref:`sphx_glr_examples_tutorials_plot_aif.py` (``..\examples\tutorials\plot_aif.py``)
-     - 00:00.499
+     - 00:00.899
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_liver.py` (``..\examples\cases\plot_liver.py``)
-     - 00:00.409
+     - 00:00.709
      - 0.0
    * - :ref:`sphx_glr_examples_tutorials_plot_convolution.py` (``..\examples\tutorials\plot_convolution.py``)
-     - 00:00.377
+     - 00:00.453
      - 0.0
    * - :ref:`sphx_glr_examples_tutorials_plot_whole_body_kinetics.py` (``..\examples\tutorials\plot_whole_body_kinetics.py``)
-     - 00:00.250
+     - 00:00.315
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_kidney.py` (``..\examples\cases\plot_kidney.py``)
-     - 00:00.158
+     - 00:00.233
      - 0.0

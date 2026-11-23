@@ -1,0 +1,12 @@
+﻿dcmri.InvalidConfig
+===================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoexception:: InvalidConfig
+
+
+

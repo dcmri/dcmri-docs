@@ -6,53 +6,79 @@
 Lexicon
 *******
 
-Quantities: definition
-----------------------
-
-.. list-table::
-   :widths: 30 70
-
-   * - :doc:`quantities`
-     - All quantities with their key, default value, unit, name, group,
-       bounds and DICOM/OSIPI keys.
+Quantities: dictionaries
+------------------------
 
 .. autosummary::
    :toctree: ../api/
-   :template: custom-data-template.rst
+   :template: autosummary.rst
 
-   QUANTITIES
-   GROUPS
-   ROIS
-   COMPS
+   all_quantities
+   all_groups
+   all_tissues
+   all_compartments
 
 
-Quantities: functions
+Quantities: properties
+----------------------
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   quantity_unit
+   quantity_group
+   quantity_key
+   quantity_desc
+
+
+Quantities: operations
+----------------------
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   parse_quantity
+   modify_quantity
+   increment_quantity
+   popindex_quantity
+
+
+Quantities: input / output
+--------------------------
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   print_quantities
+   quantity_to_json
+   quantity_from_json
+   quantity_to_csv
+   
+
+Sequences: dictionaries
+-----------------------
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   all_sequences
+   all_contrast_agents
+
+
+Sequences: properties
 ---------------------
 
 .. autosummary::
    :toctree: ../api/
-   :template: custom-class-template.rst
-   :recursive:
+   :template: autosummary.rst
 
-   unit
-   group
-   get_quantity
-   build_varname
-   parse_varname
-   extend_varname
-   increment_varindex
-   remove_varindex
-   print_quantities
-   select_params
-   
+   sequence_channels
+   sequence_readout_pulses
+   sequence_readout_time
+   sequence_repetition_time
+   sequence_acquisition_times
 
-Sequences
----------
-
-.. autosummary::
-   :toctree: ../api/
-   :template: custom-class-template.rst
-   :recursive:
-
-   SEQUENCES
-   AGENTS

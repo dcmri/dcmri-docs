@@ -1,0 +1,20 @@
+﻿dcmri.Module
+============
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: Module
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.Module
+   :add-heading:
+
+

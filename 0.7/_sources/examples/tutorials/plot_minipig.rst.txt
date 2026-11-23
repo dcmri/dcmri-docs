@@ -247,7 +247,7 @@ the most common modelling approach is implemented in the function
     +--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
     | F_p_ki | 0.1     | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
     | FF     | 0.5     |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
-    | T_ar   | 2.6e-27 | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
+    | T_ar   | 3.2e-27 | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
     | T_u    | 65.0    | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
     | v_p_ki | 0.3     | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
     +----------------------------------------------------------------------------------------------------------------------------+
@@ -521,21 +521,21 @@ parameter:
 
  .. code-block:: none
 
-    +----------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                                                     Quantities                                                                     |
-    +--------+------------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | Key    | Value                  | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
-    +--------+------------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | BAT    | 15.249999380736703     | sec    | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
-    +--------+------------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | CO     | 499.9965581761939      | mL/sec | cardiac output                                         | physiological   | (0, 500)     |       |       |
-    | D_hl   | 0.09845938951738094    |        | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
-    | E_or   | 0.00021747590959283873 |        | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
-    | T_b_or | 9.350263243160839      | sec    | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
-    | T_e_or | 3.997512688805412      | sec    | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
-    | T_hl   | 19.857363017824582     | sec    | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
-    | vr_or  | 0.9412061850996448     |        | Venous return in the organs                            | physiological   | (0, 1)       |       |       |
-    +----------------------------------------------------------------------------------------------------------------------------------------------------+
+    +---------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                     Quantities                                                                    |
+    +--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | Key    | Value                 | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
+    +--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | BAT    | 15.250001200060439    | sec    | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
+    +--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
+    | CO     | 499.98849328381965    | mL/sec | cardiac output                                         | physiological   | (0, 500)     |       |       |
+    | D_hl   | 0.09859410967156625   |        | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
+    | E_or   | 0.0002492764874375729 |        | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
+    | T_b_or | 9.35964566189189      | sec    | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
+    | T_e_or | 3.9995596586849937    | sec    | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
+    | T_hl   | 19.857428314999876    | sec    | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
+    | vr_or  | 0.9412650045912657    |        | Venous return in the organs                            | physiological   | (0, 1)       |       |       |
+    +---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
@@ -594,14 +594,14 @@ Let's try this again, but this time with inflow correction:
     +--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-------+
     | Key    | Value               | Unit   | Name                                           | Group           | Bounds       | DICOM | OSIPI |
     +--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-------+
-    | BAT    | 21.961060621183194  | sec    | bolus arrival time                             | indicator       | (-30, 30)    |       |       |
+    | BAT    | 21.961061282606778  | sec    | bolus arrival time                             | indicator       | (-30, 30)    |       |       |
     +--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-------+
-    | CO     | 68.19154431415457   | mL/sec | cardiac output                                 | physiological   | (0, 500)     |       |       |
-    | D_hl   | 0.18909603323034055 |        | transit time dispersion in the heart and Lungs | physiological   | (0.01, 0.99) |       |       |
-    | T_b_or | 17.674825722235067  | sec    | mean transit time in blood of the organs       | physiological   | (0, 60)      |       |       |
-    | T_hl   | 10.40561011332485   | sec    | mean transit time in the heart and Lungs       | physiological   | (0, 30)      |       |       |
-    | TF     | 0.2540399958782158  | sec    | inflow time                                    | physiological   | (0, 1)       |       |       |
-    | vr_or  | 0.9288668311876553  |        | Venous return in the organs                    | physiological   | (0, 1)       |       |       |
+    | CO     | 68.1915098356161    | mL/sec | cardiac output                                 | physiological   | (0, 500)     |       |       |
+    | D_hl   | 0.18909605049481323 |        | transit time dispersion in the heart and Lungs | physiological   | (0.01, 0.99) |       |       |
+    | T_b_or | 17.674820496043278  | sec    | mean transit time in blood of the organs       | physiological   | (0, 60)      |       |       |
+    | T_hl   | 10.405608321927973  | sec    | mean transit time in the heart and Lungs       | physiological   | (0, 30)      |       |       |
+    | TF     | 0.2540399991175636  | sec    | inflow time                                    | physiological   | (0, 1)       |       |       |
+    | vr_or  | 0.9288667555864202  |        | Venous return in the organs                    | physiological   | (0, 1)       |       |       |
     +-----------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -881,7 +881,7 @@ identical - to those produced from a separate Aorta and Kidneys fit.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.883 seconds)
+   **Total running time of the script:** (0 minutes 5.996 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_minipig.py:

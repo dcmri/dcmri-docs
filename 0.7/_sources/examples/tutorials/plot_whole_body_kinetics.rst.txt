@@ -207,7 +207,7 @@ Note that the cardiac output is high, as is well-known for this AIF model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.250 seconds)
+   **Total running time of the script:** (0 minutes 0.315 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_whole_body_kinetics.py:

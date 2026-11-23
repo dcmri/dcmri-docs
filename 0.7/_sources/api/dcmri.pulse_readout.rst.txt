@@ -1,0 +1,18 @@
+﻿dcmri.pulse\_readout
+====================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: pulse_readout
+
+
+
+
+
+.. minigallery:: dcmri.pulse_readout
+   :add-heading:
+
+

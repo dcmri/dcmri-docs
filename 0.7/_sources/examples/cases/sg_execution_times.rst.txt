@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**02:57.209** total execution time for 7 files **from examples\cases**:
+**04:28.472** total execution time for 7 files **from examples\cases**:
 
 .. container::
 
@@ -33,23 +33,23 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_examples_cases_plot_aorta_liver_split_drug.py` (``plot_aorta_liver_split_drug.py``)
-     - 01:12.215
+     - 01:36.798
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta_liver_split.py` (``plot_aorta_liver_split.py``)
-     - 00:59.399
+     - 01:26.193
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta_liver.py` (``plot_aorta_liver.py``)
-     - 00:32.917
+     - 00:56.848
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta_liver_drug.py` (``plot_aorta_liver_drug.py``)
-     - 00:10.799
+     - 00:24.491
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_aorta_kidneys.py` (``plot_aorta_kidneys.py``)
-     - 00:01.314
+     - 00:03.201
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_liver.py` (``plot_liver.py``)
-     - 00:00.409
+     - 00:00.709
      - 0.0
    * - :ref:`sphx_glr_examples_cases_plot_kidney.py` (``plot_kidney.py``)
-     - 00:00.158
+     - 00:00.233
      - 0.0

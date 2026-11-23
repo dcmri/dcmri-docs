@@ -1,0 +1,18 @@
+﻿dcmri.repetition\_time
+======================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: repetition_time
+
+
+
+
+
+.. minigallery:: dcmri.repetition_time
+   :add-heading:
+
+

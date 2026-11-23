@@ -1,0 +1,18 @@
+﻿dcmri.quantity\_group
+=====================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: quantity_group
+
+
+
+
+
+.. minigallery:: dcmri.quantity_group
+   :add-heading:
+
+

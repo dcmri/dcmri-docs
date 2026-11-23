@@ -80,8 +80,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="dcmri.QUANTITIES" href="../api/dcmri.QUANTITIES.html" />
-    <link rel="prev" title="Core classes" href="core.html" />
+    <link rel="next" title="dcmri.all_quantities" href="../api/dcmri.all_quantities.html" />
+    <link rel="prev" title="dcmri.InvalidConfig" href="../api/dcmri.InvalidConfig.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -436,14 +436,29 @@
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="core.html">Core classes</a></li>
 <li class="toctree-l1 current active has-children"><a aria-current="page" class="current reference internal" href="#">Lexicon</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.QUANTITIES.html">dcmri.QUANTITIES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.unit.html">dcmri.unit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.group.html">dcmri.group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.get_quantity.html">dcmri.get_quantity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.build_varname.html">dcmri.build_varname</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.parse_varname.html">dcmri.parse_varname</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.all_quantities.html">dcmri.all_quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.all_groups.html">dcmri.all_groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.all_tissues.html">dcmri.all_tissues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.all_compartments.html">dcmri.all_compartments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.quantity_unit.html">dcmri.quantity_unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.quantity_group.html">dcmri.quantity_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.quantity_key.html">dcmri.quantity_key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.quantity_desc.html">dcmri.quantity_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.parse_quantity.html">dcmri.parse_quantity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.modify_quantity.html">dcmri.modify_quantity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.increment_quantity.html">dcmri.increment_quantity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.popindex_quantity.html">dcmri.popindex_quantity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.print_quantities.html">dcmri.print_quantities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.select_params.html">dcmri.select_params</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.quantity_to_json.html">dcmri.quantity_to_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.quantity_from_json.html">dcmri.quantity_from_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.quantity_to_csv.html">dcmri.quantity_to_csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.all_sequences.html">dcmri.all_sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.all_contrast_agents.html">dcmri.all_contrast_agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.sequence_channels.html">dcmri.sequence_channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.sequence_readout_pulses.html">dcmri.sequence_readout_pulses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.sequence_readout_time.html">dcmri.sequence_readout_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.sequence_repetition_time.html">dcmri.sequence_repetition_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.sequence_acquisition_times.html">dcmri.sequence_acquisition_times</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="e2e.html">End-to-end models</a></li>
@@ -516,63 +531,119 @@
                   
   <section id="lexicon">
 <span id="id1"></span><h1>Lexicon<a class="headerlink" href="#lexicon" title="Link to this heading">#</a></h1>
-<section id="quantities-definition">
-<h2>Quantities: definition<a class="headerlink" href="#quantities-definition" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 30.0%" />
-<col style="width: 70.0%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="quantities.html"><span class="doc">Quantities</span></a></p></td>
-<td><p>All quantities with their key, default value, unit, name, group,
-bounds and DICOM/OSIPI keys.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<section id="quantities-dictionaries">
+<h2>Quantities: dictionaries<a class="headerlink" href="#quantities-dictionaries" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.QUANTITIES.html#dcmri.QUANTITIES" title="dcmri.QUANTITIES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QUANTITIES</span></code></a></p></td>
-<td><p>dict() -&gt; new empty dictionary dict(mapping) -&gt; new dictionary initialized from a mapping object's     (key, value) pairs dict(iterable) -&gt; new dictionary initialized as if via:     d = {}     for k, v in iterable:         d[k] = v dict(<a href="#id2"><span class="problematic" id="id3">**</span></a>kwargs) -&gt; new dictionary initialized with the name=value pairs     in the keyword argument list. For example:  dict(one=1, two=2).</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.all_quantities.html#dcmri.all_quantities" title="dcmri.all_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_quantities</span></code></a>()</p></td>
+<td><p>Return the registry of all quantities known to the package.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.all_groups.html#dcmri.all_groups" title="dcmri.all_groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_groups</span></code></a>()</p></td>
+<td><p>Return the names of all quantity groups.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.all_tissues.html#dcmri.all_tissues" title="dcmri.all_tissues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_tissues</span></code></a>()</p></td>
+<td><p>Return the notations for all tissue regions of interest (ROIs).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.all_compartments.html#dcmri.all_compartments" title="dcmri.all_compartments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_compartments</span></code></a>()</p></td>
+<td><p>Return the notations for all subvoxel compartments.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="quantities-functions">
-<h2>Quantities: functions<a class="headerlink" href="#quantities-functions" title="Link to this heading">#</a></h2>
+<section id="quantities-properties">
+<h2>Quantities: properties<a class="headerlink" href="#quantities-properties" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.unit.html#dcmri.unit" title="dcmri.unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit</span></code></a>(k, **kwargs)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.quantity_unit.html#dcmri.quantity_unit" title="dcmri.quantity_unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantity_unit</span></code></a>(k, **kwargs)</p></td>
+<td><p>Return the unit of a quantity.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.group.html#dcmri.group" title="dcmri.group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group</span></code></a>(k, **kwargs)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.quantity_group.html#dcmri.quantity_group" title="dcmri.quantity_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantity_group</span></code></a>(k, **kwargs)</p></td>
+<td><p>Return the group a quantity belongs to.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.get_quantity.html#dcmri.get_quantity" title="dcmri.get_quantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_quantity</span></code></a>(k[, quantities])</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.quantity_key.html#dcmri.quantity_key" title="dcmri.quantity_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantity_key</span></code></a>(name[, index, compartment, roi])</p></td>
+<td><p>Build the key of a quantity from its name and optional qualifiers.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.build_varname.html#dcmri.build_varname" title="dcmri.build_varname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_varname</span></code></a>(name[, index, compartment, roi])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.parse_varname.html#dcmri.parse_varname" title="dcmri.parse_varname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_varname</span></code></a>(varname)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_quantities</span></code></a>(q[, title, decimals, ...])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.select_params.html#dcmri.select_params" title="dcmri.select_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_params</span></code></a>([lexicon])</p></td>
-<td><p>Return lexicon parameters with specific properties</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.quantity_desc.html#dcmri.quantity_desc" title="dcmri.quantity_desc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantity_desc</span></code></a>(k[, quantities])</p></td>
+<td><p>Return the description of a quantity.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="sequences">
-<h2>Sequences<a class="headerlink" href="#sequences" title="Link to this heading">#</a></h2>
+<section id="quantities-operations">
+<h2>Quantities: operations<a class="headerlink" href="#quantities-operations" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.parse_quantity.html#dcmri.parse_quantity" title="dcmri.parse_quantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_quantity</span></code></a>(k)</p></td>
+<td><p>Split a quantity key into its name and qualifiers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.modify_quantity.html#dcmri.modify_quantity" title="dcmri.modify_quantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modify_quantity</span></code></a>(k[, index, compartment, roi])</p></td>
+<td><p>Return a quantity key with some of its qualifiers changed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.increment_quantity.html#dcmri.increment_quantity" title="dcmri.increment_quantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">increment_quantity</span></code></a>(k[, increment])</p></td>
+<td><p>Return a quantity key with its index increased.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.popindex_quantity.html#dcmri.popindex_quantity" title="dcmri.popindex_quantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popindex_quantity</span></code></a>(k)</p></td>
+<td><p>Return a quantity key with its index removed.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="quantities-input-output">
+<h2>Quantities: input / output<a class="headerlink" href="#quantities-input-output" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_quantities</span></code></a>(q[, title, decimals, ...])</p></td>
+<td><p>Print a table of quantities with their descriptions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.quantity_to_json.html#dcmri.quantity_to_json" title="dcmri.quantity_to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantity_to_json</span></code></a>(path, dct[, indent])</p></td>
+<td><p>Save a (nested) dictionary as a JSON file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.quantity_from_json.html#dcmri.quantity_from_json" title="dcmri.quantity_from_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantity_from_json</span></code></a>(path)</p></td>
+<td><p>Read a JSON file written by <a class="reference internal" href="../api/dcmri.quantity_to_json.html#dcmri.quantity_to_json" title="dcmri.quantity_to_json"><code class="xref py py-func docutils literal notranslate"><span class="pre">quantity_to_json()</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.quantity_to_csv.html#dcmri.quantity_to_csv" title="dcmri.quantity_to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantity_to_csv</span></code></a>(path, dct)</p></td>
+<td><p>Save a flat dictionary of scalar values as a two-column CSV file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sequences-dictionaries">
+<h2>Sequences: dictionaries<a class="headerlink" href="#sequences-dictionaries" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.all_sequences.html#dcmri.all_sequences" title="dcmri.all_sequences"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_sequences</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.all_contrast_agents.html#dcmri.all_contrast_agents" title="dcmri.all_contrast_agents"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_contrast_agents</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sequences-properties">
+<h2>Sequences: properties<a class="headerlink" href="#sequences-properties" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.sequence_channels.html#dcmri.sequence_channels" title="dcmri.sequence_channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sequence_channels</span></code></a>(sequence)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.sequence_readout_pulses.html#dcmri.sequence_readout_pulses" title="dcmri.sequence_readout_pulses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sequence_readout_pulses</span></code></a>(sequence, p)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.sequence_readout_time.html#dcmri.sequence_readout_time" title="dcmri.sequence_readout_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sequence_readout_time</span></code></a>(sequence, p)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.sequence_repetition_time.html#dcmri.sequence_repetition_time" title="dcmri.sequence_repetition_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sequence_repetition_time</span></code></a>(sequence, p)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.sequence_acquisition_times.html#dcmri.sequence_acquisition_times" title="dcmri.sequence_acquisition_times"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sequence_acquisition_times</span></code></a>(sequence, p, tacq)</p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -590,20 +661,20 @@ bounds and DICOM/OSIPI keys.</p></td>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="core.html"
+       href="../api/dcmri.InvalidConfig.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Core classes</p>
+        <p class="prev-next-title">dcmri.InvalidConfig</p>
       </div>
     </a>
     <a class="right-next"
-       href="../api/dcmri.QUANTITIES.html"
+       href="../api/dcmri.all_quantities.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">dcmri.QUANTITIES</p>
+        <p class="prev-next-title">dcmri.all_quantities</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -626,9 +697,12 @@ bounds and DICOM/OSIPI keys.</p></td>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantities-definition">Quantities: definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantities-functions">Quantities: functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantities-dictionaries">Quantities: dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantities-properties">Quantities: properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantities-operations">Quantities: operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantities-input-output">Quantities: input / output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-dictionaries">Sequences: dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-properties">Sequences: properties</a></li>
 </ul>
   </nav></div>
 

@@ -1,0 +1,18 @@
+﻿dcmri.all\_groups
+=================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: all_groups
+
+
+
+
+
+.. minigallery:: dcmri.all_groups
+   :add-heading:
+
+

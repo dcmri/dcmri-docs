@@ -36,7 +36,16 @@ Welcome to the ``dcmri`` user guide! Follow these sections to understand how to 
 
       📏 **Units & Dimensions**
       ^^^
-      Guidelines on standard physiological units used across inputs (concentrations, time, and volumes).
+      Guidelines on standard physiological units used across inputs and outputs.
+
+   .. grid-item-card::
+      :link: quantities
+      :link-type: doc
+      :class-card: guide-card
+
+      🏷️ **Quantities**
+      ^^^
+      Approach to naming and referencing quantities.
 
    .. grid-item-card::
       :link: basics/index
@@ -64,5 +73,6 @@ Welcome to the ``dcmri`` user guide! Follow these sections to understand how to 
    getting_started
    usage
    units
+   quantities
    basics/index
    tissues/index

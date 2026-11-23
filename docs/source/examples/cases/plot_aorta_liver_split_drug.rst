@@ -256,28 +256,28 @@ Fitting the model
            6              8         1.5942e+03      3.15e+01       2.87e-01       8.17e+03    
            7              9         1.5669e+03      2.73e+01       1.90e-01       4.65e+03    
            8             12         1.5458e+03      2.11e+01       1.27e-02       2.13e+02    
-           9             13         1.5441e+03      1.70e+00       2.55e-02       2.67e+02    
-          10             14         1.5424e+03      1.73e+00       2.46e-02       1.77e+02    
-          11             17         1.5421e+03      2.72e-01       3.30e-03       6.12e+01    
-          12             18         1.5418e+03      2.47e-01       3.24e-03       4.55e+01    
-          13             19         1.5418e+03      4.14e-02       6.15e-03       6.58e+01    
-          14             20         1.5417e+03      8.20e-02       1.62e-03       6.27e+01    
-          15             21         1.5416e+03      1.40e-01       1.69e-03       2.85e+01    
-          16             23         1.5415e+03      3.20e-02       7.82e-04       6.03e+01    
-          17             24         1.5415e+03      1.63e-02       7.36e-04       2.96e+01    
-          18             25         1.5415e+03      1.41e-02       1.95e-04       2.99e+01    
-          19             26         1.5415e+03      1.40e-02       3.87e-04       5.44e+01    
-          20             27         1.5415e+03      5.99e-03       3.64e-04       3.07e+01    
-          21             28         1.5415e+03      7.02e-03       9.63e-05       3.07e+01    
-          22             29         1.5415e+03      1.08e-02       1.92e-04       4.74e+01    
-          23             31         1.5415e+03      4.91e-04       9.12e-05       3.10e+01    
-          24             32         1.5415e+03      1.76e-03       2.40e-05       3.10e+01    
-          25             33         1.5415e+03      3.52e-03       4.80e-05       3.10e+01    
-          26             37         1.5415e+03      1.08e-04       1.50e-06       2.05e+01    
-          27             40         1.5415e+03      2.07e-07       1.80e-07       3.10e+01    
-          28             41         1.5415e+03      3.44e-06       4.69e-08       3.10e+01    
+           9             13         1.5441e+03      1.65e+00       2.55e-02       2.74e+02    
+          10             14         1.5423e+03      1.78e+00       2.46e-02       1.77e+02    
+          11             17         1.5421e+03      2.68e-01       3.30e-03       6.13e+01    
+          12             18         1.5418e+03      2.44e-01       3.24e-03       4.72e+01    
+          13             19         1.5418e+03      4.66e-02       6.16e-03       6.53e+01    
+          14             20         1.5417e+03      8.02e-02       1.62e-03       6.27e+01    
+          15             21         1.5416e+03      1.40e-01       1.69e-03       2.86e+01    
+          16             23         1.5415e+03      2.91e-02       7.83e-04       6.14e+01    
+          17             24         1.5415e+03      1.89e-02       7.36e-04       2.97e+01    
+          18             25         1.5415e+03      1.22e-02       7.74e-04       6.67e+01    
+          19             26         1.5415e+03      2.49e-02       1.85e-04       5.05e+01    
+          20             27         1.5415e+03      5.32e-03       3.67e-04       3.13e+01    
+          21             28         1.5415e+03      7.05e-03       9.59e-05       3.12e+01    
+          22             29         1.5415e+03      9.53e-03       1.92e-04       4.63e+01    
+          23             31         1.5415e+03      3.09e-03       4.57e-05       3.13e+01    
+          24             33         1.5415e+03      8.83e-04       1.20e-05       3.13e+01    
+          25             36         1.5415e+03      1.10e-04       1.50e-06       3.13e+01    
+          26             38         1.5415e+03      8.17e-06       7.50e-07       4.35e+01    
+          27             39         1.5415e+03      1.85e-05       1.79e-07       4.35e+01    
+          28             40         1.5415e+03      1.08e-05       3.58e-07       3.13e+01    
     `ftol` termination condition is satisfied.
-    Function evaluations 41, initial cost 4.3528e+04, final cost 1.5415e+03, first-order optimality 3.10e+01.
+    Function evaluations 40, initial cost 4.3528e+04, final cost 1.5415e+03, first-order optimality 3.13e+01.
 
 
 
@@ -361,7 +361,7 @@ values for the derived parameters
     | k_2_e2h     | 9.88e-05  | mL/sec/cm3 | 2nd tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)           |       |       |
     | K_2_e2h     | 0.00051   | 1/sec      | 2nd transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)           |       |       |
     | k_2_h2b     | 4.26e-05  | mL/sec/cm3 | 2nd tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)           |       |       |
-    | K_2_h2b     | 6.59e-05  | 1/sec      | 2nd transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)           |       |       |
+    | K_2_h2b     | 6.58e-05  | 1/sec      | 2nd transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)           |       |       |
     | kc_1_e2h    | 0.00296   |            | 1st diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)           |       |       |
     | kc_2_e2h    | 4.06e-05  |            | 2nd diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)           |       |       |
     | kd_e2h      | -0.00202  | mL/sec/cm3 | drug effect on tissue transfer rate from extracellular space to hepatocytes        | physiological   | (0.0, 0.1)           |       |       |
@@ -404,7 +404,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 12.215 seconds)
+   **Total running time of the script:** (1 minutes 36.798 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver_split_drug.py:

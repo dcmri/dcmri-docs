@@ -447,7 +447,7 @@ properties, even if in reality they are due to systemic differences
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.499 seconds)
+   **Total running time of the script:** (0 minutes 0.899 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_aif.py:

@@ -20,6 +20,8 @@ Single-inlet intracellular
 
    conc_liver_1i_ic
    conc_liver_1i_ic_hf
+   conc_liver_1i_ic_u
+   conc_liver_1i_ick
 
 Single-inlet intracellular (non-stationary)
 -------------------------------------------
@@ -33,6 +35,8 @@ Single-inlet intracellular (non-stationary)
    conc_liver_1i_ic_hf_nsu
    conc_liver_1i_ic_hf_nse
    conc_liver_1i_ic_hf_nsue
+   conc_liver_1i_ic_u_nsu
+   conc_liver_1i_ick_nsu
 
 Dual-inlet extracellular
 ------------------------

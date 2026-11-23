@@ -6,23 +6,23 @@ Signal formation
 ****************
 
 
-General tissues
-***************
+Modules
+*******
 
 .. autosummary::
    :toctree: ../api/
    :template: autosummary.rst
 
    Signal
+   RelaxToSignal
+   ConcToSignal
 
 
-
-Composite
+Functions
 *********
 
 .. autosummary::
    :toctree: ../api/
    :template: autosummary.rst
 
-   RelaxToSignal
-   ConcToSignal
+   signal_rice

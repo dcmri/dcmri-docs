@@ -1,4 +1,5 @@
 .. _relaxivity:
+
 .. currentmodule:: dcmri
    
 **********
@@ -6,23 +7,36 @@ Relaxivity
 **********
 
 
-General tissues
-***************
+Relaxation rates
+****************
 
 .. autosummary::
    :toctree: ../api/
    :template: autosummary.rst
 
+   R1
+   R2
+   R2s
    Relax
    ConcToRelax
 
 
-Library
-*******
+Tissue properties
+*****************
 
-The `relaxivity` package includes a library `relaxivity.lib` with basic 
-building blocks for constructing more complex kinetic models.
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
 
+   RelaxivityGeneric
+   RelaxivityArtery
+   RelaxivityKidney
+   RelaxivityLiver
+   RelaxivityTissueX
+
+
+Functions
+*********
 
 .. autosummary::
    :toctree: ../api/

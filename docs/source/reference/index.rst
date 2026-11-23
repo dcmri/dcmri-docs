@@ -12,23 +12,56 @@ what they are and what they do.
    :padding: 0
    :class-container: reference-grid
 
-   .. grid-item-card:: End-to-End Models
-      :link: e2e
+   .. grid-item-card:: Core
+      :link: core
       :link-type: doc
       :text-align: center
       :class-card: reference-card
       :class-title: sd-bg-primary sd-text-white sd-font-weight-bold
 
-      🚀 **e2e**
+      ⚙️ **core**
       ^^^
-      Complete tissue and organ pipeline models.
+      Core classes for dcmri
+
+   .. grid-item-card:: Lexicon
+      :link: lexicon
+      :link-type: doc
+      :text-align: center
+      :class-card: reference-card
+      :class-title: sd-bg-secondary sd-text-white sd-font-weight-bold
+
+      📖 **lexicon**
+      ^^^
+      Nomenclature for dcmri quantities
+
+   .. grid-item-card:: Inverse Models
+      :link: e2e
+      :link-type: doc
+      :text-align: center
+      :class-card: reference-card
+      :class-title: sd-bg-success sd-text-white sd-font-weight-bold
+
+      ⏪ **e2e**
+      ^^^
+      Inverse signal models.
+
+   .. grid-item-card:: Forward Models
+      :link: forward
+      :link-type: doc
+      :text-align: center
+      :class-card: reference-card
+      :class-title: sd-bg-info sd-text-white sd-font-weight-bold
+
+      ⏩ **forward**
+      ^^^
+      Forward signal models.
 
    .. grid-item-card:: Tracer Kinetics
       :link: kinetics
       :link-type: doc
       :text-align: center
       :class-card: reference-card
-      :class-title: sd-bg-secondary sd-text-white sd-font-weight-bold
+      :class-title: sd-bg-warning sd-text-dark sd-font-weight-bold
 
       ⏳ **kinetics**
       ^^^
@@ -39,7 +72,7 @@ what they are and what they do.
       :link-type: doc
       :text-align: center
       :class-card: reference-card
-      :class-title: sd-bg-success sd-text-white sd-font-weight-bold
+      :class-title: sd-bg-danger sd-text-white sd-font-weight-bold
 
       🧲 **relaxivity**
       ^^^
@@ -50,9 +83,9 @@ what they are and what they do.
       :link-type: doc
       :text-align: center
       :class-card: reference-card
-      :class-title: sd-bg-info sd-text-white sd-font-weight-bold
+      :class-title: sd-bg-dark sd-text-white sd-font-weight-bold
 
-      📊 **bloch**
+      🌀 **bloch**
       ^^^
       Magnetization dynamics under MRI pulse sequences.
 
@@ -61,9 +94,9 @@ what they are and what they do.
       :link-type: doc
       :text-align: center
       :class-card: reference-card
-      :class-title: sd-bg-info sd-text-white sd-font-weight-bold
+      :class-title: dcmri-bg-teal sd-text-white sd-font-weight-bold
 
-      📊 **signal**
+      📈 **signal**
       ^^^
       MRI signal equations and sequence simulations.
 
@@ -72,7 +105,7 @@ what they are and what they do.
       :link-type: doc
       :text-align: center
       :class-card: reference-card
-      :class-title: sd-bg-warning sd-text-dark sd-font-weight-bold
+      :class-title: dcmri-bg-purple sd-text-white sd-font-weight-bold
 
       🔄 **inverse**
       ^^^
@@ -83,7 +116,7 @@ what they are and what they do.
       :link-type: doc
       :text-align: center
       :class-card: reference-card
-      :class-title: sd-bg-dark sd-text-white sd-font-weight-bold
+      :class-title: dcmri-bg-pink sd-text-white sd-font-weight-bold
 
       🛠️ **utils**
       ^^^
@@ -94,7 +127,10 @@ what they are and what they do.
 .. toctree::
    :hidden:
 
+   core
+   lexicon
    e2e
+   forward
    kinetics
    relaxivity
    bloch

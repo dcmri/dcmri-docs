@@ -8,32 +8,31 @@ End-to-end models
 
 Determine parameters directly from signal data. 
 
-Whole body models
-------------------
+Whole-body models
+-----------------
 
 .. autosummary::
    :toctree: ../api/
-   :template: custom-class-template.rst
-   :recursive:
+   :template: autosummary.rst
 
    InverseAorta
    InverseAortaKidneys
-   InverseAortaLiver
    InverseAortaPortalLiver
-   InverseAortaLiverSplit
+   InverseAortaLiver
    InverseAortaLiverDrug
+   InverseAortaLiverSplit
    InverseAortaLiverSplitDrug
    
 
-Single tissue models
+Single-tissue models
 --------------------
 
 .. autosummary::
    :toctree: ../api/
-   :template: custom-class-template.rst
-   :recursive:
+   :template: autosummary.rst
 
    InverseCortMed
    InverseKidney
    InverseLiver
    InverseTissueX
+   InverseTissueLS

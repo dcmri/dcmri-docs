@@ -96,13 +96,22 @@ Chain
 
 .. _reference-pfcomp:
 
-Plug-flow compartment
----------------------
+Plug-flow compartment (serial)
+------------------------------
 .. autosummary::
    :toctree: ../../api/
    :template: autosummary.rst
 
    flux_pfcomp
+   conc_pfcomp
+
+Plug-flow and compartment (parallel)
+------------------------------------
+.. autosummary::
+   :toctree: ../../api/
+   :template: autosummary.rst
+
+   flux_plucom
 
 Two-compartment exchange
 ------------------------

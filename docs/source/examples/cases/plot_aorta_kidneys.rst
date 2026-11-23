@@ -91,14 +91,15 @@ Set up the model
            7              8         1.9948e+01      2.16e-02       5.11e-02       1.97e+00    
            8              9         1.9940e+01      8.73e-03       3.16e-02       1.22e+00    
            9             13         1.9938e+01      1.44e-03       1.40e-03       3.87e-01    
-          10             16         1.9938e+01      1.54e-04       1.88e-04       2.43e+00    
-          11             20         1.9938e+01      7.31e-06       6.30e-06       3.75e-01    
-          12             21         1.9938e+01      5.10e-06       5.77e-06       3.78e-01    
-          13             23         1.9938e+01      1.46e-06       2.89e-06       2.38e+00    
-          14             25         1.9938e+01      7.36e-07       7.87e-07       3.76e-01    
-          15             26         1.9938e+01      1.59e-07       1.80e-07       3.76e-01    
-    `ftol` termination condition is satisfied.
-    Function evaluations 26, initial cost 2.7438e+02, final cost 1.9938e+01, first-order optimality 3.76e-01.
+          10             16         1.9938e+01      1.62e-04       1.88e-04       2.43e+00    
+          11             21         1.9938e+01      1.52e-06       1.57e-06       3.93e-01    
+          12             22         1.9938e+01      3.15e-07       3.65e-07       3.93e-01    
+          13             23         1.9938e+01      6.31e-07       7.29e-07       3.93e-01    
+          14             24         1.9938e+01      1.20e-06       1.46e-06       2.26e+00    
+          15             28         1.9938e+01      4.58e-08       4.92e-08       3.93e-01    
+          16             29         1.9938e+01      9.85e-09       1.14e-08       3.93e-01    
+    Both `ftol` and `xtol` termination conditions are satisfied.
+    Function evaluations 29, initial cost 2.7438e+02, final cost 1.9938e+01, first-order optimality 3.93e-01.
 
 
 
@@ -218,7 +219,7 @@ Set up the model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.290 seconds)
+   **Total running time of the script:** (0 minutes 1.314 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_kidneys.py:

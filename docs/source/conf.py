@@ -2,6 +2,10 @@ import os
 import sys
 from pathlib import Path
 import re
+import io
+import pathlib
+import contextlib
+import textwrap
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -215,6 +219,7 @@ def strip_emoji_doctree(app, doctree, docname):
         cleaned = _emoji.sub("", text)
         if cleaned != text:
             node.parent.replace(node, nodes.Text(cleaned))
+
 
 
  

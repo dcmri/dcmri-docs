@@ -313,7 +313,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 36.088 seconds)
+   **Total running time of the script:** (0 minutes 32.917 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver.py:

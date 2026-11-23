@@ -442,7 +442,7 @@ from 0.0029 to 0.0024 mL/sec/cm3.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.389 seconds)
+   **Total running time of the script:** (0 minutes 0.409 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_liver.py:

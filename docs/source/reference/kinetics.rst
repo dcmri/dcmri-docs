@@ -13,8 +13,8 @@ wrapper functions.
    :padding: 2
    :class-container: text-center
 
-   .. grid-item-card:: Wrapper Functions
-      :link: kinetics/wrappers
+   .. grid-item-card:: Modules
+      :link: kinetics/modules
       :link-type: doc
       :shadow: md
       :class-header: bg-light font-weight-bold
@@ -83,15 +83,26 @@ wrapper functions.
       ^^^
       Tracer delivery, injections, and blood input profile generators.
 
+   .. grid-item-card:: Inverse
+      :link: kinetics/inverse
+      :link-type: doc
+      :shadow: md
+      :class-header: bg-light font-weight-bold
+
+      🔄
+      ^^^
+      Inverse kinetic functions.
+
 .. Hiding the sub-pages from visual menus but making Sphinx aware of them:
 
 .. toctree::
    :hidden:
 
-   kinetics/wrappers
+   kinetics/modules
    kinetics/building_blocks
    kinetics/exchange_tissues
    kinetics/liver
    kinetics/kidney
    kinetics/aorta
    kinetics/sources
+   kinetics/inverse

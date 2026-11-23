@@ -177,29 +177,41 @@ We can now fit the model to the data:
            0              1         1.4499e+03                                    1.21e+04    
            1              2         2.4099e+02      1.21e+03       1.63e-01       1.81e+03    
            2              3         3.2683e+01      2.08e+02       1.26e-01       2.96e+02    
-           3              4         4.8157e+00      2.79e+01       2.01e-01       2.56e+02    
+           3              4         4.8160e+00      2.79e+01       2.01e-01       2.56e+02    
            4              5         2.4004e+00      2.42e+00       5.80e-02       1.22e+01    
-           5              6         2.1455e+00      2.55e-01       1.55e-01       6.45e+01    
-           6              7         1.6786e+00      4.67e-01       4.62e-02       6.62e+00    
-           7              9         1.5978e+00      8.08e-02       6.28e-02       8.66e+00    
-           8             10         1.5238e+00      7.40e-02       1.30e-01       5.82e+01    
-           9             11         1.4331e+00      9.07e-02       3.31e-02       6.25e-01    
-          10             13         1.3966e+00      3.65e-02       4.85e-02       6.90e+00    
-          11             14         1.3468e+00      4.98e-02       9.46e-02       2.99e+01    
-          12             15         1.3261e+00      2.08e-02       2.71e-02       1.50e+00    
-          13             16         1.3033e+00      2.28e-02       8.26e-02       2.78e+01    
-          14             17         1.2978e+00      5.51e-03       5.30e-03       1.05e-01    
-          15             18         1.2915e+00      6.24e-03       4.09e-02       6.41e+00    
-          16             19         1.2911e+00      4.03e-04       2.95e-03       3.03e-02    
-          17             20         1.2902e+00      8.82e-04       1.26e-02       6.56e-01    
-          18             21         1.2897e+00      5.02e-04       1.21e-02       1.36e+00    
-          19             22         1.2896e+00      1.45e-04       1.12e-03       1.32e-01    
-          20             23         1.2895e+00      4.01e-05       8.73e-04       1.01e-02    
-          21             24         1.2895e+00      4.06e-06       9.61e-05       1.70e-03    
-          22             25         1.2895e+00      6.40e-08       7.69e-06       1.24e-03    
-          23             28         1.2895e+00      3.11e-09       2.82e-06       6.21e-04    
+           5              6         2.1470e+00      2.53e-01       1.55e-01       6.47e+01    
+           6              7         1.6787e+00      4.68e-01       4.60e-02       6.61e+00    
+           7              9         1.5979e+00      8.08e-02       6.28e-02       8.65e+00    
+           8             10         1.5239e+00      7.40e-02       1.30e-01       5.83e+01    
+           9             11         1.4331e+00      9.08e-02       3.31e-02       6.15e-01    
+          10             13         1.3967e+00      3.64e-02       4.85e-02       6.90e+00    
+          11             14         1.3468e+00      4.99e-02       9.45e-02       2.98e+01    
+          12             15         1.3261e+00      2.07e-02       2.71e-02       1.45e+00    
+          13             16         1.3033e+00      2.28e-02       8.30e-02       2.80e+01    
+          14             17         1.2978e+00      5.55e-03       5.18e-03       1.45e-01    
+          15             18         1.2915e+00      6.27e-03       4.17e-02       6.61e+00    
+          16             19         1.2911e+00      3.91e-04       2.51e-03       5.81e-02    
+          17             20         1.2900e+00      1.12e-03       1.39e-02       7.43e-01    
+          18             21         1.2898e+00      1.46e-04       8.90e-03       1.08e+00    
+          19             22         1.2897e+00      1.10e-04       1.57e-03       3.03e-01    
+          20             23         1.2897e+00      4.44e-05       1.30e-03       1.87e-01    
+          21             24         1.2897e+00      1.21e-05       1.46e-03       3.21e-01    
+          22             26         1.2896e+00      7.67e-05       8.01e-04       1.29e-01    
+          23             27         1.2896e+00      1.11e-06       3.73e-04       1.11e-01    
+          24             28         1.2896e+00      8.13e-06       2.00e-04       2.89e-02    
+          25             29         1.2896e+00      4.99e-07       1.80e-05       5.61e-03    
+          26             30         1.2896e+00      7.23e-07       2.35e-05       2.98e-03    
+          27             31         1.2896e+00      1.42e-06       4.07e-05       7.00e-03    
+          28             32         1.2896e+00      2.79e-06       6.25e-05       2.99e-03    
+          29             33         1.2896e+00      5.24e-06       1.25e-04       9.68e-03    
+          30             34         1.2896e+00      9.48e-06       2.12e-04       2.33e-03    
+          31             35         1.2895e+00      1.37e-05       3.30e-04       1.41e-02    
+          32             36         1.2895e+00      1.38e-07       5.27e-05       8.43e-03    
+          33             38         1.2895e+00      8.90e-08       4.58e-05       1.36e-02    
+          34             40         1.2895e+00      7.10e-08       1.63e-05       2.26e-03    
+          35             41         1.2895e+00      3.74e-09       4.11e-06       3.51e-04    
     `ftol` termination condition is satisfied.
-    Function evaluations 28, initial cost 1.4499e+03, final cost 1.2895e+00, first-order optimality 6.21e-04.
+    Function evaluations 41, initial cost 1.4499e+03, final cost 1.2895e+00, first-order optimality 3.51e-04.
 
 
 
@@ -253,15 +265,15 @@ print them out:
     +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
     | Key    | Value               | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
     +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | BAT    | 25.679002316041263  | sec    | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
+    | BAT    | 25.679004880374467  | sec    | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
     +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-    | CO     | 220.15992142211644  | mL/sec | cardiac output                                         | physiological   | (0, 500)     |       |       |
-    | D_hl   | 0.07737354411310308 |        | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
-    | E_or   | 0.49999999655746624 |        | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
-    | T_b_or | 10.205186819020733  | sec    | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
-    | T_e_or | 18.283979473089502  | sec    | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
-    | T_hl   | 13.08468674695726   | sec    | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
-    | vr_or  | 0.8677373523571905  |        | Venous return in the organs                            | physiological   | (0, 1)       |       |       |
+    | CO     | 220.15998817185314  | mL/sec | cardiac output                                         | physiological   | (0, 500)     |       |       |
+    | D_hl   | 0.07737354947189864 |        | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
+    | E_or   | 0.49999994421744776 |        | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
+    | T_b_or | 10.205160998105232  | sec    | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
+    | T_e_or | 18.28402755623355   | sec    | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
+    | T_hl   | 13.08468544055091   | sec    | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
+    | vr_or  | 0.8677374216305075  |        | Venous return in the organs                            | physiological   | (0, 1)       |       |       |
     +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -280,7 +292,7 @@ though their exact estimate was less elevated (10.5 L/min).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.829 seconds)
+   **Total running time of the script:** (0 minutes 2.436 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_cardiac_output.py:

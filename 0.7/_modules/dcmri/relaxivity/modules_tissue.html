@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -514,6 +514,8 @@
 <span class="c1"># | R1  | Hz   | tissue R1 | Electromagnetic | 0.65 | (0, 5) |       |       |</span>
 <span class="c1"># +--------------------------------------------------------------------------+</span>
 
+<div class="viewcode-block" id="R1">
+<a class="viewcode-back" href="../../../api/dcmri.r1_upper.html#dcmri.R1">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">R1</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
     <span class="n">configs</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'t1_relaxation'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'lin'</span><span class="p">},</span>
@@ -524,6 +526,8 @@
     <span class="n">_all_inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'C'</span><span class="p">,</span> <span class="s1">'r1'</span><span class="p">,</span> <span class="s1">'RM'</span><span class="p">,</span> <span class="s1">'R1b'</span><span class="p">}</span>
     <span class="n">_all_outputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'R1'</span><span class="p">}</span>
 
+<div class="viewcode-block" id="R1.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.r1_upper.html#dcmri.R1.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -566,7 +570,8 @@
         <span class="c1">#         R1 = R1b + r1 * C # RM=1 in this case</span>
         <span class="c1">#         R1 = R1.reshape(1, -1)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">({</span><span class="s1">'R1'</span><span class="p">:</span> <span class="n">R1</span><span class="p">})</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">({</span><span class="s1">'R1'</span><span class="p">:</span> <span class="n">R1</span><span class="p">})</span></div>
+
     
     <span class="k">def</span><span class="w"> </span><span class="nf">inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
         <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'C'</span><span class="p">}</span> 
@@ -588,7 +593,8 @@
             <span class="c1"># 'vw': np.ones(nc) / nc, </span>
             <span class="c1"># 'wx': [[0]],</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
 
 
 <span class="c1"># +--------------------------------------------------------------------------------------------------+</span>
@@ -620,6 +626,8 @@
 <span class="c1"># | R2  | Hz   | tissue R2 | Electromagnetic | 2.0  | (0, 5) |       |       |</span>
 <span class="c1"># +--------------------------------------------------------------------------+</span>
 
+<div class="viewcode-block" id="R2">
+<a class="viewcode-back" href="../../../api/dcmri.R2.html#dcmri.R2">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">R2</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
     <span class="n">configs</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'t2_relaxation'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'lin'</span><span class="p">},</span>
@@ -631,6 +639,8 @@
     <span class="n">_all_inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'r2'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'R2b'</span><span class="p">,</span> <span class="s1">'RM'</span><span class="p">}</span>
     <span class="n">_all_outputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'R2'</span><span class="p">}</span>
 
+<div class="viewcode-block" id="R2.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.R2.html#dcmri.R2.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -680,7 +690,8 @@
         <span class="c1">#         R2 = R2b + r2 * C # RM=1 in this case</span>
         <span class="c1">#         R2 = R2.reshape(1, -1)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">({</span><span class="s1">'R2'</span><span class="p">:</span> <span class="n">R2</span><span class="p">})</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">({</span><span class="s1">'R2'</span><span class="p">:</span> <span class="n">R2</span><span class="p">})</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
         <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'C'</span><span class="p">}</span> 
@@ -702,7 +713,8 @@
             <span class="c1"># 'wx': [[0]],</span>
             <span class="c1"># 'vw': np.ones(nc) / nc, </span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
 
 <span class="c1"># +--------------------------------------------------------------------------------------------------+</span>
 <span class="c1"># |                                    R2s - all configs (n = 1)                                     |</span>
@@ -737,6 +749,8 @@
 <span class="c1"># +---------------------------------------------------------------------------+</span>
 
 
+<div class="viewcode-block" id="R2s">
+<a class="viewcode-back" href="../../../api/dcmri.R2s.html#dcmri.R2s">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">R2s</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span> 
     <span class="n">configs</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'t2s_relaxation'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'lin'</span><span class="p">,</span> <span class="s1">'quad'</span><span class="p">,</span> <span class="s1">'leakage'</span><span class="p">},</span>
@@ -748,6 +762,8 @@
     <span class="n">_all_inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'r2se'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'v'</span><span class="p">,</span> <span class="s1">'r2sv'</span><span class="p">,</span> <span class="s1">'R2sb'</span><span class="p">,</span> <span class="s1">'r2sq'</span><span class="p">,</span> <span class="s1">'r2s'</span><span class="p">}</span>
     <span class="n">_all_outputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'R2s'</span><span class="p">}</span>
 
+<div class="viewcode-block" id="R2s.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.R2s.html#dcmri.R2s.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
         <span class="n">t2r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'t2s_relaxation'</span><span class="p">]</span>
@@ -789,7 +805,8 @@
             <span class="p">])</span>    <span class="c1"># (2, nt)</span>
             <span class="n">R2s</span> <span class="o">=</span> <span class="n">relax_t2s</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'R2sb'</span><span class="p">],</span> <span class="n">r2s_vasc</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="s1">'r2sv'</span><span class="p">],</span> <span class="n">r2s_ees</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="s1">'r2se'</span><span class="p">],</span> <span class="n">model</span><span class="o">=</span><span class="s1">'leakage'</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">({</span><span class="s1">'R2s'</span><span class="p">:</span> <span class="n">R2s</span><span class="p">})</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">({</span><span class="s1">'R2s'</span><span class="p">:</span> <span class="n">R2s</span><span class="p">})</span></div>
+
 
         <span class="c1"># if t2r == 'lin':</span>
         <span class="c1">#     C = p['C'].sum(axis=0)</span>
@@ -826,7 +843,8 @@
             <span class="s1">'v'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nc</span><span class="p">)</span> <span class="o">/</span> <span class="n">nc</span><span class="p">,</span> 
             <span class="s1">'C'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">nc</span><span class="p">,</span> <span class="n">nt</span><span class="p">)),</span> 
         <span class="p">}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
 
  
 <span class="c1"># +--------------------------------------------------------------------------------------------------+</span>

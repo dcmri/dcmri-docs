@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -485,6 +485,8 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">dcmri.kinetics.functions_tissue_ls</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pk_ls</span>
 
     
+<div class="viewcode-block" id="Conc">
+<a class="viewcode-back" href="../../../api/dcmri.Conc.html#dcmri.Conc">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Conc</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Concentration in a generic building block.</span>
 <span class="sd">    """</span>
@@ -502,11 +504,14 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">'C'</span><span class="p">}</span>
     
+<div class="viewcode-block" id="Conc.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.Conc.html#dcmri.Conc.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
         <span class="n">model_func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"conc_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'block'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'C'</span><span class="p">:</span> <span class="n">model_func</span><span class="p">(</span><span class="o">**</span><span class="n">p</span><span class="p">)}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nt</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">nc</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_data</span><span class="p">()</span>
@@ -521,7 +526,8 @@
             <span class="n">data</span><span class="p">[</span><span class="s1">'E'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">nc</span><span class="p">,</span> <span class="n">nc</span><span class="p">))</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'block'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'nscomp'</span><span class="p">:</span>
             <span class="n">data</span><span class="p">[</span><span class="s1">'T'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
 
 
 <div class="viewcode-block" id="ConcAorta">
@@ -711,6 +717,8 @@
 
 
 
+<div class="viewcode-block" id="ConcAortaLiver">
+<a class="viewcode-back" href="../../../api/dcmri.ConcAortaLiver.html#dcmri.ConcAortaLiver">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ConcAortaLiver</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Concentration in aorta and liver.</span>
 <span class="sd">    """</span>
@@ -760,6 +768,8 @@
             <span class="n">inputs</span> <span class="o">-=</span> <span class="p">{</span><span class="s1">'vr_li'</span><span class="p">,</span> <span class="s1">'vr_or'</span><span class="p">,</span> <span class="s1">'T_e_li'</span><span class="p">,</span> <span class="s1">'F_p_li'</span><span class="p">,</span> <span class="s1">'ci_li'</span><span class="p">}</span>
         <span class="k">return</span> <span class="n">inputs</span>
 
+<div class="viewcode-block" id="ConcAortaLiver.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.ConcAortaLiver.html#dcmri.ConcAortaLiver.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -800,7 +810,8 @@
             <span class="s1">'C_ao'</span><span class="p">:</span> <span class="n">C_a</span><span class="p">,</span> 
             <span class="s1">'ci_li'</span><span class="p">:</span> <span class="n">Ji_li</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">p</span><span class="p">[</span><span class="s1">'CO'</span><span class="p">],</span>
         <span class="p">}</span> 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_data</span><span class="p">()</span>
@@ -833,9 +844,12 @@
                 <span class="k">return</span> <span class="n">k_e2h</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_e2h</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">'F_p_li'</span><span class="p">])</span>
 
             <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">'tmax'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'dt'</span><span class="p">])</span>
-            <span class="k">return</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Ei_li'</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'Ef_li'</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Ei_li'</span><span class="p">])</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Ei_li'</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'Ef_li'</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="s1">'Ei_li'</span><span class="p">])</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span></div>
 
 
+
+<div class="viewcode-block" id="ConcAortaPortalLiver">
+<a class="viewcode-back" href="../../../api/dcmri.ConcAortaPortalLiver.html#dcmri.ConcAortaPortalLiver">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ConcAortaPortalLiver</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Concentration in aorta, portal vein, liver artery and liver.</span>
 <span class="sd">    """</span>
@@ -858,6 +872,8 @@
         <span class="n">inputs</span> <span class="o">|=</span> <span class="p">{</span><span class="s1">'vol_pv'</span><span class="p">,</span> <span class="s1">'vol_la'</span><span class="p">}</span>
         <span class="k">return</span> <span class="n">inputs</span>
         
+<div class="viewcode-block" id="ConcAortaPortalLiver.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.ConcAortaPortalLiver.html#dcmri.ConcAortaPortalLiver.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     
@@ -878,12 +894,14 @@
             <span class="s1">'ci_pv'</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="s1">'J_ao'</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">p</span><span class="p">[</span><span class="s1">'CO'</span><span class="p">],</span>
             <span class="s1">'C_pv'</span><span class="p">:</span> <span class="n">C_pv</span><span class="p">,</span>
         <span class="p">}</span>              
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_data</span><span class="p">()</span>
         <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc_aol</span><span class="o">.</span><span class="n">test_data</span><span class="p">()</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
 
 
 
@@ -936,6 +954,8 @@
 
 
 
+<div class="viewcode-block" id="ConcAortaKidneys">
+<a class="viewcode-back" href="../../../api/dcmri.ConcAortaKidneys.html#dcmri.ConcAortaKidneys">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ConcAortaKidneys</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Concentration in aorta and both kidneys.</span>
 <span class="sd">    """</span>
@@ -988,6 +1008,8 @@
             <span class="n">outputs</span> <span class="o">|=</span> <span class="p">{</span><span class="sa">f</span><span class="s1">'F_b_</span><span class="si">{</span><span class="n">roi</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'ci_</span><span class="si">{</span><span class="n">roi</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'C_</span><span class="si">{</span><span class="n">roi</span><span class="si">}</span><span class="s1">'</span><span class="p">}</span>
         <span class="k">return</span> <span class="n">outputs</span>
     
+<div class="viewcode-block" id="ConcAortaKidneys.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.ConcAortaKidneys.html#dcmri.ConcAortaKidneys.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -1048,14 +1070,16 @@
             <span class="s1">'ci_rk'</span><span class="p">:</span> <span class="n">cb</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
             <span class="s1">'C_rk'</span><span class="p">:</span> <span class="n">rk</span><span class="p">[</span><span class="s1">'C_ki'</span><span class="p">],</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_data</span><span class="p">()</span>
         <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flux_aorta</span><span class="o">.</span><span class="n">test_data</span><span class="p">()</span>
         <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc_lk</span><span class="o">.</span><span class="n">test_data</span><span class="p">()</span>
         <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc_rk</span><span class="o">.</span><span class="n">test_data</span><span class="p">()</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
 
     
     
@@ -1156,9 +1180,13 @@
 
 
 
+<div class="viewcode-block" id="ConcTissueLS">
+<a class="viewcode-back" href="../../../api/dcmri.ConcTissueLS.html#dcmri.ConcTissueLS">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ConcTissueLS</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Concentration in a linear and stationary tissue tissue.</span>
 <span class="sd">    """</span>
+<div class="viewcode-block" id="ConcTissueLS.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.ConcTissueLS.html#dcmri.ConcTissueLS.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1166,7 +1194,8 @@
         <span class="n">tC</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'dt'</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'ci'</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 
         <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tC'</span><span class="p">:</span><span class="n">tC</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="n">C</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">'ci'</span><span class="p">,</span> <span class="s1">'irf'</span><span class="p">,</span> <span class="s1">'dt'</span><span class="p">}</span>
@@ -1178,7 +1207,8 @@
         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_data</span><span class="p">()</span>
         <span class="n">data</span><span class="p">[</span><span class="s1">'ci'</span><span class="p">]</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt</span><span class="p">)</span>
         <span class="n">data</span><span class="p">[</span><span class="s1">'irf'</span><span class="p">]</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
 </pre></div>
 
                 </article>

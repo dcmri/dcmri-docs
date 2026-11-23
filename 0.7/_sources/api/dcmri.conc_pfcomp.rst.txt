@@ -1,0 +1,18 @@
+﻿dcmri.conc\_pfcomp
+==================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: conc_pfcomp
+
+
+
+
+
+.. minigallery:: dcmri.conc_pfcomp
+   :add-heading:
+
+

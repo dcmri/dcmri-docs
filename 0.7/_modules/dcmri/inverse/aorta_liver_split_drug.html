@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -883,8 +883,6 @@
 
         <span class="k">return</span> <span class="n">output</span>
 
-<div class="viewcode-block" id="InverseAortaLiverSplitDrug.inputs">
-<a class="viewcode-back" href="../../../api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug.inputs">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
         <span class="n">inputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="o">.</span><span class="n">mapped_inputs</span><span class="p">()</span>
         <span class="n">inputs</span> <span class="o">|=</span> <span class="p">{</span><span class="s1">'pfree'</span><span class="p">}</span>
@@ -902,17 +900,11 @@
             <span class="n">inputs</span> <span class="o">-=</span> <span class="p">{</span><span class="s1">'BAT_2'</span><span class="p">,</span> <span class="s1">'BAT_4'</span><span class="p">}</span>
         <span class="k">for</span> <span class="n">scan</span> <span class="ow">in</span> <span class="n">SCANS</span><span class="p">:</span>
             <span class="n">inputs</span> <span class="o">-=</span> <span class="p">{</span><span class="sa">f</span><span class="s1">'tstart_</span><span class="si">{</span><span class="n">scan</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'tacq_</span><span class="si">{</span><span class="n">scan</span><span class="si">}</span><span class="s1">'</span><span class="p">}</span>
-        <span class="k">return</span> <span class="n">inputs</span>  </div>
-
+        <span class="k">return</span> <span class="n">inputs</span>  
     
-<div class="viewcode-block" id="InverseAortaLiverSplitDrug.outputs">
-<a class="viewcode-back" href="../../../api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug.outputs">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">'popt'</span><span class="p">,</span> <span class="s1">'psdev'</span><span class="p">,</span> <span class="s1">'pcov'</span><span class="p">,</span> <span class="s1">'pars'</span><span class="p">,</span> <span class="s1">'loss'</span><span class="p">}</span></div>
-
+        <span class="k">return</span> <span class="p">{</span><span class="s1">'popt'</span><span class="p">,</span> <span class="s1">'psdev'</span><span class="p">,</span> <span class="s1">'pcov'</span><span class="p">,</span> <span class="s1">'pars'</span><span class="p">,</span> <span class="s1">'loss'</span><span class="p">}</span>
     
-<div class="viewcode-block" id="InverseAortaLiverSplitDrug.test_data">
-<a class="viewcode-back" href="../../../api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug.test_data">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> 
         <span class="n">pfree</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">'CO'</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> 
@@ -938,12 +930,9 @@
                     <span class="sa">f</span><span class="s1">'S_</span><span class="si">{</span><span class="n">scan</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">roi</span><span class="si">}</span><span class="s1">'</span><span class="p">:</span> <span class="n">pred</span><span class="p">[</span><span class="sa">f</span><span class="s1">'S_</span><span class="si">{</span><span class="n">scan</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">roi</span><span class="si">}</span><span class="s1">'</span><span class="p">],</span> 
                 <span class="p">}</span>
             
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 
 
-
-<div class="viewcode-block" id="InverseAortaLiverSplitDrug.plot">
-<a class="viewcode-back" href="../../../api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug.plot">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xlim</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">clim</span><span class="p">:</span><span class="nb">list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fname</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -1041,32 +1030,19 @@
         <span class="k">if</span> <span class="n">show</span><span class="p">:</span> 
             <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span> 
-            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-
-<div class="viewcode-block" id="InverseAortaLiverSplitDrug.save">
-<a class="viewcode-back" href="../../../api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug.save">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span><span class="nb">dict</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">subj</span><span class="o">=</span><span class="s1">'subject_id'</span><span class="p">,</span> <span class="n">study</span><span class="o">=</span><span class="s1">'study_id'</span><span class="p">):</span>
-        <span class="n">save_results</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> <span class="n">subj</span><span class="p">,</span> <span class="n">study</span><span class="p">)</span></div>
+        <span class="n">save_results</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> <span class="n">subj</span><span class="p">,</span> <span class="n">study</span><span class="p">)</span>
 
-
-<div class="viewcode-block" id="InverseAortaLiverSplitDrug.load">
-<a class="viewcode-back" href="../../../api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug.load">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">read_results</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">read_results</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
 
-
-<div class="viewcode-block" id="InverseAortaLiverSplitDrug.plot_pcov">
-<a class="viewcode-back" href="../../../api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug.plot_pcov">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">plot_pcov</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">fname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.025</span><span class="p">):</span>
-        <span class="n">plot_pcov</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">)</span></div>
+        <span class="n">plot_pcov</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">)</span>
 
-
-<div class="viewcode-block" id="InverseAortaLiverSplitDrug.plot_pvar">
-<a class="viewcode-back" href="../../../api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug.plot_pvar">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">plot_pvar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">fname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">xlim</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="n">plot_pvar</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">xlim</span><span class="p">,</span> <span class="n">show</span><span class="p">)</span></div>
-</div>
 
 </pre></div>
 

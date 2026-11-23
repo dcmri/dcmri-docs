@@ -1,0 +1,20 @@
+﻿dcmri.AortaLiver
+================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: AortaLiver
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.AortaLiver
+   :add-heading:
+
+

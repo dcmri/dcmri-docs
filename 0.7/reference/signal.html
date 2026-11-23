@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -81,7 +81,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="dcmri.Signal" href="../api/dcmri.Signal.html" />
-    <link rel="prev" title="dcmri.Mz_dyn_k0_se" href="../api/dcmri.Mz_dyn_k0_se.html" />
+    <link rel="prev" title="dcmri.Mz_dyn_ss" href="../api/dcmri.Mz_dyn_ss.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -434,7 +434,10 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon.html">Lexicon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bloch.html">Magnetization</a></li>
@@ -508,27 +511,27 @@
                   
   <section id="signal-formation">
 <span id="signal"></span><h1>Signal formation<a class="headerlink" href="#signal-formation" title="Link to this heading">#</a></h1>
-<section id="general-tissues">
-<h2>General tissues<a class="headerlink" href="#general-tissues" title="Link to this heading">#</a></h2>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Signal.html#dcmri.Signal" title="dcmri.Signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Signal</span></code></a>([imap, omap, iomap, cmap])</p></td>
 <td><p>Convert magnetization time courses into a measured MR signal.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.RelaxToSignal.html#dcmri.RelaxToSignal" title="dcmri.RelaxToSignal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelaxToSignal</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p>Compute the MR signal from tissue relaxation rates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.ConcToSignal.html#dcmri.ConcToSignal" title="dcmri.ConcToSignal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConcToSignal</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="composite">
-<h2>Composite<a class="headerlink" href="#composite" title="Link to this heading">#</a></h2>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.RelaxToSignal.html#dcmri.RelaxToSignal" title="dcmri.RelaxToSignal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelaxToSignal</span></code></a>([imap, omap, iomap, cmap])</p></td>
-<td><p>Compute the MR signal from tissue relaxation rates.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.ConcToSignal.html#dcmri.ConcToSignal" title="dcmri.ConcToSignal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConcToSignal</span></code></a>([imap, omap, iomap, cmap])</p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -546,12 +549,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../api/dcmri.Mz_dyn_k0_se.html"
+       href="../api/dcmri.Mz_dyn_ss.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">dcmri.Mz_dyn_k0_se</p>
+        <p class="prev-next-title">dcmri.Mz_dyn_ss</p>
       </div>
     </a>
     <a class="right-next"
@@ -582,8 +585,8 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-tissues">General tissues</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composite">Composite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 </ul>
   </nav></div>
 

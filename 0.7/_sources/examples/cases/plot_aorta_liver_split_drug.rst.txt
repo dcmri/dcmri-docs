@@ -253,111 +253,31 @@ Fitting the model
            3              4         2.3062e+03      1.23e+03       6.00e-01       1.42e+04    
            4              5         1.7360e+03      5.70e+02       3.29e-01       3.22e+03    
            5              7         1.6257e+03      1.10e+02       1.42e-01       1.16e+03    
-           6              8         1.5943e+03      3.15e+01       2.87e-01       8.18e+03    
-           7              9         1.5647e+03      2.95e+01       1.89e-01       4.64e+03    
-           8             12         1.5454e+03      1.94e+01       1.26e-02       2.08e+02    
-           9             14         1.5447e+03      6.99e-01       5.99e-03       1.62e+02    
-          10             16         1.5445e+03      1.15e-01       3.04e-03       1.12e+02    
-          11             17         1.5442e+03      3.88e-01       3.03e-03       3.13e+01    
-          12             20         1.5441e+03      1.47e-02       3.85e-04       3.71e+01    
-          13             21         1.5441e+03      3.77e-02       3.77e-04       2.72e+01    
-          14             22         1.5441e+03      4.85e-02       7.61e-04       3.16e+01    
-          15             23         1.5441e+03      8.52e-03       1.55e-03       8.70e+01    
-          16             24         1.5440e+03      6.72e-02       3.86e-04       5.70e+01    
-          17             25         1.5439e+03      8.25e-02       7.59e-04       2.50e+01    
-          18             26         1.5438e+03      1.02e-01       1.53e-03       3.27e+01    
-          19             28         1.5438e+03      2.55e-02       7.76e-04       4.86e+01    
-          20             29         1.5437e+03      6.97e-02       7.63e-04       3.21e+01    
-          21             31         1.5437e+03      5.85e-03       3.88e-04       4.21e+01    
-          22             32         1.5437e+03      1.02e-02       9.45e-05       3.60e+01    
-          23             33         1.5437e+03      1.80e-02       1.89e-04       2.66e+01    
-          24             34         1.5436e+03      2.02e-02       3.82e-04       3.24e+01    
-          25             35         1.5436e+03      1.51e-02       3.89e-04       3.65e+01    
-          26             36         1.5436e+03      2.97e-02       3.81e-04       3.21e+01    
-          27             38         1.5436e+03      6.08e-03       1.94e-04       3.25e+01    
-          28             39         1.5436e+03      1.52e-02       1.90e-04       3.20e+01    
-          29             40         1.5436e+03      8.61e-04       3.89e-04       4.58e+01    
-          30             41         1.5436e+03      1.07e-02       9.46e-05       3.93e+01    
-          31             42         1.5436e+03      1.84e-02       1.89e-04       2.89e+01    
-          32             43         1.5435e+03      1.84e-02       3.85e-04       3.19e+01    
-          33             44         1.5435e+03      1.48e-02       3.89e-04       3.97e+01    
-          34             45         1.5435e+03      2.71e-02       3.80e-04       3.17e+01    
-          35             47         1.5435e+03      8.37e-03       1.94e-04       3.39e+01    
-          36             48         1.5435e+03      1.17e-02       1.89e-04       3.17e+01    
-          37             49         1.5435e+03      5.48e-03       1.94e-04       3.57e+01    
-          38             50         1.5435e+03      1.41e-02       1.89e-04       3.17e+01    
-          39             52         1.5435e+03      3.50e-03       9.72e-05       3.16e+01    
-          40             53         1.5434e+03      6.12e-03       9.44e-05       3.18e+01    
-          41             54         1.5434e+03      2.48e-03       9.72e-05       3.23e+01    
-          42             55         1.5434e+03      7.02e-03       9.44e-05       3.18e+01    
-          43             56         1.5434e+03      8.56e-04       1.94e-04       3.84e+01    
-          44             57         1.5434e+03      4.77e-03       4.71e-05       3.52e+01    
-          45             58         1.5434e+03      8.85e-03       9.42e-05       2.98e+01    
-          46             59         1.5434e+03      6.65e-03       1.90e-04       3.19e+01    
-          47             60         1.5434e+03      9.89e-03       1.94e-04       3.33e+01    
-          48             61         1.5434e+03      9.73e-03       1.89e-04       3.18e+01    
-          49             62         1.5434e+03      6.77e-03       1.94e-04       3.55e+01    
-          50             63         1.5434e+03      1.22e-02       1.89e-04       3.18e+01    
-          51             64         1.5434e+03      4.22e-03       1.94e-04       3.71e+01    
-          52             65         1.5434e+03      1.43e-02       1.89e-04       3.18e+01    
-          53             67         1.5434e+03      2.95e-03       9.72e-05       3.27e+01    
-          54             68         1.5433e+03      6.17e-03       9.43e-05       3.19e+01    
-          55             69         1.5433e+03      2.03e-03       9.72e-05       3.32e+01    
-          56             70         1.5433e+03      2.19e-03       2.35e-05       3.18e+01    
-          57             71         1.5433e+03      4.23e-03       4.71e-05       2.91e+01    
-          58             72         1.5433e+03      1.37e-03       9.47e-05       3.19e+01    
-          59             73         1.5433e+03      2.09e-03       2.43e-05       3.19e+01    
-          60             74         1.5433e+03      4.18e-03       4.86e-05       3.18e+01    
-          61             75         1.5433e+03      9.33e-05       9.72e-05       3.45e+01    
-          62             76         1.5433e+03      2.23e-03       2.35e-05       3.30e+01    
-          63             77         1.5433e+03      4.30e-03       4.70e-05       3.03e+01    
-          64             78         1.5433e+03      2.83e-03       9.45e-05       3.20e+01    
-          65             79         1.5433e+03      5.24e-03       9.72e-05       3.13e+01    
-          66             80         1.5433e+03      3.92e-03       9.44e-05       3.19e+01    
-          67             81         1.5433e+03      4.12e-03       9.72e-05       3.21e+01    
-          68             82         1.5433e+03      4.90e-03       9.43e-05       3.19e+01    
-          69             83         1.5433e+03      3.11e-03       9.72e-05       3.28e+01    
-          70             84         1.5433e+03      5.79e-03       9.42e-05       3.19e+01    
-          71             85         1.5433e+03      2.19e-03       9.72e-05       3.34e+01    
-          72             86         1.5433e+03      6.61e-03       9.41e-05       3.20e+01    
-          73             87         1.5433e+03      7.01e-05       1.94e-04       3.96e+01    
-          74             88         1.5433e+03      4.78e-03       4.70e-05       3.64e+01    
-          75             89         1.5433e+03      8.82e-03       9.40e-05       3.07e+01    
-          76             90         1.5433e+03      5.39e-03       1.90e-04       3.21e+01    
-          77             91         1.5433e+03      9.96e-03       1.94e-04       3.42e+01    
-          78             92         1.5432e+03      8.38e-03       1.89e-04       3.20e+01    
-          79             93         1.5432e+03      6.96e-03       1.94e-04       3.63e+01    
-          80             94         1.5432e+03      1.08e-02       1.89e-04       3.19e+01    
-          81             95         1.5432e+03      4.52e-03       1.94e-04       3.78e+01    
-          82             96         1.5432e+03      1.28e-02       1.88e-04       3.20e+01    
-          83             97         1.5432e+03      2.44e-03       1.94e-04       3.90e+01    
-          84             98         1.5432e+03      4.69e-03       4.69e-05       3.58e+01    
-          85             99         1.5432e+03      8.64e-03       9.39e-05       3.02e+01    
-          86             100        1.5432e+03      2.74e-03       1.90e-04       3.21e+01    
-          87             101        1.5432e+03      4.10e-03       4.86e-05       3.20e+01    
-          88             102        1.5432e+03      8.18e-03       9.71e-05       3.19e+01    
-          89             105        1.5432e+03      1.25e-04       1.21e-05       3.15e+01    
-          90             106        1.5432e+03      2.63e-04       2.93e-06       3.13e+01    
-          91             107        1.5432e+03      5.23e-04       5.86e-06       3.10e+01    
-          92             108        1.5432e+03      9.45e-05       1.17e-05       3.19e+01    
-          93             109        1.5432e+03      2.56e-04       3.04e-06       3.19e+01    
-          94             110        1.5432e+03      5.11e-04       6.07e-06       3.19e+01    
-          95             111        1.5432e+03      2.10e-05       1.21e-05       3.15e+01    
-          96             112        1.5432e+03      2.63e-04       2.93e-06       3.14e+01    
-          97             113        1.5432e+03      5.23e-04       5.86e-06       3.10e+01    
-          98             114        1.5432e+03      1.96e-04       1.17e-05       3.19e+01    
-          99             115        1.5432e+03      2.56e-04       3.04e-06       3.19e+01    
-          100            116        1.5432e+03      5.11e-04       6.07e-06       3.19e+01    
-          101            119        1.5432e+03      5.66e-06       7.59e-07       3.09e+01    
-          102            120        1.5432e+03      1.63e-05       1.83e-07       3.09e+01    
-          103            121        1.5432e+03      3.25e-05       3.66e-07       3.08e+01    
-          104            122        1.5432e+03      7.92e-06       7.33e-07       3.19e+01    
-          105            123        1.5432e+03      1.60e-05       1.90e-07       3.19e+01    
-          106            124        1.5432e+03      3.19e-05       3.79e-07       3.19e+01    
-          107            126        1.5432e+03      3.65e-06       1.90e-07       3.08e+01    
-          108            127        1.5432e+03      4.06e-06       4.58e-08       3.08e+01    
+           6              8         1.5942e+03      3.15e+01       2.87e-01       8.17e+03    
+           7              9         1.5669e+03      2.73e+01       1.90e-01       4.65e+03    
+           8             12         1.5458e+03      2.11e+01       1.27e-02       2.13e+02    
+           9             13         1.5441e+03      1.70e+00       2.55e-02       2.67e+02    
+          10             14         1.5424e+03      1.73e+00       2.46e-02       1.77e+02    
+          11             17         1.5421e+03      2.72e-01       3.30e-03       6.12e+01    
+          12             18         1.5418e+03      2.47e-01       3.24e-03       4.55e+01    
+          13             19         1.5418e+03      4.14e-02       6.15e-03       6.58e+01    
+          14             20         1.5417e+03      8.20e-02       1.62e-03       6.27e+01    
+          15             21         1.5416e+03      1.40e-01       1.69e-03       2.85e+01    
+          16             23         1.5415e+03      3.20e-02       7.82e-04       6.03e+01    
+          17             24         1.5415e+03      1.63e-02       7.36e-04       2.96e+01    
+          18             25         1.5415e+03      1.41e-02       1.95e-04       2.99e+01    
+          19             26         1.5415e+03      1.40e-02       3.87e-04       5.44e+01    
+          20             27         1.5415e+03      5.99e-03       3.64e-04       3.07e+01    
+          21             28         1.5415e+03      7.02e-03       9.63e-05       3.07e+01    
+          22             29         1.5415e+03      1.08e-02       1.92e-04       4.74e+01    
+          23             31         1.5415e+03      4.91e-04       9.12e-05       3.10e+01    
+          24             32         1.5415e+03      1.76e-03       2.40e-05       3.10e+01    
+          25             33         1.5415e+03      3.52e-03       4.80e-05       3.10e+01    
+          26             37         1.5415e+03      1.08e-04       1.50e-06       2.05e+01    
+          27             40         1.5415e+03      2.07e-07       1.80e-07       3.10e+01    
+          28             41         1.5415e+03      3.44e-06       4.69e-08       3.10e+01    
     `ftol` termination condition is satisfied.
-    Function evaluations 127, initial cost 4.3528e+04, final cost 1.5432e+03, first-order optimality 3.08e+01.
+    Function evaluations 41, initial cost 4.3528e+04, final cost 1.5415e+03, first-order optimality 3.10e+01.
 
 
 
@@ -416,59 +336,59 @@ values for the derived parameters
     | BAT_3       | 72.0      | sec        | 3rd bolus arrival time                                                             | indicator       | (-30, 30)            |       |       |
     | BAT_4       | 10300.0   | sec        | 4th bolus arrival time                                                             | indicator       | (-30, 30)            |       |       |
     +-------------+-----------+------------+------------------------------------------------------------------------------------+-----------------+----------------------+-------+-------+
-    | CL_1_p      | 1.45      | mL/sec     | 1st Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)           |       |       |
-    | CL_2_p      | 0.079     | mL/sec     | 2nd Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)           |       |       |
-    | CO          | 58.3      | mL/sec     | cardiac output                                                                     | physiological   | (0, 500)             |       |       |
-    | D_hl        | 0.93      |            | transit time dispersion in the heart and Lungs                                     | physiological   | (0.01, 0.99)         |       |       |
-    | E_1_li      | 0.396     |            | 1st extraction fraction in the liver                                               | physiological   | (0.0, 1.0)           |       |       |
-    | E_2_li      | 0.0345    |            | 2nd extraction fraction in the liver                                               | physiological   | (0.0, 1.0)           |       |       |
-    | E_ki        | 0.0536    |            | extraction fraction in the kidney                                                  | physiological   | (0, 1)               |       |       |
-    | E_or        | 0.235     |            | extraction fraction in the organs                                                  | physiological   | (0, 0.5)             |       |       |
-    | Ef_1_li     | 0.557     |            | 1st final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)           |       |       |
-    | Ef_2_li     | 0.041     |            | 2nd final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)           |       |       |
-    | Ei_1_li     | 0.236     |            | 1st initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)           |       |       |
-    | Ei_2_li     | 0.0279    |            | 2nd initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)           |       |       |
-    | F_1_b_li    | 0.00589   | mL/sec/cm3 | 1st flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)             |       |       |
-    | F_1_p_li    | 0.00324   | mL/sec/cm3 | 1st flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)            |       |       |
-    | F_2_b_li    | 0.00502   | mL/sec/cm3 | 2nd flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)             |       |       |
-    | F_2_p_li    | 0.00276   | mL/sec/cm3 | 2nd flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)            |       |       |
-    | fCO_li      | 0.0691    |            | fraction of the cardiac output in the liver                                        | physiological   | (0, 0.5)             |       |       |
+    | CL_1_p      | 1.44      | mL/sec     | 1st Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)           |       |       |
+    | CL_2_p      | 0.0793    | mL/sec     | 2nd Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)           |       |       |
+    | CO          | 57.5      | mL/sec     | cardiac output                                                                     | physiological   | (0, 500)             |       |       |
+    | D_hl        | 0.931     |            | transit time dispersion in the heart and Lungs                                     | physiological   | (0.01, 0.99)         |       |       |
+    | E_1_li      | 0.385     |            | 1st extraction fraction in the liver                                               | physiological   | (0.0, 1.0)           |       |       |
+    | E_2_li      | 0.0334    |            | 2nd extraction fraction in the liver                                               | physiological   | (0.0, 1.0)           |       |       |
+    | E_ki        | 0.0525    |            | extraction fraction in the kidney                                                  | physiological   | (0, 1)               |       |       |
+    | E_or        | 0.241     |            | extraction fraction in the organs                                                  | physiological   | (0, 0.5)             |       |       |
+    | Ef_1_li     | 0.541     |            | 1st final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)           |       |       |
+    | Ef_2_li     | 0.04      |            | 2nd final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)           |       |       |
+    | Ei_1_li     | 0.229     |            | 1st initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)           |       |       |
+    | Ei_2_li     | 0.0268    |            | 2nd initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)           |       |       |
+    | F_1_b_li    | 0.0061    | mL/sec/cm3 | 1st flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)             |       |       |
+    | F_1_p_li    | 0.00336   | mL/sec/cm3 | 1st flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)            |       |       |
+    | F_2_b_li    | 0.0052    | mL/sec/cm3 | 2nd flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)             |       |       |
+    | F_2_p_li    | 0.00286   | mL/sec/cm3 | 2nd flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)            |       |       |
+    | fCO_li      | 0.0726    |            | fraction of the cardiac output in the liver                                        | physiological   | (0, 0.5)             |       |       |
     | H           | 0.45      |            | hematocrit                                                                         | physiological   | (0, 1)               |       |       |
-    | k_1_e2h     | 0.00213   | mL/sec/cm3 | 1st tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)           |       |       |
-    | K_1_e2h     | 0.011     | 1/sec      | 1st transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)           |       |       |
-    | k_1_h2b     | 0.000119  | mL/sec/cm3 | 1st tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)           |       |       |
-    | K_1_h2b     | 0.000183  | 1/sec      | 1st transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)           |       |       |
-    | k_2_e2h     | 9.85e-05  | mL/sec/cm3 | 2nd tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)           |       |       |
-    | K_2_e2h     | 0.000509  | 1/sec      | 2nd transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)           |       |       |
-    | k_2_h2b     | 4.29e-05  | mL/sec/cm3 | 2nd tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)           |       |       |
-    | K_2_h2b     | 6.62e-05  | 1/sec      | 2nd transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)           |       |       |
-    | kc_1_e2h    | 0.00307   |            | 1st diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)           |       |       |
-    | kc_2_e2h    | 3.89e-05  |            | 2nd diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)           |       |       |
-    | kd_e2h      | -0.00205  | mL/sec/cm3 | drug effect on tissue transfer rate from extracellular space to hepatocytes        | physiological   | (0.0, 0.1)           |       |       |
-    | kd_h2b      | -7.56e-05 | mL/sec/cm3 | drug effect on tissue transfer rate from hepatocytes to blood                      | physiological   | (0.0, 0.1)           |       |       |
+    | k_1_e2h     | 0.0021    | mL/sec/cm3 | 1st tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)           |       |       |
+    | K_1_e2h     | 0.0108    | 1/sec      | 1st transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)           |       |       |
+    | k_1_h2b     | 0.000121  | mL/sec/cm3 | 1st tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)           |       |       |
+    | K_1_h2b     | 0.000186  | 1/sec      | 1st transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)           |       |       |
+    | k_2_e2h     | 9.88e-05  | mL/sec/cm3 | 2nd tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)           |       |       |
+    | K_2_e2h     | 0.00051   | 1/sec      | 2nd transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)           |       |       |
+    | k_2_h2b     | 4.26e-05  | mL/sec/cm3 | 2nd tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)           |       |       |
+    | K_2_h2b     | 6.59e-05  | 1/sec      | 2nd transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)           |       |       |
+    | kc_1_e2h    | 0.00296   |            | 1st diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)           |       |       |
+    | kc_2_e2h    | 4.06e-05  |            | 2nd diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)           |       |       |
+    | kd_e2h      | -0.00202  | mL/sec/cm3 | drug effect on tissue transfer rate from extracellular space to hepatocytes        | physiological   | (0.0, 0.1)           |       |       |
+    | kd_h2b      | -7.79e-05 | mL/sec/cm3 | drug effect on tissue transfer rate from hepatocytes to blood                      | physiological   | (0.0, 0.1)           |       |       |
     | ke_e2h      | -0.963    |            | drug effect size on tissue transfer rate from extracellular space to hepatocytes   | physiological   | (-100, 100)          |       |       |
-    | ke_h2b      | -0.638    |            | drug effect size on tissue transfer rate from hepatocytes to blood                 | physiological   | (-100, 100)          |       |       |
-    | kf_1_e2h    | 0.00407   | mL/sec/cm3 | 1st final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)           |       |       |
-    | kf_2_e2h    | 0.000118  | mL/sec/cm3 | 2nd final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)           |       |       |
-    | ki_1_e2h    | 0.001     | mL/sec/cm3 | 1st initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)           |       |       |
-    | ki_2_e2h    | 7.92e-05  | mL/sec/cm3 | 2nd initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)           |       |       |
-    | Ktrans_1_li | 0.00128   | mL/sec/cm3 | 1st plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)           |       |       |
-    | Ktrans_2_li | 9.51e-05  | mL/sec/cm3 | 2nd plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)           |       |       |
-    | T_1_e_li    | 36.0      | sec        | 1st mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)            |       |       |
-    | T_1_h       | 5470.0    | sec        | 1st mean transit time in hepatocytes                                               | physiological   | (600, 21600)         |       |       |
-    | T_2_e_li    | 67.7      | sec        | 2nd mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)            |       |       |
-    | T_2_h       | 15100.0   | sec        | 2nd mean transit time in hepatocytes                                               | physiological   | (600, 21600)         |       |       |
-    | T_b_or      | 33.6      | sec        | mean transit time in blood of the organs                                           | physiological   | (0, 60)              |       |       |
-    | T_e_or      | 510.0     | sec        | mean transit time in extracellular space of the organs                             | physiological   | (0, 800)             |       |       |
-    | T_hl        | 28.1      | sec        | mean transit time in the heart and Lungs                                           | physiological   | (0, 30)              |       |       |
-    | T_lag       | 8.52      | sec        | mean transit time in the liver artery and gut                                      | physiological   | (0.0, 60)            |       |       |
-    | v_e_li      | 0.193     | mL/cm3     | volume fraction in extracellular space of the liver                                | physiological   | (0.01, 0.5)          |       |       |
+    | ke_h2b      | -0.646    |            | drug effect size on tissue transfer rate from hepatocytes to blood                 | physiological   | (-100, 100)          |       |       |
+    | kf_1_e2h    | 0.00395   | mL/sec/cm3 | 1st final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)           |       |       |
+    | kf_2_e2h    | 0.000119  | mL/sec/cm3 | 2nd final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)           |       |       |
+    | ki_1_e2h    | 0.000996  | mL/sec/cm3 | 1st initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)           |       |       |
+    | ki_2_e2h    | 7.86e-05  | mL/sec/cm3 | 2nd initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)           |       |       |
+    | Ktrans_1_li | 0.00129   | mL/sec/cm3 | 1st plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)           |       |       |
+    | Ktrans_2_li | 9.55e-05  | mL/sec/cm3 | 2nd plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)           |       |       |
+    | T_1_e_li    | 35.5      | sec        | 1st mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)            |       |       |
+    | T_1_h       | 5370.0    | sec        | 1st mean transit time in hepatocytes                                               | physiological   | (600, 21600)         |       |       |
+    | T_2_e_li    | 65.5      | sec        | 2nd mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)            |       |       |
+    | T_2_h       | 15200.0   | sec        | 2nd mean transit time in hepatocytes                                               | physiological   | (600, 21600)         |       |       |
+    | T_b_or      | 34.7      | sec        | mean transit time in blood of the organs                                           | physiological   | (0, 60)              |       |       |
+    | T_e_or      | 514.0     | sec        | mean transit time in extracellular space of the organs                             | physiological   | (0, 800)             |       |       |
+    | T_hl        | 28.3      | sec        | mean transit time in the heart and Lungs                                           | physiological   | (0, 30)              |       |       |
+    | T_lag       | 9.54      | sec        | mean transit time in the liver artery and gut                                      | physiological   | (0.0, 60)            |       |       |
+    | v_e_li      | 0.194     | mL/cm3     | volume fraction in extracellular space of the liver                                | physiological   | (0.01, 0.5)          |       |       |
     | v_li        | 1.0       | mL/cm3     | volume fraction in the liver                                                       | physiological   | (0, 1)               |       |       |
     +-------------+-----------+------------+------------------------------------------------------------------------------------+-----------------+----------------------+-------+-------+
     | AUCC_1      | 0.0861    | M*sec      | 1st area under the concentration time curve                                        | signal          | (0, 1000000000000.0) |       |       |
     | AUCC_2      | 0.0197    | M*sec      | 2nd area under the concentration time curve                                        | signal          | (0, 1000000000000.0) |       |       |
-    | RE_1        | 0.29      |            | 1st relative signal enhancement                                                    | signal          | (0, 1000)            |       |       |
-    | RE_2        | 0.051     |            | 2nd relative signal enhancement                                                    | signal          | (0, 1000)            |       |       |
+    | RE_1        | 0.289     |            | 1st relative signal enhancement                                                    | signal          | (0, 1000)            |       |       |
+    | RE_2        | 0.0509    |            | 2nd relative signal enhancement                                                    | signal          | (0, 1000)            |       |       |
     +-------------+-----------+------------+------------------------------------------------------------------------------------+-----------------+----------------------+-------+-------+
     | vol_1_ao    | 1.0       | cm3        | 1st ROI volume in the aorta                                                        | whole-body      | (0.0, 1000)          |       |       |
     | vol_1_li    | 684.0     | cm3        | 1st ROI volume in the liver                                                        | whole-body      | (0, 10000)           |       |       |
@@ -484,7 +404,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (4 minutes 29.516 seconds)
+   **Total running time of the script:** (1 minutes 12.215 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver_split_drug.py:

@@ -1,0 +1,18 @@
+﻿dcmri.clear\_cache
+==================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: clear_cache
+
+
+
+
+
+.. minigallery:: dcmri.clear_cache
+   :add-heading:
+
+

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -81,7 +81,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="dcmri.InverseAorta" href="../api/dcmri.InverseAorta.html" />
-    <link rel="prev" title="Reference" href="index.html" />
+    <link rel="prev" title="dcmri.select_params" href="../api/dcmri.select_params.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -434,20 +434,24 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon.html">Lexicon</a></li>
 <li class="toctree-l1 current active has-children"><a aria-current="page" class="current reference internal" href="#">End-to-end models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseAorta.html">dcmri.InverseAorta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseAortaKidneys.html">dcmri.InverseAortaKidneys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseAortaLiver.html">dcmri.InverseAortaLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseAortaPortalLiver.html">dcmri.InverseAortaPortalLiver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseAortaLiverSplit.html">dcmri.InverseAortaLiverSplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseAortaLiver.html">dcmri.InverseAortaLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseAortaLiverDrug.html">dcmri.InverseAortaLiverDrug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseAortaLiverSplit.html">dcmri.InverseAortaLiverSplit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseAortaLiverSplitDrug.html">dcmri.InverseAortaLiverSplitDrug</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseCortMed.html">dcmri.InverseCortMed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseKidney.html">dcmri.InverseKidney</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseLiver.html">dcmri.InverseLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseTissueX.html">dcmri.InverseTissueX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.InverseTissueLS.html">dcmri.InverseTissueLS</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bloch.html">Magnetization</a></li>
@@ -518,7 +522,7 @@
 <span id="id1"></span><h1>End-to-end models<a class="headerlink" href="#end-to-end-models" title="Link to this heading">#</a></h1>
 <p>Determine parameters directly from signal data.</p>
 <section id="whole-body-models">
-<h2>Whole body models<a class="headerlink" href="#whole-body-models" title="Link to this heading">#</a></h2>
+<h2>Whole-body models<a class="headerlink" href="#whole-body-models" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.InverseAorta.html#dcmri.InverseAorta" title="dcmri.InverseAorta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAorta</span></code></a>([imap, omap])</p></td>
@@ -527,16 +531,16 @@
 <tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaKidneys.html#dcmri.InverseAortaKidneys" title="dcmri.InverseAortaKidneys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaKidneys</span></code></a>([imap, omap])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaLiver.html#dcmri.InverseAortaLiver" title="dcmri.InverseAortaLiver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaLiver</span></code></a>([imap, omap])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaPortalLiver.html#dcmri.InverseAortaPortalLiver" title="dcmri.InverseAortaPortalLiver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaPortalLiver</span></code></a>([imap, omap])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaPortalLiver.html#dcmri.InverseAortaPortalLiver" title="dcmri.InverseAortaPortalLiver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaPortalLiver</span></code></a>([imap, omap])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaLiver.html#dcmri.InverseAortaLiver" title="dcmri.InverseAortaLiver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaLiver</span></code></a>([imap, omap])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit" title="dcmri.InverseAortaLiverSplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaLiverSplit</span></code></a>([imap, omap])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaLiverDrug.html#dcmri.InverseAortaLiverDrug" title="dcmri.InverseAortaLiverDrug"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaLiverDrug</span></code></a>([imap, omap])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaLiverDrug.html#dcmri.InverseAortaLiverDrug" title="dcmri.InverseAortaLiverDrug"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaLiverDrug</span></code></a>([imap, omap])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit" title="dcmri.InverseAortaLiverSplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaLiverSplit</span></code></a>([imap, omap])</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug" title="dcmri.InverseAortaLiverSplitDrug"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug</span></code></a>([imap, omap])</p></td>
@@ -547,7 +551,7 @@
 </div>
 </section>
 <section id="single-tissue-models">
-<h2>Single tissue models<a class="headerlink" href="#single-tissue-models" title="Link to this heading">#</a></h2>
+<h2>Single-tissue models<a class="headerlink" href="#single-tissue-models" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.InverseCortMed.html#dcmri.InverseCortMed" title="dcmri.InverseCortMed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseCortMed</span></code></a>([imap, omap])</p></td>
@@ -560,6 +564,9 @@
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.InverseTissueX.html#dcmri.InverseTissueX" title="dcmri.InverseTissueX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseTissueX</span></code></a>([imap, omap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.InverseTissueLS.html#dcmri.InverseTissueLS" title="dcmri.InverseTissueLS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseTissueLS</span></code></a>([imap, omap])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -579,12 +586,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="../api/dcmri.select_params.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Reference</p>
+        <p class="prev-next-title">dcmri.select_params</p>
       </div>
     </a>
     <a class="right-next"
@@ -615,8 +622,8 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whole-body-models">Whole body models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-tissue-models">Single tissue models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whole-body-models">Whole-body models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-tissue-models">Single-tissue models</a></li>
 </ul>
   </nav></div>
 

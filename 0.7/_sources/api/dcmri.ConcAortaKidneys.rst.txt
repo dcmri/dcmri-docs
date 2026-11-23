@@ -1,0 +1,20 @@
+﻿dcmri.ConcAortaKidneys
+======================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: ConcAortaKidneys
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.ConcAortaKidneys
+   :add-heading:
+
+

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -80,8 +80,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="dcmri.Relax" href="../api/dcmri.Relax.html" />
-    <link rel="prev" title="dcmri.ca_injection" href="../api/dcmri.ca_injection.html" />
+    <link rel="next" title="dcmri.R1" href="../api/dcmri.r1_upper.html" />
+    <link rel="prev" title="dcmri.linfit_2cfm" href="../api/dcmri.linfit_2cfm.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -434,11 +434,22 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon.html">Lexicon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1 current active has-children"><a aria-current="page" class="current reference internal" href="#">Relaxivity</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.r1_upper.html">dcmri.R1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.R2.html">dcmri.R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.R2s.html">dcmri.R2s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.Relax.html">dcmri.Relax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.ConcToRelax.html">dcmri.ConcToRelax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.RelaxivityGeneric.html">dcmri.RelaxivityGeneric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.RelaxivityArtery.html">dcmri.RelaxivityArtery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.RelaxivityKidney.html">dcmri.RelaxivityKidney</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.RelaxivityLiver.html">dcmri.RelaxivityLiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.RelaxivityTissueX.html">dcmri.RelaxivityTissueX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.relax_t2s.html">dcmri.relax_t2s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.relax_t2.html">dcmri.relax_t2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.relax_t1.html">dcmri.relax_t1</a></li>
@@ -511,24 +522,54 @@
                   
   <section id="relaxivity">
 <span id="id1"></span><h1>Relaxivity<a class="headerlink" href="#relaxivity" title="Link to this heading">#</a></h1>
-<section id="general-tissues">
-<h2>General tissues<a class="headerlink" href="#general-tissues" title="Link to this heading">#</a></h2>
+<section id="relaxation-rates">
+<h2>Relaxation rates<a class="headerlink" href="#relaxation-rates" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.Relax.html#dcmri.Relax" title="dcmri.Relax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Relax</span></code></a>([sequence, imap, omap])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.r1_upper.html#dcmri.R1" title="dcmri.R1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">R1</span></code></a>([imap, omap, iomap, cmap])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.ConcToRelax.html#dcmri.ConcToRelax" title="dcmri.ConcToRelax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConcToRelax</span></code></a>([sequence, imap, omap, iomap, cmap])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.R2.html#dcmri.R2" title="dcmri.R2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">R2</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.R2s.html#dcmri.R2s" title="dcmri.R2s"><code class="xref py py-obj docutils literal notranslate"><span class="pre">R2s</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.Relax.html#dcmri.Relax" title="dcmri.Relax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Relax</span></code></a>([sequence, imap, omap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.ConcToRelax.html#dcmri.ConcToRelax" title="dcmri.ConcToRelax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConcToRelax</span></code></a>([sequence, imap, omap, iomap, cmap])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="library">
-<h2>Library<a class="headerlink" href="#library" title="Link to this heading">#</a></h2>
-<p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">relaxivity</span></code> package includes a library <code class="xref py py-obj docutils literal notranslate"><span class="pre">relaxivity.lib</span></code> with basic
-building blocks for constructing more complex kinetic models.</p>
+<section id="tissue-properties">
+<h2>Tissue properties<a class="headerlink" href="#tissue-properties" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.RelaxivityGeneric.html#dcmri.RelaxivityGeneric" title="dcmri.RelaxivityGeneric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelaxivityGeneric</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.RelaxivityArtery.html#dcmri.RelaxivityArtery" title="dcmri.RelaxivityArtery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelaxivityArtery</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.RelaxivityKidney.html#dcmri.RelaxivityKidney" title="dcmri.RelaxivityKidney"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelaxivityKidney</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.RelaxivityLiver.html#dcmri.RelaxivityLiver" title="dcmri.RelaxivityLiver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelaxivityLiver</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.RelaxivityTissueX.html#dcmri.RelaxivityTissueX" title="dcmri.RelaxivityTissueX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelaxivityTissueX</span></code></a>([imap, omap, iomap, cmap])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.relax_t2s.html#dcmri.relax_t2s" title="dcmri.relax_t2s"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relax_t2s</span></code></a>(c, R2sb[, r2s, r2s_quad, ...])</p></td>
@@ -560,20 +601,20 @@ building blocks for constructing more complex kinetic models.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../api/dcmri.ca_injection.html"
+       href="../api/dcmri.linfit_2cfm.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">dcmri.ca_injection</p>
+        <p class="prev-next-title">dcmri.linfit_2cfm</p>
       </div>
     </a>
     <a class="right-next"
-       href="../api/dcmri.Relax.html"
+       href="../api/dcmri.r1_upper.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">dcmri.Relax</p>
+        <p class="prev-next-title">dcmri.R1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -596,8 +637,9 @@ building blocks for constructing more complex kinetic models.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-tissues">General tissues</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library">Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relaxation-rates">Relaxation rates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tissue-properties">Tissue properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 </ul>
   </nav></div>
 

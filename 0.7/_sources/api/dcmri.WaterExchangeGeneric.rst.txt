@@ -1,0 +1,20 @@
+﻿dcmri.WaterExchangeGeneric
+==========================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: WaterExchangeGeneric
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.WaterExchangeGeneric
+   :add-heading:
+
+

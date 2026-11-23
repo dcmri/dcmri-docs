@@ -1,0 +1,18 @@
+﻿dcmri.Mz\_prop\_spgr\_vectorized
+================================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: Mz_prop_spgr_vectorized
+
+
+
+
+
+.. minigallery:: dcmri.Mz_prop_spgr_vectorized
+   :add-heading:
+
+

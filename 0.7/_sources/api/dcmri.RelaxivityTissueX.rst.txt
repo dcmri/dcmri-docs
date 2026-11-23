@@ -1,0 +1,20 @@
+﻿dcmri.RelaxivityTissueX
+=======================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: RelaxivityTissueX
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.RelaxivityTissueX
+   :add-heading:
+
+

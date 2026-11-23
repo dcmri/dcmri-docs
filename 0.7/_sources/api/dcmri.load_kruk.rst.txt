@@ -1,0 +1,18 @@
+﻿dcmri.load\_kruk
+================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: load_kruk
+
+
+
+
+
+.. minigallery:: dcmri.load_kruk
+   :add-heading:
+
+

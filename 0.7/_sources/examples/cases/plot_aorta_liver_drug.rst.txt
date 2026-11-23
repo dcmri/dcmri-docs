@@ -214,27 +214,24 @@ Fitting the model
            1              2         4.9388e+03      2.94e+04       2.83e-01       3.19e+04    
            2              3         1.3322e+03      3.61e+03       3.18e-01       2.91e+03    
            3              4         5.6960e+02      7.63e+02       4.33e-01       3.53e+02    
-           4              6         5.1181e+02      5.78e+01       1.43e-01       5.36e+03    
-           5              7         4.5417e+02      5.76e+01       2.77e-01       2.05e+02    
-           6              8         4.3325e+02      2.09e+01       3.77e-01       2.34e+03    
-           7              9         4.1228e+02      2.10e+01       5.84e-02       4.70e+02    
-           8             11         4.1080e+02      1.48e+00       4.99e-02       2.83e+03    
-           9             12         4.1026e+02      5.42e-01       6.79e-02       2.57e+03    
-          10             13         4.0968e+02      5.87e-01       1.74e-02       2.31e+02    
-          11             14         4.0938e+02      2.95e-01       2.70e-02       8.83e+01    
-          12             16         4.0930e+02      7.83e-02       2.91e-02       5.78e+02    
-          13             17         4.0883e+02      4.68e-01       2.83e-02       2.26e+03    
-          14             22         4.0862e+02      2.12e-01       1.19e-04       1.04e+03    
-          15             24         4.0857e+02      4.90e-02       5.91e-05       4.47e+02    
-          16             25         4.0855e+02      2.15e-02       1.08e-04       4.46e+01    
-          17             27         4.0855e+02      2.35e-03       4.76e-05       1.51e+01    
-          18             30         4.0855e+02      1.79e-04       5.53e-06       1.06e+01    
-          19             31         4.0855e+02      2.99e-04       9.78e-06       7.44e+00    
-          20             35         4.0855e+02      8.69e-06       3.04e-07       7.43e+00    
-          21             36         4.0855e+02      1.73e-05       6.04e-07       7.42e+00    
-          22             39         4.0855e+02      2.15e-06       7.54e-08       7.42e+00    
+           4              6         5.1183e+02      5.78e+01       1.42e-01       5.36e+03    
+           5              7         4.5419e+02      5.76e+01       2.77e-01       2.04e+02    
+           6              8         4.3308e+02      2.11e+01       3.76e-01       2.29e+03    
+           7              9         4.1227e+02      2.08e+01       5.99e-02       4.52e+02    
+           8             11         4.1085e+02      1.42e+00       5.07e-02       2.92e+03    
+           9             12         4.1010e+02      7.50e-01       6.58e-02       2.38e+03    
+          10             13         4.0966e+02      4.39e-01       1.90e-02       2.00e+02    
+          11             14         4.0937e+02      2.93e-01       2.83e-02       1.14e+02    
+          12             16         4.0930e+02      6.78e-02       2.94e-02       6.19e+02    
+          13             17         4.0879e+02      5.10e-01       2.48e-02       2.12e+03    
+          14             22         4.0860e+02      1.93e-01       1.19e-04       9.00e+02    
+          15             23         4.0854e+02      5.29e-02       1.80e-04       8.78e+00    
+          16             27         4.0854e+02      1.35e-04       4.89e-06       6.30e+00    
+          17             29         4.0854e+02      6.31e-05       2.35e-06       6.25e+00    
+          18             30         4.0854e+02      1.20e-04       4.49e-06       6.14e+00    
+          19             35         4.0854e+02      9.20e-07       3.51e-08       6.14e+00    
     `ftol` termination condition is satisfied.
-    Function evaluations 39, initial cost 3.4301e+04, final cost 4.0855e+02, first-order optimality 7.42e+00.
+    Function evaluations 35, initial cost 3.4301e+04, final cost 4.0854e+02, first-order optimality 6.14e+00.
 
 
 
@@ -296,7 +293,7 @@ values for the derived parameters
     | D_hl        | 0.22     |            | transit time dispersion in the heart and Lungs                                   | physiological   | (0.01, 0.99) |       |       |
     | E_1_li      | 0.22     |            | 1st extraction fraction in the liver                                             | physiological   | (0.0, 1.0)   |       |       |
     | E_2_li      | 0.025    |            | 2nd extraction fraction in the liver                                             | physiological   | (0.0, 1.0)   |       |       |
-    | E_ki        | 0.0072   |            | extraction fraction in the kidney                                                | physiological   | (0, 1)       |       |       |
+    | E_ki        | 0.0071   |            | extraction fraction in the kidney                                                | physiological   | (0, 1)       |       |       |
     | E_or        | 0.22     |            | extraction fraction in the organs                                                | physiological   | (0, 0.5)     |       |       |
     | F_1_b_li    | 0.0076   | mL/sec/cm3 | 1st flow per unit tissue in blood of the liver                                   | physiological   | (0, 0.1)     |       |       |
     | F_1_p_li    | 0.0042   | mL/sec/cm3 | 1st flow per unit tissue in plasma of the liver                                  | physiological   | (0, 0.05)    |       |       |
@@ -323,7 +320,7 @@ values for the derived parameters
     | T_2_e_li    | 52.0     | sec        | 2nd mean transit time in extracellular space of the liver                        | physiological   | (0.1, 60)    |       |       |
     | T_2_h       | 22000.0  | sec        | 2nd mean transit time in hepatocytes                                             | physiological   | (600, 21600) |       |       |
     | T_b_or      | 33.0     | sec        | mean transit time in blood of the organs                                         | physiological   | (0, 60)      |       |       |
-    | T_e_or      | 690.0    | sec        | mean transit time in extracellular space of the organs                           | physiological   | (0, 800)     |       |       |
+    | T_e_or      | 700.0    | sec        | mean transit time in extracellular space of the organs                           | physiological   | (0, 800)     |       |       |
     | T_hl        | 11.0     | sec        | mean transit time in the heart and Lungs                                         | physiological   | (0, 30)      |       |       |
     | T_lag       | 22.0     | sec        | mean transit time in the liver artery and gut                                    | physiological   | (0.0, 60)    |       |       |
     | v_e_li      | 0.19     | mL/cm3     | volume fraction in extracellular space of the liver                              | physiological   | (0.01, 0.5)  |       |       |
@@ -343,7 +340,7 @@ values for the derived parameters
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 12.518 seconds)
+   **Total running time of the script:** (0 minutes 10.799 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_aorta_liver_drug.py:

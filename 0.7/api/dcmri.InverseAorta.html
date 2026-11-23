@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -434,20 +434,24 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/lexicon.html">Lexicon</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../reference/e2e.html">End-to-end models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.InverseAorta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaKidneys.html">dcmri.InverseAortaKidneys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiver.html">dcmri.InverseAortaLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaPortalLiver.html">dcmri.InverseAortaPortalLiver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiverSplit.html">dcmri.InverseAortaLiverSplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiver.html">dcmri.InverseAortaLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiverDrug.html">dcmri.InverseAortaLiverDrug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiverSplit.html">dcmri.InverseAortaLiverSplit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiverSplitDrug.html">dcmri.InverseAortaLiverSplitDrug</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseCortMed.html">dcmri.InverseCortMed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseKidney.html">dcmri.InverseKidney</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseLiver.html">dcmri.InverseLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseTissueX.html">dcmri.InverseTissueX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseTissueLS.html">dcmri.InverseTissueLS</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/bloch.html">Magnetization</a></li>
@@ -531,240 +535,11 @@
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
-<p class="rubric">Attributes</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.config" title="dcmri.InverseAorta.config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.configs" title="dcmri.InverseAorta.configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.defaults" title="dcmri.InverseAorta.defaults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">defaults</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.quantities" title="dcmri.InverseAorta.quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="rubric">Methods</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.all_configs" title="dcmri.InverseAorta.all_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_configs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.all_input_quantities" title="dcmri.InverseAorta.all_input_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_input_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.all_inputs" title="dcmri.InverseAorta.all_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.all_io" title="dcmri.InverseAorta.all_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_io</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.all_io_quantities" title="dcmri.InverseAorta.all_io_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_io_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.all_output_quantities" title="dcmri.InverseAorta.all_output_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_output_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.all_outputs" title="dcmri.InverseAorta.all_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.configs_with_input" title="dcmri.InverseAorta.configs_with_input"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configs_with_input</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.configs_with_output" title="dcmri.InverseAorta.configs_with_output"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configs_with_output</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.filter_data" title="dcmri.InverseAorta.filter_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.init" title="dcmri.InverseAorta.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.init_data" title="dcmri.InverseAorta.init_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.input_data" title="dcmri.InverseAorta.input_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.input_quantities" title="dcmri.InverseAorta.input_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.inputs" title="dcmri.InverseAorta.inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.map_configs" title="dcmri.InverseAorta.map_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_configs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.map_data" title="dcmri.InverseAorta.map_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.map_inputs" title="dcmri.InverseAorta.map_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.map_io" title="dcmri.InverseAorta.map_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_io</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.map_outputs" title="dcmri.InverseAorta.map_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.map_results" title="dcmri.InverseAorta.map_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_results</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.mapped_inputs" title="dcmri.InverseAorta.mapped_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mapped_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.mapped_outputs" title="dcmri.InverseAorta.mapped_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mapped_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.new_mapped_outputs" title="dcmri.InverseAorta.new_mapped_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_mapped_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.output_quantities" title="dcmri.InverseAorta.output_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.outputs" title="dcmri.InverseAorta.outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.pfree" title="dcmri.InverseAorta.pfree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pfree</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.plot" title="dcmri.InverseAorta.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.predict" title="dcmri.InverseAorta.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.print_all_inputs" title="dcmri.InverseAorta.print_all_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.print_all_io" title="dcmri.InverseAorta.print_all_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_io</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.print_all_outputs" title="dcmri.InverseAorta.print_all_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.print_configs" title="dcmri.InverseAorta.print_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_configs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.print_inputs" title="dcmri.InverseAorta.print_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.print_outputs" title="dcmri.InverseAorta.print_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.set_config" title="dcmri.InverseAorta.set_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_config</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAorta.test_data" title="dcmri.InverseAorta.test_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAorta.update_data" title="dcmri.InverseAorta.update_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="rubric">Detailed Members Reference</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.config">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#dcmri.InverseAorta.config" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.configs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">configs</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'baseline':</span> <span class="pre">{'literature',</span> <span class="pre">'measured'},</span> <span class="pre">'bolus':</span> <span class="pre">{'double',</span> <span class="pre">'single'},</span> <span class="pre">'bolus_dispersion':</span> <span class="pre">{'None',</span> <span class="pre">'chain',</span> <span class="pre">'comp'},</span> <span class="pre">'calibrate':</span> <span class="pre">{False,</span> <span class="pre">True},</span> <span class="pre">'estimate_bat':</span> <span class="pre">{'custom',</span> <span class="pre">'none',</span> <span class="pre">'ttp'},</span> <span class="pre">'heartlung':</span> <span class="pre">{'chain',</span> <span class="pre">'comp',</span> <span class="pre">'pfcomp',</span> <span class="pre">'plug',</span> <span class="pre">None},</span> <span class="pre">'inflow':</span> <span class="pre">{'none',</span> <span class="pre">'pool'},</span> <span class="pre">'kidneys':</span> <span class="pre">{'chain',</span> <span class="pre">'comp',</span> <span class="pre">'pass',</span> <span class="pre">'pfcomp',</span> <span class="pre">'plug',</span> <span class="pre">None},</span> <span class="pre">'lagut':</span> <span class="pre">{'chain',</span> <span class="pre">'comp',</span> <span class="pre">'pass',</span> <span class="pre">'pfcomp',</span> <span class="pre">'plucom',</span> <span class="pre">None},</span> <span class="pre">'liver':</span> <span class="pre">{'comp',</span> <span class="pre">'pass',</span> <span class="pre">'plug',</span> <span class="pre">None},</span> <span class="pre">'magnitude':</span> <span class="pre">{False,</span> <span class="pre">True},</span> <span class="pre">'organs':</span> <span class="pre">{'2cxm',</span> <span class="pre">'comp'},</span> <span class="pre">'renal_arteries':</span> <span class="pre">{'comp',</span> <span class="pre">'pass',</span> <span class="pre">'plug',</span> <span class="pre">None},</span> <span class="pre">'sequence':</span> <span class="pre">{'2D-DE-EPI',</span> <span class="pre">'2D-GE-EPI',</span> <span class="pre">'2D-SE-EPI',</span> <span class="pre">'2D-SPGR',</span> <span class="pre">'2D-SPGR-SS',</span> <span class="pre">'2D-SR-SPGR',</span> <span class="pre">'3D-DE-EPI',</span> <span class="pre">'3D-GE-EPI',</span> <span class="pre">'3D-IR-SPGR',</span> <span class="pre">'3D-IR-SPGR-SS',</span> <span class="pre">'3D-IR-SS',</span> <span class="pre">'3D-PR-SPGR',</span> <span class="pre">'3D-PR-SPGR-SS',</span> <span class="pre">'3D-PR-SS',</span> <span class="pre">'3D-SE-EPI',</span> <span class="pre">'3D-SPGR',</span> <span class="pre">'3D-SPGR-SS',</span> <span class="pre">'3D-SR-SPGR',</span> <span class="pre">'3D-SR-SPGR-SS',</span> <span class="pre">'3D-SR-SS',</span> <span class="pre">'ZTE-3D-IR-SPGR-SS',</span> <span class="pre">'ZTE-3D-SPGR-SS',</span> <span class="pre">'ZTE-3D-SPGR-SSI'},</span> <span class="pre">'t1_relaxation':</span> <span class="pre">{'lin',</span> <span class="pre">None},</span> <span class="pre">'t2_relaxation':</span> <span class="pre">{'lin',</span> <span class="pre">None},</span> <span class="pre">'t2s_relaxation':</span> <span class="pre">{'lin',</span> <span class="pre">'quad',</span> <span class="pre">None},</span> <span class="pre">'tof_corr':</span> <span class="pre">{False,</span> <span class="pre">True},</span> <span class="pre">'trigger':</span> <span class="pre">{False,</span> <span class="pre">True},</span> <span class="pre">'veins':</span> <span class="pre">{'chain',</span> <span class="pre">'comp',</span> <span class="pre">'pass',</span> <span class="pre">'pfcomp',</span> <span class="pre">'plug',</span> <span class="pre">None}}</span></span><a class="headerlink" href="#dcmri.InverseAorta.configs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.defaults">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">defaults</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'baseline':</span> <span class="pre">'literature',</span> <span class="pre">'bolus':</span> <span class="pre">'single',</span> <span class="pre">'bolus_dispersion':</span> <span class="pre">'None',</span> <span class="pre">'calibrate':</span> <span class="pre">True,</span> <span class="pre">'estimate_bat':</span> <span class="pre">'custom',</span> <span class="pre">'heartlung':</span> <span class="pre">'pfcomp',</span> <span class="pre">'inflow':</span> <span class="pre">'none',</span> <span class="pre">'kidneys':</span> <span class="pre">None,</span> <span class="pre">'lagut':</span> <span class="pre">None,</span> <span class="pre">'liver':</span> <span class="pre">None,</span> <span class="pre">'magnitude':</span> <span class="pre">True,</span> <span class="pre">'organs':</span> <span class="pre">'comp',</span> <span class="pre">'renal_arteries':</span> <span class="pre">None,</span> <span class="pre">'sequence':</span> <span class="pre">'3D-SPGR-SS',</span> <span class="pre">'t1_relaxation':</span> <span class="pre">'lin',</span> <span class="pre">'t2_relaxation':</span> <span class="pre">None,</span> <span class="pre">'t2s_relaxation':</span> <span class="pre">'lin',</span> <span class="pre">'tof_corr':</span> <span class="pre">False,</span> <span class="pre">'trigger':</span> <span class="pre">False,</span> <span class="pre">'veins':</span> <span class="pre">None}</span></span><a class="headerlink" href="#dcmri.InverseAorta.defaults" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.quantities">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">quantities</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#dcmri.InverseAorta.quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.all_configs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">all_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.all_configs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.all_input_quantities">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">all_input_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.all_input_quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.all_inputs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">all_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.all_inputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.all_io">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">all_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.all_io" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.all_io_quantities">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">all_io_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.all_io_quantities" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.all_output_quantities">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">all_output_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.all_output_quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.all_outputs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">all_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.all_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.configs_with_input">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">configs_with_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.configs_with_input" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.configs_with_output">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">configs_with_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.configs_with_output" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.filter_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">filter_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.filter_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dt class="sig sig-object py" id="dcmri.InverseAorta.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.__call__" title="Link to this definition">#</a></dt>
+<dd><p>Call self as a function.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
 </dd>
@@ -774,245 +549,6 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.init">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.init" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.init_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">init_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.init_data" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.input_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">input_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.input_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.input_quantities">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">input_quantities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.input_quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.inputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta.html#InverseAorta.inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAorta.inputs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.map_configs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">map_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmap</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.map_configs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>cmap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.map_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">map_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.map_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em> | </em><em>None</em>)</p></li>
-<li><p><strong>include</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)"><em>set</em></a>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.map_inputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">map_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.map_inputs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>imap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.map_io">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">map_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iomap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.map_io" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>imap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>omap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>iomap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.map_outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">map_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">omap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.map_outputs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>omap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.map_results">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">map_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.map_results" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.mapped_inputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">mapped_inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.mapped_inputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.mapped_outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">mapped_outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.mapped_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.new_mapped_outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">new_mapped_outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.new_mapped_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.output_quantities">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">output_quantities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.output_quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta.html#InverseAorta.outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAorta.outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.pfree">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">pfree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta.html#InverseAorta.pfree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAorta.pfree" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.plot">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta.html#InverseAorta.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAorta.plot" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>result</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>xlim</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><em>list</em></a>)</p></li>
-<li><p><strong>clim</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><em>list</em></a>)</p></li>
-<li><p><strong>fname</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.predict">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta.html#InverseAorta.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAorta.predict" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>results</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.print_all_inputs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">print_all_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.print_all_inputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.print_all_io">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">print_all_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.print_all_io" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.print_all_outputs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">print_all_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.print_all_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.print_configs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">print_configs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.print_configs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.print_inputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">print_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">as_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.print_inputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.print_outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">print_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">as_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.print_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.set_config">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">set_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.set_config" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>cmap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.test_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">test_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta.html#InverseAorta.test_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAorta.test_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAorta.update_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAorta.</span></span><span class="sig-name descname"><span class="pre">update_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAorta.update_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
 </dd></dl>
 
 <section id="examples-using-dcmri-inverseaorta">
@@ -1073,49 +609,10 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta"><code class="docutils literal notranslate"><span class="pre">InverseAorta</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.config"><code class="docutils literal notranslate"><span class="pre">InverseAorta.config</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.configs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.configs</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.defaults"><code class="docutils literal notranslate"><span class="pre">InverseAorta.defaults</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.quantities"><code class="docutils literal notranslate"><span class="pre">InverseAorta.quantities</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.all_configs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.all_configs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.all_input_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAorta.all_input_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.all_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.all_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.all_io"><code class="docutils literal notranslate"><span class="pre">InverseAorta.all_io()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.all_io_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAorta.all_io_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.all_output_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAorta.all_output_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.all_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.all_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.configs_with_input"><code class="docutils literal notranslate"><span class="pre">InverseAorta.configs_with_input()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.configs_with_output"><code class="docutils literal notranslate"><span class="pre">InverseAorta.configs_with_output()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.filter_data"><code class="docutils literal notranslate"><span class="pre">InverseAorta.filter_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.init"><code class="docutils literal notranslate"><span class="pre">InverseAorta.init()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.init_data"><code class="docutils literal notranslate"><span class="pre">InverseAorta.init_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.input_data"><code class="docutils literal notranslate"><span class="pre">InverseAorta.input_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.input_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAorta.input_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.inputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.map_configs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.map_configs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.map_data"><code class="docutils literal notranslate"><span class="pre">InverseAorta.map_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.map_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.map_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.map_io"><code class="docutils literal notranslate"><span class="pre">InverseAorta.map_io()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.map_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.map_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.map_results"><code class="docutils literal notranslate"><span class="pre">InverseAorta.map_results()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.mapped_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.mapped_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.mapped_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.mapped_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.new_mapped_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.new_mapped_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.output_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAorta.output_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.outputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.pfree"><code class="docutils literal notranslate"><span class="pre">InverseAorta.pfree()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.plot"><code class="docutils literal notranslate"><span class="pre">InverseAorta.plot()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.predict"><code class="docutils literal notranslate"><span class="pre">InverseAorta.predict()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.print_all_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.print_all_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.print_all_io"><code class="docutils literal notranslate"><span class="pre">InverseAorta.print_all_io()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.print_all_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.print_all_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.print_configs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.print_configs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.print_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.print_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.print_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAorta.print_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.set_config"><code class="docutils literal notranslate"><span class="pre">InverseAorta.set_config()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.test_data"><code class="docutils literal notranslate"><span class="pre">InverseAorta.test_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.update_data"><code class="docutils literal notranslate"><span class="pre">InverseAorta.update_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta"><code class="docutils literal notranslate"><span class="pre">InverseAorta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAorta.__call__"><code class="docutils literal notranslate"><span class="pre">InverseAorta.__call__()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-using-dcmri-inverseaorta">Examples using <code class="docutils literal notranslate"><span class="pre">dcmri.InverseAorta</span></code></a></li>
 </ul>
   </nav></div>

@@ -1,0 +1,18 @@
+﻿dcmri.load\_minipig
+===================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: load_minipig
+
+
+
+
+
+.. minigallery:: dcmri.load_minipig
+   :add-heading:
+
+

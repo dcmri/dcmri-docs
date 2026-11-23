@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -81,7 +81,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="dcmri.InverseCortMed" href="dcmri.InverseCortMed.html" />
-    <link rel="prev" title="dcmri.InverseAortaLiverDrug" href="dcmri.InverseAortaLiverDrug.html" />
+    <link rel="prev" title="dcmri.InverseAortaLiverSplit" href="dcmri.InverseAortaLiverSplit.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -434,20 +434,24 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/lexicon.html">Lexicon</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../reference/e2e.html">End-to-end models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAorta.html">dcmri.InverseAorta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaKidneys.html">dcmri.InverseAortaKidneys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiver.html">dcmri.InverseAortaLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaPortalLiver.html">dcmri.InverseAortaPortalLiver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiverSplit.html">dcmri.InverseAortaLiverSplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiver.html">dcmri.InverseAortaLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiverDrug.html">dcmri.InverseAortaLiverDrug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseAortaLiverSplit.html">dcmri.InverseAortaLiverSplit</a></li>
 <li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.InverseAortaLiverSplitDrug</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseCortMed.html">dcmri.InverseCortMed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseKidney.html">dcmri.InverseKidney</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseLiver.html">dcmri.InverseLiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.InverseTissueX.html">dcmri.InverseTissueX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.InverseTissueLS.html">dcmri.InverseTissueLS</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/bloch.html">Magnetization</a></li>
@@ -531,246 +535,11 @@
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
-<p class="rubric">Attributes</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.config" title="dcmri.InverseAortaLiverSplitDrug.config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.configs" title="dcmri.InverseAortaLiverSplitDrug.configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.defaults" title="dcmri.InverseAortaLiverSplitDrug.defaults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">defaults</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.quantities" title="dcmri.InverseAortaLiverSplitDrug.quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="rubric">Methods</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.all_configs" title="dcmri.InverseAortaLiverSplitDrug.all_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_configs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.all_input_quantities" title="dcmri.InverseAortaLiverSplitDrug.all_input_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_input_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.all_inputs" title="dcmri.InverseAortaLiverSplitDrug.all_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.all_io" title="dcmri.InverseAortaLiverSplitDrug.all_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_io</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.all_io_quantities" title="dcmri.InverseAortaLiverSplitDrug.all_io_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_io_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.all_output_quantities" title="dcmri.InverseAortaLiverSplitDrug.all_output_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_output_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.all_outputs" title="dcmri.InverseAortaLiverSplitDrug.all_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.configs_with_input" title="dcmri.InverseAortaLiverSplitDrug.configs_with_input"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configs_with_input</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.configs_with_output" title="dcmri.InverseAortaLiverSplitDrug.configs_with_output"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configs_with_output</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.filter_data" title="dcmri.InverseAortaLiverSplitDrug.filter_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.init" title="dcmri.InverseAortaLiverSplitDrug.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.init_data" title="dcmri.InverseAortaLiverSplitDrug.init_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.input_data" title="dcmri.InverseAortaLiverSplitDrug.input_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.input_quantities" title="dcmri.InverseAortaLiverSplitDrug.input_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.inputs" title="dcmri.InverseAortaLiverSplitDrug.inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.load" title="dcmri.InverseAortaLiverSplitDrug.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.map_configs" title="dcmri.InverseAortaLiverSplitDrug.map_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_configs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.map_data" title="dcmri.InverseAortaLiverSplitDrug.map_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.map_inputs" title="dcmri.InverseAortaLiverSplitDrug.map_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.map_io" title="dcmri.InverseAortaLiverSplitDrug.map_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_io</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.map_outputs" title="dcmri.InverseAortaLiverSplitDrug.map_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.map_results" title="dcmri.InverseAortaLiverSplitDrug.map_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_results</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.mapped_inputs" title="dcmri.InverseAortaLiverSplitDrug.mapped_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mapped_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.mapped_outputs" title="dcmri.InverseAortaLiverSplitDrug.mapped_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mapped_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.new_mapped_outputs" title="dcmri.InverseAortaLiverSplitDrug.new_mapped_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_mapped_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.output_quantities" title="dcmri.InverseAortaLiverSplitDrug.output_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_quantities</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.outputs" title="dcmri.InverseAortaLiverSplitDrug.outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.plot" title="dcmri.InverseAortaLiverSplitDrug.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.plot_pcov" title="dcmri.InverseAortaLiverSplitDrug.plot_pcov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_pcov</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.plot_pvar" title="dcmri.InverseAortaLiverSplitDrug.plot_pvar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_pvar</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.print_all_inputs" title="dcmri.InverseAortaLiverSplitDrug.print_all_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.print_all_io" title="dcmri.InverseAortaLiverSplitDrug.print_all_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_io</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.print_all_outputs" title="dcmri.InverseAortaLiverSplitDrug.print_all_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.print_configs" title="dcmri.InverseAortaLiverSplitDrug.print_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_configs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.print_inputs" title="dcmri.InverseAortaLiverSplitDrug.print_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_inputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.print_outputs" title="dcmri.InverseAortaLiverSplitDrug.print_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_outputs</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.save" title="dcmri.InverseAortaLiverSplitDrug.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.set_config" title="dcmri.InverseAortaLiverSplitDrug.set_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_config</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.test_data" title="dcmri.InverseAortaLiverSplitDrug.test_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.InverseAortaLiverSplitDrug.update_data" title="dcmri.InverseAortaLiverSplitDrug.update_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_data</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="rubric">Detailed Members Reference</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.config">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.config" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.configs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">configs</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'baseline':</span> <span class="pre">{'literature',</span> <span class="pre">'measured'},</span> <span class="pre">'bolus':</span> <span class="pre">{'double',</span> <span class="pre">'dual',</span> <span class="pre">'single'},</span> <span class="pre">'calibrate':</span> <span class="pre">{False,</span> <span class="pre">True},</span> <span class="pre">'estimate_bat':</span> <span class="pre">{'custom',</span> <span class="pre">'dual',</span> <span class="pre">'none',</span> <span class="pre">'ttp'},</span> <span class="pre">'heartlung':</span> <span class="pre">{'chain',</span> <span class="pre">'comp',</span> <span class="pre">'pfcomp',</span> <span class="pre">'plug',</span> <span class="pre">None},</span> <span class="pre">'inflow':</span> <span class="pre">{'none',</span> <span class="pre">'pool'},</span> <span class="pre">'lagut':</span> <span class="pre">{'comp',</span> <span class="pre">'pass',</span> <span class="pre">'plucom'},</span> <span class="pre">'liver':</span> <span class="pre">{'1I-EC',</span> <span class="pre">'1I-EC-HF',</span> <span class="pre">'1I-IC',</span> <span class="pre">'1I-IC-HF',</span> <span class="pre">'1I-IC-U',</span> <span class="pre">'1I-ICK'},</span> <span class="pre">'magnitude':</span> <span class="pre">{False,</span> <span class="pre">True},</span> <span class="pre">'non_stationary':</span> <span class="pre">{'E',</span> <span class="pre">'U',</span> <span class="pre">'UE',</span> <span class="pre">None},</span> <span class="pre">'organs':</span> <span class="pre">{'2cxm',</span> <span class="pre">'comp'},</span> <span class="pre">'sequence':</span> <span class="pre">{'2D-DE-EPI',</span> <span class="pre">'2D-GE-EPI',</span> <span class="pre">'2D-SE-EPI',</span> <span class="pre">'2D-SPGR',</span> <span class="pre">'2D-SPGR-SS',</span> <span class="pre">'2D-SR-SPGR',</span> <span class="pre">'3D-DE-EPI',</span> <span class="pre">'3D-GE-EPI',</span> <span class="pre">'3D-IR-SPGR',</span> <span class="pre">'3D-IR-SPGR-SS',</span> <span class="pre">'3D-IR-SS',</span> <span class="pre">'3D-PR-SPGR',</span> <span class="pre">'3D-PR-SPGR-SS',</span> <span class="pre">'3D-PR-SS',</span> <span class="pre">'3D-SE-EPI',</span> <span class="pre">'3D-SPGR',</span> <span class="pre">'3D-SPGR-SS',</span> <span class="pre">'3D-SR-SPGR',</span> <span class="pre">'3D-SR-SPGR-SS',</span> <span class="pre">'3D-SR-SS',</span> <span class="pre">'ZTE-3D-IR-SPGR-SS',</span> <span class="pre">'ZTE-3D-SPGR-SS',</span> <span class="pre">'ZTE-3D-SPGR-SSI'},</span> <span class="pre">'t1_relaxation_ao':</span> <span class="pre">{'lin',</span> <span class="pre">None},</span> <span class="pre">'t1_relaxation_li':</span> <span class="pre">{'lin',</span> <span class="pre">None},</span> <span class="pre">'t2_relaxation_ao':</span> <span class="pre">{'lin',</span> <span class="pre">None},</span> <span class="pre">'t2_relaxation_li':</span> <span class="pre">{'lin',</span> <span class="pre">None},</span> <span class="pre">'t2s_relaxation_ao':</span> <span class="pre">{'lin',</span> <span class="pre">'quad',</span> <span class="pre">None},</span> <span class="pre">'t2s_relaxation_li':</span> <span class="pre">{'lin',</span> <span class="pre">'quad',</span> <span class="pre">None},</span> <span class="pre">'tof_corr':</span> <span class="pre">{False,</span> <span class="pre">True},</span> <span class="pre">'trigger':</span> <span class="pre">{False,</span> <span class="pre">True},</span> <span class="pre">'water_exchange':</span> <span class="pre">{'F',</span> <span class="pre">'N',</span> <span class="pre">'R'}}</span></span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.configs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.defaults">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">defaults</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'baseline':</span> <span class="pre">'literature',</span> <span class="pre">'bolus':</span> <span class="pre">'single',</span> <span class="pre">'calibrate':</span> <span class="pre">True,</span> <span class="pre">'estimate_bat':</span> <span class="pre">'custom',</span> <span class="pre">'heartlung':</span> <span class="pre">'pfcomp',</span> <span class="pre">'inflow':</span> <span class="pre">'none',</span> <span class="pre">'lagut':</span> <span class="pre">'comp',</span> <span class="pre">'liver':</span> <span class="pre">'1I-EC',</span> <span class="pre">'magnitude':</span> <span class="pre">True,</span> <span class="pre">'non_stationary':</span> <span class="pre">None,</span> <span class="pre">'organs':</span> <span class="pre">'comp',</span> <span class="pre">'sequence':</span> <span class="pre">'3D-SPGR-SS',</span> <span class="pre">'t1_relaxation_ao':</span> <span class="pre">'lin',</span> <span class="pre">'t1_relaxation_li':</span> <span class="pre">'lin',</span> <span class="pre">'t2_relaxation_ao':</span> <span class="pre">None,</span> <span class="pre">'t2_relaxation_li':</span> <span class="pre">None,</span> <span class="pre">'t2s_relaxation_ao':</span> <span class="pre">'lin',</span> <span class="pre">'t2s_relaxation_li':</span> <span class="pre">'lin',</span> <span class="pre">'tof_corr':</span> <span class="pre">False,</span> <span class="pre">'trigger':</span> <span class="pre">False,</span> <span class="pre">'water_exchange':</span> <span class="pre">'F'}</span></span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.defaults" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.quantities">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">quantities</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'kc':</span> <span class="pre">{'bounds':</span> <span class="pre">(0.0,</span> <span class="pre">0.1),</span> <span class="pre">'dicom_key':</span> <span class="pre">None,</span> <span class="pre">'group':</span> <span class="pre">'physiological',</span> <span class="pre">'init':</span> <span class="pre">0.003,</span> <span class="pre">'name':</span> <span class="pre">'diurnal</span> <span class="pre">change</span> <span class="pre">of</span> <span class="pre">tissue</span> <span class="pre">transfer</span> <span class="pre">rate',</span> <span class="pre">'osipi_key':</span> <span class="pre">None,</span> <span class="pre">'unit':</span> <span class="pre">''},</span> <span class="pre">'kd':</span> <span class="pre">{'bounds':</span> <span class="pre">(0.0,</span> <span class="pre">0.1),</span> <span class="pre">'dicom_key':</span> <span class="pre">None,</span> <span class="pre">'group':</span> <span class="pre">'physiological',</span> <span class="pre">'init':</span> <span class="pre">0.003,</span> <span class="pre">'name':</span> <span class="pre">'drug</span> <span class="pre">effect</span> <span class="pre">on</span> <span class="pre">tissue</span> <span class="pre">transfer</span> <span class="pre">rate',</span> <span class="pre">'osipi_key':</span> <span class="pre">None,</span> <span class="pre">'unit':</span> <span class="pre">'mL/sec/cm3'},</span> <span class="pre">'ke':</span> <span class="pre">{'bounds':</span> <span class="pre">(-100,</span> <span class="pre">100),</span> <span class="pre">'dicom_key':</span> <span class="pre">None,</span> <span class="pre">'group':</span> <span class="pre">'physiological',</span> <span class="pre">'init':</span> <span class="pre">0.5,</span> <span class="pre">'name':</span> <span class="pre">'drug</span> <span class="pre">effect</span> <span class="pre">size</span> <span class="pre">on</span> <span class="pre">tissue</span> <span class="pre">transfer</span> <span class="pre">rate',</span> <span class="pre">'osipi_key':</span> <span class="pre">None,</span> <span class="pre">'unit':</span> <span class="pre">''}}</span></span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.all_configs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">all_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.all_configs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.all_input_quantities">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">all_input_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.all_input_quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.all_inputs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">all_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.all_inputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.all_io">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">all_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.all_io" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.all_io_quantities">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">all_io_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.all_io_quantities" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.all_output_quantities">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">all_output_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.all_output_quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.all_outputs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">all_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.all_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.configs_with_input">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">configs_with_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.configs_with_input" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.configs_with_output">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">configs_with_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.configs_with_output" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.filter_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">filter_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.filter_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.__call__" title="Link to this definition">#</a></dt>
+<dd><p>Call self as a function.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
 </dd>
@@ -780,277 +549,6 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.init">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.init" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.init_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">init_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.init_data" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.input_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">input_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.input_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.input_quantities">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">input_quantities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.input_quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.inputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta_liver_split_drug.html#InverseAortaLiverSplitDrug.inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.inputs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.load">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta_liver_split_drug.html#InverseAortaLiverSplitDrug.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.load" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filepath</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.map_configs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">map_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmap</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.map_configs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>cmap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.map_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">map_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.map_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em> | </em><em>None</em>)</p></li>
-<li><p><strong>include</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)"><em>set</em></a>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.map_inputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">map_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.map_inputs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>imap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.map_io">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">map_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iomap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.map_io" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>imap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>omap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>iomap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.map_outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">map_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">omap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.map_outputs" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>omap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.map_results">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">map_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.map_results" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.mapped_inputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">mapped_inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.mapped_inputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.mapped_outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">mapped_outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.mapped_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.new_mapped_outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">new_mapped_outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.new_mapped_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.output_quantities">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">output_quantities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.output_quantities" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta_liver_split_drug.html#InverseAortaLiverSplitDrug.outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.plot">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta_liver_split_drug.html#InverseAortaLiverSplitDrug.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.plot" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>result</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>xlim</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>clim</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><em>list</em></a>)</p></li>
-<li><p><strong>fname</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.plot_pcov">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">plot_pcov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-0.025</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.025</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta_liver_split_drug.html#InverseAortaLiverSplitDrug.plot_pcov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.plot_pcov" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>result</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>fname</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.plot_pvar">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">plot_pvar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta_liver_split_drug.html#InverseAortaLiverSplitDrug.plot_pvar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.plot_pvar" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>result</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>fname</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
-<li><p><strong>xlim</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><em>list</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.print_all_inputs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">print_all_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.print_all_inputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.print_all_io">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">print_all_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.print_all_io" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.print_all_outputs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">print_all_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.print_all_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.print_configs">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">print_configs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.print_configs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.print_inputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">print_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">as_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.print_inputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.print_outputs">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">print_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">as_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.print_outputs" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.save">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'subject_id'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">study</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'study_id'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta_liver_split_drug.html#InverseAortaLiverSplitDrug.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.save" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>result</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>filepath</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.set_config">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">set_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.set_config" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-<li><p><strong>cmap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.test_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">test_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/inverse/aorta_liver_split_drug.html#InverseAortaLiverSplitDrug.test_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.test_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dcmri.InverseAortaLiverSplitDrug.update_data">
-<span class="sig-prename descclassname"><span class="pre">InverseAortaLiverSplitDrug.</span></span><span class="sig-name descname"><span class="pre">update_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dcmri.InverseAortaLiverSplitDrug.update_data" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
-</dd>
-</dl>
 </dd></dl>
 
 <section id="examples-using-dcmri-inverseaortaliversplitdrug">
@@ -1072,12 +570,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dcmri.InverseAortaLiverDrug.html"
+       href="dcmri.InverseAortaLiverSplit.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">dcmri.InverseAortaLiverDrug</p>
+        <p class="prev-next-title">dcmri.InverseAortaLiverSplit</p>
       </div>
     </a>
     <a class="right-next"
@@ -1108,51 +606,10 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.config"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.config</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.configs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.configs</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.defaults"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.defaults</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.quantities"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.quantities</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.all_configs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.all_configs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.all_input_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.all_input_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.all_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.all_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.all_io"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.all_io()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.all_io_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.all_io_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.all_output_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.all_output_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.all_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.all_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.configs_with_input"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.configs_with_input()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.configs_with_output"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.configs_with_output()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.filter_data"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.filter_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.init"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.init()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.init_data"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.init_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.input_data"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.input_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.input_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.input_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.inputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.load"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.load()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.map_configs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.map_configs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.map_data"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.map_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.map_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.map_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.map_io"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.map_io()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.map_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.map_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.map_results"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.map_results()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.mapped_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.mapped_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.mapped_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.mapped_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.new_mapped_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.new_mapped_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.output_quantities"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.output_quantities()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.outputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.plot"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.plot()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.plot_pcov"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.plot_pcov()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.plot_pvar"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.plot_pvar()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.print_all_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.print_all_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.print_all_io"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.print_all_io()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.print_all_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.print_all_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.print_configs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.print_configs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.print_inputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.print_inputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.print_outputs"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.print_outputs()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.save"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.save()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.set_config"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.set_config()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.test_data"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.test_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.update_data"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.update_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.InverseAortaLiverSplitDrug.__call__"><code class="docutils literal notranslate"><span class="pre">InverseAortaLiverSplitDrug.__call__()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-using-dcmri-inverseaortaliversplitdrug">Examples using <code class="docutils literal notranslate"><span class="pre">dcmri.InverseAortaLiverSplitDrug</span></code></a></li>
 </ul>
   </nav></div>

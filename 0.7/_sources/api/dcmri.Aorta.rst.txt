@@ -1,0 +1,20 @@
+﻿dcmri.Aorta
+===========
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: Aorta
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.Aorta
+   :add-heading:
+
+

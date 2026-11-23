@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -1218,6 +1218,8 @@
 
 
 
+<div class="viewcode-block" id="flux_plucom">
+<a class="viewcode-back" href="../../../api/dcmri.flux_plucom.html#dcmri.flux_plucom">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">flux_plucom</span><span class="p">(</span><span class="n">J</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ffp</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Flux out of a parallel arrangement of a plug-flow system and a compartment. </span>
@@ -1266,7 +1268,8 @@
 <span class="sd">    """</span>
     <span class="n">Jp</span> <span class="o">=</span> <span class="n">flux_plug</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">Jc</span> <span class="o">=</span> <span class="n">flux_comp</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">ffp</span> <span class="o">*</span> <span class="n">Jp</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ffp</span><span class="p">)</span> <span class="o">*</span> <span class="n">Jc</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">ffp</span> <span class="o">*</span> <span class="n">Jp</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ffp</span><span class="p">)</span> <span class="o">*</span> <span class="n">Jc</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></div>
+
 
 <span class="c1"># Plug flow</span>
 
@@ -2174,6 +2177,8 @@
     <span class="k">return</span> <span class="n">J</span></div>
 
 
+<div class="viewcode-block" id="conc_pfcomp">
+<a class="viewcode-back" href="../../../api/dcmri.conc_pfcomp.html#dcmri.conc_pfcomp">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">conc_pfcomp</span><span class="p">(</span><span class="n">J</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s1">'step'</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Tissue concentration in a plug-flow compartment.</span>
@@ -2222,7 +2227,8 @@
 <span class="sd">    array([ 0.        ,  6.82332358, 21.45008965, 30.86598366, 33.12222937])</span>
 <span class="sd">    """</span>
     <span class="n">Jo</span> <span class="o">=</span> <span class="n">flux_pfcomp</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">misc</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">J</span> <span class="o">-</span> <span class="n">Jo</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">misc</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">J</span> <span class="o">-</span> <span class="n">Jo</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span></div>
+
 
 <span class="c1"># N parameters</span>
 

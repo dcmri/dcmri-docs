@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -80,8 +80,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="dcmri.fetch" href="dcmri.fetch.html" />
-    <link rel="prev" title="Utilities" href="../reference/utils.html" />
+    <link rel="next" title="End-to-end models" href="../reference/e2e.html" />
+    <link rel="prev" title="dcmri.print_quantities" href="dcmri.print_quantities.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -434,37 +434,26 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/core.html">Core classes</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../reference/lexicon.html">Lexicon</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dcmri.QUANTITIES.html">dcmri.QUANTITIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.unit.html">dcmri.unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.group.html">dcmri.group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.get_quantity.html">dcmri.get_quantity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.build_varname.html">dcmri.build_varname</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.parse_varname.html">dcmri.parse_varname</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.print_quantities.html">dcmri.print_quantities</a></li>
+<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.select_params</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/bloch.html">Magnetization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/signal.html">Signal formation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/inverse.html">Inverse methods</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../reference/utils.html">Utilities</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.select_params</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.fetch.html">dcmri.fetch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.sample.html">dcmri.sample</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.add_noise.html">dcmri.add_noise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.mle_rice.html">dcmri.mle_rice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.ca_conc.html">dcmri.ca_conc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.ca_std_dose.html">dcmri.ca_std_dose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.r2s_lower.html">dcmri.r2s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.r1_lower.html">dcmri.r1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.T1.html">dcmri.T1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.T2.html">dcmri.T2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.PD.html">dcmri.PD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.perfusion.html">dcmri.perfusion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.conv.html">dcmri.conv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.stepconv.html">dcmri.stepconv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.expconv.html">dcmri.expconv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.biexpconv.html">dcmri.biexpconv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.nexpconv.html">dcmri.nexpconv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.deconv.html">dcmri.deconv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.convmat.html">dcmri.convmat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.invconvmat.html">dcmri.invconvmat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.shepp_logan.html">dcmri.shepp_logan</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/utils.html">Utilities</a></li>
 </ul>
 </div>
 </nav></div>
@@ -509,7 +498,7 @@
     <li class="breadcrumb-item"><a href="../reference/index.html" class="nav-link">Reference</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../reference/utils.html" class="nav-link">Utilities</a></li>
+    <li class="breadcrumb-item"><a href="../reference/lexicon.html" class="nav-link">Lexicon</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">dcmri.select_params</span></li>
   </ul>
@@ -530,12 +519,14 @@
                   
   <section id="dcmri-select-params">
 <h1>dcmri.select_params<a class="headerlink" href="#dcmri-select-params" title="Link to this heading">#</a></h1>
-<dl class="py function">
+<dl class="py class">
 <dt class="sig sig-object py" id="dcmri.select_params">
-<span class="sig-name descname"><span class="pre">select_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lexicon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/tools.html#select_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.select_params" title="Link to this definition">#</a></dt>
-<dd><p>Return lexicon parameters with specific properties</p>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">select_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lexicon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/tools.html#select_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.select_params" title="Link to this definition">#</a></dt>
+<dd><p>Bases:</p>
+<p>Return lexicon parameters with specific properties</p>
 </dd></dl>
 
+<p class="rubric">Detailed Members Reference</p>
 </section>
 
 
@@ -549,20 +540,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../reference/utils.html"
+       href="dcmri.print_quantities.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Utilities</p>
+        <p class="prev-next-title">dcmri.print_quantities</p>
       </div>
     </a>
     <a class="right-next"
-       href="dcmri.fetch.html"
+       href="../reference/e2e.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">dcmri.fetch</p>
+        <p class="prev-next-title">End-to-end models</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -585,7 +576,7 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.select_params"><code class="docutils literal notranslate"><span class="pre">select_params()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.select_params"><code class="docutils literal notranslate"><span class="pre">select_params</span></code></a></li>
 </ul>
   </nav></div>
 

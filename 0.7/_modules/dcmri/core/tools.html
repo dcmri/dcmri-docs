@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -528,14 +528,22 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">"from </span><span class="si">{</span><span class="n">COMPS</span><span class="p">[</span><span class="n">comp1</span><span class="p">]</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">COMPS</span><span class="p">[</span><span class="n">comp2</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">"in </span><span class="si">{</span><span class="n">COMPS</span><span class="p">[</span><span class="n">compartment</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
 
+<div class="viewcode-block" id="unit">
+<a class="viewcode-back" href="../../../api/dcmri.unit.html#dcmri.unit">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">unit</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">q</span> <span class="o">=</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">q</span><span class="p">[</span><span class="s1">'unit'</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">q</span><span class="p">[</span><span class="s1">'unit'</span><span class="p">]</span></div>
 
+
+<div class="viewcode-block" id="group">
+<a class="viewcode-back" href="../../../api/dcmri.group.html#dcmri.group">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">group</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">q</span> <span class="o">=</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">q</span><span class="p">[</span><span class="s1">'group'</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">q</span><span class="p">[</span><span class="s1">'group'</span><span class="p">]</span></div>
 
+
+<div class="viewcode-block" id="get_quantity">
+<a class="viewcode-back" href="../../../api/dcmri.get_quantity.html#dcmri.get_quantity">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">lexicon</span> <span class="o">=</span> <span class="n">QUANTITIES</span>
     <span class="k">if</span> <span class="n">quantities</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -575,7 +583,8 @@
             <span class="n">quant</span><span class="p">[</span><span class="s1">'init'</span><span class="p">]</span> <span class="o">=</span> <span class="n">QDATA_ROIS</span><span class="p">[</span><span class="n">fallback_key</span><span class="p">][</span><span class="s1">'init'</span><span class="p">]</span>
             <span class="n">quant</span><span class="p">[</span><span class="s1">'bounds'</span><span class="p">]</span> <span class="o">=</span> <span class="n">QDATA_ROIS</span><span class="p">[</span><span class="n">fallback_key</span><span class="p">][</span><span class="s1">'bounds'</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="n">quant</span>
+    <span class="k">return</span> <span class="n">quant</span></div>
+
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_is_valid_compartment</span><span class="p">(</span><span class="n">token</span><span class="p">):</span>
@@ -587,6 +596,8 @@
     <span class="k">return</span> <span class="kc">False</span>
 
 
+<div class="viewcode-block" id="build_varname">
+<a class="viewcode-back" href="../../../api/dcmri.build_varname.html#dcmri.build_varname">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">build_varname</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compartment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roi</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">compartment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">_is_valid_compartment</span><span class="p">(</span><span class="n">compartment</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
@@ -604,9 +615,12 @@
     <span class="k">if</span> <span class="n">roi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="s2">"_"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"_"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span></div>
 
 
+
+<div class="viewcode-block" id="parse_varname">
+<a class="viewcode-back" href="../../../api/dcmri.parse_varname.html#dcmri.parse_varname">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">parse_varname</span><span class="p">(</span><span class="n">varname</span><span class="p">):</span>
     <span class="n">tokens</span> <span class="o">=</span> <span class="n">varname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)</span>
 
@@ -629,7 +643,8 @@
         <span class="s2">"index"</span><span class="p">:</span> <span class="n">index</span><span class="p">,</span>
         <span class="s2">"compartment"</span><span class="p">:</span> <span class="n">compartment</span><span class="p">,</span>
         <span class="s2">"roi"</span><span class="p">:</span> <span class="n">roi</span><span class="p">,</span>
-    <span class="p">}</span>
+    <span class="p">}</span></div>
+
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">extend_varname</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compartment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roi</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -668,6 +683,8 @@
 
 
 
+<div class="viewcode-block" id="print_quantities">
+<a class="viewcode-back" href="../../../api/dcmri.print_quantities.html#dcmri.print_quantities">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">print_quantities</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="nb">set</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimals</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">digits</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">as_dict</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
     <span class="k">if</span> <span class="n">as_dict</span><span class="p">:</span>
@@ -807,7 +824,8 @@
     <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>   
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>   </div>
+
 
 
 

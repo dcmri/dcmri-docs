@@ -1,0 +1,18 @@
+﻿dcmri.Mz\_ss\_pr\_spgr\_vectorized
+==================================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: Mz_ss_pr_spgr_vectorized
+
+
+
+
+
+.. minigallery:: dcmri.Mz_ss_pr_spgr_vectorized
+   :add-heading:
+
+

@@ -1,0 +1,18 @@
+﻿dcmri.flux\_plucom
+==================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: flux_plucom
+
+
+
+
+
+.. minigallery:: dcmri.flux_plucom
+   :add-heading:
+
+

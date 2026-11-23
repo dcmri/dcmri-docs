@@ -1,0 +1,20 @@
+﻿dcmri.ConcAortaPortalLiver
+==========================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: ConcAortaPortalLiver
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.ConcAortaPortalLiver
+   :add-heading:
+
+

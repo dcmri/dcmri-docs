@@ -25,3 +25,7 @@
 .team-member-handle {
     display: none;
 }
+
+.dcmri-bg-teal   { background-color: #0f766e !important; }
+.dcmri-bg-purple { background-color: #7c3aed !important; }
+.dcmri-bg-pink   { background-color: #db2777 !important; }

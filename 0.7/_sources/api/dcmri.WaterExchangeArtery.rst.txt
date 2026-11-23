@@ -1,0 +1,20 @@
+﻿dcmri.WaterExchangeArtery
+=========================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: WaterExchangeArtery
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.WaterExchangeArtery
+   :add-heading:
+
+

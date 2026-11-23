@@ -1,0 +1,18 @@
+﻿dcmri.load\_tristan\_humans
+===========================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: load_tristan_humans
+
+
+
+
+
+.. minigallery:: dcmri.load_tristan_humans
+   :add-heading:
+
+

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -80,7 +80,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="End-to-end models" href="e2e.html" />
+    <link rel="next" title="Core classes" href="core.html" />
     <link rel="prev" title="Whole body" href="../user_guide/tissues/whole_body.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
@@ -434,7 +434,10 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon.html">Lexicon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bloch.html">Magnetization</a></li>
@@ -507,14 +510,50 @@ what they are and what they do.</p>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center reference-card docutils">
 <div class="sd-card-header docutils">
-<p class="sd-card-text">🚀 <strong>e2e</strong></p>
+<p class="sd-card-text">⚙️ <strong>core</strong></p>
 </div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold sd-bg-primary sd-text-white docutils">
-End-to-End Models</div>
-<p class="sd-card-text">Complete tissue and organ pipeline models.</p>
+Core</div>
+<p class="sd-card-text">Core classes for dcmri</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="core.html"><span class="doc">Core classes</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center reference-card docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">📖 <strong>lexicon</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold sd-bg-secondary sd-text-white docutils">
+Lexicon</div>
+<p class="sd-card-text">Nomenclature for dcmri quantities</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="lexicon.html"><span class="doc">Lexicon</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center reference-card docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">⏪ <strong>e2e</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold sd-bg-success sd-text-white docutils">
+Inverse Models</div>
+<p class="sd-card-text">Inverse signal models.</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="e2e.html"><span class="doc">End-to-end models</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center reference-card docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">⏩ <strong>forward</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold sd-bg-info sd-text-white docutils">
+Forward Models</div>
+<p class="sd-card-text">Forward signal models.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="forward.html"><span class="doc">End-to-end models: Forward</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center reference-card docutils">
@@ -522,7 +561,7 @@ End-to-End Models</div>
 <p class="sd-card-text">⏳ <strong>kinetics</strong></p>
 </div>
 <div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold sd-bg-secondary sd-text-white docutils">
+<div class="sd-card-title sd-font-weight-bold sd-bg-warning sd-text-dark docutils">
 Tracer Kinetics</div>
 <p class="sd-card-text">Compartment systems and tracer exchange dynamics.</p>
 </div>
@@ -534,7 +573,7 @@ Tracer Kinetics</div>
 <p class="sd-card-text">🧲 <strong>relaxivity</strong></p>
 </div>
 <div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold sd-bg-success sd-text-white docutils">
+<div class="sd-card-title sd-font-weight-bold sd-bg-danger sd-text-white docutils">
 Relaxivity</div>
 <p class="sd-card-text">Conversion formulas between concentration and R1/R2.</p>
 </div>
@@ -543,10 +582,10 @@ Relaxivity</div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center reference-card docutils">
 <div class="sd-card-header docutils">
-<p class="sd-card-text">📊 <strong>bloch</strong></p>
+<p class="sd-card-text">🌀 <strong>bloch</strong></p>
 </div>
 <div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold sd-bg-info sd-text-white docutils">
+<div class="sd-card-title sd-font-weight-bold sd-bg-dark sd-text-white docutils">
 Bloch Equations</div>
 <p class="sd-card-text">Magnetization dynamics under MRI pulse sequences.</p>
 </div>
@@ -555,10 +594,10 @@ Bloch Equations</div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center reference-card docutils">
 <div class="sd-card-header docutils">
-<p class="sd-card-text">📊 <strong>signal</strong></p>
+<p class="sd-card-text">📈 <strong>signal</strong></p>
 </div>
 <div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold sd-bg-info sd-text-white docutils">
+<div class="sd-card-title sd-font-weight-bold dcmri-bg-teal sd-text-white docutils">
 Signal</div>
 <p class="sd-card-text">MRI signal equations and sequence simulations.</p>
 </div>
@@ -570,7 +609,7 @@ Signal</div>
 <p class="sd-card-text">🔄 <strong>inverse</strong></p>
 </div>
 <div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold sd-bg-warning sd-text-dark docutils">
+<div class="sd-card-title sd-font-weight-bold dcmri-bg-purple sd-text-white docutils">
 Inverse Problems</div>
 <p class="sd-card-text">Optimization, parameter estimation, and fitting routines.</p>
 </div>
@@ -582,7 +621,7 @@ Inverse Problems</div>
 <p class="sd-card-text">🛠️ <strong>utils</strong></p>
 </div>
 <div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold sd-bg-dark sd-text-white docutils">
+<div class="sd-card-title sd-font-weight-bold dcmri-bg-pink sd-text-white docutils">
 Utilities</div>
 <p class="sd-card-text">Helper functions, array manipulation, and validation tracking.</p>
 </div>
@@ -614,11 +653,11 @@ Utilities</div>
       </div>
     </a>
     <a class="right-next"
-       href="e2e.html"
+       href="core.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">End-to-end models</p>
+        <p class="prev-next-title">Core classes</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

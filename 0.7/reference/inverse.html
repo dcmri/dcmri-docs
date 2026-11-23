@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -434,20 +434,23 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon.html">Lexicon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bloch.html">Magnetization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="signal.html">Signal formation</a></li>
 <li class="toctree-l1 current active has-children"><a aria-current="page" class="current reference internal" href="#">Inverse methods</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.SignalToConc.html">dcmri.SignalToConc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.estimate_bat.html">dcmri.estimate_bat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.conc_dce.html">dcmri.conc_dce</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.conc_dce_lin.html">dcmri.conc_dce_lin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.conc_dsc.html">dcmri.conc_dsc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.conc_ss.html">dcmri.conc_ss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.vfa_nonlinear.html">dcmri.vfa_nonlinear</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.vfa_linear.html">dcmri.vfa_linear</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.linfit_2cfm.html">dcmri.linfit_2cfm</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
@@ -513,10 +516,8 @@
                   
   <section id="inverse-methods">
 <span id="inverse"></span><h1>Inverse methods<a class="headerlink" href="#inverse-methods" title="Link to this heading">#</a></h1>
-<section id="signal-to-concentration">
-<h2>Signal to concentration<a class="headerlink" href="#signal-to-concentration" title="Link to this heading">#</a></h2>
-<section id="wrapper">
-<h3>Wrapper<a class="headerlink" href="#wrapper" title="Link to this heading">#</a></h3>
+<section id="signal-to-concentration-module">
+<h2>Signal to concentration: module<a class="headerlink" href="#signal-to-concentration-module" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.SignalToConc.html#dcmri.SignalToConc" title="dcmri.SignalToConc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SignalToConc</span></code></a>([imap, omap])</p></td>
@@ -526,26 +527,28 @@
 </table>
 </div>
 </section>
-<section id="library">
-<h3>Library<a class="headerlink" href="#library" title="Link to this heading">#</a></h3>
+<section id="signal-to-concentration-functions">
+<h2>Signal to concentration: functions<a class="headerlink" href="#signal-to-concentration-functions" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.conc_dce.html#dcmri.conc_dce" title="dcmri.conc_dce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conc_dce</span></code></a>(Relax_to_Signal, S[, r1, nb, S0, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.estimate_bat.html#dcmri.estimate_bat" title="dcmri.estimate_bat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate_bat</span></code></a>(t, signal[, nb])</p></td>
+<td><p>Estimate the bolus arrival time (BAT) as the half-maximum crossing.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.conc_dce.html#dcmri.conc_dce" title="dcmri.conc_dce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conc_dce</span></code></a>(Relax_to_Signal, S[, r1, nb, S0, ...])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.conc_dce_lin.html#dcmri.conc_dce_lin" title="dcmri.conc_dce_lin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conc_dce_lin</span></code></a>(S[, r1, nb, S0, R1b])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.conc_dce_lin.html#dcmri.conc_dce_lin" title="dcmri.conc_dce_lin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conc_dce_lin</span></code></a>(S[, r1, nb, S0, R1b])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.conc_dsc.html#dcmri.conc_dsc" title="dcmri.conc_dsc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conc_dsc</span></code></a>(S[, r2, TE, nb])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.conc_dsc.html#dcmri.conc_dsc" title="dcmri.conc_dsc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conc_dsc</span></code></a>(S[, r2, TE, nb])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.conc_ss.html#dcmri.conc_ss" title="dcmri.conc_ss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conc_ss</span></code></a>(S[, r1, FA, TR, B1corr, nb, S0, R1b])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.conc_ss.html#dcmri.conc_ss" title="dcmri.conc_ss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conc_ss</span></code></a>(S[, r1, FA, TR, B1corr, nb, S0, R1b])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
 </section>
 <section id="relaxometry">
 <h2>Relaxometry<a class="headerlink" href="#relaxometry" title="Link to this heading">#</a></h2>
@@ -556,17 +559,6 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.vfa_linear.html#dcmri.vfa_linear" title="dcmri.vfa_linear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vfa_linear</span></code></a>(signal_intensities, ...[, ...])</p></td>
 <td><p>Calculates R1 and S0 from variable flip angle (VFA) SPGR data.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="kinetics">
-<h2>Kinetics<a class="headerlink" href="#kinetics" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.linfit_2cfm.html#dcmri.linfit_2cfm" title="dcmri.linfit_2cfm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">linfit_2cfm</span></code></a>(imgs[, aif, time, baseline, Hct])</p></td>
-<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -621,13 +613,9 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-to-concentration">Signal to concentration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapper">Wrapper</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#library">Library</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-to-concentration-module">Signal to concentration: module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-to-concentration-functions">Signal to concentration: functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relaxometry">Relaxometry</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetics">Kinetics</a></li>
 </ul>
   </nav></div>
 

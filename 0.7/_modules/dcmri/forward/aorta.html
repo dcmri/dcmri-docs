@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dcmri.forward.aorta &#8212; dcmri 0.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c7a6860f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../../../_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+            </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-64ZSJ8Z1MX"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-64ZSJ8Z1MX');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dcmri/forward/aorta';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.24.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://dcmri.org/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.7';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-light" alt="dcmri 0.7.0 documentation - Home"/>
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-dark pst-js-only" alt="dcmri 0.7.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">dcmri.forward.aorta</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for dcmri.forward.aorta</h1><div class="highlight"><pre>
+<span></span><span class="c1"># +--------------------------------------------------------------------------------------------------+</span>
+<span class="c1"># |                                Aorta - all configs (n = 16)                                 |</span>
+<span class="c1"># +----------------+--------------------------------------------------------------------+------------+</span>
+<span class="c1"># | Key            | Values                                                             | Default    |</span>
+<span class="c1"># +----------------+--------------------------------------------------------------------+------------+</span>
+<span class="c1"># | t1_relaxation  | None, lin                                                          | lin        |</span>
+<span class="c1"># | t2_relaxation  | None, lin                                                          | None       |</span>
+<span class="c1"># | t2s_relaxation | None, lin, quad                                                    | lin        |</span>
+<span class="c1"># | inflow         | none, pool                                                         | none       |</span>
+<span class="c1"># | sequence       | 2D-DE-EPI, 2D-GE-EPI, 2D-SE-EPI, 2D-SPGR, 2D-SPGR-SS, 2D-SR-SPGR,  | 3D-SPGR-SS |</span>
+<span class="c1"># |                | 3D-DE-EPI, 3D-GE-EPI, 3D-IR-SPGR, 3D-IR-SPGR-SS, 3D-IR-SS,         |            |</span>
+<span class="c1"># |                | 3D-PR-SPGR, 3D-PR-SPGR-SS, 3D-PR-SS, 3D-SE-EPI, 3D-SPGR,           |            |</span>
+<span class="c1"># |                | 3D-SPGR-SS, 3D-SR-SPGR, 3D-SR-SPGR-SS, 3D-SR-SS,                   |            |</span>
+<span class="c1"># |                | ZTE-3D-IR-SPGR-SS, ZTE-3D-SPGR-SS                                  |            |</span>
+<span class="c1"># | tof_corr       | False, True                                                        | False      |</span>
+<span class="c1"># | magnitude      | False, True                                                        | True       |</span>
+<span class="c1"># | trigger        | False, True                                                        | False      |</span>
+<span class="c1"># | calibrate      | False, True                                                        | False      |</span>
+<span class="c1"># | baseline       | literature, measured                                               | literature |</span>
+<span class="c1"># | heartlung      | chain, comp, pfcomp                                                | pfcomp     |</span>
+<span class="c1"># | organs         | 2cxm, comp                                                         | comp       |</span>
+<span class="c1"># | kidneys        | None, comp, pass, plug                                             | None       |</span>
+<span class="c1"># | liver          | None, comp, pass, plug                                             | None       |</span>
+<span class="c1"># | lagut          | None, comp, pass, plucom                                           | None       |</span>
+<span class="c1"># | bolus          | double, dual, single                                               | single     |</span>
+<span class="c1"># +--------------------------------------------------------------------------------------------------+</span>
+
+<span class="c1"># +--------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="c1"># |                                                            Aorta - all inputs (n = 57)                                                            |</span>
+<span class="c1"># +----------------+----------+---------------------------------------------------------+-----------------+------------+---------------+-------+-----------+</span>
+<span class="c1"># | Key            | Unit     | Name                                                    | Group           | Init       | Bounds        | DICOM | OSIPI     |</span>
+<span class="c1"># +----------------+----------+---------------------------------------------------------+-----------------+------------+---------------+-------+-----------+</span>
+<span class="c1"># | BAT            | sec      | bolus arrival time                                      | Indicator       | 30         | (-30, 30)     |       |           |</span>
+<span class="c1"># | BAT_1          | sec      | 1st bolus arrival time                                  | Indicator       | 30         | (-30, 30)     |       |           |</span>
+<span class="c1"># | BAT_2          | sec      | 2nd bolus arrival time                                  | Indicator       | 30         | (-30, 30)     |       |           |</span>
+<span class="c1"># | agent          |          | contrast agent generic name                             | Indicator       | gadoterate |               |       |           |</span>
+<span class="c1"># | bdel           | sec      | delay in a double injection                             | Indicator       | 30         | (-30, 30)     |       |           |</span>
+<span class="c1"># | dose           | mL/kg    | contrast agent dose                                     | Indicator       | 0.1        | (0, 0.2)      |       |           |</span>
+<span class="c1"># | dose_1         | mL/kg    | 1st contrast agent dose                                 | Indicator       | 0.1        | (0, 0.2)      |       |           |</span>
+<span class="c1"># | dose_2         | mL/kg    | 2nd contrast agent dose                                 | Indicator       | 0.1        | (0, 0.2)      |       |           |</span>
+<span class="c1"># | rate           | mL/s     | injection rate                                          | Indicator       | 1          | (0, 10)       |       |           |</span>
+<span class="c1"># | rate_1         | mL/s     | 1st injection rate                                      | Indicator       | 1          | (0, 10)       |       |           |</span>
+<span class="c1"># | rate_2         | mL/s     | 2nd injection rate                                      | Indicator       | 1          | (0, 10)       |       |           |</span>
+<span class="c1"># +----------------+----------+---------------------------------------------------------+-----------------+------------+---------------+-------+-----------+</span>
+<span class="c1"># | NSR            |          | noise-to-signal ratio                                   | Signal          | 0.0        | (0, 100000.0) |       |           |</span>
+<span class="c1"># | S0             | a.u.     | signal scaling factor                                   | Signal          | 1.0        | (0, 5)        |       | Q.MS1.010 |</span>
+<span class="c1"># | Scal           | a.u.     | calibration signal                                      | Signal          | 1.0        | (0, 5)        |       | Q.MS1.002 |</span>
+<span class="c1"># | iScal          |          | indices of calibration signal                           | Signal          | 0          |               |       |           |</span>
+<span class="c1"># | iStrig         |          | indices of the signal trigger                           | Signal          | None       |               |       |           |</span>
+<span class="c1"># +----------------+----------+---------------------------------------------------------+-----------------+------------+---------------+-------+-----------+</span>
+<span class="c1"># | FA             | deg      | flip angle                                              | Sequence        | 15         | (0, 180)      |       |           |</span>
+<span class="c1"># | Nk0            |          | number of acquired phase lines to the center of k-space | Sequence        | 64         | (0, 1000)     |       |           |</span>
+<span class="c1"># | Nph            |          | number of acquired phase lines in k-space               | Sequence        | 128        | (0, 1000)     |       |           |</span>
+<span class="c1"># | Nz             |          | number of slices in a multi-slice acquisition           | Sequence        | 64         | (0, 1000)     |       |           |</span>
+<span class="c1"># | PA             | deg      | preparation Pulse Flip Angle                            | Sequence        | 90         | (0, 180)      |       |           |</span>
+<span class="c1"># | SA             | deg      | saturation Slab Flip Angle                              | Sequence        | 0          | (0, 180)      |       |           |</span>
+<span class="c1"># | TA             | sec      | acquisition time                                        | Sequence        | 2.0        | (0, 30)       |       |           |</span>
+<span class="c1"># | TD             | sec      | prepulse delay                                          | Sequence        | 0.05       | (0, 1)        |       |           |</span>
+<span class="c1"># | TE             | sec      | echo time                                               | Sequence        | 0.001      | (0, 10)       |       |           |</span>
+<span class="c1"># | TE1            | sec      | first echo time in a multi-echo sequence                | Sequence        | 0.001      | (0, 1)        |       |           |</span>
+<span class="c1"># | TE2            | sec      | second echo time in a multi-echo sequence               | Sequence        | 0.005      | (0, 1)        |       |           |</span>
+<span class="c1"># | TP             | sec      | preparation delay                                       | Sequence        | 0.05       | (0, 1)        |       |           |</span>
+<span class="c1"># | TR             | sec      | repetition time                                         | Sequence        | 0.005      | (0, 1)        |       |           |</span>
+<span class="c1"># | field_strength | T        | magnetic field strength                                 | Sequence        | 3          | (0, 20)       |       |           |</span>
+<span class="c1"># | iz             |          | slice number in a multi-slice acquisition               | Sequence        | 0          | (0, 1000)     |       |           |</span>
+<span class="c1"># | tacq           | sec      | acquisition duration                                    | Sequence        | 240        | (0, 10000.0)  |       |           |</span>
+<span class="c1"># | tstart         | sec      | start of the acquisition                                | Sequence        | 0          | (0, 10000.0)  |       |           |</span>
+<span class="c1"># +----------------+----------+---------------------------------------------------------+-----------------+------------+---------------+-------+-----------+</span>
+<span class="c1"># | B1corr         |          | B1-correction factor                                    | Electromagnetic | 1          | (0, 5)        |       |           |</span>
+<span class="c1"># | R1_b           | Hz       | tissue R1 in the blood                                  | Electromagnetic | 0.65       | (0, 5)        |       |           |</span>
+<span class="c1"># | me             | A cm2/mL | equilibrium magnetization                               | Electromagnetic | 1          | (0, 5)        |       |           |</span>
+<span class="c1"># +----------------+----------+---------------------------------------------------------+-----------------+------------+---------------+-------+-----------+</span>
+<span class="c1"># | CO             | mL/sec   | cardiac output                                          | Physiological   | 100        | (0, 500)      |       |           |</span>
+<span class="c1"># | D_hl           |          | transit time dispersion in the heart and Lungs          | Physiological   | 0.2        | (0.01, 0.99)  |       |           |</span>
+<span class="c1"># | E_or           |          | extraction fraction in the organs                       | Physiological   | 0.15       | (0, 0.5)      |       |           |</span>
+<span class="c1"># | TF             | sec      | inflow time                                             | Physiological   | 0.5        | (0, 10)       |       |           |</span>
+<span class="c1"># | T_b_or         | sec      | mean transit time in blood of the organs                | Physiological   | 20         | (0, 60)       |       |           |</span>
+<span class="c1"># | T_e_li         | sec      | mean transit time in extracellular space of the liver   | Physiological   | 30.0       | (0.1, 60)     |       |           |</span>
+<span class="c1"># | T_e_or         | sec      | mean transit time in extracellular space of the organs  | Physiological   | 120        | (0, 800)      |       |           |</span>
+<span class="c1"># | T_gu           | sec      | mean transit time in the gut                            | Physiological   | 30         | (0.1, 60)     |       |           |</span>
+<span class="c1"># | T_hl           | sec      | mean transit time in the heart and Lungs                | Physiological   | 10         | (0, 30)       |       |           |</span>
+<span class="c1"># | T_la           | sec      | mean transit time in the liver artery                   | Physiological   | 30         | (0.1, 60)     |       |           |</span>
+<span class="c1"># | T_p_lk         | sec      | mean transit time in plasma of the left kidney          | Physiological   | 5          | (0, 30)       |       |           |</span>
+<span class="c1"># | T_p_rk         | sec      | mean transit time in plasma of the right kidney         | Physiological   | 5          | (0, 30)       |       |           |</span>
+<span class="c1"># | ffa            |          | arterial flow fraction                                  | Physiological   | 0.2        | (0, 1)        |       |           |</span>
+<span class="c1"># | vr_li          |          | Venous return in the liver                              | Physiological   | 0.15       | (0, 1)        |       |           |</span>
+<span class="c1"># | vr_lk          |          | Venous return in the left kidney                        | Physiological   | 0.15       | (0, 1)        |       |           |</span>
+<span class="c1"># | vr_or          |          | Venous return in the organs                             | Physiological   | 0.9        | (0, 1)        |       |           |</span>
+<span class="c1"># | vr_rk          |          | Venous return in the right kidney                       | Physiological   | 0.15       | (0, 1)        |       |           |</span>
+<span class="c1"># +----------------+----------+---------------------------------------------------------+-----------------+------------+---------------+-------+-----------+</span>
+<span class="c1"># | dose_tolerance |          | dose tolerance                                          | Hyperparameters | 0.1        |               |       |           |</span>
+<span class="c1"># | dt             | sec      | pseudo-continuous time step                             | Hyperparameters | 0.5        |               |       |           |</span>
+<span class="c1"># +----------------+----------+---------------------------------------------------------+-----------------+------------+---------------+-------+-----------+</span>
+<span class="c1"># | vol_ao         | cm3      | ROI volume in the aorta                                 | Whole-body      | 10         | (0.0, 1000)   |       |           |</span>
+<span class="c1"># | weight         | kg       | body weight                                             | Whole-body      | 70         | (0, 300)      |       |           |</span>
+<span class="c1"># +--------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+
+<span class="c1"># +----------------------------------------------------------------------------------------------------------------+</span>
+<span class="c1"># |                                       Aorta - all outputs (n = 15)                                        |</span>
+<span class="c1"># +-----+----------+----------------------------------------+-----------------+-------+--------+-------+-----------+</span>
+<span class="c1"># | Key | Unit     | Name                                   | Group           | Init  | Bounds | DICOM | OSIPI     |</span>
+<span class="c1"># +-----+----------+----------------------------------------+-----------------+-------+--------+-------+-----------+</span>
+<span class="c1"># | C   | mmol/cm3 | tissue concentration                   | Indicator       | 0.005 | (0, 1) |       |           |</span>
+<span class="c1"># | ci  | mmol/mL  | inlet concentration                    | Indicator       | 0.005 |        |       |           |</span>
+<span class="c1"># | tC  | sec      | concentration time points              | Indicator       | 0.0   |        |       |           |</span>
+<span class="c1"># +-----+----------+----------------------------------------+-----------------+-------+--------+-------+-----------+</span>
+<span class="c1"># | S   | a.u.     | signal                                 | Signal          | 1.0   | (0, 5) |       |           |</span>
+<span class="c1"># | S0  | a.u.     | signal scaling factor                  | Signal          | 1.0   | (0, 5) |       | Q.MS1.010 |</span>
+<span class="c1"># | tS  | sec      | signal time points                     | Signal          | 0.0   |        |       |           |</span>
+<span class="c1"># +-----+----------+----------------------------------------+-----------------+-------+--------+-------+-----------+</span>
+<span class="c1"># | M   | A/cm     | magnetization                          | Electromagnetic | 1     | (0, 5) |       |           |</span>
+<span class="c1"># | Mz  | A/cm     | longitudinal magnetization             | Electromagnetic | 1     | (0, 5) |       |           |</span>
+<span class="c1"># | R1  | Hz       | tissue R1                              | Electromagnetic | 0.65  | (0, 5) |       |           |</span>
+<span class="c1"># | R1i | Hz       | inlet R1                               | Electromagnetic | 0.65  | (0, 5) |       |           |</span>
+<span class="c1"># | R2  | Hz       | tissue R2                              | Electromagnetic | 2.0   | (0, 5) |       |           |</span>
+<span class="c1"># | R2s | Hz       | tissue R2*                             | Electromagnetic | 20    | (0, 5) |       |           |</span>
+<span class="c1"># | tM  | sec      | magnetization time points              | Electromagnetic | 0.0   |        |       |           |</span>
+<span class="c1"># | tMz | sec      | longitudinal magnetization time points | Electromagnetic | 0.0   |        |       |           |</span>
+<span class="c1"># | tR  | sec      | relaxation rate time points            | Electromagnetic | 0.0   |        |       |           |</span>
+<span class="c1"># +----------------------------------------------------------------------------------------------------------------+</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.core.module</span><span class="w"> </span><span class="kn">import</span> <span class="n">Module</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.kinetics.modules_conc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConcAorta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.relaxivity.modules_rois</span><span class="w"> </span><span class="kn">import</span> <span class="n">RelaxivityArtery</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.bloch.modules_rois</span><span class="w"> </span><span class="kn">import</span> <span class="n">WaterExchangeArtery</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.signal.modules_tissue</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConcToSignal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.bloch.functions_sequences</span><span class="w"> </span><span class="kn">import</span> <span class="n">channels</span>
+
+<span class="n">configs</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">ConcToSignal</span><span class="o">.</span><span class="n">configs</span> <span class="o">|</span> <span class="n">WaterExchangeArtery</span><span class="o">.</span><span class="n">configs</span> <span class="o">|</span> <span class="n">RelaxivityArtery</span><span class="o">.</span><span class="n">configs</span> <span class="o">|</span> <span class="n">ConcAorta</span><span class="o">.</span><span class="n">configs</span><span class="p">)</span>
+<span class="n">defaults</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">ConcToSignal</span><span class="o">.</span><span class="n">defaults</span> <span class="o">|</span> <span class="n">WaterExchangeArtery</span><span class="o">.</span><span class="n">defaults</span> <span class="o">|</span> <span class="n">RelaxivityArtery</span><span class="o">.</span><span class="n">defaults</span> <span class="o">|</span> <span class="n">ConcAorta</span><span class="o">.</span><span class="n">defaults</span><span class="p">)</span>
+
+<span class="n">configs</span><span class="p">[</span><span class="s1">'inflow'</span><span class="p">]</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s1">'inlet'</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Aorta">
+<a class="viewcode-back" href="../../../api/dcmri.Aorta.html#dcmri.Aorta">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Aorta</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Whole-body model for the aorta signal."""</span>
+
+    <span class="n">configs</span> <span class="o">=</span> <span class="n">configs</span>
+    <span class="n">defaults</span> <span class="o">=</span> <span class="n">defaults</span>
+
+    <span class="n">_all_inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'E_or'</span><span class="p">,</span> <span class="s1">'T_p_lk'</span><span class="p">,</span> <span class="s1">'vr_rk'</span><span class="p">,</span> <span class="s1">'NSR'</span><span class="p">,</span> <span class="s1">'iz'</span><span class="p">,</span> <span class="s1">'T_p_rk'</span><span class="p">,</span> <span class="s1">'dt'</span><span class="p">,</span> <span class="s1">'vr_lk'</span><span class="p">,</span> <span class="s1">'rate_1'</span><span class="p">,</span> <span class="s1">'Scal'</span><span class="p">,</span> <span class="s1">'T_b_or'</span><span class="p">,</span> <span class="s1">'dose'</span><span class="p">,</span> <span class="s1">'Nk0'</span><span class="p">,</span> <span class="s1">'iScal'</span><span class="p">,</span> <span class="s1">'dose_2'</span><span class="p">,</span> <span class="s1">'BAT'</span><span class="p">,</span> <span class="s1">'TP'</span><span class="p">,</span> <span class="s1">'TE2'</span><span class="p">,</span> <span class="s1">'tstart'</span><span class="p">,</span> <span class="s1">'Nph'</span><span class="p">,</span> <span class="s1">'TR'</span><span class="p">,</span> <span class="s1">'FA'</span><span class="p">,</span> <span class="s1">'TA'</span><span class="p">,</span> <span class="s1">'CO'</span><span class="p">,</span> <span class="s1">'B1corr'</span><span class="p">,</span> <span class="s1">'field_strength'</span><span class="p">,</span> <span class="s1">'T_e_li'</span><span class="p">,</span> <span class="s1">'SA'</span><span class="p">,</span> <span class="s1">'dose_tolerance'</span><span class="p">,</span> <span class="s1">'T_gu'</span><span class="p">,</span> <span class="s1">'Nz'</span><span class="p">,</span> <span class="s1">'me'</span><span class="p">,</span> <span class="s1">'agent'</span><span class="p">,</span> <span class="s1">'R1_b'</span><span class="p">,</span> <span class="s1">'TD'</span><span class="p">,</span> <span class="s1">'iStrig'</span><span class="p">,</span> <span class="s1">'dose_1'</span><span class="p">,</span> <span class="s1">'ffa'</span><span class="p">,</span> <span class="s1">'rate_2'</span><span class="p">,</span> <span class="s1">'D_hl'</span><span class="p">,</span> <span class="s1">'TE'</span><span class="p">,</span> <span class="s1">'BAT_2'</span><span class="p">,</span> <span class="s1">'bdel'</span><span class="p">,</span> <span class="s1">'tacq'</span><span class="p">,</span> <span class="s1">'vr_or'</span><span class="p">,</span> <span class="s1">'BAT_1'</span><span class="p">,</span> <span class="s1">'T_e_or'</span><span class="p">,</span> <span class="s1">'TF'</span><span class="p">,</span> <span class="s1">'weight'</span><span class="p">,</span> <span class="s1">'vol_ao'</span><span class="p">,</span> <span class="s1">'rate'</span><span class="p">,</span> <span class="s1">'PA'</span><span class="p">,</span> <span class="s1">'TE1'</span><span class="p">,</span> <span class="s1">'vr_li'</span><span class="p">,</span> <span class="s1">'S0'</span><span class="p">,</span> <span class="s1">'T_hl'</span><span class="p">,</span> <span class="s1">'T_la'</span><span class="p">}</span>
+    <span class="n">_all_outputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tC'</span><span class="p">,</span> <span class="s1">'R2s'</span><span class="p">,</span> <span class="s1">'Mz'</span><span class="p">,</span> <span class="s1">'R1'</span><span class="p">,</span> <span class="s1">'tR'</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">,</span> <span class="s1">'tM'</span><span class="p">,</span> <span class="s1">'tMz'</span><span class="p">,</span> <span class="s1">'R1i'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'ci'</span><span class="p">,</span> <span class="s1">'tS'</span><span class="p">,</span> <span class="s1">'S0'</span><span class="p">,</span> <span class="s1">'R2'</span><span class="p">,</span> <span class="s1">'M'</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">imap</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">omap</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iomap</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">config</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_config</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">cmap</span><span class="p">)</span>
+
+        <span class="n">omap</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'C_ao'</span><span class="p">:</span><span class="s1">'C'</span><span class="p">,</span> <span class="s1">'ci_ao'</span><span class="p">:</span><span class="s1">'ci'</span><span class="p">,</span> <span class="s1">'F_b_ao'</span><span class="p">:</span><span class="s1">'F_b_ar'</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_conc</span> <span class="o">=</span> <span class="n">ConcAorta</span><span class="p">(</span><span class="n">omap</span><span class="o">=</span><span class="n">omap</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tissue_rel</span> <span class="o">=</span> <span class="n">RelaxivityArtery</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tissue_wex</span> <span class="o">=</span> <span class="n">WaterExchangeArtery</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_conc_to_signal</span> <span class="o">=</span> <span class="n">ConcToSignal</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span> 
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">map_io</span><span class="p">(</span><span class="n">imap</span><span class="p">,</span> <span class="n">omap</span><span class="p">,</span> <span class="n">iomap</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Aorta.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.Aorta.html#dcmri.Aorta.__call__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  
+
+        <span class="n">p</span><span class="p">[</span><span class="s1">'tmax'</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'tstart'</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">'tacq'</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">'dt'</span><span class="p">]</span>
+
+        <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tissue_rel</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tissue_wex</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc_to_signal</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+        <span class="n">inputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc</span><span class="o">.</span><span class="n">mapped_inputs</span><span class="p">()</span>
+        <span class="n">inputs</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tissue_rel</span><span class="o">.</span><span class="n">mapped_inputs</span><span class="p">()</span>
+        <span class="n">inputs</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tissue_wex</span><span class="o">.</span><span class="n">mapped_inputs</span><span class="p">()</span>
+        <span class="n">inputs</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc_to_signal</span><span class="o">.</span><span class="n">mapped_inputs</span><span class="p">()</span>
+
+        <span class="n">inputs</span> <span class="o">-=</span> <span class="p">{</span><span class="s1">'tmax'</span><span class="p">}</span>
+        <span class="n">inputs</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc</span><span class="o">.</span><span class="n">new_mapped_outputs</span><span class="p">()</span>
+        <span class="n">inputs</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tissue_rel</span><span class="o">.</span><span class="n">new_mapped_outputs</span><span class="p">()</span>
+        <span class="n">inputs</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tissue_wex</span><span class="o">.</span><span class="n">new_mapped_outputs</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">inputs</span>  
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc</span><span class="o">.</span><span class="n">mapped_outputs</span><span class="p">()</span>
+        <span class="n">outputs</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc_to_signal</span><span class="o">.</span><span class="n">mapped_outputs</span><span class="p">()</span> 
+        <span class="n">outputs</span> <span class="o">-=</span> <span class="p">{</span><span class="s1">'F_b_ar'</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">outputs</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> 
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_data</span><span class="p">()</span>
+        <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conc</span><span class="o">.</span><span class="n">test_data</span><span class="p">()</span>
+
+        <span class="n">n_channels</span> <span class="o">=</span> <span class="n">channels</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'sequence'</span><span class="p">])</span>
+        <span class="n">components</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'magnitude'</span><span class="p">]</span> <span class="k">else</span> <span class="mi">2</span>
+        <span class="n">n0</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">Scal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_channels</span><span class="p">,</span> <span class="n">components</span><span class="p">,</span> <span class="n">n0</span><span class="p">))</span>
+        <span class="n">Scal</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="n">p</span> <span class="o">|=</span> <span class="p">{</span>
+            <span class="s1">'iScal'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">),</span>
+            <span class="s1">'Scal'</span><span class="p">:</span> <span class="n">Scal</span><span class="p">,</span> 
+            <span class="s1">'BAT_2'</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="c1"># default is the same as BAT_1</span>
+        <span class="p">}</span>
+            
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024-2026, dcmri contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

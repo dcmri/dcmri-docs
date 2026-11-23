@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -525,13 +525,13 @@ circulation to the AIF.</p>
 subjects used to derive a popular literature-based input function
 from <a class="reference external" href="https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.21066">Parker et al 2006</a>.
 It is implemented in <code class="xref py py-obj docutils literal notranslate"><span class="pre">dcmri</span></code> as the function <code class="xref py py-obj docutils literal notranslate"><span class="pre">aif_parker</span></code> and the
-module <code class="xref py py-obj docutils literal notranslate"><span class="pre">Parker</span></code>.</p>
+module <a class="reference internal" href="../../api/dcmri.aif_parker_upper.html#dcmri.Parker" title="dcmri.Parker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parker</span></code></a>.</p>
 <p>We’ll start by importing the package:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">import</span><span class="w"> </span><span class="nn">dcmri</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dc</span><span class="w">
 </span></pre></div></div>
 <p>… and generating the population-average AIF. We use the default
 settings from the original paper, so no need to provide arguments:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">aif</span></a> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">Parker</span><span class="p">(</span><span class="p">)</span><span class="p">(</span><span class="p">)</span><span class="w">
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">aif</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class reference internal" href="../../api/dcmri.aif_parker_upper.html#dcmri.Parker" title="dcmri.Parker"><span class="n">dc</span><span class="o">.</span><span class="n">Parker</span></a><span class="p">(</span><span class="p">)</span><span class="p">(</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <p>In order to apply the module <a class="reference internal" href="../../api/dcmri.InverseAorta.html#dcmri.InverseAorta" title="dcmri.InverseAorta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InverseAorta</span></code></a>, we need to
 first configure it, and then set the input parameters.
@@ -550,8 +550,8 @@ relaxation so we don’t have to rely on preset literature values:</p>
 <p>Most inputs, such as sequence parameters, are already returned as
 part of the aif, so we only need to provide values for the missing
 inputs. Let’s see what they are:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="set"><span class="n">missing_data</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-method reference internal" href="../../api/dcmri.InverseAorta.html#dcmri.InverseAorta.inputs" title="dcmri.InverseAorta.inputs"><span class="n">aorta</span><span class="o">.</span><span class="n">inputs</span></a><span class="p">(</span><span class="p">)</span> <span class="o">-</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">aif</span></a><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="p">)</span><span class="w">
-</span><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="set"><span class="n">missing_data</span></a><span class="p">)</span><span class="w">
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="set"><span class="n">missing_data</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.InverseAorta.html#dcmri.InverseAorta" title="dcmri.InverseAorta"><span class="n">aorta</span></a><span class="o">.</span><span class="n">inputs</span><span class="p">(</span><span class="p">)</span> <span class="o">-</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">aif</span></a><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="set"><span class="n">missing_data</span></a><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+---------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                                  Quantities                                                                 |
@@ -587,55 +587,67 @@ the defaults are OK too, so no need to make changes</p>
        0              1         1.4499e+03                                    1.21e+04
        1              2         2.4099e+02      1.21e+03       1.63e-01       1.81e+03
        2              3         3.2683e+01      2.08e+02       1.26e-01       2.96e+02
-       3              4         4.8157e+00      2.79e+01       2.01e-01       2.56e+02
+       3              4         4.8160e+00      2.79e+01       2.01e-01       2.56e+02
        4              5         2.4004e+00      2.42e+00       5.80e-02       1.22e+01
-       5              6         2.1455e+00      2.55e-01       1.55e-01       6.45e+01
-       6              7         1.6786e+00      4.67e-01       4.62e-02       6.62e+00
-       7              9         1.5978e+00      8.08e-02       6.28e-02       8.66e+00
-       8             10         1.5238e+00      7.40e-02       1.30e-01       5.82e+01
-       9             11         1.4331e+00      9.07e-02       3.31e-02       6.25e-01
-      10             13         1.3966e+00      3.65e-02       4.85e-02       6.90e+00
-      11             14         1.3468e+00      4.98e-02       9.46e-02       2.99e+01
-      12             15         1.3261e+00      2.08e-02       2.71e-02       1.50e+00
-      13             16         1.3033e+00      2.28e-02       8.26e-02       2.78e+01
-      14             17         1.2978e+00      5.51e-03       5.30e-03       1.05e-01
-      15             18         1.2915e+00      6.24e-03       4.09e-02       6.41e+00
-      16             19         1.2911e+00      4.03e-04       2.95e-03       3.03e-02
-      17             20         1.2902e+00      8.82e-04       1.26e-02       6.56e-01
-      18             21         1.2897e+00      5.02e-04       1.21e-02       1.36e+00
-      19             22         1.2896e+00      1.45e-04       1.12e-03       1.32e-01
-      20             23         1.2895e+00      4.01e-05       8.73e-04       1.01e-02
-      21             24         1.2895e+00      4.06e-06       9.61e-05       1.70e-03
-      22             25         1.2895e+00      6.40e-08       7.69e-06       1.24e-03
-      23             28         1.2895e+00      3.11e-09       2.82e-06       6.21e-04
+       5              6         2.1470e+00      2.53e-01       1.55e-01       6.47e+01
+       6              7         1.6787e+00      4.68e-01       4.60e-02       6.61e+00
+       7              9         1.5979e+00      8.08e-02       6.28e-02       8.65e+00
+       8             10         1.5239e+00      7.40e-02       1.30e-01       5.83e+01
+       9             11         1.4331e+00      9.08e-02       3.31e-02       6.15e-01
+      10             13         1.3967e+00      3.64e-02       4.85e-02       6.90e+00
+      11             14         1.3468e+00      4.99e-02       9.45e-02       2.98e+01
+      12             15         1.3261e+00      2.07e-02       2.71e-02       1.45e+00
+      13             16         1.3033e+00      2.28e-02       8.30e-02       2.80e+01
+      14             17         1.2978e+00      5.55e-03       5.18e-03       1.45e-01
+      15             18         1.2915e+00      6.27e-03       4.17e-02       6.61e+00
+      16             19         1.2911e+00      3.91e-04       2.51e-03       5.81e-02
+      17             20         1.2900e+00      1.12e-03       1.39e-02       7.43e-01
+      18             21         1.2898e+00      1.46e-04       8.90e-03       1.08e+00
+      19             22         1.2897e+00      1.10e-04       1.57e-03       3.03e-01
+      20             23         1.2897e+00      4.44e-05       1.30e-03       1.87e-01
+      21             24         1.2897e+00      1.21e-05       1.46e-03       3.21e-01
+      22             26         1.2896e+00      7.67e-05       8.01e-04       1.29e-01
+      23             27         1.2896e+00      1.11e-06       3.73e-04       1.11e-01
+      24             28         1.2896e+00      8.13e-06       2.00e-04       2.89e-02
+      25             29         1.2896e+00      4.99e-07       1.80e-05       5.61e-03
+      26             30         1.2896e+00      7.23e-07       2.35e-05       2.98e-03
+      27             31         1.2896e+00      1.42e-06       4.07e-05       7.00e-03
+      28             32         1.2896e+00      2.79e-06       6.25e-05       2.99e-03
+      29             33         1.2896e+00      5.24e-06       1.25e-04       9.68e-03
+      30             34         1.2896e+00      9.48e-06       2.12e-04       2.33e-03
+      31             35         1.2895e+00      1.37e-05       3.30e-04       1.41e-02
+      32             36         1.2895e+00      1.38e-07       5.27e-05       8.43e-03
+      33             38         1.2895e+00      8.90e-08       4.58e-05       1.36e-02
+      34             40         1.2895e+00      7.10e-08       1.63e-05       2.26e-03
+      35             41         1.2895e+00      3.74e-09       4.11e-06       3.51e-04
 `ftol` termination condition is satisfied.
-Function evaluations 28, initial cost 1.4499e+03, final cost 1.2895e+00, first-order optimality 6.21e-04.
+Function evaluations 41, initial cost 1.4499e+03, final cost 1.2895e+00, first-order optimality 3.51e-04.
 </pre></div>
 </div>
 <p>Before we look at the results, let’s check that the fit has
 converged to the correct solution. To do this, we
 first update the data with the new optimized values,
 and then plot it with the ground truth concentrations as reference:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-method reference internal" href="../../api/dcmri.InverseAorta.html#dcmri.InverseAorta.plot" title="dcmri.InverseAorta.plot"><span class="n">aorta</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">aif</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">)</span><span class="w">
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.InverseAorta.html#dcmri.InverseAorta" title="dcmri.InverseAorta"><span class="n">aorta</span></a><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">aif</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_cardiac_output_001.png" srcset="../../_images/sphx_glr_plot_cardiac_output_001.png" alt="MRI Signal Prediction, Concentration Reconstruction" class = "sphx-glr-single-img"/><p>The fit looks good so we can interpret the results. Let’s
 print them out:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">popt</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="w">
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">popt</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+-------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                                    Quantities                                                                   |
 +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
 | Key    | Value               | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
 +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-| BAT    | 25.679002316041263  | sec    | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
+| BAT    | 25.679004880374467  | sec    | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
 +--------+---------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-| CO     | 220.15992142211644  | mL/sec | cardiac output                                         | physiological   | (0, 500)     |       |       |
-| D_hl   | 0.07737354411310308 |        | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
-| E_or   | 0.49999999655746624 |        | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
-| T_b_or | 10.205186819020733  | sec    | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
-| T_e_or | 18.283979473089502  | sec    | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
-| T_hl   | 13.08468674695726   | sec    | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
-| vr_or  | 0.8677373523571905  |        | Venous return in the organs                            | physiological   | (0, 1)       |       |       |
+| CO     | 220.15998817185314  | mL/sec | cardiac output                                         | physiological   | (0, 500)     |       |       |
+| D_hl   | 0.07737354947189864 |        | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
+| E_or   | 0.49999994421744776 |        | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
+| T_b_or | 10.205160998105232  | sec    | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
+| T_e_or | 18.28402755623355   | sec    | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
+| T_hl   | 13.08468544055091   | sec    | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
+| vr_or  | 0.8677374216305075  |        | Venous return in the organs                            | physiological   | (0, 1)       |       |       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
@@ -645,7 +657,7 @@ value in healthy volunteers. This is in fact a known property of
 this particular population-average AIF. It has been observed before by
 <a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/mrm.21912">Yang et al (2009)</a>,
 though their exact estimate was less elevated (10.5 L/min).</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.829 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.436 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-tutorials-plot-cardiac-output-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c86da4b803c6a0e996d25d214875dd0b/plot_cardiac_output.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_cardiac_output.ipynb</span></code></a></p>

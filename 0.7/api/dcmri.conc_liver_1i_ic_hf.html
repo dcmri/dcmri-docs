@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -80,7 +80,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="dcmri.conc_liver_1i_ic_nsu" href="dcmri.conc_liver_1i_ic_nsu.html" />
+    <link rel="next" title="dcmri.conc_liver_1i_ic_u" href="dcmri.conc_liver_1i_ic_u.html" />
     <link rel="prev" title="dcmri.conc_liver_1i_ic" href="dcmri.conc_liver_1i_ic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
@@ -434,9 +434,12 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/lexicon.html">Lexicon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../reference/kinetics.html">Tracer-kinetic models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/wrappers.html">Wrapper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/modules.html">Kinetics Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/building_blocks.html">Building blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/exchange_tissues.html">Exchange tissues</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../reference/kinetics/liver.html">Liver</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -444,12 +447,14 @@
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ec_hf.html">dcmri.conc_liver_1i_ec_hf</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ic.html">dcmri.conc_liver_1i_ic</a></li>
 <li class="toctree-l3 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.conc_liver_1i_ic_hf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ic_u.html">dcmri.conc_liver_1i_ic_u</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ic_nsu.html">dcmri.conc_liver_1i_ic_nsu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ic_nse.html">dcmri.conc_liver_1i_ic_nse</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ic_nsue.html">dcmri.conc_liver_1i_ic_nsue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ic_hf_nsu.html">dcmri.conc_liver_1i_ic_hf_nsu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ic_hf_nse.html">dcmri.conc_liver_1i_ic_hf_nse</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ic_hf_nsue.html">dcmri.conc_liver_1i_ic_hf_nsue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_1i_ic_u_nsu.html">dcmri.conc_liver_1i_ic_u_nsu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_2i_ec.html">dcmri.conc_liver_2i_ec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_2i_ec_hf.html">dcmri.conc_liver_2i_ec_hf</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_liver_2i_ic.html">dcmri.conc_liver_2i_ic</a></li>
@@ -467,6 +472,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/kidney.html">Kidney</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/aorta.html">Aorta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/sources.html">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/inverse.html">Inverse</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/relaxivity.html">Relaxivity</a></li>
@@ -619,11 +625,11 @@ the extracellular concentration and the second row is the intracellular
       </div>
     </a>
     <a class="right-next"
-       href="dcmri.conc_liver_1i_ic_nsu.html"
+       href="dcmri.conc_liver_1i_ic_u.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">dcmri.conc_liver_1i_ic_nsu</p>
+        <p class="prev-next-title">dcmri.conc_liver_1i_ic_u</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

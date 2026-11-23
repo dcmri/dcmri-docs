@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -898,6 +898,8 @@
 
 
 
+<div class="viewcode-block" id="T2s">
+<a class="viewcode-back" href="../../../api/dcmri.T2s.html#dcmri.T2s">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">T2s</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">tissue</span><span class="o">=</span><span class="s1">'gray matter'</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""T2* value of selected tissue types.</span>
 
@@ -920,7 +922,8 @@
     
     <span class="k">return</span> <span class="n">VAL</span><span class="p">[</span><span class="s1">'blood'</span><span class="p">][</span><span class="mf">1.5</span><span class="p">]</span> <span class="c1"># Best guess in the absense of data</span>
 
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"No blood T2* values for field strength </span><span class="si">{</span><span class="n">field_strength</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"No blood T2* values for field strength </span><span class="si">{</span><span class="n">field_strength</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span></div>
+
 
 
 <div class="viewcode-block" id="PD">

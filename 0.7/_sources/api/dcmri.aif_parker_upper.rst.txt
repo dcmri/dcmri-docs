@@ -1,0 +1,20 @@
+﻿dcmri.Parker
+============
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: Parker
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.Parker
+   :add-heading:
+
+

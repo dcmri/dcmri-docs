@@ -1,0 +1,20 @@
+﻿dcmri.Flux
+==========
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: Flux
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.Flux
+   :add-heading:
+
+

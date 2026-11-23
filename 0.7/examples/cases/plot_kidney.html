@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -515,7 +515,7 @@ to download the full example code.</p>
 </div>
 <section class="sphx-glr-example-title" id="kidney">
 <span id="sphx-glr-examples-cases-plot-kidney-py"></span><h1>Kidney<a class="headerlink" href="#kidney" title="Link to this heading">#</a></h1>
-<p>This example illustrates the use of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Kidney</span></code> for measurement of
+<p>This example illustrates the use of <a class="reference internal" href="../../api/dcmri.kidney_upper.html#dcmri.Kidney" title="dcmri.Kidney"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Kidney</span></code></a> for measurement of
 single-kidney glomerular filtration rate (SK-GFR). We will analyse
 one kidney of a participant in the KRUK study.</p>
 <section id="setup">
@@ -539,9 +539,9 @@ assume acquisition with a 3D-SPGR-SS sequence:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="c1"># kidney.print_inputs()</span><span class="w">
 </span><span class="w">
 </span><span class="c1"># --- The dataset to be analysed</span><span class="w">
-</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">load_kruk</span><span class="p">(</span><span class="s1">'</span><span class="s1">061</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="s1">pre</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="s1">RK</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.load_kruk.html#dcmri.load_kruk" title="dcmri.load_kruk"><span class="n">dc</span><span class="o">.</span><span class="n">load_kruk</span></a><span class="p">(</span><span class="s1">'</span><span class="s1">061</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="s1">pre</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="s1">RK</span><span class="s1">'</span><span class="p">)</span><span class="w">
 </span><span class="w">
-</span><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                                        Quantities                                                                       |
@@ -579,13 +579,13 @@ assume acquisition with a 3D-SPGR-SS sequence:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.InverseKidney.html#dcmri.InverseKidney" title="dcmri.InverseKidney"><span class="n">kidney</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a><span class="p">)</span><span class="w">
 </span><span class="w">
 </span><span class="c1"># --- Check that the model has fitted the data</span><span class="w">
-</span><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-method reference internal" href="../../api/dcmri.InverseKidney.html#dcmri.InverseKidney.plot" title="dcmri.InverseKidney.plot"><span class="n">kidney</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.InverseKidney.html#dcmri.InverseKidney" title="dcmri.InverseKidney"><span class="n">kidney</span></a><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_kidney_001.png" srcset="../../_images/sphx_glr_plot_kidney_001.png" alt="Prediction of the MRI signals., Reconstruction of concentrations" class = "sphx-glr-single-img"/></section>
 <section id="numerical-results">
 <h2>Numerical results<a class="headerlink" href="#numerical-results" title="Link to this heading">#</a></h2>
 <p>Print the measured model parameters:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+-------------------------------------------------------------------------------------------------------------------------+
 |                                                        Quantities                                                       |
@@ -612,7 +612,7 @@ radio-isotope reference value:</p>
 MRR SK-GFR: 23 mL/min
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.156 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.158 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-cases-plot-kidney-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/da641de63e9128feedfed65f06caef32/plot_kidney.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_kidney.ipynb</span></code></a></p>

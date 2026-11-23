@@ -7,30 +7,6 @@ Utilities
 *********
 
 
-Lexicon
-*******
-
-.. autosummary::
-   :toctree: ../api/
-   :template: autosummary.rst
-
-   select_params
-
-
-Measurement
-***********
-
-
-.. autosummary::
-   :toctree: ../api/
-   :template: autosummary.rst
-
-   fetch
-   sample
-   add_noise
-   mle_rice
-
-
 Constants
 *********
 
@@ -42,12 +18,13 @@ Constants
    ca_conc
    ca_std_dose
    r2s
+   r2sq
    r1
    T1
    T2
+   T2s
    PD
    perfusion
-
 
 Convolution
 ***********
@@ -61,25 +38,48 @@ Convolution
    expconv
    biexpconv
    nexpconv
-   deconv
-   convmat
-   invconvmat
 
-
-Input functions
-***************
+Deconvolution
+*************
 
 .. autosummary::
    :toctree: ../api/
    :template: autosummary.rst
 
-   aif_parker
-   aif_tristan
-   aif_tristan_rat
+   deconv
+   convmat
+   invconvmat
+
+Data
+****
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   fetch
+   clear_cache
+   load_minipig
+   load_kruk
+   load_tristan_rats
+   load_tristan_humans
 
 
-Digital phantoms
-****************
+Measurement
+***********
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   sample
+   add_noise
+   mle_rice
+   describe
+
+
+Digital reference objects
+*************************
 
 .. autosummary::
    :toctree: ../api/

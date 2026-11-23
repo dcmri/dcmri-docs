@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -483,6 +483,8 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">dcmri.kinetics.functions_blocks</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">blocks</span>
 
 
+<div class="viewcode-block" id="Flux">
+<a class="viewcode-back" href="../../../api/dcmri.Flux.html#dcmri.Flux">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Flux</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Flux through an abritrary building block.</span>
 <span class="sd">    """</span>
@@ -499,13 +501,16 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">'J'</span><span class="p">}</span>
     
+<div class="viewcode-block" id="Flux.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.Flux.html#dcmri.Flux.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
         <span class="n">model_func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"flux_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'block'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> 
         <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'J'</span><span class="p">:</span> <span class="n">model_func</span><span class="p">(</span><span class="o">**</span><span class="n">p</span><span class="p">)}</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nt</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">nc</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_data</span><span class="p">()</span>
@@ -522,9 +527,12 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'block'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'nscomp'</span><span class="p">:</span>
             <span class="n">data</span><span class="p">[</span><span class="s1">'T'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
     
 
+<div class="viewcode-block" id="FluxInjection">
+<a class="viewcode-back" href="../../../api/dcmri.FluxInjection.html#dcmri.FluxInjection">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">FluxInjection</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Indicator flux injected"""</span>
 
@@ -569,6 +577,8 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">'tC'</span><span class="p">,</span> <span class="s1">'Jinj'</span><span class="p">}</span>
 
+<div class="viewcode-block" id="FluxInjection.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.FluxInjection.html#dcmri.FluxInjection.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -602,7 +612,9 @@
             <span class="n">J</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bolus_dispersion</span><span class="p">(</span><span class="n">p</span> <span class="o">|</span> <span class="p">{</span><span class="s1">'J'</span><span class="p">:</span> <span class="n">J</span><span class="p">})[</span><span class="s1">'J'</span><span class="p">]</span>
 
         <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tC'</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s1">'Jinj'</span><span class="p">:</span> <span class="n">J</span><span class="p">}</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span></div>
+</div>
+
 
 
 <div class="viewcode-block" id="FluxTissueX">
@@ -651,6 +663,8 @@
 
     
 
+<div class="viewcode-block" id="FluxAorta">
+<a class="viewcode-back" href="../../../api/dcmri.FluxAorta.html#dcmri.FluxAorta">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">FluxAorta</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Whole-body model for indicator flux in the aorta.</span>
 
@@ -766,6 +780,8 @@
             <span class="n">outputs</span> <span class="o">|=</span> <span class="p">{</span><span class="s1">'J_li'</span><span class="p">}</span>
         <span class="k">return</span> <span class="n">outputs</span> 
     
+<div class="viewcode-block" id="FluxAorta.__call__">
+<a class="viewcode-back" href="../../../api/dcmri.FluxAorta.html#dcmri.FluxAorta.__call__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -811,7 +827,8 @@
 
             <span class="n">p</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_propagate_J_vena</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">J_vc_total</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_results</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
 
     <span class="c1"># Helper function</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">_propagate_J_vena</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">Jv</span><span class="p">):</span>
@@ -879,7 +896,8 @@
             <span class="n">p</span><span class="p">[</span><span class="s1">'vr_rk'</span><span class="p">]</span> <span class="o">=</span> <span class="n">vr_ki</span> <span class="o">/</span> <span class="mi">2</span>
             <span class="n">p</span><span class="p">[</span><span class="s1">'vr_or'</span><span class="p">]</span> <span class="o">=</span> <span class="n">fCO_or</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
 </pre></div>
 
                 </article>

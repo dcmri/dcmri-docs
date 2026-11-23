@@ -1,0 +1,7 @@
+﻿dcmri.QUANTITIES
+================
+
+.. currentmodule:: dcmri
+
+.. autodata:: QUANTITIES
+   :no-value:

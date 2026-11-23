@@ -1,0 +1,20 @@
+﻿dcmri.Kidney
+============
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: Kidney
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.Kidney
+   :add-heading:
+
+

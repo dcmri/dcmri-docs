@@ -1,0 +1,30 @@
+﻿dcmri.build\_varname
+====================
+
+.. currentmodule:: dcmri
+
+.. autoclass:: build_varname
+   :no-members:
+   :show-inheritance:
+
+
+
+
+
+
+
+
+
+
+.. rubric:: Detailed Members Reference
+
+
+
+
+
+
+
+
+
+.. minigallery:: dcmri.build_varname
+   :add-heading:

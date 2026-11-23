@@ -1,0 +1,20 @@
+﻿dcmri.InverseTissueLS
+=====================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: InverseTissueLS
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.InverseTissueLS
+   :add-heading:
+
+

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -80,8 +80,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="dcmri.Mz_dyn_k0_spgr" href="dcmri.Mz_dyn_k0_spgr.html" />
-    <link rel="prev" title="dcmri.Mz_dyn_se" href="dcmri.Mz_dyn_se.html" />
+    <link rel="next" title="dcmri.Mz_dyn_ss_k0" href="dcmri.Mz_dyn_ss_k0.html" />
+    <link rel="prev" title="dcmri.Mz_dyn_k0_se" href="dcmri.Mz_dyn_k0_se.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -434,27 +434,43 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/lexicon.html">Lexicon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../reference/bloch.html">Magnetization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="dcmri.Magnetization.html">dcmri.Magnetization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn.html">dcmri.Mz_dyn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_spgr.html">dcmri.Mz_dyn_spgr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_pr_spgr.html">dcmri.Mz_dyn_pr_spgr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss.html">dcmri.Mz_dyn_ss</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_pr_spgr.html">dcmri.Mz_dyn_ss_pr_spgr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_spgr.html">dcmri.Mz_dyn_ss_spgr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_spgri.html">dcmri.Mz_dyn_ss_spgri</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_se.html">dcmri.Mz_dyn_se</a></li>
-<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.Mz_dyn_k0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.WaterExchangeGeneric.html">dcmri.WaterExchangeGeneric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.WaterExchangeArtery.html">dcmri.WaterExchangeArtery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.WaterExchangeKidney.html">dcmri.WaterExchangeKidney</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.WaterExchangeLiver.html">dcmri.WaterExchangeLiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.WaterExchangeTissueX.html">dcmri.WaterExchangeTissueX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_ss_vectorized.html">dcmri.Mz_ss_vectorized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_ss_spgr_vectorized.html">dcmri.Mz_ss_spgr_vectorized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_ss_pr_spgr_vectorized.html">dcmri.Mz_ss_pr_spgr_vectorized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_ss_k0_pr_spgr_vectorized.html">dcmri.Mz_ss_k0_pr_spgr_vectorized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_ss_spgri_vectorized.html">dcmri.Mz_ss_spgri_vectorized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_prop_vectorized.html">dcmri.Mz_prop_vectorized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_prop_spgr_vectorized.html">dcmri.Mz_prop_spgr_vectorized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_prop_pr_spgr_vectorized.html">dcmri.Mz_prop_pr_spgr_vectorized</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_k0_spgr.html">dcmri.Mz_dyn_k0_spgr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_k0_pr_spgr.html">dcmri.Mz_dyn_k0_pr_spgr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_k0.html">dcmri.Mz_dyn_ss_k0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_k0_pr_spgr.html">dcmri.Mz_dyn_ss_k0_pr_spgr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_k0_spgr.html">dcmri.Mz_dyn_ss_k0_spgr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_k0_spgri.html">dcmri.Mz_dyn_ss_k0_spgri</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_k0_se.html">dcmri.Mz_dyn_k0_se</a></li>
+<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.Mz_dyn_k0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_k0.html">dcmri.Mz_dyn_ss_k0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_spgr.html">dcmri.Mz_dyn_spgr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_pr_spgr.html">dcmri.Mz_dyn_pr_spgr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_pr_spgr.html">dcmri.Mz_dyn_ss_pr_spgr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_spgr.html">dcmri.Mz_dyn_ss_spgr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_se.html">dcmri.Mz_dyn_se</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss_spgri.html">dcmri.Mz_dyn_ss_spgri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn.html">dcmri.Mz_dyn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Mz_dyn_ss.html">dcmri.Mz_dyn_ss</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/signal.html">Signal formation</a></li>
@@ -540,8 +556,8 @@ followed by an SPGR readout train of <code class="xref py py-obj docutils litera
 <li><p><strong>R1</strong> (<em>2D array-like</em>) – Longitudinal relaxation rate(s) over time with shape <code class="xref py py-obj docutils literal notranslate"><span class="pre">(N_compartments,</span> <span class="pre">N_time)</span></code>.</p></li>
 <li><p><strong>v</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><em>float</em></a><em> or </em><em>array-like</em>) – Volume fraction(s) of the compartment(s).</p></li>
 <li><p><strong>Kw</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><em>float</em></a><em> or </em><em>array-like</em>) – Water exchange rate matrix or values between compartments [s^-1].</p></li>
-<li><p><strong>j</strong> (<em>2D array-like</em><em> or </em><em>None</em>) – Time-varying exchange flux or flow parameters matching <code class="xref py py-obj docutils literal notranslate"><span class="pre">R1</span></code> shape.
-If <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, defaults to an array of zeros with shape matching <code class="xref py py-obj docutils literal notranslate"><span class="pre">R1</span></code>.</p></li>
+<li><p><strong>j</strong> (<em>2D array-like</em><em> or </em><em>None</em>) – Time-varying exchange flux or flow parameters matching <a class="reference internal" href="dcmri.r1_upper.html#dcmri.R1" title="dcmri.R1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">R1</span></code></a> shape.
+If <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, defaults to an array of zeros with shape matching <a class="reference internal" href="dcmri.r1_upper.html#dcmri.R1" title="dcmri.R1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">R1</span></code></a>.</p></li>
 <li><p><strong>me</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><em>float</em></a><em> or </em><em>array-like</em>) – Equilibrium magnetization value(s).</p></li>
 <li><p><strong>pulses_per_period</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><em>list</em></a><em> of </em><em>lists</em>) – List of pulses in the sequence, where each pulse is defined as <code class="xref py py-obj docutils literal notranslate"><span class="pre">[flip_angle,</span> <span class="pre">delay]</span></code>.</p></li>
 <li><p><strong>tj</strong> (<em>array-like</em><em> or </em><em>None</em>) – Time points of j [s]. If None, it is assumed j is already defined at the correct times.</p></li>
@@ -575,20 +591,20 @@ prior to each readout pulse (<code class="xref py py-obj docutils literal notran
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dcmri.Mz_dyn_se.html"
+       href="dcmri.Mz_dyn_k0_se.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">dcmri.Mz_dyn_se</p>
+        <p class="prev-next-title">dcmri.Mz_dyn_k0_se</p>
       </div>
     </a>
     <a class="right-next"
-       href="dcmri.Mz_dyn_k0_spgr.html"
+       href="dcmri.Mz_dyn_ss_k0.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">dcmri.Mz_dyn_k0_spgr</p>
+        <p class="prev-next-title">dcmri.Mz_dyn_ss_k0</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

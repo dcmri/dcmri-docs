@@ -1,0 +1,20 @@
+﻿dcmri.WaterExchangeKidney
+=========================
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: WaterExchangeKidney
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.WaterExchangeKidney
+   :add-heading:
+
+

@@ -1,0 +1,30 @@
+﻿dcmri.parse\_varname
+====================
+
+.. currentmodule:: dcmri
+
+.. autoclass:: parse_varname
+   :no-members:
+   :show-inheritance:
+
+
+
+
+
+
+
+
+
+
+.. rubric:: Detailed Members Reference
+
+
+
+
+
+
+
+
+
+.. minigallery:: dcmri.parse_varname
+   :add-heading:

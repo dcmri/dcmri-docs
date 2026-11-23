@@ -1,0 +1,30 @@
+﻿dcmri.group
+===========
+
+.. currentmodule:: dcmri
+
+.. autoclass:: group
+   :no-members:
+   :show-inheritance:
+
+
+
+
+
+
+
+
+
+
+.. rubric:: Detailed Members Reference
+
+
+
+
+
+
+
+
+
+.. minigallery:: dcmri.group
+   :add-heading:

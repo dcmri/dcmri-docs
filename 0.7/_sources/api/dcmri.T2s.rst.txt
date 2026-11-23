@@ -1,0 +1,18 @@
+﻿dcmri.T2s
+=========
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autofunction:: T2s
+
+
+
+
+
+.. minigallery:: dcmri.T2s
+   :add-heading:
+
+

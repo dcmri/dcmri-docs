@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -434,9 +434,12 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lexicon.html">Lexicon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../kinetics.html">Tracer-kinetic models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="wrappers.html">Wrapper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Kinetics Modules</a></li>
 <li class="toctree-l2 current active has-children"><a aria-current="page" class="current reference internal" href="#">Building blocks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.conc_pass.html">dcmri.conc_pass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.flux_pass.html">dcmri.flux_pass</a></li>
@@ -465,6 +468,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.res_chain.html">dcmri.res_chain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.prop_chain.html">dcmri.prop_chain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.flux_pfcomp.html">dcmri.flux_pfcomp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.conc_pfcomp.html">dcmri.conc_pfcomp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.flux_plucom.html">dcmri.flux_plucom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.conc_2cxm.html">dcmri.conc_2cxm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.flux_2cxm.html">dcmri.flux_2cxm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/dcmri.conc_free.html">dcmri.conc_free</a></li>
@@ -486,6 +491,7 @@
 <li class="toctree-l2"><a class="reference internal" href="kidney.html">Kidney</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aorta.html">Aorta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sources.html">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inverse.html">Inverse</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../relaxivity.html">Relaxivity</a></li>
@@ -693,12 +699,26 @@
 </table>
 </div>
 </section>
-<section id="plug-flow-compartment">
-<span id="reference-pfcomp"></span><h2>Plug-flow compartment<a class="headerlink" href="#plug-flow-compartment" title="Link to this heading">#</a></h2>
+<section id="plug-flow-compartment-serial">
+<span id="reference-pfcomp"></span><h2>Plug-flow compartment (serial)<a class="headerlink" href="#plug-flow-compartment-serial" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../../api/dcmri.flux_pfcomp.html#dcmri.flux_pfcomp" title="dcmri.flux_pfcomp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flux_pfcomp</span></code></a>([J, t, dt, T, D, solver])</p></td>
 <td><p>Flux out of a plug-flow compartment.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../api/dcmri.conc_pfcomp.html#dcmri.conc_pfcomp" title="dcmri.conc_pfcomp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conc_pfcomp</span></code></a>([J, t, dt, T, D, solver])</p></td>
+<td><p>Tissue concentration in a plug-flow compartment.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="plug-flow-and-compartment-parallel">
+<h2>Plug-flow and compartment (parallel)<a class="headerlink" href="#plug-flow-and-compartment-parallel" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/dcmri.flux_plucom.html#dcmri.flux_plucom" title="dcmri.flux_plucom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flux_plucom</span></code></a>([J, t, dt, T, ffp])</p></td>
+<td><p>Flux out of a parallel arrangement of a plug-flow system and a compartment.</p></td>
 </tr>
 </tbody>
 </table>
@@ -842,7 +862,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bi-compartment">Bi-compartment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step">Step</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain">Chain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plug-flow-compartment">Plug-flow compartment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plug-flow-compartment-serial">Plug-flow compartment (serial)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plug-flow-and-compartment-parallel">Plug-flow and compartment (parallel)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-compartment-exchange">Two-compartment exchange</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free">Free</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multicompartment">Multicompartment</a></li>

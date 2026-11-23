@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -80,8 +80,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="dcmri.select_params" href="../api/dcmri.select_params.html" />
-    <link rel="prev" title="dcmri.linfit_2cfm" href="../api/dcmri.linfit_2cfm.html" />
+    <link rel="next" title="dcmri.ca_conc" href="../api/dcmri.ca_conc.html" />
+    <link rel="prev" title="dcmri.vfa_linear" href="../api/dcmri.vfa_linear.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -434,24 +434,23 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon.html">Lexicon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kinetics.html">Tracer-kinetic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relaxivity.html">Relaxivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bloch.html">Magnetization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="signal.html">Signal formation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inverse.html">Inverse methods</a></li>
 <li class="toctree-l1 current active has-children"><a aria-current="page" class="current reference internal" href="#">Utilities</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.select_params.html">dcmri.select_params</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.fetch.html">dcmri.fetch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.sample.html">dcmri.sample</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.add_noise.html">dcmri.add_noise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.mle_rice.html">dcmri.mle_rice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.ca_conc.html">dcmri.ca_conc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.ca_std_dose.html">dcmri.ca_std_dose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.r2s_lower.html">dcmri.r2s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.r1_lower.html">dcmri.r1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.T1.html">dcmri.T1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.T2.html">dcmri.T2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.T2s.html">dcmri.T2s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.PD.html">dcmri.PD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.perfusion.html">dcmri.perfusion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.conv.html">dcmri.conv</a></li>
@@ -462,6 +461,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.deconv.html">dcmri.deconv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.convmat.html">dcmri.convmat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.invconvmat.html">dcmri.invconvmat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.fetch.html">dcmri.fetch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.clear_cache.html">dcmri.clear_cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.load_minipig.html">dcmri.load_minipig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.load_kruk.html">dcmri.load_kruk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.load_tristan_rats.html">dcmri.load_tristan_rats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.load_tristan_humans.html">dcmri.load_tristan_humans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.sample.html">dcmri.sample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.add_noise.html">dcmri.add_noise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/dcmri.mle_rice.html">dcmri.mle_rice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/dcmri.shepp_logan.html">dcmri.shepp_logan</a></li>
 </ul>
 </details></li>
@@ -527,37 +535,6 @@
                   
   <section id="utilities">
 <span id="utils"></span><h1>Utilities<a class="headerlink" href="#utilities" title="Link to this heading">#</a></h1>
-<section id="lexicon">
-<h2>Lexicon<a class="headerlink" href="#lexicon" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.select_params.html#dcmri.select_params" title="dcmri.select_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_params</span></code></a>([lexicon])</p></td>
-<td><p>Return lexicon parameters with specific properties</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="measurement">
-<h2>Measurement<a class="headerlink" href="#measurement" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.fetch.html#dcmri.fetch" title="dcmri.fetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch</span></code></a>(dataset[, download_all])</p></td>
-<td><p>Fetch a dataset included in dcmri</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.sample.html#dcmri.sample" title="dcmri.sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample</span></code></a>(t, tp, Sp[, dt])</p></td>
-<td><p>Sample a signal at given time points.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.add_noise.html#dcmri.add_noise" title="dcmri.add_noise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_noise</span></code></a>(signal, sdev)</p></td>
-<td><p>Add noise to an MRI magnitude signal.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.mle_rice.html#dcmri.mle_rice" title="dcmri.mle_rice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mle_rice</span></code></a>(data[, fit_loc])</p></td>
-<td><p>Maximum-likelihood estimate of Rician parameters from 1D array <code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code>.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 <section id="constants">
 <h2>Constants<a class="headerlink" href="#constants" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
@@ -580,10 +557,13 @@
 <tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.T2.html#dcmri.T2" title="dcmri.T2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T2</span></code></a>([field_strength, tissue, force])</p></td>
 <td><p>T2 value of selected tissue types.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.PD.html#dcmri.PD" title="dcmri.PD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PD</span></code></a>([tissue, force])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.T2s.html#dcmri.T2s" title="dcmri.T2s"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T2s</span></code></a>([field_strength, tissue, force])</p></td>
+<td><p>T2* value of selected tissue types.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.PD.html#dcmri.PD" title="dcmri.PD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PD</span></code></a>([tissue, force])</p></td>
 <td><p>Relative proton density (PD) value of selected tissue types.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.perfusion.html#dcmri.perfusion" title="dcmri.perfusion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">perfusion</span></code></a>([parameter, tissue])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.perfusion.html#dcmri.perfusion" title="dcmri.perfusion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">perfusion</span></code></a>([parameter, tissue])</p></td>
 <td><p>perfusion parameters of selected tissue types.</p></td>
 </tr>
 </tbody>
@@ -609,29 +589,72 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.nexpconv.html#dcmri.nexpconv" title="dcmri.nexpconv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nexpconv</span></code></a>(n, T, t)</p></td>
 <td><p>Convolve n identical normalised exponentials analytically</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.deconv.html#dcmri.deconv" title="dcmri.deconv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deconv</span></code></a>(h, g[, dt, order, method, tol])</p></td>
+</tbody>
+</table>
+</div>
+</section>
+<section id="deconvolution">
+<h2>Deconvolution<a class="headerlink" href="#deconvolution" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.deconv.html#dcmri.deconv" title="dcmri.deconv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deconv</span></code></a>(h, g[, dt, order, method, tol])</p></td>
 <td><p>Deconvolve two uniformly sampled 1D functions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.convmat.html#dcmri.convmat" title="dcmri.convmat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convmat</span></code></a>(f[, order])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.convmat.html#dcmri.convmat" title="dcmri.convmat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convmat</span></code></a>(f[, order])</p></td>
 <td><p>Return the convolution matrix</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.invconvmat.html#dcmri.invconvmat" title="dcmri.invconvmat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invconvmat</span></code></a>(f[, order, tol, method])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.invconvmat.html#dcmri.invconvmat" title="dcmri.invconvmat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invconvmat</span></code></a>(f[, order, tol, method])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="input-functions">
-<h2>Input functions<a class="headerlink" href="#input-functions" title="Link to this heading">#</a></h2>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.fetch.html#dcmri.fetch" title="dcmri.fetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch</span></code></a>(dataset[, download_all])</p></td>
+<td><p>Fetch a dataset included in dcmri</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.clear_cache.html#dcmri.clear_cache" title="dcmri.clear_cache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_cache</span></code></a>()</p></td>
+<td><p>Clear the folder where the data downloaded via fetch are saved.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.load_minipig.html#dcmri.load_minipig" title="dcmri.load_minipig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_minipig</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.load_kruk.html#dcmri.load_kruk" title="dcmri.load_kruk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_kruk</span></code></a>([subjects, visit, kidney])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.load_tristan_rats.html#dcmri.load_tristan_rats" title="dcmri.load_tristan_rats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_tristan_rats</span></code></a>(study_name, subject, visit)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.load_tristan_humans.html#dcmri.load_tristan_humans" title="dcmri.load_tristan_humans"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_tristan_humans</span></code></a>([study, subjects, ...])</p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="digital-phantoms">
-<h2>Digital phantoms<a class="headerlink" href="#digital-phantoms" title="Link to this heading">#</a></h2>
+<section id="measurement">
+<h2>Measurement<a class="headerlink" href="#measurement" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.sample.html#dcmri.sample" title="dcmri.sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample</span></code></a>(t, tp, Sp[, dt])</p></td>
+<td><p>Sample a signal at given time points.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/dcmri.add_noise.html#dcmri.add_noise" title="dcmri.add_noise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_noise</span></code></a>(signal, sdev)</p></td>
+<td><p>Add noise to an MRI magnitude signal.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.mle_rice.html#dcmri.mle_rice" title="dcmri.mle_rice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mle_rice</span></code></a>(data[, fit_loc])</p></td>
+<td><p>Maximum-likelihood estimate of Rician parameters from 1D array <code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="digital-reference-objects">
+<h2>Digital reference objects<a class="headerlink" href="#digital-reference-objects" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/dcmri.shepp_logan.html#dcmri.shepp_logan" title="dcmri.shepp_logan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shepp_logan</span></code></a>(*params[, n, B0])</p></td>
@@ -654,20 +677,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../api/dcmri.linfit_2cfm.html"
+       href="../api/dcmri.vfa_linear.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">dcmri.linfit_2cfm</p>
+        <p class="prev-next-title">dcmri.vfa_linear</p>
       </div>
     </a>
     <a class="right-next"
-       href="../api/dcmri.select_params.html"
+       href="../api/dcmri.ca_conc.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">dcmri.select_params</p>
+        <p class="prev-next-title">dcmri.ca_conc</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -690,12 +713,12 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lexicon">Lexicon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement">Measurement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constants">Constants</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution">Convolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-functions">Input functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-phantoms">Digital phantoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deconvolution">Deconvolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement">Measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-reference-objects">Digital reference objects</a></li>
 </ul>
   </nav></div>
 

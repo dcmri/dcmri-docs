@@ -1,0 +1,20 @@
+﻿dcmri.CortMed
+=============
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: CortMed
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.CortMed
+   :add-heading:
+
+

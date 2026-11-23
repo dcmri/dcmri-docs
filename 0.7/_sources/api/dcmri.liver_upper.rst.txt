@@ -1,0 +1,20 @@
+﻿dcmri.Liver
+===========
+
+
+.. currentmodule:: dcmri
+
+
+
+.. autoclass:: Liver
+    :show-inheritance:
+    :special-members: __call__
+
+
+
+
+
+.. minigallery:: dcmri.Liver
+   :add-heading:
+
+

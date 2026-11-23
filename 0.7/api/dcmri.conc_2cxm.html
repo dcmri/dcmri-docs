@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cd8af66b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c7a6860f" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -81,7 +81,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="dcmri.flux_2cxm" href="dcmri.flux_2cxm.html" />
-    <link rel="prev" title="dcmri.flux_pfcomp" href="dcmri.flux_pfcomp.html" />
+    <link rel="prev" title="dcmri.flux_plucom" href="dcmri.flux_plucom.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -434,9 +434,12 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/core.html">Core classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/lexicon.html">Lexicon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/e2e.html">End-to-end models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/forward.html">End-to-end models: Forward</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../reference/kinetics.html">Tracer-kinetic models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/wrappers.html">Wrapper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/modules.html">Kinetics Modules</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../reference/kinetics/building_blocks.html">Building blocks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_pass.html">dcmri.conc_pass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.flux_pass.html">dcmri.flux_pass</a></li>
@@ -465,6 +468,8 @@
 <li class="toctree-l3"><a class="reference internal" href="dcmri.res_chain.html">dcmri.res_chain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.prop_chain.html">dcmri.prop_chain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.flux_pfcomp.html">dcmri.flux_pfcomp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcmri.conc_pfcomp.html">dcmri.conc_pfcomp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcmri.flux_plucom.html">dcmri.flux_plucom</a></li>
 <li class="toctree-l3 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.conc_2cxm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.flux_2cxm.html">dcmri.flux_2cxm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dcmri.conc_free.html">dcmri.conc_free</a></li>
@@ -486,6 +491,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/kidney.html">Kidney</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/aorta.html">Aorta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/sources.html">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/kinetics/inverse.html">Inverse</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/relaxivity.html">Relaxivity</a></li>
@@ -635,12 +641,12 @@ and <code class="xref py py-obj docutils literal notranslate"><span class="pre">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dcmri.flux_pfcomp.html"
+       href="dcmri.flux_plucom.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">dcmri.flux_pfcomp</p>
+        <p class="prev-next-title">dcmri.flux_plucom</p>
       </div>
     </a>
     <a class="right-next"

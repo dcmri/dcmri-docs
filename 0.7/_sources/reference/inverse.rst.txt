@@ -6,11 +6,8 @@ Inverse methods
 ***************
 
 
-Signal to concentration
-***********************
-
-Wrapper
--------
+Signal to concentration: module
+*******************************
 
 .. autosummary::
    :toctree: ../api/
@@ -19,13 +16,14 @@ Wrapper
    SignalToConc
 
 
-Library
--------
+Signal to concentration: functions
+**********************************
 
 .. autosummary::
    :toctree: ../api/
    :template: autosummary.rst
 
+   estimate_bat
    conc_dce
    conc_dce_lin
    conc_dsc
@@ -42,13 +40,3 @@ Relaxometry
    vfa_nonlinear
    vfa_linear
 
-
-Kinetics
-********
-
-
-.. autosummary::
-   :toctree: ../api/
-   :template: autosummary.rst
-
-   linfit_2cfm

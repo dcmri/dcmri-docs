@@ -544,79 +544,79 @@ the model with the following options:</p>
 <p>Let’s see what input parameters are needed for this model:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit" title="dcmri.InverseAortaLiverSplit"><span class="n">model</span></a><span class="o">.</span><span class="n">print_inputs</span><span class="p">(</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                   InverseAortaLiverSplit instance - inputs (n = 60)                                                    |
-+----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
-| Key            | Value      | Unit     | Name                                                        | Group           | Bounds        | DICOM | OSIPI |
-+----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
-| B1corr_1_ao    | 1          |          | 1st B1-correction factor in the aorta                       | electromagnetic | (0, 5)        |       |       |
-| B1corr_1_li    | 1          |          | 1st B1-correction factor in the liver                       | electromagnetic | (0, 5)        |       |       |
-| B1corr_2_ao    | 1          |          | 2nd B1-correction factor in the aorta                       | electromagnetic | (0, 5)        |       |       |
-| B1corr_2_li    | 1          |          | 2nd B1-correction factor in the liver                       | electromagnetic | (0, 5)        |       |       |
-| me             | 1          | A cm2/mL | equilibrium magnetization                                   | electromagnetic | (0, 5)        |       |       |
-| R1_b           | 0.65       | Hz       | tissue R1 in the blood                                      | electromagnetic | (0, 5)        |       |       |
-| R1_li          | 0.65       | Hz       | tissue R1 in the liver                                      | electromagnetic | (0, 5)        |       |       |
-+----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
-| dose_tolerance | 0.1        |          | dose tolerance                                              | hyperparameters |               |       |       |
-| dt             | 0.5        | sec      | pseudo-continuous time step                                 | hyperparameters |               |       |       |
-+----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
-| agent          | gadoterate |          | contrast agent generic name                                 | indicator       |               |       |       |
-| dose_1         | 0.1        | mL/kg    | 1st contrast agent dose                                     | indicator       | (0, 0.2)      |       |       |
-| dose_2         | 0.1        | mL/kg    | 2nd contrast agent dose                                     | indicator       | (0, 0.2)      |       |       |
-| rate_1         | 1          | mL/sec   | 1st injection rate                                          | indicator       | (0, 10)       |       |       |
-| rate_2         | 1          | mL/sec   | 2nd injection rate                                          | indicator       | (0, 10)       |       |       |
-+----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
-| pfree          | None       | a.u.     | set of free parameters                                      | inverse problem |               |       |       |
-+----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
-| CO             | 100        | mL/sec   | cardiac output                                              | physiological   | (0, 500)      |       |       |
-| D_hl           | 0.2        |          | transit time dispersion in the heart and Lungs              | physiological   | (0.01, 0.99)  |       |       |
-| E_ki           | 0.15       |          | extraction fraction in the kidney                           | physiological   | (0, 1)        |       |       |
-| E_or           | 0.15       |          | extraction fraction in the organs                           | physiological   | (0, 0.5)      |       |       |
-| Ef_li          | 0.1        |          | final extraction fraction in the liver                      | physiological   | (0.0, 1.0)    |       |       |
-| Ei_li          | 0.1        |          | initial extraction fraction in the liver                    | physiological   | (0.0, 1.0)    |       |       |
-| fCO_li         | 0.1        |          | fraction of the cardiac output in the liver                 | physiological   | (0, 0.5)      |       |       |
-| H              | 0.45       |          | hematocrit                                                  | physiological   | (0, 1)        |       |       |
-| T_b_or         | 20         | sec      | mean transit time in blood of the organs                    | physiological   | (0, 60)       |       |       |
-| T_e_or         | 120        | sec      | mean transit time in extracellular space of the organs      | physiological   | (0, 800)      |       |       |
-| T_h            | 14400      | sec      | mean transit time in hepatocytes                            | physiological   | (600, 21600)  |       |       |
-| T_hl           | 10         | sec      | mean transit time in the heart and Lungs                    | physiological   | (0, 30)       |       |       |
-| T_lag          | 30         | sec      | mean transit time in the liver artery and gut               | physiological   | (0.0, 60)     |       |       |
-| v_e_li         | 0.25       | mL/cm3   | volume fraction in extracellular space of the liver         | physiological   | (0.01, 0.5)   |       |       |
-| v_li           | 1          | mL/cm3   | volume fraction in the liver                                | physiological   | (0, 1)        |       |       |
-+----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
-| FA_1           | 15         | deg      | 1st flip angle                                              | sequence        | (0, 180)      |       |       |
-| FA_2           | 15         | deg      | 2nd flip angle                                              | sequence        | (0, 180)      |       |       |
-| field_strength | 3          | T        | magnetic field strength                                     | sequence        | (0, 20)       |       |       |
-| Nk0_1          | 64         |          | 1st number of acquired phase lines to the center of k-space | sequence        | (0, 1000)     |       |       |
-| Nk0_2          | 64         |          | 2nd number of acquired phase lines to the center of k-space | sequence        | (0, 1000)     |       |       |
-| Nph_1          | 128        |          | 1st number of acquired phase lines in k-space               | sequence        | (0, 1000)     |       |       |
-| Nph_2          | 128        |          | 2nd number of acquired phase lines in k-space               | sequence        | (0, 1000)     |       |       |
-| TR_1           | 0.005      | sec      | 1st repetition time                                         | sequence        | (0, 1)        |       |       |
-| TR_2           | 0.005      | sec      | 2nd repetition time                                         | sequence        | (0, 1)        |       |       |
-+----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
-| iStrig_1_ao    | None       |          | 1st indices of the signal trigger in the aorta              | signal          |               |       |       |
-| iStrig_1_li    | None       |          | 1st indices of the signal trigger in the liver              | signal          |               |       |       |
-| iStrig_2_ao    | None       |          | 2nd indices of the signal trigger in the aorta              | signal          |               |       |       |
-| iStrig_2_li    | None       |          | 2nd indices of the signal trigger in the liver              | signal          |               |       |       |
-| nb_1           | 1          | a.u.     | 1st number of baseline time points                          | signal          |               |       |       |
-| nb_2           | 1          | a.u.     | 2nd number of baseline time points                          | signal          |               |       |       |
-| NSR_1_ao       | 0.0        |          | 1st noise-to-signal ratio in the aorta                      | signal          | (0, 100000.0) |       |       |
-| NSR_1_li       | 0.0        |          | 1st noise-to-signal ratio in the liver                      | signal          | (0, 100000.0) |       |       |
-| NSR_2_ao       | 0.0        |          | 2nd noise-to-signal ratio in the aorta                      | signal          | (0, 100000.0) |       |       |
-| NSR_2_li       | 0.0        |          | 2nd noise-to-signal ratio in the liver                      | signal          | (0, 100000.0) |       |       |
-| S_1_ao         | 1.0        | a.u.     | 1st signal in the aorta                                     | signal          | (0, 5)        |       |       |
-| S_1_li         | 1.0        | a.u.     | 1st signal in the liver                                     | signal          | (0, 5)        |       |       |
-| S_2_ao         | 1.0        | a.u.     | 2nd signal in the aorta                                     | signal          | (0, 5)        |       |       |
-| S_2_li         | 1.0        | a.u.     | 2nd signal in the liver                                     | signal          | (0, 5)        |       |       |
-| tS_1_ao        | 0.0        | sec      | 1st signal time points in the aorta                         | signal          |               |       |       |
-| tS_1_li        | 0.0        | sec      | 1st signal time points in the liver                         | signal          |               |       |       |
-| tS_2_ao        | 0.0        | sec      | 2nd signal time points in the aorta                         | signal          |               |       |       |
-| tS_2_li        | 0.0        | sec      | 2nd signal time points in the liver                         | signal          |               |       |       |
-+----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-------+-------+
-| vol_ao         | 1          | cm3      | ROI volume in the aorta                                     | whole-body      | (0.0, 1000)   |       |       |
-| vol_li         | 1000       | cm3      | ROI volume in the liver                                     | whole-body      | (0, 10000)    |       |       |
-| weight         | 70         | kg       | body weight                                                 | whole-body      | (0, 300)      |       |       |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                             InverseAortaLiverSplit instance - inputs (n = 60)                                                              |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-----------------------+-----------+
+| Key            | Value      | Unit     | Name                                                        | Group           | Bounds        | DICOM                 | OSIPI     |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-----------------------+-----------+
+| B1corr_1_ao    | 1          |          | 1st B1-correction factor in the aorta                       | electromagnetic | (0, 5)        |                       |           |
+| B1corr_1_li    | 1          |          | 1st B1-correction factor in the liver                       | electromagnetic | (0, 5)        |                       |           |
+| B1corr_2_ao    | 1          |          | 2nd B1-correction factor in the aorta                       | electromagnetic | (0, 5)        |                       |           |
+| B1corr_2_li    | 1          |          | 2nd B1-correction factor in the liver                       | electromagnetic | (0, 5)        |                       |           |
+| me             | 1          | A cm2/mL | equilibrium magnetization                                   | electromagnetic | (0, 5)        |                       |           |
+| R1_b           | 0.65       | Hz       | tissue R1 in the blood                                      | electromagnetic | (0, 5)        |                       | Q.EL1.001 |
+| R1_li          | 0.65       | Hz       | tissue R1 in the liver                                      | electromagnetic | (0, 5)        |                       | Q.EL1.001 |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-----------------------+-----------+
+| dose_tolerance | 0.1        |          | dose tolerance                                              | hyperparameters |               |                       |           |
+| dt             | 0.5        | sec      | pseudo-continuous time step                                 | hyperparameters |               |                       |           |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-----------------------+-----------+
+| agent          | gadoterate |          | contrast agent generic name                                 | indicator       |               |                       |           |
+| dose_1         | 0.1        | mL/kg    | 1st contrast agent dose                                     | indicator       | (0, 0.2)      |                       |           |
+| dose_2         | 0.1        | mL/kg    | 2nd contrast agent dose                                     | indicator       | (0, 0.2)      |                       |           |
+| rate_1         | 1          | mL/sec   | 1st injection rate                                          | indicator       | (0, 10)       |                       |           |
+| rate_2         | 1          | mL/sec   | 2nd injection rate                                          | indicator       | (0, 10)       |                       |           |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-----------------------+-----------+
+| pfree          | None       | a.u.     | set of free parameters                                      | inverse problem |               |                       |           |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-----------------------+-----------+
+| CO             | 100        | mL/sec   | cardiac output                                              | physiological   | (0, 500)      |                       |           |
+| D_hl           | 0.2        |          | transit time dispersion in the heart and Lungs              | physiological   | (0.01, 0.99)  |                       |           |
+| E_ki           | 0.15       |          | extraction fraction in the kidney                           | physiological   | (0, 1)        |                       | Q.PH1.005 |
+| E_or           | 0.15       |          | extraction fraction in the organs                           | physiological   | (0, 0.5)      |                       | Q.PH1.005 |
+| Ef_li          | 0.1        |          | final extraction fraction in the liver                      | physiological   | (0.0, 1.0)    |                       |           |
+| Ei_li          | 0.1        |          | initial extraction fraction in the liver                    | physiological   | (0.0, 1.0)    |                       |           |
+| fCO_li         | 0.1        |          | fraction of the cardiac output in the liver                 | physiological   | (0, 0.5)      |                       |           |
+| H              | 0.45       |          | hematocrit                                                  | physiological   | (0, 1)        |                       | Q.PH1.012 |
+| T_b_or         | 20         | sec      | mean transit time in blood of the organs                    | physiological   | (0, 60)       |                       | Q.PH1.006 |
+| T_e_or         | 120        | sec      | mean transit time in extracellular space of the organs      | physiological   | (0, 800)      |                       | Q.PH1.006 |
+| T_h            | 14400      | sec      | mean transit time in hepatocytes                            | physiological   | (600, 21600)  |                       | Q.PH1.006 |
+| T_hl           | 10         | sec      | mean transit time in the heart and Lungs                    | physiological   | (0, 30)       |                       | Q.PH1.006 |
+| T_lag          | 30         | sec      | mean transit time in the liver artery and gut               | physiological   | (0.0, 60)     |                       | Q.PH1.006 |
+| v_e_li         | 0.25       | mL/cm3   | volume fraction in extracellular space of the liver         | physiological   | (0.01, 0.5)   |                       | Q.PH1.001 |
+| v_li           | 1          | mL/cm3   | volume fraction in the liver                                | physiological   | (0, 1)        |                       | Q.PH1.001 |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-----------------------+-----------+
+| FA_1           | 15         | deg      | 1st flip angle                                              | sequence        | (0, 180)      | FlipAngle             | Q.MS1.007 |
+| FA_2           | 15         | deg      | 2nd flip angle                                              | sequence        | (0, 180)      | FlipAngle             | Q.MS1.007 |
+| field_strength | 3          | T        | magnetic field strength                                     | sequence        | (0, 20)       | MagneticFieldStrength |           |
+| Nk0_1          | 64         |          | 1st number of acquired phase lines to the center of k-space | sequence        | (0, 1000)     |                       | Q.MS1.011 |
+| Nk0_2          | 64         |          | 2nd number of acquired phase lines to the center of k-space | sequence        | (0, 1000)     |                       | Q.MS1.011 |
+| Nph_1          | 128        |          | 1st number of acquired phase lines in k-space               | sequence        | (0, 1000)     |                       | Q.MS1.012 |
+| Nph_2          | 128        |          | 2nd number of acquired phase lines in k-space               | sequence        | (0, 1000)     |                       | Q.MS1.012 |
+| TR_1           | 0.005      | sec      | 1st repetition time                                         | sequence        | (0, 1)        | RepetitionTime        | Q.MS1.006 |
+| TR_2           | 0.005      | sec      | 2nd repetition time                                         | sequence        | (0, 1)        | RepetitionTime        | Q.MS1.006 |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-----------------------+-----------+
+| iStrig_1_ao    | None       |          | 1st indices of the signal trigger in the aorta              | signal          |               |                       |           |
+| iStrig_1_li    | None       |          | 1st indices of the signal trigger in the liver              | signal          |               |                       |           |
+| iStrig_2_ao    | None       |          | 2nd indices of the signal trigger in the aorta              | signal          |               |                       |           |
+| iStrig_2_li    | None       |          | 2nd indices of the signal trigger in the liver              | signal          |               |                       |           |
+| nb_1           | 1          | a.u.     | 1st number of baseline time points                          | signal          |               |                       |           |
+| nb_2           | 1          | a.u.     | 2nd number of baseline time points                          | signal          |               |                       |           |
+| NSR_1_ao       | 0.0        |          | 1st noise-to-signal ratio in the aorta                      | signal          | (0, 100000.0) |                       |           |
+| NSR_1_li       | 0.0        |          | 1st noise-to-signal ratio in the liver                      | signal          | (0, 100000.0) |                       |           |
+| NSR_2_ao       | 0.0        |          | 2nd noise-to-signal ratio in the aorta                      | signal          | (0, 100000.0) |                       |           |
+| NSR_2_li       | 0.0        |          | 2nd noise-to-signal ratio in the liver                      | signal          | (0, 100000.0) |                       |           |
+| S_1_ao         | 1.0        | a.u.     | 1st signal in the aorta                                     | signal          | (0, 5)        |                       | Q.MS1.001 |
+| S_1_li         | 1.0        | a.u.     | 1st signal in the liver                                     | signal          | (0, 5)        |                       | Q.MS1.001 |
+| S_2_ao         | 1.0        | a.u.     | 2nd signal in the aorta                                     | signal          | (0, 5)        |                       | Q.MS1.001 |
+| S_2_li         | 1.0        | a.u.     | 2nd signal in the liver                                     | signal          | (0, 5)        |                       | Q.MS1.001 |
+| tS_1_ao        | 0.0        | sec      | 1st signal time points in the aorta                         | signal          |               |                       |           |
+| tS_1_li        | 0.0        | sec      | 1st signal time points in the liver                         | signal          |               |                       |           |
+| tS_2_ao        | 0.0        | sec      | 2nd signal time points in the aorta                         | signal          |               |                       |           |
+| tS_2_li        | 0.0        | sec      | 2nd signal time points in the liver                         | signal          |               |                       |           |
++----------------+------------+----------+-------------------------------------------------------------+-----------------+---------------+-----------------------+-----------+
+| vol_ao         | 1          | cm3      | ROI volume in the aorta                                     | whole-body      | (0.0, 1000)   |                       |           |
+| vol_li         | 1000       | cm3      | ROI volume in the liver                                     | whole-body      | (0, 10000)    |                       |           |
+| weight         | 70         | kg       | body weight                                                 | whole-body      | (0, 300)      | PatientWeight         |           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
@@ -638,63 +638,55 @@ the model with the following options:</p>
        1              2         1.7212e+03      1.30e+03       5.75e-01       1.58e+04
        2              3         1.6616e+03      5.96e+01       3.65e-01       1.50e+04
        3              4         1.1728e+03      4.89e+02       1.05e-01       6.16e+03
-       4              5         8.9278e+02      2.80e+02       1.11e-01       6.00e+03
+       4              5         8.9279e+02      2.80e+02       1.11e-01       6.00e+03
        5              6         7.4311e+02      1.50e+02       2.05e-01       8.38e+02
        6              8         7.2454e+02      1.86e+01       6.79e-02       8.27e+02
-       7              9         6.9700e+02      2.75e+01       1.24e-01       9.43e+02
-       8             12         6.9413e+02      2.88e+00       1.95e-02       4.73e+02
-       9             13         6.9070e+02      3.43e+00       1.32e-02       2.45e+01
-      10             14         6.8902e+02      1.68e+00       2.81e-02       2.64e+02
-      11             15         6.8645e+02      2.57e+00       2.62e-02       1.47e+02
-      12             16         6.8393e+02      2.52e+00       6.23e-02       4.95e+02
-      13             20         6.8334e+02      5.84e-01       2.32e-03       1.46e+02
-      14             21         6.8305e+02      2.88e-01       2.32e-03       2.35e+01
-      15             23         6.8299e+02      6.51e-02       1.17e-03       2.46e+01
-      16             24         6.8296e+02      2.74e-02       2.33e-03       4.02e+01
-      17             25         6.8290e+02      5.71e-02       5.43e-04       2.98e+01
-      18             27         6.8289e+02      1.58e-02       2.73e-04       4.12e+01
-      19             29         6.8289e+02      2.45e-03       7.47e-05       3.06e+01
-      20             31         6.8288e+02      1.56e-03       1.70e-05       3.03e+01
-      21             33         6.8288e+02      3.51e-04       8.50e-06       3.91e+01
-      22             35         6.8288e+02      1.88e-04       2.33e-06       3.90e+01
-      23             38         6.8288e+02      1.79e-05       2.92e-07       3.02e+01
-      24             41         6.8288e+02      3.03e-06       3.32e-08       3.27e+01
+       7              9         6.9700e+02      2.75e+01       1.24e-01       9.44e+02
+       8             12         6.9411e+02      2.89e+00       1.95e-02       4.71e+02
+       9             13         6.9069e+02      3.42e+00       1.32e-02       2.43e+01
+      10             14         6.8899e+02      1.70e+00       2.81e-02       2.55e+02
+      11             15         6.8640e+02      2.60e+00       2.60e-02       1.37e+02
+      12             17         6.8501e+02      1.39e+00       1.39e-02       3.80e+01
+      13             21         6.8496e+02      4.83e-02       5.36e-04       2.28e+01
+      14             23         6.8494e+02      1.75e-02       2.63e-04       3.87e+01
+      15             26         6.8494e+02      2.71e-04       3.23e-05       2.15e+01
+      16             27         6.8494e+02      5.89e-04       8.29e-06       2.14e+01
+      17             28         6.8494e+02      1.18e-03       1.66e-05       2.13e+01
+      18             32         6.8494e+02      3.67e-05       5.18e-07       2.12e+01
+      19             34         6.8494e+02      1.83e-05       2.59e-07       2.12e+01
+      20             36         6.8494e+02      2.09e-06       1.29e-07       3.81e+01
+      21             37         6.8494e+02      3.87e-06       3.15e-08       3.81e+01
 `ftol` termination condition is satisfied.
-Function evaluations 41, initial cost 3.0235e+03, final cost 6.8288e+02, first-order optimality 3.27e+01.
+Function evaluations 37, initial cost 3.0235e+03, final cost 6.8494e+02, first-order optimality 3.81e+01.
    Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality
        0              1         4.6621e+04                                    4.59e+05
        1              2         6.9110e+03      3.97e+04       2.18e-01       4.91e+04
        2              3         2.0541e+03      4.86e+03       2.39e-01       5.66e+03
        3              4         1.4801e+03      5.74e+02       3.24e-01       1.68e+03
-       4              6         1.1671e+03      3.13e+02       8.80e-02       4.10e+03
-       5              7         9.4111e+02      2.26e+02       1.39e-01       6.00e+03
-       6              8         7.8849e+02      1.53e+02       2.39e-01       6.79e+02
-       7              9         7.3258e+02      5.59e+01       2.24e-01       3.66e+03
-       8             10         5.8233e+02      1.50e+02       2.09e-01       5.10e+02
-       9             13         5.7869e+02      3.65e+00       1.70e-02       1.34e+03
-      10             15         5.7539e+02      3.30e+00       1.07e-02       3.39e+02
-      11             16         5.7375e+02      1.64e+00       2.11e-02       1.09e+03
-      12             17         5.7159e+02      2.16e+00       4.37e-02       1.62e+03
-      13             18         5.7045e+02      1.13e+00       8.55e-02       6.71e+03
-      14             20         5.6827e+02      2.18e+00       2.03e-02       1.61e+02
-      15             21         5.6750e+02      7.67e-01       3.41e-02       3.91e+02
-      16             22         5.6702e+02      4.81e-01       5.49e-02       1.96e+02
-      17             24         5.6696e+02      6.12e-02       1.99e-02       1.49e+02
-      18             25         5.6688e+02      8.22e-02       1.52e-02       8.65e+00
-      19             27         5.6685e+02      2.38e-02       7.74e-03       4.76e+01
-      20             29         5.6684e+02      1.11e-02       3.50e-03       1.34e+01
-      21             31         5.6684e+02      5.11e-03       1.58e-03       1.04e+00
-      22             33         5.6684e+02      2.45e-03       7.61e-04       3.34e-01
-      23             34         5.6683e+02      3.93e-03       1.51e-03       5.15e+00
-      24             38         5.6683e+02      8.82e-04       9.72e-05       1.11e+01
-      25             39         5.6683e+02      8.18e-06       8.07e-05       3.66e+00
-      26             40         5.6683e+02      1.65e-04       2.48e-05       2.17e+00
-      27             42         5.6683e+02      6.83e-05       1.24e-05       1.73e+00
-      28             44         5.6683e+02      2.19e-05       6.17e-06       9.32e+00
-      29             46         5.6683e+02      7.31e-06       1.52e-06       1.83e+00
-      30             47         5.6683e+02      2.06e-06       3.89e-07       1.81e+00
+       4              6         1.1670e+03      3.13e+02       8.80e-02       4.10e+03
+       5              7         9.4112e+02      2.26e+02       1.39e-01       6.01e+03
+       6              8         7.8846e+02      1.53e+02       2.39e-01       6.79e+02
+       7              9         7.3355e+02      5.49e+01       2.24e-01       3.61e+03
+       8             10         5.8236e+02      1.51e+02       2.12e-01       5.31e+02
+       9             13         5.7886e+02      3.49e+00       1.73e-02       1.29e+03
+      10             15         5.7536e+02      3.50e+00       1.07e-02       3.30e+02
+      11             16         5.7371e+02      1.65e+00       2.20e-02       1.31e+03
+      12             17         5.7182e+02      1.89e+00       4.38e-02       1.40e+03
+      13             18         5.7096e+02      8.57e-01       8.73e-02       7.67e+03
+      14             20         5.6828e+02      2.68e+00       2.03e-02       1.49e+02
+      15             21         5.6750e+02      7.83e-01       3.46e-02       3.69e+02
+      16             22         5.6699e+02      5.12e-01       5.64e-02       1.85e+02
+      17             23         5.6682e+02      1.64e-01       4.10e-02       1.45e+02
+      18             27         5.6679e+02      3.32e-02       1.06e-03       2.92e+00
+      19             30         5.6679e+02      5.66e-04       1.34e-04       9.41e+00
+      20             33         5.6679e+02      8.00e-06       1.65e-05       3.04e+00
+      21             34         5.6679e+02      2.61e-05       4.31e-06       2.55e+00
+      22             35         5.6679e+02      4.47e-05       8.47e-06       1.86e+00
+      23             37         5.6679e+02      8.14e-06       4.20e-06       8.21e+00
+      24             38         5.6679e+02      4.59e-07       4.14e-06       2.22e+00
+      25             39         5.6679e+02      5.58e-06       1.07e-06       2.12e+00
 `ftol` termination condition is satisfied.
-Function evaluations 47, initial cost 4.6621e+04, final cost 5.6683e+02, first-order optimality 1.81e+00.
+Function evaluations 39, initial cost 4.6621e+04, final cost 5.6679e+02, first-order optimality 2.12e+00.
 </pre></div>
 </div>
 <p>Verify that the optimization has converged to a solution:</p>
@@ -710,94 +702,94 @@ values for the derived parameters</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_1_result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">pars</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="s1">'</span><span class="s1">Control visit</span><span class="s1">'</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">visit_2_result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">pars</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="s1">'</span><span class="s1">Drug visit</span><span class="s1">'</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                           Control visit                                                                            |
-+-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
-| Key       | Value   | Unit       | Name                                                                           | Group           | Bounds       | DICOM | OSIPI |
-+-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
-| BAT_1     | 79.0    | sec        | 1st bolus arrival time                                                         | indicator       | (-30, 30)    |       |       |
-| BAT_2     | 17000.0 | sec        | 2nd bolus arrival time                                                         | indicator       | (-30, 30)    |       |       |
-+-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
-| CL_p      | 1.1     | mL/sec     | Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)   |       |       |
-| CO        | 85.0    | mL/sec     | cardiac output                                                                 | physiological   | (0, 500)     |       |       |
-| D_hl      | 0.61    |            | transit time dispersion in the heart and Lungs                                 | physiological   | (0.01, 0.99) |       |       |
-| E_ki      | 0.024   |            | extraction fraction in the kidney                                              | physiological   | (0, 1)       |       |       |
-| E_li      | 0.18    |            | extraction fraction in liver                                                   | physiological   | (0.0, 1.0)   |       |       |
-| E_or      | 0.2     |            | extraction fraction in the organs                                              | physiological   | (0, 0.5)     |       |       |
-| Ef_li     | 0.26    |            | final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)   |       |       |
-| Ei_li     | 0.11    |            | initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)   |       |       |
-| F_b_li    | 0.013   | mL/sec/cm3 | flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)     |       |       |
-| F_p_li    | 0.0073  | mL/sec/cm3 | flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)    |       |       |
-| fCO_li    | 0.11    |            | fraction of the cardiac output in the liver                                    | physiological   | (0, 0.5)     |       |       |
-| H         | 0.45    |            | hematocrit                                                                     | physiological   | (0, 1)       |       |       |
-| k_e2h     | 0.0016  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)   |       |       |
-| K_e2h     | 0.0065  | 1/sec      | transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)   |       |       |
-| k_h2b     | 0.00015 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)   |       |       |
-| K_h2b     | 0.00028 | 1/sec      | transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)   |       |       |
-| kc_e2h    | 0.0017  |            | diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)   |       |       |
-| kf_e2h    | 0.0026  | mL/sec/cm3 | final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)   |       |       |
-| ki_e2h    | 0.00088 | mL/sec/cm3 | initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)   |       |       |
-| Ktrans_li | 0.0013  | mL/sec/cm3 | plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)   |       |       |
-| T_b_or    | 9.3     | sec        | mean transit time in blood of the organs                                       | physiological   | (0, 60)      |       |       |
-| T_e_li    | 28.0    | sec        | mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)    |       |       |
-| T_e_or    | 410.0   | sec        | mean transit time in extracellular space of the organs                         | physiological   | (0, 800)     |       |       |
-| T_h       | 3600.0  | sec        | mean transit time in hepatocytes                                               | physiological   | (600, 21600) |       |       |
-| T_hl      | 18.0    | sec        | mean transit time in the heart and Lungs                                       | physiological   | (0, 30)      |       |       |
-| T_lag     | 52.0    | sec        | mean transit time in the liver artery and gut                                  | physiological   | (0.0, 60)    |       |       |
-| v_e_li    | 0.25    | mL/cm3     | volume fraction in extracellular space of the liver                            | physiological   | (0.01, 0.5)  |       |       |
-| v_h       | 0.54    | mL/cm3     | volume fraction in hepatocytes                                                 | physiological   | (0, 1)       |       |       |
-| v_li      | 1.0     | mL/cm3     | volume fraction in the liver                                                   | physiological   | (0, 1)       |       |       |
-+-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
-| vol_ao    | 1.0     | cm3        | ROI volume in the aorta                                                        | whole-body      | (0.0, 1000)  |       |       |
-| vol_li    | 680.0   | cm3        | ROI volume in the liver                                                        | whole-body      | (0, 10000)   |       |       |
-| weight    | 63.0    | kg         | body weight                                                                    | whole-body      | (0, 300)     |       |       |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                 Control visit                                                                                  |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| Key       | Value   | Unit       | Name                                                                           | Group           | Bounds       | DICOM         | OSIPI     |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| BAT_1     | 80.0    | sec        | 1st bolus arrival time                                                         | indicator       | (-30, 30)    |               | Q.BA1.001 |
+| BAT_2     | 17000.0 | sec        | 2nd bolus arrival time                                                         | indicator       | (-30, 30)    |               | Q.BA1.001 |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| CL_p      | 1.1     | mL/sec     | Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)   |               |           |
+| CO        | 86.0    | mL/sec     | cardiac output                                                                 | physiological   | (0, 500)     |               |           |
+| D_hl      | 0.62    |            | transit time dispersion in the heart and Lungs                                 | physiological   | (0.01, 0.99) |               |           |
+| E_ki      | 0.027   |            | extraction fraction in the kidney                                              | physiological   | (0, 1)       |               | Q.PH1.005 |
+| E_li      | 0.17    |            | extraction fraction in liver                                                   | physiological   | (0.0, 1.0)   |               |           |
+| E_or      | 0.19    |            | extraction fraction in the organs                                              | physiological   | (0, 0.5)     |               | Q.PH1.005 |
+| Ef_li     | 0.24    |            | final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)   |               |           |
+| Ei_li     | 0.1     |            | initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)   |               |           |
+| F_b_li    | 0.014   | mL/sec/cm3 | flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)     |               |           |
+| F_p_li    | 0.0075  | mL/sec/cm3 | flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)    |               |           |
+| fCO_li    | 0.11    |            | fraction of the cardiac output in the liver                                    | physiological   | (0, 0.5)     |               |           |
+| H         | 0.45    |            | hematocrit                                                                     | physiological   | (0, 1)       |               | Q.PH1.012 |
+| k_e2h     | 0.0016  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)   |               |           |
+| K_e2h     | 0.0061  | 1/sec      | transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)   |               | Q.PH1.009 |
+| k_h2b     | 0.00014 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)   |               |           |
+| K_h2b     | 0.00026 | 1/sec      | transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)   |               | Q.PH1.009 |
+| kc_e2h    | 0.0016  |            | diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)   |               |           |
+| kf_e2h    | 0.0024  | mL/sec/cm3 | final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)   |               |           |
+| ki_e2h    | 0.00084 | mL/sec/cm3 | initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)   |               |           |
+| Ktrans_li | 0.0013  | mL/sec/cm3 | plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)   |               | Q.PH1.008 |
+| T_b_or    | 11.0    | sec        | mean transit time in blood of the organs                                       | physiological   | (0, 60)      |               | Q.PH1.006 |
+| T_e_li    | 28.0    | sec        | mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)    |               | Q.PH1.006 |
+| T_e_or    | 420.0   | sec        | mean transit time in extracellular space of the organs                         | physiological   | (0, 800)     |               | Q.PH1.006 |
+| T_h       | 3900.0  | sec        | mean transit time in hepatocytes                                               | physiological   | (600, 21600) |               | Q.PH1.006 |
+| T_hl      | 17.0    | sec        | mean transit time in the heart and Lungs                                       | physiological   | (0, 30)      |               | Q.PH1.006 |
+| T_lag     | 51.0    | sec        | mean transit time in the liver artery and gut                                  | physiological   | (0.0, 60)    |               | Q.PH1.006 |
+| v_e_li    | 0.26    | mL/cm3     | volume fraction in extracellular space of the liver                            | physiological   | (0.01, 0.5)  |               | Q.PH1.001 |
+| v_h       | 0.53    | mL/cm3     | volume fraction in hepatocytes                                                 | physiological   | (0, 1)       |               | Q.PH1.001 |
+| v_li      | 1.0     | mL/cm3     | volume fraction in the liver                                                   | physiological   | (0, 1)       |               | Q.PH1.001 |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| vol_ao    | 1.0     | cm3        | ROI volume in the aorta                                                        | whole-body      | (0.0, 1000)  |               |           |
+| vol_li    | 680.0   | cm3        | ROI volume in the liver                                                        | whole-body      | (0, 10000)   |               |           |
+| weight    | 63.0    | kg         | body weight                                                                    | whole-body      | (0, 300)     | PatientWeight |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                             Drug visit                                                                             |
-+-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
-| Key       | Value   | Unit       | Name                                                                           | Group           | Bounds       | DICOM | OSIPI |
-+-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
-| BAT_1     | 77.0    | sec        | 1st bolus arrival time                                                         | indicator       | (-30, 30)    |       |       |
-| BAT_2     | 10000.0 | sec        | 2nd bolus arrival time                                                         | indicator       | (-30, 30)    |       |       |
-+-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
-| CL_p      | 0.081   | mL/sec     | Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)   |       |       |
-| CO        | 91.0    | mL/sec     | cardiac output                                                                 | physiological   | (0, 500)     |       |       |
-| D_hl      | 0.52    |            | transit time dispersion in the heart and Lungs                                 | physiological   | (0.01, 0.99) |       |       |
-| E_ki      | 0.04    |            | extraction fraction in the kidney                                              | physiological   | (0, 1)       |       |       |
-| E_li      | 0.02    |            | extraction fraction in liver                                                   | physiological   | (0.0, 1.0)   |       |       |
-| E_or      | 0.15    |            | extraction fraction in the organs                                              | physiological   | (0, 0.5)     |       |       |
-| Ef_li     | 0.023   |            | final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)   |       |       |
-| Ei_li     | 0.016   |            | initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)   |       |       |
-| F_b_li    | 0.0091  | mL/sec/cm3 | flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)     |       |       |
-| F_p_li    | 0.005   | mL/sec/cm3 | flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)    |       |       |
-| fCO_li    | 0.081   |            | fraction of the cardiac output in the liver                                    | physiological   | (0, 0.5)     |       |       |
-| H         | 0.45    |            | hematocrit                                                                     | physiological   | (0, 1)       |       |       |
-| k_e2h     | 0.0001  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)   |       |       |
-| K_e2h     | 0.00053 | 1/sec      | transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)   |       |       |
-| k_h2b     | 3.1e-05 | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)   |       |       |
-| K_h2b     | 4.7e-05 | 1/sec      | transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)   |       |       |
-| kc_e2h    | 3.7e-05 |            | diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)   |       |       |
-| kf_e2h    | 0.00012 | mL/sec/cm3 | final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)   |       |       |
-| ki_e2h    | 8.2e-05 | mL/sec/cm3 | initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)   |       |       |
-| Ktrans_li | 9.8e-05 | mL/sec/cm3 | plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)   |       |       |
-| T_b_or    | 27.0    | sec        | mean transit time in blood of the organs                                       | physiological   | (0, 60)      |       |       |
-| T_e_li    | 37.0    | sec        | mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)    |       |       |
-| T_e_or    | 680.0   | sec        | mean transit time in extracellular space of the organs                         | physiological   | (0, 800)     |       |       |
-| T_h       | 21000.0 | sec        | mean transit time in hepatocytes                                               | physiological   | (600, 21600) |       |       |
-| T_hl      | 14.0    | sec        | mean transit time in the heart and Lungs                                       | physiological   | (0, 30)      |       |       |
-| T_lag     | 17.0    | sec        | mean transit time in the liver artery and gut                                  | physiological   | (0.0, 60)    |       |       |
-| v_e_li    | 0.19    | mL/cm3     | volume fraction in extracellular space of the liver                            | physiological   | (0.01, 0.5)  |       |       |
-| v_h       | 0.66    | mL/cm3     | volume fraction in hepatocytes                                                 | physiological   | (0, 1)       |       |       |
-| v_li      | 1.0     | mL/cm3     | volume fraction in the liver                                                   | physiological   | (0, 1)       |       |       |
-+-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+-------+-------+
-| vol_ao    | 1.0     | cm3        | ROI volume in the aorta                                                        | whole-body      | (0.0, 1000)  |       |       |
-| vol_li    | 800.0   | cm3        | ROI volume in the liver                                                        | whole-body      | (0, 10000)   |       |       |
-| weight    | 64.0    | kg         | body weight                                                                    | whole-body      | (0, 300)     |       |       |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                   Drug visit                                                                                   |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| Key       | Value   | Unit       | Name                                                                           | Group           | Bounds       | DICOM         | OSIPI     |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| BAT_1     | 77.0    | sec        | 1st bolus arrival time                                                         | indicator       | (-30, 30)    |               | Q.BA1.001 |
+| BAT_2     | 10000.0 | sec        | 2nd bolus arrival time                                                         | indicator       | (-30, 30)    |               | Q.BA1.001 |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| CL_p      | 0.08    | mL/sec     | Contrast agent clearance in plasma                                             | physiological   | (0.0, 100)   |               |           |
+| CO        | 90.0    | mL/sec     | cardiac output                                                                 | physiological   | (0, 500)     |               |           |
+| D_hl      | 0.52    |            | transit time dispersion in the heart and Lungs                                 | physiological   | (0.01, 0.99) |               |           |
+| E_ki      | 0.04    |            | extraction fraction in the kidney                                              | physiological   | (0, 1)       |               | Q.PH1.005 |
+| E_li      | 0.02    |            | extraction fraction in liver                                                   | physiological   | (0.0, 1.0)   |               |           |
+| E_or      | 0.15    |            | extraction fraction in the organs                                              | physiological   | (0, 0.5)     |               | Q.PH1.005 |
+| Ef_li     | 0.023   |            | final extraction fraction in the liver                                         | physiological   | (0.0, 1.0)   |               |           |
+| Ei_li     | 0.016   |            | initial extraction fraction in the liver                                       | physiological   | (0.0, 1.0)   |               |           |
+| F_b_li    | 0.0091  | mL/sec/cm3 | flow per unit tissue in blood of the liver                                     | physiological   | (0, 0.1)     |               |           |
+| F_p_li    | 0.005   | mL/sec/cm3 | flow per unit tissue in plasma of the liver                                    | physiological   | (0, 0.05)    |               |           |
+| fCO_li    | 0.081   |            | fraction of the cardiac output in the liver                                    | physiological   | (0, 0.5)     |               |           |
+| H         | 0.45    |            | hematocrit                                                                     | physiological   | (0, 1)       |               | Q.PH1.012 |
+| k_e2h     | 0.0001  | mL/sec/cm3 | tissue transfer rate from extracellular space to hepatocytes                   | physiological   | (0, 0.006)   |               |           |
+| K_e2h     | 0.00053 | 1/sec      | transfer rate from extracellular space to hepatocytes                          | physiological   | (0.0, 0.1)   |               | Q.PH1.009 |
+| k_h2b     | 3e-05   | mL/sec/cm3 | tissue transfer rate from hepatocytes to blood                                 | physiological   | (0.0, 0.1)   |               |           |
+| K_h2b     | 4.6e-05 | 1/sec      | transfer rate from hepatocytes to blood                                        | physiological   | (0.0, 0.1)   |               | Q.PH1.009 |
+| kc_e2h    | 3.6e-05 |            | diurnal change of tissue transfer rate from extracellular space to hepatocytes | physiological   | (0.0, 0.1)   |               |           |
+| kf_e2h    | 0.00012 | mL/sec/cm3 | final tissue transfer rate from extracellular space to hepatocytes             | physiological   | (0, 0.006)   |               |           |
+| ki_e2h    | 8.2e-05 | mL/sec/cm3 | initial tissue transfer rate from extracellular space to hepatocytes           | physiological   | (0, 0.006)   |               |           |
+| Ktrans_li | 9.8e-05 | mL/sec/cm3 | plasma clearance in the liver                                                  | physiological   | (0.0, 0.1)   |               | Q.PH1.008 |
+| T_b_or    | 27.0    | sec        | mean transit time in blood of the organs                                       | physiological   | (0, 60)      |               | Q.PH1.006 |
+| T_e_li    | 37.0    | sec        | mean transit time in extracellular space of the liver                          | physiological   | (0.1, 60)    |               | Q.PH1.006 |
+| T_e_or    | 670.0   | sec        | mean transit time in extracellular space of the organs                         | physiological   | (0, 800)     |               | Q.PH1.006 |
+| T_h       | 22000.0 | sec        | mean transit time in hepatocytes                                               | physiological   | (600, 21600) |               | Q.PH1.006 |
+| T_hl      | 14.0    | sec        | mean transit time in the heart and Lungs                                       | physiological   | (0, 30)      |               | Q.PH1.006 |
+| T_lag     | 17.0    | sec        | mean transit time in the liver artery and gut                                  | physiological   | (0.0, 60)    |               | Q.PH1.006 |
+| v_e_li    | 0.19    | mL/cm3     | volume fraction in extracellular space of the liver                            | physiological   | (0.01, 0.5)  |               | Q.PH1.001 |
+| v_h       | 0.66    | mL/cm3     | volume fraction in hepatocytes                                                 | physiological   | (0, 1)       |               | Q.PH1.001 |
+| v_li      | 1.0     | mL/cm3     | volume fraction in the liver                                                   | physiological   | (0, 1)       |               | Q.PH1.001 |
++-----------+---------+------------+--------------------------------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| vol_ao    | 1.0     | cm3        | ROI volume in the aorta                                                        | whole-body      | (0.0, 1000)  |               |           |
+| vol_li    | 800.0   | cm3        | ROI volume in the liver                                                        | whole-body      | (0, 10000)   |               |           |
+| weight    | 64.0    | kg         | body weight                                                                    | whole-body      | (0, 300)     | PatientWeight |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (1 minutes 26.193 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 53.747 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-cases-plot-aorta-liver-split-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/a24fd9fcd8c0a8cf1a3c0506757050b2/plot_aorta_liver_split.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_aorta_liver_split.ipynb</span></code></a></p>

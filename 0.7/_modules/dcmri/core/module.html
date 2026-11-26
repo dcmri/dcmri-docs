@@ -479,7 +479,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.core.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_quantity</span><span class="p">,</span> <span class="n">print_quantities</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.core.quantity</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_quantities</span><span class="p">,</span> <span class="n">Qty</span>
 
 <div class="viewcode-block" id="InvalidConfig">
 <a class="viewcode-back" href="../../../api/dcmri.InvalidConfig.html#dcmri.InvalidConfig">[docs]</a>
@@ -557,7 +557,7 @@
 
     <span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="n">i</span><span class="p">:</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)[</span><span class="s1">'init'</span><span class="p">]</span>
+            <span class="n">i</span><span class="p">:</span> <span class="n">Qty</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span>
         <span class="p">}</span>        
 
@@ -607,7 +607,7 @@
                 <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
             <span class="k">elif</span> <span class="nb">all</span><span class="p">:</span>
                 <span class="k">try</span><span class="p">:</span>
-                    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)[</span><span class="s1">'init'</span><span class="p">]</span>
+                    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Qty</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
                 <span class="k">except</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Unknown input </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> in call to Module </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">.'</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">p</span>
@@ -679,10 +679,10 @@
         <span class="n">print_quantities</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">as_dict</span><span class="o">=</span><span class="n">as_dict</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">input_quantities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">()}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">Qty</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span><span class="o">.</span><span class="n">_dct</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">()}</span>
         
     <span class="k">def</span><span class="w"> </span><span class="nf">output_quantities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs</span><span class="p">()}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">Qty</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span><span class="o">.</span><span class="n">_dct</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs</span><span class="p">()}</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">map_configs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cmap</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
@@ -759,14 +759,14 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">all_input_quantities</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="n">iq</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">all_inputs</span><span class="p">(</span><span class="n">verbose</span><span class="p">):</span>
-            <span class="n">iq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+            <span class="n">iq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">Qty</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span><span class="o">.</span><span class="n">_dct</span>
         <span class="k">return</span> <span class="n">iq</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">all_output_quantities</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="n">oq</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">all_outputs</span><span class="p">(</span><span class="n">verbose</span><span class="p">):</span>
-            <span class="n">oq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+            <span class="n">oq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">Qty</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span><span class="o">.</span><span class="n">_dct</span>
         <span class="k">return</span> <span class="n">oq</span>
 
     <span class="nd">@classmethod</span>
@@ -774,10 +774,10 @@
         <span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">all_io</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="n">sample</span><span class="o">=</span><span class="n">sample</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
         <span class="n">iq</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">:</span>
-            <span class="n">iq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+            <span class="n">iq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">Qty</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span><span class="o">.</span><span class="n">_dct</span>
         <span class="n">oq</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">outputs</span><span class="p">:</span>
-            <span class="n">oq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+            <span class="n">oq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">Qty</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span><span class="o">.</span><span class="n">_dct</span>
         <span class="k">return</span> <span class="n">iq</span><span class="p">,</span> <span class="n">oq</span>
 
 

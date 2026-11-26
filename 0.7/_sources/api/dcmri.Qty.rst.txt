@@ -1,0 +1,75 @@
+﻿dcmri.Qty
+=========
+
+.. currentmodule:: dcmri
+
+.. autoclass:: Qty
+   :no-members:
+   :show-inheritance:
+
+
+
+.. rubric:: Attributes
+
+
+.. autosummary::
+
+   ~Qty.bounds
+   ~Qty.desc
+   ~Qty.dicom
+   ~Qty.group
+   ~Qty.key
+   ~Qty.osipi
+   ~Qty.unit
+   ~Qty.value
+
+
+
+
+
+.. rubric:: Methods
+
+
+.. autosummary::
+   :nosignatures:
+
+   ~Qty.increment
+   ~Qty.popindex
+   ~Qty.set
+
+
+
+
+.. rubric:: Detailed Members Reference
+
+
+
+
+.. autoattribute:: Qty.bounds
+.. autoattribute:: Qty.desc
+.. autoattribute:: Qty.dicom
+.. autoattribute:: Qty.group
+.. autoattribute:: Qty.key
+.. autoattribute:: Qty.osipi
+.. autoattribute:: Qty.unit
+.. autoattribute:: Qty.value
+
+
+
+
+
+
+
+.. automethod:: Qty.increment
+
+
+.. automethod:: Qty.popindex
+
+
+.. automethod:: Qty.set
+
+
+
+
+.. minigallery:: dcmri.Qty
+   :add-heading:

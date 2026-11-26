@@ -137,10 +137,10 @@ Fit the model
 
     # --- Initialise the free parameters using built-in defaults
     pars = ['E', 'T_hl', 'D_hl', 'T_or', 'CO']
-    desc = [dc.get_quantity(k) for k in pars]
-    p0 = [q['init'] for q in desc]
-    lb = [q['bounds'][0] for q in desc]
-    ub = [q['bounds'][1] for q in desc]
+    qty = [dc.Qty(k) for k in pars]
+    p0 = [q.value for q in qty]
+    lb = [q.bounds[0] for q in qty]
+    ub = [q.bounds[1] for q in qty]
 
     # --- Perform the fit
     vals, _ = curve_fit(plasma_conc_aorta, t, cp_pop, p0, bounds=(lb, ub))
@@ -207,7 +207,7 @@ Note that the cardiac output is high, as is well-known for this AIF model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.315 seconds)
+   **Total running time of the script:** (0 minutes 0.248 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_whole_body_kinetics.py:

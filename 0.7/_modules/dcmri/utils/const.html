@@ -471,8 +471,7 @@
                 <article class="bd-article">
                   
   <h1>Source code for dcmri.utils.const</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">dcmri.core.values</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">values</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dcmri.core.dictionaries</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dictionaries</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">dcmri.core.dictionaries</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dictionaries</span>
 
 
 <div class="viewcode-block" id="ca_conc">
@@ -506,11 +505,11 @@
 <span class="sd">        print('gadoterate is available in a solution of', dc.ca_conc('gadoterate'), 'mmol/mL')</span>
 <span class="sd">    """</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">CA_CONC</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">CA_CONC</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"No concentration data for contrast agent </span><span class="si">{</span><span class="n">agent</span><span class="si">}</span><span class="s2">. "</span>
-            <span class="sa">f</span><span class="s2">"Currently values are only available for </span><span class="si">{</span><span class="n">values</span><span class="o">.</span><span class="n">CA_CONC</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s2">. "</span>
+            <span class="sa">f</span><span class="s2">"Currently values are only available for </span><span class="si">{</span><span class="n">dictionaries</span><span class="o">.</span><span class="n">CA_CONC</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s2">. "</span>
             <span class="sa">f</span><span class="s2">"Please extend the dictionary with literature values."</span>
         <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span> <span class="c1"># No traceback to KeyError shown</span></div>
 
@@ -555,11 +554,11 @@
 <span class="sd">    """</span>
     <span class="c1"># """Standard dose in mL/kg""" # better in mmol/kg, or offer it as an option</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">CA_DOSE</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">CA_DOSE</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"No data available for contrast agent </span><span class="si">{</span><span class="n">agent</span><span class="si">}</span><span class="s2">."</span>
-            <span class="sa">f</span><span class="s2">"Currently values are only available for </span><span class="si">{</span><span class="n">values</span><span class="o">.</span><span class="n">CA_DOSE</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s2">. "</span>
+            <span class="sa">f</span><span class="s2">"Currently values are only available for </span><span class="si">{</span><span class="n">dictionaries</span><span class="o">.</span><span class="n">CA_DOSE</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s2">. "</span>
             <span class="sa">f</span><span class="s2">"Please extend the dictionary with literature values."</span>
         <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span></div>
 
@@ -633,7 +632,7 @@
 <span class="sd">        The plasma relaxivity of gadobutrol at 3T is 5.0 Hz/mM</span>
 <span class="sd">    """</span>
 
-    <span class="n">val</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">R1_RELAXIVITY</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">R1_RELAXIVITY</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">COMPS</span> <span class="o">|</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">ROIS</span>
 
     <span class="n">tissue_key</span> <span class="o">=</span> <span class="n">tissue</span> <span class="k">if</span> <span class="n">tissue</span> <span class="ow">in</span> <span class="n">val</span> <span class="k">else</span> <span class="nb">map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tissue</span><span class="p">)</span>
@@ -706,7 +705,7 @@
 <span class="sd">        &gt;&gt;&gt; print('The plasma relaxivity of gadobutrol at 3T is', 1e-3*dc.r2(3.0, 'plasma', 'gadobutrol'), 'Hz/mM')</span>
 <span class="sd">        The plasma relaxivity of gadobutrol at 3T is 5.0 Hz/mM</span>
 <span class="sd">    """</span>
-    <span class="n">val</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">R2_RELAXIVITY</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">R2_RELAXIVITY</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">COMPS</span> <span class="o">|</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">ROIS</span>
 
     <span class="n">tissue_key</span> <span class="o">=</span> <span class="n">tissue</span> <span class="k">if</span> <span class="n">tissue</span> <span class="ow">in</span> <span class="n">val</span> <span class="k">else</span> <span class="nb">map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tissue</span><span class="p">)</span>
@@ -727,7 +726,7 @@
 <a class="viewcode-back" href="../../../api/dcmri.r2s_lower.html#dcmri.r2s">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">r2s</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">tissue</span><span class="o">=</span><span class="s1">'blood'</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="s1">'gadoxetate'</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""R2*-relaxivity"""</span>
-    <span class="n">val</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">R2_STAR_RELAXIVITY</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">R2_STAR_RELAXIVITY</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">COMPS</span> <span class="o">|</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">ROIS</span>
 
     <span class="n">tissue_key</span> <span class="o">=</span> <span class="n">tissue</span> <span class="k">if</span> <span class="n">tissue</span> <span class="ow">in</span> <span class="n">val</span> <span class="k">else</span> <span class="nb">map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tissue</span><span class="p">)</span>
@@ -746,7 +745,7 @@
 <a class="viewcode-back" href="../../../api/dcmri.r2sq.html#dcmri.r2sq">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">r2sq</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">tissue</span><span class="o">=</span><span class="s1">'blood'</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="s1">'gadoxetate'</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""R2*-relaxivity"""</span>
-    <span class="n">val</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">R2_STAR_RELAXIVITY_SQ</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">R2_STAR_RELAXIVITY_SQ</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">COMPS</span> <span class="o">|</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">ROIS</span>
 
     <span class="n">tissue_key</span> <span class="o">=</span> <span class="n">tissue</span> <span class="k">if</span> <span class="n">tissue</span> <span class="ow">in</span> <span class="n">val</span> <span class="k">else</span> <span class="nb">map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tissue</span><span class="p">)</span>
@@ -822,7 +821,7 @@
     <span class="k">if</span> <span class="n">field_strength</span><span class="o">==</span><span class="mi">3</span> <span class="ow">and</span> <span class="n">tissue</span><span class="o">==</span><span class="s1">'blood'</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mf">0.52</span> <span class="o">*</span> <span class="n">Hct</span> <span class="o">+</span> <span class="mf">0.38</span><span class="p">)</span>  <span class="c1"># Lu MRM 2004</span>
 
-    <span class="n">T1VAL</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">T1_RELAXATION_TIMES</span>
+    <span class="n">T1VAL</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">T1_RELAXATION_TIMES</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">COMPS</span> <span class="o">|</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">ROIS</span>
 
     <span class="n">tissue_key</span> <span class="o">=</span> <span class="n">tissue</span> <span class="k">if</span> <span class="n">tissue</span> <span class="ow">in</span> <span class="n">T1VAL</span> <span class="k">else</span> <span class="nb">map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tissue</span><span class="p">)</span>
@@ -883,7 +882,7 @@
     <span class="c1"># Engineering, Las Vegas, NV, USA, 2008, pp. 521-526, doi:</span>
     <span class="c1"># 10.1109/ICSEng.2008.15.</span>
 
-    <span class="n">VAL</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">T2_RELAXATION_TIMES</span>
+    <span class="n">VAL</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">T2_RELAXATION_TIMES</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">COMPS</span> <span class="o">|</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">ROIS</span>
 
     <span class="n">tissue_key</span> <span class="o">=</span> <span class="n">tissue</span> <span class="k">if</span> <span class="n">tissue</span> <span class="ow">in</span> <span class="n">VAL</span> <span class="k">else</span> <span class="nb">map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tissue</span><span class="p">)</span>
@@ -909,7 +908,7 @@
 <span class="sd">    Note these qre quick estimates - need more in-depth research.</span>
 <span class="sd">    """</span>
 
-    <span class="n">VAL</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">T2_STAR_RELAXATION_TIMES</span>
+    <span class="n">VAL</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">T2_STAR_RELAXATION_TIMES</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">COMPS</span> <span class="o">|</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">ROIS</span>
 
     <span class="n">tissue_key</span> <span class="o">=</span> <span class="n">tissue</span> <span class="k">if</span> <span class="n">tissue</span> <span class="ow">in</span> <span class="n">VAL</span> <span class="k">else</span> <span class="nb">map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tissue</span><span class="p">)</span>
@@ -962,7 +961,7 @@
 <span class="sd">        &gt;&gt;&gt; print('The PD of skin is', dc.PD('skin'))</span>
 <span class="sd">        The PD of skin is 0.8</span>
 <span class="sd">    """</span>
-    <span class="n">VAL</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">PROTON_DENSITY</span>
+    <span class="n">VAL</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">PROTON_DENSITY</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">COMPS</span> <span class="o">|</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">ROIS</span>
 
     <span class="n">tissue_key</span> <span class="o">=</span> <span class="n">tissue</span> <span class="k">if</span> <span class="n">tissue</span> <span class="ow">in</span> <span class="n">VAL</span> <span class="k">else</span> <span class="nb">map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tissue</span><span class="p">)</span>
@@ -1010,7 +1009,7 @@
 <span class="sd">        The BF of gray matter is 0.01 mL/sec/mL</span>
 <span class="sd">    """</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">PERFUSION</span><span class="p">[</span><span class="n">parameter</span><span class="p">][</span><span class="n">tissue</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">dictionaries</span><span class="o">.</span><span class="n">PERFUSION</span><span class="p">[</span><span class="n">parameter</span><span class="p">][</span><span class="n">tissue</span><span class="p">]</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"No </span><span class="si">{</span><span class="n">parameter</span><span class="si">}</span><span class="s2"> values for </span><span class="si">{</span><span class="n">tissue</span><span class="si">}</span><span class="s2">"</span>

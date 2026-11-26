@@ -639,17 +639,17 @@ the most common modelling approach is implemented in the function
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_minipig_003.png" srcset="../../_images/sphx_glr_plot_minipig_003.png" alt="Prediction of the MRI signals., Reconstruction of concentrations" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">popt</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+----------------------------------------------------------------------------------------------------------------------------+
-|                                                         Quantities                                                         |
-+--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| Key    | Value   | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
-+--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| F_p_ki | 0.1     | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
-| FF     | 0.5     |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
-| T_ar   | 3.2e-27 | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
-| T_u    | 65.0    | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
-| v_p_ki | 0.3     | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
-+----------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+------------------------------------------------------------------------------------------------------------------------------+
+|                                                          Quantities                                                          |
++--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| Key    | Value | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI     |
++--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| F_p_ki | 0.1   | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |           |
+| FF     | 0.5   |            | filtration fraction                          | physiological   | (0, 0.5)  |       |           |
+| T_ar   | 3e-27 | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |           |
+| T_u    | 65.0  | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       | Q.PH1.006 |
+| v_p_ki | 0.3   | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       | Q.PH1.001 |
++------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 <p>The model is not fitting the data because by default the model
@@ -669,17 +669,17 @@ with unphysical values for the parameters:</p>
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_minipig_004.png" srcset="../../_images/sphx_glr_plot_minipig_004.png" alt="Prediction of the MRI signals., Reconstruction of concentrations" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">popt</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+--------------------------------------------------------------------------------------------------------------------------+
-|                                                        Quantities                                                        |
-+--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| Key    | Value | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
-+--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| F_p_ki | 1.0   | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
-| FF     | 0.043 |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
-| T_ar   | 2.8   | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
-| T_u    | 30.0  | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
-| v_p_ki | 1.0   | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
-+--------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+------------------------------------------------------------------------------------------------------------------------------+
+|                                                          Quantities                                                          |
++--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| Key    | Value | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI     |
++--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| F_p_ki | 1.0   | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |           |
+| FF     | 0.043 |            | filtration fraction                          | physiological   | (0, 0.5)  |       |           |
+| T_ar   | 2.8   | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |           |
+| T_u    | 30.0  | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       | Q.PH1.006 |
+| v_p_ki | 1.0   | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       | Q.PH1.001 |
++------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 <p>The plasma flow and volume now hit the ceiling of what is allowed,
@@ -730,17 +730,17 @@ model instead of the measured aorta signal.</p>
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_minipig_005.png" srcset="../../_images/sphx_glr_plot_minipig_005.png" alt="Prediction of the MRI signals., Reconstruction of concentrations" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">popt</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+--------------------------------------------------------------------------------------------------------------------------+
-|                                                        Quantities                                                        |
-+--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| Key    | Value | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
-+--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| F_p_ki | 0.016 | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
-| FF     | 0.17  |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
-| T_ar   | 8.9   | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
-| T_u    | 110.0 | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
-| v_p_ki | 0.076 | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
-+--------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+------------------------------------------------------------------------------------------------------------------------------+
+|                                                          Quantities                                                          |
++--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| Key    | Value | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI     |
++--------+-------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| F_p_ki | 0.016 | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |           |
+| FF     | 0.17  |            | filtration fraction                          | physiological   | (0, 0.5)  |       |           |
+| T_ar   | 8.9   | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |           |
+| T_u    | 110.0 | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       | Q.PH1.006 |
+| v_p_ki | 0.076 | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       | Q.PH1.001 |
++------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 <p>This now fits a lot better without unphysical parameter values,
@@ -776,21 +776,21 @@ parameter:</p>
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_minipig_006.png" srcset="../../_images/sphx_glr_plot_minipig_006.png" alt="MRI Signal Prediction, Concentration Reconstruction" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">popt</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+---------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                     Quantities                                                                    |
-+--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-| Key    | Value                 | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
-+--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-| BAT    | 15.250001200060439    | sec    | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
-+--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-| CO     | 499.98849328381965    | mL/sec | cardiac output                                         | physiological   | (0, 500)     |       |       |
-| D_hl   | 0.09859410967156625   |        | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
-| E_or   | 0.0002492764874375729 |        | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
-| T_b_or | 9.35964566189189      | sec    | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
-| T_e_or | 3.9995596586849937    | sec    | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
-| T_hl   | 19.857428314999876    | sec    | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
-| vr_or  | 0.9412650045912657    |        | Venous return in the organs                            | physiological   | (0, 1)       |       |       |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                       Quantities                                                                      |
++--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-----------+
+| Key    | Value                 | Unit   | Name                                                   | Group           | Bounds       | DICOM | OSIPI     |
++--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-----------+
+| BAT    | 15.249999323784976    | sec    | bolus arrival time                                     | indicator       | (-30, 30)    |       | Q.BA1.001 |
++--------+-----------------------+--------+--------------------------------------------------------+-----------------+--------------+-------+-----------+
+| CO     | 499.99999999999994    | mL/sec | cardiac output                                         | physiological   | (0, 500)     |       |           |
+| D_hl   | 0.09846522101538935   |        | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |           |
+| E_or   | 4.053560857888913e-14 |        | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       | Q.PH1.005 |
+| T_b_or | 9.352078301127676     | sec    | mean transit time in blood of the organs               | physiological   | (0, 60)      |       | Q.PH1.006 |
+| T_e_or | 510.53186547084647    | sec    | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       | Q.PH1.006 |
+| T_hl   | 19.857882417426993    | sec    | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       | Q.PH1.006 |
+| vr_or  | 0.9412042374294769    |        | Venous return in the organs                            | physiological   | (0, 1)       |       |           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 <p>This fits the signals well but produces unphysical CO at the ceiling of 500 mL/sec.
@@ -809,20 +809,20 @@ Let’s try this again, but this time with inflow correction:</p>
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_minipig_007.png" srcset="../../_images/sphx_glr_plot_minipig_007.png" alt="MRI Signal Prediction, Concentration Reconstruction" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">popt</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+-----------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                Quantities                                                               |
-+--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-------+
-| Key    | Value               | Unit   | Name                                           | Group           | Bounds       | DICOM | OSIPI |
-+--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-------+
-| BAT    | 21.961061282606778  | sec    | bolus arrival time                             | indicator       | (-30, 30)    |       |       |
-+--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-------+
-| CO     | 68.1915098356161    | mL/sec | cardiac output                                 | physiological   | (0, 500)     |       |       |
-| D_hl   | 0.18909605049481323 |        | transit time dispersion in the heart and Lungs | physiological   | (0.01, 0.99) |       |       |
-| T_b_or | 17.674820496043278  | sec    | mean transit time in blood of the organs       | physiological   | (0, 60)      |       |       |
-| T_hl   | 10.405608321927973  | sec    | mean transit time in the heart and Lungs       | physiological   | (0, 30)      |       |       |
-| TF     | 0.2540399991175636  | sec    | inflow time                                    | physiological   | (0, 1)       |       |       |
-| vr_or  | 0.9288667555864202  |        | Venous return in the organs                    | physiological   | (0, 1)       |       |       |
-+-----------------------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+---------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                  Quantities                                                                 |
++--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-----------+
+| Key    | Value               | Unit   | Name                                           | Group           | Bounds       | DICOM | OSIPI     |
++--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-----------+
+| BAT    | 21.961060806292352  | sec    | bolus arrival time                             | indicator       | (-30, 30)    |       | Q.BA1.001 |
++--------+---------------------+--------+------------------------------------------------+-----------------+--------------+-------+-----------+
+| CO     | 68.19154508153622   | mL/sec | cardiac output                                 | physiological   | (0, 500)     |       |           |
+| D_hl   | 0.18909603150797755 |        | transit time dispersion in the heart and Lungs | physiological   | (0.01, 0.99) |       |           |
+| T_b_or | 17.67482299542622   | sec    | mean transit time in blood of the organs       | physiological   | (0, 60)      |       | Q.PH1.006 |
+| T_hl   | 10.405609530056877  | sec    | mean transit time in the heart and Lungs       | physiological   | (0, 30)      |       | Q.PH1.006 |
+| TF     | 0.2540399999299807  | sec    | inflow time                                    | physiological   | (0, 1)       |       |           |
+| vr_or  | 0.9288668186837254  |        | Venous return in the organs                    | physiological   | (0, 1)       |       |           |
++---------------------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 <p>This produces a good fit to the data and also reasonable
@@ -845,19 +845,19 @@ instead of the modelled concentration:</p>
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_minipig_008.png" srcset="../../_images/sphx_glr_plot_minipig_008.png" alt="Prediction of the MRI signals., Reconstruction of concentrations" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">pars</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'</span><span class="s1">Functional kidney (left)</span><span class="s1">'</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+---------------------------------------------------------------------------------------------------------------------------+
-|                                                  Functional kidney (left)                                                 |
-+--------+--------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| Key    | Value  | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
-+--------+--------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| F_p_ki | 0.032  | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
-| F_u_ki | 0.0019 | mL/sec/cm3 | flow per unit tissue in tubuli of the kidney | physiological   | (0, 0.05) |       |       |
-| FF     | 0.058  |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
-| T_ar   | 2.5    | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
-| T_u    | 55.0   | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
-| v_ki   | 1.0    | mL/cm3     | volume fraction in the kidney                | physiological   | (0, 1)    |       |       |
-| v_p_ki | 0.074  | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
-+---------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+-------------------------------------------------------------------------------------------------------------------------------+
+|                                                    Functional kidney (left)                                                   |
++--------+--------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| Key    | Value  | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI     |
++--------+--------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| F_p_ki | 0.032  | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |           |
+| F_u_ki | 0.0019 | mL/sec/cm3 | flow per unit tissue in tubuli of the kidney | physiological   | (0, 0.05) |       |           |
+| FF     | 0.058  |            | filtration fraction                          | physiological   | (0, 0.5)  |       |           |
+| T_ar   | 2.5    | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |           |
+| T_u    | 55.0   | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       | Q.PH1.006 |
+| v_ki   | 1.0    | mL/cm3     | volume fraction in the kidney                | physiological   | (0, 1)    |       | Q.PH1.001 |
+| v_p_ki | 0.074  | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       | Q.PH1.001 |
++-------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 <p>This now gives a good fit with reasonable values for all parameters.
@@ -873,19 +873,19 @@ parameters:</p>
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_minipig_009.png" srcset="../../_images/sphx_glr_plot_minipig_009.png" alt="Prediction of the MRI signals., Reconstruction of concentrations" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">pars</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'</span><span class="s1">Fibrotic kidney (right)</span><span class="s1">'</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+----------------------------------------------------------------------------------------------------------------------------+
-|                                                  Fibrotic kidney (right)                                                   |
-+--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| Key    | Value   | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI |
-+--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-------+
-| F_p_ki | 0.0058  | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |       |
-| F_u_ki | 0.00037 | mL/sec/cm3 | flow per unit tissue in tubuli of the kidney | physiological   | (0, 0.05) |       |       |
-| FF     | 0.065   |            | filtration fraction                          | physiological   | (0, 0.5)  |       |       |
-| T_ar   | 2.7     | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |       |
-| T_u    | 280.0   | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       |       |
-| v_ki   | 1.0     | mL/cm3     | volume fraction in the kidney                | physiological   | (0, 1)    |       |       |
-| v_p_ki | 0.091   | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       |       |
-+----------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+--------------------------------------------------------------------------------------------------------------------------------+
+|                                                    Fibrotic kidney (right)                                                     |
++--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| Key    | Value   | Unit       | Name                                         | Group           | Bounds    | DICOM | OSIPI     |
++--------+---------+------------+----------------------------------------------+-----------------+-----------+-------+-----------+
+| F_p_ki | 0.0058  | mL/sec/cm3 | flow per unit tissue in plasma of the kidney | physiological   | (0, 0.1)  |       |           |
+| F_u_ki | 0.00037 | mL/sec/cm3 | flow per unit tissue in tubuli of the kidney | physiological   | (0, 0.05) |       |           |
+| FF     | 0.065   |            | filtration fraction                          | physiological   | (0, 0.5)  |       |           |
+| T_ar   | 2.7     | sec        | arterial mean transit time                   | physiological   | (0.0, 10) |       |           |
+| T_u    | 280.0   | sec        | mean transit time in tubuli                  | physiological   | (30, 600) |       | Q.PH1.006 |
+| v_ki   | 1.0     | mL/cm3     | volume fraction in the kidney                | physiological   | (0, 1)    |       | Q.PH1.001 |
+| v_p_ki | 0.091   | mL/cm3     | volume fraction in plasma of the kidney      | physiological   | (0, 0.3)  |       | Q.PH1.001 |
++--------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 <p>The right (fibrotic) kidney now shows a substantially lower
@@ -925,52 +925,52 @@ bias in the left-right comparison of parameters such as GFR):</p>
 </span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_minipig_010.png" srcset="../../_images/sphx_glr_plot_minipig_010.png" alt="MRI Signal Prediction, Concentration" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-dcmri sphx-glr-backref-type-py-function reference internal" href="../../api/dcmri.print_quantities.html#dcmri.print_quantities" title="dcmri.print_quantities"><span class="n">dc</span><span class="o">.</span><span class="n">print_quantities</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">popt</span><span class="s1">'</span><span class="p">]</span> <span class="o">|</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">result</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">pars</span><span class="s1">'</span><span class="p">]</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'</span><span class="s1">Joint Aorta-Kidneys fit</span><span class="s1">'</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+-----------------------------------------------------------------------------------------------------------------------------------------+
-|                                                         Joint Aorta-Kidneys fit                                                         |
-+--------+---------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-| Key    | Value   | Unit       | Name                                                   | Group           | Bounds       | DICOM | OSIPI |
-+--------+---------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-| BAT    | 17.7    | sec        | bolus arrival time                                     | indicator       | (-30, 30)    |       |       |
-+--------+---------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-| CO     | 82.1    | mL/sec     | cardiac output                                         | physiological   | (0, 500)     |       |       |
-| D_hl   | 0.0858  |            | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |       |       |
-| DRF    | 0.757   |            | Differential renal function                            | physiological   | (0, 1)       |       |       |
-| DRPF   | 0.747   |            | Differential renal plasma flow                         | physiological   | (0, 1)       |       |       |
-| E_li   | 0.0     |            | extraction fraction in liver                           | physiological   | (0.0, 1.0)   |       |       |
-| E_lk   | 0.0933  |            | extraction fraction in the left kidney                 | physiological   | (0, 1)       |       |       |
-| E_or   | 0.105   |            | extraction fraction in the organs                      | physiological   | (0, 0.5)     |       |       |
-| E_rk   | 0.0886  |            | extraction fraction in the right kidney                | physiological   | (0, 1)       |       |       |
-| F_p_lk | 0.022   | mL/sec/cm3 | flow per unit tissue in plasma of the left kidney      | physiological   | (0, 0.1)     |       |       |
-| F_p_rk | 0.00745 | mL/sec/cm3 | flow per unit tissue in plasma of the right kidney     | physiological   | (0, 0.1)     |       |       |
-| fCO_ki | 0.0553  |            | fraction of the cardiac output in the kidney           | physiological   | (0, 0.5)     |       |       |
-| FF_lk  | 0.103   |            | filtration fraction in the left kidney                 | physiological   | (0, 0.5)     |       |       |
-| FF_rk  | 0.0973  |            | filtration fraction in the right kidney                | physiological   | (0, 0.5)     |       |       |
-| GFR    | 0.254   | mL/sec     | glomerular filtration rate                             | physiological   | (0, 10)      |       |       |
-| GFR_lk | 0.192   | mL/sec     | glomerular filtration rate in the left kidney          | physiological   | (0, 20)      |       |       |
-| GFR_rk | 0.0616  | mL/sec     | glomerular filtration rate in the right kidney         | physiological   | (0, 20)      |       |       |
-| H      | 0.45    |            | hematocrit                                             | physiological   | (0, 1)       |       |       |
-| PF_ki  | 2.5     | mL/sec     | plasma flow in the kidney                              | physiological   | (0, 100)     |       |       |
-| PF_lk  | 1.87    | mL/sec     | plasma flow in the left kidney                         | physiological   | (0, 100)     |       |       |
-| PF_rk  | 0.633   | mL/sec     | plasma flow in the right kidney                        | physiological   | (0, 100)     |       |       |
-| T_b_or | 14.4    | sec        | mean transit time in blood of the organs               | physiological   | (0, 60)      |       |       |
-| T_e_or | 224.0   | sec        | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |       |       |
-| T_hl   | 15.3    | sec        | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |       |       |
-| T_lka  | 0.799   | sec        | mean transit time in the left kidney artery            | physiological   | (0, 5)       |       |       |
-| T_p_lk | 5.05    | sec        | mean transit time in plasma of the left kidney         | physiological   | (0, 30)      |       |       |
-| T_p_rk | 15.7    | sec        | mean transit time in plasma of the right kidney        | physiological   | (0, 30)      |       |       |
-| T_rka  | 2.35    | sec        | mean transit time in the right kidney artery           | physiological   | (0, 5)       |       |       |
-| T_u_lk | 57.7    | sec        | mean transit time in tubuli of the left kidney         | physiological   | (30, 600)    |       |       |
-| T_u_rk | 125.0   | sec        | mean transit time in tubuli of the right kidney        | physiological   | (30, 600)    |       |       |
-| TF     | 0.275   | sec        | inflow time                                            | physiological   | (0, 1)       |       |       |
-| v_ki   | 1.0     | mL/cm3     | volume fraction in the kidney                          | physiological   | (0, 1)       |       |       |
-| v_p_lk | 0.111   | mL/cm3     | volume fraction in plasma of the left kidney           | physiological   | (0, 0.3)     |       |       |
-| v_p_rk | 0.117   | mL/cm3     | volume fraction in plasma of the right kidney          | physiological   | (0, 0.3)     |       |       |
-+--------+---------+------------+--------------------------------------------------------+-----------------+--------------+-------+-------+
-| vol_ao | 1.0     | cm3        | ROI volume in the aorta                                | whole-body      | (0.0, 1000)  |       |       |
-| vol_lk | 85.0    | cm3        | ROI volume in the left kidney                          | whole-body      | (0.0, 1000)  |       |       |
-| vol_rk | 85.0    | cm3        | ROI volume in the right kidney                         | whole-body      | (0.0, 1000)  |       |       |
-| weight | 40.0    | kg         | body weight                                            | whole-body      | (0, 300)     |       |       |
-+-----------------------------------------------------------------------------------------------------------------------------------------+
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                               Joint Aorta-Kidneys fit                                                               |
++--------+---------+------------+--------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| Key    | Value   | Unit       | Name                                                   | Group           | Bounds       | DICOM         | OSIPI     |
++--------+---------+------------+--------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| BAT    | 17.7    | sec        | bolus arrival time                                     | indicator       | (-30, 30)    |               | Q.BA1.001 |
++--------+---------+------------+--------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| CO     | 82.1    | mL/sec     | cardiac output                                         | physiological   | (0, 500)     |               |           |
+| D_hl   | 0.0858  |            | transit time dispersion in the heart and Lungs         | physiological   | (0.01, 0.99) |               |           |
+| DRF    | 0.757   |            | Differential renal function                            | physiological   | (0, 1)       |               |           |
+| DRPF   | 0.747   |            | Differential renal plasma flow                         | physiological   | (0, 1)       |               |           |
+| E_li   | 0.0     |            | extraction fraction in liver                           | physiological   | (0.0, 1.0)   |               |           |
+| E_lk   | 0.0933  |            | extraction fraction in the left kidney                 | physiological   | (0, 1)       |               | Q.PH1.005 |
+| E_or   | 0.105   |            | extraction fraction in the organs                      | physiological   | (0, 0.5)     |               | Q.PH1.005 |
+| E_rk   | 0.0886  |            | extraction fraction in the right kidney                | physiological   | (0, 1)       |               | Q.PH1.005 |
+| F_p_lk | 0.022   | mL/sec/cm3 | flow per unit tissue in plasma of the left kidney      | physiological   | (0, 0.1)     |               |           |
+| F_p_rk | 0.00745 | mL/sec/cm3 | flow per unit tissue in plasma of the right kidney     | physiological   | (0, 0.1)     |               |           |
+| fCO_ki | 0.0553  |            | fraction of the cardiac output in the kidney           | physiological   | (0, 0.5)     |               |           |
+| FF_lk  | 0.103   |            | filtration fraction in the left kidney                 | physiological   | (0, 0.5)     |               |           |
+| FF_rk  | 0.0973  |            | filtration fraction in the right kidney                | physiological   | (0, 0.5)     |               |           |
+| GFR    | 0.254   | mL/sec     | glomerular filtration rate                             | physiological   | (0, 10)      |               |           |
+| GFR_lk | 0.192   | mL/sec     | glomerular filtration rate in the left kidney          | physiological   | (0, 20)      |               |           |
+| GFR_rk | 0.0616  | mL/sec     | glomerular filtration rate in the right kidney         | physiological   | (0, 20)      |               |           |
+| H      | 0.45    |            | hematocrit                                             | physiological   | (0, 1)       |               | Q.PH1.012 |
+| PF_ki  | 2.5     | mL/sec     | plasma flow in the kidney                              | physiological   | (0, 100)     |               |           |
+| PF_lk  | 1.87    | mL/sec     | plasma flow in the left kidney                         | physiological   | (0, 100)     |               |           |
+| PF_rk  | 0.633   | mL/sec     | plasma flow in the right kidney                        | physiological   | (0, 100)     |               |           |
+| T_b_or | 14.4    | sec        | mean transit time in blood of the organs               | physiological   | (0, 60)      |               | Q.PH1.006 |
+| T_e_or | 224.0   | sec        | mean transit time in extracellular space of the organs | physiological   | (0, 800)     |               | Q.PH1.006 |
+| T_hl   | 15.3    | sec        | mean transit time in the heart and Lungs               | physiological   | (0, 30)      |               | Q.PH1.006 |
+| T_lka  | 0.799   | sec        | mean transit time in the left kidney artery            | physiological   | (0, 5)       |               | Q.PH1.006 |
+| T_p_lk | 5.05    | sec        | mean transit time in plasma of the left kidney         | physiological   | (0, 30)      |               | Q.PH1.006 |
+| T_p_rk | 15.7    | sec        | mean transit time in plasma of the right kidney        | physiological   | (0, 30)      |               | Q.PH1.006 |
+| T_rka  | 2.35    | sec        | mean transit time in the right kidney artery           | physiological   | (0, 5)       |               | Q.PH1.006 |
+| T_u_lk | 57.7    | sec        | mean transit time in tubuli of the left kidney         | physiological   | (30, 600)    |               | Q.PH1.006 |
+| T_u_rk | 125.0   | sec        | mean transit time in tubuli of the right kidney        | physiological   | (30, 600)    |               | Q.PH1.006 |
+| TF     | 0.275   | sec        | inflow time                                            | physiological   | (0, 1)       |               |           |
+| v_ki   | 1.0     | mL/cm3     | volume fraction in the kidney                          | physiological   | (0, 1)       |               | Q.PH1.001 |
+| v_p_lk | 0.111   | mL/cm3     | volume fraction in plasma of the left kidney           | physiological   | (0, 0.3)     |               | Q.PH1.001 |
+| v_p_rk | 0.117   | mL/cm3     | volume fraction in plasma of the right kidney          | physiological   | (0, 0.3)     |               | Q.PH1.001 |
++--------+---------+------------+--------------------------------------------------------+-----------------+--------------+---------------+-----------+
+| vol_ao | 1.0     | cm3        | ROI volume in the aorta                                | whole-body      | (0.0, 1000)  |               |           |
+| vol_lk | 85.0    | cm3        | ROI volume in the left kidney                          | whole-body      | (0.0, 1000)  |               |           |
+| vol_rk | 85.0    | cm3        | ROI volume in the right kidney                         | whole-body      | (0.0, 1000)  |               |           |
+| weight | 40.0    | kg         | body weight                                            | whole-body      | (0, 300)     | PatientWeight |           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 <p>This produces all results for aorta and kidneys in one go, which
@@ -980,7 +980,7 @@ from separate results. Since the model uses the volumes this can
 also automatically output important whole kidney parameters such
 as GFR and RPF. Numerically the values are similar - though not
 identical - to those produced from a separate Aorta and Kidneys fit.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.996 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.938 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-tutorials-plot-minipig-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/580c3be099452fcfbf7fcbdae0696e9e/plot_minipig.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_minipig.ipynb</span></code></a></p>

@@ -81,7 +81,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="dcmri.all_groups" href="dcmri.all_groups.html" />
-    <link rel="prev" title="Lexicon" href="../reference/lexicon.html" />
+    <link rel="prev" title="dcmri.Qty" href="dcmri.Qty.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -436,24 +436,12 @@
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../reference/core.html">Core classes</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../reference/lexicon.html">Lexicon</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dcmri.Qty.html">dcmri.Qty</a></li>
 <li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">dcmri.all_quantities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.all_groups.html">dcmri.all_groups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.all_tissues.html">dcmri.all_tissues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.all_compartments.html">dcmri.all_compartments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_desc.html">dcmri.quantity_desc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_unit.html">dcmri.quantity_unit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_group.html">dcmri.quantity_group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_key.html">dcmri.quantity_key</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_dicom.html">dcmri.quantity_dicom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_osipi.html">dcmri.quantity_osipi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.parse_quantity.html">dcmri.parse_quantity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.modify_quantity.html">dcmri.modify_quantity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.increment_quantity.html">dcmri.increment_quantity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.popindex_quantity.html">dcmri.popindex_quantity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.print_quantities.html">dcmri.print_quantities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_to_json.html">dcmri.quantity_to_json</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_from_json.html">dcmri.quantity_from_json</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcmri.quantity_to_csv.html">dcmri.quantity_to_csv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.all_sequences.html">dcmri.all_sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.all_contrast_agents.html">dcmri.all_contrast_agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcmri.sequence_channels.html">dcmri.sequence_channels</a></li>
@@ -538,7 +526,7 @@
 <h1>dcmri.all_quantities<a class="headerlink" href="#dcmri-all-quantities" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="dcmri.all_quantities">
-<span class="sig-name descname"><span class="pre">all_quantities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/quantity_tools.html#all_quantities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.all_quantities" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">all_quantities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/quantity.html#all_quantities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.all_quantities" title="Link to this definition">#</a></dt>
 <dd><p>Return the registry of all quantities known to the package.</p>
 <p>Each quantity is described by a dictionary of metadata with the
 following keys:</p>
@@ -589,12 +577,12 @@ are shared with the registry, so modify them with care.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../reference/lexicon.html"
+       href="dcmri.Qty.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lexicon</p>
+        <p class="prev-next-title">dcmri.Qty</p>
       </div>
     </a>
     <a class="right-next"

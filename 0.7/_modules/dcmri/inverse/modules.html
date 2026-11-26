@@ -529,11 +529,11 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.core.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.core.pseq_tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_sequence</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">dcmri.inverse.functions</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">solve</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.core.module</span><span class="w"> </span><span class="kn">import</span> <span class="n">Module</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.signal.modules_tissue</span><span class="w"> </span><span class="kn">import</span> <span class="n">RelaxToSignal</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.bloch.functions_sequences</span><span class="w"> </span><span class="kn">import</span> <span class="n">channels</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.core.pseq_tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">sequence_channels</span>
 
 <span class="n">invertible_seqs</span> <span class="o">=</span> <span class="n">get_sequence</span><span class="p">(</span><span class="s1">'steady-state'</span><span class="p">)</span>
 <span class="n">analytical_inversion</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'3D-SPGR-SS'</span><span class="p">,</span> <span class="s1">'ZTE-3D-SPGR-SS'</span><span class="p">,</span> <span class="s1">'lin'</span><span class="p">,</span> <span class="s1">'2D-GE-EPI'</span><span class="p">,</span> <span class="s1">'2D-SE-EPI'</span><span class="p">,</span> <span class="s1">'2D-DE-EPI'</span><span class="p">]</span>
@@ -701,7 +701,7 @@
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nt</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_data</span><span class="p">()</span>
-        <span class="n">n_channels</span> <span class="o">=</span> <span class="n">channels</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'sequence'</span><span class="p">])</span>
+        <span class="n">n_channels</span> <span class="o">=</span> <span class="n">sequence_channels</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'sequence'</span><span class="p">])</span>
         <span class="n">components</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n_channels</span><span class="p">,</span> <span class="n">components</span><span class="p">,</span> <span class="n">nt</span><span class="p">))</span>
         <span class="n">data</span> <span class="o">|=</span> <span class="p">{</span>

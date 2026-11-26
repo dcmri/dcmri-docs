@@ -384,10 +384,10 @@ exchange tissue, and the reconstructed parameters are biased:
     +-----------+------------+---------------+-------+---------+
     | Parameter | Unit       | Reconstructed | Truth | Error   |
     +-----------+------------+---------------+-------+---------+
-    | v_i       | mL/cm3     | 0.3309        | 0.3   | 10.3 %  |
     | T_ar      | sec        | 0.9769        | 0     | inf     |
-    | F_b       | mL/sec/cm3 | 0.05006       | 0.02  | 150.3 % |
     | PS        | mL/sec/cm3 | 0.00272       | 0.003 | -9.3 %  |
+    | v_i       | mL/cm3     | 0.3309        | 0.3   | 10.3 %  |
+    | F_b       | mL/sec/cm3 | 0.05006       | 0.02  | 150.3 % |
     | v_b       | mL/cm3     | 0.109         | 0.1   | 9.0 %   |
     +-----------+------------+---------------+-------+---------+
 
@@ -451,11 +451,11 @@ Also the measurements of the kinetic parameters are more accurate:
     | Parameter | Unit       | Reconstructed | Truth | Error  |
     +-----------+------------+---------------+-------+--------+
     | PSc       | mL/sec/cm3 | 100           | inf   | nan    |
-    | v_i       | mL/cm3     | 0.3012        | 0.3   | 0.4 %  |
     | T_ar      | sec        | 0.02678       | 0     | inf    |
+    | PS        | mL/sec/cm3 | 0.002999      | 0.003 | -0.0 % |
+    | v_i       | mL/cm3     | 0.3012        | 0.3   | 0.4 %  |
     | PSe       | mL/sec/cm3 | 100           | inf   | nan    |
     | F_b       | mL/sec/cm3 | 0.02039       | 0.02  | 2.0 %  |
-    | PS        | mL/sec/cm3 | 0.002999      | 0.003 | -0.0 % |
     | v_b       | mL/cm3     | 0.09999       | 0.1   | -0.0 % |
     +-----------+------------+---------------+-------+--------+
 
@@ -545,7 +545,7 @@ confounder.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 14.720 seconds)
+   **Total running time of the script:** (0 minutes 9.174 seconds)
 
 
 .. _sphx_glr_download_examples_tutorials_plot_wex.py:

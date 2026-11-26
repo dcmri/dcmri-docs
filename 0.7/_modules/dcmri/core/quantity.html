@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dcmri.core.quantity &#8212; dcmri 0.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c7a6860f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../../../_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+            </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-64ZSJ8Z1MX"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-64ZSJ8Z1MX');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dcmri/core/quantity';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.24.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://dcmri.org/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.7';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-light" alt="dcmri 0.7.0 documentation - Home"/>
+    <img src="../../../_static/dcmri-logo.png" class="logo__image only-dark pst-js-only" alt="dcmri 0.7.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releases/index.html">
+    Releases
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dcmri/dcmri" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">dcmri.core.quantity</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for dcmri.core.quantity</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numbers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Real</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numbers</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dcmri.core.dictionaries</span><span class="w"> </span><span class="kn">import</span> <span class="n">QUANTITIES</span><span class="p">,</span> <span class="n">ROIS</span><span class="p">,</span> <span class="n">COMPS</span><span class="p">,</span> <span class="n">GROUPS</span><span class="p">,</span> <span class="n">QDATA_ROIS</span>
+
+
+<div class="viewcode-block" id="Qty">
+<a class="viewcode-back" href="../../../api/dcmri.Qty.html#dcmri.Qty">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Qty</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A quantity identified by a key, with its definition and qualifiers.</span>
+
+<span class="sd">    A key has the form ``name[_index][_compartment][_roi]``, where the</span>
+<span class="sd">    name is a registered quantity (see :func:`all_quantities`) and every</span>
+<span class="sd">    other part is optional. For example ``'BAT'``, ``'T1_gm'``, ``'F_1_e'``</span>
+<span class="sd">    or ``'PS_b2e'``. A ``Qty`` builds a key from its parts, splits a key into</span>
+<span class="sd">    its parts, and looks up the definition of the quantity. See</span>
+<span class="sd">    :ref:`user-guide-quantities` for details.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    key : str, optional</span>
+<span class="sd">        Full quantity key, which is split into name, index, compartment and</span>
+<span class="sd">        ROI.</span>
+<span class="sd">    name : str, optional</span>
+<span class="sd">        Base name of the quantity. Overrides the name read from ``key``.</span>
+<span class="sd">    index : int, optional</span>
+<span class="sd">        Index of a repeated quantity, such as the second of two injections.</span>
+<span class="sd">        Overrides the index read from ``key``.</span>
+<span class="sd">    compartment : str, optional</span>
+<span class="sd">        Compartment, as listed by :func:`all_compartments`, or a pair joined</span>
+<span class="sd">        by ``'2'`` for an exchange between compartments (for example</span>
+<span class="sd">        ``'b2e'``). Overrides the compartment read from ``key``.</span>
+<span class="sd">    roi : str, optional</span>
+<span class="sd">        Region of interest, as listed by :func:`all_tissues`. Overrides the</span>
+<span class="sd">        ROI read from ``key``.</span>
+<span class="sd">    quantities : dict, optional</span>
+<span class="sd">        Definitions of additional quantities that are not in the registry, in</span>
+<span class="sd">        the same format, keyed by base name.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the compartment or ROI is not valid.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    print_quantities : Print quantities as a table or as copy-paste code.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; Qty(name='T1', compartment='e', roi='gm').key</span>
+<span class="sd">    'T1_e_gm'</span>
+<span class="sd">    &gt;&gt;&gt; q = Qty('F_1_e')</span>
+<span class="sd">    &gt;&gt;&gt; q.name, q.index, q.compartment, q.roi</span>
+<span class="sd">    ('F', 1, 'e', None)</span>
+<span class="sd">    &gt;&gt;&gt; q.increment().key</span>
+<span class="sd">    'F_2_e'</span>
+<span class="sd">    &gt;&gt;&gt; Qty('BAT').unit</span>
+<span class="sd">    'sec'</span>
+<span class="sd">    """</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> 
+        <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">compartment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">roi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">quantities</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">compartment</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">roi</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Initialise from key</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dct</span> <span class="o">=</span> <span class="n">parse_quantity</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">compartment</span> <span class="o">=</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'compartment'</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">roi</span> <span class="o">=</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'roi'</span><span class="p">]</span>
+
+        <span class="c1"># Set user-defined values</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">index</span>
+        <span class="k">if</span> <span class="n">compartment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">compartment</span> <span class="o">=</span> <span class="n">compartment</span>
+        <span class="k">if</span> <span class="n">roi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">roi</span> <span class="o">=</span> <span class="n">roi</span>
+
+        <span class="c1"># Raise if invalid</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">compartment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">_is_valid_compartment</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compartment</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">compartment</span><span class="si">}</span><span class="s2">' is not a valid compartment. "</span>
+                <span class="sa">f</span><span class="s2">"Must be one of </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">COMPS</span><span class="p">)</span><span class="si">}</span><span class="s2">, or a pair 'comp1' + '2' + 'comp2' (e.g. 'b2e') with both in </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">COMPS</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">roi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">roi</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ROIS</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">roi</span><span class="si">}</span><span class="s2">' is not a valid roi. Options are </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">ROIS</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantities</span> <span class="o">=</span> <span class="n">quantities</span> <span class="c1"># any additional not in QUANTITIES</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""str: Full key, ``name[_index][_compartment][_roi]``."""</span>
+        <span class="k">return</span> <span class="n">quantity_key</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compartment</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">roi</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_dct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># Making this private as should be obsolete - can be replaced with Qty itself</span>
+        <span class="k">return</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Default (initial) value."""</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'init'</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""tuple or None: Lower and upper bounds for fitting."""</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'bounds'</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""str: Group the quantity belongs to."""</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'group'</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""str or None: Unit of measurement."""</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'unit'</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">desc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""str: Descriptive name, adapted to the qualifiers."""</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+        <span class="c1"># TODO: language confusion here as this is called name in QUANTITIES, should be renamed to desc</span>
+        <span class="k">return</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> 
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dicom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""str or None: Corresponding DICOM keyword."""</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'dicom_key'</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">osipi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""str or None: Corresponding OSIPI CAPLEX code."""</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantities</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dct</span><span class="p">[</span><span class="s1">'osipi_key'</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Qty.set">
+<a class="viewcode-back" href="../../../api/dcmri.Qty.html#dcmri.Qty.set">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compartment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roi</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Replace the index, compartment and/or ROI.</span>
+
+<span class="sd">        Arguments that are not provided are kept. Returns the modified object,</span>
+<span class="sd">        so calls can be chained.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">index</span>
+        <span class="k">if</span> <span class="n">compartment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">compartment</span> <span class="o">=</span> <span class="n">compartment</span>
+        <span class="k">if</span> <span class="n">roi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">roi</span> <span class="o">=</span> <span class="n">roi</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="Qty.increment">
+<a class="viewcode-back" href="../../../api/dcmri.Qty.html#dcmri.Qty.increment">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">increment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Increase the index by ``increment`` (the index becomes 1 if there is</span>
+<span class="sd">        none). Returns the modified object."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="n">increment</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="Qty.popindex">
+<a class="viewcode-back" href="../../../api/dcmri.Qty.html#dcmri.Qty.popindex">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">popindex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Remove the index. Returns the modified object."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+</div>
+
+
+
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">update_bounds</span><span class="p">(</span><span class="n">free</span><span class="p">,</span> <span class="n">quantities</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    
+    <span class="c1"># --- 2. Boundary Validation ---</span>
+    <span class="n">lexicon</span> <span class="o">=</span> <span class="n">QUANTITIES</span>
+    <span class="k">if</span> <span class="n">quantities</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">lexicon</span> <span class="o">|=</span> <span class="n">quantities</span>
+
+    <span class="n">bounds_add</span> <span class="o">=</span> <span class="n">select_quantities</span><span class="p">(</span><span class="n">lexicon</span><span class="p">,</span> <span class="n">bounds_type</span><span class="o">=</span><span class="s1">'add'</span><span class="p">)</span>
+    <span class="n">bounds_mult</span> <span class="o">=</span> <span class="n">select_quantities</span><span class="p">(</span><span class="n">lexicon</span><span class="p">,</span> <span class="n">bounds_type</span><span class="o">=</span><span class="s1">'mult'</span><span class="p">)</span>
+
+    <span class="n">new_free</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">free</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">bnds</span> <span class="ow">in</span> <span class="n">free</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">var</span> <span class="o">=</span> <span class="n">parse_quantity</span><span class="p">(</span><span class="n">p</span><span class="p">)[</span><span class="s1">'name'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">' is not a valid parameter for this configuration.</span><span class="se">\n</span><span class="s2">"</span>
+                    <span class="sa">f</span><span class="s2">"Use print_params() to print a list of all valid parameters."</span>
+                <span class="p">)</span>
+            <span class="n">new_free</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">bounds_add</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">bnds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">bnds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Bounds on </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2"> must be (negative, positive)."</span><span class="p">)</span>
+            <span class="n">new_free</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>  
+                <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="o">+</span> <span class="n">bnds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="o">+</span> <span class="n">bnds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">]</span>
+            
+        <span class="k">elif</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">bounds_mult</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">bnds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">bnds</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Invalid bounds on </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">: Bounds are relative and must be positive."</span><span class="p">)</span>
+            <span class="n">new_free</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="o">*</span> <span class="n">bnds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="o">*</span> <span class="n">bnds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">]</span>
+
+        <span class="k">elif</span> <span class="ow">not</span> <span class="p">(</span><span class="n">bnds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">bnds</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2"> is out of bounds </span><span class="si">{</span><span class="n">bnds</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">new_free</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">select_quantities</span><span class="p">(</span><span class="n">lexicon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return lexicon parameters with specific properties"""</span>
+    <span class="k">if</span> <span class="n">lexicon</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">lexicon</span> <span class="o">=</span> <span class="n">QUANTITIES</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">lexicon</span><span class="p">:</span>
+        <span class="n">select_p</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">lexicon</span><span class="p">[</span><span class="n">p</span><span class="p">]:</span>
+                <span class="n">select_p</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">elif</span> <span class="n">lexicon</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">key</span><span class="p">]</span> <span class="o">!=</span> <span class="n">val</span><span class="p">:</span>
+                <span class="n">select_p</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">select_p</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">lexicon</span><span class="p">[</span><span class="n">p</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">result</span>
+
+<div class="viewcode-block" id="all_quantities">
+<a class="viewcode-back" href="../../../api/dcmri.all_quantities.html#dcmri.all_quantities">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">all_quantities</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Return the registry of all quantities known to the package.</span>
+
+<span class="sd">    Each quantity is described by a dictionary of metadata with the</span>
+<span class="sd">    following keys:</span>
+
+<span class="sd">    - ``init``: default initial value.</span>
+<span class="sd">    - ``bounds``: (lower, upper) bounds for fitting, or None if the</span>
+<span class="sd">      quantity is not fitted.</span>
+<span class="sd">    - ``bounds_type``: only present for some quantities, e.g. 'add'</span>
+<span class="sd">      for bounds that are applied relative to the initial value.</span>
+<span class="sd">    - ``name``: descriptive name.</span>
+<span class="sd">    - ``unit``: unit of measurement, or None if dimensionless or not</span>
+<span class="sd">      numeric.</span>
+<span class="sd">    - ``group``: category the quantity belongs to, e.g.</span>
+<span class="sd">      'hyperparameters' or 'indicator'.</span>
+<span class="sd">    - ``dicom_key``: corresponding DICOM keyword, or None.</span>
+<span class="sd">    - ``osipi_key``: corresponding OSIPI code, or None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary mapping quantity symbols (e.g. 'BAT',</span>
+<span class="sd">        'dose') to their metadata dictionaries. The outer</span>
+<span class="sd">        dictionary is a copy, so adding or removing quantities</span>
+<span class="sd">        does not change the registry. The metadata dictionaries</span>
+<span class="sd">        are shared with the registry, so modify them with care.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; quantities = all_quantities()</span>
+<span class="sd">        &gt;&gt;&gt; quantities['dt']['unit']</span>
+<span class="sd">        'sec'</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">QUANTITIES</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="all_groups">
+<a class="viewcode-back" href="../../../api/dcmri.all_groups.html#dcmri.all_groups">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">all_groups</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Return the names of all quantity groups.</span>
+
+<span class="sd">    Each quantity in the registry belongs to one group, stored under</span>
+<span class="sd">    its ``group`` key (see :func:`all_quantities`).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        set: The group names, e.g. 'indicator', 'signal', 'sequence',</span>
+<span class="sd">        'electromagnetic', 'physiological', 'hyperparameters',</span>
+<span class="sd">        'whole-body' and 'inverse problem'. The set is a copy, so</span>
+<span class="sd">        modifying it does not change the registry.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; 'indicator' in all_groups()</span>
+<span class="sd">        True</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">GROUPS</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="all_tissues">
+<a class="viewcode-back" href="../../../api/dcmri.all_tissues.html#dcmri.all_tissues">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">all_tissues</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Return the notations for all tissue regions of interest (ROIs).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary mapping the short notation of each tissue</span>
+<span class="sd">        ROI (e.g. 'ab', 'ao', 'gm') to its full name (e.g.</span>
+<span class="sd">        'arterial blood', 'aorta', 'grey matter'). The dictionary</span>
+<span class="sd">        is a copy, so modifying it does not change the registry.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; all_tissues()['gm']</span>
+<span class="sd">        'grey matter'</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ROIS</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="all_compartments">
+<a class="viewcode-back" href="../../../api/dcmri.all_compartments.html#dcmri.all_compartments">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">all_compartments</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Return the notations for all subvoxel compartments.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary mapping the short notation of each</span>
+<span class="sd">        compartment (e.g. 'b', 'e', 'dt') to its full name (e.g.</span>
+<span class="sd">        'blood', 'extracellular space', 'distal tubuli'). The</span>
+<span class="sd">        dictionary is a copy, so modifying it does not change the</span>
+<span class="sd">        registry.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; all_compartments()['b']</span>
+<span class="sd">        'blood'</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">COMPS</span><span class="p">)</span></div>
+
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quantity_osipi</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the OSIPI code of a quantity.</span>
+
+<span class="sd">    The codes follow the OSIPI CAPLEX lexicon:</span>
+<span class="sd">    https://osipi.github.io/OSIPI_CAPLEX/</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        k (str): Symbol of the quantity, e.g. 'BAT'.</span>
+<span class="sd">        **kwargs: Additional keyword arguments, passed on to</span>
+<span class="sd">            :func:`quantity_desc`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str or None: The OSIPI code of the quantity, e.g. 'Q.BA1.001',</span>
+<span class="sd">        or None if the quantity has no OSIPI code.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; quantity_osipi('BAT')</span>
+<span class="sd">        'Q.BA1.001'</span>
+<span class="sd">    """</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">q</span><span class="p">[</span><span class="s1">'osipi_key'</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quantity_dicom</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the DICOM keyword of a quantity.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        k (str): Symbol of the quantity, e.g. 'dt'.</span>
+<span class="sd">        **kwargs: Additional keyword arguments, passed on to</span>
+<span class="sd">            :func:`quantity_desc`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str or None: The DICOM keyword of the quantity, or None if the</span>
+<span class="sd">        quantity has no DICOM equivalent.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; quantity_dicom('dt') is None</span>
+<span class="sd">        True</span>
+<span class="sd">    """</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">q</span><span class="p">[</span><span class="s1">'dicom_key'</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quantity_key</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compartment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roi</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Build the key of a quantity from its name and optional qualifiers.</span>
+
+<span class="sd">    The key is the name followed by the index, compartment and ROI, in</span>
+<span class="sd">    that order, joined by underscores. Qualifiers that are None are</span>
+<span class="sd">    left out.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name (str): Base name of the quantity, e.g. 'T1' or 'F'. This</span>
+<span class="sd">            is not checked against the quantity registry.</span>
+<span class="sd">        index (int or str, optional): Index to distinguish repeated</span>
+<span class="sd">            quantities, e.g. 1 for the first of several. It is</span>
+<span class="sd">            converted to a string. Defaults to None.</span>
+<span class="sd">        compartment (str, optional): Notation of the subvoxel</span>
+<span class="sd">            compartment the quantity refers to. Must be a key of the</span>
+<span class="sd">            compartment registry (see :func:`all_compartments`), or a</span>
+<span class="sd">            pair of such keys joined by '2' (for example 'b2e', for</span>
+<span class="sd">            exchange from blood to the extracellular space). Defaults</span>
+<span class="sd">            to None.</span>
+<span class="sd">        roi (str, optional): Notation of the tissue region of interest</span>
+<span class="sd">            the quantity refers to. Must be a key of the ROI registry</span>
+<span class="sd">            (see :func:`all_tissues`). Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The key, e.g. 'T1_e_gm'.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If `compartment` or `roi` is not valid.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; quantity_key('T1', compartment='e', roi='gm')</span>
+<span class="sd">        'T1_e_gm'</span>
+<span class="sd">        &gt;&gt;&gt; quantity_key('F', index=1, compartment='b')</span>
+<span class="sd">        'F_1_b'</span>
+<span class="sd">    """</span>
+
+
+    <span class="n">parts</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">compartment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compartment</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">roi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s2">"_"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Split a quantity key into its name and qualifiers.</span>
+
+<span class="sd">    This is the inverse of :func:`quantity_key`. The key is split at</span>
+<span class="sd">    underscores and read from the end: a trailing ROI notation is</span>
+<span class="sd">    taken first, then a compartment notation, then an integer index.</span>
+<span class="sd">    Whatever remains is the name. Qualifiers that are not present are</span>
+<span class="sd">    returned as None.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        k (str): Quantity key, e.g. 'T1_e_gm'.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary with the following keys:</span>
+
+<span class="sd">        - ``name`` (str): Base name of the quantity.</span>
+<span class="sd">        - ``index`` (int or None): Index of the quantity.</span>
+<span class="sd">        - ``compartment`` (str or None): Compartment notation.</span>
+<span class="sd">        - ``roi`` (str or None): Tissue ROI notation.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; parse_quantity('T1_e_gm')</span>
+<span class="sd">        {'name': 'T1', 'index': None, 'compartment': 'e', 'roi': 'gm'}</span>
+<span class="sd">    """</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)</span>
+
+    <span class="n">roi</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">ROIS</span><span class="p">:</span>
+        <span class="n">roi</span> <span class="o">=</span> <span class="n">tokens</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="n">compartment</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">_is_valid_compartment</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">compartment</span> <span class="o">=</span> <span class="n">tokens</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="n">index</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tokens</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">"_"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>  <span class="c1"># TODO: rename to key. name is used to refer to full description</span>
+        <span class="s2">"index"</span><span class="p">:</span> <span class="n">index</span><span class="p">,</span>
+        <span class="s2">"compartment"</span><span class="p">:</span> <span class="n">compartment</span><span class="p">,</span>
+        <span class="s2">"roi"</span><span class="p">:</span> <span class="n">roi</span><span class="p">,</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">modify_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compartment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roi</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return a quantity key with some of its qualifiers changed.</span>
+
+<span class="sd">    The key is parsed with :func:`parse_quantity`, the qualifiers that</span>
+<span class="sd">    are provided replace the existing ones (or are added if the key</span>
+<span class="sd">    does not have them yet), and the key is rebuilt with</span>
+<span class="sd">    :func:`quantity_key`. Qualifiers that are None are left as they</span>
+<span class="sd">    are in the original key.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        k (str): Quantity key to modify, e.g. 'T1_e_gm'.</span>
+<span class="sd">        index (int or str, optional): New index. Defaults to None,</span>
+<span class="sd">            which keeps the current index.</span>
+<span class="sd">        compartment (str, optional): New compartment notation, with</span>
+<span class="sd">            the same restrictions as in :func:`quantity_key`. Defaults</span>
+<span class="sd">            to None, which keeps the current compartment.</span>
+<span class="sd">        roi (str, optional): New tissue ROI notation, with the same</span>
+<span class="sd">            restrictions as in :func:`quantity_key`. Defaults to None,</span>
+<span class="sd">            which keeps the current ROI.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The modified key.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If `compartment` or `roi` is not valid.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; modify_quantity('T1_e_gm', compartment='b')</span>
+<span class="sd">        'T1_b_gm'</span>
+<span class="sd">        &gt;&gt;&gt; modify_quantity('T1_e', roi='gm')</span>
+<span class="sd">        'T1_e_gm'</span>
+<span class="sd">    """</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">parse_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">parsed</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
+    <span class="k">if</span> <span class="n">compartment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">parsed</span><span class="p">[</span><span class="s1">'compartment'</span><span class="p">]</span> <span class="o">=</span> <span class="n">compartment</span>
+    <span class="k">if</span> <span class="n">roi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">parsed</span><span class="p">[</span><span class="s1">'roi'</span><span class="p">]</span> <span class="o">=</span> <span class="n">roi</span>
+
+    <span class="k">return</span> <span class="n">quantity_key</span><span class="p">(</span>
+        <span class="n">parsed</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">parsed</span><span class="p">[</span><span class="s1">'index'</span><span class="p">],</span>
+        <span class="n">compartment</span><span class="o">=</span><span class="n">parsed</span><span class="p">[</span><span class="s1">'compartment'</span><span class="p">],</span>
+        <span class="n">roi</span><span class="o">=</span><span class="n">parsed</span><span class="p">[</span><span class="s1">'roi'</span><span class="p">],</span>
+    <span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">increment_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return a quantity key with its index increased.</span>
+
+<span class="sd">    If the key has an index, it is increased by `increment`. If the</span>
+<span class="sd">    key has no index, it is given the index 1, regardless of the value</span>
+<span class="sd">    of `increment`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        k (str): Quantity key, e.g. 'F_1_b'.</span>
+<span class="sd">        increment (int, optional): Amount to add to the existing</span>
+<span class="sd">            index. Defaults to 1.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The key with the new index.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the compartment or ROI in the key is not valid</span>
+<span class="sd">            (raised by :func:`modify_quantity`).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; increment_quantity('F_1_b')</span>
+<span class="sd">        'F_2_b'</span>
+<span class="sd">        &gt;&gt;&gt; increment_quantity('F_1_b', increment=2)</span>
+<span class="sd">        'F_3_b'</span>
+<span class="sd">        &gt;&gt;&gt; increment_quantity('F_b')</span>
+<span class="sd">        'F_1_b'</span>
+<span class="sd">    """</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">parse_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">parsed</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">new_index</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">new_index</span> <span class="o">=</span> <span class="n">parsed</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span> <span class="o">+</span> <span class="n">increment</span>
+    <span class="k">return</span> <span class="n">modify_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">new_index</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">popindex_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return a quantity key with its index removed.</span>
+
+<span class="sd">    The key is parsed with :func:`parse_quantity` and rebuilt with</span>
+<span class="sd">    :func:`quantity_key` without the index. The name, compartment and</span>
+<span class="sd">    ROI are kept. If the key has no index, it is returned unchanged.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        k (str): Quantity key, e.g. 'F_1_b'.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The key without the index.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the compartment or ROI in the key is not valid</span>
+<span class="sd">            (raised by :func:`quantity_key`).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; popindex_quantity('F_1_b')</span>
+<span class="sd">        'F_b'</span>
+<span class="sd">        &gt;&gt;&gt; popindex_quantity('F_b')</span>
+<span class="sd">        'F_b'</span>
+<span class="sd">    """</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">parse_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">quantity_key</span><span class="p">(</span>
+        <span class="n">parsed</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span>
+        <span class="n">compartment</span><span class="o">=</span><span class="n">parsed</span><span class="p">[</span><span class="s1">'compartment'</span><span class="p">],</span>
+        <span class="n">roi</span><span class="o">=</span><span class="n">parsed</span><span class="p">[</span><span class="s1">'roi'</span><span class="p">],</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quantity_desc</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">quantities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the description of a quantity.</span>
+
+<span class="sd">    The key can be the name of a quantity in the registry (e.g. 'dt'),</span>
+<span class="sd">    or a name with qualifiers added by :func:`quantity_key` (e.g.</span>
+<span class="sd">    'T1_e_gm' or 'F_2_b'). For a qualified key, the description of the</span>
+<span class="sd">    base quantity is copied, and its human-readable name is extended</span>
+<span class="sd">    with the index, compartment and ROI. The initial value and bounds</span>
+<span class="sd">    are replaced by ROI- or compartment-specific values where these</span>
+<span class="sd">    are available.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        k (str): Quantity key.</span>
+<span class="sd">        quantities (dict, optional): Additional quantities, in the</span>
+<span class="sd">            same format as the registry returned by</span>
+<span class="sd">            :func:`all_quantities`. These are added to the registry</span>
+<span class="sd">            for this call, and replace registry entries with the same</span>
+<span class="sd">            key. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A copy of the metadata dictionary of the quantity, with</span>
+<span class="sd">        the keys described in :func:`all_quantities` (``init``,</span>
+<span class="sd">        ``bounds``, ``name``, ``unit``, ``group``, ``dicom_key``,</span>
+<span class="sd">        ``osipi_key`` and, for some quantities, ``bounds_type``).</span>
+<span class="sd">        For a qualified key, ``name`` is the extended description</span>
+<span class="sd">        (e.g. 'second bolus arrival time in the aorta'), and</span>
+<span class="sd">        ``init`` and ``bounds`` may be specific to the ROI and</span>
+<span class="sd">        compartment. The result is independent of the registry, so</span>
+<span class="sd">        it can be modified freely.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the base name of the key is not a known</span>
+<span class="sd">            quantity.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; quantity_desc('dt')['unit']</span>
+<span class="sd">        'sec'</span>
+<span class="sd">    """</span>
+    <span class="n">lexicon</span> <span class="o">=</span> <span class="n">QUANTITIES</span>
+    <span class="k">if</span> <span class="n">quantities</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">lexicon</span> <span class="o">|=</span> <span class="n">quantities</span>
+
+    <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">lexicon</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">lexicon</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">parse_quantity</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">compartment</span><span class="p">,</span> <span class="n">roi</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">parsed</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span> <span class="n">parsed</span><span class="p">[</span><span class="s1">'index'</span><span class="p">],</span> <span class="n">parsed</span><span class="p">[</span><span class="s1">'compartment'</span><span class="p">],</span> <span class="n">parsed</span><span class="p">[</span><span class="s1">'roi'</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">lexicon</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unknown quantity </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="n">quant</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">lexicon</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+
+    <span class="c1"># Build the human-readable description</span>
+    <span class="n">desc</span> <span class="o">=</span> <span class="n">quant</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">compartment</span><span class="p">:</span>
+        <span class="n">desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">desc</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">_describe_compartment</span><span class="p">(</span><span class="n">compartment</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="n">roi</span><span class="p">:</span>
+        <span class="n">desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">desc</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">'of'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">compartment</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'in'</span><span class="si">}</span><span class="s2"> the </span><span class="si">{</span><span class="n">ROIS</span><span class="p">[</span><span class="n">roi</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_ordinal</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">desc</span><span class="si">}</span><span class="s2">"</span>
+    <span class="n">quant</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">desc</span>
+
+    <span class="c1"># Override init/bounds with any roi/compartment-specific data (index doesn't affect data)</span>
+    <span class="n">data_key</span> <span class="o">=</span> <span class="n">quantity_key</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">compartment</span><span class="o">=</span><span class="n">compartment</span><span class="p">,</span> <span class="n">roi</span><span class="o">=</span><span class="n">roi</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data_key</span> <span class="ow">in</span> <span class="n">QDATA_ROIS</span><span class="p">:</span>
+        <span class="n">quant</span><span class="p">[</span><span class="s1">'init'</span><span class="p">]</span> <span class="o">=</span> <span class="n">QDATA_ROIS</span><span class="p">[</span><span class="n">data_key</span><span class="p">][</span><span class="s1">'init'</span><span class="p">]</span>
+        <span class="n">quant</span><span class="p">[</span><span class="s1">'bounds'</span><span class="p">]</span> <span class="o">=</span> <span class="n">QDATA_ROIS</span><span class="p">[</span><span class="n">data_key</span><span class="p">][</span><span class="s1">'bounds'</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">compartment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">roi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fallback_key</span> <span class="o">=</span> <span class="n">quantity_key</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">compartment</span><span class="o">=</span><span class="n">compartment</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">fallback_key</span> <span class="ow">in</span> <span class="n">QDATA_ROIS</span><span class="p">:</span>
+            <span class="n">quant</span><span class="p">[</span><span class="s1">'init'</span><span class="p">]</span> <span class="o">=</span> <span class="n">QDATA_ROIS</span><span class="p">[</span><span class="n">fallback_key</span><span class="p">][</span><span class="s1">'init'</span><span class="p">]</span>
+            <span class="n">quant</span><span class="p">[</span><span class="s1">'bounds'</span><span class="p">]</span> <span class="o">=</span> <span class="n">QDATA_ROIS</span><span class="p">[</span><span class="n">fallback_key</span><span class="p">][</span><span class="s1">'bounds'</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">quant</span>
+
+
+<div class="viewcode-block" id="print_quantities">
+<a class="viewcode-back" href="../../../api/dcmri.print_quantities.html#dcmri.print_quantities">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_quantities</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="nb">set</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimals</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">digits</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">as_dict</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Print a table of quantities with their descriptions.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        q (set or dict): The quantities to print. A set holds quantity</span>
+<span class="sd">            keys (see :func:`quantity_key`). A dict maps quantity keys</span>
+<span class="sd">            to values.</span>
+<span class="sd">        title (str, optional): Title printed above the table. Defaults</span>
+<span class="sd">            to None, which prints no title.</span>
+<span class="sd">        decimals (int, optional): Number of decimal places used to</span>
+<span class="sd">            format numerical values. Defaults to None, which applies no</span>
+<span class="sd">            rounding.</span>
+<span class="sd">        digits (int, optional): Number of significant digits used to</span>
+<span class="sd">            format numerical values. Defaults to None. It is an</span>
+<span class="sd">            alternative to `decimals`.</span>
+<span class="sd">        as_dict (bool, optional): If True, print the table contents</span>
+<span class="sd">            as a dictionary instead of a table. Defaults to</span>
+<span class="sd">            False.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Possible input formats:</span>
+    <span class="c1"># q = set of keys</span>
+    <span class="c1"># q = dict with key: value</span>
+    <span class="c1"># q = dict with key: dict of quantity</span>
+    
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="nb">set</span><span class="p">):</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">q</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">if</span> <span class="s1">'name'</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span> <span class="c1"># v is full quantity description</span>
+                    <span class="n">template</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+                    <span class="k">continue</span>
+            <span class="c1"># v is value alone - read rest of description from dictionary</span>
+            <span class="n">template</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">quantity_desc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="n">template</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="s1">'init'</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">template</span>
+
+    <span class="k">if</span> <span class="n">as_dict</span><span class="p">:</span>
+        <span class="n">_print_quantities_as_dict</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s1">'Quantities'</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">format_bounds</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">""</span>
+        <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"(</span><span class="si">{</span><span class="n">lower</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">upper</span><span class="si">}</span><span class="s2">)"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">format_optional</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">""</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">round_sig</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">significant_digits</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Round a float to the given number of significant digits."""</span>
+        <span class="k">if</span> <span class="n">significant_digits</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"significant_digits must be &gt;= 1"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.</span><span class="si">{</span><span class="n">significant_digits</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">format_value</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">init</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s2">"init"</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">init</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"array </span><span class="si">{</span><span class="n">init</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">init</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"dict (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">init</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">init</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">init</span><span class="p">,</span> <span class="n">Real</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">decimals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">init</span><span class="p">,</span> <span class="n">decimals</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">digits</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">round_sig</span><span class="p">(</span><span class="n">init</span><span class="p">,</span> <span class="n">digits</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+
+    <span class="c1"># Check values</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unknown quantity </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+
+    <span class="c1"># compute column widths from content</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">format_value</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">decimals</span><span class="p">,</span> <span class="n">digits</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="n">key_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">q</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">unit_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">format_optional</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s2">"unit"</span><span class="p">]))</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">default</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">name_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s2">"name"</span><span class="p">])</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">default</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">group_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">label</span><span class="p">)</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">GROUPS</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">init_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">bounds_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">format_bounds</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s2">"bounds"</span><span class="p">]))</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">default</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">dicom_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">format_optional</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"dicom_key"</span><span class="p">)))</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">osipi_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">format_optional</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"osipi_key"</span><span class="p">)))</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="n">key_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">key_w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s2">"Key"</span><span class="p">))</span>
+    <span class="n">unit_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">unit_w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s2">"Unit"</span><span class="p">))</span>
+    <span class="n">name_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">name_w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s2">"Name"</span><span class="p">))</span>
+    <span class="n">group_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">group_w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s2">"Group"</span><span class="p">))</span>
+    <span class="n">init_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">init_w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s2">"Value"</span><span class="p">))</span>
+    <span class="n">bounds_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">bounds_w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s2">"Bounds"</span><span class="p">))</span>
+    <span class="n">dicom_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dicom_w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s2">"DICOM"</span><span class="p">))</span>
+    <span class="n">osipi_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">osipi_w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s2">"OSIPI"</span><span class="p">))</span>
+
+    <span class="c1"># 8 columns, each " x " padded (width+2), plus 9 "+" separators (before each col + trailing)</span>
+    <span class="n">table_width</span> <span class="o">=</span> <span class="n">key_w</span> <span class="o">+</span> <span class="n">unit_w</span> <span class="o">+</span> <span class="n">name_w</span> <span class="o">+</span> <span class="n">group_w</span> <span class="o">+</span> <span class="n">init_w</span> <span class="o">+</span> <span class="n">bounds_w</span> <span class="o">+</span> <span class="n">dicom_w</span> <span class="o">+</span> <span class="n">osipi_w</span> <span class="o">+</span> <span class="mi">25</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">row</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">init</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">dicom</span><span class="p">,</span> <span class="n">osipi</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"| </span><span class="si">{</span><span class="n">key</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">key_w</span><span class="si">}}</span><span class="s2"> | </span><span class="si">{</span><span class="n">init</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">init_w</span><span class="si">}}</span><span class="s2"> | </span><span class="si">{</span><span class="n">unit</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">unit_w</span><span class="si">}}</span><span class="s2"> "</span>
+            <span class="sa">f</span><span class="s2">"| </span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">name_w</span><span class="si">}}</span><span class="s2"> | </span><span class="si">{</span><span class="n">group</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">group_w</span><span class="si">}}</span><span class="s2"> | </span><span class="si">{</span><span class="n">bounds</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">bounds_w</span><span class="si">}}</span><span class="s2"> "</span>
+            <span class="sa">f</span><span class="s2">"| </span><span class="si">{</span><span class="n">dicom</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">dicom_w</span><span class="si">}}</span><span class="s2"> | </span><span class="si">{</span><span class="n">osipi</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">osipi_w</span><span class="si">}}</span><span class="s2"> |"</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">spanning_row</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">inner_width</span> <span class="o">=</span> <span class="n">table_width</span> <span class="o">-</span> <span class="mi">4</span>  <span class="c1"># account for "| " and " |"</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"| </span><span class="si">{</span><span class="n">text</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">inner_width</span><span class="p">)</span><span class="si">}</span><span class="s2"> |"</span>
+
+    <span class="n">divider</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"+"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="p">(</span><span class="n">key_w</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="p">(</span><span class="n">init_w</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="p">(</span><span class="n">unit_w</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="p">(</span><span class="n">name_w</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="p">(</span><span class="n">group_w</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="p">(</span><span class="n">bounds_w</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="p">(</span><span class="n">dicom_w</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="p">(</span><span class="n">osipi_w</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"+"</span>
+    <span class="p">)</span>
+    <span class="n">outer_border</span> <span class="o">=</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="p">(</span><span class="n">table_width</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"+"</span>
+
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">outer_border</span><span class="p">]</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spanning_row</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">divider</span><span class="p">)</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">(</span><span class="s2">"Key"</span><span class="p">,</span> <span class="s2">"Value"</span><span class="p">,</span> <span class="s2">"Unit"</span><span class="p">,</span> <span class="s2">"Name"</span><span class="p">,</span> <span class="s2">"Group"</span><span class="p">,</span> <span class="s2">"Bounds"</span><span class="p">,</span> <span class="s2">"DICOM"</span><span class="p">,</span> <span class="s2">"OSIPI"</span><span class="p">))</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">divider</span><span class="p">)</span>
+
+    <span class="n">first_group</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="c1"># Groups in alphabetical order of their long name, ignoring case</span>
+    <span class="k">for</span> <span class="n">gr</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">GROUPS</span><span class="p">):</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="s2">"group"</span><span class="p">]</span> <span class="o">==</span> <span class="n">gr</span><span class="p">}</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">group</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="c1"># Keys within the group in alphabetical order, ignoring case</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">first_group</span><span class="p">:</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">divider</span><span class="p">)</span>
+        <span class="n">first_group</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">(</span>
+                <span class="n">k</span><span class="p">,</span> <span class="n">values</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">format_optional</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s2">"unit"</span><span class="p">]),</span> <span class="n">v</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span> <span class="n">gr</span><span class="p">,</span>
+                <span class="n">format_bounds</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s2">"bounds"</span><span class="p">]),</span> <span class="n">format_optional</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"dicom_key"</span><span class="p">)),</span> <span class="n">format_optional</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"osipi_key"</span><span class="p">)),</span>
+            <span class="p">))</span>
+
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">outer_border</span><span class="p">)</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>  </div>
+
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ordinal</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="s1">'th'</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">'st'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">'nd'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">'rd'</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">'th'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">n</span><span class="si">}{</span><span class="n">suffix</span><span class="si">}</span><span class="s2">"</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_describe_compartment</span><span class="p">(</span><span class="n">compartment</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">'2'</span> <span class="ow">in</span> <span class="n">compartment</span><span class="p">:</span>
+        <span class="n">comp1</span><span class="p">,</span> <span class="n">comp2</span> <span class="o">=</span> <span class="n">compartment</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'2'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"from </span><span class="si">{</span><span class="n">COMPS</span><span class="p">[</span><span class="n">comp1</span><span class="p">]</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">COMPS</span><span class="p">[</span><span class="n">comp2</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"in </span><span class="si">{</span><span class="n">COMPS</span><span class="p">[</span><span class="n">compartment</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_valid_compartment</span><span class="p">(</span><span class="n">token</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">COMPS</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="s2">"2"</span> <span class="ow">in</span> <span class="n">token</span><span class="p">:</span>
+        <span class="n">comp1</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">comp2</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s2">"2"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">comp1</span> <span class="ow">in</span> <span class="n">COMPS</span> <span class="ow">and</span> <span class="n">comp2</span> <span class="ow">in</span> <span class="n">COMPS</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_plain</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Convert NumPy scalars and arrays to plain Python so repr() prints cleanly."""</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">generic</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">v</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_print_quantities_as_dict</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"p"</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Print q as copy-paste code, grouped by the long group name.</span>
+
+<span class="sd">    Groups are sorted alphabetically by long name, and parameters within each</span>
+<span class="sd">    group are sorted alphabetically by key.</span>
+
+<span class="sd">    q : dict mapping parameter name -&gt; {'unit': ..., 'init': ..., 'group': &lt;short key&gt;}</span>
+<span class="sd">    name : variable name used on the printed assignment line</span>
+
+<span class="sd">    Uses the module-level GROUPS dict to translate short group keys into long names.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Collect entries per long group name (a missing group goes under 'other')</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'group'</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">'other'</span>    <span class="c1"># fall back to the short key if not in GROUPS</span>
+        <span class="n">groups</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+
+    <span class="c1"># Alphabetical order of the long names, and of the keys within each group (ignoring case)</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">g</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">g</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Build the text of each entry, so one width can be used for every comment</span>
+    <span class="n">entries</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">g</span><span class="p">:</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"    </span><span class="si">{</span><span class="n">key</span><span class="si">!r}</span><span class="s2">: </span><span class="si">{</span><span class="n">_plain</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">'init'</span><span class="p">])</span><span class="si">!r}</span><span class="s2">,"</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">g</span><span class="p">,</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">for</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">entries</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> = </span><span class="se">{{</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"    # </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span><span class="p">,</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="n">g</span><span class="p">],</span> <span class="n">items</span><span class="p">):</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'unit'</span><span class="p">)</span>
+            <span class="n">comment</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"  # </span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">unit</span> <span class="k">else</span> <span class="s2">""</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">line</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">width</span><span class="si">}}{</span><span class="n">comment</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"}"</span><span class="p">)</span>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_encode</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Fallback for objects json can't serialise natively."""</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">iscomplexobj</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'real'</span><span class="p">:</span> <span class="n">obj</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="s1">'imag'</span><span class="p">:</span> <span class="n">obj</span><span class="o">.</span><span class="n">imag</span><span class="o">.</span><span class="n">tolist</span><span class="p">()}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">'__ndarray__'</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="s1">'dtype'</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span> <span class="s1">'shape'</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">shape</span><span class="p">)}</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">generic</span><span class="p">):</span>  <span class="c1"># numpy scalars such as np.float64</span>
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Object of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> is not JSON serialisable'</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_decode</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Rebuild arrays from the dicts produced by _encode."""</span>
+    <span class="k">if</span> <span class="s1">'__ndarray__'</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">'__ndarray__'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>  <span class="c1"># complex array</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'real'</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'imag'</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="s1">'dtype'</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">'shape'</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">d</span>
+
+<span class="c1"># make these functions that operate on sets of quantities</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">quantity_to_json</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dct</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Save a (nested) dictionary as a JSON file.</span>
+
+<span class="sd">    Numpy arrays and other values that JSON cannot represent directly</span>
+<span class="sd">    are converted by the encoder, so that :func:`quantity_from_json`</span>
+<span class="sd">    can restore them.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str or Path): Path of the JSON file to write. An existing</span>
+<span class="sd">            file is overwritten.</span>
+<span class="sd">        dct (dict): The dictionary to save. It may be nested and may</span>
+<span class="sd">            contain numpy arrays.</span>
+<span class="sd">        indent (int, optional): Number of spaces used to indent the</span>
+<span class="sd">            file. Defaults to 2.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TypeError: If the dictionary contains a value that neither JSON</span>
+<span class="sd">            nor the encoder can handle.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; quantity_to_json('params.json', {'dt': 0.5, 'tmax': 240})</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dct</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">_encode</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span>
+
+<span class="c1"># make these functions that operate on sets of quantities</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">quantity_from_json</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Read a JSON file written by :func:`quantity_to_json`.</span>
+
+<span class="sd">    Numpy arrays that were encoded when the file was written are</span>
+<span class="sd">    restored as arrays.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str or Path): Path of the JSON file to read.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: The dictionary stored in the file, with numpy arrays</span>
+<span class="sd">        restored.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; quantity_from_json('params.json')</span>
+<span class="sd">        {'dt': 0.5, 'tmax': 240}</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">object_hook</span><span class="o">=</span><span class="n">_decode</span><span class="p">)</span>
+
+<span class="c1"># make these functions that operate on sets of quantities</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">quantity_to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dct</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Save a flat dictionary of scalar values as a two-column CSV file.</span>
+
+<span class="sd">    The file has a header row ``key,value`` followed by one row per</span>
+<span class="sd">    item of the dictionary.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str or Path): Path of the CSV file to write. An existing</span>
+<span class="sd">            file is overwritten.</span>
+<span class="sd">        dct (dict): A flat dictionary. All values must be scalars:</span>
+<span class="sd">            numbers, strings, booleans or None.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TypeError: If any value is not a scalar, for example a list, a</span>
+<span class="sd">            dictionary or a numpy array. The check is done before the</span>
+<span class="sd">            file is opened, so nothing is written in that case.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; quantity_to_csv('params.csv', {'dt': 0.5, 'tmax': 240})</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dct</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">is_scalar</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="p">(</span><span class="n">numbers</span><span class="o">.</span><span class="n">Number</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">generic</span><span class="p">))</span> <span class="ow">or</span> <span class="n">val</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_scalar</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Value for key '</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">' is of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">; "</span>
+                <span class="s2">"only scalar values can be saved to CSV."</span>
+            <span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">'key'</span><span class="p">,</span> <span class="s1">'value'</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dct</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">])</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024-2026, dcmri contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

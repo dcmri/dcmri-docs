@@ -6,6 +6,15 @@
 Lexicon
 *******
 
+Quantities: data type
+---------------------
+
+.. autosummary::
+   :toctree: ../api/
+   :template: custom-class-template.rst
+
+   Qty
+
 Quantities: dictionaries
 ------------------------
 
@@ -19,34 +28,6 @@ Quantities: dictionaries
    all_compartments
 
 
-Quantities: properties
-----------------------
-
-.. autosummary::
-   :toctree: ../api/
-   :template: autosummary.rst
-
-   quantity_desc
-   quantity_unit
-   quantity_group
-   quantity_key
-   quantity_dicom
-   quantity_osipi
-
-
-Quantities: operations
-----------------------
-
-.. autosummary::
-   :toctree: ../api/
-   :template: autosummary.rst
-
-   parse_quantity
-   modify_quantity
-   increment_quantity
-   popindex_quantity
-
-
 Quantities: input / output
 --------------------------
 
@@ -55,10 +36,7 @@ Quantities: input / output
    :template: autosummary.rst
 
    print_quantities
-   quantity_to_json
-   quantity_from_json
-   quantity_to_csv
-   
+
 
 Sequences: dictionaries
 -----------------------

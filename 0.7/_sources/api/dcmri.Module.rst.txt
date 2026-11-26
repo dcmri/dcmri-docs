@@ -1,20 +1,171 @@
 ﻿dcmri.Module
 ============
 
-
 .. currentmodule:: dcmri
 
-
-
 .. autoclass:: Module
-    :show-inheritance:
-    :special-members: __call__
+   :no-members:
+   :show-inheritance:
 
+
+
+.. rubric:: Attributes
+
+
+.. autosummary::
+
+   ~Module.config
+   ~Module.configs
+   ~Module.defaults
+   ~Module.quantities
+
+
+
+
+
+.. rubric:: Methods
+
+
+.. autosummary::
+   :nosignatures:
+
+   ~Module.all_configs
+   ~Module.all_inputs
+   ~Module.all_io
+   ~Module.all_outputs
+   ~Module.filter_data
+   ~Module.init
+   ~Module.input_data
+   ~Module.input_quantities
+   ~Module.inputs
+   ~Module.map_configs
+   ~Module.map_data
+   ~Module.map_inputs
+   ~Module.map_io
+   ~Module.map_outputs
+   ~Module.map_results
+   ~Module.mapped_inputs
+   ~Module.mapped_outputs
+   ~Module.new_mapped_outputs
+   ~Module.output_quantities
+   ~Module.outputs
+   ~Module.print_all_inputs
+   ~Module.print_all_io
+   ~Module.print_all_outputs
+   ~Module.print_configs
+   ~Module.print_inputs
+   ~Module.print_outputs
+   ~Module.set_config
+   ~Module.test_data
+   ~Module.update_data
+
+
+
+
+.. rubric:: Detailed Members Reference
+
+
+
+
+.. autoattribute:: Module.config
+.. autoattribute:: Module.configs
+.. autoattribute:: Module.defaults
+.. autoattribute:: Module.quantities
+
+
+
+
+
+
+
+.. automethod:: Module.all_configs
+
+
+.. automethod:: Module.all_inputs
+
+
+.. automethod:: Module.all_io
+
+
+.. automethod:: Module.all_outputs
+
+
+.. automethod:: Module.filter_data
+
+
+.. automethod:: Module.init
+
+
+.. automethod:: Module.input_data
+
+
+.. automethod:: Module.input_quantities
+
+
+.. automethod:: Module.inputs
+
+
+.. automethod:: Module.map_configs
+
+
+.. automethod:: Module.map_data
+
+
+.. automethod:: Module.map_inputs
+
+
+.. automethod:: Module.map_io
+
+
+.. automethod:: Module.map_outputs
+
+
+.. automethod:: Module.map_results
+
+
+.. automethod:: Module.mapped_inputs
+
+
+.. automethod:: Module.mapped_outputs
+
+
+.. automethod:: Module.new_mapped_outputs
+
+
+.. automethod:: Module.output_quantities
+
+
+.. automethod:: Module.outputs
+
+
+.. automethod:: Module.print_all_inputs
+
+
+.. automethod:: Module.print_all_io
+
+
+.. automethod:: Module.print_all_outputs
+
+
+.. automethod:: Module.print_configs
+
+
+.. automethod:: Module.print_inputs
+
+
+.. automethod:: Module.print_outputs
+
+
+.. automethod:: Module.set_config
+
+
+.. automethod:: Module.test_data
+
+
+.. automethod:: Module.update_data
 
 
 
 
 .. minigallery:: dcmri.Module
    :add-heading:
-
-

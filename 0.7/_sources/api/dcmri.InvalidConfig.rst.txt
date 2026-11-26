@@ -1,12 +1,30 @@
 ﻿dcmri.InvalidConfig
 ===================
 
-
 .. currentmodule:: dcmri
 
+.. autoclass:: InvalidConfig
+   :no-members:
+   :show-inheritance:
 
 
-.. autoexception:: InvalidConfig
 
 
 
+
+
+
+
+
+.. rubric:: Detailed Members Reference
+
+
+
+
+
+
+
+
+
+.. minigallery:: dcmri.InvalidConfig
+   :add-heading:

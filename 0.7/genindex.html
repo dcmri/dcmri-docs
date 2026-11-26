@@ -553,8 +553,6 @@
 </li>
         <li><a href="api/dcmri.Magnetization.html#dcmri.Magnetization.__call__">(Magnetization method)</a>
 </li>
-        <li><a href="api/dcmri.Module.html#dcmri.Module.__call__">(Module method)</a>
-</li>
         <li><a href="api/dcmri.MxyReadMz.html#dcmri.MxyReadMz.__call__">(MxyReadMz method)</a>
 </li>
         <li><a href="api/dcmri.MzInflowPrep.html#dcmri.MzInflowPrep.__call__">(MzInflowPrep method)</a>
@@ -620,14 +618,22 @@
 </li>
       <li><a href="api/dcmri.all_compartments.html#dcmri.all_compartments">all_compartments() (in module dcmri)</a>
 </li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.all_configs">all_configs() (Module class method)</a>
+</li>
       <li><a href="api/dcmri.all_contrast_agents.html#dcmri.all_contrast_agents">all_contrast_agents() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.all_groups.html#dcmri.all_groups">all_groups() (in module dcmri)</a>
 </li>
-      <li><a href="api/dcmri.all_quantities.html#dcmri.all_quantities">all_quantities() (in module dcmri)</a>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.all_inputs">all_inputs() (Module class method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.all_io">all_io() (Module class method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.all_outputs">all_outputs() (Module class method)</a>
+</li>
+      <li><a href="api/dcmri.all_quantities.html#dcmri.all_quantities">all_quantities() (in module dcmri)</a>
+</li>
       <li><a href="api/dcmri.all_sequences.html#dcmri.all_sequences">all_sequences() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.all_tissues.html#dcmri.all_tissues">all_tissues() (in module dcmri)</a>
@@ -748,10 +754,10 @@
 </li>
       <li><a href="api/dcmri.conc_liver_2i_ic.html#dcmri.conc_liver_2i_ic">conc_liver_2i_ic() (in module dcmri)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.conc_liver_2i_ic_hf.html#dcmri.conc_liver_2i_ic_hf">conc_liver_2i_ic_hf() (in module dcmri)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.conc_liver_2i_ic_hf_nse.html#dcmri.conc_liver_2i_ic_hf_nse">conc_liver_2i_ic_hf_nse() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.conc_liver_2i_ic_hf_nsu.html#dcmri.conc_liver_2i_ic_hf_nsu">conc_liver_2i_ic_hf_nsu() (in module dcmri)</a>
@@ -828,6 +834,10 @@
 </li>
       <li><a href="api/dcmri.ConcToSignal.html#dcmri.ConcToSignal">ConcToSignal (class in dcmri)</a>
 </li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.config">config (Module attribute)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.configs">configs (Module attribute)</a>
+</li>
       <li><a href="api/dcmri.conv.html#dcmri.conv">conv() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.convmat.html#dcmri.convmat">convmat() (in module dcmri)</a>
@@ -842,10 +852,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.deconv.html#dcmri.deconv">deconv() (in module dcmri)</a>
 </li>
-      <li><a href="api/dcmri.Qty.html#dcmri.Qty.desc">desc (Qty attribute)</a>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.defaults">defaults (Module attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/dcmri.Qty.html#dcmri.Qty.desc">desc (Qty attribute)</a>
+</li>
       <li><a href="api/dcmri.describe.html#dcmri.describe">describe() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.Qty.html#dcmri.Qty.dicom">dicom (Qty attribute)</a>
@@ -869,6 +881,8 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.fetch.html#dcmri.fetch">fetch() (in module dcmri)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.filter_data">filter_data() (Module method)</a>
 </li>
       <li><a href="api/dcmri.Flux.html#dcmri.Flux">Flux (class in dcmri)</a>
 </li>
@@ -944,7 +958,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.Qty.html#dcmri.Qty.increment">increment() (Qty method)</a>
 </li>
-      <li><a href="api/dcmri.InvalidConfig.html#dcmri.InvalidConfig">InvalidConfig</a>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.init">init() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.input_data">input_data() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.input_quantities">input_quantities() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.inputs">inputs() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.InvalidConfig.html#dcmri.InvalidConfig">InvalidConfig (class in dcmri)</a>
 </li>
       <li><a href="api/dcmri.invconvmat.html#dcmri.invconvmat">invconvmat() (in module dcmri)</a>
 </li>
@@ -952,12 +974,12 @@
 </li>
       <li><a href="api/dcmri.InverseAortaKidneys.html#dcmri.InverseAortaKidneys">InverseAortaKidneys (class in dcmri)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.InverseAortaLiver.html#dcmri.InverseAortaLiver">InverseAortaLiver (class in dcmri)</a>
 </li>
       <li><a href="api/dcmri.InverseAortaLiverDrug.html#dcmri.InverseAortaLiverDrug">InverseAortaLiverDrug (class in dcmri)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.InverseAortaLiverSplit.html#dcmri.InverseAortaLiverSplit">InverseAortaLiverSplit (class in dcmri)</a>
 </li>
       <li><a href="api/dcmri.InverseAortaLiverSplitDrug.html#dcmri.InverseAortaLiverSplitDrug">InverseAortaLiverSplitDrug (class in dcmri)</a>
@@ -1014,6 +1036,22 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.Magnetization.html#dcmri.Magnetization">Magnetization (class in dcmri)</a>
 </li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.map_configs">map_configs() (Module class method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.map_data">map_data() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.map_inputs">map_inputs() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.map_io">map_io() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.map_outputs">map_outputs() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.map_results">map_results() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.mapped_inputs">mapped_inputs() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.mapped_outputs">mapped_outputs() (Module method)</a>
+</li>
       <li><a href="api/dcmri.mle_rice.html#dcmri.mle_rice">mle_rice() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.Module.html#dcmri.Module">Module (class in dcmri)</a>
@@ -1036,6 +1074,8 @@
 </li>
       <li><a href="api/dcmri.Mz_dyn_spgr.html#dcmri.Mz_dyn_spgr">Mz_dyn_spgr() (in module dcmri)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.Mz_dyn_ss.html#dcmri.Mz_dyn_ss">Mz_dyn_ss() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.Mz_dyn_ss_k0.html#dcmri.Mz_dyn_ss_k0">Mz_dyn_ss_k0() (in module dcmri)</a>
@@ -1044,8 +1084,6 @@
 </li>
       <li><a href="api/dcmri.Mz_dyn_ss_k0_spgr.html#dcmri.Mz_dyn_ss_k0_spgr">Mz_dyn_ss_k0_spgr() (in module dcmri)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.Mz_dyn_ss_k0_spgri.html#dcmri.Mz_dyn_ss_k0_spgri">Mz_dyn_ss_k0_spgri() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.Mz_dyn_ss_pr_spgr.html#dcmri.Mz_dyn_ss_pr_spgr">Mz_dyn_ss_pr_spgr() (in module dcmri)</a>
@@ -1084,6 +1122,10 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.new_mapped_outputs">new_mapped_outputs() (Module method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.nexpconv.html#dcmri.nexpconv">nexpconv() (in module dcmri)</a>
 </li>
   </ul></td>
@@ -1093,6 +1135,12 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.Qty.html#dcmri.Qty.osipi">osipi (Qty attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.output_quantities">output_quantities() (Module method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.outputs">outputs() (Module method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1110,12 +1158,24 @@
 </li>
       <li><a href="api/dcmri.Qty.html#dcmri.Qty.popindex">popindex() (Qty method)</a>
 </li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.print_all_inputs">print_all_inputs() (Module class method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.print_all_io">print_all_io() (Module class method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.print_all_outputs">print_all_outputs() (Module class method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.print_configs">print_configs() (Module class method)</a>
+</li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.print_inputs">print_inputs() (Module method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.print_outputs">print_outputs() (Module method)</a>
+</li>
       <li><a href="api/dcmri.print_quantities.html#dcmri.print_quantities">print_quantities() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.prop_chain.html#dcmri.prop_chain">prop_chain() (in module dcmri)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.prop_comp.html#dcmri.prop_comp">prop_comp() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.prop_free.html#dcmri.prop_free">prop_free() (in module dcmri)</a>
@@ -1137,6 +1197,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.Qty.html#dcmri.Qty">Qty (class in dcmri)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.quantities">quantities (Module attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1216,6 +1280,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.Qty.html#dcmri.Qty.set">set() (Qty method)</a>
 </li>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.set_config">set_config() (Module method)</a>
+</li>
       <li><a href="api/dcmri.shepp_logan.html#dcmri.shepp_logan">shepp_logan() (in module dcmri)</a>
 </li>
       <li><a href="api/dcmri.Signal.html#dcmri.Signal">Signal (class in dcmri)</a>
@@ -1236,9 +1302,11 @@
 </li>
       <li><a href="api/dcmri.T2.html#dcmri.T2">T2() (in module dcmri)</a>
 </li>
+      <li><a href="api/dcmri.T2s.html#dcmri.T2s">T2s() (in module dcmri)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/dcmri.T2s.html#dcmri.T2s">T2s() (in module dcmri)</a>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.test_data">test_data() (Module method)</a>
 </li>
       <li><a href="api/dcmri.TissueLS.html#dcmri.TissueLS">TissueLS (class in dcmri)</a>
 </li>
@@ -1251,6 +1319,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dcmri.Qty.html#dcmri.Qty.unit">unit (Qty attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/dcmri.Module.html#dcmri.Module.update_data">update_data() (Module method)</a>
 </li>
   </ul></td>
 </tr></table>

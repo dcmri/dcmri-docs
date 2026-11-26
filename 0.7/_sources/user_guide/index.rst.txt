@@ -48,6 +48,15 @@ Welcome to the ``dcmri`` user guide! Follow these sections to understand how to 
       Approach to naming and referencing quantities.
 
    .. grid-item-card::
+      :link: modules
+      :link-type: doc
+      :class-card: guide-card
+
+      🧩 **Modules**
+      ^^^
+      Basic building blocks of more complex models.
+
+   .. grid-item-card::
       :link: basics/index
       :link-type: doc
       :class-card: guide-card
@@ -74,5 +83,6 @@ Welcome to the ``dcmri`` user guide! Follow these sections to understand how to 
    usage
    units
    quantities
+   modules
    basics/index
    tissues/index

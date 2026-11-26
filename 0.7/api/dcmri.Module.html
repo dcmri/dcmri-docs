@@ -517,6 +517,26 @@
 <dt class="sig sig-object py" id="dcmri.Module">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iomap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Configurable function with named inputs and outputs.</p>
+<p>A Module is the basic building block of the high-level functionality in dcmri.
+It is configured once at construction, after which it behaves like a function that takes
+a dictionary of named inputs and returns a dictionary of named outputs.
+Modules can be connected by mapping the outputs of one onto the inputs
+of another, which allows more complex modules to be assembled from
+simpler ones.</p>
+<p>Subclasses define the class attributes <code class="docutils literal notranslate"><span class="pre">configs</span></code>, <code class="docutils literal notranslate"><span class="pre">defaults</span></code> and
+<code class="docutils literal notranslate"><span class="pre">quantities</span></code>, and implement the methods <code class="docutils literal notranslate"><span class="pre">inputs</span></code>, <code class="docutils literal notranslate"><span class="pre">outputs</span></code> and
+<code class="docutils literal notranslate"><span class="pre">_call</span></code>. The set of inputs and outputs may depend on the
+configuration.</p>
+<p>Names used inside the module are <em>internal</em> names. The optional
+mappings <code class="docutils literal notranslate"><span class="pre">imap</span></code>, <code class="docutils literal notranslate"><span class="pre">omap</span></code>, <code class="docutils literal notranslate"><span class="pre">iomap</span></code> and <code class="docutils literal notranslate"><span class="pre">cmap</span></code> translate them to
+<em>external</em> names, which are the names used in the data dictionaries
+that are passed to and returned from the module.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">MyModule</span><span class="p">(</span><span class="n">imap</span><span class="o">=</span><span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="s1">'signal'</span><span class="p">},</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'fast'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">({</span><span class="s1">'signal'</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">})</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -527,13 +547,280 @@
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.config" title="dcmri.Module.config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config</span></code></a></p></td>
+<td><p>A copy of the current configuration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.configs" title="dcmri.Module.configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configs</span></code></a></p></td>
+<td><p>Valid configuration options.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.defaults" title="dcmri.Module.defaults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">defaults</span></code></a></p></td>
+<td><p>Default value for each configuration key.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.quantities" title="dcmri.Module.quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantities</span></code></a></p></td>
+<td><p>Definitions of the quantities that appear as inputs and outputs, only needed for quantities that are not in the lexicon.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.all_configs" title="dcmri.Module.all_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_configs</span></code></a></p></td>
+<td><p>List the possible configurations of this class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.all_inputs" title="dcmri.Module.all_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_inputs</span></code></a></p></td>
+<td><p>Get every input that occurs in any valid configuration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.all_io" title="dcmri.Module.all_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_io</span></code></a></p></td>
+<td><p>Get every input and output that occurs in any valid configuration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.all_outputs" title="dcmri.Module.all_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_outputs</span></code></a></p></td>
+<td><p>Get every output that occurs in any valid configuration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.filter_data" title="dcmri.Module.filter_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_data</span></code></a></p></td>
+<td><p>Keep only the entries of a dictionary that are inputs.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.init" title="dcmri.Module.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a></p></td>
+<td><p>Get the default value of every input.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.input_data" title="dcmri.Module.input_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_data</span></code></a></p></td>
+<td><p>Build a dictionary of input values keyed by external name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.input_quantities" title="dcmri.Module.input_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_quantities</span></code></a></p></td>
+<td><p>Get the quantity definitions of the inputs of this instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.inputs" title="dcmri.Module.inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inputs</span></code></a></p></td>
+<td><p>Get the names of the inputs for the current configuration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.map_configs" title="dcmri.Module.map_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_configs</span></code></a></p></td>
+<td><p>Get the valid configurations with keys renamed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.map_data" title="dcmri.Module.map_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_data</span></code></a></p></td>
+<td><p>Translate external data to a dictionary with internal input names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.map_inputs" title="dcmri.Module.map_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_inputs</span></code></a></p></td>
+<td><p>Set the input mapping.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.map_io" title="dcmri.Module.map_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_io</span></code></a></p></td>
+<td><p>Set the mapping of internal to external input and output names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.map_outputs" title="dcmri.Module.map_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_outputs</span></code></a></p></td>
+<td><p>Set the output mapping.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.map_results" title="dcmri.Module.map_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_results</span></code></a></p></td>
+<td><p>Translate results to a dictionary with external output names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.mapped_inputs" title="dcmri.Module.mapped_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mapped_inputs</span></code></a></p></td>
+<td><p>Get the input names as seen from outside the module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.mapped_outputs" title="dcmri.Module.mapped_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mapped_outputs</span></code></a></p></td>
+<td><p>Get the output names as seen from outside the module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.new_mapped_outputs" title="dcmri.Module.new_mapped_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_mapped_outputs</span></code></a></p></td>
+<td><p>Get the external outputs that are not also external inputs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.output_quantities" title="dcmri.Module.output_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_quantities</span></code></a></p></td>
+<td><p>Get the quantity definitions of the outputs of this instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.outputs" title="dcmri.Module.outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outputs</span></code></a></p></td>
+<td><p>Get the names of the outputs for the current configuration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.print_all_inputs" title="dcmri.Module.print_all_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_inputs</span></code></a></p></td>
+<td><p>Print every input that occurs in any valid configuration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.print_all_io" title="dcmri.Module.print_all_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_io</span></code></a></p></td>
+<td><p>Print every input and output that occurs in any valid configuration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.print_all_outputs" title="dcmri.Module.print_all_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_outputs</span></code></a></p></td>
+<td><p>Print every output that occurs in any valid configuration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.print_configs" title="dcmri.Module.print_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_configs</span></code></a></p></td>
+<td><p>Print the configuration options with their defaults.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.print_inputs" title="dcmri.Module.print_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_inputs</span></code></a></p></td>
+<td><p>Print a table of the inputs of this instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.print_outputs" title="dcmri.Module.print_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_outputs</span></code></a></p></td>
+<td><p>Print a table of the outputs of this instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.set_config" title="dcmri.Module.set_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_config</span></code></a></p></td>
+<td><p>Set the configuration, starting from the defaults.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dcmri.Module.test_data" title="dcmri.Module.test_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_data</span></code></a></p></td>
+<td><p>Get a complete set of input data for testing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dcmri.Module.update_data" title="dcmri.Module.update_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_data</span></code></a></p></td>
+<td><p>Translate internal values back to external names.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Detailed Members Reference</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dcmri.Module.config">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#dcmri.Module.config" title="Link to this definition">#</a></dt>
+<dd><p>A copy of the current configuration.</p>
+<p>Modifying the returned dictionary does not change the module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dcmri.Module.configs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">configs</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#dcmri.Module.configs" title="Link to this definition">#</a></dt>
+<dd><p>Valid configuration options. Maps each configuration key to a
+collection of allowed values.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dcmri.Module.defaults">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">defaults</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#dcmri.Module.defaults" title="Link to this definition">#</a></dt>
+<dd><p>Default value for each configuration key.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dcmri.Module.quantities">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">quantities</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#dcmri.Module.quantities" title="Link to this definition">#</a></dt>
+<dd><p>Definitions of the quantities that appear as inputs and outputs,
+only needed for quantities that are not in the lexicon.</p>
+</dd></dl>
+
 <dl class="py method">
-<dt class="sig sig-object py" id="dcmri.Module.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.__call__" title="Link to this definition">#</a></dt>
-<dd><p>Call self as a function.</p>
+<dt class="sig sig-object py" id="dcmri.Module.all_configs">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">all_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.all_configs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.all_configs" title="Link to this definition">#</a></dt>
+<dd><p>List the possible configurations of this class.</p>
+<p>Without <code class="docutils literal notranslate"><span class="pre">sample</span></code>, this is the full product of all values in
+<code class="docutils literal notranslate"><span class="pre">configs</span></code>, which can be very large. With <code class="docutils literal notranslate"><span class="pre">sample</span></code>, random
+configurations are drawn without enumerating the product.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>)</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – Number of random configurations to
+return. If None, all are returned.</p></li>
+<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – Seed for the random sampling.</p></li>
+<li><p><strong>valid</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, only return configurations
+that the class accepts, i.e. that do not raise
+<code class="docutils literal notranslate"><span class="pre">InvalidConfig</span></code>. This requires instantiating each one.
+Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Configurations as dictionaries of key-value pairs. With
+<code class="docutils literal notranslate"><span class="pre">sample</span></code>, fewer are returned if the search space is
+exhausted first.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.all_inputs">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">all_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.all_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.all_inputs" title="Link to this definition">#</a></dt>
+<dd><p>Get every input that occurs in any valid configuration.</p>
+<p>If the class attribute <code class="docutils literal notranslate"><span class="pre">_all_inputs</span></code> is set, it is returned
+directly, which skips the (slow) enumeration of configurations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – If non-zero, show a progress bar.
+Defaults to 0.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Names of all possible inputs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.all_io">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">all_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.all_io"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.all_io" title="Link to this definition">#</a></dt>
+<dd><p>Get every input and output that occurs in any valid configuration.</p>
+<p>This is faster than calling <a class="reference internal" href="#dcmri.Module.all_inputs" title="dcmri.Module.all_inputs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">all_inputs()</span></code></a> and
+<a class="reference internal" href="#dcmri.Module.all_outputs" title="dcmri.Module.all_outputs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">all_outputs()</span></code></a> separately, as each configuration is built
+only once. If both <code class="docutils literal notranslate"><span class="pre">_all_inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">_all_outputs</span></code> are set on
+the class, they are returned directly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – If non-zero, show a progress bar and
+report the number of valid configurations found.</p></li>
+<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – Only inspect this many randomly drawn
+configurations (valid or not) instead of all of them.
+The result may then be incomplete.</p></li>
+<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – Seed for the random sampling.</p></li>
+<li><p><strong>split</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, return inputs and outputs
+separately. If False, return their union. Defaults to
+True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple (inputs, outputs) of sets of names if
+<code class="docutils literal notranslate"><span class="pre">split</span></code> is True, otherwise a single set with both.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)">tuple</a> or <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.all_outputs">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">all_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.all_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.all_outputs" title="Link to this definition">#</a></dt>
+<dd><p>Get every output that occurs in any valid configuration.</p>
+<p>If the class attribute <code class="docutils literal notranslate"><span class="pre">_all_outputs</span></code> is set, it is returned
+directly, which skips the (slow) enumeration of configurations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – If non-zero, show a progress bar.
+Defaults to 0.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Names of all possible outputs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.filter_data">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">filter_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.filter_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.filter_data" title="Link to this definition">#</a></dt>
+<dd><p>Keep only the entries of a dictionary that are inputs.</p>
+<p>Note that the keys are compared to the <em>internal</em> input names, the
+input mapping is not applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>) – Data to filter.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The entries of <code class="docutils literal notranslate"><span class="pre">data</span></code> whose key is an input.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.init">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.init" title="Link to this definition">#</a></dt>
+<dd><p>Get the default value of every input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Default values, keyed by internal input name.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
@@ -541,6 +828,404 @@
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.input_data">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">input_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.input_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.input_data" title="Link to this definition">#</a></dt>
+<dd><p>Build a dictionary of input values keyed by external name.</p>
+<p>For each input, the value is taken from <code class="docutils literal notranslate"><span class="pre">data</span></code> if present, and
+from <code class="docutils literal notranslate"><span class="pre">init</span></code> otherwise. Inputs that are in neither are left out.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>init</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>) – Fallback values keyed by internal input name,
+for example the output of <a class="reference internal" href="#dcmri.Module.init" title="dcmri.Module.init"><code class="xref py py-meth docutils literal notranslate"><span class="pre">init()</span></code></a>.</p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em>, </em><em>optional</em>) – Data keyed by external name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Input values keyed by external name.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.input_quantities">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">input_quantities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.input_quantities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.input_quantities" title="Link to this definition">#</a></dt>
+<dd><p>Get the quantity definitions of the inputs of this instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Maps each input name to its quantity properties.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.inputs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.inputs" title="Link to this definition">#</a></dt>
+<dd><p>Get the names of the inputs for the current configuration.</p>
+<p>Must be implemented by subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Internal input names.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.map_configs">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">map_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmap</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.map_configs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.map_configs" title="Link to this definition">#</a></dt>
+<dd><p>Get the valid configurations with keys renamed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cmap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>) – Maps internal configuration keys to new keys.
+Keys not in <code class="docutils literal notranslate"><span class="pre">cmap</span></code> are unchanged.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of <code class="docutils literal notranslate"><span class="pre">configs</span></code> with renamed keys.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.map_data">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">map_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.map_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.map_data" title="Link to this definition">#</a></dt>
+<dd><p>Translate external data to a dictionary with internal input names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em> or </em><em>None</em>) – Data keyed by external name.</p></li>
+<li><p><strong>all</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, inputs missing from <code class="docutils literal notranslate"><span class="pre">data</span></code>
+are filled with their default values. If False, they are
+left out. Defaults to True.</p></li>
+<li><p><strong>include</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)"><em>set</em></a><em>, </em><em>optional</em>) – Additional internal names to treat
+as inputs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Input values keyed by internal name.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.15)"><strong>ValueError</strong></a> – If an input is missing from <code class="docutils literal notranslate"><span class="pre">data</span></code> and has no
+    default value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.map_inputs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">map_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.map_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.map_inputs" title="Link to this definition">#</a></dt>
+<dd><p>Set the input mapping.</p>
+<p>Reads the current inputs from <code class="docutils literal notranslate"><span class="pre">inputs()</span></code>, so this needs to be
+called again if the configuration changes. Entries in <code class="docutils literal notranslate"><span class="pre">imap</span></code>
+that are not inputs of this module are dropped.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>imap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em>, </em><em>optional</em>) – Maps internal input names to external
+names.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The module itself, to allow chaining.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dcmri.Module" title="dcmri.Module">Module</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.map_io">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">map_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iomap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.map_io"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.map_io" title="Link to this definition">#</a></dt>
+<dd><p>Set the mapping of internal to external input and output names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>imap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em>, </em><em>optional</em>) – Mapping for the inputs.</p></li>
+<li><p><strong>omap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em>, </em><em>optional</em>) – Mapping for the outputs.</p></li>
+<li><p><strong>iomap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em>, </em><em>optional</em>) – Mapping applied to both inputs and
+outputs. If provided, <code class="docutils literal notranslate"><span class="pre">imap</span></code> and <code class="docutils literal notranslate"><span class="pre">omap</span></code> are ignored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The module itself, to allow chaining.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dcmri.Module" title="dcmri.Module">Module</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.map_outputs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">map_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">omap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.map_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.map_outputs" title="Link to this definition">#</a></dt>
+<dd><p>Set the output mapping.</p>
+<p>Reads the current outputs from <code class="docutils literal notranslate"><span class="pre">outputs()</span></code>, so this needs to be
+called again if the configuration changes. Entries in <code class="docutils literal notranslate"><span class="pre">omap</span></code>
+that are not outputs of this module are dropped.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>omap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em>, </em><em>optional</em>) – Maps internal output names to external
+names.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The module itself, to allow chaining.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dcmri.Module" title="dcmri.Module">Module</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.map_results">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">map_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.map_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.map_results" title="Link to this definition">#</a></dt>
+<dd><p>Translate results to a dictionary with external output names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>) – Results keyed by internal output name, as
+returned by <code class="docutils literal notranslate"><span class="pre">_call</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The outputs of this module keyed by external name.
+Outputs that are missing from <code class="docutils literal notranslate"><span class="pre">data</span></code> are left out.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.mapped_inputs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">mapped_inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.mapped_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.mapped_inputs" title="Link to this definition">#</a></dt>
+<dd><p>Get the input names as seen from outside the module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>External input names.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.mapped_outputs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">mapped_outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.mapped_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.mapped_outputs" title="Link to this definition">#</a></dt>
+<dd><p>Get the output names as seen from outside the module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>External output names.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.new_mapped_outputs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">new_mapped_outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.new_mapped_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.new_mapped_outputs" title="Link to this definition">#</a></dt>
+<dd><p>Get the external outputs that are not also external inputs.</p>
+<p>Useful when connecting modules, to see which quantities this
+module adds to the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>External names of outputs that are not inputs.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.output_quantities">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">output_quantities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.output_quantities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.output_quantities" title="Link to this definition">#</a></dt>
+<dd><p>Get the quantity definitions of the outputs of this instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Maps each output name to its quantity properties.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.outputs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.outputs" title="Link to this definition">#</a></dt>
+<dd><p>Get the names of the outputs for the current configuration.</p>
+<p>Must be implemented by subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Internal output names.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#set" title="(in Python v3.15)">set</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.print_all_inputs">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">print_all_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.print_all_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.print_all_inputs" title="Link to this definition">#</a></dt>
+<dd><p>Print every input that occurs in any valid configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – If non-zero, show a progress bar.
+Defaults to 0.</p></li>
+<li><p><strong>simple</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a><em>, </em><em>optional</em>) – Print a plain set of names instead
+of a table with quantity properties. Defaults to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.print_all_io">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">print_all_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.print_all_io"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.print_all_io" title="Link to this definition">#</a></dt>
+<dd><p>Print every input and output that occurs in any valid configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – If non-zero, show a progress bar.
+Defaults to 0.</p></li>
+<li><p><strong>simple</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a><em>, </em><em>optional</em>) – Print plain sets of names instead of
+tables with quantity properties. Defaults to False.</p></li>
+<li><p><strong>sample</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – Only inspect this many randomly drawn
+configurations instead of all of them.</p></li>
+<li><p><strong>seed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – Seed for the random sampling.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.print_all_outputs">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">print_all_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.print_all_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.print_all_outputs" title="Link to this definition">#</a></dt>
+<dd><p>Print every output that occurs in any valid configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a><em>, </em><em>optional</em>) – If non-zero, show a progress bar.
+Defaults to 0.</p></li>
+<li><p><strong>simple</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a><em>, </em><em>optional</em>) – Print a plain set of names instead
+of a table with quantity properties. Defaults to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.print_configs">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">print_configs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.print_configs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.print_configs" title="Link to this definition">#</a></dt>
+<dd><p>Print the configuration options with their defaults.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.print_inputs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">print_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">as_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.print_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.print_inputs" title="Link to this definition">#</a></dt>
+<dd><p>Print a table of the inputs of this instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>as_dict</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a><em>, </em><em>optional</em>) – Print as a dictionary instead of
+a table. Defaults to False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.print_outputs">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">print_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">as_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.print_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.print_outputs" title="Link to this definition">#</a></dt>
+<dd><p>Print a table of the outputs of this instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>as_dict</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a><em>, </em><em>optional</em>) – Print as a dictionary instead of
+a table. Defaults to False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.set_config">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">set_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.set_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.set_config" title="Link to this definition">#</a></dt>
+<dd><p>Set the configuration, starting from the defaults.</p>
+<p>Any previous configuration is discarded. Keys in <code class="docutils literal notranslate"><span class="pre">config</span></code> that
+are not in <code class="docutils literal notranslate"><span class="pre">configs</span></code> are silently ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em>, </em><em>optional</em>) – Configuration values to override
+the defaults.</p></li>
+<li><p><strong>cmap</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em>, </em><em>optional</em>) – Maps internal configuration keys to
+external keys. It is inverted here, so that external keys
+in <code class="docutils literal notranslate"><span class="pre">config</span></code> are translated back to internal ones.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The module itself, to allow chaining.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dcmri.Module" title="dcmri.Module">Module</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="dcmri.InvalidConfig.html#dcmri.InvalidConfig" title="dcmri.InvalidConfig"><strong>InvalidConfig</strong></a> – If a value is not allowed for its key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.test_data">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">test_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.test_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.test_data" title="Link to this definition">#</a></dt>
+<dd><p>Get a complete set of input data for testing.</p>
+<p>Default values are used for every input not given in <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a><em>, </em><em>optional</em>) – Values keyed by external name that
+override the defaults.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Input values keyed by external name.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dcmri.Module.update_data">
+<span class="sig-prename descclassname"><span class="pre">Module.</span></span><span class="sig-name descname"><span class="pre">update_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dcmri/core/module.html#Module.update_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dcmri.Module.update_data" title="Link to this definition">#</a></dt>
+<dd><p>Translate internal values back to external names.</p>
+<p>Only entries that are inputs of this module are returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>) – Values keyed by internal name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The input entries of <code class="docutils literal notranslate"><span class="pre">p</span></code> keyed by external name.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <section id="examples-using-dcmri-module">
@@ -628,10 +1313,40 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module"><code class="docutils literal notranslate"><span class="pre">Module</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.__call__"><code class="docutils literal notranslate"><span class="pre">Module.__call__()</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module"><code class="docutils literal notranslate"><span class="pre">Module</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.config"><code class="docutils literal notranslate"><span class="pre">Module.config</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.configs"><code class="docutils literal notranslate"><span class="pre">Module.configs</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.defaults"><code class="docutils literal notranslate"><span class="pre">Module.defaults</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.quantities"><code class="docutils literal notranslate"><span class="pre">Module.quantities</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.all_configs"><code class="docutils literal notranslate"><span class="pre">Module.all_configs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.all_inputs"><code class="docutils literal notranslate"><span class="pre">Module.all_inputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.all_io"><code class="docutils literal notranslate"><span class="pre">Module.all_io()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.all_outputs"><code class="docutils literal notranslate"><span class="pre">Module.all_outputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.filter_data"><code class="docutils literal notranslate"><span class="pre">Module.filter_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.init"><code class="docutils literal notranslate"><span class="pre">Module.init()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.input_data"><code class="docutils literal notranslate"><span class="pre">Module.input_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.input_quantities"><code class="docutils literal notranslate"><span class="pre">Module.input_quantities()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.inputs"><code class="docutils literal notranslate"><span class="pre">Module.inputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.map_configs"><code class="docutils literal notranslate"><span class="pre">Module.map_configs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.map_data"><code class="docutils literal notranslate"><span class="pre">Module.map_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.map_inputs"><code class="docutils literal notranslate"><span class="pre">Module.map_inputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.map_io"><code class="docutils literal notranslate"><span class="pre">Module.map_io()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.map_outputs"><code class="docutils literal notranslate"><span class="pre">Module.map_outputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.map_results"><code class="docutils literal notranslate"><span class="pre">Module.map_results()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.mapped_inputs"><code class="docutils literal notranslate"><span class="pre">Module.mapped_inputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.mapped_outputs"><code class="docutils literal notranslate"><span class="pre">Module.mapped_outputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.new_mapped_outputs"><code class="docutils literal notranslate"><span class="pre">Module.new_mapped_outputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.output_quantities"><code class="docutils literal notranslate"><span class="pre">Module.output_quantities()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.outputs"><code class="docutils literal notranslate"><span class="pre">Module.outputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.print_all_inputs"><code class="docutils literal notranslate"><span class="pre">Module.print_all_inputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.print_all_io"><code class="docutils literal notranslate"><span class="pre">Module.print_all_io()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.print_all_outputs"><code class="docutils literal notranslate"><span class="pre">Module.print_all_outputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.print_configs"><code class="docutils literal notranslate"><span class="pre">Module.print_configs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.print_inputs"><code class="docutils literal notranslate"><span class="pre">Module.print_inputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.print_outputs"><code class="docutils literal notranslate"><span class="pre">Module.print_outputs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.set_config"><code class="docutils literal notranslate"><span class="pre">Module.set_config()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.test_data"><code class="docutils literal notranslate"><span class="pre">Module.test_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcmri.Module.update_data"><code class="docutils literal notranslate"><span class="pre">Module.update_data()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-using-dcmri-module">Examples using <code class="docutils literal notranslate"><span class="pre">dcmri.Module</span></code></a></li>
 </ul>
   </nav></div>

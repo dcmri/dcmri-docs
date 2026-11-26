@@ -9,7 +9,7 @@ Core classes
 
 .. autosummary::
    :toctree: ../api/
-   :template: autosummary.rst
+   :template: custom-class-template.rst
 
    Module
    InvalidConfig

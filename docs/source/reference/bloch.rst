@@ -40,11 +40,11 @@ Sequences: properties
    :toctree: ../api/
    :template: autosummary.rst
 
-   channels
-   pulse_readout
-   readout_time
-   repetition_time
-   acquisition_times
+   sequence_channels
+   sequence_readout_pulses
+   sequence_readout_time
+   sequence_repetition_time
+   sequence_acquisition_times
 
 
 Sequences: magnetization

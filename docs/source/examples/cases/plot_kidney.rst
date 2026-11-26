@@ -96,33 +96,33 @@ Let's see what input parameters are needed for this model:
 
  .. code-block:: none
 
-    +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |                                                                        Quantities                                                                       |
-    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
-    | Key            | Value              | Unit   | Name                                                    | Group           | Bounds       | DICOM | OSIPI |
-    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
-    | r1             | 3500.0             | Hz/M   | longitudinal contrast agent relaxivity                  | electromagnetic | (0, 10000.0) |       |       |
-    | R1_b           | 0.614              | Hz     | tissue R1 in the blood                                  | electromagnetic | (0, 5)       |       |       |
-    | R1_ki          | 0.7053339766853816 | Hz     | tissue R1 in the kidney                                 | electromagnetic | (0, 5)       |       |       |
-    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
-    | agent          | gadoterate         |        | contrast agent generic name                             | indicator       |              |       |       |
-    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
-    | nmGFR          | 0.308333333        | mL/sec | nuclear medicine glomerular filtration rate             | physiological   | (0, 10)      |       |       |
-    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
-    | FA             | 17.0               | deg    | flip angle                                              | sequence        | (0, 180)     |       |       |
-    | field_strength | 3.0                | T      | magnetic field strength                                 | sequence        | (0, 20)      |       |       |
-    | Nk0            | 213                |        | number of acquired phase lines to the center of k-space | sequence        | (0, 1000)    |       |       |
-    | Nph            | 426                |        | number of acquired phase lines in k-space               | sequence        | (0, 1000)    |       |       |
-    | TR             | 0.005              | sec    | repetition time                                         | sequence        | (0, 1)       |       |       |
-    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
-    | nb             | 10                 | a.u.   | number of baseline time points                          | signal          |              |       |       |
-    | S_ar           | array (125,)       | a.u.   | signal in the artery                                    | signal          | (0, 5)       |       |       |
-    | S_ki           | array (125,)       | a.u.   | signal in the kidney                                    | signal          | (0, 5)       |       |       |
-    | tS_ar          | array (125,)       | sec    | signal time points in the artery                        | signal          |              |       |       |
-    | tS_ki          | array (125,)       | sec    | signal time points in the kidney                        | signal          |              |       |       |
-    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-------+-------+
-    | vol_ki         | 160.859365         | cm3    | ROI volume in the kidney                                | whole-body      | (0.0, 1000)  |       |       |
-    +---------------------------------------------------------------------------------------------------------------------------------------------------------+
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |                                                                                  Quantities                                                                                 |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-----------------------+-----------+
+    | Key            | Value              | Unit   | Name                                                    | Group           | Bounds       | DICOM                 | OSIPI     |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-----------------------+-----------+
+    | r1             | 3500.0             | Hz/M   | longitudinal contrast agent relaxivity                  | electromagnetic | (0, 10000.0) |                       | Q.EL1.015 |
+    | R1_b           | 0.614              | Hz     | tissue R1 in the blood                                  | electromagnetic | (0, 5)       |                       | Q.EL1.001 |
+    | R1_ki          | 0.7053339766853816 | Hz     | tissue R1 in the kidney                                 | electromagnetic | (0, 5)       |                       | Q.EL1.001 |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-----------------------+-----------+
+    | agent          | gadoterate         |        | contrast agent generic name                             | indicator       |              |                       |           |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-----------------------+-----------+
+    | nmGFR          | 0.308333333        | mL/sec | nuclear medicine glomerular filtration rate             | physiological   | (0, 10)      |                       |           |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-----------------------+-----------+
+    | FA             | 17.0               | deg    | flip angle                                              | sequence        | (0, 180)     | FlipAngle             | Q.MS1.007 |
+    | field_strength | 3.0                | T      | magnetic field strength                                 | sequence        | (0, 20)      | MagneticFieldStrength |           |
+    | Nk0            | 213                |        | number of acquired phase lines to the center of k-space | sequence        | (0, 1000)    |                       | Q.MS1.011 |
+    | Nph            | 426                |        | number of acquired phase lines in k-space               | sequence        | (0, 1000)    |                       | Q.MS1.012 |
+    | TR             | 0.005              | sec    | repetition time                                         | sequence        | (0, 1)       | RepetitionTime        | Q.MS1.006 |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-----------------------+-----------+
+    | nb             | 10                 | a.u.   | number of baseline time points                          | signal          |              |                       |           |
+    | S_ar           | array (125,)       | a.u.   | signal in the artery                                    | signal          | (0, 5)       |                       | Q.MS1.001 |
+    | S_ki           | array (125,)       | a.u.   | signal in the kidney                                    | signal          | (0, 5)       |                       | Q.MS1.001 |
+    | tS_ar          | array (125,)       | sec    | signal time points in the artery                        | signal          |              |                       |           |
+    | tS_ki          | array (125,)       | sec    | signal time points in the kidney                        | signal          |              |                       |           |
+    +----------------+--------------------+--------+---------------------------------------------------------+-----------------+--------------+-----------------------+-----------+
+    | vol_ki         | 160.859365         | cm3    | ROI volume in the kidney                                | whole-body      | (0.0, 1000)  |                       |           |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
@@ -225,7 +225,7 @@ radio-isotope reference value:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.233 seconds)
+   **Total running time of the script:** (0 minutes 0.197 seconds)
 
 
 .. _sphx_glr_download_examples_cases_plot_kidney.py:

@@ -78,6 +78,36 @@
    "name": "curve_fit"
   }
  ],
+ "dc.Qty": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core.quantity",
+   "module_short": "dcmri.core.quantity",
+   "name": "Qty"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri.core",
+   "module_short": "dcmri.core",
+   "name": "Qty"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Qty"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dcmri",
+   "module_short": "dcmri",
+   "name": "Qty"
+  }
+ ],
  "dc.aif_parker": [
   {
    "is_class": false,
@@ -156,31 +186,6 @@
    "module": "dcmri",
    "module_short": "dcmri",
    "name": "flux_aorta"
-  }
- ],
- "dc.get_quantity": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dcmri",
-   "module_short": "dcmri",
-   "name": "get_quantity"
-  }
- ],
- "desc": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "list"
   }
  ],
  "dose": [
@@ -349,6 +354,15 @@
    "module": "matplotlib.pyplot",
    "module_short": "matplotlib.pyplot",
    "name": "ylabel"
+  }
+ ],
+ "qty": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
   }
  ],
  "rate": [

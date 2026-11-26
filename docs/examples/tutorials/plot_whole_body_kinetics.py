@@ -75,10 +75,10 @@ def plasma_conc_aorta(t, E, T_hl, D_hl, T_or, CO):
 
 # --- Initialise the free parameters using built-in defaults
 pars = ['E', 'T_hl', 'D_hl', 'T_or', 'CO']
-desc = [dc.get_quantity(k) for k in pars]
-p0 = [q['init'] for q in desc]
-lb = [q['bounds'][0] for q in desc]
-ub = [q['bounds'][1] for q in desc]
+qty = [dc.Qty(k) for k in pars]
+p0 = [q.value for q in qty]
+lb = [q.bounds[0] for q in qty]
+ub = [q.bounds[1] for q in qty]
 
 # --- Perform the fit
 vals, _ = curve_fit(plasma_conc_aorta, t, cp_pop, p0, bounds=(lb, ub))

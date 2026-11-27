@@ -821,12 +821,18 @@ each step.</p>
 </section>
 <section id="building-a-larger-module">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Building a larger module</a><a class="headerlink" href="#building-a-larger-module" title="Link to this heading">#</a></h2>
-<p>The same pattern can be wrapped in a module of its own, so that the chain can
+<p>Modules can be combined to build more complex modules by linking their
+inputs and outputs, and connecting new configurations.</p>
+<p>The figure below shows the structure of a composite module <code class="docutils literal notranslate"><span class="pre">Chain</span></code>. Names inside a
+box are lower case, names outside the Chain are upper case. Only the
+configuration options that the Chain passes on are shown on the inner boxes, so
+the <code class="docutils literal notranslate"><span class="pre">mode</span></code> that the Chain fixes to <code class="docutils literal notranslate"><span class="pre">'plain'</span></code> has no slot.</p>
+<a class="reference internal image-reference" href="../_images/module_chain_diagram.svg"><img alt="A Chain module built from two Gain modules" class="align-center" src="../_images/module_chain_diagram.svg" style="width: 600px;" />
+</a>
+<p>The chain can
 be used like any other module. The helper methods <code class="docutils literal notranslate"><span class="pre">mapped_inputs()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">mapped_outputs()</span></code> return the <em>external</em> names of a module, which is what is
 needed to work out the inputs and outputs of the combination.</p>
-<a class="reference internal image-reference" href="../_images/module_chain_diagram.svg"><img alt="A Chain module built from two Gain modules" class="align-center" src="../_images/module_chain_diagram.svg" style="width: 600px;" />
-</a>
 <p>The combination also has a configuration of its own. Here, <code class="docutils literal notranslate"><span class="pre">kind1</span></code> and
 <code class="docutils literal notranslate"><span class="pre">kind2</span></code> choose the <code class="docutils literal notranslate"><span class="pre">kind</span></code> of the first and the second <code class="docutils literal notranslate"><span class="pre">Gain</span></code>, and are
 passed on when the sub-modules are created. The <code class="docutils literal notranslate"><span class="pre">mode</span></code> of both sub-modules is
@@ -891,10 +897,7 @@ module:</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Chain</span></code> is itself a module, so it can also be renamed with <code class="docutils literal notranslate"><span class="pre">imap</span></code> and
 <code class="docutils literal notranslate"><span class="pre">omap</span></code>, and it can in turn be used as a building block of an even larger
-module. The figure below shows the structure of this <code class="docutils literal notranslate"><span class="pre">Chain</span></code>. Names inside a
-box are lower case, names outside the Chain are upper case. Only the
-configuration options that the Chain passes on are shown on the inner boxes, so
-the <code class="docutils literal notranslate"><span class="pre">mode</span></code> that the Chain fixes to <code class="docutils literal notranslate"><span class="pre">'plain'</span></code> has no slot.</p>
+module.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The sub-modules are built in <code class="docutils literal notranslate"><span class="pre">set_config</span></code>, which the constructor calls

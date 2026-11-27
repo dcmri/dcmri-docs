@@ -370,16 +370,24 @@ each step.
 
 Building a larger module
 ========================
- 
-The same pattern can be wrapped in a module of its own, so that the chain can
-be used like any other module. The helper methods ``mapped_inputs()`` and
-``mapped_outputs()`` return the *external* names of a module, which is what is
-needed to work out the inputs and outputs of the combination.
+
+Modules can be combined to build more complex modules by linking their 
+inputs and outputs, and connecting new configurations. 
+
+The figure below shows the structure of a composite module ``Chain``. Names inside a
+box are lower case, names outside the Chain are upper case. Only the
+configuration options that the Chain passes on are shown on the inner boxes, so
+the ``mode`` that the Chain fixes to ``'plain'`` has no slot.
 
 .. image:: /_static/module_chain_diagram.svg
    :alt: A Chain module built from two Gain modules
    :align: center
    :width: 600px
+
+The chain can
+be used like any other module. The helper methods ``mapped_inputs()`` and
+``mapped_outputs()`` return the *external* names of a module, which is what is
+needed to work out the inputs and outputs of the combination.
  
 The combination also has a configuration of its own. Here, ``kind1`` and
 ``kind2`` choose the ``kind`` of the first and the second ``Gain``, and are
@@ -452,10 +460,7 @@ module:
  
 The ``Chain`` is itself a module, so it can also be renamed with ``imap`` and
 ``omap``, and it can in turn be used as a building block of an even larger
-module. The figure below shows the structure of this ``Chain``. Names inside a
-box are lower case, names outside the Chain are upper case. Only the
-configuration options that the Chain passes on are shown on the inner boxes, so
-the ``mode`` that the Chain fixes to ``'plain'`` has no slot.
+module. 
  
 
  
